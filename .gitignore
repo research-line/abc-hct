@@ -1,0 +1,40 @@
+# Private/internal research control files
+BEWEISNOTIZ*.md
+proof_notes/
+_proof-notes/
+_handoffs/
+_codex/
+_archive/
+_partners/
+CORE.txt
+Plan.txt
+ZENODO_CREDENTIALS.md
+*_BRIEFING*
+removed_sections/
+
+# Large/generated computation artifacts by default; curate selected files explicitly
+_results/*.log
+_results/*.err
+_results/*.tmp
+_results/*.partial.*
+__pycache__/
+*.pyc
+
+# LaTeX build products
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

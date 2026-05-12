@@ -6,13 +6,15 @@ Current scope:
 
 - bilingual abc/HCT paper drafts,
 - reproducible scripts for the no-Magma Manin-Hecke quotient route,
-- selected machine-readable result artifacts needed for verification,
-- publication-ready documentation after curation.
+- curated machine-readable result artifacts needed for verification,
+- publication-ready supplements after curation.
 
 Repository policy:
 
 - Keep this repository private until the corresponding DOI/public release gate is reached.
-- Do not push local private handoffs, raw agent transcripts, credentials, or non-curated proof scratch by default.
+- GitHub normally receives computation scripts and reproducible results, not internal proof notebooks.
+- Do not push `BEWEISNOTIZ*`, `_proof-notes/`, handoffs, raw agent transcripts, credentials, or proof scratch by default.
+- Internal proof notes become repo-publishable only after journal publication and explicit release as attached notes.
 - Public release should contain only curated paper files, reproducibility scripts, selected results, and a clean disclosure/status note.
 
 Primary local project path:

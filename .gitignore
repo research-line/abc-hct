@@ -1,4 +1,5 @@
 # Private/internal research control files
+# Proof notes stay out until journal publication plus explicit release.
 BEWEISNOTIZ*.md
 proof_notes/
 _proof-notes/

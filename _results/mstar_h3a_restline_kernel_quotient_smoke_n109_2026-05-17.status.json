@@ -1,0 +1,17 @@
+{
+  "tool": "mstar_h3a_restline_kernel_quotient",
+  "phase": "done",
+  "case_dir": "_results\\h3a_wait_postprocess_smoke_n109_2026-05-16\\N109_raw_sign1_splitlast",
+  "q": 3863,
+  "ncols_v_si": 27,
+  "started_unix": 1779042688.0509973,
+  "rows_seen": 27,
+  "manin_t_rank": 18,
+  "hecke_rows": 8,
+  "quotient_ncols": 9,
+  "quotient_basis_rank": 8,
+  "seconds": 0.011,
+  "quotient_kernel_dim": 1,
+  "repair_pairing_signed": 705,
+  "ready_for_al_scalar": true
+}

@@ -1,0 +1,129 @@
+{
+  "tool": "mstar_h3a_restline_kernel_quotient",
+  "case_dir": "_results/h3a_wait_postprocess_smoke_n109_2026-05-16/N109_raw_sign1_splitlast",
+  "level": 109,
+  "mode": "raw",
+  "q": 3863,
+  "ncols_v_si": 27,
+  "rows_seen": 27,
+  "manin_t_rows": 18,
+  "manin_t_rank": 18,
+  "manin_t_max_basis_row_len": 5,
+  "hecke_rows": 8,
+  "quotient_ncols": 9,
+  "quotient_rank": 8,
+  "quotient_kernel_dim": 1,
+  "kernel_engine": "sage",
+  "matrix_entries": 43,
+  "matrix_seconds": 0.023879542999999614,
+  "kernel_seconds": 0.04459181400000034,
+  "seconds": 3.3765979370000014,
+  "free_columns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    16
+  ],
+  "kernel_support_size": 3,
+  "kernel_entries_mod_q": [
+    [
+      6,
+      1
+    ],
+    [
+      7,
+      2809
+    ],
+    [
+      8,
+      2460
+    ]
+  ],
+  "kernel_entries_signed_head": [
+    [
+      6,
+      1
+    ],
+    [
+      7,
+      -1054
+    ],
+    [
+      8,
+      -1403
+    ]
+  ],
+  "repair_projected_support_size": 7,
+  "repair_projected_entries_mod_q": [
+    [
+      1,
+      1931
+    ],
+    [
+      2,
+      3862
+    ],
+    [
+      4,
+      3861
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      3860
+    ],
+    [
+      7,
+      3862
+    ],
+    [
+      8,
+      3
+    ]
+  ],
+  "repair_projected_entries_signed": [
+    [
+      1,
+      1931
+    ],
+    [
+      2,
+      -1
+    ],
+    [
+      4,
+      -2
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      -3
+    ],
+    [
+      7,
+      -1
+    ],
+    [
+      8,
+      3
+    ]
+  ],
+  "repair_pairing_mod_q": 705,
+  "repair_pairing_signed": 705,
+  "repair_pairing_nonzero": true,
+  "source_pairing_nonzero": 0,
+  "source_annihilated": true,
+  "source_pairing_examples": [],
+  "ready_for_al_scalar": true
+}

@@ -1,0 +1,37 @@
+{
+  "tool": "mstar_h3a_rc3c_witness_verify_rank",
+  "case_dir": "_results/h3a_residue_line_witness_120336_raw_standard_2026-05-16/N120336_raw_sign1_splitlast",
+  "case": "N120336_raw_sign1_splitlast",
+  "level": 120336,
+  "mode": "raw",
+  "q": 3863,
+  "ncols": 63360,
+  "witness_type": "source_prefix_plus_single_repair_row",
+  "rows_file": "mixed_rows.jsonl",
+  "row_count": 63360,
+  "pivot_strategy": "max",
+  "full": {
+    "rows_seen": 63360,
+    "independent_rows": 63360,
+    "rank": 63360,
+    "max_basis_row_len": 20035,
+    "seconds": 120644.62237405777
+  },
+  "full_rank_is_ncols": true,
+  "source_row_count_matches_manifest": true,
+  "split": {
+    "source": {
+      "rows_seen": 63359,
+      "independent_rows": 63359,
+      "rank": 63359,
+      "max_basis_row_len": null,
+      "seconds": null
+    },
+    "repair_only_count": 1,
+    "source_rank_is_ncols_minus_one": true,
+    "full_rank_is_ncols": true,
+    "single_repair_row": true,
+    "certified": true
+  },
+  "certified": true
+}

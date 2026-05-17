@@ -1,0 +1,1555 @@
+{
+  "meta": {
+    "script": "_scripts/frey_watkins_phase3.py",
+    "date": "2026-05-17",
+    "cmax": 5000,
+    "sample_size_requested": 60,
+    "seconds_total": 12.63
+  },
+  "summary": {
+    "n": 60,
+    "n_ok": 60,
+    "delta_min": 0.13181007797116573,
+    "delta_mean": 1.0512376803063472,
+    "delta_median": 1.1110441869007128,
+    "delta_max": 1.5245266864194702,
+    "rho_min": 0.3581044635020827,
+    "rho_mean": 1.1389452661590431,
+    "rho_max": 1.7929035842104373,
+    "quality_min": 0.6947233210815047,
+    "quality_mean": 1.087707585852696,
+    "quality_max": 1.6299116841270482,
+    "corr_delta_quality": -0.45415420230738973,
+    "corr_rho_quality": 0.39478950647182476,
+    "corr_rho_log_tamagawa": 0.6134719120992631,
+    "rho_lt_one_count": 12,
+    "rho_lt_one": [
+      {
+        "triple": [
+          1,
+          8,
+          9
+        ],
+        "origin": "control",
+        "rad_abc": 6,
+        "quality": 1.226294385530917,
+        "N": 48,
+        "modular_degree": "4",
+        "modular_degree_float": 4.0,
+        "rho": 0.3581044635020827,
+        "delta": 0.13181007797116573,
+        "tamagawa_product": 16,
+        "root_number": 1,
+        "seconds": 0.068
+      },
+      {
+        "triple": [
+          1,
+          80,
+          81
+        ],
+        "origin": "control",
+        "rad_abc": 30,
+        "quality": 1.292030029884618,
+        "N": 240,
+        "modular_degree": "128",
+        "modular_degree_float": 128.0,
+        "rho": 0.8853037632628679,
+        "delta": 0.59327373337825,
+        "tamagawa_product": 64,
+        "root_number": 1,
+        "seconds": 0.017
+      },
+      {
+        "triple": [
+          32,
+          49,
+          81
+        ],
+        "origin": "control",
+        "rad_abc": 42,
+        "quality": 1.1757189916348774,
+        "N": 42,
+        "modular_degree": "16",
+        "modular_degree_float": 16.0,
+        "rho": 0.7417960936614756,
+        "delta": 0.5660771020265982,
+        "tamagawa_product": 8,
+        "root_number": 1,
+        "seconds": 0.023
+      },
+      {
+        "triple": [
+          5,
+          27,
+          32
+        ],
+        "origin": "control",
+        "rad_abc": 30,
+        "quality": 1.018975235452531,
+        "N": 30,
+        "modular_degree": "4",
+        "modular_degree_float": 4.0,
+        "rho": 0.40759009418101233,
+        "delta": 0.38861485872848134,
+        "tamagawa_product": 24,
+        "root_number": 1,
+        "seconds": 0.017
+      },
+      {
+        "triple": [
+          1,
+          48,
+          49
+        ],
+        "origin": "control",
+        "rad_abc": 42,
+        "quality": 1.0412424573518235,
+        "N": 336,
+        "modular_degree": "128",
+        "modular_degree_float": 128.0,
+        "rho": 0.8340961914763045,
+        "delta": 0.792853734124481,
+        "tamagawa_product": 32,
+        "root_number": -1,
+        "seconds": 0.02
+      },
+      {
+        "triple": [
+          1,
+          99,
+          100
+        ],
+        "origin": "control",
+        "rad_abc": 330,
+        "quality": 0.7941190907591212,
+        "N": 1320,
+        "modular_degree": "1024",
+        "modular_degree_float": 1024.0,
+        "rho": 0.9646622778382866,
+        "delta": 1.1705431870791654,
+        "tamagawa_product": 64,
+        "root_number": -1,
+        "seconds": 0.019
+      },
+      {
+        "triple": [
+          9,
+          16,
+          25
+        ],
+        "origin": "control",
+        "rad_abc": 30,
+        "quality": 0.9463948908766786,
+        "N": 240,
+        "modular_degree": "64",
+        "modular_degree_float": 64.0,
+        "rho": 0.7588317970824581,
+        "delta": 0.8124369062057795,
+        "tamagawa_product": 64,
+        "root_number": 1,
+        "seconds": 0.021
+      },
+      {
+        "triple": [
+          1,
+          143,
+          144
+        ],
+        "origin": "control",
+        "rad_abc": 858,
+        "quality": 0.7357667786854808,
+        "N": 429,
+        "modular_degree": "128",
+        "modular_degree_float": 128.0,
+        "rho": 0.8004726138972064,
+        "delta": 1.0647058352117256,
+        "tamagawa_product": 16,
+        "root_number": -1,
+        "seconds": 0.017
+      },
+      {
+        "triple": [
+          1,
+          168,
+          169
+        ],
+        "origin": "control",
+        "rad_abc": 546,
+        "quality": 0.8139312775633516,
+        "N": 4368,
+        "modular_degree": "4096",
+        "modular_degree_float": 4096.0,
+        "rho": 0.9923295291686642,
+        "delta": 1.1783982516053126,
+        "tamagawa_product": 64,
+        "root_number": 1,
+        "seconds": 0.017
+      },
+      {
+        "triple": [
+          27,
+          32,
+          59
+        ],
+        "origin": "control",
+        "rad_abc": 354,
+        "quality": 0.6947233210815047,
+        "N": 354,
+        "modular_degree": "96",
+        "modular_degree_float": 96.0,
+        "rho": 0.7776652398099262,
+        "delta": 1.0829419187284215,
+        "tamagawa_product": 8,
+        "root_number": 1,
+        "seconds": 0.018
+      },
+      {
+        "triple": [
+          1,
+          124,
+          125
+        ],
+        "origin": "control",
+        "rad_abc": 310,
+        "quality": 0.8416722542525953,
+        "N": 2480,
+        "modular_degree": "1728",
+        "modular_degree_float": 1728.0,
+        "rho": 0.9537751727120918,
+        "delta": 1.1121029184594966,
+        "tamagawa_product": 24,
+        "root_number": 1,
+        "seconds": 0.021
+      },
+      {
+        "triple": [
+          1,
+          63,
+          64
+        ],
+        "origin": "sieve_top_q",
+        "rad_abc": 42,
+        "quality": 1.1126941404922133,
+        "N": 42,
+        "modular_degree": "8",
+        "modular_degree_float": 8.0,
+        "rho": 0.5563470702461066,
+        "delta": 0.44365292975389337,
+        "tamagawa_product": 16,
+        "root_number": 1,
+        "seconds": 0.019
+      }
+    ],
+    "low_delta_top10": [
+      {
+        "triple": [
+          1,
+          8,
+          9
+        ],
+        "origin": "control",
+        "rad_abc": 6,
+        "quality": 1.226294385530917,
+        "N": 48,
+        "modular_degree": "4",
+        "modular_degree_float": 4.0,
+        "rho": 0.3581044635020827,
+        "delta": 0.13181007797116573,
+        "tamagawa_product": 16,
+        "root_number": 1,
+        "seconds": 0.068
+      },
+      {
+        "triple": [
+          5,
+          27,
+          32
+        ],
+        "origin": "control",
+        "rad_abc": 30,
+        "quality": 1.018975235452531,
+        "N": 30,
+        "modular_degree": "4",
+        "modular_degree_float": 4.0,
+        "rho": 0.40759009418101233,
+        "delta": 0.38861485872848134,
+        "tamagawa_product": 24,
+        "root_number": 1,
+        "seconds": 0.017
+      },
+      {
+        "triple": [
+          1,
+          63,
+          64
+        ],
+        "origin": "sieve_top_q",
+        "rad_abc": 42,
+        "quality": 1.1126941404922133,
+        "N": 42,
+        "modular_degree": "8",
+        "modular_degree_float": 8.0,
+        "rho": 0.5563470702461066,
+        "delta": 0.44365292975389337,
+        "tamagawa_product": 16,
+        "root_number": 1,
+        "seconds": 0.019
+      },
+      {
+        "triple": [
+          32,
+          49,
+          81
+        ],
+        "origin": "control",
+        "rad_abc": 42,
+        "quality": 1.1757189916348774,
+        "N": 42,
+        "modular_degree": "16",
+        "modular_degree_float": 16.0,
+        "rho": 0.7417960936614756,
+        "delta": 0.5660771020265982,
+        "tamagawa_product": 8,
+        "root_number": 1,
+        "seconds": 0.023
+      },
+      {
+        "triple": [
+          1,
+          80,
+          81
+        ],
+        "origin": "control",
+        "rad_abc": 30,
+        "quality": 1.292030029884618,
+        "N": 240,
+        "modular_degree": "128",
+        "modular_degree_float": 128.0,
+        "rho": 0.8853037632628679,
+        "delta": 0.59327373337825,
+        "tamagawa_product": 64,
+        "root_number": 1,
+        "seconds": 0.017
+      },
+      {
+        "triple": [
+          3,
+          125,
+          128
+        ],
+        "origin": "control",
+        "rad_abc": 30,
+        "quality": 1.4265653296335432,
+        "N": 240,
+        "modular_degree": "288",
+        "modular_degree_float": 288.0,
+        "rho": 1.0332664784788959,
+        "delta": 0.6067011488453526,
+        "tamagawa_product": 16,
+        "root_number": 1,
+        "seconds": 0.02
+      },
+      {
+        "triple": [
+          13,
+          243,
+          256
+        ],
+        "origin": "control",
+        "rad_abc": 78,
+        "quality": 1.2727904629543532,
+        "N": 78,
+        "modular_degree": "80",
+        "modular_degree_float": 80.0,
+        "rho": 1.0058112233319771,
+        "delta": 0.733020760377624,
+        "tamagawa_product": 8,
+        "root_number": 1,
+        "seconds": 0.019
+      },
+      {
+        "triple": [
+          1,
+          242,
+          243
+        ],
+        "origin": "sieve_top_q",
+        "rad_abc": 66,
+        "quality": 1.311101219926227,
+        "N": 1056,
+        "modular_degree": "1920",
+        "modular_degree_float": 1920.0,
+        "rho": 1.0858684422376244,
+        "delta": 0.7747672223113973,
+        "tamagawa_product": 40,
+        "root_number": 1,
+        "seconds": 0.023
+      },
+      {
+        "triple": [
+          1,
+          48,
+          49
+        ],
+        "origin": "control",
+        "rad_abc": 42,
+        "quality": 1.0412424573518235,
+        "N": 336,
+        "modular_degree": "128",
+        "modular_degree_float": 128.0,
+        "rho": 0.8340961914763045,
+        "delta": 0.792853734124481,
+        "tamagawa_product": 32,
+        "root_number": -1,
+        "seconds": 0.02
+      },
+      {
+        "triple": [
+          9,
+          16,
+          25
+        ],
+        "origin": "control",
+        "rad_abc": 30,
+        "quality": 0.9463948908766786,
+        "N": 240,
+        "modular_degree": "64",
+        "modular_degree_float": 64.0,
+        "rho": 0.7588317970824581,
+        "delta": 0.8124369062057795,
+        "tamagawa_product": 64,
+        "root_number": 1,
+        "seconds": 0.021
+      }
+    ],
+    "high_quality": {
+      "threshold": 1.5,
+      "n": 2,
+      "delta_min": 0.8589434685272004,
+      "delta_mean": 1.0109676843052946,
+      "rho_min": 1.4268307329276613,
+      "rho_mean": 1.6098671585690494,
+      "rows": [
+        {
+          "triple": [
+            2,
+            6436341,
+            6436343
+          ],
+          "origin": "control",
+          "rad_abc": 15042,
+          "quality": 1.6299116841270482,
+          "N": 240672,
+          "modular_degree": "4450176000",
+          "modular_degree_float": 4450176000.0,
+          "rho": 1.7929035842104373,
+          "delta": 1.162991900083389,
+          "tamagawa_product": 800,
+          "root_number": -1,
+          "seconds": 0.433
+        },
+        {
+          "triple": [
+            1,
+            4374,
+            4375
+          ],
+          "origin": "control",
+          "rad_abc": 210,
+          "quality": 1.567887264400461,
+          "N": 3360,
+          "modular_degree": "107520",
+          "modular_degree_float": 107520.0,
+          "rho": 1.4268307329276613,
+          "delta": 0.8589434685272004,
+          "tamagawa_product": 64,
+          "root_number": 1,
+          "seconds": 0.016
+        }
+      ]
+    }
+  },
+  "rows": [
+    {
+      "triple": [
+        1,
+        8,
+        9
+      ],
+      "origin": "control",
+      "rad_abc": 6,
+      "quality": 1.226294385530917,
+      "N": 48,
+      "modular_degree": "4",
+      "modular_degree_float": 4.0,
+      "rho": 0.3581044635020827,
+      "delta": 0.13181007797116573,
+      "tamagawa_product": 16,
+      "root_number": 1,
+      "seconds": 0.068
+    },
+    {
+      "triple": [
+        1,
+        80,
+        81
+      ],
+      "origin": "control",
+      "rad_abc": 30,
+      "quality": 1.292030029884618,
+      "N": 240,
+      "modular_degree": "128",
+      "modular_degree_float": 128.0,
+      "rho": 0.8853037632628679,
+      "delta": 0.59327373337825,
+      "tamagawa_product": 64,
+      "root_number": 1,
+      "seconds": 0.017
+    },
+    {
+      "triple": [
+        3,
+        125,
+        128
+      ],
+      "origin": "control",
+      "rad_abc": 30,
+      "quality": 1.4265653296335432,
+      "N": 240,
+      "modular_degree": "288",
+      "modular_degree_float": 288.0,
+      "rho": 1.0332664784788959,
+      "delta": 0.6067011488453526,
+      "tamagawa_product": 16,
+      "root_number": 1,
+      "seconds": 0.02
+    },
+    {
+      "triple": [
+        32,
+        49,
+        81
+      ],
+      "origin": "control",
+      "rad_abc": 42,
+      "quality": 1.1757189916348774,
+      "N": 42,
+      "modular_degree": "16",
+      "modular_degree_float": 16.0,
+      "rho": 0.7417960936614756,
+      "delta": 0.5660771020265982,
+      "tamagawa_product": 8,
+      "root_number": 1,
+      "seconds": 0.023
+    },
+    {
+      "triple": [
+        13,
+        243,
+        256
+      ],
+      "origin": "control",
+      "rad_abc": 78,
+      "quality": 1.2727904629543532,
+      "N": 78,
+      "modular_degree": "80",
+      "modular_degree_float": 80.0,
+      "rho": 1.0058112233319771,
+      "delta": 0.733020760377624,
+      "tamagawa_product": 8,
+      "root_number": 1,
+      "seconds": 0.019
+    },
+    {
+      "triple": [
+        5,
+        27,
+        32
+      ],
+      "origin": "control",
+      "rad_abc": 30,
+      "quality": 1.018975235452531,
+      "N": 30,
+      "modular_degree": "4",
+      "modular_degree_float": 4.0,
+      "rho": 0.40759009418101233,
+      "delta": 0.38861485872848134,
+      "tamagawa_product": 24,
+      "root_number": 1,
+      "seconds": 0.017
+    },
+    {
+      "triple": [
+        1,
+        48,
+        49
+      ],
+      "origin": "control",
+      "rad_abc": 42,
+      "quality": 1.0412424573518235,
+      "N": 336,
+      "modular_degree": "128",
+      "modular_degree_float": 128.0,
+      "rho": 0.8340961914763045,
+      "delta": 0.792853734124481,
+      "tamagawa_product": 32,
+      "root_number": -1,
+      "seconds": 0.02
+    },
+    {
+      "triple": [
+        1,
+        99,
+        100
+      ],
+      "origin": "control",
+      "rad_abc": 330,
+      "quality": 0.7941190907591212,
+      "N": 1320,
+      "modular_degree": "1024",
+      "modular_degree_float": 1024.0,
+      "rho": 0.9646622778382866,
+      "delta": 1.1705431870791654,
+      "tamagawa_product": 64,
+      "root_number": -1,
+      "seconds": 0.019
+    },
+    {
+      "triple": [
+        1,
+        288,
+        289
+      ],
+      "origin": "control",
+      "rad_abc": 102,
+      "quality": 1.2251805398372944,
+      "N": 816,
+      "modular_degree": "1536",
+      "modular_degree_float": 1536.0,
+      "rho": 1.0943441925356503,
+      "delta": 0.8691636526983559,
+      "tamagawa_product": 32,
+      "root_number": -1,
+      "seconds": 0.022
+    },
+    {
+      "triple": [
+        1,
+        728,
+        729
+      ],
+      "origin": "control",
+      "rad_abc": 546,
+      "quality": 1.0458626417646626,
+      "N": 4368,
+      "modular_degree": "18432",
+      "modular_degree_float": 18432.0,
+      "rho": 1.1717695837530446,
+      "delta": 1.125906941988382,
+      "tamagawa_product": 192,
+      "root_number": -1,
+      "seconds": 0.02
+    },
+    {
+      "triple": [
+        625,
+        2048,
+        2673
+      ],
+      "origin": "control",
+      "rad_abc": 330,
+      "quality": 1.3607226485800983,
+      "N": 2640,
+      "modular_degree": "107520",
+      "modular_degree_float": 107520.0,
+      "rho": 1.4705060443137503,
+      "delta": 1.109783395733652,
+      "tamagawa_product": 160,
+      "root_number": 1,
+      "seconds": 0.017
+    },
+    {
+      "triple": [
+        1,
+        2400,
+        2401
+      ],
+      "origin": "control",
+      "rad_abc": 210,
+      "quality": 1.4556731001773688,
+      "N": 1680,
+      "modular_degree": "24576",
+      "modular_degree_float": 24576.0,
+      "rho": 1.3612682737830513,
+      "delta": 0.9055951736056824,
+      "tamagawa_product": 256,
+      "root_number": 1,
+      "seconds": 0.02
+    },
+    {
+      "triple": [
+        1,
+        5831,
+        5832
+      ],
+      "origin": "control",
+      "rad_abc": 714,
+      "quality": 1.319627106948366,
+      "N": 2856,
+      "modular_degree": "69120",
+      "modular_degree_float": 69120.0,
+      "rho": 1.400446282706834,
+      "delta": 1.080819175758468,
+      "tamagawa_product": 96,
+      "root_number": 1,
+      "seconds": 0.019
+    },
+    {
+      "triple": [
+        3,
+        1024,
+        1027
+      ],
+      "origin": "control",
+      "rad_abc": 6162,
+      "quality": 0.7946679695188295,
+      "N": 6162,
+      "modular_degree": "12672",
+      "modular_degree_float": 12672.0,
+      "rho": 1.0826243971323326,
+      "delta": 1.2879564276135032,
+      "tamagawa_product": 16,
+      "root_number": -1,
+      "seconds": 0.024
+    },
+    {
+      "triple": [
+        2,
+        6436341,
+        6436343
+      ],
+      "origin": "control",
+      "rad_abc": 15042,
+      "quality": 1.6299116841270482,
+      "N": 240672,
+      "modular_degree": "4450176000",
+      "modular_degree_float": 4450176000.0,
+      "rho": 1.7929035842104373,
+      "delta": 1.162991900083389,
+      "tamagawa_product": 800,
+      "root_number": -1,
+      "seconds": 0.433
+    },
+    {
+      "triple": [
+        1,
+        624,
+        625
+      ],
+      "origin": "control",
+      "rad_abc": 390,
+      "quality": 1.0790468171894105,
+      "N": 3120,
+      "modular_degree": "12288",
+      "modular_degree_float": 12288.0,
+      "rho": 1.170377867564337,
+      "delta": 1.0913310503749265,
+      "tamagawa_product": 128,
+      "root_number": 1,
+      "seconds": 0.018
+    },
+    {
+      "triple": [
+        9,
+        16,
+        25
+      ],
+      "origin": "control",
+      "rad_abc": 30,
+      "quality": 0.9463948908766786,
+      "N": 240,
+      "modular_degree": "64",
+      "modular_degree_float": 64.0,
+      "rho": 0.7588317970824581,
+      "delta": 0.8124369062057795,
+      "tamagawa_product": 64,
+      "root_number": 1,
+      "seconds": 0.021
+    },
+    {
+      "triple": [
+        1,
+        15624,
+        15625
+      ],
+      "origin": "control",
+      "rad_abc": 6510,
+      "quality": 1.0997065588977257,
+      "N": 52080,
+      "modular_degree": "4227072",
+      "modular_degree_float": 4227072.0,
+      "rho": 1.404812775703966,
+      "delta": 1.3051062168062402,
+      "tamagawa_product": 384,
+      "root_number": 1,
+      "seconds": 0.048
+    },
+    {
+      "triple": [
+        1,
+        143,
+        144
+      ],
+      "origin": "control",
+      "rad_abc": 858,
+      "quality": 0.7357667786854808,
+      "N": 429,
+      "modular_degree": "128",
+      "modular_degree_float": 128.0,
+      "rho": 0.8004726138972064,
+      "delta": 1.0647058352117256,
+      "tamagawa_product": 16,
+      "root_number": -1,
+      "seconds": 0.017
+    },
+    {
+      "triple": [
+        1,
+        575,
+        576
+      ],
+      "origin": "control",
+      "rad_abc": 690,
+      "quality": 0.9723738019150305,
+      "N": 690,
+      "modular_degree": "768",
+      "modular_degree_float": 768.0,
+      "rho": 1.0163841499874082,
+      "delta": 1.0440103480723777,
+      "tamagawa_product": 128,
+      "root_number": 1,
+      "seconds": 0.017
+    },
+    {
+      "triple": [
+        49,
+        576,
+        625
+      ],
+      "origin": "control",
+      "rad_abc": 210,
+      "quality": 1.2039689893561185,
+      "N": 1680,
+      "modular_degree": "12288",
+      "modular_degree_float": 12288.0,
+      "rho": 1.2679345902911847,
+      "delta": 1.0639656009350662,
+      "tamagawa_product": 256,
+      "root_number": 1,
+      "seconds": 0.018
+    },
+    {
+      "triple": [
+        1,
+        168,
+        169
+      ],
+      "origin": "control",
+      "rad_abc": 546,
+      "quality": 0.8139312775633516,
+      "N": 4368,
+      "modular_degree": "4096",
+      "modular_degree_float": 4096.0,
+      "rho": 0.9923295291686642,
+      "delta": 1.1783982516053126,
+      "tamagawa_product": 64,
+      "root_number": 1,
+      "seconds": 0.017
+    },
+    {
+      "triple": [
+        1,
+        224,
+        225
+      ],
+      "origin": "control",
+      "rad_abc": 210,
+      "quality": 1.0129028397298183,
+      "N": 1680,
+      "modular_degree": "3072",
+      "modular_degree_float": 3072.0,
+      "rho": 1.0812672233074514,
+      "delta": 1.068364383577633,
+      "tamagawa_product": 128,
+      "root_number": 1,
+      "seconds": 0.015
+    },
+    {
+      "triple": [
+        4,
+        121,
+        125
+      ],
+      "origin": "control",
+      "rad_abc": 110,
+      "quality": 1.027195810121916,
+      "N": 440,
+      "modular_degree": "576",
+      "modular_degree_float": 576.0,
+      "rho": 1.0442488749571668,
+      "delta": 1.0170530648352507,
+      "tamagawa_product": 24,
+      "root_number": 1,
+      "seconds": 0.017
+    },
+    {
+      "triple": [
+        27,
+        32,
+        59
+      ],
+      "origin": "control",
+      "rad_abc": 354,
+      "quality": 0.6947233210815047,
+      "N": 354,
+      "modular_degree": "96",
+      "modular_degree_float": 96.0,
+      "rho": 0.7776652398099262,
+      "delta": 1.0829419187284215,
+      "tamagawa_product": 8,
+      "root_number": 1,
+      "seconds": 0.018
+    },
+    {
+      "triple": [
+        1,
+        4374,
+        4375
+      ],
+      "origin": "control",
+      "rad_abc": 210,
+      "quality": 1.567887264400461,
+      "N": 3360,
+      "modular_degree": "107520",
+      "modular_degree_float": 107520.0,
+      "rho": 1.4268307329276613,
+      "delta": 0.8589434685272004,
+      "tamagawa_product": 64,
+      "root_number": 1,
+      "seconds": 0.016
+    },
+    {
+      "triple": [
+        4,
+        729,
+        733
+      ],
+      "origin": "control",
+      "rad_abc": 4398,
+      "quality": 0.7864131930591405,
+      "N": 17592,
+      "modular_degree": "98496",
+      "modular_degree_float": 98496.0,
+      "rho": 1.1762185701973265,
+      "delta": 1.389805377138186,
+      "tamagawa_product": 8,
+      "root_number": 1,
+      "seconds": 0.025
+    },
+    {
+      "triple": [
+        1,
+        4095,
+        4096
+      ],
+      "origin": "control",
+      "rad_abc": 2730,
+      "quality": 1.0512773459890672,
+      "N": 2730,
+      "modular_degree": "16384",
+      "modular_degree_float": 16384.0,
+      "rho": 1.226490236987245,
+      "delta": 1.1752128909981778,
+      "tamagawa_product": 256,
+      "root_number": 1,
+      "seconds": 0.018
+    },
+    {
+      "triple": [
+        1,
+        1023,
+        1024
+      ],
+      "origin": "control",
+      "rad_abc": 2046,
+      "quality": 0.9092074174300852,
+      "N": 2046,
+      "modular_degree": "3072",
+      "modular_degree_float": 3072.0,
+      "rho": 1.0533133836305064,
+      "delta": 1.1441059662004212,
+      "tamagawa_product": 96,
+      "root_number": 1,
+      "seconds": 0.016
+    },
+    {
+      "triple": [
+        1,
+        2047,
+        2048
+      ],
+      "origin": "control",
+      "rad_abc": 4094,
+      "quality": 0.9167204944296901,
+      "N": 4094,
+      "modular_degree": "9856",
+      "modular_degree_float": 9856.0,
+      "rho": 1.1056304651889988,
+      "delta": 1.1889099707593087,
+      "tamagawa_product": 56,
+      "root_number": -1,
+      "seconds": 0.019
+    },
+    {
+      "triple": [
+        1,
+        8191,
+        8192
+      ],
+      "origin": "control",
+      "rad_abc": 16382,
+      "quality": 0.9285831102122393,
+      "N": 16382,
+      "modular_degree": "182016",
+      "modular_degree_float": 182016.0,
+      "rho": 1.2481375409165452,
+      "delta": 1.319554430704306,
+      "tamagawa_product": 36,
+      "root_number": 1,
+      "seconds": 0.035
+    },
+    {
+      "triple": [
+        1,
+        323,
+        324
+      ],
+      "origin": "control",
+      "rad_abc": 1938,
+      "quality": 0.7636978505460231,
+      "N": 7752,
+      "modular_degree": "15360",
+      "modular_degree_float": 15360.0,
+      "rho": 1.0763553249073972,
+      "delta": 1.312657474361374,
+      "tamagawa_product": 128,
+      "root_number": 1,
+      "seconds": 0.019
+    },
+    {
+      "triple": [
+        1,
+        440,
+        441
+      ],
+      "origin": "control",
+      "rad_abc": 2310,
+      "quality": 0.7861901447837731,
+      "N": 18480,
+      "modular_degree": "65536",
+      "modular_degree_float": 65536.0,
+      "rho": 1.1288531441864702,
+      "delta": 1.342662999402697,
+      "tamagawa_product": 256,
+      "root_number": 1,
+      "seconds": 0.018
+    },
+    {
+      "triple": [
+        1,
+        675,
+        676
+      ],
+      "origin": "control",
+      "rad_abc": 390,
+      "quality": 1.0921945706283556,
+      "N": 1560,
+      "modular_degree": "7680",
+      "modular_degree_float": 7680.0,
+      "rho": 1.2167897306712634,
+      "delta": 1.1245951600429078,
+      "tamagawa_product": 128,
+      "root_number": 1,
+      "seconds": 0.015
+    },
+    {
+      "triple": [
+        3,
+        4096,
+        4099
+      ],
+      "origin": "control",
+      "rad_abc": 24594,
+      "quality": 0.822778062983943,
+      "N": 24594,
+      "modular_degree": "184320",
+      "modular_degree_float": 184320.0,
+      "rho": 1.1992205251979617,
+      "delta": 1.3764424622140188,
+      "tamagawa_product": 8,
+      "root_number": 1,
+      "seconds": 0.05
+    },
+    {
+      "triple": [
+        1,
+        3124,
+        3125
+      ],
+      "origin": "control",
+      "rad_abc": 7810,
+      "quality": 0.8978071733799949,
+      "N": 62480,
+      "modular_degree": "967680",
+      "modular_degree_float": 967680.0,
+      "rho": 1.2481349053465236,
+      "delta": 1.3503277319665288,
+      "tamagawa_product": 80,
+      "root_number": 1,
+      "seconds": 0.039
+    },
+    {
+      "triple": [
+        16,
+        243,
+        259
+      ],
+      "origin": "control",
+      "rad_abc": 1554,
+      "quality": 0.7561763452245515,
+      "N": 12432,
+      "modular_degree": "30720",
+      "modular_degree_float": 30720.0,
+      "rho": 1.0959521982470926,
+      "delta": 1.339775853022541,
+      "tamagawa_product": 32,
+      "root_number": 1,
+      "seconds": 0.013
+    },
+    {
+      "triple": [
+        1,
+        9800,
+        9801
+      ],
+      "origin": "control",
+      "rad_abc": 2310,
+      "quality": 1.186602501434509,
+      "N": 18480,
+      "modular_degree": "1179648",
+      "modular_degree_float": 1179648.0,
+      "rho": 1.4230552034927157,
+      "delta": 1.2364527020582068,
+      "tamagawa_product": 1024,
+      "root_number": 1,
+      "seconds": 0.021
+    },
+    {
+      "triple": [
+        4,
+        243,
+        247
+      ],
+      "origin": "control",
+      "rad_abc": 1482,
+      "quality": 0.7545920837555243,
+      "N": 11856,
+      "modular_degree": "23040",
+      "modular_degree_float": 23040.0,
+      "rho": 1.0708268684044342,
+      "delta": 1.31623478464891,
+      "tamagawa_product": 16,
+      "root_number": -1,
+      "seconds": 0.019
+    },
+    {
+      "triple": [
+        121,
+        2187,
+        2308
+      ],
+      "origin": "control",
+      "rad_abc": 38082,
+      "quality": 0.7342155794272147,
+      "N": 152328,
+      "modular_degree": "3340288",
+      "modular_degree_float": 3340288.0,
+      "rho": 1.258742265846685,
+      "delta": 1.5245266864194702,
+      "tamagawa_product": 64,
+      "root_number": 1,
+      "seconds": 0.164
+    },
+    {
+      "triple": [
+        1,
+        124,
+        125
+      ],
+      "origin": "control",
+      "rad_abc": 310,
+      "quality": 0.8416722542525953,
+      "N": 2480,
+      "modular_degree": "1728",
+      "modular_degree_float": 1728.0,
+      "rho": 0.9537751727120918,
+      "delta": 1.1121029184594966,
+      "tamagawa_product": 24,
+      "root_number": 1,
+      "seconds": 0.021
+    },
+    {
+      "triple": [
+        1,
+        512,
+        513
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 114,
+      "quality": 1.3175706029138485,
+      "N": 912,
+      "modular_degree": "2880",
+      "modular_degree_float": 2880.0,
+      "rho": 1.1687157163128155,
+      "delta": 0.8511451133989669,
+      "tamagawa_product": 48,
+      "root_number": 1,
+      "seconds": 0.019
+    },
+    {
+      "triple": [
+        1,
+        242,
+        243
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 66,
+      "quality": 1.311101219926227,
+      "N": 1056,
+      "modular_degree": "1920",
+      "modular_degree_float": 1920.0,
+      "rho": 1.0858684422376244,
+      "delta": 0.7747672223113973,
+      "tamagawa_product": 40,
+      "root_number": 1,
+      "seconds": 0.023
+    },
+    {
+      "triple": [
+        5,
+        1024,
+        1029
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 210,
+      "quality": 1.297213997658906,
+      "N": 1680,
+      "modular_degree": "13824",
+      "modular_degree_float": 13824.0,
+      "rho": 1.2837943165931565,
+      "delta": 0.9865803189342504,
+      "tamagawa_product": 32,
+      "root_number": -1,
+      "seconds": 0.021
+    },
+    {
+      "triple": [
+        10,
+        2187,
+        2197
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 390,
+      "quality": 1.2897517290221443,
+      "N": 6240,
+      "modular_degree": "107520",
+      "modular_degree_float": 107520.0,
+      "rho": 1.3257561356536753,
+      "delta": 1.036004406631531,
+      "tamagawa_product": 48,
+      "root_number": 1,
+      "seconds": 0.021
+    },
+    {
+      "triple": [
+        125,
+        2187,
+        2312
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 510,
+      "quality": 1.2424379096229239,
+      "N": 2040,
+      "modular_degree": "53760",
+      "modular_degree_float": 53760.0,
+      "rho": 1.4293014689689438,
+      "delta": 1.18686355934602,
+      "tamagawa_product": 112,
+      "root_number": 1,
+      "seconds": 0.019
+    },
+    {
+      "triple": [
+        81,
+        1250,
+        1331
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 330,
+      "quality": 1.2404847183915741,
+      "N": 5280,
+      "modular_degree": "61440",
+      "modular_degree_float": 61440.0,
+      "rho": 1.286307304631285,
+      "delta": 1.0458225862397108,
+      "tamagawa_product": 192,
+      "root_number": -1,
+      "seconds": 0.016
+    },
+    {
+      "triple": [
+        11,
+        3125,
+        3136
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 770,
+      "quality": 1.2112895508449888,
+      "N": 6160,
+      "modular_degree": "122880",
+      "modular_degree_float": 122880.0,
+      "rho": 1.3430196080401124,
+      "delta": 1.1317300571951237,
+      "tamagawa_product": 320,
+      "root_number": -1,
+      "seconds": 0.016
+    },
+    {
+      "triple": [
+        243,
+        1805,
+        2048
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 570,
+      "quality": 1.2015530913851162,
+      "N": 4560,
+      "modular_degree": "107520",
+      "modular_degree_float": 107520.0,
+      "rho": 1.375112763326212,
+      "delta": 1.1735596719410957,
+      "tamagawa_product": 64,
+      "root_number": -1,
+      "seconds": 0.013
+    },
+    {
+      "triple": [
+        169,
+        343,
+        512
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 182,
+      "quality": 1.198754152359422,
+      "N": 182,
+      "modular_degree": "360",
+      "modular_degree_float": 360.0,
+      "rho": 1.1310715733834904,
+      "delta": 0.9323174210240683,
+      "tamagawa_product": 40,
+      "root_number": 1,
+      "seconds": 0.016
+    },
+    {
+      "triple": [
+        1024,
+        1377,
+        2401
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 714,
+      "quality": 1.1845653987192404,
+      "N": 714,
+      "modular_degree": "7680",
+      "modular_degree_float": 7680.0,
+      "rho": 1.3615179082350193,
+      "delta": 1.176952509515779,
+      "tamagawa_product": 384,
+      "root_number": 1,
+      "seconds": 0.026
+    },
+    {
+      "triple": [
+        8,
+        1323,
+        1331
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 462,
+      "quality": 1.1724569695043712,
+      "N": 3696,
+      "modular_degree": "46080",
+      "modular_degree_float": 46080.0,
+      "rho": 1.307136443928507,
+      "delta": 1.1346794744241357,
+      "tamagawa_product": 96,
+      "root_number": 1,
+      "seconds": 0.023
+    },
+    {
+      "triple": [
+        23,
+        2025,
+        2048
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 690,
+      "quality": 1.1664339478657648,
+      "N": 5520,
+      "modular_degree": "86016",
+      "modular_degree_float": 86016.0,
+      "rho": 1.3187224965982745,
+      "delta": 1.1522885487325096,
+      "tamagawa_product": 128,
+      "root_number": 1,
+      "seconds": 0.025
+    },
+    {
+      "triple": [
+        1,
+        3968,
+        3969
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 1302,
+      "quality": 1.1554191252537194,
+      "N": 10416,
+      "modular_degree": "221184",
+      "modular_degree_float": 221184.0,
+      "rho": 1.330301519717705,
+      "delta": 1.1748823944639857,
+      "tamagawa_product": 256,
+      "root_number": 1,
+      "seconds": 0.017
+    },
+    {
+      "triple": [
+        1,
+        1024,
+        1025
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 410,
+      "quality": 1.152304985982131,
+      "N": 3280,
+      "modular_degree": "13824",
+      "modular_degree_float": 13824.0,
+      "rho": 1.1776968996030828,
+      "delta": 1.0253919136209517,
+      "tamagawa_product": 32,
+      "root_number": 1,
+      "seconds": 0.018
+    },
+    {
+      "triple": [
+        128,
+        2997,
+        3125
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 1110,
+      "quality": 1.1476122716785004,
+      "N": 1110,
+      "modular_degree": "11520",
+      "modular_degree_float": 11520.0,
+      "rho": 1.3336688776129062,
+      "delta": 1.1860566059344058,
+      "tamagawa_product": 64,
+      "root_number": 1,
+      "seconds": 0.023
+    },
+    {
+      "triple": [
+        139,
+        2048,
+        2187
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 834,
+      "quality": 1.1433272621761756,
+      "N": 834,
+      "modular_degree": "4704",
+      "modular_degree_float": 4704.0,
+      "rho": 1.2571922476869544,
+      "delta": 1.1138649855107787,
+      "tamagawa_product": 56,
+      "root_number": 1,
+      "seconds": 0.018
+    },
+    {
+      "triple": [
+        25,
+        704,
+        729
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 330,
+      "quality": 1.1366732909394883,
+      "N": 2640,
+      "modular_degree": "18432",
+      "modular_degree_float": 18432.0,
+      "rho": 1.2466587462814174,
+      "delta": 1.109985455341929,
+      "tamagawa_product": 384,
+      "root_number": 1,
+      "seconds": 0.017
+    },
+    {
+      "triple": [
+        1,
+        1215,
+        1216
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 570,
+      "quality": 1.119402634915339,
+      "N": 570,
+      "modular_degree": "1920",
+      "modular_degree_float": 1920.0,
+      "rho": 1.191382555686606,
+      "delta": 1.071979920771267,
+      "tamagawa_product": 32,
+      "root_number": 1,
+      "seconds": 0.017
+    },
+    {
+      "triple": [
+        1,
+        63,
+        64
+      ],
+      "origin": "sieve_top_q",
+      "rad_abc": 42,
+      "quality": 1.1126941404922133,
+      "N": 42,
+      "modular_degree": "8",
+      "modular_degree_float": 8.0,
+      "rho": 0.5563470702461066,
+      "delta": 0.44365292975389337,
+      "tamagawa_product": 16,
+      "root_number": 1,
+      "seconds": 0.019
+    }
+  ]
+}

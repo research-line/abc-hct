@@ -1,0 +1,173 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "plain",
+  "backend_used": "plain",
+  "q": 3863,
+  "sign": 1,
+  "primes": [
+    5
+  ],
+  "stop_on_zero": true,
+  "runs": [
+    {
+      "backend": "plain",
+      "level": 109,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 110,
+      "columns_after_2term": null,
+      "gamma0_index": 110,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.23285388946533203,
+      "stages": [
+        {
+          "stage": "manin_relations",
+          "rows_added": 330,
+          "nnz_added": 760,
+          "total_rows": 330,
+          "total_nnz": 760,
+          "rank": 101,
+          "quotient_dim": 9,
+          "seconds_rank": 0.0,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2",
+          "rows_added": 110,
+          "nnz_added": 754,
+          "total_rows": 440,
+          "total_nnz": 1514,
+          "rank": 110,
+          "quotient_dim": 0,
+          "seconds_rank": 0.0,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "plain",
+      "level": 109,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 110,
+      "columns_after_2term": null,
+      "gamma0_index": 110,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.24669194221496582,
+      "stages": [
+        {
+          "stage": "manin_relations",
+          "rows_added": 330,
+          "nnz_added": 760,
+          "total_rows": 330,
+          "total_nnz": 760,
+          "rank": 101,
+          "quotient_dim": 9,
+          "seconds_rank": 0.0,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2",
+          "rows_added": 110,
+          "nnz_added": 754,
+          "total_rows": 440,
+          "total_nnz": 1514,
+          "rank": 110,
+          "quotient_dim": 0,
+          "seconds_rank": 0.002017498016357422,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "plain",
+      "level": 218,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 330,
+      "columns_after_2term": null,
+      "gamma0_index": 330,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.7363424301147461,
+      "stages": [
+        {
+          "stage": "manin_relations",
+          "rows_added": 990,
+          "nnz_added": 2296,
+          "total_rows": 990,
+          "total_nnz": 2296,
+          "rank": 301,
+          "quotient_dim": 29,
+          "seconds_rank": 0.003727436065673828,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2",
+          "rows_added": 330,
+          "nnz_added": 2272,
+          "total_rows": 1320,
+          "total_nnz": 4568,
+          "rank": 330,
+          "quotient_dim": 0,
+          "seconds_rank": 0.04421067237854004,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "plain",
+      "level": 218,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 330,
+      "columns_after_2term": null,
+      "gamma0_index": 330,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.7741937637329102,
+      "stages": [
+        {
+          "stage": "manin_relations",
+          "rows_added": 990,
+          "nnz_added": 2296,
+          "total_rows": 990,
+          "total_nnz": 2296,
+          "rank": 301,
+          "quotient_dim": 29,
+          "seconds_rank": 0.004171133041381836,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2",
+          "rows_added": 330,
+          "nnz_added": 2272,
+          "total_rows": 1320,
+          "total_nnz": 4568,
+          "rank": 330,
+          "quotient_dim": 0,
+          "seconds_rank": 0.048445701599121094,
+          "killed": true
+        }
+      ]
+    }
+  ]
+}

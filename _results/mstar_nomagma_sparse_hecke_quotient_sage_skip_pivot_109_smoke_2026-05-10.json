@@ -1,0 +1,53 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "sage",
+  "backend_used": "sage",
+  "q": 3863,
+  "sign": 1,
+  "primes": [
+    5
+  ],
+  "stop_on_zero": true,
+  "runs": [
+    {
+      "backend": "sage",
+      "level": 109,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 110,
+      "columns_after_2term": 27,
+      "gamma0_index": 110,
+      "status": "survivor_candidate",
+      "error": null,
+      "seconds_total": 0.053499698638916016,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 104,
+          "nnz_added": 296,
+          "total_rows": 104,
+          "total_nnz": 296,
+          "rank": 18,
+          "quotient_dim": 9,
+          "seconds_rank": 0.0052416324615478516,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 5,
+          "nnz_added": 17,
+          "total_rows": 109,
+          "total_nnz": 313,
+          "rank": 22,
+          "quotient_dim": 5,
+          "seconds_rank": 6.67572021484375e-05,
+          "killed": false
+        }
+      ]
+    }
+  ]
+}

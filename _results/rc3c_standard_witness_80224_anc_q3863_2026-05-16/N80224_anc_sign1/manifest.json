@@ -1,0 +1,21 @@
+{
+  "base_rank": 21112,
+  "certificate_version": "rc3c-independent-source-rows-1",
+  "columns_after_2term": 31680,
+  "final_stage": "T_7_minus_0_batch_1",
+  "full_rank": 31680,
+  "level": 80224,
+  "mode": "anc",
+  "ncols": 31680,
+  "pivot_strategy": "max",
+  "q": 3863,
+  "quotient_rank": 10568,
+  "rank_engine": "quotient-numpy-dense",
+  "rows_file": "source_rows.jsonl",
+  "rows_file_sha256": "0cbb9e45b20276c20c3fe3a4ff753ba6b8b4fad383c0f25d66434028429bc28a",
+  "scope": "original rows that increased the Python sparse base rank or the quotient-compressed rank; verifier recomputes full rank from original rows",
+  "sign": 1,
+  "source_row_count": 31680,
+  "source_row_nnz": 137277,
+  "witness_type": "independent_source_rows"
+}

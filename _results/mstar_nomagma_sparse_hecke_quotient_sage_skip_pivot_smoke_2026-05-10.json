@@ -1,0 +1,47 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "sage",
+  "backend_used": "sage",
+  "q": 3863,
+  "sign": 1,
+  "primes": [
+    5
+  ],
+  "stop_on_zero": true,
+  "runs": [
+    {
+      "backend": "sage",
+      "level": 109,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 0,
+      "columns_after_2term": null,
+      "gamma0_index": 110,
+      "status": "error",
+      "error": "BrokenPipeError: [Errno 32] Broken pipe",
+      "seconds_total": 0.0,
+      "stages": []
+    },
+    {
+      "backend": "sage",
+      "level": 218,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 0,
+      "columns_after_2term": null,
+      "gamma0_index": 330,
+      "status": "error",
+      "error": "BrokenPipeError: [Errno 32] Broken pipe",
+      "seconds_total": 0.0,
+      "stages": []
+    }
+  ]
+}

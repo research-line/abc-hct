@@ -1,0 +1,573 @@
+{
+  "tool": "mstar_h3a_pi_to_sage_basis_wrapper",
+  "case_dir": "_results/h3a_wait_postprocess_smoke_n109_2026-05-16/N109_raw_sign1_splitlast",
+  "N": 109,
+  "q": 3863,
+  "sign": 1,
+  "ncols_v_si": 27,
+  "sage_dim": 9,
+  "free_columns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    16
+  ],
+  "free_to_sage_rank": 9,
+  "free_to_sage_isomorphism": true,
+  "missing_columns": [],
+  "consistency_errors": [],
+  "t_rows_nonzero_in_sage": 0,
+  "t_nonzero_examples": [],
+  "projected_hecke_rank_in_sage": 8,
+  "projected_rank_with_repair_in_sage": 9,
+  "repair_adds_sage_rank": true,
+  "repair_sage_entries_signed": [
+    [
+      1,
+      -3
+    ],
+    [
+      2,
+      -3
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      4,
+      -1
+    ],
+    [
+      5,
+      -5
+    ],
+    [
+      6,
+      -1
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      8,
+      -4
+    ]
+  ],
+  "phi_sage_entries_signed": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      1403
+    ],
+    [
+      5,
+      -1054
+    ],
+    [
+      7,
+      -1054
+    ]
+  ],
+  "pairing_tests": {
+    "available": true,
+    "full_sign0_dim": 17,
+    "plus_dim": 9,
+    "minus_dim": 8,
+    "Bpp_rank": 8,
+    "Bpq_rank": 7,
+    "Bqq_rank": 8,
+    "Bal_rank": 9,
+    "Bal_determinant_signed": 26,
+    "phi_on_hecke_source_nonzero": [],
+    "phi_on_repair_sage_signed": 705,
+    "phi_repair_pairing_signed": 705,
+    "phi_on_u_right_signed": 722,
+    "phi_on_u_left_signed": 722,
+    "alpha_right_from_phi_signed": -925,
+    "alpha_left_from_phi_signed": -925,
+    "phi_vs_repair_Bpp_right": {
+      "consistent": false,
+      "scale": "1932",
+      "mismatches": [
+        {
+          "i": 2,
+          "a": 1403,
+          "b": -7,
+          "scale": "2007",
+          "expected": "1932"
+        },
+        {
+          "i": 3,
+          "a": 0,
+          "b": 3,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 4,
+          "a": 0,
+          "b": -5,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 5,
+          "a": -1054,
+          "b": -9,
+          "scale": "1834",
+          "expected": "1932"
+        },
+        {
+          "i": 6,
+          "a": 0,
+          "b": 3,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 7,
+          "a": -1054,
+          "b": 7,
+          "scale": "1505",
+          "expected": "1932"
+        },
+        {
+          "i": 8,
+          "a": 0,
+          "b": -5,
+          "kind": "zero-mismatch"
+        }
+      ]
+    },
+    "phi_vs_repair_Bpp_left": {
+      "consistent": false,
+      "scale": "492",
+      "mismatches": [
+        {
+          "i": 1,
+          "a": 1,
+          "b": 0,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 4,
+          "a": 0,
+          "b": -4,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 5,
+          "a": -1054,
+          "b": -14,
+          "scale": "1179",
+          "expected": "492"
+        },
+        {
+          "i": 6,
+          "a": 0,
+          "b": 5,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 7,
+          "a": -1054,
+          "b": 7,
+          "scale": "1505",
+          "expected": "492"
+        },
+        {
+          "i": 8,
+          "a": 0,
+          "b": -1,
+          "kind": "zero-mismatch"
+        }
+      ]
+    },
+    "phi_vs_repair_Bal_right": {
+      "consistent": false,
+      "scale": "1",
+      "mismatches": [
+        {
+          "i": 2,
+          "a": 1403,
+          "b": 0,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 3,
+          "a": 0,
+          "b": 40,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 4,
+          "a": 0,
+          "b": 41,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 5,
+          "a": -1054,
+          "b": 43,
+          "scale": "245",
+          "expected": "1"
+        },
+        {
+          "i": 6,
+          "a": 0,
+          "b": 1,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 7,
+          "a": -1054,
+          "b": -19,
+          "scale": "1682",
+          "expected": "1"
+        },
+        {
+          "i": 8,
+          "a": 0,
+          "b": -11,
+          "kind": "zero-mismatch"
+        }
+      ]
+    },
+    "phi_vs_repair_Bal_left": {
+      "consistent": false,
+      "scale": "1931",
+      "mismatches": [
+        {
+          "i": 2,
+          "a": 1403,
+          "b": 6,
+          "scale": "3453",
+          "expected": "1931"
+        },
+        {
+          "i": 3,
+          "a": 0,
+          "b": 4,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 4,
+          "a": 0,
+          "b": 23,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 5,
+          "a": -1054,
+          "b": 32,
+          "scale": "2140",
+          "expected": "1931"
+        },
+        {
+          "i": 6,
+          "a": 0,
+          "b": -19,
+          "kind": "zero-mismatch"
+        },
+        {
+          "i": 7,
+          "a": -1054,
+          "b": -9,
+          "scale": "1834",
+          "expected": "1931"
+        },
+        {
+          "i": 8,
+          "a": 0,
+          "b": 2,
+          "kind": "zero-mismatch"
+        }
+      ]
+    },
+    "al_preimage_right_entries_signed": [
+      [
+        1,
+        -1596
+      ],
+      [
+        2,
+        -1657
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        -1806
+      ],
+      [
+        5,
+        -488
+      ],
+      [
+        6,
+        1612
+      ],
+      [
+        7,
+        1685
+      ],
+      [
+        8,
+        1117
+      ]
+    ],
+    "al_preimage_left_entries_signed": [
+      [
+        1,
+        -979
+      ],
+      [
+        2,
+        -703
+      ],
+      [
+        3,
+        365
+      ],
+      [
+        4,
+        -1047
+      ],
+      [
+        5,
+        -186
+      ],
+      [
+        6,
+        1775
+      ],
+      [
+        7,
+        1433
+      ],
+      [
+        8,
+        -1555
+      ]
+    ],
+    "al_defect_right_entries_signed": [
+      [
+        1,
+        -1593
+      ],
+      [
+        2,
+        -1654
+      ],
+      [
+        3,
+        -1
+      ],
+      [
+        4,
+        -1805
+      ],
+      [
+        5,
+        -483
+      ],
+      [
+        6,
+        1613
+      ],
+      [
+        7,
+        1681
+      ],
+      [
+        8,
+        1121
+      ]
+    ],
+    "al_defect_left_entries_signed": [
+      [
+        1,
+        -976
+      ],
+      [
+        2,
+        -700
+      ],
+      [
+        3,
+        363
+      ],
+      [
+        4,
+        -1046
+      ],
+      [
+        5,
+        -181
+      ],
+      [
+        6,
+        1776
+      ],
+      [
+        7,
+        1429
+      ],
+      [
+        8,
+        -1551
+      ]
+    ],
+    "al_preimage_right_source_repair_decomposition": {
+      "available": true,
+      "source_repair_rank": 9,
+      "repair_coefficient_mod_q": 2938,
+      "repair_coefficient_signed": -925,
+      "same_projective_restline_as_repair": true,
+      "source_coefficients_signed": [
+        [
+          1,
+          34
+        ],
+        [
+          2,
+          1279
+        ],
+        [
+          3,
+          -455
+        ],
+        [
+          4,
+          378
+        ],
+        [
+          5,
+          -1868
+        ],
+        [
+          6,
+          -988
+        ],
+        [
+          7,
+          1407
+        ]
+      ],
+      "normalized_minus_repair_entries_signed": [
+        [
+          1,
+          1291
+        ],
+        [
+          2,
+          1408
+        ],
+        [
+          3,
+          946
+        ],
+        [
+          4,
+          -778
+        ],
+        [
+          5,
+          941
+        ],
+        [
+          6,
+          -1571
+        ],
+        [
+          7,
+          -1906
+        ],
+        [
+          8,
+          458
+        ]
+      ]
+    },
+    "al_preimage_left_source_repair_decomposition": {
+      "available": true,
+      "source_repair_rank": 9,
+      "repair_coefficient_mod_q": 2938,
+      "repair_coefficient_signed": -925,
+      "same_projective_restline_as_repair": true,
+      "source_coefficients_signed": [
+        [
+          1,
+          1239
+        ],
+        [
+          2,
+          1469
+        ],
+        [
+          3,
+          -1293
+        ],
+        [
+          4,
+          -91
+        ],
+        [
+          5,
+          1394
+        ],
+        [
+          6,
+          1644
+        ],
+        [
+          7,
+          960
+        ]
+      ],
+      "normalized_minus_repair_entries_signed": [
+        [
+          1,
+          -969
+        ],
+        [
+          2,
+          1858
+        ],
+        [
+          3,
+          -1652
+        ],
+        [
+          4,
+          236
+        ],
+        [
+          5,
+          1375
+        ],
+        [
+          6,
+          -1567
+        ],
+        [
+          7,
+          -1296
+        ],
+        [
+          8,
+          1530
+        ]
+      ]
+    }
+  }
+}

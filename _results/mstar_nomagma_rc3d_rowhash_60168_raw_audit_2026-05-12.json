@@ -1,0 +1,21 @@
+{
+  "all_checks_ok": true,
+  "date": "2026-05-12",
+  "manifests": [
+    {
+      "checks_ok": true,
+      "level": 60168,
+      "manifest": "_results/rc3d_rowhash_source_witness_60168_raw_2026-05-12/N60168_raw_sign1/manifest.json",
+      "mode": "raw",
+      "ncols": 31680,
+      "problems": [],
+      "q": 3863,
+      "rank_method": "sage-matrix",
+      "recomputed_rank": 31680,
+      "sign": 1,
+      "source_row_count": 31680,
+      "source_rows_bound": 31680,
+      "transcript_checked": true
+    }
+  ]
+}

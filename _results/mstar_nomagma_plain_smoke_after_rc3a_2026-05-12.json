@@ -1,0 +1,53 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "plain",
+  "backend_used": "plain",
+  "q": 3863,
+  "sign": 1,
+  "primes": [
+    5
+  ],
+  "stop_on_zero": true,
+  "runs": [
+    {
+      "backend": "plain",
+      "level": 109,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 110,
+      "columns_after_2term": null,
+      "gamma0_index": 110,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.1351022720336914,
+      "stages": [
+        {
+          "stage": "manin_relations",
+          "rows_added": 330,
+          "nnz_added": 760,
+          "total_rows": 330,
+          "total_nnz": 760,
+          "rank": 101,
+          "quotient_dim": 9,
+          "seconds_rank": 0.0,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2",
+          "rows_added": 110,
+          "nnz_added": 754,
+          "total_rows": 440,
+          "total_nnz": 1514,
+          "rank": 110,
+          "quotient_dim": 0,
+          "seconds_rank": 0.0020034313201904297,
+          "killed": true
+        }
+      ]
+    }
+  ]
+}

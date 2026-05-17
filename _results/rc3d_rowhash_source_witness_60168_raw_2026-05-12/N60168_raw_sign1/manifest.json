@@ -1,0 +1,18 @@
+{
+  "certificate_version": "rc3c-independent-source-rows-1",
+  "columns_after_2term": 31680,
+  "final_stage": "T_5_minus_2_batch_13",
+  "level": 60168,
+  "mode": "raw",
+  "ncols": 31680,
+  "pivot_strategy": "max",
+  "q": 3863,
+  "rank_engine": "python-sparse",
+  "rows_file": "source_rows.jsonl",
+  "rows_file_sha256": "d7b3f5c5e4b90e156bd5def52f6e39b7b8c62f0dbcbe9698c4500ca8e7759720",
+  "scope": "original rows that increased the Python sparse rank; verifier recomputes rank",
+  "sign": 1,
+  "source_row_count": 31680,
+  "source_row_nnz": 137273,
+  "witness_type": "independent_source_rows"
+}

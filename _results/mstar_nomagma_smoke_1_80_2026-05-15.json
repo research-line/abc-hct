@@ -1,0 +1,591 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "sage",
+  "backend_used": "sage",
+  "q": 3863,
+  "sign": 1,
+  "primes": [
+    5,
+    7,
+    11,
+    13
+  ],
+  "stop_on_zero": true,
+  "runs": [
+    {
+      "backend": "sage",
+      "level": 30,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 1,
+        "7": 0,
+        "11": 4,
+        "13": -2
+      },
+      "manin_symbols": 72,
+      "columns_after_2term": 20,
+      "gamma0_index": 72,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.0602412223815918,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 60,
+          "nnz_added": 180,
+          "total_rows": 60,
+          "total_nnz": 180,
+          "rank": 10,
+          "quotient_dim": 10,
+          "seconds_rank": 0.02391648292541504,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 72,
+          "nnz_added": 430,
+          "total_rows": 132,
+          "total_nnz": 610,
+          "rank": 14,
+          "quotient_dim": 6,
+          "seconds_rank": 0.0008816719055175781,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_0",
+          "rows_added": 72,
+          "nnz_added": 610,
+          "total_rows": 204,
+          "total_nnz": 1220,
+          "rank": 18,
+          "quotient_dim": 2,
+          "seconds_rank": 0.0011072158813476562,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_4",
+          "rows_added": 72,
+          "nnz_added": 771,
+          "total_rows": 276,
+          "total_nnz": 1991,
+          "rank": 20,
+          "quotient_dim": 0,
+          "seconds_rank": 0.0022954940795898438,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 30,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 1,
+        "7": 0,
+        "11": -4,
+        "13": -2
+      },
+      "manin_symbols": 72,
+      "columns_after_2term": 20,
+      "gamma0_index": 72,
+      "status": "survivor_candidate",
+      "error": null,
+      "seconds_total": 0.03500962257385254,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 60,
+          "nnz_added": 180,
+          "total_rows": 60,
+          "total_nnz": 180,
+          "rank": 10,
+          "quotient_dim": 10,
+          "seconds_rank": 0.00018644332885742188,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 72,
+          "nnz_added": 430,
+          "total_rows": 132,
+          "total_nnz": 610,
+          "rank": 14,
+          "quotient_dim": 6,
+          "seconds_rank": 0.000316619873046875,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_0",
+          "rows_added": 72,
+          "nnz_added": 610,
+          "total_rows": 204,
+          "total_nnz": 1220,
+          "rank": 18,
+          "quotient_dim": 2,
+          "seconds_rank": 0.0007061958312988281,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_-4",
+          "rows_added": 72,
+          "nnz_added": 781,
+          "total_rows": 276,
+          "total_nnz": 2001,
+          "rank": 18,
+          "quotient_dim": 2,
+          "seconds_rank": 0.0018513202667236328,
+          "killed": false
+        },
+        {
+          "stage": "T_13_minus_-2",
+          "rows_added": 72,
+          "nnz_added": 851,
+          "total_rows": 348,
+          "total_nnz": 2852,
+          "rank": 18,
+          "quotient_dim": 2,
+          "seconds_rank": 0.002029895782470703,
+          "killed": false
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 60,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 1,
+        "7": 0,
+        "11": 4,
+        "13": -2
+      },
+      "manin_symbols": 144,
+      "columns_after_2term": 38,
+      "gamma0_index": 144,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.03903698921203613,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 120,
+          "nnz_added": 360,
+          "total_rows": 120,
+          "total_nnz": 360,
+          "rank": 20,
+          "quotient_dim": 18,
+          "seconds_rank": 0.0004661083221435547,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 144,
+          "nnz_added": 992,
+          "total_rows": 264,
+          "total_nnz": 1352,
+          "rank": 29,
+          "quotient_dim": 9,
+          "seconds_rank": 0.0008864402770996094,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_0",
+          "rows_added": 144,
+          "nnz_added": 1552,
+          "total_rows": 408,
+          "total_nnz": 2904,
+          "rank": 35,
+          "quotient_dim": 3,
+          "seconds_rank": 0.0021300315856933594,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_4",
+          "rows_added": 144,
+          "nnz_added": 2166,
+          "total_rows": 552,
+          "total_nnz": 5070,
+          "rank": 38,
+          "quotient_dim": 0,
+          "seconds_rank": 0.0033600330352783203,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 60,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 1,
+        "7": 0,
+        "11": -4,
+        "13": -2
+      },
+      "manin_symbols": 144,
+      "columns_after_2term": 38,
+      "gamma0_index": 144,
+      "status": "survivor_candidate",
+      "error": null,
+      "seconds_total": 0.0646674633026123,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 120,
+          "nnz_added": 360,
+          "total_rows": 120,
+          "total_nnz": 360,
+          "rank": 20,
+          "quotient_dim": 18,
+          "seconds_rank": 0.00028395652770996094,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 144,
+          "nnz_added": 992,
+          "total_rows": 264,
+          "total_nnz": 1352,
+          "rank": 29,
+          "quotient_dim": 9,
+          "seconds_rank": 0.0009016990661621094,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_0",
+          "rows_added": 144,
+          "nnz_added": 1552,
+          "total_rows": 408,
+          "total_nnz": 2904,
+          "rank": 35,
+          "quotient_dim": 3,
+          "seconds_rank": 0.001734018325805664,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_-4",
+          "rows_added": 144,
+          "nnz_added": 2184,
+          "total_rows": 552,
+          "total_nnz": 5088,
+          "rank": 35,
+          "quotient_dim": 3,
+          "seconds_rank": 0.0029714107513427734,
+          "killed": false
+        },
+        {
+          "stage": "T_13_minus_-2",
+          "rows_added": 144,
+          "nnz_added": 2466,
+          "total_rows": 696,
+          "total_nnz": 7554,
+          "rank": 35,
+          "quotient_dim": 3,
+          "seconds_rank": 0.0062716007232666016,
+          "killed": false
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 120,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 1,
+        "7": 0,
+        "11": 4,
+        "13": -2
+      },
+      "manin_symbols": 288,
+      "columns_after_2term": 72,
+      "gamma0_index": 288,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.09570598602294922,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 240,
+          "nnz_added": 720,
+          "total_rows": 240,
+          "total_nnz": 720,
+          "rank": 40,
+          "quotient_dim": 32,
+          "seconds_rank": 0.0007915496826171875,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 288,
+          "nnz_added": 2248,
+          "total_rows": 528,
+          "total_nnz": 2968,
+          "rank": 57,
+          "quotient_dim": 15,
+          "seconds_rank": 0.002428770065307617,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_0",
+          "rows_added": 288,
+          "nnz_added": 3712,
+          "total_rows": 816,
+          "total_nnz": 6680,
+          "rank": 67,
+          "quotient_dim": 5,
+          "seconds_rank": 0.0073659420013427734,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_4",
+          "rows_added": 288,
+          "nnz_added": 5368,
+          "total_rows": 1104,
+          "total_nnz": 12048,
+          "rank": 72,
+          "quotient_dim": 0,
+          "seconds_rank": 0.011234283447265625,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 120,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 1,
+        "7": 0,
+        "11": -4,
+        "13": -2
+      },
+      "manin_symbols": 288,
+      "columns_after_2term": 72,
+      "gamma0_index": 288,
+      "status": "survivor_candidate",
+      "error": null,
+      "seconds_total": 0.1586298942565918,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 240,
+          "nnz_added": 720,
+          "total_rows": 240,
+          "total_nnz": 720,
+          "rank": 40,
+          "quotient_dim": 32,
+          "seconds_rank": 0.0005040168762207031,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 288,
+          "nnz_added": 2248,
+          "total_rows": 528,
+          "total_nnz": 2968,
+          "rank": 57,
+          "quotient_dim": 15,
+          "seconds_rank": 0.0019872188568115234,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_0",
+          "rows_added": 288,
+          "nnz_added": 3712,
+          "total_rows": 816,
+          "total_nnz": 6680,
+          "rank": 67,
+          "quotient_dim": 5,
+          "seconds_rank": 0.004920005798339844,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_-4",
+          "rows_added": 288,
+          "nnz_added": 5396,
+          "total_rows": 1104,
+          "total_nnz": 12076,
+          "rank": 67,
+          "quotient_dim": 5,
+          "seconds_rank": 0.007654428482055664,
+          "killed": false
+        },
+        {
+          "stage": "T_13_minus_-2",
+          "rows_added": 288,
+          "nnz_added": 6416,
+          "total_rows": 1392,
+          "total_nnz": 18492,
+          "rank": 68,
+          "quotient_dim": 4,
+          "seconds_rank": 0.012180328369140625,
+          "killed": false
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 240,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 1,
+        "7": 0,
+        "11": 4,
+        "13": -2
+      },
+      "manin_symbols": 576,
+      "columns_after_2term": 144,
+      "gamma0_index": 576,
+      "status": "survivor_candidate",
+      "error": null,
+      "seconds_total": 0.3316338062286377,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 528,
+          "nnz_added": 1572,
+          "total_rows": 528,
+          "total_nnz": 1572,
+          "rank": 88,
+          "quotient_dim": 56,
+          "seconds_rank": 0.0015645027160644531,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 576,
+          "nnz_added": 5076,
+          "total_rows": 1104,
+          "total_nnz": 6648,
+          "rank": 119,
+          "quotient_dim": 25,
+          "seconds_rank": 0.008165121078491211,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_0",
+          "rows_added": 576,
+          "nnz_added": 8564,
+          "total_rows": 1680,
+          "total_nnz": 15212,
+          "rank": 135,
+          "quotient_dim": 9,
+          "seconds_rank": 0.01902151107788086,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_4",
+          "rows_added": 576,
+          "nnz_added": 13264,
+          "total_rows": 2256,
+          "total_nnz": 28476,
+          "rank": 142,
+          "quotient_dim": 2,
+          "seconds_rank": 0.02909994125366211,
+          "killed": false
+        },
+        {
+          "stage": "T_13_minus_-2",
+          "rows_added": 576,
+          "nnz_added": 16230,
+          "total_rows": 2832,
+          "total_nnz": 44706,
+          "rank": 143,
+          "quotient_dim": 1,
+          "seconds_rank": 0.0410764217376709,
+          "killed": false
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 240,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 1,
+        "7": 0,
+        "11": -4,
+        "13": -2
+      },
+      "manin_symbols": 576,
+      "columns_after_2term": 144,
+      "gamma0_index": 576,
+      "status": "survivor_candidate",
+      "error": null,
+      "seconds_total": 0.35900449752807617,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 528,
+          "nnz_added": 1572,
+          "total_rows": 528,
+          "total_nnz": 1572,
+          "rank": 88,
+          "quotient_dim": 56,
+          "seconds_rank": 0.0012252330780029297,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 576,
+          "nnz_added": 5076,
+          "total_rows": 1104,
+          "total_nnz": 6648,
+          "rank": 119,
+          "quotient_dim": 25,
+          "seconds_rank": 0.007210731506347656,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_0",
+          "rows_added": 576,
+          "nnz_added": 8564,
+          "total_rows": 1680,
+          "total_nnz": 15212,
+          "rank": 135,
+          "quotient_dim": 9,
+          "seconds_rank": 0.016088247299194336,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_-4",
+          "rows_added": 576,
+          "nnz_added": 13280,
+          "total_rows": 2256,
+          "total_nnz": 28492,
+          "rank": 137,
+          "quotient_dim": 7,
+          "seconds_rank": 0.028124570846557617,
+          "killed": false
+        },
+        {
+          "stage": "T_13_minus_-2",
+          "rows_added": 576,
+          "nnz_added": 16230,
+          "total_rows": 2832,
+          "total_nnz": 44722,
+          "rank": 139,
+          "quotient_dim": 5,
+          "seconds_rank": 0.04149627685546875,
+          "killed": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "tool": "mstar_s2_source_cokernel_pairing",
+  "case": "N109_raw_sign1_splitlast",
+  "path": "_results\\h3a_residue_line_witness_smoke_2026-05-16\\N109_raw_sign1_splitlast",
+  "ncols": 27,
+  "source_row_count": 26,
+  "repair_rows": [
+    {
+      "index": 26,
+      "row_id": "T_5_minus_2_batch_1/8",
+      "origin": "repair_only",
+      "stage": "T_5_minus_2_batch_1",
+      "stage_row_index": 8
+    }
+  ],
+  "prime_results": [
+    {
+      "prime": 3863,
+      "source_rank": 26,
+      "source_defect_dim": 1,
+      "right_kernel_dim": 1,
+      "repair_row_count": 1,
+      "pairing_rank": 1,
+      "superset_rank": 27,
+      "saturates": true,
+      "pairing_matrix": [
+        [
+          395
+        ]
+      ],
+      "kernel_support_sizes": [
+        25
+      ],
+      "kernel_support_samples": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          26
+        ]
+      ],
+      "seconds": 0.0012146999943070114,
+      "engine": "sparse-modp"
+    }
+  ]
+}

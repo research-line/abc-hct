@@ -1,0 +1,203 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "sage",
+  "backend_used": "sage",
+  "q": 3863,
+  "sign": 1,
+  "primes": [
+    5
+  ],
+  "stop_on_zero": true,
+  "runs": [
+    {
+      "backend": "sage",
+      "level": 109,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 110,
+      "columns_after_2term": 27,
+      "gamma0_index": 110,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.020830392837524414,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 104,
+          "nnz_added": 296,
+          "total_rows": 104,
+          "total_nnz": 296,
+          "rank": 18,
+          "quotient_dim": 9,
+          "seconds_rank": 0.003320932388305664,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 20,
+          "nnz_added": 118,
+          "total_rows": 124,
+          "total_nnz": 414,
+          "rank": 27,
+          "quotient_dim": 0,
+          "seconds_rank": 0.00037479400634765625,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 218,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 330,
+      "columns_after_2term": 83,
+      "gamma0_index": 330,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.049955129623413086,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 324,
+          "nnz_added": 966,
+          "total_rows": 324,
+          "total_nnz": 966,
+          "rank": 54,
+          "quotient_dim": 29,
+          "seconds_rank": 0.0067675113677978516,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 20,
+          "nnz_added": 135,
+          "total_rows": 344,
+          "total_nnz": 1101,
+          "rank": 74,
+          "quotient_dim": 9,
+          "seconds_rank": 0.0013630390167236328,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_2",
+          "rows_added": 20,
+          "nnz_added": 136,
+          "total_rows": 364,
+          "total_nnz": 1237,
+          "rank": 82,
+          "quotient_dim": 1,
+          "seconds_rank": 0.0019123554229736328,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_3",
+          "rows_added": 20,
+          "nnz_added": 134,
+          "total_rows": 384,
+          "total_nnz": 1371,
+          "rank": 82,
+          "quotient_dim": 1,
+          "seconds_rank": 0.001924753189086914,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_4",
+          "rows_added": 20,
+          "nnz_added": 130,
+          "total_rows": 404,
+          "total_nnz": 1501,
+          "rank": 82,
+          "quotient_dim": 1,
+          "seconds_rank": 0.005431652069091797,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_5",
+          "rows_added": 20,
+          "nnz_added": 131,
+          "total_rows": 424,
+          "total_nnz": 1632,
+          "rank": 82,
+          "quotient_dim": 1,
+          "seconds_rank": 0.0019795894622802734,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_6",
+          "rows_added": 20,
+          "nnz_added": 137,
+          "total_rows": 444,
+          "total_nnz": 1769,
+          "rank": 82,
+          "quotient_dim": 1,
+          "seconds_rank": 0.0020630359649658203,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_7",
+          "rows_added": 20,
+          "nnz_added": 130,
+          "total_rows": 464,
+          "total_nnz": 1899,
+          "rank": 82,
+          "quotient_dim": 1,
+          "seconds_rank": 0.0018525123596191406,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_8",
+          "rows_added": 20,
+          "nnz_added": 132,
+          "total_rows": 484,
+          "total_nnz": 2031,
+          "rank": 82,
+          "quotient_dim": 1,
+          "seconds_rank": 0.0018177032470703125,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_9",
+          "rows_added": 20,
+          "nnz_added": 133,
+          "total_rows": 504,
+          "total_nnz": 2164,
+          "rank": 82,
+          "quotient_dim": 1,
+          "seconds_rank": 0.0050983428955078125,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_10",
+          "rows_added": 20,
+          "nnz_added": 128,
+          "total_rows": 524,
+          "total_nnz": 2292,
+          "rank": 82,
+          "quotient_dim": 1,
+          "seconds_rank": 0.002523660659790039,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_11",
+          "rows_added": 20,
+          "nnz_added": 132,
+          "total_rows": 544,
+          "total_nnz": 2424,
+          "rank": 83,
+          "quotient_dim": 0,
+          "seconds_rank": 0.0028078556060791016,
+          "killed": true
+        }
+      ]
+    }
+  ]
+}

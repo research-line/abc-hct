@@ -1,0 +1,262 @@
+{
+  "results": [
+    {
+      "case_dir": "_results\\h3a_residue_line_witness_80224_raw_standard_2026-05-16\\N80224_raw_sign1_splitlast",
+      "level": 80224,
+      "mode": "raw",
+      "q": 3863,
+      "source_rows": 31679,
+      "functional_support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "functional_coefficients_signed": [
+        2,
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "source_nonzero_pairings": 16,
+      "source_annihilated": false,
+      "repair_pairing_mod_q": 9,
+      "repair_pairing_signed": 9,
+      "repair_pairing_nonzero": true,
+      "nonzero_examples": [
+        {
+          "row_id": "manin_T_relations_after_SI/4",
+          "stage": "manin_T_relations_after_SI",
+          "manin_symbol_index": 7,
+          "dot_mod_q": 1,
+          "dot_signed": 1
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/0",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 0,
+          "dot_mod_q": 3855,
+          "dot_signed": -8
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/1",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 1,
+          "dot_mod_q": 3,
+          "dot_signed": 3
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/2",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 2,
+          "dot_mod_q": 1,
+          "dot_signed": 1
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/3",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 3,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/4",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 4,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/5",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 5,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/6",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 6,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        }
+      ]
+    },
+    {
+      "case_dir": "_results\\h3a_residue_line_witness_80224_anc_standard_2026-05-16\\N80224_anc_sign1_splitlast",
+      "level": 80224,
+      "mode": "anc",
+      "q": 3863,
+      "source_rows": 31679,
+      "functional_support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "functional_coefficients_signed": [
+        2,
+        -1,
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      "source_nonzero_pairings": 16,
+      "source_annihilated": false,
+      "repair_pairing_mod_q": 9,
+      "repair_pairing_signed": 9,
+      "repair_pairing_nonzero": true,
+      "nonzero_examples": [
+        {
+          "row_id": "manin_T_relations_after_SI/4",
+          "stage": "manin_T_relations_after_SI",
+          "manin_symbol_index": 7,
+          "dot_mod_q": 1,
+          "dot_signed": 1
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/0",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 0,
+          "dot_mod_q": 3855,
+          "dot_signed": -8
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/1",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 1,
+          "dot_mod_q": 3,
+          "dot_signed": 3
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/2",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 2,
+          "dot_mod_q": 1,
+          "dot_signed": 1
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/3",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 3,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/4",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 4,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/5",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 5,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/6",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 6,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        }
+      ]
+    },
+    {
+      "case_dir": "_results\\h3a_residue_line_witness_120336_raw_standard_2026-05-16\\N120336_raw_sign1_splitlast",
+      "level": 120336,
+      "mode": "raw",
+      "q": 3863,
+      "source_rows": 63359,
+      "functional_support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "functional_coefficients_signed": [
+        2,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "source_nonzero_pairings": 16,
+      "source_annihilated": false,
+      "repair_pairing_mod_q": 9,
+      "repair_pairing_signed": 9,
+      "repair_pairing_nonzero": true,
+      "nonzero_examples": [
+        {
+          "row_id": "manin_T_relations_after_SI/4",
+          "stage": "manin_T_relations_after_SI",
+          "manin_symbol_index": 7,
+          "dot_mod_q": 1,
+          "dot_signed": 1
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/0",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 0,
+          "dot_mod_q": 3855,
+          "dot_signed": -8
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/1",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 1,
+          "dot_mod_q": 3,
+          "dot_signed": 3
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/2",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 2,
+          "dot_mod_q": 1,
+          "dot_signed": 1
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/3",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 3,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/4",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 4,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/5",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 5,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        },
+        {
+          "row_id": "T_5_minus_2_batch_1/6",
+          "stage": "T_5_minus_2_batch_1",
+          "manin_symbol_index": 6,
+          "dot_mod_q": 3861,
+          "dot_signed": -2
+        }
+      ]
+    }
+  ]
+}

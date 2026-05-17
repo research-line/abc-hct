@@ -1,0 +1,57 @@
+{
+  "witness_dir": "_results\\rc3c_standard_witness_240672_raw_q3863_2026-05-16\\N240672_raw_sign1",
+  "level": 240672,
+  "mode": "raw",
+  "q": 3863,
+  "ncols": 126720,
+  "quotient_rank_d": 42256,
+  "source_row_count": 126720,
+  "base_rank": 84464,
+  "manin_source_rows": 84464,
+  "t5_source_rows": 42255,
+  "expected_t5_source_rows": 42255,
+  "t5_indices_first": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "t5_indices_last": [
+    42245,
+    42246,
+    42247,
+    42248,
+    42249,
+    42250,
+    42251,
+    42252,
+    42253,
+    42254
+  ],
+  "t5_indices_min": 0,
+  "t5_indices_max": 42254,
+  "t5_exact_affine_prefix_0_to_d_minus_2": true,
+  "t5_source_positions_consecutive": true,
+  "t5_source_position_first": 84464,
+  "t5_source_position_last": 126718,
+  "t7_source_rows": 1,
+  "t7_first_row": {
+    "source_position": 126719,
+    "row_id": "T_7_minus_0_batch_1/1",
+    "stage": "T_7_minus_0_batch_1",
+    "hecke_prime": 7,
+    "hecke_ap": 0,
+    "hecke_family": "standard",
+    "manin_symbol_index": 1
+  },
+  "cfr3_diagnostic": {
+    "meaning": "RC3c source witnesses record only rows that increased rank during construction; if the T5 indices are exactly 0..d-2, the machine certificate supports the Cusp-Fan rank chain.",
+    "supports_cfr3_mod_q": true
+  }
+}

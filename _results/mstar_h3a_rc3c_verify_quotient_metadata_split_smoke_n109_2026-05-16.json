@@ -1,0 +1,37 @@
+{
+  "tool": "mstar_h3a_rc3c_witness_verify_rank",
+  "case_dir": "_results\\h3a_quotient_metadata_split_smoke_n109_2026-05-16\\N109_raw_sign1_splitlast",
+  "case": "N109_raw_sign1_splitlast",
+  "level": 109,
+  "mode": "raw",
+  "q": 3863,
+  "ncols": 27,
+  "witness_type": "source_prefix_plus_single_repair_row",
+  "rows_file": "mixed_rows.jsonl",
+  "row_count": 27,
+  "pivot_strategy": "max",
+  "full": {
+    "rows_seen": 27,
+    "independent_rows": 27,
+    "rank": 27,
+    "max_basis_row_len": 9,
+    "seconds": 0.0
+  },
+  "full_rank_is_ncols": true,
+  "source_row_count_matches_manifest": false,
+  "split": {
+    "source": {
+      "rows_seen": 26,
+      "independent_rows": 26,
+      "rank": 26,
+      "max_basis_row_len": 9,
+      "seconds": 0.0
+    },
+    "repair_only_count": 1,
+    "source_rank_is_ncols_minus_one": true,
+    "full_rank_is_ncols": true,
+    "single_repair_row": true,
+    "certified": true
+  },
+  "certified": true
+}

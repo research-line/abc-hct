@@ -1,0 +1,365 @@
+{
+  "case_dir": "_results\\h3a_wait_postprocess_smoke_n109_2026-05-16\\N109_raw_sign1_splitlast",
+  "level": 109,
+  "mode": "raw",
+  "q": 3863,
+  "ncols": 27,
+  "t_rows": 18,
+  "t_rank": 18,
+  "independent_t_rows": 18,
+  "quotient_dim": 9,
+  "pivot_columns": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "free_columns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    16
+  ],
+  "sage_sign_plus_expected_dim": 9,
+  "quotient_matches_n109_sage_dim": true,
+  "hecke_source_rows": 8,
+  "projected_hecke_rank": 8,
+  "projected_rank_with_repair": 9,
+  "repair_adds_quotient_rank": true,
+  "projected_repair_summary": {
+    "support_size": 7,
+    "support": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "coefficients_signed": [
+      1931,
+      -1,
+      -2,
+      1,
+      -3,
+      -1,
+      3
+    ],
+    "truncated": false
+  },
+  "projected_repair_entries_mod_q": [
+    [
+      1,
+      1931
+    ],
+    [
+      2,
+      3862
+    ],
+    [
+      4,
+      3861
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      3860
+    ],
+    [
+      7,
+      3862
+    ],
+    [
+      8,
+      3
+    ]
+  ],
+  "projected_repair_entries_signed": [
+    [
+      1,
+      1931
+    ],
+    [
+      2,
+      -1
+    ],
+    [
+      4,
+      -2
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      -3
+    ],
+    [
+      7,
+      -1
+    ],
+    [
+      8,
+      3
+    ]
+  ],
+  "projected_hecke_rows_mod_q": [
+    [
+      [
+        0,
+        3859
+      ],
+      [
+        1,
+        3861
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3859
+      ],
+      [
+        3,
+        3861
+      ],
+      [
+        4,
+        3855
+      ],
+      [
+        5,
+        3859
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        3859
+      ],
+      [
+        4,
+        3855
+      ],
+      [
+        5,
+        3860
+      ]
+    ],
+    [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3861
+      ],
+      [
+        3,
+        3860
+      ],
+      [
+        4,
+        3855
+      ],
+      [
+        5,
+        3860
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        3860
+      ],
+      [
+        4,
+        3856
+      ],
+      [
+        5,
+        3861
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        3862
+      ],
+      [
+        3,
+        3862
+      ],
+      [
+        4,
+        3859
+      ],
+      [
+        5,
+        3862
+      ]
+    ],
+    [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3860
+      ],
+      [
+        3,
+        3861
+      ],
+      [
+        4,
+        3857
+      ],
+      [
+        5,
+        3858
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        7,
+        3862
+      ],
+      [
+        8,
+        3861
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        3858
+      ],
+      [
+        4,
+        3857
+      ],
+      [
+        5,
+        3858
+      ],
+      [
+        6,
+        3862
+      ],
+      [
+        7,
+        3857
+      ],
+      [
+        8,
+        3862
+      ]
+    ]
+  ],
+  "phi_checks": {
+    "available": true,
+    "induced_phi_entries_mod_q": [
+      [
+        6,
+        1
+      ],
+      [
+        7,
+        2809
+      ],
+      [
+        8,
+        2460
+      ]
+    ],
+    "induced_phi_entries_signed": [
+      [
+        6,
+        1
+      ],
+      [
+        7,
+        -1054
+      ],
+      [
+        8,
+        -1403
+      ]
+    ],
+    "induced_phi_support": [
+      6,
+      7,
+      8
+    ],
+    "induced_phi_coefficients_signed": [
+      1,
+      -1054,
+      -1403
+    ],
+    "t_rows_nonzero_pairings": 0,
+    "hecke_source_nonzero_pairings": 0,
+    "repair_pairing_signed": 705,
+    "repair_pairing_nonzero": true
+  }
+}

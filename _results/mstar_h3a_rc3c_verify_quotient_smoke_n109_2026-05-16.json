@@ -1,0 +1,24 @@
+{
+  "tool": "mstar_h3a_rc3c_witness_verify_rank",
+  "case_dir": "_results\\rc3c_quotient_witness_smoke_n109_2026-05-16\\N109_raw_sign1",
+  "case": "N109_raw_sign1",
+  "level": 109,
+  "mode": "raw",
+  "q": 3863,
+  "ncols": 27,
+  "witness_type": "independent_source_rows",
+  "rows_file": "source_rows.jsonl",
+  "row_count": 27,
+  "pivot_strategy": "max",
+  "full": {
+    "rows_seen": 27,
+    "independent_rows": 27,
+    "rank": 27,
+    "max_basis_row_len": 9,
+    "seconds": 0.0005102157592773438
+  },
+  "full_rank_is_ncols": true,
+  "source_row_count_matches_manifest": true,
+  "split": null,
+  "certified": true
+}

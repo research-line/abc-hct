@@ -1,0 +1,137 @@
+{
+  "results": [
+    {
+      "case_dir": "_results\\h3a_wait_postprocess_smoke_n109_2026-05-16\\N109_raw_sign1_splitlast",
+      "level": 109,
+      "mode": "raw",
+      "q": 3863,
+      "ncols": 27,
+      "source_rows": 26,
+      "source_rank": 26,
+      "dependent_source_rows": 0,
+      "free_columns": [
+        6
+      ],
+      "max_basis_row_len": 9,
+      "phi_support_size": 11,
+      "phi_support_min": 6,
+      "phi_support_max": 21,
+      "phi_entries_signed": [
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          -1054
+        ],
+        [
+          10,
+          -1054
+        ],
+        [
+          11,
+          -1054
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          16,
+          -1403
+        ],
+        [
+          18,
+          1403
+        ],
+        [
+          19,
+          1403
+        ],
+        [
+          21,
+          -1053
+        ]
+      ],
+      "phi_entries_mod_q": [
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          2809
+        ],
+        [
+          10,
+          2809
+        ],
+        [
+          11,
+          2809
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          16,
+          2460
+        ],
+        [
+          18,
+          1403
+        ],
+        [
+          19,
+          1403
+        ],
+        [
+          21,
+          2810
+        ]
+      ],
+      "phi_prefix_0_15_signed": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 1,
+        "7": -1054,
+        "8": 0,
+        "9": 0,
+        "10": -1054,
+        "11": -1054,
+        "12": 1,
+        "13": 1,
+        "14": 1,
+        "15": 0
+      },
+      "source_nonzero_pairings": 0,
+      "source_annihilated": true,
+      "repair_pairing_mod_q": 705,
+      "repair_pairing_signed": 705,
+      "repair_pairing_nonzero": true,
+      "nonzero_examples": []
+    }
+  ]
+}

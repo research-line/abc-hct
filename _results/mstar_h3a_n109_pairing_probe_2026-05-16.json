@@ -1,0 +1,214 @@
+{
+  "blocks": {
+    "T_5_minus_2_batch_1": {
+      "defect_mod": {
+        "107": 18,
+        "109": 18,
+        "2": 19,
+        "3": 18,
+        "31": 18,
+        "3863": 18,
+        "5": 18,
+        "7": 18
+      },
+      "nnz": 45,
+      "rank_Q": 9,
+      "rank_mod": {
+        "107": 9,
+        "109": 9,
+        "2": 8,
+        "3": 9,
+        "31": 9,
+        "3863": 9,
+        "5": 9,
+        "7": 9
+      },
+      "shape": [
+        9,
+        27
+      ],
+      "smith_counter": {
+        "1": 8,
+        "4": 1
+      },
+      "smith_diagonal": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "smith_nonunit": [
+        4
+      ]
+    },
+    "combined": {
+      "abs_determinant": 107856,
+      "defect_mod": {
+        "107": 1,
+        "109": 0,
+        "2": 2,
+        "3": 1,
+        "31": 0,
+        "3863": 0,
+        "5": 0,
+        "7": 1
+      },
+      "determinant": 107856,
+      "determinant_factorization": {
+        "107": 1,
+        "2": 4,
+        "3": 2,
+        "7": 1
+      },
+      "nnz": 95,
+      "rank_Q": 27,
+      "rank_mod": {
+        "107": 26,
+        "109": 27,
+        "2": 25,
+        "3": 26,
+        "31": 27,
+        "3863": 27,
+        "5": 27,
+        "7": 26
+      },
+      "shape": [
+        27,
+        27
+      ],
+      "smith_counter": {
+        "1": 25,
+        "26964": 1,
+        "4": 1
+      },
+      "smith_diagonal": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4,
+        26964
+      ],
+      "smith_nonunit": [
+        4,
+        26964
+      ]
+    },
+    "manin_T_relations_after_SI": {
+      "defect_mod": {
+        "107": 9,
+        "109": 9,
+        "2": 9,
+        "3": 10,
+        "31": 9,
+        "3863": 9,
+        "5": 9,
+        "7": 9
+      },
+      "nnz": 50,
+      "rank_Q": 18,
+      "rank_mod": {
+        "107": 18,
+        "109": 18,
+        "2": 18,
+        "3": 17,
+        "31": 18,
+        "3863": 18,
+        "5": 18,
+        "7": 18
+      },
+      "shape": [
+        18,
+        27
+      ],
+      "smith_counter": {
+        "1": 17,
+        "3": 1
+      },
+      "smith_diagonal": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "smith_nonunit": [
+        3
+      ]
+    }
+  },
+  "case_dir": "_results\\rc3d_rowhash_source_witness_smoke_2026-05-12\\N109_raw_sign1",
+  "manifest": {
+    "certificate_version": "rc3c-independent-source-rows-1",
+    "columns_after_2term": 27,
+    "final_stage": "T_5_minus_2_batch_1",
+    "level": 109,
+    "mode": "raw",
+    "ncols": 27,
+    "pivot_strategy": "max",
+    "q": 3863,
+    "rank_engine": "python-sparse",
+    "rows_file": "source_rows.jsonl",
+    "rows_file_sha256": "e93bc16c5d7c075a4d6ff4ef9870ccdcd4e05de99a5c16e2678d83a7f63c8141",
+    "scope": "original rows that increased the Python sparse rank; verifier recomputes rank",
+    "sign": 1,
+    "source_row_count": 27,
+    "source_row_nnz": 95,
+    "witness_type": "independent_source_rows"
+  },
+  "primes": [
+    2,
+    3,
+    5,
+    7,
+    31,
+    107,
+    109,
+    3863
+  ],
+  "row_count": 27,
+  "seconds": 2.0398601999986568,
+  "stage_counts": {
+    "T_5_minus_2_batch_1": 9,
+    "manin_T_relations_after_SI": 18
+  }
+}

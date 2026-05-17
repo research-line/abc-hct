@@ -1,0 +1,172 @@
+{
+  "tool": "mstar_h3a_restlevel_trace_summary",
+  "rows": [
+    {
+      "source_file": "_results\\mstar_nomagma_sparse_hecke_quotient_60168_anc_T5cap14_fullprimes_numpy_mac_2026-05-10.json",
+      "level": 60168,
+      "mode": "anc",
+      "q": 3863,
+      "sign": 1,
+      "status": "killed",
+      "manin_symbols": 126720,
+      "columns_after_2term": 31680,
+      "manin_qdim": 10576,
+      "final_stage": "T_5_minus_2_batch_13",
+      "final_rank": 31680,
+      "final_qdim": 0,
+      "stage_before_kill": "T_5_minus_2_batch_12",
+      "qdim_before_kill": 1,
+      "operators_seen": [
+        "T_5_minus_2"
+      ],
+      "seconds_total": 2030.6555120944977
+    },
+    {
+      "source_file": "_results\\mstar_nomagma_sparse_hecke_quotient_60168_raw_T5_quotient_numpy_mac_2026-05-10.json",
+      "level": 60168,
+      "mode": "raw",
+      "q": 3863,
+      "sign": 1,
+      "status": "killed",
+      "manin_symbols": 126720,
+      "columns_after_2term": 31680,
+      "manin_qdim": 10576,
+      "final_stage": "T_5_minus_2_batch_13",
+      "final_rank": 31680,
+      "final_qdim": 0,
+      "stage_before_kill": "T_5_minus_2_batch_12",
+      "qdim_before_kill": 1,
+      "operators_seen": [
+        "T_5_minus_2"
+      ],
+      "seconds_total": 2004.8766210079193
+    },
+    {
+      "source_file": "_results\\mstar_nomagma_sparse_hecke_quotient_80224_anc_T5cap14_fullprimes_numpy_mac_2026-05-10.json",
+      "level": 80224,
+      "mode": "anc",
+      "q": 3863,
+      "sign": 1,
+      "status": "killed",
+      "manin_symbols": 126720,
+      "columns_after_2term": 31680,
+      "manin_qdim": 10568,
+      "final_stage": "T_7_minus_0_batch_1",
+      "final_rank": 31680,
+      "final_qdim": 0,
+      "stage_before_kill": "T_5_minus_2_batch_14",
+      "qdim_before_kill": 1,
+      "operators_seen": [
+        "T_5_minus_2",
+        "T_7_minus_0"
+      ],
+      "seconds_total": 2664.295141220093
+    },
+    {
+      "source_file": "_results\\mstar_nomagma_sparse_hecke_quotient_80224_raw_T5cap14_fullprimes_numpy_mac_2026-05-10.json",
+      "level": 80224,
+      "mode": "raw",
+      "q": 3863,
+      "sign": 1,
+      "status": "killed",
+      "manin_symbols": 126720,
+      "columns_after_2term": 31680,
+      "manin_qdim": 10568,
+      "final_stage": "T_7_minus_0_batch_1",
+      "final_rank": 31680,
+      "final_qdim": 0,
+      "stage_before_kill": "T_5_minus_2_batch_14",
+      "qdim_before_kill": 1,
+      "operators_seen": [
+        "T_5_minus_2",
+        "T_7_minus_0"
+      ],
+      "seconds_total": 2646.8999371528625
+    },
+    {
+      "source_file": "_results\\mstar_nomagma_sparse_hecke_quotient_120336_anc_T5cap24_fullprimes_numpy_mac_2026-05-10.json",
+      "level": 120336,
+      "mode": "anc",
+      "q": 3863,
+      "sign": 1,
+      "status": "killed",
+      "manin_symbols": 253440,
+      "columns_after_2term": 63360,
+      "manin_qdim": 21136,
+      "final_stage": "T_7_minus_0_batch_1",
+      "final_rank": 63360,
+      "final_qdim": 0,
+      "stage_before_kill": "T_5_minus_2_batch_24",
+      "qdim_before_kill": 1,
+      "operators_seen": [
+        "T_5_minus_2",
+        "T_7_minus_0"
+      ],
+      "seconds_total": 13609.934061050415
+    },
+    {
+      "source_file": "_results\\mstar_nomagma_sparse_hecke_quotient_120336_raw_T5cap24_fullprimes_numpy_mac_2026-05-10.json",
+      "level": 120336,
+      "mode": "raw",
+      "q": 3863,
+      "sign": 1,
+      "status": "killed",
+      "manin_symbols": 253440,
+      "columns_after_2term": 63360,
+      "manin_qdim": 21136,
+      "final_stage": "T_7_minus_0_batch_1",
+      "final_rank": 63360,
+      "final_qdim": 0,
+      "stage_before_kill": "T_5_minus_2_batch_24",
+      "qdim_before_kill": 1,
+      "operators_seen": [
+        "T_5_minus_2",
+        "T_7_minus_0"
+      ],
+      "seconds_total": 13722.567617177963
+    },
+    {
+      "source_file": "_results\\mstar_nomagma_sparse_hecke_quotient_240672_anc_T5cap48_fullprimes_numpy_mac_2026-05-10.json",
+      "level": 240672,
+      "mode": "anc",
+      "q": 3863,
+      "sign": 1,
+      "status": "killed",
+      "manin_symbols": 506880,
+      "columns_after_2term": 126720,
+      "manin_qdim": 42256,
+      "final_stage": "T_7_minus_0_batch_1",
+      "final_rank": 126720,
+      "final_qdim": 0,
+      "stage_before_kill": "T_5_minus_2_batch_48",
+      "qdim_before_kill": 1,
+      "operators_seen": [
+        "T_5_minus_2",
+        "T_7_minus_0"
+      ],
+      "seconds_total": 109484.49784708023
+    },
+    {
+      "source_file": "_results\\mstar_nomagma_sparse_hecke_quotient_240672_raw_T5cap48_fullprimes_numpy_mac_2026-05-10.json",
+      "level": 240672,
+      "mode": "raw",
+      "q": 3863,
+      "sign": 1,
+      "status": "killed",
+      "manin_symbols": 506880,
+      "columns_after_2term": 126720,
+      "manin_qdim": 42256,
+      "final_stage": "T_7_minus_0_batch_1",
+      "final_rank": 126720,
+      "final_qdim": 0,
+      "stage_before_kill": "T_5_minus_2_batch_48",
+      "qdim_before_kill": 1,
+      "operators_seen": [
+        "T_5_minus_2",
+        "T_7_minus_0"
+      ],
+      "seconds_total": 109955.81064510345
+    }
+  ],
+  "missing": []
+}

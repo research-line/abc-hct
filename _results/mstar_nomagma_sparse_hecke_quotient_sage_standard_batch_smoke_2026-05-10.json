@@ -1,0 +1,195 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "sage",
+  "backend_used": "sage",
+  "q": 3863,
+  "sign": 1,
+  "primes": [
+    5
+  ],
+  "stop_on_zero": true,
+  "runs": [
+    {
+      "backend": "sage",
+      "level": 109,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 110,
+      "columns_after_2term": 27,
+      "gamma0_index": 110,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.04297828674316406,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 104,
+          "nnz_added": 296,
+          "total_rows": 104,
+          "total_nnz": 296,
+          "rank": 18,
+          "quotient_dim": 9,
+          "seconds_rank": 0.02517223358154297,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 20,
+          "nnz_added": 104,
+          "total_rows": 124,
+          "total_nnz": 400,
+          "rank": 27,
+          "quotient_dim": 0,
+          "seconds_rank": 0.0006105899810791016,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 109,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 110,
+      "columns_after_2term": 27,
+      "gamma0_index": 110,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.002765178680419922,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 104,
+          "nnz_added": 296,
+          "total_rows": 104,
+          "total_nnz": 296,
+          "rank": 18,
+          "quotient_dim": 9,
+          "seconds_rank": 0.0002646446228027344,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 20,
+          "nnz_added": 104,
+          "total_rows": 124,
+          "total_nnz": 400,
+          "rank": 27,
+          "quotient_dim": 0,
+          "seconds_rank": 0.00027751922607421875,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 218,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 330,
+      "columns_after_2term": 83,
+      "gamma0_index": 330,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.012537002563476562,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 324,
+          "nnz_added": 966,
+          "total_rows": 324,
+          "total_nnz": 966,
+          "rank": 54,
+          "quotient_dim": 29,
+          "seconds_rank": 0.0010836124420166016,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 20,
+          "nnz_added": 118,
+          "total_rows": 344,
+          "total_nnz": 1084,
+          "rank": 74,
+          "quotient_dim": 9,
+          "seconds_rank": 0.0014426708221435547,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_2",
+          "rows_added": 20,
+          "nnz_added": 134,
+          "total_rows": 364,
+          "total_nnz": 1218,
+          "rank": 83,
+          "quotient_dim": 0,
+          "seconds_rank": 0.0015480518341064453,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 218,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 330,
+      "columns_after_2term": 83,
+      "gamma0_index": 330,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.01186227798461914,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 324,
+          "nnz_added": 966,
+          "total_rows": 324,
+          "total_nnz": 966,
+          "rank": 54,
+          "quotient_dim": 29,
+          "seconds_rank": 0.000919342041015625,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 20,
+          "nnz_added": 118,
+          "total_rows": 344,
+          "total_nnz": 1084,
+          "rank": 74,
+          "quotient_dim": 9,
+          "seconds_rank": 0.0016546249389648438,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_2",
+          "rows_added": 20,
+          "nnz_added": 134,
+          "total_rows": 364,
+          "total_nnz": 1218,
+          "rank": 83,
+          "quotient_dim": 0,
+          "seconds_rank": 0.0012924671173095703,
+          "killed": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "all_completed_checks_ok": true,
+  "all_completed_killed": true,
+  "date": "2026-05-12",
+  "partial_logs": [
+    {
+      "file": "_results\\mstar_nomagma_signminus_60168_2026-05-12.log",
+      "last_level": 60168,
+      "last_mode": "anc",
+      "last_quotient_dim": 0,
+      "last_rank": 31680,
+      "last_stage": "T_5_minus_2_batch_11",
+      "rank_done_lines": 24,
+      "sha256": "013981e439b8675d6c502638e1f2854e1fc966a361d44c217f63d8513f4c9420"
+    }
+  ],
+  "runs": [
+    {
+      "backend": "sage",
+      "checks_ok": true,
+      "columns_after_2term": 31680,
+      "file": "_results\\mstar_nomagma_signminus_60168_2026-05-12.json",
+      "final_quotient_dim": 0,
+      "final_rank": 31680,
+      "final_stage": "T_5_minus_2_batch_11",
+      "killed": true,
+      "level": 60168,
+      "mode": "anc",
+      "problems": [],
+      "q": 3863,
+      "sha256": "f6034b56671633d02c9468be75c4529445580f13a9ec6c0766972c9edbea20f8",
+      "sign": -1,
+      "stage_count": 12,
+      "status": "killed"
+    },
+    {
+      "backend": "sage",
+      "checks_ok": true,
+      "columns_after_2term": 31680,
+      "file": "_results\\mstar_nomagma_signminus_60168_2026-05-12.json",
+      "final_quotient_dim": 0,
+      "final_rank": 31680,
+      "final_stage": "T_5_minus_2_batch_11",
+      "killed": true,
+      "level": 60168,
+      "mode": "raw",
+      "problems": [],
+      "q": 3863,
+      "sha256": "f6034b56671633d02c9468be75c4529445580f13a9ec6c0766972c9edbea20f8",
+      "sign": -1,
+      "stage_count": 12,
+      "status": "killed"
+    }
+  ]
+}

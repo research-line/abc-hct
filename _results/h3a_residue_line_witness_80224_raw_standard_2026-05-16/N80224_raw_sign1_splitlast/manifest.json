@@ -1,0 +1,22 @@
+{
+  "certificate_version": "h3a-residue-line-witness-1",
+  "columns_after_2term": 31680,
+  "level": 80224,
+  "mixed_row_count": 31680,
+  "mode": "raw",
+  "ncols": 31680,
+  "original_source_row_count": 31680,
+  "q": 3863,
+  "repair_only_original_index": 31679,
+  "repair_only_row_count": 1,
+  "repair_only_row_id": "T_7_minus_0_batch_1/1",
+  "repair_only_stage": "T_7_minus_0_batch_1",
+  "rows_file": "mixed_rows.jsonl",
+  "rows_file_sha256": "df74a6bd8b3e4fee7c11528ebb3a579d434da593c48d96e01d14918e39115c15",
+  "sign": 1,
+  "source_case_dir": "_results/rc3c_standard_witness_80224_raw_q3863_2026-05-16/N80224_raw_sign1",
+  "source_row_count": 31679,
+  "split_rule": "final source row",
+  "square": true,
+  "witness_type": "source_prefix_plus_single_repair_row"
+}

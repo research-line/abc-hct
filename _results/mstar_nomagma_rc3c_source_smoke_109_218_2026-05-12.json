@@ -1,0 +1,173 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "sage",
+  "backend_used": "sage",
+  "q": 3863,
+  "sign": 1,
+  "primes": [
+    5
+  ],
+  "stop_on_zero": true,
+  "runs": [
+    {
+      "backend": "sage",
+      "level": 109,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 110,
+      "columns_after_2term": 27,
+      "gamma0_index": 110,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.008550167083740234,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 104,
+          "nnz_added": 296,
+          "total_rows": 104,
+          "total_nnz": 296,
+          "rank": 18,
+          "quotient_dim": 9,
+          "seconds_rank": 0.002315044403076172,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 100,
+          "nnz_added": 568,
+          "total_rows": 204,
+          "total_nnz": 864,
+          "rank": 27,
+          "quotient_dim": 0,
+          "seconds_rank": 0.001756906509399414,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 109,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 110,
+      "columns_after_2term": 27,
+      "gamma0_index": 110,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.006136178970336914,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 104,
+          "nnz_added": 296,
+          "total_rows": 104,
+          "total_nnz": 296,
+          "rank": 18,
+          "quotient_dim": 9,
+          "seconds_rank": 0.0016796588897705078,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 100,
+          "nnz_added": 568,
+          "total_rows": 204,
+          "total_nnz": 864,
+          "rank": 27,
+          "quotient_dim": 0,
+          "seconds_rank": 0.0020647048950195312,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 218,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 330,
+      "columns_after_2term": 83,
+      "gamma0_index": 330,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.017253875732421875,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 324,
+          "nnz_added": 966,
+          "total_rows": 324,
+          "total_nnz": 966,
+          "rank": 54,
+          "quotient_dim": 29,
+          "seconds_rank": 0.0054738521575927734,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 100,
+          "nnz_added": 647,
+          "total_rows": 424,
+          "total_nnz": 1613,
+          "rank": 83,
+          "quotient_dim": 0,
+          "seconds_rank": 0.006562948226928711,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 218,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 2
+      },
+      "manin_symbols": 330,
+      "columns_after_2term": 83,
+      "gamma0_index": 330,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.014549970626831055,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 324,
+          "nnz_added": 966,
+          "total_rows": 324,
+          "total_nnz": 966,
+          "rank": 54,
+          "quotient_dim": 29,
+          "seconds_rank": 0.005234956741333008,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 100,
+          "nnz_added": 647,
+          "total_rows": 424,
+          "total_nnz": 1613,
+          "rank": 83,
+          "quotient_dim": 0,
+          "seconds_rank": 0.006299734115600586,
+          "killed": true
+        }
+      ]
+    }
+  ]
+}

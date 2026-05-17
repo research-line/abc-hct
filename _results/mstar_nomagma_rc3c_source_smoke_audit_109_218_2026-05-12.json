@@ -1,0 +1,54 @@
+{
+  "all_checks_ok": true,
+  "date": "2026-05-12",
+  "manifests": [
+    {
+      "checks_ok": true,
+      "level": 109,
+      "manifest": "_results/rc3c_source_witness_smoke_2026-05-12/N109_raw_sign1/manifest.json",
+      "mode": "raw",
+      "ncols": 27,
+      "problems": [],
+      "q": 3863,
+      "recomputed_rank": 27,
+      "sign": 1,
+      "source_row_count": 27
+    },
+    {
+      "checks_ok": true,
+      "level": 109,
+      "manifest": "_results/rc3c_source_witness_smoke_2026-05-12/N109_anc_sign1/manifest.json",
+      "mode": "anc",
+      "ncols": 27,
+      "problems": [],
+      "q": 3863,
+      "recomputed_rank": 27,
+      "sign": 1,
+      "source_row_count": 27
+    },
+    {
+      "checks_ok": true,
+      "level": 218,
+      "manifest": "_results/rc3c_source_witness_smoke_2026-05-12/N218_raw_sign1/manifest.json",
+      "mode": "raw",
+      "ncols": 83,
+      "problems": [],
+      "q": 3863,
+      "recomputed_rank": 83,
+      "sign": 1,
+      "source_row_count": 83
+    },
+    {
+      "checks_ok": true,
+      "level": 218,
+      "manifest": "_results/rc3c_source_witness_smoke_2026-05-12/N218_anc_sign1/manifest.json",
+      "mode": "anc",
+      "ncols": 83,
+      "problems": [],
+      "q": 3863,
+      "recomputed_rank": 83,
+      "sign": 1,
+      "source_row_count": 83
+    }
+  ]
+}

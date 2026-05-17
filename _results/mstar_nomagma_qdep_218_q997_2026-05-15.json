@@ -1,0 +1,104 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "sage",
+  "backend_used": "sage",
+  "q": 997,
+  "raw_a": 2,
+  "raw_b": 6436341,
+  "sign": 1,
+  "primes": [
+    5,
+    7,
+    11,
+    13
+  ],
+  "stop_on_zero": true,
+  "runs": [
+    {
+      "backend": "sage",
+      "level": 218,
+      "q": 997,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2,
+        "7": 0,
+        "11": 0,
+        "13": -6
+      },
+      "manin_symbols": 330,
+      "columns_after_2term": 83,
+      "gamma0_index": 330,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.43087196350097656,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 324,
+          "nnz_added": 966,
+          "total_rows": 324,
+          "total_nnz": 966,
+          "rank": 54,
+          "quotient_dim": 29,
+          "seconds_rank": 0.00881814956665039,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 256,
+          "nnz_added": 2972,
+          "total_rows": 580,
+          "total_nnz": 3938,
+          "rank": 83,
+          "quotient_dim": 0,
+          "seconds_rank": 0.054538726806640625,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 218,
+      "q": 997,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 2,
+        "7": 0,
+        "11": 0,
+        "13": -6
+      },
+      "manin_symbols": 330,
+      "columns_after_2term": 83,
+      "gamma0_index": 330,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.08148837089538574,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 324,
+          "nnz_added": 966,
+          "total_rows": 324,
+          "total_nnz": 966,
+          "rank": 54,
+          "quotient_dim": 29,
+          "seconds_rank": 0.007455587387084961,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 256,
+          "nnz_added": 2972,
+          "total_rows": 580,
+          "total_nnz": 3938,
+          "rank": 83,
+          "quotient_dim": 0,
+          "seconds_rank": 0.049227237701416016,
+          "killed": true
+        }
+      ]
+    }
+  ]
+}

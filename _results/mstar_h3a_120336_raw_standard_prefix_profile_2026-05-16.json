@@ -1,0 +1,794 @@
+{
+  "witness_dir": "_results\\rc3c_standard_witness_120336_raw_q3863_2026-05-16\\N120336_raw_sign1",
+  "manifest": {
+    "base_rank": 42224,
+    "certificate_version": "rc3c-independent-source-rows-1",
+    "columns_after_2term": 63360,
+    "final_stage": "T_7_minus_0_batch_1",
+    "full_rank": 63360,
+    "level": 120336,
+    "mode": "raw",
+    "ncols": 63360,
+    "pivot_strategy": "max",
+    "q": 3863,
+    "quotient_rank": 21136,
+    "rank_engine": "quotient-numpy-dense",
+    "rows_file": "source_rows.jsonl",
+    "rows_file_sha256": "7f0f9f1d074c7ca7ef2369fe1dd52ce97da5075e6dd542027e9d7c203e0d1a0f",
+    "scope": "original rows that increased the Python sparse base rank or the quotient-compressed rank; verifier recomputes full rank from original rows",
+    "sign": 1,
+    "source_row_count": 63360,
+    "source_row_nnz": 274547,
+    "witness_type": "independent_source_rows"
+  },
+  "source_kind_counts": {
+    "manin_T": 42224,
+    "hecke": 21136
+  },
+  "stages": {
+    "manin_T_relations_after_SI": {
+      "rows": 42224,
+      "stage_row_index": {
+        "count": 42224,
+        "min": 0,
+        "max": 236943,
+        "unique": 42224,
+        "contiguous": false,
+        "starts_at_zero": true,
+        "missing_count": 194720,
+        "first_missing": [
+          584,
+          585,
+          884,
+          885,
+          1004,
+          1005,
+          1040,
+          1041,
+          1244,
+          1245,
+          1490,
+          1491,
+          1604,
+          1605,
+          1712,
+          1713,
+          1822,
+          1823,
+          1934,
+          1935
+        ],
+        "last_missing": [
+          236923,
+          236924,
+          236925,
+          236926,
+          236927,
+          236928,
+          236929,
+          236930,
+          236931,
+          236932,
+          236933,
+          236934,
+          236935,
+          236936,
+          236937,
+          236938,
+          236939,
+          236940,
+          236941,
+          236942
+        ]
+      },
+      "manin_symbol_index": {
+        "count": 42224,
+        "min": 3,
+        "max": 237014,
+        "unique": 42224,
+        "contiguous": false,
+        "starts_at_zero": false,
+        "missing_count": 194788,
+        "first_missing": [
+          587,
+          588,
+          887,
+          888,
+          1007,
+          1008,
+          1043,
+          1044,
+          1247,
+          1248,
+          1493,
+          1494,
+          1607,
+          1608,
+          1715,
+          1716,
+          1825,
+          1826,
+          1937,
+          1938
+        ],
+        "last_missing": [
+          236994,
+          236995,
+          236996,
+          236997,
+          236998,
+          236999,
+          237000,
+          237001,
+          237002,
+          237003,
+          237004,
+          237005,
+          237006,
+          237007,
+          237008,
+          237009,
+          237010,
+          237011,
+          237012,
+          237013
+        ]
+      }
+    },
+    "T_5_minus_2_batch_1": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_2": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 1000,
+        "max": 1999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_3": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 2000,
+        "max": 2999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_4": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 3000,
+        "max": 3999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_5": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 4000,
+        "max": 4999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_6": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 5000,
+        "max": 5999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_7": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 6000,
+        "max": 6999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_8": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 7000,
+        "max": 7999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_9": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 8000,
+        "max": 8999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_10": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 9000,
+        "max": 9999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_11": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 10000,
+        "max": 10999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_12": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 11000,
+        "max": 11999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_13": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 12000,
+        "max": 12999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_14": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 13000,
+        "max": 13999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_15": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 14000,
+        "max": 14999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_16": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 15000,
+        "max": 15999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_17": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 16000,
+        "max": 16999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_18": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 17000,
+        "max": 17999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_19": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 18000,
+        "max": 18999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_20": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 19000,
+        "max": 19999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_21": {
+      "rows": 1000,
+      "stage_row_index": {
+        "count": 1000,
+        "min": 0,
+        "max": 999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1000,
+        "min": 20000,
+        "max": 20999,
+        "unique": 1000,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_5_minus_2_batch_22": {
+      "rows": 135,
+      "stage_row_index": {
+        "count": 135,
+        "min": 0,
+        "max": 134,
+        "unique": 135,
+        "contiguous": true,
+        "starts_at_zero": true,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 135,
+        "min": 21000,
+        "max": 21134,
+        "unique": 135,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    },
+    "T_7_minus_0_batch_1": {
+      "rows": 1,
+      "stage_row_index": {
+        "count": 1,
+        "min": 1,
+        "max": 1,
+        "unique": 1,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      },
+      "manin_symbol_index": {
+        "count": 1,
+        "min": 1,
+        "max": 1,
+        "unique": 1,
+        "contiguous": true,
+        "starts_at_zero": false,
+        "missing_count": 0,
+        "first_missing": [],
+        "last_missing": []
+      }
+    }
+  },
+  "by_hecke_prime": {
+    "5": {
+      "count": 21135,
+      "min": 0,
+      "max": 21134,
+      "unique": 21135,
+      "contiguous": true,
+      "starts_at_zero": true,
+      "missing_count": 0,
+      "first_missing": [],
+      "last_missing": [],
+      "rows": 21135
+    },
+    "7": {
+      "count": 1,
+      "min": 1,
+      "max": 1,
+      "unique": 1,
+      "contiguous": true,
+      "starts_at_zero": false,
+      "missing_count": 0,
+      "first_missing": [],
+      "last_missing": [],
+      "rows": 1
+    }
+  },
+  "last_record": {
+    "row": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3862
+      ],
+      [
+        2,
+        3862
+      ],
+      [
+        3,
+        3862
+      ],
+      [
+        4,
+        3862
+      ],
+      [
+        5,
+        3862
+      ]
+    ],
+    "row_id": "T_7_minus_0_batch_1/1",
+    "row_metadata": {
+      "hecke_ap": 0,
+      "hecke_family": "standard",
+      "hecke_prime": 7,
+      "hecke_row_order": "natural",
+      "manin_symbol_index": 1,
+      "source_kind": "hecke"
+    },
+    "stage": "T_7_minus_0_batch_1",
+    "stage_row_index": 1
+  },
+  "normalform_signals": {
+    "rows_before_final_stage": 63359,
+    "ncols": 63360,
+    "rows_before_final_is_ncols_minus_one": true,
+    "final_stage": "T_7_minus_0_batch_1",
+    "final_row_id": "T_7_minus_0_batch_1/1",
+    "final_row_metadata": {
+      "hecke_ap": 0,
+      "hecke_family": "standard",
+      "hecke_prime": 7,
+      "hecke_row_order": "natural",
+      "manin_symbol_index": 1,
+      "source_kind": "hecke"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "all_checks_ok": true,
+  "date": "2026-05-12",
+  "manifests": [
+    {
+      "certificate_version": "rc3a-row-transcript-draft-1",
+      "checks_ok": true,
+      "level": 109,
+      "manifest": "_results/rc3a_smoke_2026-05-12/N109_raw_sign1/manifest.json",
+      "manifest_sha256": "4d2bc840efc5e232bb9ace49ed37651ffab048fa7c42cfcaf1a7bd192195a5c9",
+      "mode": "raw",
+      "problems": [],
+      "q": 3863,
+      "sign": 1,
+      "stage_count": 2,
+      "total_nnz_added": 864,
+      "total_rows_added": 204
+    },
+    {
+      "certificate_version": "rc3a-row-transcript-draft-1",
+      "checks_ok": true,
+      "level": 109,
+      "manifest": "_results/rc3a_smoke_2026-05-12/N109_anc_sign1/manifest.json",
+      "manifest_sha256": "ca92b1448b335869a8fff768824b5d08e31bc59ff1b8855299c690bfdee5698d",
+      "mode": "anc",
+      "problems": [],
+      "q": 3863,
+      "sign": 1,
+      "stage_count": 2,
+      "total_nnz_added": 864,
+      "total_rows_added": 204
+    },
+    {
+      "certificate_version": "rc3a-row-transcript-draft-1",
+      "checks_ok": true,
+      "level": 218,
+      "manifest": "_results/rc3a_smoke_2026-05-12/N218_raw_sign1/manifest.json",
+      "manifest_sha256": "b291ddfbf5f243fa34f494efec0d86ea7eab339cb9740272a8c33a5c2e93ee46",
+      "mode": "raw",
+      "problems": [],
+      "q": 3863,
+      "sign": 1,
+      "stage_count": 2,
+      "total_nnz_added": 1613,
+      "total_rows_added": 424
+    },
+    {
+      "certificate_version": "rc3a-row-transcript-draft-1",
+      "checks_ok": true,
+      "level": 218,
+      "manifest": "_results/rc3a_smoke_2026-05-12/N218_anc_sign1/manifest.json",
+      "manifest_sha256": "0c5e2cc67d03d81792e05a7370b62afbf8f2f0971267d8525a9d5bab0733cd40",
+      "mode": "anc",
+      "problems": [],
+      "q": 3863,
+      "sign": 1,
+      "stage_count": 2,
+      "total_nnz_added": 1613,
+      "total_rows_added": 424
+    }
+  ]
+}

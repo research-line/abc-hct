@@ -1,0 +1,276 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "sage",
+  "backend_used": "sage",
+  "q": 3863,
+  "sign": 1,
+  "primes": [
+    5,
+    7,
+    11,
+    13
+  ],
+  "stop_on_zero": true,
+  "runs": [
+    {
+      "backend": "sage",
+      "level": 210,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 1,
+        "7": 1,
+        "11": -4,
+        "13": -6
+      },
+      "manin_symbols": 576,
+      "columns_after_2term": 148,
+      "gamma0_index": 576,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.19342660903930664,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 552,
+          "nnz_added": 1656,
+          "total_rows": 552,
+          "total_nnz": 1656,
+          "rank": 92,
+          "quotient_dim": 56,
+          "seconds_rank": 0.026013612747192383,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 576,
+          "nnz_added": 5446,
+          "total_rows": 1128,
+          "total_nnz": 7102,
+          "rank": 123,
+          "quotient_dim": 25,
+          "seconds_rank": 0.00531315803527832,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_1",
+          "rows_added": 576,
+          "nnz_added": 7436,
+          "total_rows": 1704,
+          "total_nnz": 14538,
+          "rank": 140,
+          "quotient_dim": 8,
+          "seconds_rank": 0.011956453323364258,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_-4",
+          "rows_added": 576,
+          "nnz_added": 14059,
+          "total_rows": 2280,
+          "total_nnz": 28597,
+          "rank": 148,
+          "quotient_dim": 0,
+          "seconds_rank": 0.025026321411132812,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 210,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 1,
+        "7": -1,
+        "11": 4,
+        "13": -6
+      },
+      "manin_symbols": 576,
+      "columns_after_2term": 148,
+      "gamma0_index": 576,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.15949606895446777,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 552,
+          "nnz_added": 1656,
+          "total_rows": 552,
+          "total_nnz": 1656,
+          "rank": 92,
+          "quotient_dim": 56,
+          "seconds_rank": 0.0010352134704589844,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 576,
+          "nnz_added": 5446,
+          "total_rows": 1128,
+          "total_nnz": 7102,
+          "rank": 123,
+          "quotient_dim": 25,
+          "seconds_rank": 0.0055692195892333984,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_-1",
+          "rows_added": 576,
+          "nnz_added": 7487,
+          "total_rows": 1704,
+          "total_nnz": 14589,
+          "rank": 139,
+          "quotient_dim": 9,
+          "seconds_rank": 0.010018348693847656,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_4",
+          "rows_added": 576,
+          "nnz_added": 14041,
+          "total_rows": 2280,
+          "total_nnz": 28630,
+          "rank": 148,
+          "quotient_dim": 0,
+          "seconds_rank": 0.022740602493286133,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 420,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 1,
+        "7": 1,
+        "11": -4,
+        "13": -6
+      },
+      "manin_symbols": 1152,
+      "columns_after_2term": 292,
+      "gamma0_index": 1152,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.3656492233276367,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 1104,
+          "nnz_added": 3312,
+          "total_rows": 1104,
+          "total_nnz": 3312,
+          "rank": 184,
+          "quotient_dim": 108,
+          "seconds_rank": 0.0020956993103027344,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 1152,
+          "nnz_added": 11264,
+          "total_rows": 2256,
+          "total_nnz": 14576,
+          "rank": 249,
+          "quotient_dim": 43,
+          "seconds_rank": 0.016954660415649414,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_1",
+          "rows_added": 1152,
+          "nnz_added": 15892,
+          "total_rows": 3408,
+          "total_nnz": 30468,
+          "rank": 276,
+          "quotient_dim": 16,
+          "seconds_rank": 0.03775453567504883,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_-4",
+          "rows_added": 1152,
+          "nnz_added": 30168,
+          "total_rows": 4560,
+          "total_nnz": 60636,
+          "rank": 292,
+          "quotient_dim": 0,
+          "seconds_rank": 0.07756185531616211,
+          "killed": true
+        }
+      ]
+    },
+    {
+      "backend": "sage",
+      "level": 420,
+      "q": 3863,
+      "sign": 1,
+      "mode": "anc",
+      "traces": {
+        "5": 1,
+        "7": -1,
+        "11": 4,
+        "13": -6
+      },
+      "manin_symbols": 1152,
+      "columns_after_2term": 292,
+      "gamma0_index": 1152,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.35007357597351074,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 1104,
+          "nnz_added": 3312,
+          "total_rows": 1104,
+          "total_nnz": 3312,
+          "rank": 184,
+          "quotient_dim": 108,
+          "seconds_rank": 0.0025849342346191406,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_1",
+          "rows_added": 1152,
+          "nnz_added": 11264,
+          "total_rows": 2256,
+          "total_nnz": 14576,
+          "rank": 249,
+          "quotient_dim": 43,
+          "seconds_rank": 0.016889333724975586,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_-1",
+          "rows_added": 1152,
+          "nnz_added": 16000,
+          "total_rows": 3408,
+          "total_nnz": 30576,
+          "rank": 277,
+          "quotient_dim": 15,
+          "seconds_rank": 0.03292036056518555,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_4",
+          "rows_added": 1152,
+          "nnz_added": 30146,
+          "total_rows": 4560,
+          "total_nnz": 60722,
+          "rank": 292,
+          "quotient_dim": 0,
+          "seconds_rank": 0.07331657409667969,
+          "killed": true
+        }
+      ]
+    }
+  ]
+}

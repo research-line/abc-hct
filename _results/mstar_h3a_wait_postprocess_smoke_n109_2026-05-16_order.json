@@ -1,0 +1,24 @@
+{
+  "tool": "mstar_h3a_residue_line_order_certificate",
+  "case": "N109_raw_sign1_splitlast",
+  "path": "_results\\h3a_wait_postprocess_smoke_n109_2026-05-16\\N109_raw_sign1_splitlast",
+  "q": 3863,
+  "level": 109,
+  "mode": "raw",
+  "ncols": 27,
+  "original_source_row_count": 27,
+  "source_prefix_count": 26,
+  "repair_row_id": "T_5_minus_2_batch_1/21",
+  "repair_stage": "T_5_minus_2_batch_1",
+  "repair_original_index": 26,
+  "checks": {
+    "original_full_count_equals_ncols": true,
+    "source_prefix_count_equals_ncols_minus_one": true,
+    "single_repair_row": true,
+    "mixed_count_equals_ncols": true,
+    "split_rule_is_final_or_specified": true,
+    "repair_stage_matches_expectation": true
+  },
+  "certified": true,
+  "mathematical_reading": "Because the source witness is an ordered list of rank-increasing rows over q, the first n-1 rows have rank n-1 and the final repair row raises the rank to n. Thus the repair row is nonzero on the one-dimensional row-cokernel residue."
+}

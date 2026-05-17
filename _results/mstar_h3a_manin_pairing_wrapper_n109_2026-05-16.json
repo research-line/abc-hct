@@ -1,0 +1,13 @@
+{
+  "tool": "mstar_h3a_manin_pairing_wrapper",
+  "case_dir": "_results/h3a_wait_postprocess_smoke_n109_2026-05-16/N109_raw_sign1_splitlast",
+  "N": 109,
+  "q": 3863,
+  "witness_ncols": 27,
+  "sage_dim": 9,
+  "bases_match": false,
+  "pairing_method": null,
+  "pairing_error": null,
+  "status": "blocked_basis_projection_required",
+  "next_step": "Construct the projection matrix from RC3 S/I quotient columns to Sage ModularSymbols coordinates before comparing B_N*r_N with the dual nullvector."
+}

@@ -10,14 +10,27 @@ _partners/
 CORE.txt
 Plan.txt
 ZENODO_CREDENTIALS.md
+GAPS.md
+TODO.md
+MEMORY.md
+AKTIONSPLAN.md
+IDEENSPEICHER*.md
+GITHUB_REPO.md
+PAPER_SPLIT_PLAN.md
+SCALING_CAPACITY_GATE.md
 *_BRIEFING*
 removed_sections/
+_sources/
+_data/
+logs/
+_logs/
 
 # Large/generated computation artifacts by default; curate selected files explicitly
 _results/*.log
 _results/*.err
 _results/*.tmp
 _results/*.partial.*
+*.pid
 __pycache__/
 *.pyc
 

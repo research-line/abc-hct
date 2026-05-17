@@ -14,7 +14,9 @@ Repository policy:
 - Keep this repository private until the corresponding DOI/public release gate is reached.
 - GitHub normally receives computation scripts and reproducible results, not internal proof notebooks.
 - Do not push `BEWEISNOTIZ*`, `_proof-notes/`, handoffs, raw agent transcripts, credentials, or proof scratch by default.
+- Internal control/state files such as `TODO.md`, `GAPS.md`, `AKTIONSPLAN.md`, `MEMORY.md`, `IDEENSPEICHER*.md`, local source caches, and raw `_data/` snapshots stay local by default.
 - Internal proof notes become repo-publishable only after journal publication and explicit release as attached notes.
+- Exploratory result notes become repo-eligible only together with the reproducer script they cite.
 - Public release should contain only curated paper files, reproducibility scripts, selected results, and a clean disclosure/status note.
 
 Primary local project path:

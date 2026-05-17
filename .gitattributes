@@ -1,0 +1,11 @@
+# Keep computational artifacts byte-stable across Windows/macOS/Linux checkouts.
+* text=auto eol=lf
+
+*.json text eol=lf
+*.jsonl text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.sage text eol=lf
+*.sh text eol=lf
+*.ps1 text eol=lf
+*.gp text eol=lf

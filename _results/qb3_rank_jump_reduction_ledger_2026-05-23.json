@@ -1,0 +1,65 @@
+{
+  "tool": "qb3_rank_jump_reduction_ledger",
+  "date": "2026-05-23",
+  "interpretation": "rank(G) is reduced to the standard nondegeneracy theorem for B_AL once Source+Repair is a quotient basis; Q_B-3 remains rank(A).",
+  "rows": [
+    {
+      "input_json": "_results\\mstar_h3a_restline_kernel_quotient_80224_raw_2026-05-17.json",
+      "level": 80224,
+      "mode": "raw",
+      "q": 3863,
+      "quotient_dim": 10568,
+      "source_rows": 10567,
+      "source_rank": 10567,
+      "kernel_dim": 1,
+      "source_annihilated": true,
+      "beta_signed": -1,
+      "repair_pairing_nonzero": true,
+      "source_hyperplane_certified": true,
+      "repair_outside_source": true,
+      "source_repair_basis_certified": true,
+      "full_gram_rank_by_theorem": true,
+      "rank_G_target": 10568,
+      "rank_G_status": "closed_by_basis_plus_B_AL_nondegenerate",
+      "rank_A_target": 10567,
+      "rank_A_status": "open",
+      "remaining_qb3_task": "certify rank(A)=10567 for source-only B_AL Gram block"
+    },
+    {
+      "input_json": "_results\\mstar_h3a_restline_kernel_quotient_80224_anc_2026-05-17.json",
+      "level": 80224,
+      "mode": "anc",
+      "q": 3863,
+      "quotient_dim": 10568,
+      "source_rows": 10567,
+      "source_rank": 10567,
+      "kernel_dim": 1,
+      "source_annihilated": true,
+      "beta_signed": -1,
+      "repair_pairing_nonzero": true,
+      "source_hyperplane_certified": true,
+      "repair_outside_source": true,
+      "source_repair_basis_certified": true,
+      "full_gram_rank_by_theorem": true,
+      "rank_G_target": 10568,
+      "rank_G_status": "closed_by_basis_plus_B_AL_nondegenerate",
+      "rank_A_target": 10567,
+      "rank_A_status": "open",
+      "remaining_qb3_task": "certify rank(A)=10567 for source-only B_AL Gram block"
+    }
+  ],
+  "all_source_repair_basis_certified": true,
+  "all_rank_G_closed_by_reduction": true,
+  "open_tasks": [
+    {
+      "level": 80224,
+      "mode": "raw",
+      "task": "certify rank(A)=10567 for source-only B_AL Gram block"
+    },
+    {
+      "level": 80224,
+      "mode": "anc",
+      "task": "certify rank(A)=10567 for source-only B_AL Gram block"
+    }
+  ]
+}

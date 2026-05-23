@@ -1,0 +1,45 @@
+{
+  "id": "qb3_wiedemann_80224_anc_2026-05-23",
+  "title": "Q_B-3 Wiedemann certificate for 80224/anc",
+  "status": "pending",
+  "priority": 20,
+  "allowed_hosts": [
+    "mac-studio",
+    "ellmos-services",
+    "desktop-pc"
+  ],
+  "disallowed_hosts": [
+    "ASUS-GEI"
+  ],
+  "depends_on_success": [
+    "qb3_wiedemann_80224_raw_2026-05-23"
+  ],
+  "defer_while_process_regex": [
+    "mstar_h3a_restline_kernel_quotient.py",
+    "mstar_h3a_rc3c_witness_verify_rank.py"
+  ],
+  "resource_policy": {
+    "min_free_mem_gb": 6.0,
+    "max_load_1min": 8.0
+  },
+  "backend": {
+    "type": "sage",
+    "allow_docker": true,
+    "docker_image": "sagemath/sagemath:latest"
+  },
+  "command": "{sage} _scripts/mstar_h3a_qb3_wiedemann_production.sage --case-dir _results/h3a_residue_line_witness_80224_anc_standard_2026-05-16/N80224_anc_sign1_splitlast --pi-json _results/mstar_h3a_restline_kernel_quotient_80224_anc_2026-05-17.json --out-json _results/mstar_h3a_qb3_wiedemann_production_80224_anc_2026-05-23.json --out-md _results/mstar_h3a_qb3_wiedemann_production_80224_anc_2026-05-23.md --status-json _results/mstar_h3a_qb3_wiedemann_production_80224_anc_2026-05-23.status.json --seed-start 1 --seed-count 16 --suffix-terms 4 --progress-every 100 --projection-progress-every 1000",
+  "expected_outputs": [
+    "_results/mstar_h3a_qb3_wiedemann_production_80224_anc_2026-05-23.json",
+    "_results/mstar_h3a_qb3_wiedemann_production_80224_anc_2026-05-23.md"
+  ],
+  "success_json": {
+    "path": "_results/mstar_h3a_qb3_wiedemann_production_80224_anc_2026-05-23.json",
+    "field": "accepted_certificate_found",
+    "equals": true
+  },
+  "notes": [
+    "Runs after raw succeeded.",
+    "Target rank is 10567; sequence length is 21138 per seed.",
+    "Do not start this job on the laptop."
+  ]
+}

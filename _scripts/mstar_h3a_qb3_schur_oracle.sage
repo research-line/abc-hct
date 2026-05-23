@@ -120,6 +120,23 @@ def make_free_to_sage(case_dir, pi_data, manifest):
 def compute_dense_schur(case_dir, pi_json, max_dense_dim):
     manifest = read_manifest(case_dir)
     pi_data = load_json(pi_json)
+    N = int(manifest["level"])
+    q = int(manifest["q"])
+    free_dim = len(pi_data.get("free_columns", []))
+    if free_dim > max_dense_dim:
+        return {
+            "tool": "mstar_h3a_qb3_schur_oracle",
+            "case_dir": str(case_dir),
+            "pi_json": str(pi_json),
+            "level": N,
+            "q": q,
+            "mode": "dense",
+            "status": "blocked_by_dense_guard",
+            "sage_dim": free_dim,
+            "quotient_dim_from_free_columns": free_dim,
+            "max_dense_dim": int(max_dense_dim),
+            "reason": "Use a matrix-free Schur oracle for this dimension.",
+        }
     bridge = make_free_to_sage(case_dir, pi_data, manifest)
     F = bridge["field"]
     q = bridge["q"]
@@ -258,7 +275,7 @@ def write_markdown(payload, out_md):
                 "",
                 payload.get("reason", ""),
                 "",
-                f"Sage dimension `{payload.get('sage_dim')}` exceeds guard",
+                f"Quotient/Sage dimension `{payload.get('sage_dim')}` exceeds guard",
                 f"`{payload.get('max_dense_dim')}`.",
                 "",
             ]

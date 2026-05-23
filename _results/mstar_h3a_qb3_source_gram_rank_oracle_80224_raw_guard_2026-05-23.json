@@ -1,0 +1,14 @@
+{
+  "tool": "mstar_h3a_qb3_source_gram_rank_oracle",
+  "case_dir": "_results/h3a_residue_line_witness_80224_raw_standard_2026-05-16/N80224_raw_sign1_splitlast",
+  "pi_json": "_results/mstar_h3a_restline_kernel_quotient_80224_raw_2026-05-17.json",
+  "level": 80224,
+  "q": 3863,
+  "mode": "dense",
+  "status": "blocked_by_dense_guard",
+  "quotient_dim": 10568,
+  "source_rows": 10567,
+  "rank_A_target": 10567,
+  "max_dense_dim": 256,
+  "reason": "Use a matrix-free Source-only Gram-rank oracle for this dimension."
+}

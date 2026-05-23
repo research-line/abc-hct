@@ -236,11 +236,16 @@ def compute(case_dir, pi_json, max_dense_dim, max_seed):
         row = {
             "seed": int(seed),
             "degree": int(degree),
+            "sequence_length": int(len(seq)),
+            "verification_suffix_terms": int(max(0, len(seq) - degree)),
             "constant_mod_q": int(constant),
             "constant_signed": signed_lift(constant, q),
             "constant_nonzero": bool(constant != 0),
             "connection_verified": len(bad) == 0,
             "verification_failures": bad,
+            "connection_coefficients_mod_q": [int(x) for x in coeffs],
+            "connection_coefficients_signed": [signed_lift(x, q) for x in coeffs],
+            "sequence_mod_q": [int(x) for x in seq],
             "sequence_head_signed": [signed_lift(x, q) for x in seq[: min(10, len(seq))]],
         }
         attempts.append(row)

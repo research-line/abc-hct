@@ -1,0 +1,76 @@
+{
+  "tool": "qb3_wiedemann_production_runbook",
+  "date": "2026-05-23",
+  "purpose": "Fix the production certificate contract for the 80224 Q_B-3 source-Gram rank test rank(A)=10567.",
+  "does_start_computation": false,
+  "algorithm": [
+    "Build the matrix-free operator A v = C_source B_AL C_source^T v.",
+    "For each deterministic seed, generate s_k = u^T A^k v.",
+    "Run Berlekamp-Massey on the scalar sequence.",
+    "Accept a seed only if degree = target_rank and the final coefficient is nonzero.",
+    "Export the full sequence and connection coefficients for local verification."
+  ],
+  "suffix_terms": 4,
+  "cases": [
+    {
+      "guard_json": "_results\\mstar_h3a_qb3_wiedemann_smoke_80224_raw_guard_2026-05-23.json",
+      "guard_sha256": "fa41e479bbd069f11dac5c530a3d267e0df91ed50b8bf3d7c3aaff05ca13c734",
+      "level": 80224,
+      "mode": "raw",
+      "q": 3863,
+      "target_rank": 10567,
+      "sequence_length_per_seed": 21138,
+      "matvecs_per_seed": 21137,
+      "seed_count_budget": 16,
+      "matvec_budget_if_all_seeds_used": 338192,
+      "expected_success_condition": "some seed has Berlekamp-Massey degree target_rank and nonzero last connection coefficient",
+      "required_certificate_fields": [
+        "level",
+        "mode",
+        "q",
+        "target_rank",
+        "seed",
+        "degree",
+        "sequence_length",
+        "connection_coefficients_mod_q",
+        "sequence_mod_q",
+        "case_manifest_sha256",
+        "pi_json_sha256",
+        "operator_script_sha256"
+      ],
+      "certificate_json": "_results/mstar_h3a_qb3_wiedemann_certificate_80224_raw_2026-05-23.json",
+      "local_verifier_json": "_results/qb3_wiedemann_certificate_verify_80224_raw_2026-05-23.json",
+      "local_verifier_command": "python ./_scripts/qb3_wiedemann_certificate_verify.py --certificate ./_results/mstar_h3a_qb3_wiedemann_certificate_80224_raw_2026-05-23.json --expected-rank 10567 --expected-q 3863 --out-json ./_results/qb3_wiedemann_certificate_verify_80224_raw_2026-05-23.json --out-md ./_results/qb3_wiedemann_certificate_verify_80224_raw_2026-05-23.md"
+    },
+    {
+      "guard_json": "_results\\mstar_h3a_qb3_wiedemann_smoke_80224_anc_guard_2026-05-23.json",
+      "guard_sha256": "eb75af350cb868ef59fa85b256ab21112bfb7ef3bbc6f0d0b1f4a599211687dc",
+      "level": 80224,
+      "mode": "anc",
+      "q": 3863,
+      "target_rank": 10567,
+      "sequence_length_per_seed": 21138,
+      "matvecs_per_seed": 21137,
+      "seed_count_budget": 16,
+      "matvec_budget_if_all_seeds_used": 338192,
+      "expected_success_condition": "some seed has Berlekamp-Massey degree target_rank and nonzero last connection coefficient",
+      "required_certificate_fields": [
+        "level",
+        "mode",
+        "q",
+        "target_rank",
+        "seed",
+        "degree",
+        "sequence_length",
+        "connection_coefficients_mod_q",
+        "sequence_mod_q",
+        "case_manifest_sha256",
+        "pi_json_sha256",
+        "operator_script_sha256"
+      ],
+      "certificate_json": "_results/mstar_h3a_qb3_wiedemann_certificate_80224_anc_2026-05-23.json",
+      "local_verifier_json": "_results/qb3_wiedemann_certificate_verify_80224_anc_2026-05-23.json",
+      "local_verifier_command": "python ./_scripts/qb3_wiedemann_certificate_verify.py --certificate ./_results/mstar_h3a_qb3_wiedemann_certificate_80224_anc_2026-05-23.json --expected-rank 10567 --expected-q 3863 --out-json ./_results/qb3_wiedemann_certificate_verify_80224_anc_2026-05-23.json --out-md ./_results/qb3_wiedemann_certificate_verify_80224_anc_2026-05-23.md"
+    }
+  ]
+}

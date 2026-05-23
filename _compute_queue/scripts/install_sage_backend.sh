@@ -18,7 +18,9 @@ echo "host=$(hostname)"
 echo "mode=$MODE"
 
 sage_ok() {
-  "$1" -python -c 'import sage.all' >/dev/null 2>&1
+  local bindir
+  bindir="$(dirname "$1")"
+  PATH="$bindir:$PATH" "$bindir/python" -c 'import sage.all' >/dev/null 2>&1
 }
 
 if command -v sage >/dev/null 2>&1 && sage_ok "$(command -v sage)"; then
@@ -30,7 +32,8 @@ fi
 for candidate in "$HOME/mamba/envs/sage/bin/sage" "$HOME/micromamba/envs/sage/bin/sage" "$HOME/.local/bin/sage" "$HOME/bin/sage"; do
   if [ -x "$candidate" ] && sage_ok "$candidate"; then
     echo "native_sage=$candidate"
-    "$candidate" -v || true
+    bindir="$(dirname "$candidate")"
+    PATH="$bindir:$PATH" "$bindir/python" -c 'from sage.env import SAGE_VERSION; print("SageMath version", SAGE_VERSION)' || true
     exit 0
   fi
 done
@@ -50,10 +53,11 @@ if [ "$MODE" = "micromamba" ]; then
   micromamba create -y -p "$HOME/mamba/envs/sage" -c conda-forge sage
   cat > "$HOME/bin/sage" <<'EOF'
 #!/usr/bin/env bash
+export PATH="$HOME/mamba/envs/sage/bin:$PATH"
 exec "$HOME/mamba/envs/sage/bin/sage" "$@"
 EOF
   chmod +x "$HOME/bin/sage"
-  "$HOME/mamba/envs/sage/bin/sage" -v
+  PATH="$HOME/mamba/envs/sage/bin:$PATH" "$HOME/mamba/envs/sage/bin/python" -c 'from sage.env import SAGE_VERSION; print("SageMath version", SAGE_VERSION)'
   exit 0
 fi
 

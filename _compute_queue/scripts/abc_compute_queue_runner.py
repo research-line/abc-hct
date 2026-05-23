@@ -169,6 +169,42 @@ def output_success(root: Path, job: dict[str, Any]) -> tuple[bool, str]:
     return bool(expected or spec), "outputs accepted"
 
 
+def sage_script_backend_for_bindir(bindir: Path) -> tuple[str | None, str]:
+    python_path = bindir / "python"
+    if not python_path.exists() or not os.access(python_path, os.X_OK):
+        return None, f"python missing in {bindir}"
+    env = os.environ.copy()
+    env["PATH"] = str(bindir) + os.pathsep + env.get("PATH", "")
+    try:
+        proc = subprocess.run(
+            [str(python_path), "-c", "import sage.all"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            env=env,
+            timeout=120,
+        )
+    except subprocess.TimeoutExpired:
+        return None, f"sage import timeout in {bindir}"
+    if proc.returncode != 0:
+        return None, f"sage import failed in {bindir}"
+    q_bindir = shlex.quote(str(bindir))
+    q_python = shlex.quote(str(python_path))
+    return f"PATH={q_bindir}:$PATH {q_python}", f"sage python at {python_path}"
+
+
+def native_sage_works(path: str) -> bool:
+    try:
+        proc = subprocess.run(
+            [path, "-v"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            timeout=60,
+        )
+    except subprocess.TimeoutExpired:
+        return False
+    return proc.returncode == 0
+
+
 def docker_image_present(image: str) -> bool:
     docker = shutil.which("docker")
     if not docker:
@@ -181,29 +217,20 @@ def docker_image_present(image: str) -> bool:
     return proc.returncode == 0
 
 
-def sage_works(path: str) -> bool:
-    proc = subprocess.run(
-        [path, "-python", "-c", "import sage.all"],
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-    )
-    return proc.returncode == 0
-
-
 def sage_command(root: Path, job: dict[str, Any]) -> tuple[str | None, str]:
-    native = shutil.which("sage")
-    if native and sage_works(native):
-        return shlex.quote(native), "native sage"
-
     home = Path.home()
-    for candidate in [
-        home / "mamba" / "envs" / "sage" / "bin" / "sage",
-        home / "micromamba" / "envs" / "sage" / "bin" / "sage",
-        home / ".local" / "bin" / "sage",
-        home / "bin" / "sage",
+    for bindir in [
+        home / "mamba" / "envs" / "sage" / "bin",
+        home / "micromamba" / "envs" / "sage" / "bin",
     ]:
-        if candidate.exists() and os.access(candidate, os.X_OK) and sage_works(str(candidate)):
-            return shlex.quote(str(candidate)), f"sage at {candidate}"
+        if bindir.exists():
+            cmd, reason = sage_script_backend_for_bindir(bindir)
+            if cmd:
+                return cmd, reason
+
+    native = shutil.which("sage")
+    if native and native_sage_works(native):
+        return shlex.quote(native), "native sage"
 
     backend = job.get("backend", {})
     if backend.get("allow_docker"):
@@ -220,7 +247,7 @@ def sage_command(root: Path, job: dict[str, Any]) -> tuple[str | None, str]:
         )
         return cmd, f"docker sage ({image})"
 
-    return None, "no native sage"
+    return None, "no sage backend"
 
 
 def state_path(root: Path, job_id: str) -> Path:

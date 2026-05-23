@@ -1,0 +1,116 @@
+{
+  "tool": "qb3_pairing_oracle_preflight",
+  "date": "2026-05-23",
+  "project": "HCT/abc",
+  "q": 3863,
+  "purpose": "Narrow the next AL-pairing job to a Schur-certificate oracle.",
+  "formula": {
+    "block_matrix": "G = [[A,b],[b^T,c]] = C B_AL C^T",
+    "schur_scalar": "s = c - b^T A^-1 b",
+    "q_b": "Q_B(phi) = beta^2 / s",
+    "certificate": "beta != 0, rank(A)=dim(A), s != 0"
+  },
+  "cases": [
+    {
+      "case": "109/raw",
+      "kind": "regression",
+      "source": "_results\\mstar_h3a_pi_to_sage_basis_n109_2026-05-16.json",
+      "q": 3863,
+      "beta_signed": 705,
+      "q_b_signed": 722,
+      "inverse_repair_diagonal_mod_q": 848,
+      "inverse_repair_diagonal_signed": 848,
+      "schur_scalar_mod_q": 41,
+      "schur_scalar_signed": 41,
+      "expected": {
+        "q_b_signed": 722,
+        "schur_scalar_mod_q": 41
+      },
+      "passes": true
+    },
+    {
+      "case": "80224/raw",
+      "kind": "large_preflight",
+      "source": "_results\\mstar_h3a_restline_kernel_quotient_80224_raw_2026-05-17.json",
+      "q": 3863,
+      "quotient_ncols": 10568,
+      "source_block_dim": 10567,
+      "hecke_rows": 10567,
+      "quotient_rank": 10567,
+      "quotient_kernel_dim": 1,
+      "kernel_support_size": 4855,
+      "matrix_entries_projected_hecke": 1623421,
+      "beta_signed": -1,
+      "beta_mod_q": 3862,
+      "source_annihilated": true,
+      "ready_for_al_scalar": true,
+      "dense_no_go": {
+        "G_entries": 111682624,
+        "A_entries": 111661489,
+        "symmetric_pairings_needed_if_full_G": 55846596,
+        "uint16_lower_bound_G_MiB": 213.02,
+        "int64_lower_bound_G_GiB": 0.832,
+        "int64_lower_bound_A_GiB": 0.832,
+        "warning": "A dense inverse is not the primary target.  The next job should emit rank(A), the Schur scalar s, and a failure witness if s=0 or A is singular."
+      },
+      "needed_certificate": {
+        "source_block_rank": 10567,
+        "schur_scalar_mod_q": "nonzero",
+        "q_b_formula": "Q_B = beta^2 / s",
+        "failure_outputs": [
+          "rank(A) if singular",
+          "nullvector for A or G when available",
+          "repair Schur scalar s when computable"
+        ]
+      }
+    },
+    {
+      "case": "80224/anc",
+      "kind": "large_preflight",
+      "source": "_results\\mstar_h3a_restline_kernel_quotient_80224_anc_2026-05-17.json",
+      "q": 3863,
+      "quotient_ncols": 10568,
+      "source_block_dim": 10567,
+      "hecke_rows": 10567,
+      "quotient_rank": 10567,
+      "quotient_kernel_dim": 1,
+      "kernel_support_size": 4855,
+      "matrix_entries_projected_hecke": 0,
+      "beta_signed": -1,
+      "beta_mod_q": 3862,
+      "source_annihilated": true,
+      "ready_for_al_scalar": true,
+      "dense_no_go": {
+        "G_entries": 111682624,
+        "A_entries": 111661489,
+        "symmetric_pairings_needed_if_full_G": 55846596,
+        "uint16_lower_bound_G_MiB": 213.02,
+        "int64_lower_bound_G_GiB": 0.832,
+        "int64_lower_bound_A_GiB": 0.832,
+        "warning": "A dense inverse is not the primary target.  The next job should emit rank(A), the Schur scalar s, and a failure witness if s=0 or A is singular."
+      },
+      "needed_certificate": {
+        "source_block_rank": 10567,
+        "schur_scalar_mod_q": "nonzero",
+        "q_b_formula": "Q_B = beta^2 / s",
+        "failure_outputs": [
+          "rank(A) if singular",
+          "nullvector for A or G when available",
+          "repair Schur scalar s when computable"
+        ]
+      }
+    },
+    {
+      "case": "120336/raw",
+      "kind": "missing_input",
+      "status": "blocked",
+      "note": "No local restline_kernel_quotient JSON yet; rank/order artifacts are not a beta/source-annihilation substitute."
+    },
+    {
+      "case": "240672/raw",
+      "kind": "missing_input",
+      "status": "blocked",
+      "note": "Restline kernel quotient is still running on the Mac; wait for the JSON/MD before Q_B-1/Q_B-2 status."
+    }
+  ]
+}

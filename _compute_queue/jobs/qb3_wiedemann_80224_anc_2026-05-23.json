@@ -1,7 +1,8 @@
 {
   "id": "qb3_wiedemann_80224_anc_2026-05-23",
   "title": "Q_B-3 Wiedemann certificate for 80224/anc",
-  "status": "pending",
+  "status": "paused",
+  "pause_reason": "Loop 350 guard: do not repeat the sign=0 plus_submodule/build_bal_factors rational-kernel path for anc. Resume only after sign=1/finite-field refactor or explicit 64+ GB host decision.",
   "priority": 20,
   "allowed_hosts": [
     "mac-studio",
@@ -40,6 +41,7 @@
   "notes": [
     "Runs after raw succeeded.",
     "Target rank is 10567; sequence length is 21138 per seed.",
-    "Do not start this job on the laptop."
+    "Do not start this job on the laptop.",
+    "Paused after q=5077 raw diagnosis showed the current Sage route spends hours in rational IML nullspace with huge memory footprint."
   ]
 }

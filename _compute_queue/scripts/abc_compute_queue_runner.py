@@ -281,6 +281,10 @@ def dependencies_met(root: Path, job: dict[str, Any]) -> tuple[bool, str]:
 
 
 def job_eligible(root: Path, job: dict[str, Any], jobs: list[dict[str, Any]]) -> tuple[bool, str, dict[str, Any]]:
+    job_status = str(job.get("status", "pending")).lower()
+    if job_status in {"paused", "blocked", "disabled"}:
+        return False, f"job status {job_status}: {job.get('pause_reason') or job.get('block_reason') or 'manual hold'}", {}
+
     aliases = host_aliases()
     allowed = {str(x) for x in job.get("allowed_hosts", [])}
     disallowed = {str(x) for x in job.get("disallowed_hosts", [])}

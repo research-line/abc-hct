@@ -1,7 +1,8 @@
 {
   "id": "qb3_wiedemann_80224_raw_2026-05-23",
   "title": "Q_B-3 Wiedemann certificate for 80224/raw",
-  "status": "pending",
+  "status": "paused",
+  "pause_reason": "Loop 350 guard: current script uses ModularSymbols sign=0 plus_submodule/build_bal_factors, triggering rational IML nullspace with >100 GB peak on 80224. Resume only after sign=1/finite-field refactor or explicit 64+ GB host decision.",
   "priority": 10,
   "allowed_hosts": [
     "mac-studio",
@@ -37,6 +38,7 @@
   "notes": [
     "Starts only after current H3a blockers are gone.",
     "Target rank is 10567; sequence length is 21138 per seed.",
-    "Do not start this job on the laptop."
+    "Do not start this job on the laptop.",
+    "Paused after py-spy/sample diagnosis of q=5077 Mac run: built_free_to_sage is algorithmically expensive, not hung."
   ]
 }

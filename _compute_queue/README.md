@@ -105,10 +105,20 @@ nur 2 vCPU / 8 GB RAM und ist daher eher Kalibrier- oder Fallback-Host.
 
 1. `qb3_wiedemann_80224_raw_2026-05-23.json`
    - Q_B-3 Source-Gram-Rank für `80224/raw`.
-   - Startet erst nach Ende der laufenden H3a-Blocker.
+   - **Pausiert seit Loop 350.**
+   - Grund: die aktuelle Produktionsroute baut `ModularSymbols(..., sign=0)`
+     plus `plus_submodule()`/`build_bal_factors` und landet bei `80224` in
+     einer rationalen IML-Nullspace-Rechnung mit sehr großem Peak-Speicher.
+   - Wieder aktivieren nur nach `sign=1`-/finite-field-Refactor oder nach
+     expliziter Entscheidung für einen Host mit mindestens 64 GB RAM.
 2. `qb3_wiedemann_80224_anc_2026-05-23.json`
    - gleiche Zertifizierung für `80224/anc`.
-   - Wartet zusätzlich auf erfolgreichen raw-Lauf.
+   - **Pausiert aus demselben Grund**; anc darf nicht automatisch dieselbe
+     teure `sign=0`-Route wiederholen.
+
+Der manuell gestartete Mac-Lauf
+`mstar_h3a_qb3_wiedemann_production_remod_q5077_80224_raw_mac_2026-05-24`
+darf weiterlaufen. Die Pausierung betrifft nur neue Queue-Starts.
 
 ## Heartbeat
 

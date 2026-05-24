@@ -5,6 +5,12 @@
 # the sparse pi_N projection from a split-last witness, constructs the sparse
 # bridge to Sage's M^+ basis, and generates scalar Wiedemann sequences from
 # matrix-free matvecs.
+#
+# Loop 350 guardrail: for large levels do not build ModularSymbols over QQ
+# unless explicitly requested.  The old sign=0 + plus_submodule() route over
+# QQ triggers a rational IML/GMP nullspace with very large intermediate
+# integers.  The default route below keeps the sign=1 bridge and the sign=0
+# AL-pairing ambient over F_q.
 
 import argparse
 import hashlib
@@ -255,7 +261,7 @@ def build_t_projection(case_dir, pi_data, q, status, save_status, progress_every
     return projected_rows
 
 
-def build_free_to_sage(case_dir, pi_data, manifest, F, status):
+def build_free_to_sage(case_dir, pi_data, manifest, F, status, module_base_ring):
     N = int(manifest["level"])
     q = int(manifest["q"])
     sign = int(manifest.get("sign", 1))
@@ -280,7 +286,12 @@ def build_free_to_sage(case_dir, pi_data, manifest, F, status):
             rep_to_col[rep_i] = len(rep_to_col)
         mod_map.append((rep_to_col[rep_i], F(scalar)))
 
-    M = ModularSymbols(Gamma0(N), 2, sign=sign)
+    if module_base_ring == "finite":
+        M = ModularSymbols(Gamma0(N), 2, sign=sign, base_ring=F)
+    elif module_base_ring == "rational":
+        M = ModularSymbols(Gamma0(N), 2, sign=sign)
+    else:
+        raise ValueError("unknown module base ring: %s" % module_base_ring)
     sage_dim = int(M.dimension())
     gens_to_basis = M.manin_gens_to_basis()
 
@@ -311,16 +322,82 @@ def build_free_to_sage(case_dir, pi_data, manifest, F, status):
     Fmat = sparse_matrix_from_row_dicts(F, len(rows), sage_dim, rows)
     status.update({
         "phase": "built_free_to_sage",
+        "module_base_ring": str(module_base_ring),
         "sage_dim": int(sage_dim),
         "free_to_sage_nnz": int(Fmat.dict().__len__()),
     })
     return Fmat, sage_dim
 
 
-def build_bal_factors(N, F, status):
-    M0 = ModularSymbols(Gamma0(N), 2, sign=0)
+def build_bal_factors(N, F, status, save_status, bal_mode):
+    if bal_mode == "sign0-finite":
+        save_status({
+            "phase": "building_B_AL_modular_symbols",
+            "bal_mode": bal_mode,
+            "module_base_ring": "finite",
+        })
+        M0 = ModularSymbols(Gamma0(N), 2, sign=0, base_ring=F)
+    elif bal_mode == "sign0-rational":
+        save_status({
+            "phase": "building_B_AL_modular_symbols",
+            "bal_mode": bal_mode,
+            "module_base_ring": "rational",
+        })
+        M0 = ModularSymbols(Gamma0(N), 2, sign=0)
+    elif bal_mode == "sign1-direct":
+        save_status({
+            "phase": "building_B_AL_sign1_direct_probe",
+            "bal_mode": bal_mode,
+            "module_base_ring": "finite",
+        })
+        M1 = ModularSymbols(Gamma0(N), 2, sign=1, base_ring=F)
+        try:
+            E1 = sparse_change_ring(M1._pari_pairing(), F)
+        except Exception as exc:
+            raise RuntimeError(
+                "sign1-direct pairing is unavailable/degenerate in Sage; "
+                "use sign0-finite for the AL-twisted ambient pairing"
+            ) from exc
+        W1 = M1.atkin_lehner_operator(N)
+        try:
+            W1m = W1.matrix()
+        except Exception:
+            W1m = W1
+        WF1 = sparse_change_ring(W1m, F)
+        status.update({
+            "phase": "built_B_AL_factors",
+            "bal_mode": bal_mode,
+            "sign1_dim": int(M1.dimension()),
+            "P_nnz": None,
+            "E_nnz": int(len(E1.dict())),
+            "W_nnz": int(len(WF1.dict())),
+        })
+        return None, E1, WF1
+    else:
+        raise ValueError("unknown B_AL mode: %s" % bal_mode)
+
+    save_status({
+        "phase": "building_B_AL_plus_basis",
+        "bal_mode": bal_mode,
+        "sign0_dim": int(M0.dimension()),
+    })
     P = sparse_change_ring(M0.plus_submodule().basis_matrix(), F)
+    save_status({
+        "phase": "building_B_AL_pairing",
+        "bal_mode": bal_mode,
+        "sign0_dim": int(M0.dimension()),
+        "plus_dim": int(P.nrows()),
+        "P_nnz": int(len(P.dict())),
+    })
     E = sparse_change_ring(M0._pari_pairing(), F)
+    save_status({
+        "phase": "building_B_AL_atkin_lehner",
+        "bal_mode": bal_mode,
+        "sign0_dim": int(M0.dimension()),
+        "plus_dim": int(P.nrows()),
+        "P_nnz": int(len(P.dict())),
+        "E_nnz": int(len(E.dict())),
+    })
     W = M0.atkin_lehner_operator(N)
     try:
         Wm = W.matrix()
@@ -329,6 +406,7 @@ def build_bal_factors(N, F, status):
     WF = sparse_change_ring(Wm, F)
     status.update({
         "phase": "built_B_AL_factors",
+        "bal_mode": bal_mode,
         "sign0_dim": int(M0.dimension()),
         "plus_dim": int(P.nrows()),
         "P_nnz": int(len(P.dict())),
@@ -382,9 +460,9 @@ def run(args):
         max(1, int(args.projection_progress_every)),
     )
     save_status()
-    Fmat, sage_dim = build_free_to_sage(case_dir, pi_data, manifest, F, status)
+    Fmat, sage_dim = build_free_to_sage(case_dir, pi_data, manifest, F, status, args.module_base_ring)
     save_status()
-    P, E, WF = build_bal_factors(N, F, status)
+    P, E, WF = build_bal_factors(N, F, status, save_status, args.bal_mode)
     save_status()
 
     n = int(len(source_rows))
@@ -398,6 +476,8 @@ def run(args):
     })
 
     def bal_apply(x):
+        if P is None:
+            return E * (WF * x)
         return P * (E * (WF * (P.transpose() * x)))
 
     def matvec(v):
@@ -477,6 +557,8 @@ def run(args):
         "level": N,
         "mode": manifest.get("mode"),
         "q": q,
+        "module_base_ring": args.module_base_ring,
+        "bal_mode": args.bal_mode,
         "status": "computed" if not args.max_steps else "partial_max_steps",
         "target_rank": n,
         "quotient_dim": d,
@@ -538,6 +620,23 @@ def parse_args():
     parser.add_argument("--progress-every", type=int, default=100)
     parser.add_argument("--projection-progress-every", type=int, default=1000)
     parser.add_argument("--max-steps", type=int, default=0)
+    parser.add_argument(
+        "--module-base-ring",
+        choices=["finite", "rational"],
+        default="finite",
+        help="Base ring for the sign=1 Sage bridge. Default finite avoids QQ kernel work.",
+    )
+    parser.add_argument(
+        "--bal-mode",
+        choices=["sign0-finite", "sign0-rational", "sign1-direct"],
+        default="sign0-finite",
+        help=(
+            "How to build B_AL. Default sign0-finite keeps the ambient "
+            "AL-twisted pairing over F_q. sign0-rational is legacy/unsafe "
+            "for large levels. sign1-direct is a diagnostic and usually "
+            "fails because the sign=1 pairing is degenerate."
+        ),
+    )
     return parser.parse_args()
 
 

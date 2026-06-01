@@ -19,6 +19,13 @@ Repository policy:
 - Exploratory result notes become repo-eligible only together with the reproducer script they cite.
 - Public release should contain only curated paper files, reproducibility scripts, selected results, and a clean disclosure/status note.
 
+Repository hygiene:
+
+- GitHub Actions runs `abc-hct hygiene` on pushes and pull requests.
+- The workflow performs syntax-only Python compilation for `_scripts/` and `_compute_queue/scripts/`.
+- It also checks that the private-research `.gitignore` still excludes proof notes, handoffs, local state, raw data snapshots, and transient logs.
+- Long calculations remain outside GitHub Actions and must use the project compute queue or a designated remote compute host.
+
 Primary local project path:
 
 ```text

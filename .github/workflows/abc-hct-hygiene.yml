@@ -1,0 +1,77 @@
+name: abc-hct hygiene
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hygiene:
+    name: Syntax and repository policy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Compile Python entry points
+        run: python -m compileall -q _scripts _compute_queue/scripts
+
+      - name: Check private research repository policy
+        shell: python
+        run: |
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          required_ignore_rules = [
+              "BEWEISNOTIZ*.md",
+              "_proof-notes/",
+              "_handoffs/",
+              "_data/",
+              "logs/",
+              "_results/*.log",
+          ]
+          gitignore = Path(".gitignore").read_text(encoding="utf-8")
+          missing = [rule for rule in required_ignore_rules if rule not in gitignore]
+          if missing:
+              print("Missing required .gitignore rules:", ", ".join(missing))
+              sys.exit(1)
+
+          tracked = subprocess.check_output(
+              ["git", "ls-files"],
+              text=True,
+              encoding="utf-8",
+          ).splitlines()
+          forbidden_exact = {
+              "BEWEISNOTIZ.md",
+              "GAPS.md",
+              "TODO.md",
+              "MEMORY.md",
+              "AKTIONSPLAN.md",
+          }
+          forbidden_prefixes = (
+              "_proof-notes/",
+              "_handoffs/",
+              "_data/",
+              "logs/",
+              "_logs/",
+          )
+          violations = [
+              path
+              for path in tracked
+              if Path(path).name in forbidden_exact or path.startswith(forbidden_prefixes)
+          ]
+          if violations:
+              print("Forbidden internal files are tracked:")
+              print("\n".join(violations))
+              sys.exit(1)

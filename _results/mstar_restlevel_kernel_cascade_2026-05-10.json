@@ -1,0 +1,42 @@
+{
+  "date": "2026-05-10",
+  "purpose": "Restlevel mod-3863 determinant/kernel cascade for Reyssat orientations.",
+  "guardrail": "Default levels exclude 240672; manager writes partial JSON after every worker.",
+  "q": 3863,
+  "levels": [
+    60168
+  ],
+  "primes": [
+    5
+  ],
+  "backend": "modsym_gf",
+  "timeout_seconds_per_worker": 120,
+  "summary": {
+    "worker_count": 2,
+    "ok_count": 0,
+    "timeout_count": 2,
+    "error_count": 0,
+    "survivor_count": 0,
+    "survivors": []
+  },
+  "rows": [
+    {
+      "level": 60168,
+      "mode": "raw",
+      "backend": "modsym_gf",
+      "status": "timeout",
+      "timeout_seconds": 120,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "level": 60168,
+      "mode": "anc",
+      "backend": "modsym_gf",
+      "status": "timeout",
+      "timeout_seconds": 120,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    }
+  ]
+}

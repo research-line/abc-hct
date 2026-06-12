@@ -1,0 +1,338 @@
+{
+  "date": "2026-05-15",
+  "status": "raw-normalized ledger v0; anc oldform projection pending",
+  "normalization": {
+    "old_dim_expected_raw": "sigma_0(N_test / N_E) if N_E divides N_test, else 0",
+    "residual_dim": "max(0, qdim_final - old_dim_expected_raw)",
+    "old_dim_deficit": "max(0, old_dim_expected_raw - qdim_final)"
+  },
+  "raw_rows": [
+    {
+      "label": "Reyssat",
+      "triple": "(2, 3^10*109, 23^5)",
+      "N_E": 240672,
+      "N_test": 109,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 0,
+      "old_dim_expected_raw": 0,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "lower-level killed"
+    },
+    {
+      "label": "Reyssat",
+      "triple": "(2, 3^10*109, 23^5)",
+      "N_E": 240672,
+      "N_test": 218,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 0,
+      "old_dim_expected_raw": 0,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "lower-level killed"
+    },
+    {
+      "label": "Reyssat",
+      "triple": "(2, 3^10*109, 23^5)",
+      "N_E": 240672,
+      "N_test": 60168,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 0,
+      "old_dim_expected_raw": 0,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "lower-level killed"
+    },
+    {
+      "label": "Reyssat",
+      "triple": "(2, 3^10*109, 23^5)",
+      "N_E": 240672,
+      "N_test": 80224,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 0,
+      "old_dim_expected_raw": 0,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "lower-level killed"
+    },
+    {
+      "label": "Reyssat",
+      "triple": "(2, 3^10*109, 23^5)",
+      "N_E": 240672,
+      "N_test": 120336,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 0,
+      "old_dim_expected_raw": 0,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "lower-level killed"
+    },
+    {
+      "label": "Reyssat",
+      "triple": "(2, 3^10*109, 23^5)",
+      "N_E": 240672,
+      "N_test": 240672,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 0,
+      "old_dim_expected_raw": 1,
+      "residual_dim": 0,
+      "old_dim_deficit": 1,
+      "status": "conductor-level spike kill"
+    },
+    {
+      "label": "(5,27)",
+      "triple": "(5, 27, 32)",
+      "N_E": 30,
+      "N_test": 30,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 1,
+      "old_dim_expected_raw": 1,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "expected Frey newform"
+    },
+    {
+      "label": "(5,27)",
+      "triple": "(5, 27, 32)",
+      "N_E": 30,
+      "N_test": 60,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 2,
+      "old_dim_expected_raw": 2,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "expected oldforms"
+    },
+    {
+      "label": "(5,27)",
+      "triple": "(5, 27, 32)",
+      "N_E": 30,
+      "N_test": 120,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 3,
+      "old_dim_expected_raw": 3,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "expected oldforms"
+    },
+    {
+      "label": "(5,27)",
+      "triple": "(5, 27, 32)",
+      "N_E": 30,
+      "N_test": 240,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 4,
+      "old_dim_expected_raw": 4,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "expected oldforms"
+    },
+    {
+      "label": "(1,80)",
+      "triple": "(1, 80, 81)",
+      "N_E": 240,
+      "N_test": 30,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 0,
+      "old_dim_expected_raw": 0,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "below conductor killed"
+    },
+    {
+      "label": "(1,80)",
+      "triple": "(1, 80, 81)",
+      "N_E": 240,
+      "N_test": 60,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 0,
+      "old_dim_expected_raw": 0,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "below conductor killed"
+    },
+    {
+      "label": "(1,80)",
+      "triple": "(1, 80, 81)",
+      "N_E": 240,
+      "N_test": 120,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 0,
+      "old_dim_expected_raw": 0,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "below conductor killed"
+    },
+    {
+      "label": "(1,80)",
+      "triple": "(1, 80, 81)",
+      "N_E": 240,
+      "N_test": 240,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 1,
+      "old_dim_expected_raw": 1,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "expected Frey newform"
+    },
+    {
+      "label": "(1,4374)",
+      "triple": "(1, 4374, 4375)",
+      "N_E": 3360,
+      "N_test": 210,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 0,
+      "old_dim_expected_raw": 0,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "below conductor killed"
+    },
+    {
+      "label": "(1,4374)",
+      "triple": "(1, 4374, 4375)",
+      "N_E": 3360,
+      "N_test": 420,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 0,
+      "old_dim_expected_raw": 0,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "below conductor killed"
+    },
+    {
+      "label": "(1,4374)",
+      "triple": "(1, 4374, 4375)",
+      "N_E": 3360,
+      "N_test": 3360,
+      "q": 3863,
+      "mode": "raw",
+      "qdim_final": 1,
+      "old_dim_expected_raw": 1,
+      "residual_dim": 0,
+      "old_dim_deficit": 0,
+      "status": "expected Frey newform"
+    }
+  ],
+  "anc_observations": [
+    {
+      "label": "(5,27)",
+      "N_E": 30,
+      "N_test": 30,
+      "q": 3863,
+      "mode": "anc",
+      "qdim_final": 0,
+      "status": "killed"
+    },
+    {
+      "label": "(5,27)",
+      "N_E": 30,
+      "N_test": 60,
+      "q": 3863,
+      "mode": "anc",
+      "qdim_final": 0,
+      "status": "killed"
+    },
+    {
+      "label": "(5,27)",
+      "N_E": 30,
+      "N_test": 120,
+      "q": 3863,
+      "mode": "anc",
+      "qdim_final": 0,
+      "status": "killed"
+    },
+    {
+      "label": "(5,27)",
+      "N_E": 30,
+      "N_test": 240,
+      "q": 3863,
+      "mode": "anc",
+      "qdim_final": 1,
+      "status": "survivor_candidate"
+    },
+    {
+      "label": "(1,80)",
+      "N_E": 240,
+      "N_test": 30,
+      "q": 3863,
+      "mode": "anc",
+      "qdim_final": 2,
+      "status": "survivor_candidate"
+    },
+    {
+      "label": "(1,80)",
+      "N_E": 240,
+      "N_test": 60,
+      "q": 3863,
+      "mode": "anc",
+      "qdim_final": 3,
+      "status": "survivor_candidate"
+    },
+    {
+      "label": "(1,80)",
+      "N_E": 240,
+      "N_test": 120,
+      "q": 3863,
+      "mode": "anc",
+      "qdim_final": 4,
+      "status": "survivor_candidate"
+    },
+    {
+      "label": "(1,80)",
+      "N_E": 240,
+      "N_test": 240,
+      "q": 3863,
+      "mode": "anc",
+      "qdim_final": 5,
+      "status": "survivor_candidate"
+    },
+    {
+      "label": "(1,4374)",
+      "N_E": 3360,
+      "N_test": 210,
+      "q": 3863,
+      "mode": "anc",
+      "qdim_final": 0,
+      "status": "killed"
+    },
+    {
+      "label": "(1,4374)",
+      "N_E": 3360,
+      "N_test": 420,
+      "q": 3863,
+      "mode": "anc",
+      "qdim_final": 0,
+      "status": "killed"
+    },
+    {
+      "label": "(1,4374)",
+      "N_E": 3360,
+      "N_test": 3360,
+      "q": 3863,
+      "mode": "anc",
+      "qdim_final": 1,
+      "status": "survivor_candidate"
+    }
+  ],
+  "pending": [
+    "Define or compute old_dim_expected_anc via Atkin-Lehner projection.",
+    "Generate this ledger automatically in Metrik-Extractor v2.",
+    "Check Paper B and older notes for obsolete Reyssat conductor wording."
+  ]
+}

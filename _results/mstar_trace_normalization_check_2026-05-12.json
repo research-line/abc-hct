@@ -1,0 +1,95 @@
+{
+  "all_ok": true,
+  "date": "2026-05-12",
+  "model": "y^2 = x(x-a)(x+b)",
+  "rows": [
+    {
+      "a": 2,
+      "ap_by_count": 2,
+      "ap_by_legendre_sum": 2,
+      "b": 6436341,
+      "expected_ap": 2,
+      "mode": "raw",
+      "ok": true,
+      "p": 5,
+      "point_count": 4
+    },
+    {
+      "a": 2,
+      "ap_by_count": 0,
+      "ap_by_legendre_sum": 0,
+      "b": 6436341,
+      "expected_ap": 0,
+      "mode": "raw",
+      "ok": true,
+      "p": 7,
+      "point_count": 8
+    },
+    {
+      "a": 2,
+      "ap_by_count": 0,
+      "ap_by_legendre_sum": 0,
+      "b": 6436341,
+      "expected_ap": 0,
+      "mode": "raw",
+      "ok": true,
+      "p": 11,
+      "point_count": 12
+    },
+    {
+      "a": 2,
+      "ap_by_count": -6,
+      "ap_by_legendre_sum": -6,
+      "b": 6436341,
+      "expected_ap": -6,
+      "mode": "raw",
+      "ok": true,
+      "p": 13,
+      "point_count": 20
+    },
+    {
+      "a": 6436341,
+      "ap_by_count": 2,
+      "ap_by_legendre_sum": 2,
+      "b": 2,
+      "expected_ap": 2,
+      "mode": "anc",
+      "ok": true,
+      "p": 5,
+      "point_count": 4
+    },
+    {
+      "a": 6436341,
+      "ap_by_count": 0,
+      "ap_by_legendre_sum": 0,
+      "b": 2,
+      "expected_ap": 0,
+      "mode": "anc",
+      "ok": true,
+      "p": 7,
+      "point_count": 8
+    },
+    {
+      "a": 6436341,
+      "ap_by_count": 0,
+      "ap_by_legendre_sum": 0,
+      "b": 2,
+      "expected_ap": 0,
+      "mode": "anc",
+      "ok": true,
+      "p": 11,
+      "point_count": 12
+    },
+    {
+      "a": 6436341,
+      "ap_by_count": -6,
+      "ap_by_legendre_sum": -6,
+      "b": 2,
+      "expected_ap": -6,
+      "mode": "anc",
+      "ok": true,
+      "p": 13,
+      "point_count": 20
+    }
+  ]
+}

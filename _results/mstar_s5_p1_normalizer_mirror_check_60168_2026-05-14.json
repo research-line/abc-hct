@@ -1,0 +1,11 @@
+{
+  "tool": "mstar_s5_p1_normalizer_mirror_check",
+  "level": 60168,
+  "checked_divisor_u": 126719,
+  "same_u_hits": 126719,
+  "bad_same_u_mirror_count": 0,
+  "d_axis_p1_count": 384,
+  "bad_d_axis_mirror_count": 0,
+  "bad_examples": [],
+  "seconds_total": 2.8729189180000105
+}

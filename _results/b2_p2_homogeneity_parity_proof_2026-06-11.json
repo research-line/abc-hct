@@ -1,0 +1,84 @@
+{
+  "date": "2026-06-11",
+  "level": 60168,
+  "p_support_density": 0.6669191919191919,
+  "baseline_homog": 0.555724033261912,
+  "S1_parity_transfer": {
+    "fails_maninT": 0,
+    "fails_T5": 0,
+    "total_rows": 31680,
+    "holds": true,
+    "odd_len_hist": {
+      "0": 1,
+      "3": 21106,
+      "4": 12,
+      "5": 28,
+      "6": 10533
+    }
+  },
+  "S2_len2_rows": {
+    "n_rows": 0,
+    "n_homog": 0,
+    "exact": true
+  },
+  "homogeneity_rates": {
+    "mult_1": {
+      "rate": 0.6170672656369044,
+      "n": 177193
+    },
+    "mult_2": {
+      "rate": 0.4039149717082123,
+      "n": 32695
+    },
+    "mult_3": {
+      "rate": 0.03142735527809307,
+      "n": 14096
+    },
+    "mult_4": {
+      "rate": 0.95,
+      "n": 40
+    },
+    "heavy_w_ge_0.5": {
+      "rate": 0.7999080036798528,
+      "n": 4348
+    },
+    "mult_ge2_coherent_heavy": {
+      "rate": 0.8005546568061013,
+      "n": 4327
+    },
+    "mult_ge2_fully_cancelled_G_eq_0": {
+      "rate": 0.0007358351729212656,
+      "n": 14949
+    },
+    "mult_ge2_partial_light": {
+      "rate": 0.37060424605334785,
+      "n": 27555
+    }
+  },
+  "S3_parity_prediction_vs_measured": [
+    {
+      "k": 3,
+      "measured": 0.3333333333333333,
+      "predicted": 0.3845078829339611,
+      "n_pairs": 63318
+    },
+    {
+      "k": 4,
+      "measured": 0.3888888888888889,
+      "predicted": 0.6100807891992086,
+      "n_pairs": 72
+    },
+    {
+      "k": 5,
+      "measured": 0.45714285714285713,
+      "predicted": 0.5372757759465943,
+      "n_pairs": 280
+    },
+    {
+      "k": 6,
+      "measured": 0.4666666666666667,
+      "predicted": 0.5618487542819491,
+      "n_pairs": 157995
+    }
+  ]
+}

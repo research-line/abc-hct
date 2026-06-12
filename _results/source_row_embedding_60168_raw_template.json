@@ -1,0 +1,29 @@
+{
+  "_status": "TEMPLATE — CQ-3w (schwache Source-Inklusion). Alle Embedding-Flags false: erst 0 von 31680 Zeilen als kanonische Relation identifiziert. Pruefen mit _scripts/source_row_embedding_verifier.py. Erwartung: source_embedding_ready=false, source_embedding_level=false, source_presentation_equality=false.",
+  "_schema": "_scripts/source_row_embedding_manifest_schema.json",
+  "meta": {
+    "case": "60168/raw",
+    "q": 3863,
+    "n_source_rows": 31680,
+    "created": "2026-06-01",
+    "campaign": "Source-Sublattice Monotonicity (_proof-notes/source_sublattice_monotonicity_2026-06-01.md)"
+  },
+  "source_rows": {
+    "n_rowhash_bound": 0,
+    "n_identified_canonical": 0,
+    "relation_types": []
+  },
+  "column_basis": {
+    "column_basis_compatible": false,
+    "column_basis_hash": "<<FILL: sha256 der fixierten Spaltenbasis>>"
+  },
+  "labels": {
+    "source_embedding_level": false,
+    "source_presentation_equality": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "embedding_holds_if": "n_rowhash_bound==n_source_rows UND n_identified_canonical==n_source_rows UND column_basis_compatible",
+    "but_not": ["CQ-3s (full equality, fuer exakten Content/H3)", "canonical_level global", "PCAT/FAQS", "abc"]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_status": "TEMPLATE — strukturell gueltiges Presentation-Upgrade-Manifest, aber NOCH KEIN Upgrade. Erzwingt AP-9 (s. _proof-notes/presentation_to_canonicity_bridge_2026-06-01.md). Pruefen mit _scripts/presentation_upgrade_verifier.py. presentation_level wird true erst wenn (0) das LM-Manifest certificate_level=true ist UND (1)+(2)+(3) erfuellt sind. Echte Artefakte liegen auf Mac Studio (h3a_residue_line_witness_60168_raw_2026-05-16/N60168_raw_sign1_splitlast/), Extraktion deferred.",
+  "_schema": "_scripts/presentation_upgrade_schema.json",
+  "meta": {
+    "manifest_id": "PRES-LM-60168",
+    "case": "60168/raw",
+    "created": "2026-06-01",
+    "campaign": "Presentation-to-Canonicity Bridge (_proof-notes/presentation_to_canonicity_bridge_2026-06-01.md)"
+  },
+  "prerequisite": {
+    "certificate_manifest": "_results/lm_60168_raw_template.json",
+    "certificate_level": false
+  },
+  "source_reconstruction": {
+    "source_block_hash": "<<FILL: sha256(A) aus N60168_raw_sign1_splitlast>>",
+    "rowhash_manifest": "<<FILL: Pfad zur Rowhash-Liste aller n=31680 Source-Zeilen>>",
+    "n_rows_required": 31680,
+    "n_rows_covered": 0,
+    "transcript_tree": "<<FILL: Pfad/Hash des kanonischen Trace-Transcripts>>",
+    "reconstructed": false
+  },
+  "column_basis": {
+    "column_basis_hash": "<<FILL: sha256 der fixierten Spaltenbasis>>",
+    "bound": false
+  },
+  "sink_class_verification": [
+    {"stage_id": "<<FILL: T_5_minus_2_batch_11/575>>", "rowhash": "<<FILL>>", "q_roles": [2, 3], "sink_class_ok": false},
+    {"stage_id": "<<FILL: T_7_minus_0_batch_1/1>>",    "rowhash": "<<FILL>>", "q_roles": [2, 5, 31], "sink_class_ok": false}
+  ],
+  "presentation_moves": [
+    {"type": "sink_row_plus_source_relation", "description": "<<FILL: dokumentierter M4-Zug exportierte R_i -> kanonische Trace-Zeile>>", "honest": false}
+  ],
+  "labels": {
+    "certificate_level": false,
+    "presentation_level": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "presentation_holds_if": "prerequisite.certificate_level==true UND source_reconstruction.reconstructed UND alle sink_class_ok UND alle presentation_moves.honest",
+    "but_not": ["canonical-level (Q_E ist der kanonische HCT-Trace-Quotient; S2a/S2b/H3 offen)", "PCAT (log content(P_E) <= eps log N + C_eps)", "FAQS / M*-Transfer", "abc"],
+    "canonical_open": "canonical_level erfordert S2a (A_E funktoriell/Frey-kompatibel) + S2b (R_E kanonische Trace-/Boundary-Zeilen) + H3 (Fitting-Inklusion). Drache D1."
+  }
+}

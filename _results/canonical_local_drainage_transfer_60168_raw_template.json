@@ -1,0 +1,26 @@
+{
+  "_status": "TEMPLATE — lokaler Drainage-Transfer (SRM-1). Alle Inputs false. Pruefen mit _scripts/canonical_local_drainage_transfer_verifier.py. Erwartung: local_transfer_ready_computed=false, canonical_local_drainage_ready=false, pcat_ready=false. (Selbsttest zeigt: drainage_ready oeffnet OHNE source_presentation_equality.)",
+  "_schema": "_scripts/canonical_local_drainage_transfer_schema.json",
+  "meta": {
+    "case": "60168/raw",
+    "primes": [2, 3, 5, 31],
+    "created": "2026-06-01",
+    "campaign": "Canonical Local Drainage Transfer (_proof-notes/source_sublattice_monotonicity_2026-06-01.md)"
+  },
+  "inputs": {
+    "local_certificate_level": false,
+    "source_embedding_level": false,
+    "sink_embedding_level": false,
+    "column_basis_compatible": false
+  },
+  "source_presentation_equality": false,
+  "labels": {
+    "canonical_local_drainage_ready": false,
+    "pcat_ready": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "drainage_ready_if": "local_certificate_level AND source_embedding_level (CQ-3w) AND sink_embedding_level AND column_basis_compatible (source_presentation_equality/CQ-3s NICHT noetig)",
+    "but_not": ["pcat_ready (braucht CQ-3s + H3-Type-Check + uniformes FAQS)", "globales canonical_level", "PCAT/FAQS", "abc"]
+  }
+}

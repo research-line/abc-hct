@@ -1,0 +1,33 @@
+{
+  "tool": "mstar_s5_oriented_twelve_identity_audit",
+  "input_json": "_results\\mstar_s5_109_axis_transition_profile_60168_raw_2026-05-14.json",
+  "level": 60168,
+  "target_count": 192,
+  "transition_record_count": 2304,
+  "good_target_count": 192,
+  "records_per_target_distribution": [
+    {
+      "key": "12",
+      "count": 192
+    }
+  ],
+  "scalar_balance_distribution": [
+    {
+      "key": "+6/-6",
+      "count": 192
+    }
+  ],
+  "expected_per_target": {
+    "base-gcd-v-line:TT:1:exact": 1,
+    "base-gcd-v-line:TT:1:same-u": 1,
+    "base-gcd-v-line:id:-1:other": 2,
+    "even-intermediate:T:-1:other": 2,
+    "even-intermediate:T:1:exact": 1,
+    "even-intermediate:T:1:same-u": 1,
+    "target-109d-axis:TT:-1:other": 2,
+    "target-109d-axis:id:1:exact": 1,
+    "target-109d-axis:id:1:same-u": 1
+  },
+  "bad_targets": [],
+  "seconds_total": 0.013228400028310716
+}

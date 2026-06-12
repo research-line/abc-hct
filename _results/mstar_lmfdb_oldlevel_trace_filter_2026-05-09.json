@@ -1,0 +1,7628 @@
+{
+  "date": "2026-05-09",
+  "source": "LMFDB mf_newforms",
+  "source_note": "Default source is the public LMFDB read-only PostgreSQL mirror; HTTP API kept as optional fallback.",
+  "source_urls": {
+    "api": "https://www.lmfdb.org/api/mf_newforms/",
+    "access_options": "https://www.lmfdb.org/api/options",
+    "sql_host": "devmirror.lmfdb.xyz"
+  },
+  "purpose": "Loop 107 necessary trace filter for Reyssat mod-3863 congruence against oldlevel newform orbits.",
+  "guardrail": "Trace congruence is necessary but not sufficient for coefficient-field prime-ideal congruence.",
+  "q": 3863,
+  "frey_conductor": 240672,
+  "levels": [
+    109,
+    218,
+    327,
+    872,
+    1744,
+    2507,
+    3488,
+    15042,
+    20056,
+    40112,
+    60168,
+    80224,
+    120336
+  ],
+  "tested_primes_requested": [
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    29,
+    31,
+    37,
+    41,
+    43,
+    47,
+    53,
+    59,
+    61,
+    67,
+    71,
+    73,
+    79,
+    83,
+    89,
+    97
+  ],
+  "fetch_errors": [],
+  "source_levels": [
+    {
+      "level": 109,
+      "level_factor": "109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 12,
+      "trivial_newspaces": [
+        {
+          "label": "109.2.a",
+          "dim": 8,
+          "mf_new_dim": 9,
+          "num_forms": 3,
+          "hecke_orbit_dims": [
+            1,
+            3,
+            4
+          ]
+        }
+      ],
+      "trivial_newspace_dim_sum": 8,
+      "trivial_newspace_num_forms": [
+        3
+      ],
+      "trivial_character_orbits": 3,
+      "trivial_character_dim_sum": 8,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 12,
+          "row_count": 3,
+          "elapsed_seconds": 1.870667199997115
+        }
+      ]
+    },
+    {
+      "level": 218,
+      "level_factor": "2 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 17,
+      "trivial_newspaces": [
+        {
+          "label": "218.2.a",
+          "dim": 10,
+          "mf_new_dim": 10,
+          "num_forms": 5,
+          "hecke_orbit_dims": [
+            1,
+            2,
+            2,
+            2,
+            3
+          ]
+        }
+      ],
+      "trivial_newspace_dim_sum": 10,
+      "trivial_newspace_num_forms": [
+        5
+      ],
+      "trivial_character_orbits": 5,
+      "trivial_character_dim_sum": 10,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 17,
+          "row_count": 5,
+          "elapsed_seconds": 1.922754299986991
+        }
+      ]
+    },
+    {
+      "level": 327,
+      "level_factor": "3 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 27,
+      "trivial_newspaces": [
+        {
+          "label": "327.2.a",
+          "dim": 19,
+          "mf_new_dim": 19,
+          "num_forms": 4,
+          "hecke_orbit_dims": [
+            1,
+            3,
+            6,
+            9
+          ]
+        }
+      ],
+      "trivial_newspace_dim_sum": 19,
+      "trivial_newspace_num_forms": [
+        4
+      ],
+      "trivial_character_orbits": 4,
+      "trivial_character_dim_sum": 19,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 27,
+          "row_count": 4,
+          "elapsed_seconds": 1.8370842000003904
+        }
+      ]
+    },
+    {
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 34,
+      "trivial_newspaces": [
+        {
+          "label": "872.2.a",
+          "dim": 27,
+          "mf_new_dim": 27,
+          "num_forms": 6,
+          "hecke_orbit_dims": [
+            1,
+            2,
+            3,
+            5,
+            7,
+            9
+          ]
+        }
+      ],
+      "trivial_newspace_dim_sum": 27,
+      "trivial_newspace_num_forms": [
+        6
+      ],
+      "trivial_character_orbits": 6,
+      "trivial_character_dim_sum": 27,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 34,
+          "row_count": 6,
+          "elapsed_seconds": 1.9090146999951685
+        }
+      ]
+    },
+    {
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 23,
+      "trivial_newspaces": [
+        {
+          "label": "1744.2.a",
+          "dim": 54,
+          "mf_new_dim": 54,
+          "num_forms": 17,
+          "hecke_orbit_dims": [
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            5,
+            7,
+            9
+          ]
+        }
+      ],
+      "trivial_newspace_dim_sum": 54,
+      "trivial_newspace_num_forms": [
+        17
+      ],
+      "trivial_character_orbits": 17,
+      "trivial_character_dim_sum": 54,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 23,
+          "row_count": 17,
+          "elapsed_seconds": 2.220021800007089
+        }
+      ]
+    },
+    {
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 5,
+      "trivial_newspaces": [
+        {
+          "label": "2507.2.a",
+          "dim": 199,
+          "mf_new_dim": 199,
+          "num_forms": 5,
+          "hecke_orbit_dims": [
+            1,
+            41,
+            44,
+            55,
+            58
+          ]
+        }
+      ],
+      "trivial_newspace_dim_sum": 199,
+      "trivial_newspace_num_forms": [
+        5
+      ],
+      "trivial_character_orbits": 5,
+      "trivial_character_dim_sum": 199,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 5,
+          "row_count": 5,
+          "elapsed_seconds": 2.2299611999915214
+        }
+      ]
+    },
+    {
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 10,
+      "trivial_newspaces": [
+        {
+          "label": "3488.2.a",
+          "dim": 108,
+          "mf_new_dim": 108,
+          "num_forms": 10,
+          "hecke_orbit_dims": [
+            1,
+            1,
+            10,
+            11,
+            11,
+            12,
+            14,
+            15,
+            15,
+            18
+          ]
+        }
+      ],
+      "trivial_newspace_dim_sum": 108,
+      "trivial_newspace_num_forms": [
+        10
+      ],
+      "trivial_character_orbits": 10,
+      "trivial_character_dim_sum": 108,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 10,
+          "row_count": 10,
+          "elapsed_seconds": 2.1489020999870263
+        }
+      ]
+    },
+    {
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 28,
+      "trivial_newspaces": [
+        {
+          "label": "15042.2.a",
+          "dim": 397,
+          "mf_new_dim": 397,
+          "num_forms": 28,
+          "hecke_orbit_dims": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            18,
+            18,
+            20,
+            21,
+            21,
+            22,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            27,
+            28,
+            30,
+            32
+          ]
+        }
+      ],
+      "trivial_newspace_dim_sum": 397,
+      "trivial_newspace_num_forms": [
+        28
+      ],
+      "trivial_character_orbits": 28,
+      "trivial_character_dim_sum": 397,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 28,
+          "row_count": 28,
+          "elapsed_seconds": 1.6995334000093862
+        }
+      ]
+    },
+    {
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 9,
+      "trivial_newspaces": [
+        {
+          "label": "20056.2.a",
+          "dim": 594,
+          "mf_new_dim": 594,
+          "num_forms": 9,
+          "hecke_orbit_dims": [
+            1,
+            67,
+            67,
+            71,
+            71,
+            77,
+            77,
+            81,
+            82
+          ]
+        }
+      ],
+      "trivial_newspace_dim_sum": 594,
+      "trivial_newspace_num_forms": [
+        9
+      ],
+      "trivial_character_orbits": 9,
+      "trivial_character_dim_sum": 594,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 9,
+          "row_count": 9,
+          "elapsed_seconds": 1.8590208999958122
+        }
+      ]
+    },
+    {
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 32,
+      "trivial_newspaces": [
+        {
+          "label": "40112.2.a",
+          "dim": 1188,
+          "mf_new_dim": 1188,
+          "num_forms": 32,
+          "hecke_orbit_dims": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            3,
+            4,
+            17,
+            21,
+            24,
+            24,
+            24,
+            25,
+            27,
+            29,
+            41,
+            42,
+            44,
+            46,
+            52,
+            53,
+            55,
+            58,
+            67,
+            67,
+            71,
+            71,
+            77,
+            77,
+            81,
+            82
+          ]
+        }
+      ],
+      "trivial_newspace_dim_sum": 1188,
+      "trivial_newspace_num_forms": [
+        32
+      ],
+      "trivial_character_orbits": 32,
+      "trivial_character_dim_sum": 1188,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 32,
+          "row_count": 32,
+          "elapsed_seconds": 1.8603187000117032
+        }
+      ]
+    },
+    {
+      "level": 60168,
+      "level_factor": "2^3 * 3 * 23 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 0,
+      "trivial_newspaces": [
+        {
+          "label": "60168.2.a",
+          "dim": 1188,
+          "mf_new_dim": 1188,
+          "num_forms": null,
+          "hecke_orbit_dims": null
+        }
+      ],
+      "trivial_newspace_dim_sum": 1188,
+      "trivial_newspace_num_forms": [
+        null
+      ],
+      "trivial_character_orbits": 0,
+      "trivial_character_dim_sum": 0,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 0,
+          "row_count": 0,
+          "elapsed_seconds": 1.626290300002438
+        }
+      ]
+    },
+    {
+      "level": 80224,
+      "level_factor": "2^5 * 23 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 0,
+      "trivial_newspaces": [
+        {
+          "label": "80224.2.a",
+          "dim": 2376,
+          "mf_new_dim": 2376,
+          "num_forms": null,
+          "hecke_orbit_dims": null
+        }
+      ],
+      "trivial_newspace_dim_sum": 2376,
+      "trivial_newspace_num_forms": [
+        null
+      ],
+      "trivial_character_orbits": 0,
+      "trivial_character_dim_sum": 0,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 0,
+          "row_count": 0,
+          "elapsed_seconds": 1.690645000009681
+        }
+      ]
+    },
+    {
+      "level": 120336,
+      "level_factor": "2^4 * 3 * 23 * 109",
+      "data_source": "sql",
+      "total_newform_orbits_returned": 0,
+      "trivial_newspaces": [
+        {
+          "label": "120336.2.a",
+          "dim": 2376,
+          "mf_new_dim": 2376,
+          "num_forms": null,
+          "hecke_orbit_dims": null
+        }
+      ],
+      "trivial_newspace_dim_sum": 2376,
+      "trivial_newspace_num_forms": [
+        null
+      ],
+      "trivial_character_orbits": 0,
+      "trivial_character_dim_sum": 0,
+      "pages": [
+        {
+          "source": "sql_mirror",
+          "query": "mf_newforms where level=:level and weight=2 and char_order=1 and char_conductor=1",
+          "total_weight2_orbits": 0,
+          "row_count": 0,
+          "elapsed_seconds": 1.7802965000009863
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "level_count_requested": 13,
+    "level_count_fetched": 13,
+    "fetch_error_count": 0,
+    "orbit_mode_tests": 238,
+    "survivor_count": 0,
+    "closed_by_trace_filter_levels": [
+      109,
+      218,
+      327,
+      872,
+      1744,
+      2507,
+      3488,
+      15042,
+      20056,
+      40112
+    ],
+    "open_due_to_missing_orbit_data_levels": [
+      60168,
+      80224,
+      120336
+    ],
+    "survivors": [],
+    "by_level": [
+      {
+        "level": 109,
+        "level_factor": "109",
+        "newspace_dim": 8,
+        "orbit_dim_loaded": 8,
+        "coverage": "orbit-traces",
+        "test_count": 6,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 218,
+        "level_factor": "2 * 109",
+        "newspace_dim": 10,
+        "orbit_dim_loaded": 10,
+        "coverage": "orbit-traces",
+        "test_count": 10,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 327,
+        "level_factor": "3 * 109",
+        "newspace_dim": 19,
+        "orbit_dim_loaded": 19,
+        "coverage": "orbit-traces",
+        "test_count": 8,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 872,
+        "level_factor": "2^3 * 109",
+        "newspace_dim": 27,
+        "orbit_dim_loaded": 27,
+        "coverage": "orbit-traces",
+        "test_count": 12,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 1744,
+        "level_factor": "2^4 * 109",
+        "newspace_dim": 54,
+        "orbit_dim_loaded": 54,
+        "coverage": "orbit-traces",
+        "test_count": 34,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 2507,
+        "level_factor": "23 * 109",
+        "newspace_dim": 199,
+        "orbit_dim_loaded": 199,
+        "coverage": "orbit-traces",
+        "test_count": 10,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 3488,
+        "level_factor": "2^5 * 109",
+        "newspace_dim": 108,
+        "orbit_dim_loaded": 108,
+        "coverage": "orbit-traces",
+        "test_count": 20,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 15042,
+        "level_factor": "2 * 3 * 23 * 109",
+        "newspace_dim": 397,
+        "orbit_dim_loaded": 397,
+        "coverage": "orbit-traces",
+        "test_count": 56,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 20056,
+        "level_factor": "2^3 * 23 * 109",
+        "newspace_dim": 594,
+        "orbit_dim_loaded": 594,
+        "coverage": "orbit-traces",
+        "test_count": 18,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 40112,
+        "level_factor": "2^4 * 23 * 109",
+        "newspace_dim": 1188,
+        "orbit_dim_loaded": 1188,
+        "coverage": "orbit-traces",
+        "test_count": 64,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 60168,
+        "level_factor": "2^3 * 3 * 23 * 109",
+        "newspace_dim": 1188,
+        "orbit_dim_loaded": 0,
+        "coverage": "newspace-only",
+        "test_count": 0,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 80224,
+        "level_factor": "2^5 * 23 * 109",
+        "newspace_dim": 2376,
+        "orbit_dim_loaded": 0,
+        "coverage": "newspace-only",
+        "test_count": 0,
+        "survivor_count": 0,
+        "survivors": []
+      },
+      {
+        "level": 120336,
+        "level_factor": "2^4 * 3 * 23 * 109",
+        "newspace_dim": 2376,
+        "orbit_dim_loaded": 0,
+        "coverage": "newspace-only",
+        "test_count": 0,
+        "survivor_count": 0,
+        "survivors": []
+      }
+    ]
+  },
+  "tests": [
+    {
+      "label": "109.2.a.a",
+      "space_label": "109.2.a",
+      "level": 109,
+      "level_factor": "109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "109.2.a.a",
+      "space_label": "109.2.a",
+      "level": 109,
+      "level_factor": "109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "109.2.a.b",
+      "space_label": "109.2.a",
+      "level": 109,
+      "level_factor": "109",
+      "mode": "raw",
+      "dim": 3,
+      "hecke_orbit": 2,
+      "field_poly": [
+        1,
+        -2,
+        -1,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "109.2.a.b",
+      "space_label": "109.2.a",
+      "level": 109,
+      "level_factor": "109",
+      "mode": "anc",
+      "dim": 3,
+      "hecke_orbit": 2,
+      "field_poly": [
+        1,
+        -2,
+        -1,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "109.2.a.c",
+      "space_label": "109.2.a",
+      "level": 109,
+      "level_factor": "109",
+      "mode": "raw",
+      "dim": 4,
+      "hecke_orbit": 3,
+      "field_poly": [
+        3,
+        4,
+        -5,
+        -1,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 8
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "109.2.a.c",
+      "space_label": "109.2.a",
+      "level": 109,
+      "level_factor": "109",
+      "mode": "anc",
+      "dim": 4,
+      "hecke_orbit": 3,
+      "field_poly": [
+        3,
+        4,
+        -5,
+        -1,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 8
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "218.2.a.a",
+      "space_label": "218.2.a",
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "218.2.a.a",
+      "space_label": "218.2.a",
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "218.2.a.b",
+      "space_label": "218.2.a",
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "raw",
+      "dim": 2,
+      "hecke_orbit": 2,
+      "field_poly": [
+        -2,
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 2,
+        "trace_mod_q": 2,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "218.2.a.b",
+      "space_label": "218.2.a",
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "anc",
+      "dim": 2,
+      "hecke_orbit": 2,
+      "field_poly": [
+        -2,
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 2,
+        "trace_mod_q": 2,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "218.2.a.c",
+      "space_label": "218.2.a",
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "raw",
+      "dim": 2,
+      "hecke_orbit": 3,
+      "field_poly": [
+        -3,
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "218.2.a.c",
+      "space_label": "218.2.a",
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "anc",
+      "dim": 2,
+      "hecke_orbit": 3,
+      "field_poly": [
+        -3,
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "218.2.a.d",
+      "space_label": "218.2.a",
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "raw",
+      "dim": 2,
+      "hecke_orbit": 4,
+      "field_poly": [
+        -1,
+        -1,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 2,
+        "trace_mod_q": 2,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "218.2.a.d",
+      "space_label": "218.2.a",
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "anc",
+      "dim": 2,
+      "hecke_orbit": 4,
+      "field_poly": [
+        -1,
+        -1,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 2,
+        "trace_mod_q": 2,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "218.2.a.e",
+      "space_label": "218.2.a",
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "raw",
+      "dim": 3,
+      "hecke_orbit": 5,
+      "field_poly": [
+        -3,
+        -6,
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "218.2.a.e",
+      "space_label": "218.2.a",
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "anc",
+      "dim": 3,
+      "hecke_orbit": 5,
+      "field_poly": [
+        -3,
+        -6,
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "327.2.a.a",
+      "space_label": "327.2.a",
+      "level": 327,
+      "level_factor": "3 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -1,
+        "trace_mod_q": 3862,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "327.2.a.a",
+      "space_label": "327.2.a",
+      "level": 327,
+      "level_factor": "3 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -1,
+        "trace_mod_q": 3862,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "327.2.a.b",
+      "space_label": "327.2.a",
+      "level": 327,
+      "level_factor": "3 * 109",
+      "mode": "raw",
+      "dim": 3,
+      "hecke_orbit": 2,
+      "field_poly": [
+        1,
+        -3,
+        -1,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "327.2.a.b",
+      "space_label": "327.2.a",
+      "level": 327,
+      "level_factor": "3 * 109",
+      "mode": "anc",
+      "dim": 3,
+      "hecke_orbit": 2,
+      "field_poly": [
+        1,
+        -3,
+        -1,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "327.2.a.c",
+      "space_label": "327.2.a",
+      "level": 327,
+      "level_factor": "3 * 109",
+      "mode": "raw",
+      "dim": 6,
+      "hecke_orbit": 3,
+      "field_poly": [
+        -8,
+        -6,
+        15,
+        8,
+        -7,
+        -2,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 5,
+        "trace_mod_q": 5,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 12
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "327.2.a.c",
+      "space_label": "327.2.a",
+      "level": 327,
+      "level_factor": "3 * 109",
+      "mode": "anc",
+      "dim": 6,
+      "hecke_orbit": 3,
+      "field_poly": [
+        -8,
+        -6,
+        15,
+        8,
+        -7,
+        -2,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 5,
+        "trace_mod_q": 5,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 12
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "327.2.a.d",
+      "space_label": "327.2.a",
+      "level": 327,
+      "level_factor": "3 * 109",
+      "mode": "raw",
+      "dim": 9,
+      "hecke_orbit": 4,
+      "field_poly": [
+        -5,
+        9,
+        127,
+        -29,
+        -122,
+        34,
+        35,
+        -11,
+        -3,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 18
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "327.2.a.d",
+      "space_label": "327.2.a",
+      "level": 327,
+      "level_factor": "3 * 109",
+      "mode": "anc",
+      "dim": 9,
+      "hecke_orbit": 4,
+      "field_poly": [
+        -5,
+        9,
+        127,
+        -29,
+        -122,
+        34,
+        35,
+        -11,
+        -3,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 18
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.a",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.a",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.b",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "raw",
+      "dim": 2,
+      "hecke_orbit": 2,
+      "field_poly": [
+        -2,
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.b",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "anc",
+      "dim": 2,
+      "hecke_orbit": 2,
+      "field_poly": [
+        -2,
+        0,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.c",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "raw",
+      "dim": 3,
+      "hecke_orbit": 3,
+      "field_poly": [
+        3,
+        -4,
+        -1,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.c",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "anc",
+      "dim": 3,
+      "hecke_orbit": 3,
+      "field_poly": [
+        3,
+        -4,
+        -1,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.d",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "raw",
+      "dim": 5,
+      "hecke_orbit": 4,
+      "field_poly": [
+        -1,
+        3,
+        5,
+        -4,
+        -2,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 10
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.d",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "anc",
+      "dim": 5,
+      "hecke_orbit": 4,
+      "field_poly": [
+        -1,
+        3,
+        5,
+        -4,
+        -2,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 10
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.e",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "raw",
+      "dim": 7,
+      "hecke_orbit": 5,
+      "field_poly": [
+        -2,
+        -22,
+        -37,
+        16,
+        24,
+        -8,
+        -3,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 14
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.e",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "anc",
+      "dim": 7,
+      "hecke_orbit": 5,
+      "field_poly": [
+        -2,
+        -22,
+        -37,
+        16,
+        24,
+        -8,
+        -3,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 14
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.f",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "raw",
+      "dim": 9,
+      "hecke_orbit": 6,
+      "field_poly": [
+        -1,
+        73,
+        136,
+        -108,
+        -153,
+        54,
+        46,
+        -12,
+        -4,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 7,
+        "trace_mod_q": 7,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 18
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "872.2.a.f",
+      "space_label": "872.2.a",
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "anc",
+      "dim": 9,
+      "hecke_orbit": 6,
+      "field_poly": [
+        -1,
+        73,
+        136,
+        -108,
+        -153,
+        54,
+        46,
+        -12,
+        -4,
+        1
+      ],
+      "trace_count_available": 1000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 7,
+        "trace_mod_q": 7,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 18
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.a",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.a",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.b",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 2,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.b",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 2,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.c",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 3,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.c",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 3,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.d",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 2,
+      "hecke_orbit": 4,
+      "field_poly": [
+        -1,
+        -1,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 2,
+        "trace_mod_q": 2,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.d",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 2,
+      "hecke_orbit": 4,
+      "field_poly": [
+        -1,
+        -1,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 2,
+        "trace_mod_q": 2,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.e",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 2,
+      "hecke_orbit": 5,
+      "field_poly": [
+        -2,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.e",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 2,
+      "hecke_orbit": 5,
+      "field_poly": [
+        -2,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.f",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 2,
+      "hecke_orbit": 6,
+      "field_poly": [
+        -2,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 2,
+        "trace_mod_q": 2,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.f",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 2,
+      "hecke_orbit": 6,
+      "field_poly": [
+        -2,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 2,
+        "trace_mod_q": 2,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.g",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 2,
+      "hecke_orbit": 7,
+      "field_poly": [
+        -3,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.g",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 2,
+      "hecke_orbit": 7,
+      "field_poly": [
+        -3,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.h",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 2,
+      "hecke_orbit": 8,
+      "field_poly": [
+        -2,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 2,
+        "trace_mod_q": 2,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.h",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 2,
+      "hecke_orbit": 8,
+      "field_poly": [
+        -2,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 2,
+        "trace_mod_q": 2,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.i",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 3,
+      "hecke_orbit": 9,
+      "field_poly": [
+        -3,
+        -6,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.i",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 3,
+      "hecke_orbit": 9,
+      "field_poly": [
+        -3,
+        -6,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.j",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 3,
+      "hecke_orbit": 10,
+      "field_poly": [
+        -1,
+        -3,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.j",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 3,
+      "hecke_orbit": 10,
+      "field_poly": [
+        -1,
+        -3,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.k",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 3,
+      "hecke_orbit": 11,
+      "field_poly": [
+        3,
+        -4,
+        -1,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.k",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 3,
+      "hecke_orbit": 11,
+      "field_poly": [
+        3,
+        -4,
+        -1,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.l",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 3,
+      "hecke_orbit": 12,
+      "field_poly": [
+        1,
+        -2,
+        -1,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.l",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 3,
+      "hecke_orbit": 12,
+      "field_poly": [
+        1,
+        -2,
+        -1,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.m",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 4,
+      "hecke_orbit": 13,
+      "field_poly": [
+        3,
+        4,
+        -5,
+        -1,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 8
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.m",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 4,
+      "hecke_orbit": 13,
+      "field_poly": [
+        3,
+        4,
+        -5,
+        -1,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 8
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.n",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 4,
+      "hecke_orbit": 14,
+      "field_poly": [
+        8,
+        -1,
+        -7,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 2,
+      "tested_primes": [
+        5,
+        7
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 7,
+        "trace": -5,
+        "trace_mod_q": 3858,
+        "frey_ap": 0,
+        "dim_times_ap_mod_q": 0
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.n",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 4,
+      "hecke_orbit": 14,
+      "field_poly": [
+        8,
+        -1,
+        -7,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 2,
+      "tested_primes": [
+        5,
+        7
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 7,
+        "trace": -5,
+        "trace_mod_q": 3858,
+        "frey_ap": 0,
+        "dim_times_ap_mod_q": 0
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.o",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 5,
+      "hecke_orbit": 15,
+      "field_poly": [
+        -1,
+        3,
+        5,
+        -4,
+        -2,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 10
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.o",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 5,
+      "hecke_orbit": 15,
+      "field_poly": [
+        -1,
+        3,
+        5,
+        -4,
+        -2,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 10
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.p",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 7,
+      "hecke_orbit": 16,
+      "field_poly": [
+        -2,
+        -22,
+        -37,
+        16,
+        24,
+        -8,
+        -3,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 14
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.p",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 7,
+      "hecke_orbit": 16,
+      "field_poly": [
+        -2,
+        -22,
+        -37,
+        16,
+        24,
+        -8,
+        -3,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 14
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.q",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "dim": 9,
+      "hecke_orbit": 17,
+      "field_poly": [
+        -1,
+        73,
+        136,
+        -108,
+        -153,
+        54,
+        46,
+        -12,
+        -4,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 7,
+        "trace_mod_q": 7,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 18
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "1744.2.a.q",
+      "space_label": "1744.2.a",
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "dim": 9,
+      "hecke_orbit": 17,
+      "field_poly": [
+        -1,
+        73,
+        136,
+        -108,
+        -153,
+        54,
+        46,
+        -12,
+        -4,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 7,
+        "trace_mod_q": 7,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 18
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "2507.2.a.a",
+      "space_label": "2507.2.a",
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "2507.2.a.a",
+      "space_label": "2507.2.a",
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "2507.2.a.b",
+      "space_label": "2507.2.a",
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "raw",
+      "dim": 41,
+      "hecke_orbit": 2,
+      "field_poly": null,
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -23,
+        "trace_mod_q": 3840,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 82
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "2507.2.a.b",
+      "space_label": "2507.2.a",
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "anc",
+      "dim": 41,
+      "hecke_orbit": 2,
+      "field_poly": null,
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -23,
+        "trace_mod_q": 3840,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 82
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "2507.2.a.c",
+      "space_label": "2507.2.a",
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "raw",
+      "dim": 44,
+      "hecke_orbit": 3,
+      "field_poly": null,
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -9,
+        "trace_mod_q": 3854,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 88
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "2507.2.a.c",
+      "space_label": "2507.2.a",
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "anc",
+      "dim": 44,
+      "hecke_orbit": 3,
+      "field_poly": null,
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -9,
+        "trace_mod_q": 3854,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 88
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "2507.2.a.d",
+      "space_label": "2507.2.a",
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "raw",
+      "dim": 55,
+      "hecke_orbit": 4,
+      "field_poly": null,
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 25,
+        "trace_mod_q": 25,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 110
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "2507.2.a.d",
+      "space_label": "2507.2.a",
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "anc",
+      "dim": 55,
+      "hecke_orbit": 4,
+      "field_poly": null,
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 25,
+        "trace_mod_q": 25,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 110
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "2507.2.a.e",
+      "space_label": "2507.2.a",
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "raw",
+      "dim": 58,
+      "hecke_orbit": 5,
+      "field_poly": null,
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 13,
+        "trace_mod_q": 13,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 116
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "2507.2.a.e",
+      "space_label": "2507.2.a",
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "anc",
+      "dim": 58,
+      "hecke_orbit": 5,
+      "field_poly": null,
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 13,
+        "trace_mod_q": 13,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 116
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.a",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.a",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.b",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 2,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.b",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 2,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.c",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "raw",
+      "dim": 10,
+      "hecke_orbit": 3,
+      "field_poly": [
+        -4,
+        0,
+        60,
+        0,
+        -109,
+        0,
+        63,
+        0,
+        -14,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 4,
+        "trace_mod_q": 4,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 20
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.c",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "anc",
+      "dim": 10,
+      "hecke_orbit": 3,
+      "field_poly": [
+        -4,
+        0,
+        60,
+        0,
+        -109,
+        0,
+        63,
+        0,
+        -14,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 4,
+        "trace_mod_q": 4,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 20
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.d",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "raw",
+      "dim": 11,
+      "hecke_orbit": 4,
+      "field_poly": [
+        -47,
+        -238,
+        -231,
+        321,
+        403,
+        -179,
+        -224,
+        59,
+        51,
+        -12,
+        -4,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 5,
+        "trace_mod_q": 5,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 22
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.d",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "anc",
+      "dim": 11,
+      "hecke_orbit": 4,
+      "field_poly": [
+        -47,
+        -238,
+        -231,
+        321,
+        403,
+        -179,
+        -224,
+        59,
+        51,
+        -12,
+        -4,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 5,
+        "trace_mod_q": 5,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 22
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.e",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "raw",
+      "dim": 11,
+      "hecke_orbit": 5,
+      "field_poly": [
+        -47,
+        -238,
+        -231,
+        321,
+        403,
+        -179,
+        -224,
+        59,
+        51,
+        -12,
+        -4,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 5,
+        "trace_mod_q": 5,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 22
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.e",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "anc",
+      "dim": 11,
+      "hecke_orbit": 5,
+      "field_poly": [
+        -47,
+        -238,
+        -231,
+        321,
+        403,
+        -179,
+        -224,
+        59,
+        51,
+        -12,
+        -4,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 5,
+        "trace_mod_q": 5,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 22
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.f",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "raw",
+      "dim": 12,
+      "hecke_orbit": 6,
+      "field_poly": [
+        208,
+        0,
+        -1568,
+        0,
+        2064,
+        0,
+        -1057,
+        0,
+        247,
+        0,
+        -26,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -10,
+        "trace_mod_q": 3853,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 24
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.f",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "anc",
+      "dim": 12,
+      "hecke_orbit": 6,
+      "field_poly": [
+        208,
+        0,
+        -1568,
+        0,
+        2064,
+        0,
+        -1057,
+        0,
+        247,
+        0,
+        -26,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -10,
+        "trace_mod_q": 3853,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 24
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.g",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "raw",
+      "dim": 14,
+      "hecke_orbit": 7,
+      "field_poly": [
+        -116,
+        0,
+        1388,
+        0,
+        -4533,
+        0,
+        4342,
+        0,
+        -1708,
+        0,
+        322,
+        0,
+        -29,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 12,
+        "trace_mod_q": 12,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 28
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.g",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "anc",
+      "dim": 14,
+      "hecke_orbit": 7,
+      "field_poly": [
+        -116,
+        0,
+        1388,
+        0,
+        -4533,
+        0,
+        4342,
+        0,
+        -1708,
+        0,
+        322,
+        0,
+        -29,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 12,
+        "trace_mod_q": 12,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 28
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.h",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "raw",
+      "dim": 15,
+      "hecke_orbit": 8,
+      "field_poly": [
+        64,
+        432,
+        -2128,
+        -7860,
+        5380,
+        12292,
+        -6754,
+        -7087,
+        4147,
+        1650,
+        -1187,
+        -111,
+        152,
+        -9,
+        -7,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -8,
+        "trace_mod_q": 3855,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 30
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.h",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "anc",
+      "dim": 15,
+      "hecke_orbit": 8,
+      "field_poly": [
+        64,
+        432,
+        -2128,
+        -7860,
+        5380,
+        12292,
+        -6754,
+        -7087,
+        4147,
+        1650,
+        -1187,
+        -111,
+        152,
+        -9,
+        -7,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -8,
+        "trace_mod_q": 3855,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 30
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.i",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "raw",
+      "dim": 15,
+      "hecke_orbit": 9,
+      "field_poly": [
+        64,
+        432,
+        -2128,
+        -7860,
+        5380,
+        12292,
+        -6754,
+        -7087,
+        4147,
+        1650,
+        -1187,
+        -111,
+        152,
+        -9,
+        -7,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -8,
+        "trace_mod_q": 3855,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 30
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.i",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "anc",
+      "dim": 15,
+      "hecke_orbit": 9,
+      "field_poly": [
+        64,
+        432,
+        -2128,
+        -7860,
+        5380,
+        12292,
+        -6754,
+        -7087,
+        4147,
+        1650,
+        -1187,
+        -111,
+        152,
+        -9,
+        -7,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -8,
+        "trace_mod_q": 3855,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 30
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.j",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "raw",
+      "dim": 18,
+      "hecke_orbit": 10,
+      "field_poly": [
+        -512,
+        0,
+        21776,
+        0,
+        -72208,
+        0,
+        98916,
+        0,
+        -69889,
+        0,
+        27070,
+        0,
+        -5780,
+        0,
+        678,
+        0,
+        -41,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 36
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "3488.2.a.j",
+      "space_label": "3488.2.a",
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "anc",
+      "dim": 18,
+      "hecke_orbit": 10,
+      "field_poly": [
+        -512,
+        0,
+        21776,
+        0,
+        -72208,
+        0,
+        98916,
+        0,
+        -69889,
+        0,
+        27070,
+        0,
+        -5780,
+        0,
+        678,
+        0,
+        -41,
+        0,
+        1
+      ],
+      "trace_count_available": 3000,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 36
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.a",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.a",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.b",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 2,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.b",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 2,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.ba",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 30,
+      "hecke_orbit": 27,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 13,
+        "trace_mod_q": 13,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 60
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.ba",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 30,
+      "hecke_orbit": 27,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 13,
+        "trace_mod_q": 13,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 60
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.bb",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 32,
+      "hecke_orbit": 28,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 5,
+        "trace_mod_q": 5,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 64
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.bb",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 32,
+      "hecke_orbit": 28,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 5,
+        "trace_mod_q": 5,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 64
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.c",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 3,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.c",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 3,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.d",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 4,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 3,
+      "tested_primes": [
+        5,
+        7,
+        11
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 11,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 0,
+        "dim_times_ap_mod_q": 0
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.d",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 4,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 3,
+      "tested_primes": [
+        5,
+        7,
+        11
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 11,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 0,
+        "dim_times_ap_mod_q": 0
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.e",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 5,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.e",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 5,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.f",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 6,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.f",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 6,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.g",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 7,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.g",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 7,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.h",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 8,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.h",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 8,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.i",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 9,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.i",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 9,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.j",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 10,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.j",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 10,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.k",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 11,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.k",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 11,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -2,
+        "trace_mod_q": 3861,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.l",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 2,
+      "hecke_orbit": 12,
+      "field_poly": [
+        -8,
+        -1,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.l",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 2,
+      "hecke_orbit": 12,
+      "field_poly": [
+        -8,
+        -1,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 4
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.m",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 18,
+      "hecke_orbit": 13,
+      "field_poly": [
+        -303,
+        -4749,
+        -20806,
+        -12023,
+        82298,
+        53594,
+        -164768,
+        -4201,
+        116071,
+        -24479,
+        -36751,
+        12652,
+        5505,
+        -2619,
+        -311,
+        249,
+        -7,
+        -9,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -9,
+        "trace_mod_q": 3854,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 36
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.m",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 18,
+      "hecke_orbit": 13,
+      "field_poly": [
+        -303,
+        -4749,
+        -20806,
+        -12023,
+        82298,
+        53594,
+        -164768,
+        -4201,
+        116071,
+        -24479,
+        -36751,
+        12652,
+        5505,
+        -2619,
+        -311,
+        249,
+        -7,
+        -9,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -9,
+        "trace_mod_q": 3854,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 36
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.n",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 18,
+      "hecke_orbit": 14,
+      "field_poly": [
+        1184,
+        -699,
+        -12798,
+        8469,
+        41221,
+        -36299,
+        -45415,
+        48460,
+        21839,
+        -30063,
+        -4099,
+        9827,
+        -226,
+        -1718,
+        196,
+        149,
+        -25,
+        -5,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -5,
+        "trace_mod_q": 3858,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 36
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.n",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 18,
+      "hecke_orbit": 14,
+      "field_poly": [
+        1184,
+        -699,
+        -12798,
+        8469,
+        41221,
+        -36299,
+        -45415,
+        48460,
+        21839,
+        -30063,
+        -4099,
+        9827,
+        -226,
+        -1718,
+        196,
+        149,
+        -25,
+        -5,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -5,
+        "trace_mod_q": 3858,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 36
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.o",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 20,
+      "hecke_orbit": 15,
+      "field_poly": [
+        839,
+        -2021,
+        -37323,
+        -37499,
+        165066,
+        146037,
+        -318834,
+        -192034,
+        317889,
+        115330,
+        -168627,
+        -37572,
+        50287,
+        7043,
+        -8711,
+        -756,
+        868,
+        43,
+        -46,
+        -1,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -1,
+        "trace_mod_q": 3862,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 40
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.o",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 20,
+      "hecke_orbit": 15,
+      "field_poly": [
+        839,
+        -2021,
+        -37323,
+        -37499,
+        165066,
+        146037,
+        -318834,
+        -192034,
+        317889,
+        115330,
+        -168627,
+        -37572,
+        50287,
+        7043,
+        -8711,
+        -756,
+        868,
+        43,
+        -46,
+        -1,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -1,
+        "trace_mod_q": 3862,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 40
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.p",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 21,
+      "hecke_orbit": 16,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 42
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.p",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 21,
+      "hecke_orbit": 16,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 42
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.q",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 21,
+      "hecke_orbit": 17,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -1,
+        "trace_mod_q": 3862,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 42
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.q",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 21,
+      "hecke_orbit": 17,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -1,
+        "trace_mod_q": 3862,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 42
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.r",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 22,
+      "hecke_orbit": 18,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 44
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.r",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 22,
+      "hecke_orbit": 18,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 44
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.s",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 22,
+      "hecke_orbit": 19,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 44
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.s",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 22,
+      "hecke_orbit": 19,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 3,
+        "trace_mod_q": 3,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 44
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.t",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 23,
+      "hecke_orbit": 20,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -10,
+        "trace_mod_q": 3853,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 46
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.t",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 23,
+      "hecke_orbit": 20,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -10,
+        "trace_mod_q": 3853,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 46
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.u",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 24,
+      "hecke_orbit": 21,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -1,
+        "trace_mod_q": 3862,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 48
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.u",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 24,
+      "hecke_orbit": 21,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -1,
+        "trace_mod_q": 3862,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 48
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.v",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 25,
+      "hecke_orbit": 22,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 15,
+        "trace_mod_q": 15,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 50
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.v",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 25,
+      "hecke_orbit": 22,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 15,
+        "trace_mod_q": 15,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 50
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.w",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 26,
+      "hecke_orbit": 23,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -1,
+        "trace_mod_q": 3862,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 52
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.w",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 26,
+      "hecke_orbit": 23,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -1,
+        "trace_mod_q": 3862,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 52
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.x",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 27,
+      "hecke_orbit": 24,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 54
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.x",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 27,
+      "hecke_orbit": 24,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 54
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.y",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 27,
+      "hecke_orbit": 25,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 8,
+        "trace_mod_q": 8,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 54
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.y",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 27,
+      "hecke_orbit": 25,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 8,
+        "trace_mod_q": 8,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 54
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.z",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "raw",
+      "dim": 28,
+      "hecke_orbit": 26,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 56
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "15042.2.a.z",
+      "space_label": "15042.2.a",
+      "level": 15042,
+      "level_factor": "2 * 3 * 23 * 109",
+      "mode": "anc",
+      "dim": 28,
+      "hecke_orbit": 26,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 56
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.a",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.a",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.b",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "raw",
+      "dim": 67,
+      "hecke_orbit": 2,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 134
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.b",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "anc",
+      "dim": 67,
+      "hecke_orbit": 2,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 134
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.c",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "raw",
+      "dim": 67,
+      "hecke_orbit": 3,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -12,
+        "trace_mod_q": 3851,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 134
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.c",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "anc",
+      "dim": 67,
+      "hecke_orbit": 3,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -12,
+        "trace_mod_q": 3851,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 134
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.d",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "raw",
+      "dim": 71,
+      "hecke_orbit": 4,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 15,
+        "trace_mod_q": 15,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 142
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.d",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "anc",
+      "dim": 71,
+      "hecke_orbit": 4,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 15,
+        "trace_mod_q": 15,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 142
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.e",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "raw",
+      "dim": 71,
+      "hecke_orbit": 5,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 142
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.e",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "anc",
+      "dim": 71,
+      "hecke_orbit": 5,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 142
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.f",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "raw",
+      "dim": 77,
+      "hecke_orbit": 6,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -14,
+        "trace_mod_q": 3849,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 154
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.f",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "anc",
+      "dim": 77,
+      "hecke_orbit": 6,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -14,
+        "trace_mod_q": 3849,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 154
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.g",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "raw",
+      "dim": 77,
+      "hecke_orbit": 7,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 154
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.g",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "anc",
+      "dim": 77,
+      "hecke_orbit": 7,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 154
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.h",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "raw",
+      "dim": 81,
+      "hecke_orbit": 8,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 9,
+        "trace_mod_q": 9,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 162
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.h",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "anc",
+      "dim": 81,
+      "hecke_orbit": 8,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 9,
+        "trace_mod_q": 9,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 162
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.i",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "raw",
+      "dim": 82,
+      "hecke_orbit": 9,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 11,
+        "trace_mod_q": 11,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 164
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "20056.2.a.i",
+      "space_label": "20056.2.a",
+      "level": 20056,
+      "level_factor": "2^3 * 23 * 109",
+      "mode": "anc",
+      "dim": 82,
+      "hecke_orbit": 9,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 11,
+        "trace_mod_q": 11,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 164
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.a",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.a",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 1,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.b",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 2,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.b",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 2,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.ba",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 71,
+      "hecke_orbit": 27,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 142
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.ba",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 71,
+      "hecke_orbit": 27,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 1,
+        "trace_mod_q": 1,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 142
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.bb",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 71,
+      "hecke_orbit": 28,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 15,
+        "trace_mod_q": 15,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 142
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.bb",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 71,
+      "hecke_orbit": 28,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 15,
+        "trace_mod_q": 15,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 142
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.bc",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 77,
+      "hecke_orbit": 29,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 154
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.bc",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 77,
+      "hecke_orbit": 29,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -6,
+        "trace_mod_q": 3857,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 154
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.bd",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 77,
+      "hecke_orbit": 30,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -14,
+        "trace_mod_q": 3849,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 154
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.bd",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 77,
+      "hecke_orbit": 30,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -14,
+        "trace_mod_q": 3849,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 154
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.be",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 81,
+      "hecke_orbit": 31,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 9,
+        "trace_mod_q": 9,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 162
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.be",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 81,
+      "hecke_orbit": 31,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 9,
+        "trace_mod_q": 9,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 162
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.bf",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 82,
+      "hecke_orbit": 32,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 11,
+        "trace_mod_q": 11,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 164
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.bf",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 82,
+      "hecke_orbit": 32,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 11,
+        "trace_mod_q": 11,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 164
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.c",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 3,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.c",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 3,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.d",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 4,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.d",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 4,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 0,
+        "trace_mod_q": 0,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.e",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 5,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 4,
+        "trace_mod_q": 4,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.e",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 5,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 4,
+        "trace_mod_q": 4,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.f",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 1,
+      "hecke_orbit": 6,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.f",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 1,
+      "hecke_orbit": 6,
+      "field_poly": [
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 2
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.g",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 3,
+      "hecke_orbit": 7,
+      "field_poly": [
+        -1,
+        -3,
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.g",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 3,
+      "hecke_orbit": 7,
+      "field_poly": [
+        -1,
+        -3,
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -3,
+        "trace_mod_q": 3860,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 6
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.h",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 4,
+      "hecke_orbit": 8,
+      "field_poly": [
+        1,
+        -1,
+        -4,
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -7,
+        "trace_mod_q": 3856,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 8
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.h",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 4,
+      "hecke_orbit": 8,
+      "field_poly": [
+        1,
+        -1,
+        -4,
+        0,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -7,
+        "trace_mod_q": 3856,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 8
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.i",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 17,
+      "hecke_orbit": 9,
+      "field_poly": [
+        -163,
+        -130,
+        2367,
+        2597,
+        -8784,
+        -9380,
+        11654,
+        10425,
+        -8559,
+        -5205,
+        3792,
+        1220,
+        -976,
+        -100,
+        131,
+        -6,
+        -7,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 4,
+        "trace_mod_q": 4,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 34
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.i",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 17,
+      "hecke_orbit": 9,
+      "field_poly": [
+        -163,
+        -130,
+        2367,
+        2597,
+        -8784,
+        -9380,
+        11654,
+        10425,
+        -8559,
+        -5205,
+        3792,
+        1220,
+        -976,
+        -100,
+        131,
+        -6,
+        -7,
+        1
+      ],
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 4,
+        "trace_mod_q": 4,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 34
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.j",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 21,
+      "hecke_orbit": 10,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -13,
+        "trace_mod_q": 3850,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 42
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.j",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 21,
+      "hecke_orbit": 10,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -13,
+        "trace_mod_q": 3850,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 42
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.k",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 24,
+      "hecke_orbit": 11,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 13,
+        "trace_mod_q": 13,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 48
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.k",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 24,
+      "hecke_orbit": 11,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 13,
+        "trace_mod_q": 13,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 48
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.l",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 24,
+      "hecke_orbit": 12,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -7,
+        "trace_mod_q": 3856,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 48
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.l",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 24,
+      "hecke_orbit": 12,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -7,
+        "trace_mod_q": 3856,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 48
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.m",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 24,
+      "hecke_orbit": 13,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -13,
+        "trace_mod_q": 3850,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 48
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.m",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 24,
+      "hecke_orbit": 13,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -13,
+        "trace_mod_q": 3850,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 48
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.n",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 25,
+      "hecke_orbit": 14,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 6,
+        "trace_mod_q": 6,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 50
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.n",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 25,
+      "hecke_orbit": 14,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 6,
+        "trace_mod_q": 6,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 50
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.o",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 27,
+      "hecke_orbit": 15,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 9,
+        "trace_mod_q": 9,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 54
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.o",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 27,
+      "hecke_orbit": 15,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 9,
+        "trace_mod_q": 9,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 54
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.p",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 29,
+      "hecke_orbit": 16,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 4,
+        "trace_mod_q": 4,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 58
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.p",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 29,
+      "hecke_orbit": 16,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 4,
+        "trace_mod_q": 4,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 58
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.q",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 41,
+      "hecke_orbit": 17,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -23,
+        "trace_mod_q": 3840,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 82
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.q",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 41,
+      "hecke_orbit": 17,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -23,
+        "trace_mod_q": 3840,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 82
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.r",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 42,
+      "hecke_orbit": 18,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -8,
+        "trace_mod_q": 3855,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 84
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.r",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 42,
+      "hecke_orbit": 18,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -8,
+        "trace_mod_q": 3855,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 84
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.s",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 44,
+      "hecke_orbit": 19,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -9,
+        "trace_mod_q": 3854,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 88
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.s",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 44,
+      "hecke_orbit": 19,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -9,
+        "trace_mod_q": 3854,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 88
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.t",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 46,
+      "hecke_orbit": 20,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 7,
+        "trace_mod_q": 7,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 92
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.t",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 46,
+      "hecke_orbit": 20,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 7,
+        "trace_mod_q": 7,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 92
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.u",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 52,
+      "hecke_orbit": 21,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -5,
+        "trace_mod_q": 3858,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 104
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.u",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 52,
+      "hecke_orbit": 21,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -5,
+        "trace_mod_q": 3858,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 104
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.v",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 53,
+      "hecke_orbit": 22,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 9,
+        "trace_mod_q": 9,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 106
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.v",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 53,
+      "hecke_orbit": 22,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 9,
+        "trace_mod_q": 9,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 106
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.w",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 55,
+      "hecke_orbit": 23,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 25,
+        "trace_mod_q": 25,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 110
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.w",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 55,
+      "hecke_orbit": 23,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 25,
+        "trace_mod_q": 25,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 110
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.x",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 58,
+      "hecke_orbit": 24,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 13,
+        "trace_mod_q": 13,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 116
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.x",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 58,
+      "hecke_orbit": 24,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": 13,
+        "trace_mod_q": 13,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 116
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.y",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 67,
+      "hecke_orbit": 25,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -12,
+        "trace_mod_q": 3851,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 134
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.y",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 67,
+      "hecke_orbit": 25,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -12,
+        "trace_mod_q": 3851,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 134
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.z",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "raw",
+      "dim": 67,
+      "hecke_orbit": 26,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 134
+      },
+      "passes_trace_filter": false
+    },
+    {
+      "label": "40112.2.a.z",
+      "space_label": "40112.2.a",
+      "level": 40112,
+      "level_factor": "2^4 * 23 * 109",
+      "mode": "anc",
+      "dim": 67,
+      "hecke_orbit": 26,
+      "field_poly": null,
+      "trace_count_available": 100,
+      "tested_prime_count": 1,
+      "tested_primes": [
+        5
+      ],
+      "skipped_primes": [],
+      "missing_primes": [],
+      "first_failure": {
+        "p": 5,
+        "trace": -4,
+        "trace_mod_q": 3859,
+        "frey_ap": 2,
+        "dim_times_ap_mod_q": 134
+      },
+      "passes_trace_filter": false
+    }
+  ]
+}

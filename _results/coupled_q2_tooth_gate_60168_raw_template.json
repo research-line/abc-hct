@@ -1,0 +1,39 @@
+{
+  "_status": "TEMPLATE — Paarungs-Evidenz REAL gebunden (saturates=true, [[1,1],[1,0]]), aber alle readiness-Inputs false. Pruefen mit _scripts/coupled_q2_tooth_gate_verifier.py. Erwartung: sink_ready_computed=false, sink_canonical_ready=false, canonical_level=false.",
+  "_schema": "_scripts/coupled_q2_tooth_gate_schema.json",
+  "meta": {
+    "case": "60168/raw",
+    "q": 2,
+    "created": "2026-06-01",
+    "campaign": "Coupled q=2 Canonical-Tooth (_proof-notes/coupled_q2_canonical_tooth_contract_2026-06-01.md)"
+  },
+  "repair_rows": [
+    {"sink": "t5", "row_id": "T_5_minus_2_batch_11/575", "tre_claim": "_results/trace_row_embedding_60168_raw_t5_partial.json"},
+    {"sink": "t7", "row_id": "T_7_minus_0_batch_1/1", "tre_claim": "_results/trace_row_embedding_60168_raw_t7_partial.json"}
+  ],
+  "inputs": {
+    "t5_tre": false,
+    "t7_tre": false,
+    "psc2_certificate_level": false
+  },
+  "pairing_evidence": {
+    "witness": "_results/mstar_s2_source_cokernel_pairing_60168_raw_q2_2026-05-15.json",
+    "source_defect_dim": 2,
+    "right_kernel_dim": 2,
+    "pairing_rank": 2,
+    "pairing_matrix": [[1, 1], [1, 0]],
+    "saturates": true
+  },
+  "source_canonicality_ref": {
+    "sc_claim": "_results/source_canonicality_60168_raw_template.json",
+    "source_canonicality": false
+  },
+  "labels": {
+    "sink_canonical_ready": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "sink_ready_if": "t5_tre AND t7_tre AND psc2_certificate_level",
+    "but_not": ["canonical_level (braucht zusaetzlich Source-Canonicality CQ-3 + Gesamt-Gate CQ-4)", "uniformes Smith/Fitting-Budget", "FAQS", "PCAT", "abc"]
+  }
+}

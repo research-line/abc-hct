@@ -1,0 +1,10 @@
+{
+  "date": "2026-06-11",
+  "s_r_distribution": {
+    "T5|has2|s=+1": 5283,
+    "T5|pure1|s=+1": 8,
+    "maninT|pure1|s=+1": 21104
+  },
+  "vt2_incidence_by_entry_parity": {},
+  "s_neg_pure1_examples": []
+}

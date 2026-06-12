@@ -1,0 +1,45 @@
+{
+  "id": "hecke_cremona_240672_raw_2026-06-05",
+  "title": "N=240672 Hecke quotient with cremona family (Gap B gate re-run)",
+  "status": "queued",
+  "priority": 10,
+  "allowed_hosts": [
+    "mac-studio"
+  ],
+  "disallowed_hosts": [
+    "ASUS-GEI"
+  ],
+  "depends_on_success": [],
+  "defer_while_process_regex": [
+    "mstar_h3a_qb3_wiedemann_production_finite_pairing.sage"
+  ],
+  "resource_policy": {
+    "min_free_mem_gb": 8.0,
+    "max_load_1min": 6.0
+  },
+  "backend": {
+    "type": "sage",
+    "allow_docker": false
+  },
+  "command": "{sage} _scripts/mstar_nomagma_sparse_hecke_quotient.py --backend sage --levels 240672 --modes raw --primes 3 5 7 11 13 --q 3863 --raw-a 2 --raw-b 6 --sign 1 --hecke-family cremona --rank-engine quotient-numpy-dense --hecke-batch-size 1000 --max-hecke-batches-per-prime 96 --hecke-row-order natural --pivot-strategy max --no-stop-on-zero --progress --out-json _results/hecke_cremona_240672_raw_2026-06-05.json --out-md _results/hecke_cremona_240672_raw_2026-06-05.md --rc3-source-witness-dir _results/rc3c_cremona_witness_240672_raw_q3863_2026-06-05",
+  "expected_outputs": [
+    "_results/hecke_cremona_240672_raw_2026-06-05.json",
+    "_results/hecke_cremona_240672_raw_2026-06-05.md"
+  ],
+  "success_json": {
+    "path": "_results/hecke_cremona_240672_raw_2026-06-05.json",
+    "field": "manual_check_required",
+    "equals": true
+  },
+  "notes": [
+    "CRITICAL: Re-Run von N=240672 mit korrekter hecke_family='cremona'.",
+    "Vorherige Runs nutzten 'standard', was falsche Hecke-Operatoren erzeugt (syms.apply()-Inkompatibilität).",
+    "Bug diagnostiziert und reproduziert: N=192 standard→qdim=0, cremona→qdim=1.",
+    "PRIME-FIX (2026-06-05): T_3 hinzugefügt! 240672.c (Twist durch χ_{-1}) hat identische Eigenvalues bei {5,7,11,13} wie 240672.g (Frey). Nur a_3 trennt sie: a_3(c)=-1, a_3(g)=+1. Ohne T_3 wäre qdim=2, nicht 1.",
+    "Erwartetes Ergebnis: qdim=1 (mit 5 Primzahlen {3,5,7,11,13} separiert T_3 den Twist-Partner).",
+    "Geschätzte Laufzeit: 35-65 Stunden (cremona, 5 statt 4 Primzahlen, ~20% Mehraufwand für T_3).",
+    "max-hecke-batches-per-prime=96 (doppelt so viel wie der 48-Batch standard-Run, als Sicherheitsmarge).",
+    "Defer: Nicht gleichzeitig mit Wiedemann laufen (RAM).",
+    "RC3c-Witness-Dir für spätere Reproduzierbarkeit."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "mdet_1b_snf_exponents_60168_2026-06-12",
+  "title": "M-DET 1b: Elementarteiler-Exponenten 60168 (|D(W)| exakt)",
+  "status": "queued",
+  "priority": 10,
+  "allowed_hosts": [
+    "mac-studio"
+  ],
+  "disallowed_hosts": [
+    "ASUS-GEI"
+  ],
+  "depends_on_success": [],
+  "defer_while_process_regex": [],
+  "resource_policy": {
+    "min_free_mem_gb": 8.0,
+    "max_load_1min": 6.0
+  },
+  "backend": {
+    "type": "sage",
+    "allow_docker": false
+  },
+  "command": "{sage} _scripts/mdet_1b_snf_exponents_60168.py",
+  "expected_runtime_hours": "0.5-2 (4 GF(p)-Kernel + ~10-40 sparse Solves, 31680^2, nnz 137k)",
+  "notes": "Folgejob zu M-DET 1a (Drop-Primes {2: Defekt 2, 3: 1, 5: 1, 31: 1}). Bestimmt v_p(det) EXAKT via Kern-Filtration L_k mit Korrekturspalten aus Obstruktionen frueherer Stufen; jede Lift-Stufe Z-exakt verifiziert. (Naive Leiter pro Basisvektor waere bei p=2/Defekt 2 falsch: Gegenbeispiel diag(2,4).) Ergebnis |D(W)| = 2^a*3^b*5^c*31^d fuer Satz B, MG_conditional_single_curve_theorem_2026-06-12.md Par. 7. Kann parallel zu p2_dimer laufen (moderater RAM)."
+}

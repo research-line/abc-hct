@@ -1,0 +1,40 @@
+{
+  "_status": "VOLLSTAENDIGES 60168/raw-Rowhash-Integritaetsmanifest — BEIDE Zeilen (T5, T7) mit realer Sparse-Zeile; der Verifier rechnet beide Hashes nach. Erwartung: all_rows_available=true, all_rowhashes_bound=true. (Korrektur zur Annahme 'T5 wartet noch': die T5-Sparse-Zeile ist seit 2026-06-01 extrahiert und bindet.) SCOPE: nur Rowhash-Identitaet, NICHT TRE/canonical/abc. Pruefen mit _scripts/rowhash_line_verifier.py.",
+  "_schema": "_scripts/rowhash_integrity_manifest_schema.json",
+  "meta": {
+    "case": "60168/raw",
+    "q": 3863,
+    "created": "2026-06-01",
+    "generator_ref": "_scripts/mstar_h3a_restline_minikill.py:156-164 (canonical_row/row_hash)"
+  },
+  "serialization": {
+    "scheme": "sha256( f'{stage}\\t{stage_row_index}\\t{col:val,...}\\n' ), val mod q, sortiert, Nullen raus",
+    "source": "canonical_row(row,q) + row_hash(stage,idx,row,q) aus mstar_h3a_restline_minikill.py"
+  },
+  "entries": [
+    {
+      "sink": "t7",
+      "row_id": "T_7_minus_0_batch_1/1",
+      "stage": "T_7_minus_0_batch_1",
+      "stage_row_index": 1,
+      "expected_rowhash": "a7c9b47d334f80801465ad60f61304c2e9ff7f4991419087c25105b801bbdabf",
+      "sparse_row": [[0, 2], [1, 3862], [2, 3862], [3, 3862], [4, 3862], [5, 3862]]
+    },
+    {
+      "sink": "t5",
+      "row_id": "T_5_minus_2_batch_11/575",
+      "stage": "T_5_minus_2_batch_11",
+      "stage_row_index": 575,
+      "expected_rowhash": "2578c0ce429aef9be25542091120652f1809745705c80d5053aea547c898e3f5",
+      "sparse_row": [[7037, 3862], [7038, 1], [7039, 3862], [7040, 3862], [7041, 3862], [10015, 2], [22583, 3862]]
+    }
+  ],
+  "aggregate": {
+    "all_rows_available": true,
+    "all_rowhashes_bound": true
+  },
+  "scope_note": {
+    "proves": "Artefaktidentitaet: jede exportierte Zeile ist wirklich diese sparse row (rowhash real nachgerechnet).",
+    "does_not_prove": ["TRE (kanonisch T_ell - a_ell(E) in Q_E)", "canonical_level", "PSC2-certificate mit echtem A,R,K", "PCAT/FAQS", "abc"]
+  }
+}

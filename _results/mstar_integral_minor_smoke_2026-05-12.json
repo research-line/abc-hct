@@ -1,0 +1,103 @@
+{
+  "tool": "mstar_integral_minor_smoke",
+  "root": "_results\\rc3d_rowhash_source_witness_smoke_2026-05-12",
+  "max_n": 120,
+  "results": [
+    {
+      "case": "N109_anc_sign1",
+      "level": 109,
+      "mode": "anc",
+      "sign": 1,
+      "q": 3863,
+      "ncols": 27,
+      "source_rows": 27,
+      "status": "ok",
+      "determinant": "107856",
+      "det_abs_bits": 17,
+      "det_divisible_by_q": false,
+      "factorization": {
+        "2": 4,
+        "3": 2,
+        "7": 1,
+        "107": 1
+      },
+      "exceptional_primes": [
+        2,
+        3,
+        7,
+        107
+      ]
+    },
+    {
+      "case": "N109_raw_sign1",
+      "level": 109,
+      "mode": "raw",
+      "sign": 1,
+      "q": 3863,
+      "ncols": 27,
+      "source_rows": 27,
+      "status": "ok",
+      "determinant": "107856",
+      "det_abs_bits": 17,
+      "det_divisible_by_q": false,
+      "factorization": {
+        "2": 4,
+        "3": 2,
+        "7": 1,
+        "107": 1
+      },
+      "exceptional_primes": [
+        2,
+        3,
+        7,
+        107
+      ]
+    },
+    {
+      "case": "N218_anc_sign1",
+      "level": 218,
+      "mode": "anc",
+      "sign": 1,
+      "q": 3863,
+      "ncols": 83,
+      "source_rows": 83,
+      "status": "ok",
+      "determinant": "-1669104553261328",
+      "det_abs_bits": 51,
+      "det_divisible_by_q": false,
+      "factorization": {
+        "2": 4,
+        "2081": 1,
+        "50129281393": 1
+      },
+      "exceptional_primes": [
+        2,
+        2081,
+        50129281393
+      ]
+    },
+    {
+      "case": "N218_raw_sign1",
+      "level": 218,
+      "mode": "raw",
+      "sign": 1,
+      "q": 3863,
+      "ncols": 83,
+      "source_rows": 83,
+      "status": "ok",
+      "determinant": "-1669104553261328",
+      "det_abs_bits": 51,
+      "det_divisible_by_q": false,
+      "factorization": {
+        "2": 4,
+        "2081": 1,
+        "50129281393": 1
+      },
+      "exceptional_primes": [
+        2,
+        2081,
+        50129281393
+      ]
+    }
+  ]
+}

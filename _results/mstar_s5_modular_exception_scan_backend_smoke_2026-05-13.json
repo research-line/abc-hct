@@ -1,0 +1,121 @@
+{
+  "tool": "mstar_s5_modular_exception_scan",
+  "description": "modular rank scan for S5 exception-prime recursion",
+  "primes": [
+    2,
+    3,
+    5
+  ],
+  "pivot_strategy": "max",
+  "rank_engine": "sparse-order",
+  "results": [
+    {
+      "case": "N109_raw_sign1",
+      "path": "_results\\rc3d_rowhash_source_witness_smoke_2026-05-12\\N109_raw_sign1",
+      "q": 3863,
+      "ncols": 27,
+      "source_rows": 27,
+      "square": true,
+      "status": "ok",
+      "pivot_strategy": "max",
+      "rank_engine": "sparse-order",
+      "prime_results": [
+        {
+          "prime": 2,
+          "rank": 25,
+          "ncols": 27,
+          "full_rank": false,
+          "rows_seen": 27,
+          "seconds": 0.00015259999781847,
+          "rank_engine": "sparse-order",
+          "max_basis_row_len": 5
+        },
+        {
+          "prime": 3,
+          "rank": 26,
+          "ncols": 27,
+          "full_rank": false,
+          "rows_seen": 27,
+          "seconds": 0.0001254999660886824,
+          "rank_engine": "sparse-order",
+          "max_basis_row_len": 6
+        },
+        {
+          "prime": 5,
+          "rank": 27,
+          "ncols": 27,
+          "full_rank": true,
+          "rows_seen": 27,
+          "seconds": 0.00014169997302815318,
+          "rank_engine": "sparse-order",
+          "max_basis_row_len": 6
+        }
+      ],
+      "full_rank_primes": [
+        5
+      ],
+      "exception_candidate_primes": [
+        2,
+        3
+      ]
+    },
+    {
+      "case": "N218_raw_sign1",
+      "path": "_results\\rc3d_rowhash_source_witness_smoke_2026-05-12\\N218_raw_sign1",
+      "q": 3863,
+      "ncols": 83,
+      "source_rows": 83,
+      "square": true,
+      "status": "ok",
+      "pivot_strategy": "max",
+      "rank_engine": "sparse-order",
+      "prime_results": [
+        {
+          "prime": 2,
+          "rank": 80,
+          "ncols": 83,
+          "full_rank": false,
+          "rows_seen": 83,
+          "seconds": 0.000659800018183887,
+          "rank_engine": "sparse-order",
+          "max_basis_row_len": 13
+        },
+        {
+          "prime": 3,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.0009092999971471727,
+          "rank_engine": "sparse-order",
+          "max_basis_row_len": 18
+        },
+        {
+          "prime": 5,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.001089200028218329,
+          "rank_engine": "sparse-order",
+          "max_basis_row_len": 22
+        }
+      ],
+      "full_rank_primes": [
+        3,
+        5
+      ],
+      "exception_candidate_primes": [
+        2
+      ]
+    },
+    {
+      "case": "N60168_raw_sign1",
+      "path": "_results\\rc3c_source_witness_60168_raw_2026-05-12\\N60168_raw_sign1",
+      "ncols": 31680,
+      "source_rows": 31680,
+      "status": "skipped_max_ncols",
+      "prime_results": []
+    }
+  ]
+}

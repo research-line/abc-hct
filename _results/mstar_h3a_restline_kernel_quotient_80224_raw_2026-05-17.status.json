@@ -1,0 +1,14 @@
+{
+  "tool": "mstar_h3a_restline_kernel_quotient",
+  "phase": "collecting_projected_hecke_matrix",
+  "case_dir": "_results\\h3a_residue_line_witness_80224_raw_standard_2026-05-16\\N80224_raw_sign1_splitlast",
+  "q": 3863,
+  "ncols_v_si": 31680,
+  "started_unix": 1779042705.0584693,
+  "rows_seen": 25000,
+  "manin_t_rank": 21112,
+  "hecke_rows": 3888,
+  "quotient_ncols": 10568,
+  "quotient_basis_rank": 3888,
+  "seconds": 35.052
+}

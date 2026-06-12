@@ -1,0 +1,19 @@
+{
+  "tool": "mstar_h3a_restline_kernel_quotient",
+  "phase": "done",
+  "case_dir": "_results/h3a_residue_line_witness_80224_raw_remod_q5077_2026-05-23/N80224_raw_sign1_splitlast",
+  "q": 5077,
+  "ncols_v_si": 31680,
+  "kernel_engine": "sparse-python",
+  "started_unix": 1779577461.104396,
+  "rows_seen": 31680,
+  "manin_t_rank": 21112,
+  "hecke_rows": 10567,
+  "quotient_ncols": 10568,
+  "quotient_basis_rank": 10567,
+  "matrix_entries": null,
+  "seconds": 8622.84,
+  "quotient_kernel_dim": 1,
+  "repair_pairing_signed": -1,
+  "ready_for_al_scalar": true
+}

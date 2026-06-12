@@ -1,0 +1,142 @@
+{
+  "date": "2026-05-10",
+  "purpose": "Staged computational data path for missing oldlevel/newlevel Hecke data.",
+  "q": 3863,
+  "frey_level": 240672,
+  "test_primes": [
+    5,
+    7,
+    11,
+    13
+  ],
+  "input_files": [
+    "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\mstar_level240672_feasibility_2026-05-09.json",
+    "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\mstar_lmfdb_missing_orbit_audit_2026-05-09.json",
+    "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\mstar_oldlevel_t5_charpoly_scan_2026-05-09.json"
+  ],
+  "existing_t5_scan_summary": {
+    "worker_count": 6,
+    "ok_count": 6,
+    "timeout_count": 0,
+    "error_count": 0,
+    "hit_count": 0,
+    "hits": []
+  },
+  "missing_oldlevel_targets": [
+    {
+      "level": 60168,
+      "factor": "2^3 * 3 * 23 * 109",
+      "new_dimension": 1188,
+      "total_cusp_dimension": 10545,
+      "sturm_bound": 21120,
+      "oldspace_contribution_at_N": 3564,
+      "lmfdb_total_trace_display": [
+        0,
+        0,
+        0,
+        8
+      ],
+      "lmfdb_has_orbit_data": false,
+      "lmfdb_has_charpoly_data": false,
+      "priority": "R1",
+      "recommended_first_test": "det(T_5-a_5(E)) mod 3863 on S2(Gamma0(M))^new"
+    },
+    {
+      "level": 80224,
+      "factor": "2^5 * 23 * 109",
+      "new_dimension": 2376,
+      "total_cusp_dimension": 10545,
+      "sturm_bound": 21120,
+      "oldspace_contribution_at_N": 4752,
+      "lmfdb_total_trace_display": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lmfdb_has_orbit_data": false,
+      "lmfdb_has_charpoly_data": false,
+      "priority": "R2",
+      "recommended_first_test": "det(T_5-a_5(E)) mod 3863 on S2(Gamma0(M))^new"
+    },
+    {
+      "level": 120336,
+      "factor": "2^4 * 3 * 23 * 109",
+      "new_dimension": 2376,
+      "total_cusp_dimension": 21097,
+      "sturm_bound": 42240,
+      "oldspace_contribution_at_N": 4752,
+      "lmfdb_total_trace_display": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lmfdb_has_orbit_data": false,
+      "lmfdb_has_charpoly_data": false,
+      "priority": "R2",
+      "recommended_first_test": "det(T_5-a_5(E)) mod 3863 on S2(Gamma0(M))^new"
+    }
+  ],
+  "true_newlevel_target": {
+    "level": 240672,
+    "factor": "2^5 * 3 * 23 * 109",
+    "new_dimension": 4752,
+    "total_cusp_dimension": 42209,
+    "sturm_bound": 84480,
+    "old_dimension": 37457,
+    "recommended_first_test": "after oldlevel cleanup: det(T_5-a_5(E)) mod 3863 on the true new_subspace",
+    "risk": "high; split by Atkin-Lehner signs before a full determinant if possible"
+  },
+  "stages": [
+    {
+      "id": "R0",
+      "name": "Do not use LMFDB total traces as orbit evidence",
+      "reason": "The missing levels have only mf_newspaces rows. Total traces do not exclude individual orbit factors unless a one-orbit decomposition is known.",
+      "status": "guardrail"
+    },
+    {
+      "id": "R1",
+      "name": "Restlevel determinant filter",
+      "targets": [
+        60168,
+        80224,
+        120336
+      ],
+      "test": "Compute det(T_p-a_p(E)) mod 3863 on the newspace, starting with p=5.",
+      "success_condition": "nonzero determinant kills the level for that Reyssat orientation",
+      "continuation": "only if determinant is zero, compute the kernel and add p=7,11,13",
+      "status": "next executable data step"
+    },
+    {
+      "id": "R2",
+      "name": "Kernel cascade",
+      "test": "Intersect kernels of T_p-a_p(E) modulo 3863 for p=5,7,11,13.",
+      "success_condition": "zero kernel kills the level; nonzero kernel is a real residual candidate",
+      "status": "conditional"
+    },
+    {
+      "id": "R3",
+      "name": "Orbit/field recovery only after a kernel survivor",
+      "test": "Compute factor data, minimal polynomials, or q-adic field primes only on surviving subspace.",
+      "reason": "Full charpoly/order data are too expensive before the determinant/kernelfilter.",
+      "status": "conditional"
+    },
+    {
+      "id": "N1",
+      "name": "True newlevel after restlevels",
+      "target": 240672,
+      "test": "Run the same determinant/kernelfilter on the 4752-dimensional new_subspace.",
+      "guardrail": "Avoid full S2 dimension 42209; use new_subspace and Atkin-Lehner splitting if Sage exposes it.",
+      "status": "high-risk later step"
+    },
+    {
+      "id": "F1",
+      "name": "FOG-FC evidence, not proof",
+      "test": "If q=3863 is killed or localized, repeat for several external primes and small T to estimate index support.",
+      "guardrail": "This remains data support for FOG-FC, not a proof of the asymptotic theorem.",
+      "status": "later evidence step"
+    }
+  ],
+  "interpretation": "The next computational investment should be a mod-q determinant/kernel cascade on the three missing oldlevels, not a full level-240672 modular-symbol build. Only surviving kernels justify expensive orbit/Hecke-field recovery."
+}

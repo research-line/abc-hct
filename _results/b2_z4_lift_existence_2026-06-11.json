@@ -1,0 +1,15 @@
+{
+  "date": "2026-06-11",
+  "rank_mod2": 31678,
+  "kernel_dim_mod2": 2,
+  "r_ones": 16778,
+  "n_inconsistent": 0,
+  "z4_lift_exists": true,
+  "verification_Mvtilde_mod4_zero": true,
+  "vtilde_value_counts": {
+    "0": 5321,
+    "1": 10501,
+    "2": 5231,
+    "3": 10627
+  }
+}

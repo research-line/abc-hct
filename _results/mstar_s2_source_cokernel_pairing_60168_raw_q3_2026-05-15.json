@@ -1,0 +1,43 @@
+{
+  "tool": "mstar_s2_source_cokernel_pairing",
+  "case": "N60168_raw_source_plus_p2repair_sign1",
+  "path": "_results/s5_mixed_superset_witness_60168_raw_2026-05-14/N60168_raw_source_plus_p2repair_sign1",
+  "ncols": 31680,
+  "source_row_count": 31680,
+  "repair_rows": [
+    {
+      "index": 31680,
+      "row_id": "T_5_minus_2_batch_11/575",
+      "origin": "repair_only",
+      "stage": "T_5_minus_2_batch_11",
+      "stage_row_index": 575
+    },
+    {
+      "index": 31681,
+      "row_id": "T_7_minus_0_batch_1/1",
+      "origin": "repair_only",
+      "stage": "T_7_minus_0_batch_1",
+      "stage_row_index": 1
+    }
+  ],
+  "prime_results": [
+    {
+      "prime": 3,
+      "source_rank": 31679,
+      "source_defect_dim": 1,
+      "right_kernel_dim": 1,
+      "repair_row_count": 2,
+      "pairing_rank": 1,
+      "superset_rank": 31680,
+      "saturates": true,
+      "pairing_matrix": [
+        [
+          1,
+          0
+        ]
+      ],
+      "seconds": 10675.2087055,
+      "engine": "sage-matrix"
+    }
+  ]
+}

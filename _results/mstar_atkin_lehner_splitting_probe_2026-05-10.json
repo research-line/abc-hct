@@ -1,0 +1,338 @@
+{
+  "date": "2026-05-10",
+  "purpose": "Atkin-Lehner sign-space probe for the mod-3863 kernel cascade.",
+  "q": 3863,
+  "levels": [
+    109,
+    218,
+    60168
+  ],
+  "primes": [
+    5,
+    7,
+    11,
+    13
+  ],
+  "atkin_divisors": [
+    109
+  ],
+  "timeout_seconds_per_worker": 90,
+  "summary": {
+    "worker_count": 6,
+    "ok_count": 4,
+    "timeout_count": 2,
+    "error_count": 0,
+    "survivor_count": 0,
+    "survivors": []
+  },
+  "rows": [
+    {
+      "level": 109,
+      "level_factor": "109",
+      "mode": "raw",
+      "status": "ok",
+      "q": 3863,
+      "tested_primes": [
+        5,
+        7,
+        11,
+        13
+      ],
+      "atkin_divisors": [
+        109
+      ],
+      "backend": "modsym_gf",
+      "ambient_dimension": 17,
+      "cuspidal_dimension": 16,
+      "new_dimension": 16,
+      "atkin_rows": [
+        {
+          "atkin_divisor": 109,
+          "involution_defect_rank": 0,
+          "signs": [
+            {
+              "sign": 1,
+              "sign_space_dimension": 6,
+              "steps": [
+                {
+                  "prime": 5,
+                  "a_p": 2,
+                  "a_p_mod_q": 2,
+                  "full_operator_rank": 16,
+                  "full_operator_nullity": 0,
+                  "sign_kernel_dimension_before": 6,
+                  "sign_kernel_dimension_after": 0,
+                  "hecke_build_seconds": 0.0015257519999991587,
+                  "intersection_seconds": 0.0016139359999982617
+                }
+              ],
+              "final_kernel_dimension": 0,
+              "killed": true,
+              "elapsed_seconds": 0.0035101189999977578
+            },
+            {
+              "sign": -1,
+              "sign_space_dimension": 10,
+              "steps": [
+                {
+                  "prime": 5,
+                  "a_p": 2,
+                  "a_p_mod_q": 2,
+                  "full_operator_rank": 16,
+                  "full_operator_nullity": 0,
+                  "sign_kernel_dimension_before": 10,
+                  "sign_kernel_dimension_after": 0,
+                  "hecke_build_seconds": 0.0015257519999991587,
+                  "intersection_seconds": 0.00012595799999814972
+                }
+              ],
+              "final_kernel_dimension": 0,
+              "killed": true,
+              "elapsed_seconds": 0.0010924060000050417
+            }
+          ],
+          "killed_all_signs": true,
+          "elapsed_seconds": 0.03595809200000133
+        }
+      ],
+      "killed_all_atkin_splits": true,
+      "elapsed_seconds": 0.15461739899999571,
+      "manager_elapsed_seconds": 2.159371727
+    },
+    {
+      "level": 109,
+      "level_factor": "109",
+      "mode": "anc",
+      "status": "ok",
+      "q": 3863,
+      "tested_primes": [
+        5,
+        7,
+        11,
+        13
+      ],
+      "atkin_divisors": [
+        109
+      ],
+      "backend": "modsym_gf",
+      "ambient_dimension": 17,
+      "cuspidal_dimension": 16,
+      "new_dimension": 16,
+      "atkin_rows": [
+        {
+          "atkin_divisor": 109,
+          "involution_defect_rank": 0,
+          "signs": [
+            {
+              "sign": 1,
+              "sign_space_dimension": 6,
+              "steps": [
+                {
+                  "prime": 5,
+                  "a_p": 2,
+                  "a_p_mod_q": 2,
+                  "full_operator_rank": 16,
+                  "full_operator_nullity": 0,
+                  "sign_kernel_dimension_before": 6,
+                  "sign_kernel_dimension_after": 0,
+                  "hecke_build_seconds": 0.0017667380000006006,
+                  "intersection_seconds": 0.0018593530000003966
+                }
+              ],
+              "final_kernel_dimension": 0,
+              "killed": true,
+              "elapsed_seconds": 0.0031923279999972465
+            },
+            {
+              "sign": -1,
+              "sign_space_dimension": 10,
+              "steps": [
+                {
+                  "prime": 5,
+                  "a_p": 2,
+                  "a_p_mod_q": 2,
+                  "full_operator_rank": 16,
+                  "full_operator_nullity": 0,
+                  "sign_kernel_dimension_before": 10,
+                  "sign_kernel_dimension_after": 0,
+                  "hecke_build_seconds": 0.0017667380000006006,
+                  "intersection_seconds": 0.00012580100000292305
+                }
+              ],
+              "final_kernel_dimension": 0,
+              "killed": true,
+              "elapsed_seconds": 0.0012640700000048355
+            }
+          ],
+          "killed_all_signs": true,
+          "elapsed_seconds": 0.020590884000000642
+        }
+      ],
+      "killed_all_atkin_splits": true,
+      "elapsed_seconds": 0.08217550400000562,
+      "manager_elapsed_seconds": 2.0670436369999976
+    },
+    {
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "raw",
+      "status": "ok",
+      "q": 3863,
+      "tested_primes": [
+        5,
+        7,
+        11,
+        13
+      ],
+      "atkin_divisors": [
+        109
+      ],
+      "backend": "modsym_gf",
+      "ambient_dimension": 55,
+      "cuspidal_dimension": 52,
+      "new_dimension": 20,
+      "atkin_rows": [
+        {
+          "atkin_divisor": 109,
+          "involution_defect_rank": 0,
+          "signs": [
+            {
+              "sign": 1,
+              "sign_space_dimension": 12,
+              "steps": [
+                {
+                  "prime": 5,
+                  "a_p": 2,
+                  "a_p_mod_q": 2,
+                  "full_operator_rank": 20,
+                  "full_operator_nullity": 0,
+                  "sign_kernel_dimension_before": 12,
+                  "sign_kernel_dimension_after": 0,
+                  "hecke_build_seconds": 0.004691804000003685,
+                  "intersection_seconds": 0.004791236000002641
+                }
+              ],
+              "final_kernel_dimension": 0,
+              "killed": true,
+              "elapsed_seconds": 0.006338946000013834
+            },
+            {
+              "sign": -1,
+              "sign_space_dimension": 8,
+              "steps": [
+                {
+                  "prime": 5,
+                  "a_p": 2,
+                  "a_p_mod_q": 2,
+                  "full_operator_rank": 20,
+                  "full_operator_nullity": 0,
+                  "sign_kernel_dimension_before": 8,
+                  "sign_kernel_dimension_after": 0,
+                  "hecke_build_seconds": 0.004691804000003685,
+                  "intersection_seconds": 7.669500000417884e-05
+                }
+              ],
+              "final_kernel_dimension": 0,
+              "killed": true,
+              "elapsed_seconds": 0.0005901429999966012
+            }
+          ],
+          "killed_all_signs": true,
+          "elapsed_seconds": 0.04697002300000008
+        }
+      ],
+      "killed_all_atkin_splits": true,
+      "elapsed_seconds": 0.39218024000000185,
+      "manager_elapsed_seconds": 2.365264341999989
+    },
+    {
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "anc",
+      "status": "ok",
+      "q": 3863,
+      "tested_primes": [
+        5,
+        7,
+        11,
+        13
+      ],
+      "atkin_divisors": [
+        109
+      ],
+      "backend": "modsym_gf",
+      "ambient_dimension": 55,
+      "cuspidal_dimension": 52,
+      "new_dimension": 20,
+      "atkin_rows": [
+        {
+          "atkin_divisor": 109,
+          "involution_defect_rank": 0,
+          "signs": [
+            {
+              "sign": 1,
+              "sign_space_dimension": 12,
+              "steps": [
+                {
+                  "prime": 5,
+                  "a_p": 2,
+                  "a_p_mod_q": 2,
+                  "full_operator_rank": 20,
+                  "full_operator_nullity": 0,
+                  "sign_kernel_dimension_before": 12,
+                  "sign_kernel_dimension_after": 0,
+                  "hecke_build_seconds": 0.005526071000005572,
+                  "intersection_seconds": 0.0057069120000079465
+                }
+              ],
+              "final_kernel_dimension": 0,
+              "killed": true,
+              "elapsed_seconds": 0.008127582000000189
+            },
+            {
+              "sign": -1,
+              "sign_space_dimension": 8,
+              "steps": [
+                {
+                  "prime": 5,
+                  "a_p": 2,
+                  "a_p_mod_q": 2,
+                  "full_operator_rank": 20,
+                  "full_operator_nullity": 0,
+                  "sign_kernel_dimension_before": 8,
+                  "sign_kernel_dimension_after": 0,
+                  "hecke_build_seconds": 0.005526071000005572,
+                  "intersection_seconds": 9.583599999984926e-05
+                }
+              ],
+              "final_kernel_dimension": 0,
+              "killed": true,
+              "elapsed_seconds": 0.0007285450000011906
+            }
+          ],
+          "killed_all_signs": true,
+          "elapsed_seconds": 0.0567905739999901
+        }
+      ],
+      "killed_all_atkin_splits": true,
+      "elapsed_seconds": 0.3597376419999989,
+      "manager_elapsed_seconds": 2.527208630000004
+    },
+    {
+      "level": 60168,
+      "mode": "raw",
+      "status": "timeout",
+      "timeout_seconds": 90,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "level": 60168,
+      "mode": "anc",
+      "status": "timeout",
+      "timeout_seconds": 90,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "tool": "qb3_integer_lift_crt",
+  "level": 109,
+  "mode": "raw",
+  "rank": 8,
+  "q1": 3863,
+  "q2": 5077,
+  "modulus_crt": 19612451,
+  "constant_signed_q1": 1815,
+  "constant_signed_q2": 2121,
+  "constant_crt_unsigned": 18127011,
+  "constant_crt_signed": -1485440,
+  "degree_q1": 8,
+  "degree_q2": 8,
+  "degree_consistent": true,
+  "nonzero": true,
+  "size_relative_to_modulus": "moderate",
+  "interpretation": "INTEGER VALUE LIKELY: constant fits in [-modulus/2, modulus/2] = [-9806225, 9806225]; if true integer value of Q_B is bounded by max|coef|, this is an unconditional integer lift."
+}

@@ -1,0 +1,236 @@
+{
+  "date": "2026-06-10",
+  "purpose": "Survivor census on level N itself (qdim=3 plateau explanation)",
+  "frey_class": "240672.g",
+  "fe_traces": {
+    "5": 2,
+    "7": 0,
+    "11": 0,
+    "13": -6,
+    "17": 6,
+    "19": 0,
+    "23": 1,
+    "29": -2,
+    "31": 4
+  },
+  "good_primes": [
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29,
+    31
+  ],
+  "tested_so_far": [
+    7,
+    11,
+    13,
+    17,
+    19
+  ],
+  "pending": [
+    23,
+    29,
+    31
+  ],
+  "iso_class_count": 8,
+  "classes": [
+    {
+      "iso": "240672.a",
+      "traces": {
+        "5": -1,
+        "7": 3,
+        "11": 0,
+        "13": 0,
+        "17": -6,
+        "19": 6,
+        "23": -1,
+        "29": -2,
+        "31": 8
+      },
+      "separators_good": [
+        5,
+        7,
+        13,
+        17,
+        19,
+        23,
+        31
+      ],
+      "survives_tested_so_far": false,
+      "first_pending_separator": 23
+    },
+    {
+      "iso": "240672.b",
+      "traces": {
+        "5": 0,
+        "7": 4,
+        "11": 3,
+        "13": -1,
+        "17": 2,
+        "19": -2,
+        "23": -1,
+        "29": -6,
+        "31": -5
+      },
+      "separators_good": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31
+      ],
+      "survives_tested_so_far": false,
+      "first_pending_separator": 23
+    },
+    {
+      "iso": "240672.c",
+      "traces": {
+        "5": 2,
+        "7": 0,
+        "11": 0,
+        "13": -6,
+        "17": 6,
+        "19": 0,
+        "23": -1,
+        "29": -2,
+        "31": -4
+      },
+      "separators_good": [
+        23,
+        31
+      ],
+      "survives_tested_so_far": true,
+      "first_pending_separator": 23
+    },
+    {
+      "iso": "240672.d",
+      "traces": {
+        "5": 4,
+        "7": 0,
+        "11": -5,
+        "13": -1,
+        "17": -2,
+        "19": 6,
+        "23": -1,
+        "29": 6,
+        "31": 9
+      },
+      "separators_good": [
+        5,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31
+      ],
+      "survives_tested_so_far": false,
+      "first_pending_separator": 23
+    },
+    {
+      "iso": "240672.e",
+      "traces": {
+        "5": -1,
+        "7": -3,
+        "11": 0,
+        "13": 0,
+        "17": -6,
+        "19": -6,
+        "23": 1,
+        "29": -2,
+        "31": -8
+      },
+      "separators_good": [
+        5,
+        7,
+        13,
+        17,
+        19,
+        31
+      ],
+      "survives_tested_so_far": false,
+      "first_pending_separator": 31
+    },
+    {
+      "iso": "240672.f",
+      "traces": {
+        "5": 0,
+        "7": -4,
+        "11": -3,
+        "13": -1,
+        "17": 2,
+        "19": 2,
+        "23": 1,
+        "29": -6,
+        "31": 5
+      },
+      "separators_good": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31
+      ],
+      "survives_tested_so_far": false,
+      "first_pending_separator": 29
+    },
+    {
+      "iso": "240672.g",
+      "traces": {
+        "5": 2,
+        "7": 0,
+        "11": 0,
+        "13": -6,
+        "17": 6,
+        "19": 0,
+        "23": 1,
+        "29": -2,
+        "31": 4
+      },
+      "separators_good": [],
+      "survives_tested_so_far": true,
+      "first_pending_separator": null
+    },
+    {
+      "iso": "240672.h",
+      "traces": {
+        "5": 4,
+        "7": 0,
+        "11": 5,
+        "13": -1,
+        "17": -2,
+        "19": -6,
+        "23": 1,
+        "29": 6,
+        "31": -9
+      },
+      "separators_good": [
+        5,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31
+      ],
+      "survives_tested_so_far": false,
+      "first_pending_separator": 29
+    }
+  ],
+  "plateau_survivors_tested_so_far": [
+    "240672.c",
+    "240672.g"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "tool": "mstar_s5_minor_budget_probe",
+  "description": "Hadamard-scale diagnostic for S5 integral-minor route",
+  "results": [
+    {
+      "case": "N109_raw_sign1",
+      "path": "_results\\rc3d_rowhash_source_witness_smoke_2026-05-12\\N109_raw_sign1",
+      "q": 3863,
+      "ncols": 27,
+      "source_rows": 27,
+      "square": true,
+      "avg_nnz": 3.5185185185185186,
+      "max_nnz": 7,
+      "avg_l1_symmetric_lift": 4.0,
+      "max_l1_symmetric_lift": 8,
+      "hadamard_log2_symmetric_lift_bound": 28.709960900624328
+    },
+    {
+      "case": "N218_raw_sign1",
+      "path": "_results\\rc3d_rowhash_source_witness_smoke_2026-05-12\\N218_raw_sign1",
+      "q": 3863,
+      "ncols": 83,
+      "source_rows": 83,
+      "square": true,
+      "avg_nnz": 4.108433734939759,
+      "max_nnz": 7,
+      "avg_l1_symmetric_lift": 4.506024096385542,
+      "max_l1_symmetric_lift": 8,
+      "hadamard_log2_symmetric_lift_bound": 89.75358279767863
+    },
+    {
+      "case": "N60168_raw_sign1",
+      "path": "_results\\rc3c_source_witness_60168_raw_2026-05-12\\N60168_raw_sign1",
+      "q": 3863,
+      "ncols": 31680,
+      "source_rows": 31680,
+      "square": true,
+      "avg_nnz": 4.333112373737373,
+      "max_nnz": 7,
+      "avg_l1_symmetric_lift": 4.666919191919192,
+      "max_l1_symmetric_lift": 8,
+      "hadamard_log2_symmetric_lift_bound": 34283.807946392306
+    }
+  ]
+}

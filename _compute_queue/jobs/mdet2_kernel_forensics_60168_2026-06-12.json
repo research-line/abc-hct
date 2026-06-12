@@ -1,0 +1,27 @@
+{
+  "id": "mdet2_kernel_forensics_60168_2026-06-12",
+  "title": "M-DET 2: Kernvektor-Forensik 60168 (Satz-B-Mechanismus, priorisiert)",
+  "status": "queued",
+  "priority": 11,
+  "allowed_hosts": [
+    "mac-studio"
+  ],
+  "disallowed_hosts": [
+    "ASUS-GEI"
+  ],
+  "depends_on_success": [],
+  "defer_while_process_regex": [
+    "mdet_1b_snf_exponents"
+  ],
+  "resource_policy": {
+    "min_free_mem_gb": 8.0,
+    "max_load_1min": 6.0
+  },
+  "backend": {
+    "type": "sage",
+    "allow_docker": false
+  },
+  "command": "{sage} _scripts/mdet2_kernel_forensics_60168.py",
+  "expected_runtime_hours": "5-8 (4 GF(p)-Kernels a ~85 min + Statistik; Checkpoint nach jedem Prime)",
+  "notes": "USER-PRIORISIERT vor mdet_240672 (der auf blocked). Persistiert die Kernvektoren (npz! 1b speicherte sie nicht) und rechnet Struktur-Statistik: Dreiecks-Muster (Test (1-T)^2-Hypothese mod 3, konsistent mit v_3=2), Traeger-Lokalisierung (Mikro-Cluster), Traeger-Ueberlapp 3/5/31 (S5-Orte), Stage-Profil. Vorergebnis lokal: Eisenstein-Kongruenz-Primes der drei 60168-Klassen LEER (alle Torsion 1) => konstruktive Erklaerung fuehrend. Deferred bis 1b fertig (RAM ~7 GB/Kernel)."
+}

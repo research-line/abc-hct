@@ -1,0 +1,264 @@
+{
+  "tool": "mstar_s5_repair_certificate_bundle",
+  "certificate": {
+    "case": "N60168_raw_p2_s5_repair",
+    "claim": "The fixed-quotient S5 repair witness proves full rank modulo 2 for the 60168/raw quotient using T5 batches 1-13 plus T7 batch 1.",
+    "level": 60168,
+    "mode": "raw",
+    "sign": 1,
+    "q": 3863,
+    "repair_prime": 2,
+    "ncols": 31680,
+    "repair_rows": 31680,
+    "audit_rank": 31680,
+    "audit_checks_ok": true
+  },
+  "files": [
+    {
+      "path": "_results\\mstar_s5_repair_witness_60168_raw_p2_2026-05-13.json",
+      "bytes": 19481,
+      "sha256": "3f1857ab214655c91b6afaa0029f523c328456b66946dbbc27bbf9c429cc57b1",
+      "role": "result-json"
+    },
+    {
+      "path": "_results\\mstar_s5_repair_witness_60168_raw_p2_2026-05-13.md",
+      "bytes": 1593,
+      "sha256": "9029b94ce90c1f915051b7d93f9f3fd0d858f24dd974bedbe050e596e8c00541",
+      "role": "result-md"
+    },
+    {
+      "path": "_results\\mstar_s5_repair_witness_60168_raw_p2_audit_2026-05-13.json",
+      "bytes": 466,
+      "sha256": "60f1e18580399d3c9d396f94745a1e7fde596a2882dd54489c376ddb94ce9654",
+      "role": "audit-json"
+    },
+    {
+      "path": "_results\\mstar_s5_repair_witness_60168_raw_p2_audit_2026-05-13.md",
+      "bytes": 242,
+      "sha256": "7c86ddc1ff74797190e9570ea3560bfeb4c9d36880bd16b370ac2e59c0918504",
+      "role": "audit-md"
+    },
+    {
+      "path": "_results\\mstar_s5_repair_witness_60168_raw_p2_2026-05-13.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "run-log"
+    },
+    {
+      "path": "_results\\mstar_s5_repair_witness_60168_raw_p2_2026-05-13.err",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "run-err"
+    },
+    {
+      "path": "_scripts\\mstar_s5_fixedquotient_full_rank.py",
+      "bytes": 21007,
+      "sha256": "76f90998181af380e14491d0ff9ae21480f5f10c75fc30fdaa5b391f1acf291d",
+      "role": "script"
+    },
+    {
+      "path": "_scripts\\mstar_s5_repair_witness_audit.py",
+      "bytes": 6899,
+      "sha256": "520cad58b5cdca98f54ebf6fff13d949733a08ad2d0087f612159446e0860c9f",
+      "role": "script"
+    },
+    {
+      "path": "_scripts\\mstar_s5_repair_certificate_bundle.py",
+      "bytes": 6612,
+      "sha256": "08f69d1cedd6171e4477ea8ce1d1d5b11101009a21393718c4f213137b34bc98",
+      "role": "script"
+    }
+  ],
+  "trees": [
+    {
+      "path": "_results\\s5_repair_witness_60168_raw_p2_2026-05-13",
+      "file_count": 2,
+      "total_bytes": 8237171,
+      "tree_sha256": "6d2e1196c78ba3b00a0947b54efbd0de85b50eb3aabcd78dfed76bf1aeeafc9d",
+      "files": [
+        {
+          "path": "_results\\s5_repair_witness_60168_raw_p2_2026-05-13\\N60168_raw_p2_sign1\\manifest.json",
+          "bytes": 8980,
+          "sha256": "2d744e890a8139e3dfea94b6d411874adff5a007cab07ce96122890614520d05"
+        },
+        {
+          "path": "_results\\s5_repair_witness_60168_raw_p2_2026-05-13\\N60168_raw_p2_sign1\\repair_rows.jsonl",
+          "bytes": 8228191,
+          "sha256": "2a0f27f64b1e09828b7e996e4c336184c0591e61cb835905de2c117570c59dcc"
+        }
+      ],
+      "role": "repair-witness"
+    },
+    {
+      "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13",
+      "file_count": 31,
+      "total_bytes": 16026571,
+      "tree_sha256": "3691413ea2973ce8c5ee12bf4a91777310812631b1bb7515a2320d7a4b05aa52",
+      "files": [
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\manifest.json",
+          "bytes": 8486,
+          "sha256": "5e736e9352e2fbe636d01bb67fa823e3c6f814a13af67d50bb2a9379325b0c77"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\manin_T_relations_after_SI.rowhashes.jsonl",
+          "bytes": 14450650,
+          "sha256": "4b1b3bebc7d9812e268497c66bc81577f00eb5e514ae1952738a7aa87ebf3928"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\manin_T_relations_after_SI.sha256",
+          "bytes": 65,
+          "sha256": "e525f0509945170d785dc5920fcf2850b5cc7f1e301ca70b069739773b73c9e1"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_1.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "51fba2517f7c8559ce69569c1a9468517621735c8e73bdb5f1efe99e5e1e3668"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_1.sha256",
+          "bytes": 65,
+          "sha256": "e995177ef4fcaaf1beedf17683753be588169f53745a5838801f255329da0d09"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_10.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "c58cb0edb3fb0467eb375ef5472846f718f18d7e1daacffa3824acd7367b768f"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_10.sha256",
+          "bytes": 65,
+          "sha256": "53300f724b37721a05c16b9939194d6a07497613ef503bf24a349e208b375c91"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_11.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "f21cd9b001b8488f33b62985678e12d699e386337a443510028767084400c970"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_11.sha256",
+          "bytes": 65,
+          "sha256": "a7f219b6916d2b6b9a42821b1c60da683abd2a2732e9328b2a2ddbd7c206c6ac"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_12.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "9ce1a6da5245fceea2d495a8756b02b1381f9077e9d74ef3e1084588cb00697d"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_12.sha256",
+          "bytes": 65,
+          "sha256": "77dc12a26d76d36aa27b3adaec00dcb679f9de8dc8446c50c4bae9ae8674eb7b"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_13.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "6e1f5c0ba53152600325b61d686e8431bb548fa1d5ae56b629db1dc7e363c8ab"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_13.sha256",
+          "bytes": 65,
+          "sha256": "892be9e4a9abcce2e181c8da5ececbe2abd01772e1e02c2123009b0ba3f5d3f8"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_2.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "09d478b719a81025971d9ed09412f247f1c54c64e0e2c8679f281caf1c05f577"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_2.sha256",
+          "bytes": 65,
+          "sha256": "a95f42d2d8978b9911a937f369c61218e34d83d03466678c7ee519b45484d4b9"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_3.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "634bba62530e912e38db2e0daabb1c2ade4952d1e6dd1cee835b6c94f02e7e99"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_3.sha256",
+          "bytes": 65,
+          "sha256": "c768d6fd8d286b4a4a86c4f2c23d01521cb144bef5d8a2266d04cf7741b4677b"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_4.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "1c443a5f6e4e41b1d444fe0ac0574aba6e2a38bc61a1e70146eaffe01d04ff2b"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_4.sha256",
+          "bytes": 65,
+          "sha256": "277534464251728a9047a9aec79ede0075452c5891e8ae652388c9220eb7ade6"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_5.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "cdda0afd1291e97c95b2f15298bd63e5691bb5085644b300b1d886b10e75260c"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_5.sha256",
+          "bytes": 65,
+          "sha256": "581f7f534bb991704bc11e59463eb0b1136f3875c36aad0f462014e184f2c31e"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_6.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "63606e8468cb338eaccf8b2a9d7a140843a0680dd36e1124c543301bc8693b98"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_6.sha256",
+          "bytes": 65,
+          "sha256": "f456cf44ef1043dab3d5d53158689bbc6eca85287b6701513a81b67a98f04c15"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_7.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "71da4673e6d2c8104c11a5ee0b40a9bd8b0d6128f8b2d93ac65fea79e03a5ad0"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_7.sha256",
+          "bytes": 65,
+          "sha256": "ebd33b1aca1e76c2a4e94e5476c4684eb063b68ee052e3d753fdb86465d7679c"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_8.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "d8dffaa81aaa1e1f43f11b4ba15b0c58f93ebb46b13e9e6548e32a2d41a70e7a"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_8.sha256",
+          "bytes": 65,
+          "sha256": "608fb65a75574cdfcd9263ea3da38d937e915f380e55c9843e12167727334fbe"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_9.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "93258aa7c78ca8f99198d6d9a2007e9c24302dc76e63e5485403080b757e5615"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_5_minus_2_batch_9.sha256",
+          "bytes": 65,
+          "sha256": "33e230c9edf7c174ec4f6b1dd9cea0d7303f8ceeed8b6873bc9c72090c965aeb"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_7_minus_0_batch_1.rowhashes.jsonl",
+          "bytes": 111890,
+          "sha256": "ebebf2425dbcd228dd7798a27ade52833691b898c44829d8bf7b96bdfdeb58e4"
+        },
+        {
+          "path": "_results\\s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13\\N60168_raw_sign1\\T_7_minus_0_batch_1.sha256",
+          "bytes": 65,
+          "sha256": "8cf2571fa5c15c922450cf053d080cafc50b6494c6c267457e80b1e667fffa1d"
+        }
+      ],
+      "role": "repair-transcript"
+    }
+  ],
+  "verification_notes": [
+    "Result JSON/MD records the fixed-quotient repair computation.",
+    "Repair witness tree contains exported independent rows over the fixed GF(3863) quotient.",
+    "Repair transcript tree contains per-stage rowhash indexes, including T7 batch 1.",
+    "Audit JSON/MD recomputes rank modulo 2 and checks transcript binding.",
+    "Run err file is expected to be empty."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "status": "ok",
+  "case_dir": "_results\\rc3c_quotient_metadata_smoke_n109_2026-05-16\\N109_raw_sign1",
+  "out_case_dir": "_results\\h3a_wait_postprocess_smoke_n109_2026-05-16\\N109_raw_sign1_splitlast",
+  "expect_stage_prefix": "T_5_minus_2",
+  "waited_seconds": 0.4605128765106201,
+  "order_json": "_results\\mstar_h3a_wait_postprocess_smoke_n109_2026-05-16_order.json",
+  "rank_json": "_results\\mstar_h3a_wait_postprocess_smoke_n109_2026-05-16_rank_verify.json",
+  "steps": [
+    {
+      "cmd": [
+        "C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\python.exe",
+        "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_scripts\\mstar_h3a_make_residue_line_witness.py",
+        "--source-case-dir",
+        "_results\\rc3c_quotient_metadata_smoke_n109_2026-05-16\\N109_raw_sign1",
+        "--out-case-dir",
+        "_results\\h3a_wait_postprocess_smoke_n109_2026-05-16\\N109_raw_sign1_splitlast",
+        "--expect-repair-stage-prefix",
+        "T_5_minus_2"
+      ],
+      "returncode": 0,
+      "seconds": 0.15572357177734375,
+      "stdout": "{\n  \"certificate_version\": \"h3a-residue-line-witness-1\",\n  \"columns_after_2term\": 27,\n  \"level\": 109,\n  \"mixed_row_count\": 27,\n  \"mode\": \"raw\",\n  \"ncols\": 27,\n  \"original_source_row_count\": 27,\n  \"q\": 3863,\n  \"repair_only_original_index\": 26,\n  \"repair_only_row_count\": 1,\n  \"repair_only_row_id\": \"T_5_minus_2_batch_1/21\",\n  \"repair_only_stage\": \"T_5_minus_2_batch_1\",\n  \"rows_file\": \"mixed_rows.jsonl\",\n  \"rows_file_sha256\": \"9b467722b611356cfbfa39059df23dbed10d7d6d5d5581ce1fe825ead4cecfdb\",\n  \"sign\": 1,\n  \"source_case_dir\": \"_results\\\\rc3c_quotient_metadata_smoke_n109_2026-05-16\\\\N109_raw_sign1\",\n  \"source_row_count\": 26,\n  \"split_rule\": \"final source row\",\n  \"square\": true,\n  \"witness_type\": \"source_prefix_plus_single_repair_row\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "cmd": [
+        "C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\python.exe",
+        "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_scripts\\mstar_h3a_residue_line_order_certificate.py",
+        "_results\\h3a_wait_postprocess_smoke_n109_2026-05-16\\N109_raw_sign1_splitlast",
+        "--expect-stage-prefix",
+        "T_5_minus_2",
+        "--out-json",
+        "_results\\mstar_h3a_wait_postprocess_smoke_n109_2026-05-16_order.json",
+        "--out-md",
+        "_results\\mstar_h3a_wait_postprocess_smoke_n109_2026-05-16_order.md"
+      ],
+      "returncode": 0,
+      "seconds": 0.15496325492858887,
+      "stdout": "{\"certified\": true}\n",
+      "stderr": ""
+    },
+    {
+      "cmd": [
+        "C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\python.exe",
+        "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_scripts\\mstar_h3a_rc3c_witness_verify_rank.py",
+        "_results\\h3a_wait_postprocess_smoke_n109_2026-05-16\\N109_raw_sign1_splitlast",
+        "--out-json",
+        "_results\\mstar_h3a_wait_postprocess_smoke_n109_2026-05-16_rank_verify.json",
+        "--out-md",
+        "_results\\mstar_h3a_wait_postprocess_smoke_n109_2026-05-16_rank_verify.md"
+      ],
+      "returncode": 0,
+      "seconds": 0.1492757797241211,
+      "stdout": "{\"certified\": true, \"rank\": 27}\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "_status": "TEMPLATE — REALE Evidenz (rowhash + final_sparse_row) uebernommen; rowhash-Bindung vom Verifier KRYPTOGRAPHISCH bestaetigt. Formal-Origin (source_manin_symbol/formal_hecke_row/quotient_contributions) streng <<FILL>>. Pruefen mit _scripts/t5_row_origin_witness_verifier.py. Erwartung: rowhash_bound=true, trace_value=2, contributions_ready=false, ready_for_trace_row_embedding=false.",
+  "_schema": "_scripts/t5_row_origin_witness_schema.json",
+  "_evidence_source": "_results/s5_mixed_superset_witness_60168_raw_2026-05-14/N60168_raw_source_plus_p2repair_sign1/mixed_rows.jsonl",
+  "meta": {
+    "case": "60168/raw",
+    "N": 60168, "mode": "raw", "sign": 1, "q": 3863,
+    "ell": 5, "a_ell": 2,
+    "row_id": "T_5_minus_2_batch_11/575",
+    "stage": "T_5_minus_2_batch_11",
+    "stage_row_index": 575,
+    "created": "2026-06-01"
+  },
+  "rowhash": {
+    "expected": "2578c0ce429aef9be25542091120652f1809745705c80d5053aea547c898e3f5",
+    "scheme": "sha256( f'{stage}\\t{stage_row_index}\\t{col:val,...}\\n' ), val mod q, sortiert, Nullen raus"
+  },
+  "final_sparse_row": [[7037, 3862], [7038, 1], [7039, 3862], [7040, 3862], [7041, 3862], [10015, 2], [22583, 3862]],
+  "quotient_contributions": [],
+  "formal_origin": {
+    "source_manin_symbol": "<<FILL: Manin-Symbol, das T_5_minus_2_batch_11/575 erzeugt>>",
+    "formal_hecke_row": "<<FILL: T_5(source) Expansion mit Coset-Matrizen [1,j,0,5] j=0..4 und [5,0,0,1]>>",
+    "hecke_coset_matrices": "<<FILL: 6 = p+1 Coset-Matrizen fuer p=5>>",
+    "trace_subtraction": "<<FILL: T_5(source) - 2*source  (a_5=2)>>"
+  },
+  "readiness": {
+    "hecke_convention_verified": false,
+    "compression_convention_verified": false,
+    "sign_convention_verified": false,
+    "integer_lift_convention_verified": false
+  },
+  "labels": {
+    "ready_for_trace_row_embedding": false
+  },
+  "no_overclaim": {
+    "ready_if": "rowhash_bound (real) UND trace_value=2 UND symmetric_lift_checked UND contributions_ready (Summe=final_sparse_row mod q) UND vier Konventionen gegen kanonisches Q_E",
+    "but_not": ["rowhash_bound allein reicht NICHT (Formal-Origin + Konventionen fehlen)", "canonical_level", "PCAT/FAQS", "abc"]
+  }
+}

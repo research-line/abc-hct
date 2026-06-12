@@ -1,0 +1,1423 @@
+{
+  "date": "2026-05-09",
+  "purpose": "M*/S* ledger separating visible local Tamagawa/exponent mass from global projection-tail data.",
+  "limits": {
+    "congruence_N_max": 0,
+    "isogeny_N_max": 0,
+    "reason": "Dynamic congruence_number()/isogeny_class() calls are disabled after Loop 94 timeouts; ABCHome_2 is precomputed from Loop 93."
+  },
+  "summary": {
+    "case_count": 15,
+    "computed_congruence_count": 0,
+    "congruence_equals_modular_degree_count": 0,
+    "max_degree_over_N2": {
+      "label": "ABCHome_2",
+      "a": 121,
+      "b": 48234375,
+      "c": 48234496,
+      "rad_abc": 53130,
+      "quality_rad": 1.6259905201086524,
+      "N_cond": 53130,
+      "N_cond_factor": "2 * 3 * 5 * 7 * 11 * 23",
+      "minimal_discriminant_factor": "2^34 * 3^4 * 5^12 * 7^6 * 11^4 * 23^2",
+      "modular_degree": 3158507520,
+      "modular_degree_factor": "2^16 * 3^4 * 5 * 7 * 17",
+      "degree_exponent_N": 2.01032778282889,
+      "degree_over_N2": 1.1189283649843884,
+      "tamagawa_product": 6528,
+      "tamagawa_product_factor": "2^7 * 3 * 17",
+      "degree_over_tamagawa_product": 483840.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I34",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 34,
+          "tamagawa": 34
+        },
+        {
+          "p": 3,
+          "kodaira": "I4",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 2
+        },
+        {
+          "p": 5,
+          "kodaira": "I12",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 12,
+          "tamagawa": 12
+        },
+        {
+          "p": 7,
+          "kodaira": "I6",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 6,
+          "tamagawa": 2
+        },
+        {
+          "p": 11,
+          "kodaira": "I4",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 2
+        },
+        {
+          "p": 23,
+          "kodaira": "I2",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 34,
+      "max_tamagawa": 34,
+      "root_number": 1,
+      "torsion_order": 4,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": 3158507520,
+        "factor": "2^16 * 3^4 * 5 * 7 * 17",
+        "status": "precomputed_loop_93",
+        "source": "_results/mstar_abchome_tail_probe_2026-05-09.json"
+      },
+      "congruence_equals_modular_degree": true,
+      "isogeny": {
+        "status": "precomputed_loop_93",
+        "source": "_results/mstar_abchome_tail_probe_2026-05-09.json",
+        "size": 4,
+        "modular_degrees": [
+          3158507520,
+          6317015040,
+          1579253760,
+          6317015040
+        ],
+        "min_modular_degree": 1579253760,
+        "frey_degree_over_min": 2.0,
+        "matrix": [
+          [
+            1,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            4,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            4
+          ],
+          [
+            2,
+            4,
+            4,
+            1
+          ]
+        ]
+      }
+    },
+    "max_degree_exponent_N": {
+      "label": "ABCHome_2",
+      "a": 121,
+      "b": 48234375,
+      "c": 48234496,
+      "rad_abc": 53130,
+      "quality_rad": 1.6259905201086524,
+      "N_cond": 53130,
+      "N_cond_factor": "2 * 3 * 5 * 7 * 11 * 23",
+      "minimal_discriminant_factor": "2^34 * 3^4 * 5^12 * 7^6 * 11^4 * 23^2",
+      "modular_degree": 3158507520,
+      "modular_degree_factor": "2^16 * 3^4 * 5 * 7 * 17",
+      "degree_exponent_N": 2.01032778282889,
+      "degree_over_N2": 1.1189283649843884,
+      "tamagawa_product": 6528,
+      "tamagawa_product_factor": "2^7 * 3 * 17",
+      "degree_over_tamagawa_product": 483840.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I34",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 34,
+          "tamagawa": 34
+        },
+        {
+          "p": 3,
+          "kodaira": "I4",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 2
+        },
+        {
+          "p": 5,
+          "kodaira": "I12",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 12,
+          "tamagawa": 12
+        },
+        {
+          "p": 7,
+          "kodaira": "I6",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 6,
+          "tamagawa": 2
+        },
+        {
+          "p": 11,
+          "kodaira": "I4",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 2
+        },
+        {
+          "p": 23,
+          "kodaira": "I2",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 34,
+      "max_tamagawa": 34,
+      "root_number": 1,
+      "torsion_order": 4,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": 3158507520,
+        "factor": "2^16 * 3^4 * 5 * 7 * 17",
+        "status": "precomputed_loop_93",
+        "source": "_results/mstar_abchome_tail_probe_2026-05-09.json"
+      },
+      "congruence_equals_modular_degree": true,
+      "isogeny": {
+        "status": "precomputed_loop_93",
+        "source": "_results/mstar_abchome_tail_probe_2026-05-09.json",
+        "size": 4,
+        "modular_degrees": [
+          3158507520,
+          6317015040,
+          1579253760,
+          6317015040
+        ],
+        "min_modular_degree": 1579253760,
+        "frey_degree_over_min": 2.0,
+        "matrix": [
+          [
+            1,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            4,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            4
+          ],
+          [
+            2,
+            4,
+            4,
+            1
+          ]
+        ]
+      }
+    },
+    "max_degree_over_tamagawa": {
+      "label": "Reyssat_ANC_orientation",
+      "a": 6436341,
+      "b": 2,
+      "c": 6436343,
+      "rad_abc": 15042,
+      "quality_rad": 1.6299116841270482,
+      "N_cond": 240672,
+      "N_cond_factor": "2^5 * 3 * 23 * 109",
+      "minimal_discriminant_factor": "2^6 * 3^20 * 23^10 * 109^2",
+      "modular_degree": 4450176000,
+      "modular_degree_factor": "2^10 * 3^2 * 5^3 * 3863",
+      "degree_exponent_N": 1.7929035842104373,
+      "degree_over_N2": 0.07682915439481856,
+      "tamagawa_product": 16,
+      "tamagawa_product_factor": "2^4",
+      "degree_over_tamagawa_product": 278136000.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "III",
+          "split": false,
+          "nonsplit": false,
+          "f_p": 5,
+          "delta_v": 6,
+          "tamagawa": 2
+        },
+        {
+          "p": 3,
+          "kodaira": "I20",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 20,
+          "tamagawa": 2
+        },
+        {
+          "p": 23,
+          "kodaira": "I10",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 10,
+          "tamagawa": 2
+        },
+        {
+          "p": 109,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 20,
+      "max_tamagawa": 2,
+      "root_number": 1,
+      "torsion_order": 4,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    }
+  },
+  "rows": [
+    {
+      "label": "Reyssat_raw",
+      "a": 2,
+      "b": 6436341,
+      "c": 6436343,
+      "rad_abc": 15042,
+      "quality_rad": 1.6299116841270482,
+      "N_cond": 240672,
+      "N_cond_factor": "2^5 * 3 * 23 * 109",
+      "minimal_discriminant_factor": "2^6 * 3^20 * 23^10 * 109^2",
+      "modular_degree": 4450176000,
+      "modular_degree_factor": "2^10 * 3^2 * 5^3 * 3863",
+      "degree_exponent_N": 1.7929035842104373,
+      "degree_over_N2": 0.07682915439481856,
+      "tamagawa_product": 800,
+      "tamagawa_product_factor": "2^5 * 5^2",
+      "degree_over_tamagawa_product": 5562720.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "III",
+          "split": false,
+          "nonsplit": false,
+          "f_p": 5,
+          "delta_v": 6,
+          "tamagawa": 2
+        },
+        {
+          "p": 3,
+          "kodaira": "I20",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 20,
+          "tamagawa": 20
+        },
+        {
+          "p": 23,
+          "kodaira": "I10",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 10,
+          "tamagawa": 10
+        },
+        {
+          "p": 109,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 20,
+      "max_tamagawa": 20,
+      "root_number": -1,
+      "torsion_order": 4,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "Reyssat_ANC_orientation",
+      "a": 6436341,
+      "b": 2,
+      "c": 6436343,
+      "rad_abc": 15042,
+      "quality_rad": 1.6299116841270482,
+      "N_cond": 240672,
+      "N_cond_factor": "2^5 * 3 * 23 * 109",
+      "minimal_discriminant_factor": "2^6 * 3^20 * 23^10 * 109^2",
+      "modular_degree": 4450176000,
+      "modular_degree_factor": "2^10 * 3^2 * 5^3 * 3863",
+      "degree_exponent_N": 1.7929035842104373,
+      "degree_over_N2": 0.07682915439481856,
+      "tamagawa_product": 16,
+      "tamagawa_product_factor": "2^4",
+      "degree_over_tamagawa_product": 278136000.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "III",
+          "split": false,
+          "nonsplit": false,
+          "f_p": 5,
+          "delta_v": 6,
+          "tamagawa": 2
+        },
+        {
+          "p": 3,
+          "kodaira": "I20",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 20,
+          "tamagawa": 2
+        },
+        {
+          "p": 23,
+          "kodaira": "I10",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 10,
+          "tamagawa": 2
+        },
+        {
+          "p": 109,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 20,
+      "max_tamagawa": 2,
+      "root_number": 1,
+      "torsion_order": 4,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "ABCHome_2",
+      "a": 121,
+      "b": 48234375,
+      "c": 48234496,
+      "rad_abc": 53130,
+      "quality_rad": 1.6259905201086524,
+      "N_cond": 53130,
+      "N_cond_factor": "2 * 3 * 5 * 7 * 11 * 23",
+      "minimal_discriminant_factor": "2^34 * 3^4 * 5^12 * 7^6 * 11^4 * 23^2",
+      "modular_degree": 3158507520,
+      "modular_degree_factor": "2^16 * 3^4 * 5 * 7 * 17",
+      "degree_exponent_N": 2.01032778282889,
+      "degree_over_N2": 1.1189283649843884,
+      "tamagawa_product": 6528,
+      "tamagawa_product_factor": "2^7 * 3 * 17",
+      "degree_over_tamagawa_product": 483840.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I34",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 34,
+          "tamagawa": 34
+        },
+        {
+          "p": 3,
+          "kodaira": "I4",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 2
+        },
+        {
+          "p": 5,
+          "kodaira": "I12",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 12,
+          "tamagawa": 12
+        },
+        {
+          "p": 7,
+          "kodaira": "I6",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 6,
+          "tamagawa": 2
+        },
+        {
+          "p": 11,
+          "kodaira": "I4",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 2
+        },
+        {
+          "p": 23,
+          "kodaira": "I2",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 34,
+      "max_tamagawa": 34,
+      "root_number": 1,
+      "torsion_order": 4,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": 3158507520,
+        "factor": "2^16 * 3^4 * 5 * 7 * 17",
+        "status": "precomputed_loop_93",
+        "source": "_results/mstar_abchome_tail_probe_2026-05-09.json"
+      },
+      "congruence_equals_modular_degree": true,
+      "isogeny": {
+        "status": "precomputed_loop_93",
+        "source": "_results/mstar_abchome_tail_probe_2026-05-09.json",
+        "size": 4,
+        "modular_degrees": [
+          3158507520,
+          6317015040,
+          1579253760,
+          6317015040
+        ],
+        "min_modular_degree": 1579253760,
+        "frey_degree_over_min": 2.0,
+        "matrix": [
+          [
+            1,
+            2,
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            4,
+            4
+          ],
+          [
+            2,
+            4,
+            1,
+            4
+          ],
+          [
+            2,
+            4,
+            4,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "label": "classic_4374",
+      "a": 1,
+      "b": 4374,
+      "c": 4375,
+      "rad_abc": 210,
+      "quality_rad": 1.567887264400461,
+      "N_cond": 3360,
+      "N_cond_factor": "2^5 * 3 * 5 * 7",
+      "minimal_discriminant_factor": "2^6 * 3^14 * 5^8 * 7^2",
+      "modular_degree": 107520,
+      "modular_degree_factor": "2^10 * 3 * 5 * 7",
+      "degree_exponent_N": 1.4268307329276613,
+      "degree_over_N2": 0.009523809523809525,
+      "tamagawa_product": 64,
+      "tamagawa_product_factor": "2^6",
+      "degree_over_tamagawa_product": 1680.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "III",
+          "split": false,
+          "nonsplit": false,
+          "f_p": 5,
+          "delta_v": 6,
+          "tamagawa": 2
+        },
+        {
+          "p": 3,
+          "kodaira": "I14",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 14,
+          "tamagawa": 2
+        },
+        {
+          "p": 5,
+          "kodaira": "I8",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 8,
+          "tamagawa": 8
+        },
+        {
+          "p": 7,
+          "kodaira": "I2",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 14,
+      "max_tamagawa": 8,
+      "root_number": 1,
+      "torsion_order": 4,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "classic_2401",
+      "a": 1,
+      "b": 2400,
+      "c": 2401,
+      "rad_abc": 210,
+      "quality_rad": 1.4556731001773688,
+      "N_cond": 1680,
+      "N_cond_factor": "2^4 * 3 * 5 * 7",
+      "minimal_discriminant_factor": "2^14 * 3^2 * 5^4 * 7^8",
+      "modular_degree": 24576,
+      "modular_degree_factor": "2^13 * 3",
+      "degree_exponent_N": 1.3612682737830513,
+      "degree_over_N2": 0.008707482993197279,
+      "tamagawa_product": 256,
+      "tamagawa_product_factor": "2^8",
+      "degree_over_tamagawa_product": 96.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I6*",
+          "split": false,
+          "nonsplit": false,
+          "f_p": 4,
+          "delta_v": 14,
+          "tamagawa": 4
+        },
+        {
+          "p": 3,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        },
+        {
+          "p": 5,
+          "kodaira": "I4",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 4
+        },
+        {
+          "p": 7,
+          "kodaira": "I8",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 8,
+          "tamagawa": 8
+        }
+      ],
+      "max_delta_v": 14,
+      "max_tamagawa": 8,
+      "root_number": 1,
+      "torsion_order": 8,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "1+8=9",
+      "a": 1,
+      "b": 8,
+      "c": 9,
+      "rad_abc": 6,
+      "quality_rad": 1.226294385530917,
+      "N_cond": 48,
+      "N_cond_factor": "2^4 * 3",
+      "minimal_discriminant_factor": "2^10 * 3^4",
+      "modular_degree": 4,
+      "modular_degree_factor": "2^2",
+      "degree_exponent_N": 0.3581044635020827,
+      "degree_over_N2": 0.001736111111111111,
+      "tamagawa_product": 16,
+      "tamagawa_product_factor": "2^4",
+      "degree_over_tamagawa_product": 0.25,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I2*",
+          "split": false,
+          "nonsplit": false,
+          "f_p": 4,
+          "delta_v": 10,
+          "tamagawa": 4
+        },
+        {
+          "p": 3,
+          "kodaira": "I4",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 4
+        }
+      ],
+      "max_delta_v": 10,
+      "max_tamagawa": 4,
+      "root_number": 1,
+      "torsion_order": 8,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "1+63=64",
+      "a": 1,
+      "b": 63,
+      "c": 64,
+      "rad_abc": 42,
+      "quality_rad": 1.1126941404922133,
+      "N_cond": 42,
+      "N_cond_factor": "2 * 3 * 7",
+      "minimal_discriminant_factor": "2^4 * 3^4 * 7^2",
+      "modular_degree": 8,
+      "modular_degree_factor": "2^3",
+      "degree_exponent_N": 0.5563470702461066,
+      "degree_over_N2": 0.0045351473922902496,
+      "tamagawa_product": 16,
+      "tamagawa_product_factor": "2^4",
+      "degree_over_tamagawa_product": 0.5,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I4",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 4
+        },
+        {
+          "p": 3,
+          "kodaira": "I4",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 2
+        },
+        {
+          "p": 7,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 4,
+      "max_tamagawa": 4,
+      "root_number": 1,
+      "torsion_order": 8,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "1+80=81",
+      "a": 1,
+      "b": 80,
+      "c": 81,
+      "rad_abc": 30,
+      "quality_rad": 1.292030029884618,
+      "N_cond": 240,
+      "N_cond_factor": "2^4 * 3 * 5",
+      "minimal_discriminant_factor": "2^12 * 3^8 * 5^2",
+      "modular_degree": 128,
+      "modular_degree_factor": "2^7",
+      "degree_exponent_N": 0.8853037632628679,
+      "degree_over_N2": 0.0022222222222222222,
+      "tamagawa_product": 64,
+      "tamagawa_product_factor": "2^6",
+      "degree_over_tamagawa_product": 2.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I4*",
+          "split": false,
+          "nonsplit": false,
+          "f_p": 4,
+          "delta_v": 12,
+          "tamagawa": 4
+        },
+        {
+          "p": 3,
+          "kodaira": "I8",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 8,
+          "tamagawa": 8
+        },
+        {
+          "p": 5,
+          "kodaira": "I2",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 12,
+      "max_tamagawa": 8,
+      "root_number": 1,
+      "torsion_order": 8,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "5+27=32",
+      "a": 5,
+      "b": 27,
+      "c": 32,
+      "rad_abc": 30,
+      "quality_rad": 1.018975235452531,
+      "N_cond": 30,
+      "N_cond_factor": "2 * 3 * 5",
+      "minimal_discriminant_factor": "2^2 * 3^6 * 5^2",
+      "modular_degree": 4,
+      "modular_degree_factor": "2^2",
+      "degree_exponent_N": 0.40759009418101233,
+      "degree_over_N2": 0.0044444444444444444,
+      "tamagawa_product": 24,
+      "tamagawa_product_factor": "2^3 * 3",
+      "degree_over_tamagawa_product": 0.16666666666666666,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        },
+        {
+          "p": 3,
+          "kodaira": "I6",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 6,
+          "tamagawa": 6
+        },
+        {
+          "p": 5,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 6,
+      "max_tamagawa": 6,
+      "root_number": 1,
+      "torsion_order": 12,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "3+125=128",
+      "a": 3,
+      "b": 125,
+      "c": 128,
+      "rad_abc": 30,
+      "quality_rad": 1.4265653296335432,
+      "N_cond": 240,
+      "N_cond_factor": "2^4 * 3 * 5",
+      "minimal_discriminant_factor": "2^18 * 3^2 * 5^6",
+      "modular_degree": 288,
+      "modular_degree_factor": "2^5 * 3^2",
+      "degree_exponent_N": 1.0332664784788959,
+      "degree_over_N2": 0.005,
+      "tamagawa_product": 16,
+      "tamagawa_product_factor": "2^4",
+      "degree_over_tamagawa_product": 18.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I10*",
+          "split": false,
+          "nonsplit": false,
+          "f_p": 4,
+          "delta_v": 18,
+          "tamagawa": 4
+        },
+        {
+          "p": 3,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        },
+        {
+          "p": 5,
+          "kodaira": "I6",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 6,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 18,
+      "max_tamagawa": 4,
+      "root_number": 1,
+      "torsion_order": 4,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "13+243=256",
+      "a": 13,
+      "b": 243,
+      "c": 256,
+      "rad_abc": 78,
+      "quality_rad": 1.2727904629543532,
+      "N_cond": 78,
+      "N_cond_factor": "2 * 3 * 13",
+      "minimal_discriminant_factor": "2^8 * 3^10 * 13^2",
+      "modular_degree": 80,
+      "modular_degree_factor": "2^4 * 5",
+      "degree_exponent_N": 1.0058112233319771,
+      "degree_over_N2": 0.013149243918474688,
+      "tamagawa_product": 8,
+      "tamagawa_product_factor": "2^3",
+      "degree_over_tamagawa_product": 10.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I8",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 8,
+          "tamagawa": 2
+        },
+        {
+          "p": 3,
+          "kodaira": "I10",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 10,
+          "tamagawa": 2
+        },
+        {
+          "p": 13,
+          "kodaira": "I2",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 10,
+      "max_tamagawa": 2,
+      "root_number": 1,
+      "torsion_order": 4,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "32+49=81",
+      "a": 32,
+      "b": 49,
+      "c": 81,
+      "rad_abc": 42,
+      "quality_rad": 1.1757189916348774,
+      "N_cond": 42,
+      "N_cond_factor": "2 * 3 * 7",
+      "minimal_discriminant_factor": "2^2 * 3^8 * 7^4",
+      "modular_degree": 16,
+      "modular_degree_factor": "2^4",
+      "degree_exponent_N": 0.7417960936614756,
+      "degree_over_N2": 0.009070294784580499,
+      "tamagawa_product": 8,
+      "tamagawa_product_factor": "2^3",
+      "degree_over_tamagawa_product": 2.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I2",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        },
+        {
+          "p": 3,
+          "kodaira": "I8",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 8,
+          "tamagawa": 2
+        },
+        {
+          "p": 7,
+          "kodaira": "I4",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 8,
+      "max_tamagawa": 2,
+      "root_number": 1,
+      "torsion_order": 4,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "1+4095=4096",
+      "a": 1,
+      "b": 4095,
+      "c": 4096,
+      "rad_abc": 2730,
+      "quality_rad": 1.0512773459890672,
+      "N_cond": 2730,
+      "N_cond_factor": "2 * 3 * 5 * 7 * 13",
+      "minimal_discriminant_factor": "2^16 * 3^4 * 5^2 * 7^2 * 13^2",
+      "modular_degree": 16384,
+      "modular_degree_factor": "2^14",
+      "degree_exponent_N": 1.226490236987245,
+      "degree_over_N2": 0.002198338901635605,
+      "tamagawa_product": 256,
+      "tamagawa_product_factor": "2^8",
+      "degree_over_tamagawa_product": 64.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I16",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 16,
+          "tamagawa": 16
+        },
+        {
+          "p": 3,
+          "kodaira": "I4",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 4,
+          "tamagawa": 2
+        },
+        {
+          "p": 5,
+          "kodaira": "I2",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        },
+        {
+          "p": 7,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        },
+        {
+          "p": 13,
+          "kodaira": "I2",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 16,
+      "max_tamagawa": 16,
+      "root_number": 1,
+      "torsion_order": 8,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "625+2048=2673",
+      "a": 625,
+      "b": 2048,
+      "c": 2673,
+      "rad_abc": 330,
+      "quality_rad": 1.3607226485800983,
+      "N_cond": 2640,
+      "N_cond_factor": "2^4 * 3 * 5 * 11",
+      "minimal_discriminant_factor": "2^26 * 3^10 * 5^8 * 11^2",
+      "modular_degree": 107520,
+      "modular_degree_factor": "2^10 * 3 * 5 * 7",
+      "degree_exponent_N": 1.4705060443137503,
+      "degree_over_N2": 0.015426997245179064,
+      "tamagawa_product": 160,
+      "tamagawa_product_factor": "2^5 * 5",
+      "degree_over_tamagawa_product": 672.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I18*",
+          "split": false,
+          "nonsplit": false,
+          "f_p": 4,
+          "delta_v": 26,
+          "tamagawa": 4
+        },
+        {
+          "p": 3,
+          "kodaira": "I10",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 10,
+          "tamagawa": 10
+        },
+        {
+          "p": 5,
+          "kodaira": "I8",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 8,
+          "tamagawa": 2
+        },
+        {
+          "p": 11,
+          "kodaira": "I2",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 26,
+      "max_tamagawa": 10,
+      "root_number": 1,
+      "torsion_order": 4,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    },
+    {
+      "label": "1+1023=1024",
+      "a": 1,
+      "b": 1023,
+      "c": 1024,
+      "rad_abc": 2046,
+      "quality_rad": 0.9092074174300852,
+      "N_cond": 2046,
+      "N_cond_factor": "2 * 3 * 11 * 31",
+      "minimal_discriminant_factor": "2^12 * 3^2 * 11^2 * 31^2",
+      "modular_degree": 3072,
+      "modular_degree_factor": "2^10 * 3",
+      "degree_exponent_N": 1.0533133836305064,
+      "degree_over_N2": 0.0007338544846822209,
+      "tamagawa_product": 96,
+      "tamagawa_product_factor": "2^5 * 3",
+      "degree_over_tamagawa_product": 32.0,
+      "local_data": [
+        {
+          "p": 2,
+          "kodaira": "I12",
+          "split": true,
+          "nonsplit": false,
+          "f_p": 1,
+          "delta_v": 12,
+          "tamagawa": 12
+        },
+        {
+          "p": 3,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        },
+        {
+          "p": 11,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        },
+        {
+          "p": 31,
+          "kodaira": "I2",
+          "split": false,
+          "nonsplit": true,
+          "f_p": 1,
+          "delta_v": 2,
+          "tamagawa": 2
+        }
+      ],
+      "max_delta_v": 12,
+      "max_tamagawa": 12,
+      "root_number": 1,
+      "torsion_order": 8,
+      "two_torsion_rank": 2,
+      "congruence_number": {
+        "value": null,
+        "factor": null,
+        "status": "skipped_dynamic_disabled",
+        "reason": "dynamic congruence_number() calls hung in Loop 94; ABCHome is precomputed only"
+      },
+      "congruence_equals_modular_degree": null,
+      "isogeny": {
+        "status": "skipped_dynamic_disabled",
+        "size": null,
+        "reason": "dynamic isogeny_class() calls are disabled for this conservative ledger"
+      }
+    }
+  ]
+}

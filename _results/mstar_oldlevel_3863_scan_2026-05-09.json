@@ -1,0 +1,436 @@
+{
+  "date": "2026-05-09",
+  "purpose": "Targeted old-level GF(3863) Hecke eigenspace scan for the Reyssat residual trace system.",
+  "guardrail": "Diagnostic finite-prime scan with per-level subprocess timeout; not a full Sturm proof.",
+  "q": 3863,
+  "levels": [
+    109,
+    218,
+    327,
+    872,
+    1744,
+    2507,
+    3488,
+    15042
+  ],
+  "prime_count": 12,
+  "timeout_seconds_per_worker": 90,
+  "summary": {
+    "worker_count": 16,
+    "ok_count": 14,
+    "timeout_count": 2,
+    "error_count": 0,
+    "survivor_count": 0,
+    "survivors": []
+  },
+  "rows": [
+    {
+      "level": 109,
+      "level_factor": "109",
+      "mode": "raw",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 0.24933884500000403,
+      "ambient_sign_plus_dimension": 9,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 8,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 8,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 2.5964287850000005
+    },
+    {
+      "level": 109,
+      "level_factor": "109",
+      "mode": "anc",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 0.08416356200000052,
+      "ambient_sign_plus_dimension": 9,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 8,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 8,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 1.9771079819999997
+    },
+    {
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "raw",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 0.23954407600000138,
+      "ambient_sign_plus_dimension": 29,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 10,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 10,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 1.9046641890000018
+    },
+    {
+      "level": 218,
+      "level_factor": "2 * 109",
+      "mode": "anc",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 0.279077443999995,
+      "ambient_sign_plus_dimension": 29,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 10,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 10,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 2.29220952
+    },
+    {
+      "level": 327,
+      "level_factor": "3 * 109",
+      "mode": "raw",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 0.294039699999999,
+      "ambient_sign_plus_dimension": 38,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 19,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 19,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 1.8361900640000073
+    },
+    {
+      "level": 327,
+      "level_factor": "3 * 109",
+      "mode": "anc",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 0.45931091399999957,
+      "ambient_sign_plus_dimension": 38,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 19,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 19,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 2.2567569749999876
+    },
+    {
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "raw",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 1.2776716319999935,
+      "ambient_sign_plus_dimension": 114,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 27,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 27,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 3.131819142000012
+    },
+    {
+      "level": 872,
+      "level_factor": "2^3 * 109",
+      "mode": "anc",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 1.1552316279999957,
+      "ambient_sign_plus_dimension": 114,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 27,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 27,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 3.0711701009999928
+    },
+    {
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "raw",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 3.8212216989999916,
+      "ambient_sign_plus_dimension": 224,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 54,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 54,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 5.276919125999996
+    },
+    {
+      "level": 1744,
+      "level_factor": "2^4 * 109",
+      "mode": "anc",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 3.576358815000006,
+      "ambient_sign_plus_dimension": 224,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 54,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 54,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 5.047860111999995
+    },
+    {
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "raw",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 3.3361563300000086,
+      "ambient_sign_plus_dimension": 222,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 199,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 199,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 4.654045179000008
+    },
+    {
+      "level": 2507,
+      "level_factor": "23 * 109",
+      "mode": "anc",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 4.559799336999987,
+      "ambient_sign_plus_dimension": 222,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 199,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 199,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 6.106296912999994
+    },
+    {
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "raw",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 13.056693170999992,
+      "ambient_sign_plus_dimension": 444,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 108,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 108,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 14.615768005999996
+    },
+    {
+      "level": 3488,
+      "level_factor": "2^5 * 109",
+      "mode": "anc",
+      "q": 3863,
+      "prime_count_requested": 12,
+      "primes_used": [
+        5
+      ],
+      "status": "ok",
+      "elapsed_seconds": 12.470387667000011,
+      "ambient_sign_plus_dimension": 444,
+      "module_method": "cuspidal.new_submodule",
+      "module_method_error": null,
+      "module_dimension": 108,
+      "surviving_dimension": 0,
+      "survives_all_used_primes": false,
+      "trace": [
+        {
+          "p": 5,
+          "a_p_mod_q": 2,
+          "before": 108,
+          "kernel_dim": 0,
+          "after": 0
+        }
+      ],
+      "manager_elapsed_seconds": 14.082432945000008
+    },
+    {
+      "level": 15042,
+      "mode": "raw",
+      "status": "timeout",
+      "timeout_seconds": 90,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "level": 15042,
+      "mode": "anc",
+      "status": "timeout",
+      "timeout_seconds": 90,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    }
+  ]
+}

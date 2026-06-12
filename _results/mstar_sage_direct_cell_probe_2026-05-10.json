@@ -1,0 +1,163 @@
+{
+  "date": "2026-05-10",
+  "purpose": "Sage sign=+1 cell/decomposition access probe.",
+  "q": 3863,
+  "levels": [
+    109,
+    218,
+    60168
+  ],
+  "sign": 1,
+  "timeout_seconds_per_worker": 90,
+  "summary": {
+    "worker_count": 3,
+    "ok_count": 2,
+    "timeout_count": 1,
+    "error_count": 0
+  },
+  "rows": [
+    {
+      "level": 109,
+      "level_factor": "109",
+      "sign": 1,
+      "status": "ok",
+      "q": 3863,
+      "ambient_dimension": 9,
+      "cuspidal_dimension": 8,
+      "new_dimension": 8,
+      "timings": {
+        "module_seconds": 0.0790628850000008,
+        "cuspidal_seconds": 0.038296144000000254,
+        "newspace_seconds": 0.00025758399999986636,
+        "total_seconds": 0.18740649700000134
+      },
+      "decompositions": [
+        {
+          "name": "cuspidal_decomposition_bound5",
+          "status": "ok",
+          "count": 5,
+          "dims": [
+            1,
+            1,
+            1,
+            1,
+            4
+          ],
+          "elapsed_seconds": 0.05561892199999896
+        },
+        {
+          "name": "newspace_decomposition_bound5",
+          "status": "ok",
+          "count": 5,
+          "dims": [
+            1,
+            1,
+            1,
+            1,
+            4
+          ],
+          "elapsed_seconds": 5.677999999065264e-06
+        },
+        {
+          "name": "cuspidal_star_decomposition",
+          "status": "ok",
+          "count": 1,
+          "dims": [
+            8
+          ],
+          "elapsed_seconds": 0.00979787900000062
+        },
+        {
+          "name": "newspace_star_decomposition",
+          "status": "ok",
+          "count": 1,
+          "dims": [
+            8
+          ],
+          "elapsed_seconds": 0.0005728469999990438
+        }
+      ],
+      "manager_elapsed_seconds": 2.349620155
+    },
+    {
+      "level": 218,
+      "level_factor": "2 * 109",
+      "sign": 1,
+      "status": "ok",
+      "q": 3863,
+      "ambient_dimension": 29,
+      "cuspidal_dimension": 26,
+      "new_dimension": 10,
+      "timings": {
+        "module_seconds": 0.048166786999999545,
+        "cuspidal_seconds": 0.03142189300000098,
+        "newspace_seconds": 0.18414084199999792,
+        "total_seconds": 0.38723648599999905
+      },
+      "decompositions": [
+        {
+          "name": "cuspidal_decomposition_bound5",
+          "status": "ok",
+          "count": 12,
+          "dims": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            2,
+            3,
+            8
+          ],
+          "elapsed_seconds": 0.0682645639999997
+        },
+        {
+          "name": "newspace_decomposition_bound5",
+          "status": "ok",
+          "count": 7,
+          "dims": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            3
+          ],
+          "elapsed_seconds": 0.015409202000000732
+        },
+        {
+          "name": "cuspidal_star_decomposition",
+          "status": "ok",
+          "count": 1,
+          "dims": [
+            26
+          ],
+          "elapsed_seconds": 0.0309943230000016
+        },
+        {
+          "name": "newspace_star_decomposition",
+          "status": "ok",
+          "count": 1,
+          "dims": [
+            10
+          ],
+          "elapsed_seconds": 0.005809182000000135
+        }
+      ],
+      "manager_elapsed_seconds": 2.8270141879999997
+    },
+    {
+      "level": 60168,
+      "sign": 1,
+      "status": "timeout",
+      "timeout_seconds": 90,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    }
+  ]
+}

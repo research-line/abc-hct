@@ -1,0 +1,27 @@
+{
+  "id": "mdet_240672_rank_drop_primes_2026-06-12",
+  "title": "M-DET 240672: Rangabfall-Primes der gestapelten Gate-2-Matrix (Satz-A-Replikation)",
+  "status": "queued",
+  "priority": 9,
+  "allowed_hosts": [
+    "mac-studio"
+  ],
+  "disallowed_hosts": [
+    "ASUS-GEI"
+  ],
+  "depends_on_success": [],
+  "defer_while_process_regex": [
+    "mdet_1b_snf_exponents"
+  ],
+  "resource_policy": {
+    "min_free_mem_gb": 12.0,
+    "max_load_1min": 6.0
+  },
+  "backend": {
+    "type": "sage",
+    "allow_docker": false
+  },
+  "command": "{sage} _scripts/mdet_240672_rank_drop_primes.py",
+  "expected_runtime_hours": "2-9 (9 sparse GF(p)-Raenge auf 146672 x 126720, nnz ~2M; Checkpoint nach jedem Prime)",
+  "notes": "240672-Replikation von M-DET 1a gemaess Satz-Note Par. 8f (pivot-frei: Raenge statt Minoren). M_total = 126672 Witness-Zeilen + Operator-Bloecke (Vereinigung v2b/v3: T13 4000, T7/T11/T17/T19 je 3000, U23 4000 Symbole, Z-exakt). Anker-Selbsttest: rank mod 5077 und mod 3863 MUESSEN 126719 sein (Obermenge der GREEN-Laeufe). Drop-Primes = Teiler von e_r | D(W); 60168-Vergleich: {2,3,5,31} = S5-Inventar. Deferred bis mdet_1b fertig (RAM)."
+}

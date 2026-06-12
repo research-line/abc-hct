@@ -1,0 +1,28 @@
+{
+  "_status": "TEMPLATE — alle Kanonizitaetsflags bewusst false. Pruefen mit _scripts/source_canonicality_verifier.py. Erwartung: source_ready=false. full_rank_witness allein liefert NIE source_ready (AP-4 != CQ-3).",
+  "_schema": "_scripts/source_canonicality_schema.json",
+  "meta": {
+    "case": "60168/raw",
+    "created": "2026-06-01",
+    "campaign": "Source Canonicality Contract CQ-3/S2a (_proof-notes/source_canonicality_contract_2026-06-01.md)"
+  },
+  "source_block": {
+    "source_block_hash": "<<FILL: sha256(A) aus N60168_raw_sign1_splitlast>>",
+    "full_rank_witness": true
+  },
+  "canonical_presentation": {
+    "F_E_defined": false,
+    "M_E_defined": false,
+    "rho_E_defined": false,
+    "ap7_equivalence_to_export": false,
+    "lattice_canonical": false
+  },
+  "labels": {
+    "source_canonicality": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "canonicality_holds_if": "F_E_defined UND M_E_defined UND rho_E_defined UND ap7_equivalence_to_export UND lattice_canonical UND source_block_hash gesetzt",
+    "but_not": ["full_rank_witness allein genuegt NICHT", "canonical_level (nur CQ-4)", "PCAT/FAQS", "abc"]
+  }
+}

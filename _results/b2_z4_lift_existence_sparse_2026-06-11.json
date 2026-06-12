@@ -1,0 +1,23 @@
+{
+  "nrows": 31680,
+  "rank_mod2": 31678,
+  "kernel_dim_mod2": 2,
+  "r_ones": 16778,
+  "n_inconsistent": 0,
+  "z4_lift_exists": true,
+  "solve_seconds": 73.72901225090027,
+  "verification_Mvtilde_mod4_zero": true,
+  "verification_failures": 0,
+  "max_residue_mod4": 0,
+  "vtilde_value_counts": {
+    "0": 10552,
+    "1": 8133,
+    "2": 0,
+    "3": 12995
+  },
+  "date": "2026-06-11",
+  "script": "b2_z4_lift_existence_sparse.py",
+  "source_rows": "_results\\rc3c_source_witness_60168_raw_2026-05-12\\N60168_raw_sign1\\source_rows.jsonl",
+  "kernel_source": "_results\\mstar_s5_p2_cokernel_from_witness_60168_raw_2026-05-13.json",
+  "total_seconds": 75.18064641952515
+}

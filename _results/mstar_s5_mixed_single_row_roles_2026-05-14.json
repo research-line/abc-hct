@@ -1,0 +1,136 @@
+{
+  "tool": "mstar_s5_modular_exception_scan",
+  "description": "modular rank scan for S5 exception-prime recursion",
+  "primes": [
+    2,
+    3,
+    5,
+    31
+  ],
+  "pivot_strategy": "max",
+  "rank_engine": "sage-matrix",
+  "results": [
+    {
+      "case": "N60168_raw_source_plus_T5b11r575_sign1",
+      "path": "_results/s5_mixed_superset_witness_60168_raw_2026-05-14/N60168_raw_source_plus_T5b11r575_sign1",
+      "q": 3863,
+      "ncols": 31680,
+      "source_rows": 31681,
+      "square": false,
+      "status": "ok",
+      "pivot_strategy": "max",
+      "rank_engine": "sage-matrix",
+      "prime_results": [
+        {
+          "prime": 2,
+          "rank": 31679,
+          "ncols": 31680,
+          "full_rank": false,
+          "rows_seen": 31681,
+          "seconds": 41.067140584,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 3,
+          "rank": 31680,
+          "ncols": 31680,
+          "full_rank": true,
+          "rows_seen": 31681,
+          "seconds": 300.216841026,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 5,
+          "rank": 31680,
+          "ncols": 31680,
+          "full_rank": true,
+          "rows_seen": 31681,
+          "seconds": 479.807663717,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 31,
+          "rank": 31680,
+          "ncols": 31680,
+          "full_rank": true,
+          "rows_seen": 31681,
+          "seconds": 392.65398436400005,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        }
+      ],
+      "full_rank_primes": [
+        3,
+        5,
+        31
+      ],
+      "exception_candidate_primes": [
+        2
+      ]
+    },
+    {
+      "case": "N60168_raw_source_plus_T7b1r1_sign1",
+      "path": "_results/s5_mixed_superset_witness_60168_raw_2026-05-14/N60168_raw_source_plus_T7b1r1_sign1",
+      "q": 3863,
+      "ncols": 31680,
+      "source_rows": 31681,
+      "square": false,
+      "status": "ok",
+      "pivot_strategy": "max",
+      "rank_engine": "sage-matrix",
+      "prime_results": [
+        {
+          "prime": 2,
+          "rank": 31679,
+          "ncols": 31680,
+          "full_rank": false,
+          "rows_seen": 31681,
+          "seconds": 89.93188666399988,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 3,
+          "rank": 31679,
+          "ncols": 31680,
+          "full_rank": false,
+          "rows_seen": 31681,
+          "seconds": 257.91460072100017,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 5,
+          "rank": 31680,
+          "ncols": 31680,
+          "full_rank": true,
+          "rows_seen": 31681,
+          "seconds": 260.318394526,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 31,
+          "rank": 31680,
+          "ncols": 31680,
+          "full_rank": true,
+          "rows_seen": 31681,
+          "seconds": 178.99746345300014,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        }
+      ],
+      "full_rank_primes": [
+        5,
+        31
+      ],
+      "exception_candidate_primes": [
+        2,
+        3
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "tool": "mstar_s5_negative_other_manin_orbit_profile",
+  "input_json": "_results/mstar_s5_109_axis_transition_profile_60168_raw_2026-05-14.json",
+  "level": 60168,
+  "negative_other_record_count": 1152,
+  "unique_negative_image_count": 384,
+  "target_count": 192,
+  "images_per_target_distribution": [
+    {
+      "key": "2",
+      "count": 192
+    }
+  ],
+  "records_per_image_distribution": [
+    {
+      "key": "3",
+      "count": 384
+    }
+  ],
+  "orbit_source_check_distribution": [
+    {
+      "key": "True",
+      "count": 1152
+    }
+  ],
+  "per_image_field_signature_distribution": [
+    {
+      "key": "base-gcd-v-line:id:-1:other|even-intermediate:T:-1:other|target-109d-axis:TT:-1:other",
+      "count": 384
+    }
+  ],
+  "bad_records": [],
+  "seconds_total": 2.933971957
+}

@@ -1,0 +1,32 @@
+{
+  "_status": "TEMPLATE — strukturell gueltiges Manifest, aber NOCH KEIN echtes Zertifikat. Bündelt PSC-2 (q=2) + PSC-1 (q=3,5,31) zu LM-60168. Pruefen mit _scripts/lm_manifest_verifier.py. Sobald die vier PSC-Zertifikate echt instanziiert sind (certificate_level=true), wird das Manifest-certificate_level true.",
+  "_schema": "_scripts/lm_manifest_schema.json",
+  "meta": {
+    "manifest_id": "LM-60168",
+    "case": "60168/raw",
+    "created": "2026-06-01",
+    "campaign": "Local Drainage Manifest (_proof-notes/local_drainage_manifest_2026-06-01.md)"
+  },
+  "claim": {
+    "statement": "Lokaler Satz LM-60168: ell_2 = ell_3 = ell_5 = ell_31 = 0 fuer den exportierten 60168/raw-Block, d.h. sum_{q in {2,3,5,31}} ell_q(coker[A;R_q]) log q = 0.",
+    "scope": "LOCAL certificate-level. NICHT global: beweist NICHT log content(P_E) <= eps log N + C_eps (PCAT/FAQS bleibt offen)."
+  },
+  "required_primes": [2, 3, 5, 31],
+  "entries": [
+    {"q": 2,  "psc_version": "PSC-2", "d_q": 2, "certificate": "psc2_60168_raw_q2_certificate.json",  "template": "psc2_60168_raw_q2_template.json",                "repair": "t5,t7 (gekoppelt, [[1,1],[1,0]])", "labels": {"certificate_level": false, "presentation_level": false, "canonical_level": false}},
+    {"q": 3,  "psc_version": "PSC-1", "d_q": 1, "certificate": "psc1_60168_raw_q3_certificate.json",  "template": "psc1_60168_raw_template.json#instances[0]",      "repair": "t5",                              "labels": {"certificate_level": false, "presentation_level": false, "canonical_level": false}},
+    {"q": 5,  "psc_version": "PSC-1", "d_q": 1, "certificate": "psc1_60168_raw_q5_certificate.json",  "template": "psc1_60168_raw_template.json#instances[1]",      "repair": "t5 oder t7 (redundant)",          "labels": {"certificate_level": false, "presentation_level": false, "canonical_level": false}},
+    {"q": 31, "psc_version": "PSC-1", "d_q": 1, "certificate": "psc1_60168_raw_q31_certificate.json", "template": "psc1_60168_raw_template.json#instances[2]",      "repair": "t5 oder t7 (redundant)",          "labels": {"certificate_level": false, "presentation_level": false, "canonical_level": false}}
+  ],
+  "aggregate_labels": {
+    "_rule": "Manifest-Level = logisches UND der Eintrags-Labels (alle q muessen das Level erfuellen).",
+    "certificate_level": false,
+    "presentation_level": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "local_theorem_holds_if": "alle entries.certificate_level == true",
+    "but_not": ["PCAT (log content(P_E) <= eps log N + C_eps)", "FAQS / M*-Transfer", "abc"],
+    "canonical_open": "canonical_level erfordert S2a/S2b + H3 (s. _proof-notes/local_drainage_manifest_2026-06-01.md, Canonicity-Checkliste)."
+  }
+}

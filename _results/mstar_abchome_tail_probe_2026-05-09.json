@@ -1,0 +1,369 @@
+{
+  "date": "2026-05-09",
+  "label": "ABCHome_2",
+  "a": 121,
+  "b": 48234375,
+  "c": 48234496,
+  "abc_factor": "2^21 * 3^2 * 5^6 * 7^3 * 11^2 * 23",
+  "c_factor": "2^21 * 23",
+  "rad_abc": 53130,
+  "quality_rad": 1.6259905201086524,
+  "N_cond": 53130,
+  "N_cond_factor": "2 * 3 * 5 * 7 * 11 * 23",
+  "minimal_model_ainvs": [
+    1,
+    1,
+    1,
+    -48470016000305,
+    129884638715634610127
+  ],
+  "minimal_discriminant": 309570505431123492864000000000000,
+  "minimal_discriminant_factor": "2^34 * 3^4 * 5^12 * 7^6 * 11^4 * 23^2",
+  "frey_curve": {
+    "index": 0,
+    "ainvs": [
+      0,
+      48234254,
+      0,
+      -5836359375,
+      0
+    ],
+    "N_cond": 53130,
+    "modular_degree": 3158507520,
+    "modular_degree_factor": "2^16 * 3^4 * 5 * 7 * 17",
+    "congruence_number": 3158507520,
+    "congruence_number_factor": "2^16 * 3^4 * 5 * 7 * 17",
+    "congruence_equals_modular_degree": true,
+    "degree_exponent_N": 2.01032778282889,
+    "degree_over_N2": {
+      "num": 2506752,
+      "den": 2240315,
+      "float": 1.1189283649843884,
+      "factor_num": "2^14 * 3^2 * 17",
+      "factor_den": "5 * 7 * 11^2 * 23^2"
+    },
+    "torsion_order": 4,
+    "two_torsion_rank": 2,
+    "root_number": 1,
+    "tamagawa_numbers": [
+      34,
+      2,
+      12,
+      2,
+      2,
+      2
+    ],
+    "tamagawa_product": 6528,
+    "tamagawa_product_bsd": 13056
+  },
+  "local_data": [
+    {
+      "p": 2,
+      "kodaira": "I34",
+      "bad_reduction_type": "1",
+      "split_multiplicative": true,
+      "nonsplit_multiplicative": false,
+      "conductor_valuation": 1,
+      "minimal_discriminant_valuation": 34,
+      "tamagawa_number": 34,
+      "tamagawa_exponent": 34
+    },
+    {
+      "p": 3,
+      "kodaira": "I4",
+      "bad_reduction_type": "-1",
+      "split_multiplicative": false,
+      "nonsplit_multiplicative": true,
+      "conductor_valuation": 1,
+      "minimal_discriminant_valuation": 4,
+      "tamagawa_number": 2,
+      "tamagawa_exponent": 2
+    },
+    {
+      "p": 5,
+      "kodaira": "I12",
+      "bad_reduction_type": "1",
+      "split_multiplicative": true,
+      "nonsplit_multiplicative": false,
+      "conductor_valuation": 1,
+      "minimal_discriminant_valuation": 12,
+      "tamagawa_number": 12,
+      "tamagawa_exponent": 12
+    },
+    {
+      "p": 7,
+      "kodaira": "I6",
+      "bad_reduction_type": "-1",
+      "split_multiplicative": false,
+      "nonsplit_multiplicative": true,
+      "conductor_valuation": 1,
+      "minimal_discriminant_valuation": 6,
+      "tamagawa_number": 2,
+      "tamagawa_exponent": 2
+    },
+    {
+      "p": 11,
+      "kodaira": "I4",
+      "bad_reduction_type": "-1",
+      "split_multiplicative": false,
+      "nonsplit_multiplicative": true,
+      "conductor_valuation": 1,
+      "minimal_discriminant_valuation": 4,
+      "tamagawa_number": 2,
+      "tamagawa_exponent": 2
+    },
+    {
+      "p": 23,
+      "kodaira": "I2",
+      "bad_reduction_type": "1",
+      "split_multiplicative": true,
+      "nonsplit_multiplicative": false,
+      "conductor_valuation": 1,
+      "minimal_discriminant_valuation": 2,
+      "tamagawa_number": 2,
+      "tamagawa_exponent": 2
+    }
+  ],
+  "modular_degree_equals_congruence_number": true,
+  "degree_over_N2": {
+    "num": 2506752,
+    "den": 2240315,
+    "float": 1.1189283649843884,
+    "factor_num": "2^14 * 3^2 * 17",
+    "factor_den": "5 * 7 * 11^2 * 23^2"
+  },
+  "degree_factor_vs_N2": {
+    "degree_factor": "2^16 * 3^4 * 5 * 7 * 17",
+    "N2_factor": "2^2 * 3^2 * 5^2 * 7^2 * 11^2 * 23^2",
+    "interpretation": "Extra 2-adic and 3-adic mass, plus a 17-factor, is partly offset by missing 11^2 and 23^2 factors from N^2."
+  },
+  "isogeny_class": {
+    "size": 4,
+    "matrix": [
+      [
+        1,
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        1,
+        4,
+        4
+      ],
+      [
+        2,
+        4,
+        1,
+        4
+      ],
+      [
+        2,
+        4,
+        4,
+        1
+      ]
+    ],
+    "curves": [
+      {
+        "index": 0,
+        "ainvs": [
+          1,
+          1,
+          1,
+          -48470016000305,
+          129884638715634610127
+        ],
+        "N_cond": 53130,
+        "modular_degree": 3158507520,
+        "modular_degree_factor": "2^16 * 3^4 * 5 * 7 * 17",
+        "congruence_number": 3158507520,
+        "congruence_number_factor": "2^16 * 3^4 * 5 * 7 * 17",
+        "congruence_equals_modular_degree": true,
+        "degree_exponent_N": 2.01032778282889,
+        "degree_over_N2": {
+          "num": 2506752,
+          "den": 2240315,
+          "float": 1.1189283649843884,
+          "factor_num": "2^14 * 3^2 * 17",
+          "factor_den": "5 * 7 * 11^2 * 23^2"
+        },
+        "torsion_order": 4,
+        "two_torsion_rank": 2,
+        "root_number": 1,
+        "tamagawa_numbers": [
+          34,
+          2,
+          12,
+          2,
+          2,
+          2
+        ],
+        "tamagawa_product": 6528,
+        "tamagawa_product_bsd": 6528
+      },
+      {
+        "index": 1,
+        "ainvs": [
+          1,
+          1,
+          1,
+          -775520256000305,
+          8312617847303922610127
+        ],
+        "N_cond": 53130,
+        "modular_degree": 6317015040,
+        "modular_degree_factor": "2^17 * 3^4 * 5 * 7 * 17",
+        "congruence_number": 6317015040,
+        "congruence_number_factor": "2^17 * 3^4 * 5 * 7 * 17",
+        "congruence_equals_modular_degree": true,
+        "degree_exponent_N": 2.0740332532059504,
+        "degree_over_N2": {
+          "num": 5013504,
+          "den": 2240315,
+          "float": 2.237856729968777,
+          "factor_num": "2^15 * 3^2 * 17",
+          "factor_den": "5 * 7 * 11^2 * 23^2"
+        },
+        "torsion_order": 2,
+        "two_torsion_rank": 1,
+        "root_number": 1,
+        "tamagawa_numbers": [
+          17,
+          2,
+          6,
+          1,
+          2,
+          1
+        ],
+        "tamagawa_product": 408,
+        "tamagawa_product_bsd": 408
+      },
+      {
+        "index": 2,
+        "ainvs": [
+          1,
+          1,
+          1,
+          -3029262008625,
+          2029606900086697935
+        ],
+        "N_cond": 53130,
+        "modular_degree": 1579253760,
+        "modular_degree_factor": "2^15 * 3^4 * 5 * 7 * 17",
+        "congruence_number": 1579253760,
+        "congruence_number_factor": "2^15 * 3^4 * 5 * 7 * 17",
+        "congruence_equals_modular_degree": true,
+        "degree_exponent_N": 1.94662231245183,
+        "degree_over_N2": {
+          "num": 1253376,
+          "den": 2240315,
+          "float": 0.5594641824921942,
+          "factor_num": "2^13 * 3^2 * 17",
+          "factor_den": "5 * 7 * 11^2 * 23^2"
+        },
+        "torsion_order": 4,
+        "two_torsion_rank": 1,
+        "root_number": 1,
+        "tamagawa_numbers": [
+          68,
+          2,
+          6,
+          1,
+          2,
+          4
+        ],
+        "tamagawa_product": 6528,
+        "tamagawa_product_bsd": 6528
+      },
+      {
+        "index": 3,
+        "ainvs": [
+          1,
+          1,
+          1,
+          -48471839867185,
+          129874375137492824015
+        ],
+        "N_cond": 53130,
+        "modular_degree": 6317015040,
+        "modular_degree_factor": "2^17 * 3^4 * 5 * 7 * 17",
+        "congruence_number": 6317015040,
+        "congruence_number_factor": "2^17 * 3^4 * 5 * 7 * 17",
+        "congruence_equals_modular_degree": true,
+        "degree_exponent_N": 2.0740332532059504,
+        "degree_over_N2": {
+          "num": 5013504,
+          "den": 2240315,
+          "float": 2.237856729968777,
+          "factor_num": "2^15 * 3^2 * 17",
+          "factor_den": "5 * 7 * 11^2 * 23^2"
+        },
+        "torsion_order": 2,
+        "two_torsion_rank": 1,
+        "root_number": 1,
+        "tamagawa_numbers": [
+          17,
+          2,
+          24,
+          2,
+          2,
+          1
+        ],
+        "tamagawa_product": 3264,
+        "tamagawa_product_bsd": 3264
+      }
+    ],
+    "min_modular_degree_curve": {
+      "index": 2,
+      "ainvs": [
+        1,
+        1,
+        1,
+        -3029262008625,
+        2029606900086697935
+      ],
+      "N_cond": 53130,
+      "modular_degree": 1579253760,
+      "modular_degree_factor": "2^15 * 3^4 * 5 * 7 * 17",
+      "congruence_number": 1579253760,
+      "congruence_number_factor": "2^15 * 3^4 * 5 * 7 * 17",
+      "congruence_equals_modular_degree": true,
+      "degree_exponent_N": 1.94662231245183,
+      "degree_over_N2": {
+        "num": 1253376,
+        "den": 2240315,
+        "float": 0.5594641824921942,
+        "factor_num": "2^13 * 3^2 * 17",
+        "factor_den": "5 * 7 * 11^2 * 23^2"
+      },
+      "torsion_order": 4,
+      "two_torsion_rank": 1,
+      "root_number": 1,
+      "tamagawa_numbers": [
+        68,
+        2,
+        6,
+        1,
+        2,
+        4
+      ],
+      "tamagawa_product": 6528,
+      "tamagawa_product_bsd": 6528
+    },
+    "frey_degree_over_min_degree": {
+      "num": 2,
+      "den": 1,
+      "float": 2.0,
+      "factor_num": "2",
+      "factor_den": "1"
+    }
+  },
+  "route_implication": {
+    "unit_N2_bound_for_frey_model": "fails in this finite normalization",
+    "unit_N2_bound_for_min_degree_in_isogeny_class": "passes in this sample",
+    "mstar_scale": "C_eps * N^(2+eps) remains the correct target",
+    "structural_signal": "ABCHome_2 stress is tied to congruence_number = modular_degree and a small 2-isogeny class, not to a large unresolved isogeny graph."
+  }
+}

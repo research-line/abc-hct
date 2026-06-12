@@ -1,0 +1,370 @@
+{
+  "tool": "mstar_s5_t7_row_origin",
+  "level": 60168,
+  "mode": "raw",
+  "sign": 1,
+  "q": 3863,
+  "nsyms": 126720,
+  "ncols": 31680,
+  "hecke_prime": 7,
+  "ap": 0,
+  "stage": "T_7_minus_0_batch_1",
+  "stage_row_index": 1,
+  "source_symbol": "(1,0)",
+  "source_symbol_index": 1,
+  "row": [
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      3862
+    ],
+    [
+      2,
+      3862
+    ],
+    [
+      3,
+      3862
+    ],
+    [
+      4,
+      3862
+    ],
+    [
+      5,
+      3862
+    ]
+  ],
+  "row_line_sha256": "a7c9b47d334f80801465ad60f61304c2e9ff7f4991419087c25105b801bbdabf",
+  "row_mod_2_support": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "quotient_columns": [
+    {
+      "col": 0,
+      "value_mod_q": 2,
+      "symmetric_lift": 2,
+      "value_mod_2": 0,
+      "representative_index": 1,
+      "representative_symbol": "(1,0)"
+    },
+    {
+      "col": 1,
+      "value_mod_q": 3862,
+      "symmetric_lift": -1,
+      "value_mod_2": 1,
+      "representative_index": 60169,
+      "representative_symbol": "(2,1)"
+    },
+    {
+      "col": 2,
+      "value_mod_q": 3862,
+      "symmetric_lift": -1,
+      "value_mod_2": 1,
+      "representative_index": 75211,
+      "representative_symbol": "(3,1)"
+    },
+    {
+      "col": 3,
+      "value_mod_q": 3862,
+      "symmetric_lift": -1,
+      "value_mod_2": 1,
+      "representative_index": 95267,
+      "representative_symbol": "(4,1)"
+    },
+    {
+      "col": 4,
+      "value_mod_q": 3862,
+      "symmetric_lift": -1,
+      "value_mod_2": 1,
+      "representative_index": 36102,
+      "representative_symbol": "(1,36101)"
+    },
+    {
+      "col": 5,
+      "value_mod_q": 3862,
+      "symmetric_lift": -1,
+      "value_mod_2": 1,
+      "representative_index": 102788,
+      "representative_symbol": "(6,1)"
+    }
+  ],
+  "mapped_terms": [
+    {
+      "source": "trace_term",
+      "matrix_index": null,
+      "matrix": null,
+      "symbol_index": 1,
+      "coefficient": 0,
+      "symbol": "(1,0)",
+      "quotient_col": 0,
+      "quotient_scalar": 1,
+      "contribution": 0
+    },
+    {
+      "source": "hecke_image",
+      "matrix_index": 0,
+      "matrix": [
+        1,
+        0,
+        0,
+        7
+      ],
+      "symbol_index": 1,
+      "coefficient": 1,
+      "symbol": "(1,0)",
+      "quotient_col": 0,
+      "quotient_scalar": 1,
+      "contribution": 1
+    },
+    {
+      "source": "hecke_image",
+      "matrix_index": 1,
+      "matrix": [
+        1,
+        1,
+        0,
+        7
+      ],
+      "symbol_index": 2,
+      "coefficient": 1,
+      "symbol": "(1,1)",
+      "quotient_col": null,
+      "quotient_scalar": 0,
+      "contribution": 0
+    },
+    {
+      "source": "hecke_image",
+      "matrix_index": 2,
+      "matrix": [
+        1,
+        2,
+        0,
+        7
+      ],
+      "symbol_index": 3,
+      "coefficient": 1,
+      "symbol": "(1,2)",
+      "quotient_col": 1,
+      "quotient_scalar": 3862,
+      "contribution": 3862
+    },
+    {
+      "source": "hecke_image",
+      "matrix_index": 3,
+      "matrix": [
+        1,
+        3,
+        0,
+        7
+      ],
+      "symbol_index": 4,
+      "coefficient": 1,
+      "symbol": "(1,3)",
+      "quotient_col": 2,
+      "quotient_scalar": 3862,
+      "contribution": 3862
+    },
+    {
+      "source": "hecke_image",
+      "matrix_index": 4,
+      "matrix": [
+        1,
+        4,
+        0,
+        7
+      ],
+      "symbol_index": 5,
+      "coefficient": 1,
+      "symbol": "(1,4)",
+      "quotient_col": 3,
+      "quotient_scalar": 3862,
+      "contribution": 3862
+    },
+    {
+      "source": "hecke_image",
+      "matrix_index": 5,
+      "matrix": [
+        1,
+        5,
+        0,
+        7
+      ],
+      "symbol_index": 6,
+      "coefficient": 1,
+      "symbol": "(1,5)",
+      "quotient_col": 4,
+      "quotient_scalar": 3862,
+      "contribution": 3862
+    },
+    {
+      "source": "hecke_image",
+      "matrix_index": 6,
+      "matrix": [
+        1,
+        6,
+        0,
+        7
+      ],
+      "symbol_index": 7,
+      "coefficient": 1,
+      "symbol": "(1,6)",
+      "quotient_col": 5,
+      "quotient_scalar": 3862,
+      "contribution": 3862
+    },
+    {
+      "source": "hecke_image",
+      "matrix_index": 7,
+      "matrix": [
+        7,
+        0,
+        0,
+        1
+      ],
+      "symbol_index": 1,
+      "coefficient": 1,
+      "symbol": "(1,0)",
+      "quotient_col": 0,
+      "quotient_scalar": 1,
+      "contribution": 1
+    }
+  ],
+  "per_matrix": [
+    {
+      "matrix_index": 0,
+      "matrix": [
+        1,
+        0,
+        0,
+        7
+      ],
+      "image_terms": [
+        [
+          1,
+          1,
+          "(1,0)"
+        ]
+      ]
+    },
+    {
+      "matrix_index": 1,
+      "matrix": [
+        1,
+        1,
+        0,
+        7
+      ],
+      "image_terms": [
+        [
+          2,
+          1,
+          "(1,1)"
+        ]
+      ]
+    },
+    {
+      "matrix_index": 2,
+      "matrix": [
+        1,
+        2,
+        0,
+        7
+      ],
+      "image_terms": [
+        [
+          3,
+          1,
+          "(1,2)"
+        ]
+      ]
+    },
+    {
+      "matrix_index": 3,
+      "matrix": [
+        1,
+        3,
+        0,
+        7
+      ],
+      "image_terms": [
+        [
+          4,
+          1,
+          "(1,3)"
+        ]
+      ]
+    },
+    {
+      "matrix_index": 4,
+      "matrix": [
+        1,
+        4,
+        0,
+        7
+      ],
+      "image_terms": [
+        [
+          5,
+          1,
+          "(1,4)"
+        ]
+      ]
+    },
+    {
+      "matrix_index": 5,
+      "matrix": [
+        1,
+        5,
+        0,
+        7
+      ],
+      "image_terms": [
+        [
+          6,
+          1,
+          "(1,5)"
+        ]
+      ]
+    },
+    {
+      "matrix_index": 6,
+      "matrix": [
+        1,
+        6,
+        0,
+        7
+      ],
+      "image_terms": [
+        [
+          7,
+          1,
+          "(1,6)"
+        ]
+      ]
+    },
+    {
+      "matrix_index": 7,
+      "matrix": [
+        7,
+        0,
+        0,
+        1
+      ],
+      "image_terms": [
+        [
+          1,
+          1,
+          "(1,0)"
+        ]
+      ]
+    }
+  ]
+}

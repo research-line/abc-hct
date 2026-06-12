@@ -1,0 +1,38 @@
+{
+  "tool": "mstar_s5_modular_exception_scan",
+  "description": "modular rank scan for S5 exception-prime recursion",
+  "primes": [
+    53
+  ],
+  "pivot_strategy": "max",
+  "rank_engine": "sage-matrix",
+  "results": [
+    {
+      "case": "N60168_raw_sign1",
+      "path": "_results/rc3d_rowhash_source_witness_60168_raw_2026-05-12/N60168_raw_sign1",
+      "q": 3863,
+      "ncols": 31680,
+      "source_rows": 31680,
+      "square": true,
+      "status": "ok",
+      "pivot_strategy": "max",
+      "rank_engine": "sage-matrix",
+      "prime_results": [
+        {
+          "prime": 53,
+          "rank": 31680,
+          "ncols": 31680,
+          "full_rank": true,
+          "rows_seen": 31680,
+          "seconds": 160.01962398,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        }
+      ],
+      "full_rank_primes": [
+        53
+      ],
+      "exception_candidate_primes": []
+    }
+  ]
+}

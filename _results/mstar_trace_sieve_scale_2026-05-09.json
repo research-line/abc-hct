@@ -1,0 +1,173 @@
+{
+  "date": "2026-05-09",
+  "purpose": "Scale obstruction for standard trace/resultant determinant bounds in HOS-excess.",
+  "N": 240672,
+  "logN": 12.39119028962613,
+  "target_2logN": 24.78238057925226,
+  "tested_primes": [
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    29,
+    31,
+    37,
+    41,
+    43,
+    47,
+    53,
+    59,
+    61,
+    67,
+    71,
+    73,
+    79,
+    83,
+    89,
+    97
+  ],
+  "formula": "dim * sum_{p in P} log(4*sqrt(p))",
+  "interpretation": "This is a crude upper bound for determinant/resultant mass, not an exact congruence computation.",
+  "level_rows": [
+    {
+      "name": "109",
+      "dimension": 8,
+      "prime_count": 22,
+      "log_bound": 559.1923544127276,
+      "bound_over_logN": 45.12821943190412,
+      "bound_over_2logN": 22.56410971595206
+    },
+    {
+      "name": "218",
+      "dimension": 10,
+      "prime_count": 22,
+      "log_bound": 698.9904430159095,
+      "bound_over_logN": 56.41027428988016,
+      "bound_over_2logN": 28.20513714494008
+    },
+    {
+      "name": "327",
+      "dimension": 19,
+      "prime_count": 22,
+      "log_bound": 1328.081841730228,
+      "bound_over_logN": 107.1795211507723,
+      "bound_over_2logN": 53.58976057538615
+    },
+    {
+      "name": "872",
+      "dimension": 27,
+      "prime_count": 22,
+      "log_bound": 1887.2741961429556,
+      "bound_over_logN": 152.30774058267642,
+      "bound_over_2logN": 76.15387029133821
+    },
+    {
+      "name": "1744",
+      "dimension": 54,
+      "prime_count": 22,
+      "log_bound": 3774.548392285911,
+      "bound_over_logN": 304.61548116535283,
+      "bound_over_2logN": 152.30774058267642
+    },
+    {
+      "name": "2507",
+      "dimension": 199,
+      "prime_count": 22,
+      "log_bound": 13909.9098160166,
+      "bound_over_logN": 1122.564458368615,
+      "bound_over_2logN": 561.2822291843075
+    },
+    {
+      "name": "3488",
+      "dimension": 108,
+      "prime_count": 22,
+      "log_bound": 7549.096784571822,
+      "bound_over_logN": 609.2309623307057,
+      "bound_over_2logN": 304.61548116535283
+    },
+    {
+      "name": "15042",
+      "dimension": 397,
+      "prime_count": 22,
+      "log_bound": 27749.920587731605,
+      "bound_over_logN": 2239.4878893082423,
+      "bound_over_2logN": 1119.7439446541212
+    },
+    {
+      "name": "20056",
+      "dimension": 594,
+      "prime_count": 22,
+      "log_bound": 41520.03231514502,
+      "bound_over_logN": 3350.770292818881,
+      "bound_over_2logN": 1675.3851464094405
+    },
+    {
+      "name": "40112",
+      "dimension": 1188,
+      "prime_count": 22,
+      "log_bound": 83040.06463029004,
+      "bound_over_logN": 6701.540585637762,
+      "bound_over_2logN": 3350.770292818881
+    },
+    {
+      "name": "60168",
+      "dimension": 1188,
+      "prime_count": 22,
+      "log_bound": 83040.06463029004,
+      "bound_over_logN": 6701.540585637762,
+      "bound_over_2logN": 3350.770292818881
+    },
+    {
+      "name": "80224",
+      "dimension": 2376,
+      "prime_count": 22,
+      "log_bound": 166080.12926058008,
+      "bound_over_logN": 13403.081171275524,
+      "bound_over_2logN": 6701.540585637762
+    },
+    {
+      "name": "120336",
+      "dimension": 2376,
+      "prime_count": 22,
+      "log_bound": 166080.12926058008,
+      "bound_over_logN": 13403.081171275524,
+      "bound_over_2logN": 6701.540585637762
+    }
+  ],
+  "aggregate_loaded": {
+    "name": "loaded_oldlevel_sum",
+    "dimension": 8544,
+    "prime_count": 22,
+    "log_bound": 597217.4345127931,
+    "bound_over_logN": 48196.93835327361,
+    "bound_over_2logN": 24098.469176636805
+  },
+  "full_level_rows": [
+    {
+      "name": "level_240672_new",
+      "dimension": 4752,
+      "prime_count": 22,
+      "log_bound": 332160.25852116017,
+      "bound_over_logN": 26806.162342551048,
+      "bound_over_2logN": 13403.081171275524
+    },
+    {
+      "name": "level_240672_old",
+      "dimension": 37457,
+      "prime_count": 22,
+      "log_bound": 2618208.502404692,
+      "bound_over_logN": 211295.9644076041,
+      "bound_over_2logN": 105647.98220380205
+    },
+    {
+      "name": "level_240672_total",
+      "dimension": 42209,
+      "prime_count": 22,
+      "log_bound": 2950368.760925852,
+      "bound_over_logN": 238102.12675015515,
+      "bound_over_2logN": 119051.06337507757
+    }
+  ]
+}

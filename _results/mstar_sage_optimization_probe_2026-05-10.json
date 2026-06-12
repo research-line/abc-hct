@@ -1,0 +1,133 @@
+{
+  "date": "2026-05-10",
+  "purpose": "Small-level Sage API triage for optimizing restlevel kernel cascade.",
+  "q": 3863,
+  "timeout_seconds_per_probe": 45,
+  "summary": {
+    "probe_count": 5,
+    "ok_count": 5,
+    "timeout_count": 0,
+    "error_count": 0,
+    "modsym_gf_ok": [
+      {
+        "level": 11,
+        "elapsed_seconds": 0.0882113659999959
+      },
+      {
+        "level": 109,
+        "elapsed_seconds": 0.08290307999999413
+      }
+    ],
+    "modsym_gf_failed": []
+  },
+  "rows": [
+    {
+      "probe": "cuspforms_newspace_methods",
+      "level": 109,
+      "status": "ok",
+      "total_dimension": 8,
+      "new_dimension": 8,
+      "atkin_methods": [
+        "_compute_atkin_lehner_matrix",
+        "atkin_lehner_operator"
+      ],
+      "decomp_methods": [
+        "decomposition"
+      ],
+      "new_methods": [
+        "__new__",
+        "_test_new",
+        "is_new",
+        "new_submodule",
+        "new_subspace",
+        "newforms"
+      ],
+      "modular_symbol_methods": [
+        "modular_symbols"
+      ],
+      "elapsed_seconds": 0.3710928189999976,
+      "manager_elapsed_seconds": 2.942942068999997
+    },
+    {
+      "probe": "cuspforms_newspace_hecke_matrix",
+      "level": 109,
+      "prime": 5,
+      "status": "ok",
+      "total_dimension": 8,
+      "new_dimension": 8,
+      "matrix_nrows": 8,
+      "matrix_parent": "Full MatrixSpace of 8 by 8 dense matrices over Rational Field",
+      "elapsed_seconds": 0.2844800529999958,
+      "manager_elapsed_seconds": 2.5205700930000035
+    },
+    {
+      "probe": "modularsymbols_QQ_newspace_hecke_matrix",
+      "level": 109,
+      "prime": 5,
+      "status": "ok",
+      "ambient_dimension": 17,
+      "cuspidal_dimension": 16,
+      "new_dimension": 16,
+      "matrix_nrows": 16,
+      "matrix_parent": "Full MatrixSpace of 16 by 16 dense matrices over Rational Field",
+      "atkin_methods": [
+        "_compute_atkin_lehner_matrix",
+        "atkin_lehner_operator"
+      ],
+      "decomp_methods": [
+        "decomposition",
+        "star_decomposition"
+      ],
+      "elapsed_seconds": 0.09176509600000315,
+      "manager_elapsed_seconds": 2.4558835219999935
+    },
+    {
+      "probe": "modularsymbols_GF_newspace_hecke_matrix",
+      "level": 11,
+      "prime": 5,
+      "status": "ok",
+      "q": 3863,
+      "ambient_dimension": 3,
+      "cuspidal_dimension": 2,
+      "cuspidal_has_new_subspace": true,
+      "new_dimension": 2,
+      "matrix_nrows": 2,
+      "matrix_parent": "Full MatrixSpace of 2 by 2 dense matrices over Finite Field of size 3863",
+      "rank_zero_shift": 2,
+      "atkin_methods": [
+        "_compute_atkin_lehner_matrix",
+        "atkin_lehner_operator"
+      ],
+      "decomp_methods": [
+        "decomposition",
+        "star_decomposition"
+      ],
+      "elapsed_seconds": 0.0882113659999959,
+      "manager_elapsed_seconds": 2.329578256000005
+    },
+    {
+      "probe": "modularsymbols_GF_newspace_hecke_matrix",
+      "level": 109,
+      "prime": 5,
+      "status": "ok",
+      "q": 3863,
+      "ambient_dimension": 17,
+      "cuspidal_dimension": 16,
+      "cuspidal_has_new_subspace": true,
+      "new_dimension": 16,
+      "matrix_nrows": 16,
+      "matrix_parent": "Full MatrixSpace of 16 by 16 dense matrices over Finite Field of size 3863",
+      "rank_zero_shift": 16,
+      "atkin_methods": [
+        "_compute_atkin_lehner_matrix",
+        "atkin_lehner_operator"
+      ],
+      "decomp_methods": [
+        "decomposition",
+        "star_decomposition"
+      ],
+      "elapsed_seconds": 0.08290307999999413,
+      "manager_elapsed_seconds": 2.3378665729999994
+    }
+  ]
+}

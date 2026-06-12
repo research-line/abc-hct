@@ -1,0 +1,46 @@
+{
+  "_status": "PARTIAL CLAIM — Evidenz an realen Transcript-Witness (2026-05-13) gebunden, aber vier Konventionen + canonical_trace_module_binding noch false. trace_row_ready=false bewusst. Pruefen mit _scripts/trace_row_embedding_verifier.py.",
+  "_schema": "_scripts/trace_row_embedding_schema.json",
+  "_evidence_source": "_results/mstar_s5_t7_row_origin_60168_raw_p7_i1_2026-05-13.json",
+  "meta": {
+    "case": "60168/raw",
+    "ell": 7,
+    "created": "2026-06-01",
+    "campaign": "T7 Trace-Embedding Evidence (_proof-notes/t7_trace_embedding_evidence_2026-06-01.md)"
+  },
+  "trace_row": {
+    "stage_id": "T_7_minus_0_batch_1/1",
+    "rowhash": "a7c9b47d334f80801465ad60f61304c2e9ff7f4991419087c25105b801bbdabf",
+    "a_ell_E": 0,
+    "claimed_class": "T_7 - a_7(E) = T_7  (a_7(E)=0)"
+  },
+  "_evidence": {
+    "witness_file": "_results/mstar_s5_t7_row_origin_60168_raw_p7_i1_2026-05-13.json",
+    "N": 60168, "mode": "raw", "sign": 1, "q": 3863,
+    "source_symbol": "(1,0)", "hecke_prime": 7, "ap_trace": 0,
+    "formal_hecke_row": "T_7(1,0) = 2(1,0)+(1,1)+(1,2)+(1,3)+(1,4)+(1,5)+(1,6)",
+    "hecke_coset_matrices": "[1,j,0,7] for j=0..6  and  [7,0,0,1]  (8 = p+1)",
+    "reduced_row_pairs": [[0, 2], [1, 3862], [2, 3862], [3, 3862], [4, 3862], [5, 3862]],
+    "symmetric_lift": "3862 = -1 mod 3863  =>  2*col0 - col1 - col2 - col3 - col4 - col5",
+    "row_mod_2_support": [1, 2, 3, 4, 5],
+    "row_line_sha256": "a7c9b47d334f80801465ad60f61304c2e9ff7f4991419087c25105b801bbdabf"
+  },
+  "conventions": {
+    "hecke_convention_verified": false,
+    "compression_convention_verified": false,
+    "sign_convention_verified": false,
+    "integer_lift_convention_verified": false
+  },
+  "canonical_trace_module_binding": {
+    "module_id": "<<FILL: kanonisches HCT-Trace-Relationenmodul M_E von 60168/raw (CQ-3 offen)>>",
+    "bound": false
+  },
+  "labels": {
+    "trace_row_embedding": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "embedding_holds_if": "rowhash UND a_ell_E gesetzt (beide ja) UND vier Konventionen gegen kanonisches Q_E verifiziert (offen) UND canonical_trace_module_binding.bound (offen)",
+    "but_not": ["Witness pinnt nur die BERECHNETE Quotienten-Konvention, nicht die kanonische", "canonical_level (nur CQ-4)", "PCAT/FAQS", "abc"]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "_status": "TEMPLATE — T7-Rowhash + a_7(E)=0 BEKANNT eingetragen, aber vier Konventionsflags noch false. Pruefen mit _scripts/trace_row_embedding_verifier.py. Erwartung: trace_row_ready=false. Naechster echter Schritt: die vier Konventionen transcriptgebunden verifizieren, dann analog T5-2.",
+  "_schema": "_scripts/trace_row_embedding_schema.json",
+  "meta": {
+    "case": "60168/raw",
+    "ell": 7,
+    "created": "2026-06-01",
+    "campaign": "Trace-Row Embedding Contract CQ-2 (_proof-notes/trace_row_embedding_contract_2026-06-01.md)"
+  },
+  "trace_row": {
+    "stage_id": "T_7_minus_0_batch_1/1",
+    "rowhash": "a7c9b47d334f80801465ad60f61304c2e9ff7f4991419087c25105b801bbdabf",
+    "a_ell_E": 0,
+    "claimed_class": "T_7 - a_7(E) = T_7"
+  },
+  "conventions": {
+    "hecke_convention_verified": false,
+    "compression_convention_verified": false,
+    "sign_convention_verified": false,
+    "integer_lift_convention_verified": false
+  },
+  "canonical_trace_module_binding": {
+    "module_id": "<<FILL: kanonisches Trace-Relationenmodul M_E von 60168/raw>>",
+    "bound": false
+  },
+  "labels": {
+    "trace_row_embedding": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "embedding_holds_if": "rowhash UND a_ell_E gesetzt UND alle vier Konventionen verifiziert UND canonical_trace_module_binding.bound",
+    "but_not": ["canonical_level (nur Gesamt-Gate CQ-4)", "PCAT/FAQS", "abc"]
+  }
+}

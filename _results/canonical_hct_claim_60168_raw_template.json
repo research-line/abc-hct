@@ -1,0 +1,29 @@
+{
+  "_status": "TEMPLATE — bewusst canonical_level=false. Gesamt-Gate CQ-4. Pruefen mit _scripts/canonical_claim_verifier.py. canonical_level wird true erst wenn ALLE prerequisites (PSC/LM/presentation/H3) UND obligations (CQ-1/CQ-2/CQ-3) true sind. Erwartung: canonical_ready=false, canonical_level=false.",
+  "_schema": "_scripts/canonical_hct_claim_schema.json",
+  "meta": {
+    "claim_id": "CANON-60168",
+    "case": "60168/raw",
+    "created": "2026-06-01",
+    "campaign": "Canonical HCT Trace Quotient (_proof-notes/canonical_hct_trace_quotient_blueprint_2026-06-01.md)"
+  },
+  "prerequisites": {
+    "psc_certificate_level": false,
+    "lm_certificate_level": false,
+    "presentation_level": false,
+    "h3_canonical_ready": false
+  },
+  "obligations": {
+    "cq1_transfer_iso": false,
+    "cq2_trace_embedding": false,
+    "cq3_source_canonicality": false
+  },
+  "labels": {
+    "presentation_level": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "canonical_holds_if": "alle prerequisites==true UND alle obligations==true (CQ-4)",
+    "but_not": ["PCAT (log content(P_E) <= eps log N + C_eps)", "FAQS / M*-Transfer", "No-Escape", "abc"]
+  }
+}

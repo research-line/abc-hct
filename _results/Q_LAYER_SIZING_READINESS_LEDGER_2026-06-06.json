@@ -1,0 +1,192 @@
+{
+  "summary": {
+    "run_id": "2026-06-06",
+    "created_at": "2026-06-06T15:33:55.369334+00:00",
+    "project": "abc / HCT Paper B q^r-layer sizing",
+    "overall_status": "preflight_ready_but_compute_blocked",
+    "claim_upgrade": false,
+    "long_compute_started": false,
+    "upload_started": false,
+    "row_count": 10,
+    "blocker_count": 8,
+    "main_blockers": [
+      "240672/raw Cremona-Hecke output is not locally available as a completed gate.",
+      "PSC certificates for q in {2,3,5,31} remain templates until row/kernel/source bindings are real.",
+      "Canonical local drainage transfer labels remain false, so PCAT/FAQS/abc language is not licensed."
+    ],
+    "next_action": "Finish or fetch the 240672 Cremona run, then instantiate PSC certificates before any q-layer sizing claim."
+  },
+  "paperstand": [
+    {
+      "source": "Cuevas Barrientos--Pasten, arXiv:2504.15971v3",
+      "url": "https://arxiv.org/abs/2504.15971",
+      "checked_status": "Subexponentieller Szpiro-in-Familien-Kontext; kein Frey-uniformes Polynomial-Closing."
+    },
+    {
+      "source": "Chan, arXiv:2407.13850",
+      "url": "https://arxiv.org/abs/2407.13850",
+      "checked_status": "Fast-alle-Szpiro-Ratio; bestätigt Statistik-gegen-Worst-Case-Barriere."
+    },
+    {
+      "source": "Sawin--Sutherland, arXiv:2504.12295v2",
+      "url": "https://arxiv.org/abs/2504.12295",
+      "checked_status": "Murmurations-Dichte als Mittelwert-/Evidenzkontext, nicht als individueller Frey-Hebel."
+    },
+    {
+      "source": "Dumas--Kaltofen--Thomé, arXiv:1507.01083",
+      "url": "https://arxiv.org/abs/1507.01083",
+      "checked_status": "Passender Zertifikatsrahmen für Wiedemann/Krylov; härtet Verifikation, nicht HCT-Transfer."
+    },
+    {
+      "source": "Pasten, arXiv:1705.09251v4",
+      "url": "https://arxiv.org/abs/1705.09251",
+      "checked_status": "Shimura-/abc-Kontext; keine neue Perioden-/Modulgrad-Schließung für diese Route."
+    },
+    {
+      "source": "Iyengar--Khare--Manning, arXiv:2510.05418v2",
+      "url": "https://arxiv.org/abs/2510.05418",
+      "checked_status": "Kongruenzideal-Sprache aktuell; für HCT bleibt uniforme Frey-Schranke das offene Gate."
+    },
+    {
+      "source": "Khan--Maithani, arXiv:2604.06446",
+      "url": "https://arxiv.org/abs/2604.06446",
+      "checked_status": "Determinantaler Wiles-Defekt ist Reformulierungskontext, kein unabhängiger abc-Beweis."
+    }
+  ],
+  "rows": [
+    {
+      "case": "80224/raw",
+      "gate": "QB3 Wiedemann identity-pairing fingerprint",
+      "status": "available_certificate_fingerprint",
+      "evidence": {
+        "json": "PAPER_B__beneath_abc_landscape/_results/mstar_h3a_qb3_wiedemann_production_remod_q5077_80224_raw_identity_mac_2026-05-26.json",
+        "status_json": "PAPER_B__beneath_abc_landscape/_results/mstar_h3a_qb3_wiedemann_production_remod_q5077_80224_raw_identity_mac_2026-05-26.status.json",
+        "q": 5077,
+        "target_rank": 10567,
+        "degree": 10567,
+        "constant_signed": 1344,
+        "phase": "finished",
+        "seconds": 335749.772,
+        "sha256": "35823d1d68ec54c30cbf358f2d4383a01c625af1f5c26c0f1eb4b5cd2fa7e55f"
+      },
+      "next_action": "Nur als Zertifikatshärtungs-Kalibrator nutzen; das ist nicht der q-Layer-Sizing-Lauf."
+    },
+    {
+      "case": "240672/raw",
+      "gate": "Cremona Hecke separator for current Frey class",
+      "status": "local_output_missing_or_remote_running",
+      "evidence": {
+        "queue_job": "compute_queue/jobs/hecke_cremona_240672_raw_2026-06-05.json",
+        "queue_status": "queued",
+        "expected_json": "MISSING:_results/hecke_cremona_240672_raw_2026-06-05.json",
+        "expected_md": "MISSING:_results/hecke_cremona_240672_raw_2026-06-05.md",
+        "allowed_hosts": [
+          "mac-studio"
+        ],
+        "defer_while": [
+          "mstar_h3a_qb3_wiedemann_production_finite_pairing.sage"
+        ]
+      },
+      "next_action": "240672/Cremona-Ausgabe holen oder fertigstellen, bevor sie als qdim=1-Input genutzt wird."
+    },
+    {
+      "case": "60168/raw q=2",
+      "gate": "PSC-2 two-dimensional source-cokernel repair",
+      "status": "pairing_available_template_not_certificate",
+      "evidence": {
+        "pairing_json": "_results/mstar_s2_source_cokernel_pairing_60168_raw_q2_2026-05-15.json",
+        "template": "_results/psc2_60168_raw_q2_template.json",
+        "source_defect_dim": 2,
+        "pairing_rank": 2,
+        "saturates": true
+      },
+      "next_action": "Row-Hashes, Kernelbasis und Source-Block-Hash binden, um das PSC-2-Zertifikat zu instanziieren."
+    },
+    {
+      "case": "60168/raw q=3",
+      "gate": "PSC-1 one-row source-cokernel repair",
+      "status": "pairing_available_template_not_certificate",
+      "evidence": {
+        "pairing_json": "_results/mstar_s2_source_cokernel_pairing_60168_raw_q3_2026-05-15.json",
+        "template": "_results/psc1_60168_raw_template.json",
+        "source_defect_dim": 1,
+        "pairing_rank": 1,
+        "saturates": true
+      },
+      "next_action": "q=3-Kernelvektor und Repair-Rowhash binden, bevor certificate-level behauptet wird."
+    },
+    {
+      "case": "60168/raw q=5",
+      "gate": "PSC-1 one-row repair candidate",
+      "status": "template_only_missing_real_export",
+      "evidence": {
+        "template": "_results/psc1_60168_raw_template.json",
+        "expected_certificate": "MISSING:_results/psc1_60168_raw_q5_certificate.json"
+      },
+      "next_action": "Echten q=5-Kernel-/Pairing-Witness exportieren; nicht aus q=2/q=3 folgern."
+    },
+    {
+      "case": "60168/raw q=31",
+      "gate": "PSC-1 one-row repair candidate",
+      "status": "template_only_missing_real_export",
+      "evidence": {
+        "template": "_results/psc1_60168_raw_template.json",
+        "expected_certificate": "MISSING:_results/psc1_60168_raw_q31_certificate.json"
+      },
+      "next_action": "Echten q=31-Kernel-/Pairing-Witness exportieren; getrennt von q=5 führen."
+    },
+    {
+      "case": "LM-60168",
+      "gate": "Local drainage manifest for q in {2,3,5,31}",
+      "status": "manifest_template_not_certificate",
+      "evidence": {
+        "manifest": "_results/lm_60168_raw_template.json",
+        "certificate_level": false,
+        "presentation_level": false,
+        "canonical_level": false
+      },
+      "next_action": "Keine Labels hochstufen, bevor alle vier PSC-Einträge real und verifiziert sind."
+    },
+    {
+      "case": "60168/raw transfer",
+      "gate": "Canonical local drainage transfer",
+      "status": "blocked_by_false_transfer_inputs",
+      "evidence": {
+        "transfer_template": "_results/canonical_local_drainage_transfer_60168_raw_template.json",
+        "inputs": {
+          "local_certificate_level": false,
+          "source_embedding_level": false,
+          "sink_embedding_level": false,
+          "column_basis_compatible": false
+        },
+        "source_presentation_equality": false,
+        "labels": {
+          "canonical_local_drainage_ready": false,
+          "pcat_ready": false,
+          "canonical_level": false
+        }
+      },
+      "next_action": "Embedding und Spaltenbasis-Kompatibilität klären, bevor canonical- oder PCAT-Sprache verwendet wird."
+    },
+    {
+      "case": "60168/raw witness base",
+      "gate": "Source witness availability",
+      "status": "available_source_witness",
+      "evidence": {
+        "manifest": "_results/rc3c_source_witness_60168_raw_2026-05-12/N60168_raw_sign1/manifest.json",
+        "sha256": "5b3858b0aa6a00ebca530d819b4a7d82413bc040163b727d328e606f3627c90a"
+      },
+      "next_action": "Als Bindungsziel für PSC-Row-/Kernel-Provenienz verwenden."
+    },
+    {
+      "case": "240672/raw legacy witness",
+      "gate": "Old standard-family witness",
+      "status": "legacy_standard_witness_not_current_cremona_gate",
+      "evidence": {
+        "manifest": "_results/rc3c_standard_witness_240672_raw_q3863_2026-05-16/N240672_raw_sign1/manifest.json",
+        "sha256": "423c137aa58a5fc53c30ec09bee5b5195ea76b63829f1d2eef4faa3833a7d374"
+      },
+      "next_action": "Nicht ohne explizites Replay/Übersetzung als 2026-06-05-Cremona-Gate wiederverwenden."
+    }
+  ]
+}

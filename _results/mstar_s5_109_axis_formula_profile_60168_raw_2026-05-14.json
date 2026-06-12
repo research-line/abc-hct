@@ -1,0 +1,7728 @@
+{
+  "tool": "mstar_s5_109_axis_formula_profile",
+  "input_json": "_results\\mstar_s5_109_axis_transition_profile_60168_raw_2026-05-14.json",
+  "level": 60168,
+  "transition_record_count": 2304,
+  "fields": [
+    {
+      "field": "base-gcd-v-line:TT:1:exact",
+      "count": 192,
+      "exact_identity_counts": {
+        "gcd(image_u,N)=gcd(target_u,N)": 192,
+        "gcd(image_v,N)=gcd(target_v,N)": 192,
+        "image=target": 192,
+        "image_u=target_u": 192,
+        "source_u=g": 192
+      },
+      "quotient_v_relation_counts": {
+        "image_v=target_v mod N/u": 192
+      },
+      "target_d_g_distribution": [
+        {
+          "key": "1,1",
+          "count": 88
+        },
+        {
+          "key": "3,1",
+          "count": 44
+        },
+        {
+          "key": "1,3",
+          "count": 44
+        },
+        {
+          "key": "23,1",
+          "count": 4
+        },
+        {
+          "key": "1,23",
+          "count": 4
+        },
+        {
+          "key": "69,1",
+          "count": 2
+        },
+        {
+          "key": "23,3",
+          "count": 2
+        },
+        {
+          "key": "3,23",
+          "count": 2
+        },
+        {
+          "key": "1,69",
+          "count": 2
+        }
+      ],
+      "source_u_expression_distribution": [
+        {
+          "key": "g",
+          "count": 192
+        }
+      ],
+      "source_u_distribution": [
+        {
+          "key": "1",
+          "count": 138
+        },
+        {
+          "key": "3",
+          "count": 46
+        },
+        {
+          "key": "23",
+          "count": 6
+        },
+        {
+          "key": "69",
+          "count": 2
+        }
+      ],
+      "source_v_minus_target_v_mod109": [
+        {
+          "key": "97",
+          "count": 6
+        },
+        {
+          "key": "103",
+          "count": 6
+        },
+        {
+          "key": "91",
+          "count": 5
+        },
+        {
+          "key": "63",
+          "count": 5
+        },
+        {
+          "key": "51",
+          "count": 4
+        },
+        {
+          "key": "101",
+          "count": 4
+        },
+        {
+          "key": "1",
+          "count": 4
+        },
+        {
+          "key": "67",
+          "count": 4
+        },
+        {
+          "key": "62",
+          "count": 4
+        },
+        {
+          "key": "55",
+          "count": 4
+        },
+        {
+          "key": "61",
+          "count": 4
+        },
+        {
+          "key": "107",
+          "count": 4
+        },
+        {
+          "key": "53",
+          "count": 3
+        },
+        {
+          "key": "98",
+          "count": 3
+        },
+        {
+          "key": "83",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        },
+        {
+          "key": "95",
+          "count": 3
+        },
+        {
+          "key": "13",
+          "count": 3
+        },
+        {
+          "key": "7",
+          "count": 3
+        },
+        {
+          "key": "32",
+          "count": 3
+        }
+      ],
+      "source_v_plus_target_v_mod109": [
+        {
+          "key": "0",
+          "count": 9
+        },
+        {
+          "key": "12",
+          "count": 7
+        },
+        {
+          "key": "10",
+          "count": 6
+        },
+        {
+          "key": "4",
+          "count": 5
+        },
+        {
+          "key": "16",
+          "count": 4
+        },
+        {
+          "key": "6",
+          "count": 4
+        },
+        {
+          "key": "40",
+          "count": 4
+        },
+        {
+          "key": "45",
+          "count": 4
+        },
+        {
+          "key": "52",
+          "count": 4
+        },
+        {
+          "key": "46",
+          "count": 4
+        },
+        {
+          "key": "24",
+          "count": 3
+        },
+        {
+          "key": "101",
+          "count": 3
+        },
+        {
+          "key": "106",
+          "count": 3
+        },
+        {
+          "key": "41",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 3
+        },
+        {
+          "key": "94",
+          "count": 3
+        },
+        {
+          "key": "100",
+          "count": 3
+        },
+        {
+          "key": "71",
+          "count": 3
+        },
+        {
+          "key": "78",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        }
+      ],
+      "image_v_minus_target_v_mod109": [
+        {
+          "key": "0",
+          "count": 192
+        }
+      ],
+      "source_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 0
+            },
+            {
+              "a": 1,
+              "b": 1
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "image_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 3,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 4,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 3,
+              "b": 2
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 8,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 5,
+              "b": 4
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 23,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 46,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 24,
+              "b": 23
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 69,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 92,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 47,
+              "b": 46
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 109,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 218,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 110,
+              "b": 109
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 327,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 552,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 277,
+              "b": 276
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 872,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 437,
+              "b": 436
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 2507,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 7521,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 60168,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 30085,
+              "b": 30084
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "per_target_source_v_mod109_signature": [
+        {
+          "key": "108",
+          "count": 138
+        },
+        {
+          "key": "106",
+          "count": 46
+        },
+        {
+          "key": "86",
+          "count": 6
+        },
+        {
+          "key": "40",
+          "count": 2
+        }
+      ],
+      "per_target_image_v_mod109_signature": [
+        {
+          "key": "11",
+          "count": 6
+        },
+        {
+          "key": "7",
+          "count": 5
+        },
+        {
+          "key": "1",
+          "count": 5
+        },
+        {
+          "key": "107",
+          "count": 4
+        },
+        {
+          "key": "5",
+          "count": 4
+        },
+        {
+          "key": "41",
+          "count": 4
+        },
+        {
+          "key": "53",
+          "count": 4
+        },
+        {
+          "key": "47",
+          "count": 4
+        },
+        {
+          "key": "3",
+          "count": 4
+        },
+        {
+          "key": "85",
+          "count": 4
+        },
+        {
+          "key": "55",
+          "count": 3
+        },
+        {
+          "key": "25",
+          "count": 3
+        },
+        {
+          "key": "102",
+          "count": 3
+        },
+        {
+          "key": "13",
+          "count": 3
+        },
+        {
+          "key": "17",
+          "count": 3
+        },
+        {
+          "key": "15",
+          "count": 3
+        },
+        {
+          "key": "36",
+          "count": 3
+        },
+        {
+          "key": "95",
+          "count": 3
+        },
+        {
+          "key": "46",
+          "count": 3
+        },
+        {
+          "key": "79",
+          "count": 3
+        },
+        {
+          "key": "22",
+          "count": 3
+        },
+        {
+          "key": "16",
+          "count": 3
+        },
+        {
+          "key": "60",
+          "count": 3
+        },
+        {
+          "key": "33",
+          "count": 3
+        },
+        {
+          "key": "23",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 3
+        },
+        {
+          "key": "91",
+          "count": 2
+        },
+        {
+          "key": "10",
+          "count": 2
+        },
+        {
+          "key": "82",
+          "count": 2
+        },
+        {
+          "key": "87",
+          "count": 2
+        },
+        {
+          "key": "77",
+          "count": 2
+        },
+        {
+          "key": "38",
+          "count": 2
+        },
+        {
+          "key": "45",
+          "count": 2
+        },
+        {
+          "key": "19",
+          "count": 2
+        },
+        {
+          "key": "42",
+          "count": 2
+        },
+        {
+          "key": "12",
+          "count": 2
+        },
+        {
+          "key": "18",
+          "count": 2
+        },
+        {
+          "key": "101",
+          "count": 2
+        },
+        {
+          "key": "51",
+          "count": 2
+        },
+        {
+          "key": "89",
+          "count": 2
+        },
+        {
+          "key": "76",
+          "count": 2
+        },
+        {
+          "key": "72",
+          "count": 2
+        },
+        {
+          "key": "49",
+          "count": 2
+        },
+        {
+          "key": "32",
+          "count": 2
+        },
+        {
+          "key": "59",
+          "count": 2
+        },
+        {
+          "key": "73",
+          "count": 2
+        },
+        {
+          "key": "48",
+          "count": 2
+        },
+        {
+          "key": "54",
+          "count": 2
+        },
+        {
+          "key": "99",
+          "count": 2
+        },
+        {
+          "key": "92",
+          "count": 2
+        },
+        {
+          "key": "52",
+          "count": 2
+        },
+        {
+          "key": "65",
+          "count": 2
+        },
+        {
+          "key": "39",
+          "count": 2
+        },
+        {
+          "key": "67",
+          "count": 2
+        },
+        {
+          "key": "27",
+          "count": 2
+        },
+        {
+          "key": "37",
+          "count": 2
+        },
+        {
+          "key": "57",
+          "count": 1
+        },
+        {
+          "key": "88",
+          "count": 1
+        },
+        {
+          "key": "26",
+          "count": 1
+        },
+        {
+          "key": "81",
+          "count": 1
+        },
+        {
+          "key": "61",
+          "count": 1
+        },
+        {
+          "key": "75",
+          "count": 1
+        },
+        {
+          "key": "4",
+          "count": 1
+        },
+        {
+          "key": "94",
+          "count": 1
+        },
+        {
+          "key": "83",
+          "count": 1
+        },
+        {
+          "key": "62",
+          "count": 1
+        },
+        {
+          "key": "108",
+          "count": 1
+        },
+        {
+          "key": "30",
+          "count": 1
+        },
+        {
+          "key": "28",
+          "count": 1
+        },
+        {
+          "key": "84",
+          "count": 1
+        },
+        {
+          "key": "58",
+          "count": 1
+        },
+        {
+          "key": "98",
+          "count": 1
+        },
+        {
+          "key": "9",
+          "count": 1
+        },
+        {
+          "key": "106",
+          "count": 1
+        },
+        {
+          "key": "93",
+          "count": 1
+        },
+        {
+          "key": "40",
+          "count": 1
+        },
+        {
+          "key": "50",
+          "count": 1
+        },
+        {
+          "key": "20",
+          "count": 1
+        },
+        {
+          "key": "97",
+          "count": 1
+        },
+        {
+          "key": "44",
+          "count": 1
+        },
+        {
+          "key": "96",
+          "count": 1
+        },
+        {
+          "key": "66",
+          "count": 1
+        },
+        {
+          "key": "86",
+          "count": 1
+        },
+        {
+          "key": "2",
+          "count": 1
+        },
+        {
+          "key": "74",
+          "count": 1
+        },
+        {
+          "key": "105",
+          "count": 1
+        },
+        {
+          "key": "8",
+          "count": 1
+        },
+        {
+          "key": "90",
+          "count": 1
+        },
+        {
+          "key": "104",
+          "count": 1
+        },
+        {
+          "key": "21",
+          "count": 1
+        },
+        {
+          "key": "43",
+          "count": 1
+        },
+        {
+          "key": "71",
+          "count": 1
+        },
+        {
+          "key": "103",
+          "count": 1
+        },
+        {
+          "key": "29",
+          "count": 1
+        },
+        {
+          "key": "6",
+          "count": 1
+        },
+        {
+          "key": "69",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "field": "base-gcd-v-line:TT:1:same-u",
+      "count": 192,
+      "exact_identity_counts": {
+        "gcd(image_u,N)=gcd(target_u,N)": 192,
+        "gcd(image_v,N)=gcd(target_v,N)": 192,
+        "image_u=target_u": 192,
+        "source_u=g": 192
+      },
+      "quotient_v_relation_counts": {
+        "image_v=-target_v mod N/u": 192
+      },
+      "target_d_g_distribution": [
+        {
+          "key": "1,1",
+          "count": 88
+        },
+        {
+          "key": "3,1",
+          "count": 44
+        },
+        {
+          "key": "1,3",
+          "count": 44
+        },
+        {
+          "key": "23,1",
+          "count": 4
+        },
+        {
+          "key": "1,23",
+          "count": 4
+        },
+        {
+          "key": "69,1",
+          "count": 2
+        },
+        {
+          "key": "23,3",
+          "count": 2
+        },
+        {
+          "key": "3,23",
+          "count": 2
+        },
+        {
+          "key": "1,69",
+          "count": 2
+        }
+      ],
+      "source_u_expression_distribution": [
+        {
+          "key": "g",
+          "count": 192
+        }
+      ],
+      "source_u_distribution": [
+        {
+          "key": "1",
+          "count": 138
+        },
+        {
+          "key": "3",
+          "count": 46
+        },
+        {
+          "key": "23",
+          "count": 6
+        },
+        {
+          "key": "69",
+          "count": 2
+        }
+      ],
+      "source_v_minus_target_v_mod109": [
+        {
+          "key": "103",
+          "count": 6
+        },
+        {
+          "key": "97",
+          "count": 6
+        },
+        {
+          "key": "91",
+          "count": 5
+        },
+        {
+          "key": "63",
+          "count": 5
+        },
+        {
+          "key": "107",
+          "count": 4
+        },
+        {
+          "key": "61",
+          "count": 4
+        },
+        {
+          "key": "67",
+          "count": 4
+        },
+        {
+          "key": "62",
+          "count": 4
+        },
+        {
+          "key": "55",
+          "count": 4
+        },
+        {
+          "key": "101",
+          "count": 4
+        },
+        {
+          "key": "1",
+          "count": 4
+        },
+        {
+          "key": "51",
+          "count": 4
+        },
+        {
+          "key": "105",
+          "count": 3
+        },
+        {
+          "key": "29",
+          "count": 3
+        },
+        {
+          "key": "23",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        },
+        {
+          "key": "7",
+          "count": 3
+        },
+        {
+          "key": "92",
+          "count": 3
+        },
+        {
+          "key": "86",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 3
+        }
+      ],
+      "source_v_plus_target_v_mod109": [
+        {
+          "key": "0",
+          "count": 9
+        },
+        {
+          "key": "12",
+          "count": 7
+        },
+        {
+          "key": "10",
+          "count": 6
+        },
+        {
+          "key": "4",
+          "count": 5
+        },
+        {
+          "key": "46",
+          "count": 4
+        },
+        {
+          "key": "40",
+          "count": 4
+        },
+        {
+          "key": "45",
+          "count": 4
+        },
+        {
+          "key": "52",
+          "count": 4
+        },
+        {
+          "key": "16",
+          "count": 4
+        },
+        {
+          "key": "6",
+          "count": 4
+        },
+        {
+          "key": "78",
+          "count": 3
+        },
+        {
+          "key": "32",
+          "count": 3
+        },
+        {
+          "key": "84",
+          "count": 3
+        },
+        {
+          "key": "64",
+          "count": 3
+        },
+        {
+          "key": "100",
+          "count": 3
+        },
+        {
+          "key": "15",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        },
+        {
+          "key": "71",
+          "count": 3
+        },
+        {
+          "key": "94",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 3
+        }
+      ],
+      "image_v_minus_target_v_mod109": [
+        {
+          "key": "55",
+          "count": 4
+        },
+        {
+          "key": "10",
+          "count": 4
+        },
+        {
+          "key": "6",
+          "count": 4
+        },
+        {
+          "key": "0",
+          "count": 4
+        },
+        {
+          "key": "103",
+          "count": 4
+        },
+        {
+          "key": "18",
+          "count": 4
+        },
+        {
+          "key": "5",
+          "count": 3
+        },
+        {
+          "key": "1",
+          "count": 3
+        },
+        {
+          "key": "67",
+          "count": 3
+        },
+        {
+          "key": "50",
+          "count": 3
+        },
+        {
+          "key": "46",
+          "count": 3
+        },
+        {
+          "key": "105",
+          "count": 3
+        },
+        {
+          "key": "79",
+          "count": 3
+        },
+        {
+          "key": "34",
+          "count": 3
+        },
+        {
+          "key": "41",
+          "count": 3
+        },
+        {
+          "key": "90",
+          "count": 3
+        },
+        {
+          "key": "106",
+          "count": 3
+        },
+        {
+          "key": "78",
+          "count": 3
+        },
+        {
+          "key": "27",
+          "count": 3
+        },
+        {
+          "key": "14",
+          "count": 3
+        }
+      ],
+      "source_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 0
+            },
+            {
+              "a": 1,
+              "b": 1
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "image_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 4,
+          "examples": [
+            {
+              "a": 1,
+              "b": 2
+            },
+            {
+              "a": 3,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 8,
+          "examples": [
+            {
+              "a": 3,
+              "b": 4
+            },
+            {
+              "a": 7,
+              "b": 0
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "per_target_source_v_mod109_signature": [
+        {
+          "key": "108",
+          "count": 138
+        },
+        {
+          "key": "106",
+          "count": 46
+        },
+        {
+          "key": "86",
+          "count": 6
+        },
+        {
+          "key": "40",
+          "count": 2
+        }
+      ],
+      "per_target_image_v_mod109_signature": [
+        {
+          "key": "4",
+          "count": 4
+        },
+        {
+          "key": "83",
+          "count": 4
+        },
+        {
+          "key": "31",
+          "count": 4
+        },
+        {
+          "key": "29",
+          "count": 4
+        },
+        {
+          "key": "71",
+          "count": 4
+        },
+        {
+          "key": "34",
+          "count": 4
+        },
+        {
+          "key": "7",
+          "count": 4
+        },
+        {
+          "key": "6",
+          "count": 3
+        },
+        {
+          "key": "40",
+          "count": 3
+        },
+        {
+          "key": "61",
+          "count": 3
+        },
+        {
+          "key": "19",
+          "count": 3
+        },
+        {
+          "key": "89",
+          "count": 3
+        },
+        {
+          "key": "70",
+          "count": 3
+        },
+        {
+          "key": "65",
+          "count": 3
+        },
+        {
+          "key": "77",
+          "count": 3
+        },
+        {
+          "key": "63",
+          "count": 3
+        },
+        {
+          "key": "64",
+          "count": 3
+        },
+        {
+          "key": "103",
+          "count": 3
+        },
+        {
+          "key": "43",
+          "count": 3
+        },
+        {
+          "key": "75",
+          "count": 3
+        },
+        {
+          "key": "24",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        },
+        {
+          "key": "5",
+          "count": 3
+        },
+        {
+          "key": "17",
+          "count": 3
+        },
+        {
+          "key": "28",
+          "count": 3
+        },
+        {
+          "key": "101",
+          "count": 3
+        },
+        {
+          "key": "59",
+          "count": 3
+        },
+        {
+          "key": "97",
+          "count": 3
+        },
+        {
+          "key": "78",
+          "count": 3
+        },
+        {
+          "key": "9",
+          "count": 3
+        },
+        {
+          "key": "37",
+          "count": 2
+        },
+        {
+          "key": "47",
+          "count": 2
+        },
+        {
+          "key": "69",
+          "count": 2
+        },
+        {
+          "key": "96",
+          "count": 2
+        },
+        {
+          "key": "66",
+          "count": 2
+        },
+        {
+          "key": "49",
+          "count": 2
+        },
+        {
+          "key": "56",
+          "count": 2
+        },
+        {
+          "key": "10",
+          "count": 2
+        },
+        {
+          "key": "100",
+          "count": 2
+        },
+        {
+          "key": "35",
+          "count": 2
+        },
+        {
+          "key": "23",
+          "count": 2
+        },
+        {
+          "key": "68",
+          "count": 2
+        },
+        {
+          "key": "108",
+          "count": 2
+        },
+        {
+          "key": "58",
+          "count": 2
+        },
+        {
+          "key": "57",
+          "count": 2
+        },
+        {
+          "key": "30",
+          "count": 2
+        },
+        {
+          "key": "84",
+          "count": 2
+        },
+        {
+          "key": "90",
+          "count": 2
+        },
+        {
+          "key": "2",
+          "count": 2
+        },
+        {
+          "key": "67",
+          "count": 2
+        },
+        {
+          "key": "73",
+          "count": 2
+        },
+        {
+          "key": "80",
+          "count": 2
+        },
+        {
+          "key": "105",
+          "count": 2
+        },
+        {
+          "key": "13",
+          "count": 2
+        },
+        {
+          "key": "14",
+          "count": 2
+        },
+        {
+          "key": "95",
+          "count": 2
+        },
+        {
+          "key": "91",
+          "count": 2
+        },
+        {
+          "key": "93",
+          "count": 2
+        },
+        {
+          "key": "81",
+          "count": 2
+        },
+        {
+          "key": "51",
+          "count": 1
+        },
+        {
+          "key": "94",
+          "count": 1
+        },
+        {
+          "key": "44",
+          "count": 1
+        },
+        {
+          "key": "99",
+          "count": 1
+        },
+        {
+          "key": "104",
+          "count": 1
+        },
+        {
+          "key": "25",
+          "count": 1
+        },
+        {
+          "key": "107",
+          "count": 1
+        },
+        {
+          "key": "18",
+          "count": 1
+        },
+        {
+          "key": "88",
+          "count": 1
+        },
+        {
+          "key": "86",
+          "count": 1
+        },
+        {
+          "key": "8",
+          "count": 1
+        },
+        {
+          "key": "54",
+          "count": 1
+        },
+        {
+          "key": "22",
+          "count": 1
+        },
+        {
+          "key": "106",
+          "count": 1
+        },
+        {
+          "key": "41",
+          "count": 1
+        },
+        {
+          "key": "53",
+          "count": 1
+        },
+        {
+          "key": "55",
+          "count": 1
+        },
+        {
+          "key": "27",
+          "count": 1
+        },
+        {
+          "key": "15",
+          "count": 1
+        },
+        {
+          "key": "74",
+          "count": 1
+        },
+        {
+          "key": "48",
+          "count": 1
+        },
+        {
+          "key": "16",
+          "count": 1
+        },
+        {
+          "key": "39",
+          "count": 1
+        },
+        {
+          "key": "79",
+          "count": 1
+        },
+        {
+          "key": "87",
+          "count": 1
+        },
+        {
+          "key": "45",
+          "count": 1
+        },
+        {
+          "key": "50",
+          "count": 1
+        },
+        {
+          "key": "62",
+          "count": 1
+        },
+        {
+          "key": "20",
+          "count": 1
+        },
+        {
+          "key": "72",
+          "count": 1
+        },
+        {
+          "key": "12",
+          "count": 1
+        },
+        {
+          "key": "26",
+          "count": 1
+        },
+        {
+          "key": "11",
+          "count": 1
+        },
+        {
+          "key": "42",
+          "count": 1
+        },
+        {
+          "key": "52",
+          "count": 1
+        },
+        {
+          "key": "1",
+          "count": 1
+        },
+        {
+          "key": "98",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "field": "base-gcd-v-line:id:-1:other",
+      "count": 384,
+      "exact_identity_counts": {
+        "source_u=g": 384
+      },
+      "quotient_v_relation_counts": {
+        "image_v=-target_v mod N/u": 6,
+        "image_v=target_v mod N/u": 6,
+        "source_v=-target_v mod N/u": 6,
+        "source_v=target_v mod N/u": 6
+      },
+      "target_d_g_distribution": [
+        {
+          "key": "1,1",
+          "count": 176
+        },
+        {
+          "key": "3,1",
+          "count": 88
+        },
+        {
+          "key": "1,3",
+          "count": 88
+        },
+        {
+          "key": "23,1",
+          "count": 8
+        },
+        {
+          "key": "1,23",
+          "count": 8
+        },
+        {
+          "key": "69,1",
+          "count": 4
+        },
+        {
+          "key": "23,3",
+          "count": 4
+        },
+        {
+          "key": "3,23",
+          "count": 4
+        },
+        {
+          "key": "1,69",
+          "count": 4
+        }
+      ],
+      "source_u_expression_distribution": [
+        {
+          "key": "g",
+          "count": 384
+        }
+      ],
+      "source_u_distribution": [
+        {
+          "key": "1",
+          "count": 276
+        },
+        {
+          "key": "3",
+          "count": 92
+        },
+        {
+          "key": "23",
+          "count": 12
+        },
+        {
+          "key": "69",
+          "count": 4
+        }
+      ],
+      "source_v_minus_target_v_mod109": [
+        {
+          "key": "98",
+          "count": 12
+        },
+        {
+          "key": "108",
+          "count": 10
+        },
+        {
+          "key": "102",
+          "count": 10
+        },
+        {
+          "key": "106",
+          "count": 8
+        },
+        {
+          "key": "24",
+          "count": 8
+        },
+        {
+          "key": "62",
+          "count": 8
+        },
+        {
+          "key": "68",
+          "count": 8
+        },
+        {
+          "key": "56",
+          "count": 8
+        },
+        {
+          "key": "104",
+          "count": 8
+        },
+        {
+          "key": "2",
+          "count": 8
+        },
+        {
+          "key": "30",
+          "count": 6
+        },
+        {
+          "key": "76",
+          "count": 6
+        },
+        {
+          "key": "63",
+          "count": 6
+        },
+        {
+          "key": "49",
+          "count": 6
+        },
+        {
+          "key": "93",
+          "count": 6
+        },
+        {
+          "key": "87",
+          "count": 6
+        },
+        {
+          "key": "92",
+          "count": 6
+        },
+        {
+          "key": "96",
+          "count": 6
+        },
+        {
+          "key": "14",
+          "count": 6
+        },
+        {
+          "key": "73",
+          "count": 6
+        }
+      ],
+      "source_v_plus_target_v_mod109": [
+        {
+          "key": "11",
+          "count": 12
+        },
+        {
+          "key": "1",
+          "count": 10
+        },
+        {
+          "key": "7",
+          "count": 10
+        },
+        {
+          "key": "3",
+          "count": 8
+        },
+        {
+          "key": "85",
+          "count": 8
+        },
+        {
+          "key": "47",
+          "count": 8
+        },
+        {
+          "key": "41",
+          "count": 8
+        },
+        {
+          "key": "53",
+          "count": 8
+        },
+        {
+          "key": "5",
+          "count": 8
+        },
+        {
+          "key": "107",
+          "count": 8
+        },
+        {
+          "key": "79",
+          "count": 6
+        },
+        {
+          "key": "33",
+          "count": 6
+        },
+        {
+          "key": "46",
+          "count": 6
+        },
+        {
+          "key": "60",
+          "count": 6
+        },
+        {
+          "key": "16",
+          "count": 6
+        },
+        {
+          "key": "22",
+          "count": 6
+        },
+        {
+          "key": "17",
+          "count": 6
+        },
+        {
+          "key": "13",
+          "count": 6
+        },
+        {
+          "key": "95",
+          "count": 6
+        },
+        {
+          "key": "36",
+          "count": 6
+        }
+      ],
+      "image_v_minus_target_v_mod109": [
+        {
+          "key": "98",
+          "count": 12
+        },
+        {
+          "key": "108",
+          "count": 10
+        },
+        {
+          "key": "102",
+          "count": 10
+        },
+        {
+          "key": "106",
+          "count": 8
+        },
+        {
+          "key": "24",
+          "count": 8
+        },
+        {
+          "key": "62",
+          "count": 8
+        },
+        {
+          "key": "68",
+          "count": 8
+        },
+        {
+          "key": "56",
+          "count": 8
+        },
+        {
+          "key": "104",
+          "count": 8
+        },
+        {
+          "key": "2",
+          "count": 8
+        },
+        {
+          "key": "30",
+          "count": 6
+        },
+        {
+          "key": "76",
+          "count": 6
+        },
+        {
+          "key": "63",
+          "count": 6
+        },
+        {
+          "key": "49",
+          "count": 6
+        },
+        {
+          "key": "93",
+          "count": 6
+        },
+        {
+          "key": "87",
+          "count": 6
+        },
+        {
+          "key": "92",
+          "count": 6
+        },
+        {
+          "key": "96",
+          "count": 6
+        },
+        {
+          "key": "14",
+          "count": 6
+        },
+        {
+          "key": "73",
+          "count": 6
+        }
+      ],
+      "source_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 109,
+          "examples": [
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 218,
+          "examples": [
+            {
+              "a": 0,
+              "b": 109
+            },
+            {
+              "a": 109,
+              "b": 0
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "image_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 109,
+          "examples": [
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 218,
+          "examples": [
+            {
+              "a": 0,
+              "b": 109
+            },
+            {
+              "a": 109,
+              "b": 0
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "per_target_source_v_mod109_signature": [
+        {
+          "key": "0|0",
+          "count": 192
+        }
+      ],
+      "per_target_image_v_mod109_signature": [
+        {
+          "key": "0|0",
+          "count": 192
+        }
+      ]
+    },
+    {
+      "field": "even-intermediate:T:-1:other",
+      "count": 384,
+      "exact_identity_counts": {
+        "source_u even non-109": 384
+      },
+      "quotient_v_relation_counts": {
+        "image_v=-target_v mod N/u": 6,
+        "image_v=target_v mod N/u": 6,
+        "source_v=-target_v mod N/u": 14,
+        "source_v=target_v mod N/u": 13
+      },
+      "target_d_g_distribution": [
+        {
+          "key": "1,1",
+          "count": 176
+        },
+        {
+          "key": "3,1",
+          "count": 88
+        },
+        {
+          "key": "1,3",
+          "count": 88
+        },
+        {
+          "key": "1,23",
+          "count": 8
+        },
+        {
+          "key": "23,1",
+          "count": 8
+        },
+        {
+          "key": "3,23",
+          "count": 4
+        },
+        {
+          "key": "23,3",
+          "count": 4
+        },
+        {
+          "key": "69,1",
+          "count": 4
+        },
+        {
+          "key": "1,69",
+          "count": 4
+        }
+      ],
+      "source_u_expression_distribution": [
+        {
+          "key": "even_non109",
+          "count": 384
+        }
+      ],
+      "source_u_distribution": [
+        {
+          "key": "2",
+          "count": 138
+        },
+        {
+          "key": "4",
+          "count": 69
+        },
+        {
+          "key": "8",
+          "count": 69
+        },
+        {
+          "key": "6",
+          "count": 46
+        },
+        {
+          "key": "12",
+          "count": 23
+        },
+        {
+          "key": "24",
+          "count": 23
+        },
+        {
+          "key": "46",
+          "count": 6
+        },
+        {
+          "key": "92",
+          "count": 3
+        },
+        {
+          "key": "184",
+          "count": 3
+        },
+        {
+          "key": "138",
+          "count": 2
+        },
+        {
+          "key": "276",
+          "count": 1
+        },
+        {
+          "key": "552",
+          "count": 1
+        }
+      ],
+      "source_v_minus_target_v_mod109": [
+        {
+          "key": "96",
+          "count": 12
+        },
+        {
+          "key": "100",
+          "count": 12
+        },
+        {
+          "key": "98",
+          "count": 11
+        },
+        {
+          "key": "50",
+          "count": 10
+        },
+        {
+          "key": "52",
+          "count": 10
+        },
+        {
+          "key": "0",
+          "count": 9
+        },
+        {
+          "key": "74",
+          "count": 8
+        },
+        {
+          "key": "102",
+          "count": 8
+        },
+        {
+          "key": "15",
+          "count": 7
+        },
+        {
+          "key": "2",
+          "count": 7
+        },
+        {
+          "key": "65",
+          "count": 7
+        },
+        {
+          "key": "106",
+          "count": 6
+        },
+        {
+          "key": "72",
+          "count": 6
+        },
+        {
+          "key": "94",
+          "count": 6
+        },
+        {
+          "key": "4",
+          "count": 6
+        },
+        {
+          "key": "87",
+          "count": 6
+        },
+        {
+          "key": "28",
+          "count": 6
+        },
+        {
+          "key": "48",
+          "count": 6
+        },
+        {
+          "key": "85",
+          "count": 5
+        },
+        {
+          "key": "22",
+          "count": 5
+        }
+      ],
+      "source_v_plus_target_v_mod109": [
+        {
+          "key": "9",
+          "count": 12
+        },
+        {
+          "key": "108",
+          "count": 10
+        },
+        {
+          "key": "33",
+          "count": 9
+        },
+        {
+          "key": "83",
+          "count": 9
+        },
+        {
+          "key": "7",
+          "count": 9
+        },
+        {
+          "key": "11",
+          "count": 8
+        },
+        {
+          "key": "70",
+          "count": 8
+        },
+        {
+          "key": "35",
+          "count": 8
+        },
+        {
+          "key": "0",
+          "count": 8
+        },
+        {
+          "key": "45",
+          "count": 7
+        },
+        {
+          "key": "105",
+          "count": 6
+        },
+        {
+          "key": "58",
+          "count": 6
+        },
+        {
+          "key": "31",
+          "count": 6
+        },
+        {
+          "key": "46",
+          "count": 6
+        },
+        {
+          "key": "34",
+          "count": 6
+        },
+        {
+          "key": "1",
+          "count": 6
+        },
+        {
+          "key": "94",
+          "count": 6
+        },
+        {
+          "key": "81",
+          "count": 6
+        },
+        {
+          "key": "75",
+          "count": 6
+        },
+        {
+          "key": "96",
+          "count": 6
+        }
+      ],
+      "image_v_minus_target_v_mod109": [
+        {
+          "key": "98",
+          "count": 12
+        },
+        {
+          "key": "108",
+          "count": 10
+        },
+        {
+          "key": "102",
+          "count": 10
+        },
+        {
+          "key": "2",
+          "count": 8
+        },
+        {
+          "key": "62",
+          "count": 8
+        },
+        {
+          "key": "24",
+          "count": 8
+        },
+        {
+          "key": "68",
+          "count": 8
+        },
+        {
+          "key": "106",
+          "count": 8
+        },
+        {
+          "key": "104",
+          "count": 8
+        },
+        {
+          "key": "56",
+          "count": 8
+        },
+        {
+          "key": "74",
+          "count": 6
+        },
+        {
+          "key": "49",
+          "count": 6
+        },
+        {
+          "key": "94",
+          "count": 6
+        },
+        {
+          "key": "87",
+          "count": 6
+        },
+        {
+          "key": "76",
+          "count": 6
+        },
+        {
+          "key": "7",
+          "count": 6
+        },
+        {
+          "key": "86",
+          "count": 6
+        },
+        {
+          "key": "96",
+          "count": 6
+        },
+        {
+          "key": "92",
+          "count": 6
+        },
+        {
+          "key": "63",
+          "count": 6
+        }
+      ],
+      "source_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "image_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 109,
+          "examples": [
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 218,
+          "examples": [
+            {
+              "a": 0,
+              "b": 109
+            },
+            {
+              "a": 109,
+              "b": 0
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "per_target_source_v_mod109_signature": [
+        {
+          "key": "105|107",
+          "count": 44
+        },
+        {
+          "key": "101|107",
+          "count": 44
+        },
+        {
+          "key": "107|85",
+          "count": 22
+        },
+        {
+          "key": "107|97",
+          "count": 22
+        },
+        {
+          "key": "103|105",
+          "count": 22
+        },
+        {
+          "key": "101|103",
+          "count": 22
+        },
+        {
+          "key": "107|34",
+          "count": 2
+        },
+        {
+          "key": "107|17",
+          "count": 2
+        },
+        {
+          "key": "105|63",
+          "count": 2
+        },
+        {
+          "key": "101|63",
+          "count": 2
+        },
+        {
+          "key": "107|51",
+          "count": 1
+        },
+        {
+          "key": "102|107",
+          "count": 1
+        },
+        {
+          "key": "105|80",
+          "count": 1
+        },
+        {
+          "key": "103|34",
+          "count": 1
+        },
+        {
+          "key": "103|17",
+          "count": 1
+        },
+        {
+          "key": "101|80",
+          "count": 1
+        },
+        {
+          "key": "63|97",
+          "count": 1
+        },
+        {
+          "key": "63|85",
+          "count": 1
+        }
+      ],
+      "per_target_image_v_mod109_signature": [
+        {
+          "key": "0|0",
+          "count": 192
+        }
+      ]
+    },
+    {
+      "field": "even-intermediate:T:1:exact",
+      "count": 192,
+      "exact_identity_counts": {
+        "gcd(image_u,N)=gcd(target_u,N)": 192,
+        "gcd(image_v,N)=gcd(target_v,N)": 192,
+        "image=target": 192,
+        "image_u=target_u": 192,
+        "source_u even non-109": 192
+      },
+      "quotient_v_relation_counts": {
+        "image_v=target_v mod N/u": 192,
+        "source_v=-target_v mod N/u": 1,
+        "source_v=target_v mod N/u": 2
+      },
+      "target_d_g_distribution": [
+        {
+          "key": "1,1",
+          "count": 88
+        },
+        {
+          "key": "1,3",
+          "count": 44
+        },
+        {
+          "key": "3,1",
+          "count": 44
+        },
+        {
+          "key": "23,1",
+          "count": 4
+        },
+        {
+          "key": "1,23",
+          "count": 4
+        },
+        {
+          "key": "1,69",
+          "count": 2
+        },
+        {
+          "key": "23,3",
+          "count": 2
+        },
+        {
+          "key": "3,23",
+          "count": 2
+        },
+        {
+          "key": "69,1",
+          "count": 2
+        }
+      ],
+      "source_u_expression_distribution": [
+        {
+          "key": "even_non109",
+          "count": 192
+        }
+      ],
+      "source_u_distribution": [
+        {
+          "key": "2",
+          "count": 68
+        },
+        {
+          "key": "4",
+          "count": 36
+        },
+        {
+          "key": "8",
+          "count": 34
+        },
+        {
+          "key": "6",
+          "count": 23
+        },
+        {
+          "key": "24",
+          "count": 12
+        },
+        {
+          "key": "12",
+          "count": 11
+        },
+        {
+          "key": "46",
+          "count": 4
+        },
+        {
+          "key": "184",
+          "count": 2
+        },
+        {
+          "key": "138",
+          "count": 1
+        },
+        {
+          "key": "276",
+          "count": 1
+        }
+      ],
+      "source_v_minus_target_v_mod109": [
+        {
+          "key": "98",
+          "count": 6
+        },
+        {
+          "key": "108",
+          "count": 5
+        },
+        {
+          "key": "102",
+          "count": 5
+        },
+        {
+          "key": "68",
+          "count": 4
+        },
+        {
+          "key": "106",
+          "count": 4
+        },
+        {
+          "key": "2",
+          "count": 4
+        },
+        {
+          "key": "62",
+          "count": 4
+        },
+        {
+          "key": "24",
+          "count": 4
+        },
+        {
+          "key": "56",
+          "count": 4
+        },
+        {
+          "key": "104",
+          "count": 4
+        },
+        {
+          "key": "54",
+          "count": 3
+        },
+        {
+          "key": "14",
+          "count": 3
+        },
+        {
+          "key": "63",
+          "count": 3
+        },
+        {
+          "key": "7",
+          "count": 3
+        },
+        {
+          "key": "30",
+          "count": 3
+        },
+        {
+          "key": "96",
+          "count": 3
+        },
+        {
+          "key": "73",
+          "count": 3
+        },
+        {
+          "key": "86",
+          "count": 3
+        },
+        {
+          "key": "49",
+          "count": 3
+        },
+        {
+          "key": "87",
+          "count": 3
+        }
+      ],
+      "source_v_plus_target_v_mod109": [
+        {
+          "key": "11",
+          "count": 6
+        },
+        {
+          "key": "1",
+          "count": 5
+        },
+        {
+          "key": "7",
+          "count": 5
+        },
+        {
+          "key": "41",
+          "count": 4
+        },
+        {
+          "key": "3",
+          "count": 4
+        },
+        {
+          "key": "107",
+          "count": 4
+        },
+        {
+          "key": "47",
+          "count": 4
+        },
+        {
+          "key": "85",
+          "count": 4
+        },
+        {
+          "key": "53",
+          "count": 4
+        },
+        {
+          "key": "5",
+          "count": 4
+        },
+        {
+          "key": "55",
+          "count": 3
+        },
+        {
+          "key": "95",
+          "count": 3
+        },
+        {
+          "key": "46",
+          "count": 3
+        },
+        {
+          "key": "102",
+          "count": 3
+        },
+        {
+          "key": "79",
+          "count": 3
+        },
+        {
+          "key": "13",
+          "count": 3
+        },
+        {
+          "key": "36",
+          "count": 3
+        },
+        {
+          "key": "23",
+          "count": 3
+        },
+        {
+          "key": "60",
+          "count": 3
+        },
+        {
+          "key": "22",
+          "count": 3
+        }
+      ],
+      "image_v_minus_target_v_mod109": [
+        {
+          "key": "0",
+          "count": 192
+        }
+      ],
+      "source_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 109,
+          "examples": [
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 218,
+          "examples": [
+            {
+              "a": 0,
+              "b": 109
+            },
+            {
+              "a": 109,
+              "b": 0
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "image_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 3,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 4,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 3,
+              "b": 2
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 8,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 5,
+              "b": 4
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 23,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 46,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 24,
+              "b": 23
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 69,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 92,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 47,
+              "b": 46
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 109,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 218,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 110,
+              "b": 109
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 327,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 552,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 277,
+              "b": 276
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 872,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 437,
+              "b": 436
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 2507,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 7521,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 60168,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 30085,
+              "b": 30084
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "per_target_source_v_mod109_signature": [
+        {
+          "key": "0",
+          "count": 192
+        }
+      ],
+      "per_target_image_v_mod109_signature": [
+        {
+          "key": "11",
+          "count": 6
+        },
+        {
+          "key": "1",
+          "count": 5
+        },
+        {
+          "key": "7",
+          "count": 5
+        },
+        {
+          "key": "41",
+          "count": 4
+        },
+        {
+          "key": "3",
+          "count": 4
+        },
+        {
+          "key": "107",
+          "count": 4
+        },
+        {
+          "key": "47",
+          "count": 4
+        },
+        {
+          "key": "85",
+          "count": 4
+        },
+        {
+          "key": "53",
+          "count": 4
+        },
+        {
+          "key": "5",
+          "count": 4
+        },
+        {
+          "key": "55",
+          "count": 3
+        },
+        {
+          "key": "95",
+          "count": 3
+        },
+        {
+          "key": "46",
+          "count": 3
+        },
+        {
+          "key": "102",
+          "count": 3
+        },
+        {
+          "key": "79",
+          "count": 3
+        },
+        {
+          "key": "13",
+          "count": 3
+        },
+        {
+          "key": "36",
+          "count": 3
+        },
+        {
+          "key": "23",
+          "count": 3
+        },
+        {
+          "key": "60",
+          "count": 3
+        },
+        {
+          "key": "22",
+          "count": 3
+        },
+        {
+          "key": "17",
+          "count": 3
+        },
+        {
+          "key": "25",
+          "count": 3
+        },
+        {
+          "key": "33",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 3
+        },
+        {
+          "key": "15",
+          "count": 3
+        },
+        {
+          "key": "16",
+          "count": 3
+        },
+        {
+          "key": "67",
+          "count": 2
+        },
+        {
+          "key": "54",
+          "count": 2
+        },
+        {
+          "key": "42",
+          "count": 2
+        },
+        {
+          "key": "45",
+          "count": 2
+        },
+        {
+          "key": "91",
+          "count": 2
+        },
+        {
+          "key": "72",
+          "count": 2
+        },
+        {
+          "key": "77",
+          "count": 2
+        },
+        {
+          "key": "82",
+          "count": 2
+        },
+        {
+          "key": "19",
+          "count": 2
+        },
+        {
+          "key": "92",
+          "count": 2
+        },
+        {
+          "key": "48",
+          "count": 2
+        },
+        {
+          "key": "101",
+          "count": 2
+        },
+        {
+          "key": "18",
+          "count": 2
+        },
+        {
+          "key": "73",
+          "count": 2
+        },
+        {
+          "key": "32",
+          "count": 2
+        },
+        {
+          "key": "89",
+          "count": 2
+        },
+        {
+          "key": "49",
+          "count": 2
+        },
+        {
+          "key": "37",
+          "count": 2
+        },
+        {
+          "key": "39",
+          "count": 2
+        },
+        {
+          "key": "59",
+          "count": 2
+        },
+        {
+          "key": "27",
+          "count": 2
+        },
+        {
+          "key": "65",
+          "count": 2
+        },
+        {
+          "key": "52",
+          "count": 2
+        },
+        {
+          "key": "51",
+          "count": 2
+        },
+        {
+          "key": "38",
+          "count": 2
+        },
+        {
+          "key": "76",
+          "count": 2
+        },
+        {
+          "key": "99",
+          "count": 2
+        },
+        {
+          "key": "12",
+          "count": 2
+        },
+        {
+          "key": "10",
+          "count": 2
+        },
+        {
+          "key": "87",
+          "count": 2
+        },
+        {
+          "key": "29",
+          "count": 1
+        },
+        {
+          "key": "69",
+          "count": 1
+        },
+        {
+          "key": "105",
+          "count": 1
+        },
+        {
+          "key": "90",
+          "count": 1
+        },
+        {
+          "key": "43",
+          "count": 1
+        },
+        {
+          "key": "83",
+          "count": 1
+        },
+        {
+          "key": "8",
+          "count": 1
+        },
+        {
+          "key": "108",
+          "count": 1
+        },
+        {
+          "key": "81",
+          "count": 1
+        },
+        {
+          "key": "103",
+          "count": 1
+        },
+        {
+          "key": "44",
+          "count": 1
+        },
+        {
+          "key": "21",
+          "count": 1
+        },
+        {
+          "key": "61",
+          "count": 1
+        },
+        {
+          "key": "66",
+          "count": 1
+        },
+        {
+          "key": "2",
+          "count": 1
+        },
+        {
+          "key": "74",
+          "count": 1
+        },
+        {
+          "key": "40",
+          "count": 1
+        },
+        {
+          "key": "75",
+          "count": 1
+        },
+        {
+          "key": "96",
+          "count": 1
+        },
+        {
+          "key": "98",
+          "count": 1
+        },
+        {
+          "key": "62",
+          "count": 1
+        },
+        {
+          "key": "26",
+          "count": 1
+        },
+        {
+          "key": "97",
+          "count": 1
+        },
+        {
+          "key": "50",
+          "count": 1
+        },
+        {
+          "key": "28",
+          "count": 1
+        },
+        {
+          "key": "88",
+          "count": 1
+        },
+        {
+          "key": "4",
+          "count": 1
+        },
+        {
+          "key": "71",
+          "count": 1
+        },
+        {
+          "key": "86",
+          "count": 1
+        },
+        {
+          "key": "84",
+          "count": 1
+        },
+        {
+          "key": "30",
+          "count": 1
+        },
+        {
+          "key": "6",
+          "count": 1
+        },
+        {
+          "key": "106",
+          "count": 1
+        },
+        {
+          "key": "93",
+          "count": 1
+        },
+        {
+          "key": "94",
+          "count": 1
+        },
+        {
+          "key": "20",
+          "count": 1
+        },
+        {
+          "key": "9",
+          "count": 1
+        },
+        {
+          "key": "57",
+          "count": 1
+        },
+        {
+          "key": "104",
+          "count": 1
+        },
+        {
+          "key": "58",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "field": "even-intermediate:T:1:same-u",
+      "count": 192,
+      "exact_identity_counts": {
+        "gcd(image_u,N)=gcd(target_u,N)": 192,
+        "gcd(image_v,N)=gcd(target_v,N)": 192,
+        "image_u=target_u": 192,
+        "source_u even non-109": 192
+      },
+      "quotient_v_relation_counts": {
+        "image_v=-target_v mod N/u": 192,
+        "source_v=-target_v mod N/u": 2,
+        "source_v=target_v mod N/u": 6
+      },
+      "target_d_g_distribution": [
+        {
+          "key": "1,1",
+          "count": 88
+        },
+        {
+          "key": "1,3",
+          "count": 44
+        },
+        {
+          "key": "3,1",
+          "count": 44
+        },
+        {
+          "key": "1,23",
+          "count": 4
+        },
+        {
+          "key": "23,1",
+          "count": 4
+        },
+        {
+          "key": "69,1",
+          "count": 2
+        },
+        {
+          "key": "3,23",
+          "count": 2
+        },
+        {
+          "key": "23,3",
+          "count": 2
+        },
+        {
+          "key": "1,69",
+          "count": 2
+        }
+      ],
+      "source_u_expression_distribution": [
+        {
+          "key": "even_non109",
+          "count": 192
+        }
+      ],
+      "source_u_distribution": [
+        {
+          "key": "2",
+          "count": 70
+        },
+        {
+          "key": "8",
+          "count": 35
+        },
+        {
+          "key": "4",
+          "count": 33
+        },
+        {
+          "key": "6",
+          "count": 23
+        },
+        {
+          "key": "12",
+          "count": 12
+        },
+        {
+          "key": "24",
+          "count": 11
+        },
+        {
+          "key": "92",
+          "count": 3
+        },
+        {
+          "key": "46",
+          "count": 2
+        },
+        {
+          "key": "138",
+          "count": 1
+        },
+        {
+          "key": "184",
+          "count": 1
+        },
+        {
+          "key": "552",
+          "count": 1
+        }
+      ],
+      "source_v_minus_target_v_mod109": [
+        {
+          "key": "98",
+          "count": 6
+        },
+        {
+          "key": "102",
+          "count": 5
+        },
+        {
+          "key": "108",
+          "count": 5
+        },
+        {
+          "key": "68",
+          "count": 4
+        },
+        {
+          "key": "24",
+          "count": 4
+        },
+        {
+          "key": "62",
+          "count": 4
+        },
+        {
+          "key": "2",
+          "count": 4
+        },
+        {
+          "key": "106",
+          "count": 4
+        },
+        {
+          "key": "56",
+          "count": 4
+        },
+        {
+          "key": "104",
+          "count": 4
+        },
+        {
+          "key": "73",
+          "count": 3
+        },
+        {
+          "key": "76",
+          "count": 3
+        },
+        {
+          "key": "74",
+          "count": 3
+        },
+        {
+          "key": "86",
+          "count": 3
+        },
+        {
+          "key": "84",
+          "count": 3
+        },
+        {
+          "key": "49",
+          "count": 3
+        },
+        {
+          "key": "93",
+          "count": 3
+        },
+        {
+          "key": "30",
+          "count": 3
+        },
+        {
+          "key": "14",
+          "count": 3
+        },
+        {
+          "key": "87",
+          "count": 3
+        }
+      ],
+      "source_v_plus_target_v_mod109": [
+        {
+          "key": "11",
+          "count": 6
+        },
+        {
+          "key": "7",
+          "count": 5
+        },
+        {
+          "key": "1",
+          "count": 5
+        },
+        {
+          "key": "41",
+          "count": 4
+        },
+        {
+          "key": "85",
+          "count": 4
+        },
+        {
+          "key": "47",
+          "count": 4
+        },
+        {
+          "key": "107",
+          "count": 4
+        },
+        {
+          "key": "3",
+          "count": 4
+        },
+        {
+          "key": "53",
+          "count": 4
+        },
+        {
+          "key": "5",
+          "count": 4
+        },
+        {
+          "key": "36",
+          "count": 3
+        },
+        {
+          "key": "33",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 3
+        },
+        {
+          "key": "23",
+          "count": 3
+        },
+        {
+          "key": "25",
+          "count": 3
+        },
+        {
+          "key": "60",
+          "count": 3
+        },
+        {
+          "key": "16",
+          "count": 3
+        },
+        {
+          "key": "79",
+          "count": 3
+        },
+        {
+          "key": "95",
+          "count": 3
+        },
+        {
+          "key": "22",
+          "count": 3
+        }
+      ],
+      "image_v_minus_target_v_mod109": [
+        {
+          "key": "55",
+          "count": 4
+        },
+        {
+          "key": "103",
+          "count": 4
+        },
+        {
+          "key": "0",
+          "count": 4
+        },
+        {
+          "key": "6",
+          "count": 4
+        },
+        {
+          "key": "18",
+          "count": 4
+        },
+        {
+          "key": "10",
+          "count": 4
+        },
+        {
+          "key": "78",
+          "count": 3
+        },
+        {
+          "key": "14",
+          "count": 3
+        },
+        {
+          "key": "50",
+          "count": 3
+        },
+        {
+          "key": "27",
+          "count": 3
+        },
+        {
+          "key": "46",
+          "count": 3
+        },
+        {
+          "key": "66",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        },
+        {
+          "key": "105",
+          "count": 3
+        },
+        {
+          "key": "67",
+          "count": 3
+        },
+        {
+          "key": "1",
+          "count": 3
+        },
+        {
+          "key": "44",
+          "count": 3
+        },
+        {
+          "key": "106",
+          "count": 3
+        },
+        {
+          "key": "41",
+          "count": 3
+        },
+        {
+          "key": "40",
+          "count": 3
+        }
+      ],
+      "source_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 109,
+          "examples": [
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 218,
+          "examples": [
+            {
+              "a": 0,
+              "b": 109
+            },
+            {
+              "a": 109,
+              "b": 0
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "image_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 4,
+          "examples": [
+            {
+              "a": 1,
+              "b": 2
+            },
+            {
+              "a": 3,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 8,
+          "examples": [
+            {
+              "a": 3,
+              "b": 4
+            },
+            {
+              "a": 7,
+              "b": 0
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "per_target_source_v_mod109_signature": [
+        {
+          "key": "0",
+          "count": 192
+        }
+      ],
+      "per_target_image_v_mod109_signature": [
+        {
+          "key": "34",
+          "count": 4
+        },
+        {
+          "key": "83",
+          "count": 4
+        },
+        {
+          "key": "31",
+          "count": 4
+        },
+        {
+          "key": "29",
+          "count": 4
+        },
+        {
+          "key": "71",
+          "count": 4
+        },
+        {
+          "key": "4",
+          "count": 4
+        },
+        {
+          "key": "7",
+          "count": 4
+        },
+        {
+          "key": "5",
+          "count": 3
+        },
+        {
+          "key": "65",
+          "count": 3
+        },
+        {
+          "key": "17",
+          "count": 3
+        },
+        {
+          "key": "59",
+          "count": 3
+        },
+        {
+          "key": "9",
+          "count": 3
+        },
+        {
+          "key": "40",
+          "count": 3
+        },
+        {
+          "key": "89",
+          "count": 3
+        },
+        {
+          "key": "78",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        },
+        {
+          "key": "19",
+          "count": 3
+        },
+        {
+          "key": "24",
+          "count": 3
+        },
+        {
+          "key": "77",
+          "count": 3
+        },
+        {
+          "key": "97",
+          "count": 3
+        },
+        {
+          "key": "28",
+          "count": 3
+        },
+        {
+          "key": "101",
+          "count": 3
+        },
+        {
+          "key": "6",
+          "count": 3
+        },
+        {
+          "key": "103",
+          "count": 3
+        },
+        {
+          "key": "43",
+          "count": 3
+        },
+        {
+          "key": "61",
+          "count": 3
+        },
+        {
+          "key": "63",
+          "count": 3
+        },
+        {
+          "key": "75",
+          "count": 3
+        },
+        {
+          "key": "64",
+          "count": 3
+        },
+        {
+          "key": "70",
+          "count": 3
+        },
+        {
+          "key": "57",
+          "count": 2
+        },
+        {
+          "key": "23",
+          "count": 2
+        },
+        {
+          "key": "30",
+          "count": 2
+        },
+        {
+          "key": "84",
+          "count": 2
+        },
+        {
+          "key": "81",
+          "count": 2
+        },
+        {
+          "key": "93",
+          "count": 2
+        },
+        {
+          "key": "69",
+          "count": 2
+        },
+        {
+          "key": "35",
+          "count": 2
+        },
+        {
+          "key": "10",
+          "count": 2
+        },
+        {
+          "key": "91",
+          "count": 2
+        },
+        {
+          "key": "105",
+          "count": 2
+        },
+        {
+          "key": "56",
+          "count": 2
+        },
+        {
+          "key": "37",
+          "count": 2
+        },
+        {
+          "key": "47",
+          "count": 2
+        },
+        {
+          "key": "80",
+          "count": 2
+        },
+        {
+          "key": "96",
+          "count": 2
+        },
+        {
+          "key": "68",
+          "count": 2
+        },
+        {
+          "key": "58",
+          "count": 2
+        },
+        {
+          "key": "66",
+          "count": 2
+        },
+        {
+          "key": "90",
+          "count": 2
+        },
+        {
+          "key": "13",
+          "count": 2
+        },
+        {
+          "key": "100",
+          "count": 2
+        },
+        {
+          "key": "14",
+          "count": 2
+        },
+        {
+          "key": "2",
+          "count": 2
+        },
+        {
+          "key": "108",
+          "count": 2
+        },
+        {
+          "key": "95",
+          "count": 2
+        },
+        {
+          "key": "67",
+          "count": 2
+        },
+        {
+          "key": "73",
+          "count": 2
+        },
+        {
+          "key": "49",
+          "count": 2
+        },
+        {
+          "key": "45",
+          "count": 1
+        },
+        {
+          "key": "22",
+          "count": 1
+        },
+        {
+          "key": "42",
+          "count": 1
+        },
+        {
+          "key": "20",
+          "count": 1
+        },
+        {
+          "key": "79",
+          "count": 1
+        },
+        {
+          "key": "107",
+          "count": 1
+        },
+        {
+          "key": "16",
+          "count": 1
+        },
+        {
+          "key": "106",
+          "count": 1
+        },
+        {
+          "key": "94",
+          "count": 1
+        },
+        {
+          "key": "18",
+          "count": 1
+        },
+        {
+          "key": "51",
+          "count": 1
+        },
+        {
+          "key": "50",
+          "count": 1
+        },
+        {
+          "key": "53",
+          "count": 1
+        },
+        {
+          "key": "48",
+          "count": 1
+        },
+        {
+          "key": "88",
+          "count": 1
+        },
+        {
+          "key": "26",
+          "count": 1
+        },
+        {
+          "key": "87",
+          "count": 1
+        },
+        {
+          "key": "72",
+          "count": 1
+        },
+        {
+          "key": "98",
+          "count": 1
+        },
+        {
+          "key": "11",
+          "count": 1
+        },
+        {
+          "key": "1",
+          "count": 1
+        },
+        {
+          "key": "41",
+          "count": 1
+        },
+        {
+          "key": "86",
+          "count": 1
+        },
+        {
+          "key": "27",
+          "count": 1
+        },
+        {
+          "key": "25",
+          "count": 1
+        },
+        {
+          "key": "15",
+          "count": 1
+        },
+        {
+          "key": "74",
+          "count": 1
+        },
+        {
+          "key": "39",
+          "count": 1
+        },
+        {
+          "key": "52",
+          "count": 1
+        },
+        {
+          "key": "62",
+          "count": 1
+        },
+        {
+          "key": "54",
+          "count": 1
+        },
+        {
+          "key": "12",
+          "count": 1
+        },
+        {
+          "key": "104",
+          "count": 1
+        },
+        {
+          "key": "8",
+          "count": 1
+        },
+        {
+          "key": "55",
+          "count": 1
+        },
+        {
+          "key": "44",
+          "count": 1
+        },
+        {
+          "key": "99",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "field": "target-109d-axis:TT:-1:other",
+      "count": 384,
+      "exact_identity_counts": {
+        "source_u=109*d": 384
+      },
+      "quotient_v_relation_counts": {
+        "image_v=-target_v mod N/u": 6,
+        "image_v=target_v mod N/u": 6
+      },
+      "target_d_g_distribution": [
+        {
+          "key": "1,1",
+          "count": 176
+        },
+        {
+          "key": "1,3",
+          "count": 88
+        },
+        {
+          "key": "3,1",
+          "count": 88
+        },
+        {
+          "key": "1,23",
+          "count": 8
+        },
+        {
+          "key": "23,1",
+          "count": 8
+        },
+        {
+          "key": "1,69",
+          "count": 4
+        },
+        {
+          "key": "3,23",
+          "count": 4
+        },
+        {
+          "key": "23,3",
+          "count": 4
+        },
+        {
+          "key": "69,1",
+          "count": 4
+        }
+      ],
+      "source_u_expression_distribution": [
+        {
+          "key": "109*d",
+          "count": 384
+        }
+      ],
+      "source_u_distribution": [
+        {
+          "key": "109",
+          "count": 276
+        },
+        {
+          "key": "327",
+          "count": 92
+        },
+        {
+          "key": "2507",
+          "count": 12
+        },
+        {
+          "key": "7521",
+          "count": 4
+        }
+      ],
+      "source_v_minus_target_v_mod109": [
+        {
+          "key": "0",
+          "count": 113
+        },
+        {
+          "key": "7",
+          "count": 46
+        },
+        {
+          "key": "41",
+          "count": 18
+        },
+        {
+          "key": "75",
+          "count": 18
+        },
+        {
+          "key": "13",
+          "count": 7
+        },
+        {
+          "key": "100",
+          "count": 4
+        },
+        {
+          "key": "1",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        },
+        {
+          "key": "105",
+          "count": 3
+        },
+        {
+          "key": "24",
+          "count": 3
+        },
+        {
+          "key": "44",
+          "count": 3
+        },
+        {
+          "key": "52",
+          "count": 3
+        },
+        {
+          "key": "84",
+          "count": 3
+        },
+        {
+          "key": "27",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 3
+        },
+        {
+          "key": "55",
+          "count": 3
+        },
+        {
+          "key": "6",
+          "count": 3
+        },
+        {
+          "key": "14",
+          "count": 3
+        },
+        {
+          "key": "22",
+          "count": 3
+        },
+        {
+          "key": "94",
+          "count": 3
+        }
+      ],
+      "source_v_plus_target_v_mod109": [
+        {
+          "key": "7",
+          "count": 142
+        },
+        {
+          "key": "14",
+          "count": 29
+        },
+        {
+          "key": "48",
+          "count": 13
+        },
+        {
+          "key": "13",
+          "count": 8
+        },
+        {
+          "key": "41",
+          "count": 7
+        },
+        {
+          "key": "61",
+          "count": 4
+        },
+        {
+          "key": "15",
+          "count": 4
+        },
+        {
+          "key": "9",
+          "count": 4
+        },
+        {
+          "key": "37",
+          "count": 4
+        },
+        {
+          "key": "20",
+          "count": 3
+        },
+        {
+          "key": "32",
+          "count": 3
+        },
+        {
+          "key": "44",
+          "count": 3
+        },
+        {
+          "key": "56",
+          "count": 3
+        },
+        {
+          "key": "72",
+          "count": 3
+        },
+        {
+          "key": "96",
+          "count": 3
+        },
+        {
+          "key": "11",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 3
+        },
+        {
+          "key": "43",
+          "count": 3
+        },
+        {
+          "key": "75",
+          "count": 3
+        },
+        {
+          "key": "38",
+          "count": 3
+        }
+      ],
+      "image_v_minus_target_v_mod109": [
+        {
+          "key": "98",
+          "count": 12
+        },
+        {
+          "key": "108",
+          "count": 10
+        },
+        {
+          "key": "102",
+          "count": 10
+        },
+        {
+          "key": "106",
+          "count": 8
+        },
+        {
+          "key": "104",
+          "count": 8
+        },
+        {
+          "key": "24",
+          "count": 8
+        },
+        {
+          "key": "68",
+          "count": 8
+        },
+        {
+          "key": "62",
+          "count": 8
+        },
+        {
+          "key": "56",
+          "count": 8
+        },
+        {
+          "key": "2",
+          "count": 8
+        },
+        {
+          "key": "7",
+          "count": 6
+        },
+        {
+          "key": "93",
+          "count": 6
+        },
+        {
+          "key": "87",
+          "count": 6
+        },
+        {
+          "key": "73",
+          "count": 6
+        },
+        {
+          "key": "63",
+          "count": 6
+        },
+        {
+          "key": "49",
+          "count": 6
+        },
+        {
+          "key": "14",
+          "count": 6
+        },
+        {
+          "key": "84",
+          "count": 6
+        },
+        {
+          "key": "76",
+          "count": 6
+        },
+        {
+          "key": "74",
+          "count": 6
+        }
+      ],
+      "source_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 0
+            },
+            {
+              "a": 1,
+              "b": 1
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "image_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 109,
+          "examples": [
+            {
+              "a": 0,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 218,
+          "examples": [
+            {
+              "a": 0,
+              "b": 109
+            },
+            {
+              "a": 109,
+              "b": 0
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "per_target_source_v_mod109_signature": [
+        {
+          "key": "7|7",
+          "count": 3
+        },
+        {
+          "key": "1|13",
+          "count": 3
+        },
+        {
+          "key": "104|19",
+          "count": 3
+        },
+        {
+          "key": "25|98",
+          "count": 3
+        },
+        {
+          "key": "31|92",
+          "count": 3
+        },
+        {
+          "key": "37|86",
+          "count": 3
+        },
+        {
+          "key": "2|5",
+          "count": 2
+        },
+        {
+          "key": "3|4",
+          "count": 2
+        },
+        {
+          "key": "1|6",
+          "count": 2
+        },
+        {
+          "key": "108|8",
+          "count": 2
+        },
+        {
+          "key": "10|106",
+          "count": 2
+        },
+        {
+          "key": "104|12",
+          "count": 2
+        },
+        {
+          "key": "102|14",
+          "count": 2
+        },
+        {
+          "key": "100|16",
+          "count": 2
+        },
+        {
+          "key": "18|98",
+          "count": 2
+        },
+        {
+          "key": "20|96",
+          "count": 2
+        },
+        {
+          "key": "22|94",
+          "count": 2
+        },
+        {
+          "key": "24|92",
+          "count": 2
+        },
+        {
+          "key": "26|90",
+          "count": 2
+        },
+        {
+          "key": "28|88",
+          "count": 2
+        },
+        {
+          "key": "30|86",
+          "count": 2
+        },
+        {
+          "key": "32|84",
+          "count": 2
+        },
+        {
+          "key": "34|82",
+          "count": 2
+        },
+        {
+          "key": "36|80",
+          "count": 2
+        },
+        {
+          "key": "38|78",
+          "count": 2
+        },
+        {
+          "key": "40|76",
+          "count": 2
+        },
+        {
+          "key": "42|74",
+          "count": 2
+        },
+        {
+          "key": "44|72",
+          "count": 2
+        },
+        {
+          "key": "46|70",
+          "count": 2
+        },
+        {
+          "key": "48|68",
+          "count": 2
+        },
+        {
+          "key": "50|66",
+          "count": 2
+        },
+        {
+          "key": "52|64",
+          "count": 2
+        },
+        {
+          "key": "54|62",
+          "count": 2
+        },
+        {
+          "key": "56|60",
+          "count": 2
+        },
+        {
+          "key": "43|80",
+          "count": 2
+        },
+        {
+          "key": "49|74",
+          "count": 2
+        },
+        {
+          "key": "55|68",
+          "count": 2
+        },
+        {
+          "key": "61|62",
+          "count": 2
+        },
+        {
+          "key": "56|67",
+          "count": 2
+        },
+        {
+          "key": "50|73",
+          "count": 2
+        },
+        {
+          "key": "58|58",
+          "count": 1
+        },
+        {
+          "key": "107|9",
+          "count": 1
+        },
+        {
+          "key": "105|11",
+          "count": 1
+        },
+        {
+          "key": "103|13",
+          "count": 1
+        },
+        {
+          "key": "101|15",
+          "count": 1
+        },
+        {
+          "key": "17|99",
+          "count": 1
+        },
+        {
+          "key": "19|97",
+          "count": 1
+        },
+        {
+          "key": "21|95",
+          "count": 1
+        },
+        {
+          "key": "23|93",
+          "count": 1
+        },
+        {
+          "key": "25|91",
+          "count": 1
+        },
+        {
+          "key": "27|89",
+          "count": 1
+        },
+        {
+          "key": "29|87",
+          "count": 1
+        },
+        {
+          "key": "31|85",
+          "count": 1
+        },
+        {
+          "key": "33|83",
+          "count": 1
+        },
+        {
+          "key": "35|81",
+          "count": 1
+        },
+        {
+          "key": "37|79",
+          "count": 1
+        },
+        {
+          "key": "39|77",
+          "count": 1
+        },
+        {
+          "key": "41|75",
+          "count": 1
+        },
+        {
+          "key": "43|73",
+          "count": 1
+        },
+        {
+          "key": "45|71",
+          "count": 1
+        },
+        {
+          "key": "47|69",
+          "count": 1
+        },
+        {
+          "key": "49|67",
+          "count": 1
+        },
+        {
+          "key": "51|65",
+          "count": 1
+        },
+        {
+          "key": "53|63",
+          "count": 1
+        },
+        {
+          "key": "55|61",
+          "count": 1
+        },
+        {
+          "key": "57|59",
+          "count": 1
+        },
+        {
+          "key": "5|9",
+          "count": 1
+        },
+        {
+          "key": "11|3",
+          "count": 1
+        },
+        {
+          "key": "108|15",
+          "count": 1
+        },
+        {
+          "key": "106|17",
+          "count": 1
+        },
+        {
+          "key": "102|21",
+          "count": 1
+        },
+        {
+          "key": "100|23",
+          "count": 1
+        },
+        {
+          "key": "27|96",
+          "count": 1
+        },
+        {
+          "key": "29|94",
+          "count": 1
+        },
+        {
+          "key": "33|90",
+          "count": 1
+        },
+        {
+          "key": "35|88",
+          "count": 1
+        },
+        {
+          "key": "39|84",
+          "count": 1
+        },
+        {
+          "key": "41|82",
+          "count": 1
+        },
+        {
+          "key": "45|78",
+          "count": 1
+        },
+        {
+          "key": "47|76",
+          "count": 1
+        },
+        {
+          "key": "51|72",
+          "count": 1
+        },
+        {
+          "key": "53|70",
+          "count": 1
+        },
+        {
+          "key": "57|66",
+          "count": 1
+        },
+        {
+          "key": "59|64",
+          "count": 1
+        },
+        {
+          "key": "60|63",
+          "count": 1
+        },
+        {
+          "key": "58|65",
+          "count": 1
+        },
+        {
+          "key": "54|69",
+          "count": 1
+        },
+        {
+          "key": "52|71",
+          "count": 1
+        },
+        {
+          "key": "48|75",
+          "count": 1
+        },
+        {
+          "key": "46|77",
+          "count": 1
+        },
+        {
+          "key": "44|79",
+          "count": 1
+        },
+        {
+          "key": "42|81",
+          "count": 1
+        },
+        {
+          "key": "40|83",
+          "count": 1
+        },
+        {
+          "key": "38|85",
+          "count": 1
+        },
+        {
+          "key": "36|87",
+          "count": 1
+        },
+        {
+          "key": "34|89",
+          "count": 1
+        },
+        {
+          "key": "32|91",
+          "count": 1
+        },
+        {
+          "key": "30|93",
+          "count": 1
+        },
+        {
+          "key": "28|95",
+          "count": 1
+        },
+        {
+          "key": "26|97",
+          "count": 1
+        },
+        {
+          "key": "24|99",
+          "count": 1
+        },
+        {
+          "key": "101|22",
+          "count": 1
+        },
+        {
+          "key": "103|20",
+          "count": 1
+        },
+        {
+          "key": "105|18",
+          "count": 1
+        },
+        {
+          "key": "107|16",
+          "count": 1
+        },
+        {
+          "key": "12|2",
+          "count": 1
+        },
+        {
+          "key": "10|4",
+          "count": 1
+        },
+        {
+          "key": "6|8",
+          "count": 1
+        },
+        {
+          "key": "14|7",
+          "count": 1
+        },
+        {
+          "key": "2|80",
+          "count": 1
+        },
+        {
+          "key": "4|44",
+          "count": 1
+        },
+        {
+          "key": "74|8",
+          "count": 1
+        },
+        {
+          "key": "10|38",
+          "count": 1
+        },
+        {
+          "key": "14|68",
+          "count": 1
+        },
+        {
+          "key": "16|32",
+          "count": 1
+        },
+        {
+          "key": "20|62",
+          "count": 1
+        },
+        {
+          "key": "22|26",
+          "count": 1
+        },
+        {
+          "key": "26|56",
+          "count": 1
+        },
+        {
+          "key": "20|28",
+          "count": 1
+        },
+        {
+          "key": "32|50",
+          "count": 1
+        },
+        {
+          "key": "14|34",
+          "count": 1
+        },
+        {
+          "key": "38|44",
+          "count": 1
+        },
+        {
+          "key": "40|8",
+          "count": 1
+        },
+        {
+          "key": "2|46",
+          "count": 1
+        },
+        {
+          "key": "105|52",
+          "count": 1
+        },
+        {
+          "key": "58|99",
+          "count": 1
+        },
+        {
+          "key": "64|93",
+          "count": 1
+        },
+        {
+          "key": "70|87",
+          "count": 1
+        },
+        {
+          "key": "76|81",
+          "count": 1
+        },
+        {
+          "key": "75|82",
+          "count": 1
+        },
+        {
+          "key": "69|88",
+          "count": 1
+        },
+        {
+          "key": "63|94",
+          "count": 1
+        },
+        {
+          "key": "100|57",
+          "count": 1
+        },
+        {
+          "key": "106|51",
+          "count": 1
+        },
+        {
+          "key": "3|45",
+          "count": 1
+        },
+        {
+          "key": "39|9",
+          "count": 1
+        },
+        {
+          "key": "15|33",
+          "count": 1
+        },
+        {
+          "key": "21|27",
+          "count": 1
+        },
+        {
+          "key": "2|24",
+          "count": 1
+        },
+        {
+          "key": "22|4",
+          "count": 1
+        },
+        {
+          "key": "20|6",
+          "count": 1
+        },
+        {
+          "key": "18|8",
+          "count": 1
+        },
+        {
+          "key": "10|16",
+          "count": 1
+        },
+        {
+          "key": "12|14",
+          "count": 1
+        },
+        {
+          "key": "2|4",
+          "count": 1
+        },
+        {
+          "key": "14|8",
+          "count": 1
+        }
+      ],
+      "per_target_image_v_mod109_signature": [
+        {
+          "key": "0|0",
+          "count": 192
+        }
+      ]
+    },
+    {
+      "field": "target-109d-axis:id:1:exact",
+      "count": 192,
+      "exact_identity_counts": {
+        "gcd(image_u,N)=gcd(target_u,N)": 192,
+        "gcd(image_v,N)=gcd(target_v,N)": 192,
+        "image=target": 192,
+        "image_u=target_u": 192,
+        "source_u=109*d": 192
+      },
+      "quotient_v_relation_counts": {
+        "image_v=target_v mod N/u": 192,
+        "source_v=target_v mod N/u": 192
+      },
+      "target_d_g_distribution": [
+        {
+          "key": "1,1",
+          "count": 88
+        },
+        {
+          "key": "1,3",
+          "count": 44
+        },
+        {
+          "key": "3,1",
+          "count": 44
+        },
+        {
+          "key": "1,23",
+          "count": 4
+        },
+        {
+          "key": "23,1",
+          "count": 4
+        },
+        {
+          "key": "1,69",
+          "count": 2
+        },
+        {
+          "key": "3,23",
+          "count": 2
+        },
+        {
+          "key": "23,3",
+          "count": 2
+        },
+        {
+          "key": "69,1",
+          "count": 2
+        }
+      ],
+      "source_u_expression_distribution": [
+        {
+          "key": "109*d",
+          "count": 192
+        }
+      ],
+      "source_u_distribution": [
+        {
+          "key": "109",
+          "count": 138
+        },
+        {
+          "key": "327",
+          "count": 46
+        },
+        {
+          "key": "2507",
+          "count": 6
+        },
+        {
+          "key": "7521",
+          "count": 2
+        }
+      ],
+      "source_v_minus_target_v_mod109": [
+        {
+          "key": "0",
+          "count": 192
+        }
+      ],
+      "source_v_plus_target_v_mod109": [
+        {
+          "key": "22",
+          "count": 6
+        },
+        {
+          "key": "2",
+          "count": 5
+        },
+        {
+          "key": "14",
+          "count": 5
+        },
+        {
+          "key": "6",
+          "count": 4
+        },
+        {
+          "key": "10",
+          "count": 4
+        },
+        {
+          "key": "94",
+          "count": 4
+        },
+        {
+          "key": "106",
+          "count": 4
+        },
+        {
+          "key": "61",
+          "count": 4
+        },
+        {
+          "key": "105",
+          "count": 4
+        },
+        {
+          "key": "82",
+          "count": 4
+        },
+        {
+          "key": "26",
+          "count": 3
+        },
+        {
+          "key": "30",
+          "count": 3
+        },
+        {
+          "key": "34",
+          "count": 3
+        },
+        {
+          "key": "46",
+          "count": 3
+        },
+        {
+          "key": "50",
+          "count": 3
+        },
+        {
+          "key": "66",
+          "count": 3
+        },
+        {
+          "key": "1",
+          "count": 3
+        },
+        {
+          "key": "49",
+          "count": 3
+        },
+        {
+          "key": "81",
+          "count": 3
+        },
+        {
+          "key": "32",
+          "count": 3
+        }
+      ],
+      "image_v_minus_target_v_mod109": [
+        {
+          "key": "0",
+          "count": 192
+        }
+      ],
+      "source_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 3,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 4,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 3,
+              "b": 2
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 8,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 5,
+              "b": 4
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 23,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 46,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 24,
+              "b": 23
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 69,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 92,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 47,
+              "b": 46
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 109,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 218,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 110,
+              "b": 109
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 327,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 552,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 277,
+              "b": 276
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 872,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 437,
+              "b": 436
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 2507,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 7521,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 60168,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 30085,
+              "b": 30084
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "image_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 3,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 4,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 3,
+              "b": 2
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 8,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 5,
+              "b": 4
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 23,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 46,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 24,
+              "b": 23
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 69,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 92,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 47,
+              "b": 46
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 109,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 218,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 110,
+              "b": 109
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 327,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 552,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 277,
+              "b": 276
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 872,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 437,
+              "b": 436
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 2507,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 7521,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 1
+        },
+        {
+          "modulus": 60168,
+          "examples": [
+            {
+              "a": 1,
+              "b": 0
+            },
+            {
+              "a": 30085,
+              "b": 30084
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "per_target_source_v_mod109_signature": [
+        {
+          "key": "11",
+          "count": 6
+        },
+        {
+          "key": "1",
+          "count": 5
+        },
+        {
+          "key": "7",
+          "count": 5
+        },
+        {
+          "key": "3",
+          "count": 4
+        },
+        {
+          "key": "5",
+          "count": 4
+        },
+        {
+          "key": "47",
+          "count": 4
+        },
+        {
+          "key": "53",
+          "count": 4
+        },
+        {
+          "key": "85",
+          "count": 4
+        },
+        {
+          "key": "107",
+          "count": 4
+        },
+        {
+          "key": "41",
+          "count": 4
+        },
+        {
+          "key": "13",
+          "count": 3
+        },
+        {
+          "key": "15",
+          "count": 3
+        },
+        {
+          "key": "17",
+          "count": 3
+        },
+        {
+          "key": "23",
+          "count": 3
+        },
+        {
+          "key": "25",
+          "count": 3
+        },
+        {
+          "key": "33",
+          "count": 3
+        },
+        {
+          "key": "55",
+          "count": 3
+        },
+        {
+          "key": "79",
+          "count": 3
+        },
+        {
+          "key": "95",
+          "count": 3
+        },
+        {
+          "key": "16",
+          "count": 3
+        },
+        {
+          "key": "22",
+          "count": 3
+        },
+        {
+          "key": "36",
+          "count": 3
+        },
+        {
+          "key": "46",
+          "count": 3
+        },
+        {
+          "key": "60",
+          "count": 3
+        },
+        {
+          "key": "102",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 3
+        },
+        {
+          "key": "27",
+          "count": 2
+        },
+        {
+          "key": "39",
+          "count": 2
+        },
+        {
+          "key": "49",
+          "count": 2
+        },
+        {
+          "key": "51",
+          "count": 2
+        },
+        {
+          "key": "59",
+          "count": 2
+        },
+        {
+          "key": "65",
+          "count": 2
+        },
+        {
+          "key": "73",
+          "count": 2
+        },
+        {
+          "key": "91",
+          "count": 2
+        },
+        {
+          "key": "99",
+          "count": 2
+        },
+        {
+          "key": "10",
+          "count": 2
+        },
+        {
+          "key": "12",
+          "count": 2
+        },
+        {
+          "key": "32",
+          "count": 2
+        },
+        {
+          "key": "38",
+          "count": 2
+        },
+        {
+          "key": "42",
+          "count": 2
+        },
+        {
+          "key": "48",
+          "count": 2
+        },
+        {
+          "key": "52",
+          "count": 2
+        },
+        {
+          "key": "72",
+          "count": 2
+        },
+        {
+          "key": "76",
+          "count": 2
+        },
+        {
+          "key": "82",
+          "count": 2
+        },
+        {
+          "key": "92",
+          "count": 2
+        },
+        {
+          "key": "19",
+          "count": 2
+        },
+        {
+          "key": "37",
+          "count": 2
+        },
+        {
+          "key": "45",
+          "count": 2
+        },
+        {
+          "key": "67",
+          "count": 2
+        },
+        {
+          "key": "77",
+          "count": 2
+        },
+        {
+          "key": "87",
+          "count": 2
+        },
+        {
+          "key": "89",
+          "count": 2
+        },
+        {
+          "key": "101",
+          "count": 2
+        },
+        {
+          "key": "18",
+          "count": 2
+        },
+        {
+          "key": "54",
+          "count": 2
+        },
+        {
+          "key": "21",
+          "count": 1
+        },
+        {
+          "key": "61",
+          "count": 1
+        },
+        {
+          "key": "69",
+          "count": 1
+        },
+        {
+          "key": "105",
+          "count": 1
+        },
+        {
+          "key": "2",
+          "count": 1
+        },
+        {
+          "key": "6",
+          "count": 1
+        },
+        {
+          "key": "8",
+          "count": 1
+        },
+        {
+          "key": "28",
+          "count": 1
+        },
+        {
+          "key": "30",
+          "count": 1
+        },
+        {
+          "key": "44",
+          "count": 1
+        },
+        {
+          "key": "58",
+          "count": 1
+        },
+        {
+          "key": "74",
+          "count": 1
+        },
+        {
+          "key": "86",
+          "count": 1
+        },
+        {
+          "key": "88",
+          "count": 1
+        },
+        {
+          "key": "94",
+          "count": 1
+        },
+        {
+          "key": "104",
+          "count": 1
+        },
+        {
+          "key": "106",
+          "count": 1
+        },
+        {
+          "key": "108",
+          "count": 1
+        },
+        {
+          "key": "9",
+          "count": 1
+        },
+        {
+          "key": "43",
+          "count": 1
+        },
+        {
+          "key": "57",
+          "count": 1
+        },
+        {
+          "key": "93",
+          "count": 1
+        },
+        {
+          "key": "103",
+          "count": 1
+        },
+        {
+          "key": "20",
+          "count": 1
+        },
+        {
+          "key": "26",
+          "count": 1
+        },
+        {
+          "key": "50",
+          "count": 1
+        },
+        {
+          "key": "62",
+          "count": 1
+        },
+        {
+          "key": "66",
+          "count": 1
+        },
+        {
+          "key": "90",
+          "count": 1
+        },
+        {
+          "key": "96",
+          "count": 1
+        },
+        {
+          "key": "98",
+          "count": 1
+        },
+        {
+          "key": "29",
+          "count": 1
+        },
+        {
+          "key": "71",
+          "count": 1
+        },
+        {
+          "key": "75",
+          "count": 1
+        },
+        {
+          "key": "81",
+          "count": 1
+        },
+        {
+          "key": "97",
+          "count": 1
+        },
+        {
+          "key": "83",
+          "count": 1
+        },
+        {
+          "key": "4",
+          "count": 1
+        },
+        {
+          "key": "40",
+          "count": 1
+        },
+        {
+          "key": "84",
+          "count": 1
+        }
+      ],
+      "per_target_image_v_mod109_signature": [
+        {
+          "key": "11",
+          "count": 6
+        },
+        {
+          "key": "1",
+          "count": 5
+        },
+        {
+          "key": "7",
+          "count": 5
+        },
+        {
+          "key": "3",
+          "count": 4
+        },
+        {
+          "key": "5",
+          "count": 4
+        },
+        {
+          "key": "47",
+          "count": 4
+        },
+        {
+          "key": "53",
+          "count": 4
+        },
+        {
+          "key": "85",
+          "count": 4
+        },
+        {
+          "key": "107",
+          "count": 4
+        },
+        {
+          "key": "41",
+          "count": 4
+        },
+        {
+          "key": "13",
+          "count": 3
+        },
+        {
+          "key": "15",
+          "count": 3
+        },
+        {
+          "key": "17",
+          "count": 3
+        },
+        {
+          "key": "23",
+          "count": 3
+        },
+        {
+          "key": "25",
+          "count": 3
+        },
+        {
+          "key": "33",
+          "count": 3
+        },
+        {
+          "key": "55",
+          "count": 3
+        },
+        {
+          "key": "79",
+          "count": 3
+        },
+        {
+          "key": "95",
+          "count": 3
+        },
+        {
+          "key": "16",
+          "count": 3
+        },
+        {
+          "key": "22",
+          "count": 3
+        },
+        {
+          "key": "36",
+          "count": 3
+        },
+        {
+          "key": "46",
+          "count": 3
+        },
+        {
+          "key": "60",
+          "count": 3
+        },
+        {
+          "key": "102",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 3
+        },
+        {
+          "key": "27",
+          "count": 2
+        },
+        {
+          "key": "39",
+          "count": 2
+        },
+        {
+          "key": "49",
+          "count": 2
+        },
+        {
+          "key": "51",
+          "count": 2
+        },
+        {
+          "key": "59",
+          "count": 2
+        },
+        {
+          "key": "65",
+          "count": 2
+        },
+        {
+          "key": "73",
+          "count": 2
+        },
+        {
+          "key": "91",
+          "count": 2
+        },
+        {
+          "key": "99",
+          "count": 2
+        },
+        {
+          "key": "10",
+          "count": 2
+        },
+        {
+          "key": "12",
+          "count": 2
+        },
+        {
+          "key": "32",
+          "count": 2
+        },
+        {
+          "key": "38",
+          "count": 2
+        },
+        {
+          "key": "42",
+          "count": 2
+        },
+        {
+          "key": "48",
+          "count": 2
+        },
+        {
+          "key": "52",
+          "count": 2
+        },
+        {
+          "key": "72",
+          "count": 2
+        },
+        {
+          "key": "76",
+          "count": 2
+        },
+        {
+          "key": "82",
+          "count": 2
+        },
+        {
+          "key": "92",
+          "count": 2
+        },
+        {
+          "key": "19",
+          "count": 2
+        },
+        {
+          "key": "37",
+          "count": 2
+        },
+        {
+          "key": "45",
+          "count": 2
+        },
+        {
+          "key": "67",
+          "count": 2
+        },
+        {
+          "key": "77",
+          "count": 2
+        },
+        {
+          "key": "87",
+          "count": 2
+        },
+        {
+          "key": "89",
+          "count": 2
+        },
+        {
+          "key": "101",
+          "count": 2
+        },
+        {
+          "key": "18",
+          "count": 2
+        },
+        {
+          "key": "54",
+          "count": 2
+        },
+        {
+          "key": "21",
+          "count": 1
+        },
+        {
+          "key": "61",
+          "count": 1
+        },
+        {
+          "key": "69",
+          "count": 1
+        },
+        {
+          "key": "105",
+          "count": 1
+        },
+        {
+          "key": "2",
+          "count": 1
+        },
+        {
+          "key": "6",
+          "count": 1
+        },
+        {
+          "key": "8",
+          "count": 1
+        },
+        {
+          "key": "28",
+          "count": 1
+        },
+        {
+          "key": "30",
+          "count": 1
+        },
+        {
+          "key": "44",
+          "count": 1
+        },
+        {
+          "key": "58",
+          "count": 1
+        },
+        {
+          "key": "74",
+          "count": 1
+        },
+        {
+          "key": "86",
+          "count": 1
+        },
+        {
+          "key": "88",
+          "count": 1
+        },
+        {
+          "key": "94",
+          "count": 1
+        },
+        {
+          "key": "104",
+          "count": 1
+        },
+        {
+          "key": "106",
+          "count": 1
+        },
+        {
+          "key": "108",
+          "count": 1
+        },
+        {
+          "key": "9",
+          "count": 1
+        },
+        {
+          "key": "43",
+          "count": 1
+        },
+        {
+          "key": "57",
+          "count": 1
+        },
+        {
+          "key": "93",
+          "count": 1
+        },
+        {
+          "key": "103",
+          "count": 1
+        },
+        {
+          "key": "20",
+          "count": 1
+        },
+        {
+          "key": "26",
+          "count": 1
+        },
+        {
+          "key": "50",
+          "count": 1
+        },
+        {
+          "key": "62",
+          "count": 1
+        },
+        {
+          "key": "66",
+          "count": 1
+        },
+        {
+          "key": "90",
+          "count": 1
+        },
+        {
+          "key": "96",
+          "count": 1
+        },
+        {
+          "key": "98",
+          "count": 1
+        },
+        {
+          "key": "29",
+          "count": 1
+        },
+        {
+          "key": "71",
+          "count": 1
+        },
+        {
+          "key": "75",
+          "count": 1
+        },
+        {
+          "key": "81",
+          "count": 1
+        },
+        {
+          "key": "97",
+          "count": 1
+        },
+        {
+          "key": "83",
+          "count": 1
+        },
+        {
+          "key": "4",
+          "count": 1
+        },
+        {
+          "key": "40",
+          "count": 1
+        },
+        {
+          "key": "84",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "field": "target-109d-axis:id:1:same-u",
+      "count": 192,
+      "exact_identity_counts": {
+        "gcd(image_u,N)=gcd(target_u,N)": 192,
+        "gcd(image_v,N)=gcd(target_v,N)": 192,
+        "image_u=target_u": 192,
+        "source_u=109*d": 192
+      },
+      "quotient_v_relation_counts": {
+        "image_v=-target_v mod N/u": 192,
+        "source_v=-target_v mod N/u": 192
+      },
+      "target_d_g_distribution": [
+        {
+          "key": "1,1",
+          "count": 88
+        },
+        {
+          "key": "1,3",
+          "count": 44
+        },
+        {
+          "key": "3,1",
+          "count": 44
+        },
+        {
+          "key": "1,23",
+          "count": 4
+        },
+        {
+          "key": "23,1",
+          "count": 4
+        },
+        {
+          "key": "1,69",
+          "count": 2
+        },
+        {
+          "key": "3,23",
+          "count": 2
+        },
+        {
+          "key": "23,3",
+          "count": 2
+        },
+        {
+          "key": "69,1",
+          "count": 2
+        }
+      ],
+      "source_u_expression_distribution": [
+        {
+          "key": "109*d",
+          "count": 192
+        }
+      ],
+      "source_u_distribution": [
+        {
+          "key": "109",
+          "count": 138
+        },
+        {
+          "key": "327",
+          "count": 46
+        },
+        {
+          "key": "2507",
+          "count": 6
+        },
+        {
+          "key": "7521",
+          "count": 2
+        }
+      ],
+      "source_v_minus_target_v_mod109": [
+        {
+          "key": "55",
+          "count": 4
+        },
+        {
+          "key": "10",
+          "count": 4
+        },
+        {
+          "key": "18",
+          "count": 4
+        },
+        {
+          "key": "0",
+          "count": 4
+        },
+        {
+          "key": "6",
+          "count": 4
+        },
+        {
+          "key": "103",
+          "count": 4
+        },
+        {
+          "key": "67",
+          "count": 3
+        },
+        {
+          "key": "79",
+          "count": 3
+        },
+        {
+          "key": "34",
+          "count": 3
+        },
+        {
+          "key": "46",
+          "count": 3
+        },
+        {
+          "key": "50",
+          "count": 3
+        },
+        {
+          "key": "78",
+          "count": 3
+        },
+        {
+          "key": "90",
+          "count": 3
+        },
+        {
+          "key": "1",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        },
+        {
+          "key": "41",
+          "count": 3
+        },
+        {
+          "key": "105",
+          "count": 3
+        },
+        {
+          "key": "40",
+          "count": 3
+        },
+        {
+          "key": "44",
+          "count": 3
+        },
+        {
+          "key": "27",
+          "count": 3
+        }
+      ],
+      "source_v_plus_target_v_mod109": [
+        {
+          "key": "7",
+          "count": 136
+        },
+        {
+          "key": "41",
+          "count": 30
+        },
+        {
+          "key": "75",
+          "count": 15
+        },
+        {
+          "key": "24",
+          "count": 5
+        },
+        {
+          "key": "14",
+          "count": 3
+        },
+        {
+          "key": "48",
+          "count": 1
+        },
+        {
+          "key": "16",
+          "count": 1
+        },
+        {
+          "key": "8",
+          "count": 1
+        }
+      ],
+      "image_v_minus_target_v_mod109": [
+        {
+          "key": "55",
+          "count": 4
+        },
+        {
+          "key": "10",
+          "count": 4
+        },
+        {
+          "key": "18",
+          "count": 4
+        },
+        {
+          "key": "0",
+          "count": 4
+        },
+        {
+          "key": "6",
+          "count": 4
+        },
+        {
+          "key": "103",
+          "count": 4
+        },
+        {
+          "key": "67",
+          "count": 3
+        },
+        {
+          "key": "79",
+          "count": 3
+        },
+        {
+          "key": "34",
+          "count": 3
+        },
+        {
+          "key": "46",
+          "count": 3
+        },
+        {
+          "key": "50",
+          "count": 3
+        },
+        {
+          "key": "78",
+          "count": 3
+        },
+        {
+          "key": "90",
+          "count": 3
+        },
+        {
+          "key": "1",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        },
+        {
+          "key": "41",
+          "count": 3
+        },
+        {
+          "key": "105",
+          "count": 3
+        },
+        {
+          "key": "40",
+          "count": 3
+        },
+        {
+          "key": "44",
+          "count": 3
+        },
+        {
+          "key": "27",
+          "count": 3
+        }
+      ],
+      "source_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 4,
+          "examples": [
+            {
+              "a": 1,
+              "b": 2
+            },
+            {
+              "a": 3,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 8,
+          "examples": [
+            {
+              "a": 3,
+              "b": 4
+            },
+            {
+              "a": 7,
+              "b": 0
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "image_v_linear_rules": [
+        {
+          "modulus": 2,
+          "examples": [
+            {
+              "a": 0,
+              "b": 1
+            },
+            {
+              "a": 1,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 4,
+          "examples": [
+            {
+              "a": 1,
+              "b": 2
+            },
+            {
+              "a": 3,
+              "b": 0
+            }
+          ],
+          "count": 2
+        },
+        {
+          "modulus": 8,
+          "examples": [
+            {
+              "a": 3,
+              "b": 4
+            },
+            {
+              "a": 7,
+              "b": 0
+            }
+          ],
+          "count": 2
+        }
+      ],
+      "per_target_source_v_mod109_signature": [
+        {
+          "key": "29",
+          "count": 4
+        },
+        {
+          "key": "31",
+          "count": 4
+        },
+        {
+          "key": "71",
+          "count": 4
+        },
+        {
+          "key": "83",
+          "count": 4
+        },
+        {
+          "key": "4",
+          "count": 4
+        },
+        {
+          "key": "34",
+          "count": 4
+        },
+        {
+          "key": "7",
+          "count": 4
+        },
+        {
+          "key": "9",
+          "count": 3
+        },
+        {
+          "key": "19",
+          "count": 3
+        },
+        {
+          "key": "43",
+          "count": 3
+        },
+        {
+          "key": "63",
+          "count": 3
+        },
+        {
+          "key": "75",
+          "count": 3
+        },
+        {
+          "key": "77",
+          "count": 3
+        },
+        {
+          "key": "89",
+          "count": 3
+        },
+        {
+          "key": "97",
+          "count": 3
+        },
+        {
+          "key": "101",
+          "count": 3
+        },
+        {
+          "key": "103",
+          "count": 3
+        },
+        {
+          "key": "24",
+          "count": 3
+        },
+        {
+          "key": "40",
+          "count": 3
+        },
+        {
+          "key": "64",
+          "count": 3
+        },
+        {
+          "key": "70",
+          "count": 3
+        },
+        {
+          "key": "78",
+          "count": 3
+        },
+        {
+          "key": "17",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        },
+        {
+          "key": "59",
+          "count": 3
+        },
+        {
+          "key": "61",
+          "count": 3
+        },
+        {
+          "key": "65",
+          "count": 3
+        },
+        {
+          "key": "6",
+          "count": 3
+        },
+        {
+          "key": "28",
+          "count": 3
+        },
+        {
+          "key": "5",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 2
+        },
+        {
+          "key": "37",
+          "count": 2
+        },
+        {
+          "key": "57",
+          "count": 2
+        },
+        {
+          "key": "67",
+          "count": 2
+        },
+        {
+          "key": "81",
+          "count": 2
+        },
+        {
+          "key": "93",
+          "count": 2
+        },
+        {
+          "key": "14",
+          "count": 2
+        },
+        {
+          "key": "56",
+          "count": 2
+        },
+        {
+          "key": "66",
+          "count": 2
+        },
+        {
+          "key": "68",
+          "count": 2
+        },
+        {
+          "key": "80",
+          "count": 2
+        },
+        {
+          "key": "84",
+          "count": 2
+        },
+        {
+          "key": "90",
+          "count": 2
+        },
+        {
+          "key": "96",
+          "count": 2
+        },
+        {
+          "key": "100",
+          "count": 2
+        },
+        {
+          "key": "13",
+          "count": 2
+        },
+        {
+          "key": "23",
+          "count": 2
+        },
+        {
+          "key": "49",
+          "count": 2
+        },
+        {
+          "key": "69",
+          "count": 2
+        },
+        {
+          "key": "73",
+          "count": 2
+        },
+        {
+          "key": "91",
+          "count": 2
+        },
+        {
+          "key": "105",
+          "count": 2
+        },
+        {
+          "key": "2",
+          "count": 2
+        },
+        {
+          "key": "10",
+          "count": 2
+        },
+        {
+          "key": "30",
+          "count": 2
+        },
+        {
+          "key": "58",
+          "count": 2
+        },
+        {
+          "key": "108",
+          "count": 2
+        },
+        {
+          "key": "47",
+          "count": 2
+        },
+        {
+          "key": "95",
+          "count": 2
+        },
+        {
+          "key": "41",
+          "count": 1
+        },
+        {
+          "key": "45",
+          "count": 1
+        },
+        {
+          "key": "87",
+          "count": 1
+        },
+        {
+          "key": "18",
+          "count": 1
+        },
+        {
+          "key": "20",
+          "count": 1
+        },
+        {
+          "key": "26",
+          "count": 1
+        },
+        {
+          "key": "50",
+          "count": 1
+        },
+        {
+          "key": "54",
+          "count": 1
+        },
+        {
+          "key": "62",
+          "count": 1
+        },
+        {
+          "key": "98",
+          "count": 1
+        },
+        {
+          "key": "15",
+          "count": 1
+        },
+        {
+          "key": "27",
+          "count": 1
+        },
+        {
+          "key": "39",
+          "count": 1
+        },
+        {
+          "key": "79",
+          "count": 1
+        },
+        {
+          "key": "107",
+          "count": 1
+        },
+        {
+          "key": "8",
+          "count": 1
+        },
+        {
+          "key": "12",
+          "count": 1
+        },
+        {
+          "key": "22",
+          "count": 1
+        },
+        {
+          "key": "42",
+          "count": 1
+        },
+        {
+          "key": "44",
+          "count": 1
+        },
+        {
+          "key": "72",
+          "count": 1
+        },
+        {
+          "key": "74",
+          "count": 1
+        },
+        {
+          "key": "86",
+          "count": 1
+        },
+        {
+          "key": "88",
+          "count": 1
+        },
+        {
+          "key": "94",
+          "count": 1
+        },
+        {
+          "key": "104",
+          "count": 1
+        },
+        {
+          "key": "106",
+          "count": 1
+        },
+        {
+          "key": "1",
+          "count": 1
+        },
+        {
+          "key": "11",
+          "count": 1
+        },
+        {
+          "key": "25",
+          "count": 1
+        },
+        {
+          "key": "51",
+          "count": 1
+        },
+        {
+          "key": "55",
+          "count": 1
+        },
+        {
+          "key": "99",
+          "count": 1
+        },
+        {
+          "key": "53",
+          "count": 1
+        },
+        {
+          "key": "48",
+          "count": 1
+        },
+        {
+          "key": "52",
+          "count": 1
+        },
+        {
+          "key": "16",
+          "count": 1
+        }
+      ],
+      "per_target_image_v_mod109_signature": [
+        {
+          "key": "29",
+          "count": 4
+        },
+        {
+          "key": "31",
+          "count": 4
+        },
+        {
+          "key": "71",
+          "count": 4
+        },
+        {
+          "key": "83",
+          "count": 4
+        },
+        {
+          "key": "4",
+          "count": 4
+        },
+        {
+          "key": "34",
+          "count": 4
+        },
+        {
+          "key": "7",
+          "count": 4
+        },
+        {
+          "key": "9",
+          "count": 3
+        },
+        {
+          "key": "19",
+          "count": 3
+        },
+        {
+          "key": "43",
+          "count": 3
+        },
+        {
+          "key": "63",
+          "count": 3
+        },
+        {
+          "key": "75",
+          "count": 3
+        },
+        {
+          "key": "77",
+          "count": 3
+        },
+        {
+          "key": "89",
+          "count": 3
+        },
+        {
+          "key": "97",
+          "count": 3
+        },
+        {
+          "key": "101",
+          "count": 3
+        },
+        {
+          "key": "103",
+          "count": 3
+        },
+        {
+          "key": "24",
+          "count": 3
+        },
+        {
+          "key": "40",
+          "count": 3
+        },
+        {
+          "key": "64",
+          "count": 3
+        },
+        {
+          "key": "70",
+          "count": 3
+        },
+        {
+          "key": "78",
+          "count": 3
+        },
+        {
+          "key": "17",
+          "count": 3
+        },
+        {
+          "key": "21",
+          "count": 3
+        },
+        {
+          "key": "59",
+          "count": 3
+        },
+        {
+          "key": "61",
+          "count": 3
+        },
+        {
+          "key": "65",
+          "count": 3
+        },
+        {
+          "key": "6",
+          "count": 3
+        },
+        {
+          "key": "28",
+          "count": 3
+        },
+        {
+          "key": "5",
+          "count": 3
+        },
+        {
+          "key": "35",
+          "count": 2
+        },
+        {
+          "key": "37",
+          "count": 2
+        },
+        {
+          "key": "57",
+          "count": 2
+        },
+        {
+          "key": "67",
+          "count": 2
+        },
+        {
+          "key": "81",
+          "count": 2
+        },
+        {
+          "key": "93",
+          "count": 2
+        },
+        {
+          "key": "14",
+          "count": 2
+        },
+        {
+          "key": "56",
+          "count": 2
+        },
+        {
+          "key": "66",
+          "count": 2
+        },
+        {
+          "key": "68",
+          "count": 2
+        },
+        {
+          "key": "80",
+          "count": 2
+        },
+        {
+          "key": "84",
+          "count": 2
+        },
+        {
+          "key": "90",
+          "count": 2
+        },
+        {
+          "key": "96",
+          "count": 2
+        },
+        {
+          "key": "100",
+          "count": 2
+        },
+        {
+          "key": "13",
+          "count": 2
+        },
+        {
+          "key": "23",
+          "count": 2
+        },
+        {
+          "key": "49",
+          "count": 2
+        },
+        {
+          "key": "69",
+          "count": 2
+        },
+        {
+          "key": "73",
+          "count": 2
+        },
+        {
+          "key": "91",
+          "count": 2
+        },
+        {
+          "key": "105",
+          "count": 2
+        },
+        {
+          "key": "2",
+          "count": 2
+        },
+        {
+          "key": "10",
+          "count": 2
+        },
+        {
+          "key": "30",
+          "count": 2
+        },
+        {
+          "key": "58",
+          "count": 2
+        },
+        {
+          "key": "108",
+          "count": 2
+        },
+        {
+          "key": "47",
+          "count": 2
+        },
+        {
+          "key": "95",
+          "count": 2
+        },
+        {
+          "key": "41",
+          "count": 1
+        },
+        {
+          "key": "45",
+          "count": 1
+        },
+        {
+          "key": "87",
+          "count": 1
+        },
+        {
+          "key": "18",
+          "count": 1
+        },
+        {
+          "key": "20",
+          "count": 1
+        },
+        {
+          "key": "26",
+          "count": 1
+        },
+        {
+          "key": "50",
+          "count": 1
+        },
+        {
+          "key": "54",
+          "count": 1
+        },
+        {
+          "key": "62",
+          "count": 1
+        },
+        {
+          "key": "98",
+          "count": 1
+        },
+        {
+          "key": "15",
+          "count": 1
+        },
+        {
+          "key": "27",
+          "count": 1
+        },
+        {
+          "key": "39",
+          "count": 1
+        },
+        {
+          "key": "79",
+          "count": 1
+        },
+        {
+          "key": "107",
+          "count": 1
+        },
+        {
+          "key": "8",
+          "count": 1
+        },
+        {
+          "key": "12",
+          "count": 1
+        },
+        {
+          "key": "22",
+          "count": 1
+        },
+        {
+          "key": "42",
+          "count": 1
+        },
+        {
+          "key": "44",
+          "count": 1
+        },
+        {
+          "key": "72",
+          "count": 1
+        },
+        {
+          "key": "74",
+          "count": 1
+        },
+        {
+          "key": "86",
+          "count": 1
+        },
+        {
+          "key": "88",
+          "count": 1
+        },
+        {
+          "key": "94",
+          "count": 1
+        },
+        {
+          "key": "104",
+          "count": 1
+        },
+        {
+          "key": "106",
+          "count": 1
+        },
+        {
+          "key": "1",
+          "count": 1
+        },
+        {
+          "key": "11",
+          "count": 1
+        },
+        {
+          "key": "25",
+          "count": 1
+        },
+        {
+          "key": "51",
+          "count": 1
+        },
+        {
+          "key": "55",
+          "count": 1
+        },
+        {
+          "key": "99",
+          "count": 1
+        },
+        {
+          "key": "53",
+          "count": 1
+        },
+        {
+          "key": "48",
+          "count": 1
+        },
+        {
+          "key": "52",
+          "count": 1
+        },
+        {
+          "key": "16",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

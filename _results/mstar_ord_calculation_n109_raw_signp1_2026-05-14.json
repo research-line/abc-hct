@@ -1,0 +1,15 @@
+{
+  "date": "2026-05-14",
+  "N": 109,
+  "q": 3863,
+  "mode": "raw",
+  "frey_traces": {
+    "5": 2,
+    "7": 0,
+    "11": 0,
+    "13": -6
+  },
+  "M_dimension": 9,
+  "frey_eigenspace_dim": 0,
+  "verdict": "No Frey eigenspace mod q. Frey maximal ideal does not exist; setup invalid."
+}

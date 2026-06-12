@@ -1,0 +1,280 @@
+{
+  "tool": "mstar_s5_modular_exception_scan",
+  "description": "modular rank scan for S5 exception-prime recursion",
+  "primes": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29,
+    31
+  ],
+  "pivot_strategy": "max",
+  "results": [
+    {
+      "case": "N109_raw_sign1",
+      "path": "_results\\rc3d_rowhash_source_witness_smoke_2026-05-12\\N109_raw_sign1",
+      "q": 3863,
+      "ncols": 27,
+      "source_rows": 27,
+      "square": true,
+      "status": "ok",
+      "pivot_strategy": "max",
+      "prime_results": [
+        {
+          "prime": 2,
+          "rank": 25,
+          "ncols": 27,
+          "full_rank": false,
+          "rows_seen": 27,
+          "seconds": 0.0006082000327296555,
+          "max_basis_row_len": 5
+        },
+        {
+          "prime": 3,
+          "rank": 26,
+          "ncols": 27,
+          "full_rank": false,
+          "rows_seen": 27,
+          "seconds": 0.0005448000156320632,
+          "max_basis_row_len": 6
+        },
+        {
+          "prime": 5,
+          "rank": 27,
+          "ncols": 27,
+          "full_rank": true,
+          "rows_seen": 27,
+          "seconds": 0.00046449998626485467,
+          "max_basis_row_len": 6
+        },
+        {
+          "prime": 7,
+          "rank": 26,
+          "ncols": 27,
+          "full_rank": false,
+          "rows_seen": 27,
+          "seconds": 0.0004459000192582607,
+          "max_basis_row_len": 6
+        },
+        {
+          "prime": 11,
+          "rank": 27,
+          "ncols": 27,
+          "full_rank": true,
+          "rows_seen": 27,
+          "seconds": 0.0004972000024281442,
+          "max_basis_row_len": 6
+        },
+        {
+          "prime": 13,
+          "rank": 27,
+          "ncols": 27,
+          "full_rank": true,
+          "rows_seen": 27,
+          "seconds": 0.0006260999944061041,
+          "max_basis_row_len": 6
+        },
+        {
+          "prime": 17,
+          "rank": 27,
+          "ncols": 27,
+          "full_rank": true,
+          "rows_seen": 27,
+          "seconds": 0.0005893000052310526,
+          "max_basis_row_len": 6
+        },
+        {
+          "prime": 19,
+          "rank": 27,
+          "ncols": 27,
+          "full_rank": true,
+          "rows_seen": 27,
+          "seconds": 0.0005215000128373504,
+          "max_basis_row_len": 6
+        },
+        {
+          "prime": 23,
+          "rank": 27,
+          "ncols": 27,
+          "full_rank": true,
+          "rows_seen": 27,
+          "seconds": 0.0009903000318445265,
+          "max_basis_row_len": 6
+        },
+        {
+          "prime": 29,
+          "rank": 27,
+          "ncols": 27,
+          "full_rank": true,
+          "rows_seen": 27,
+          "seconds": 0.0007105999975465238,
+          "max_basis_row_len": 6
+        },
+        {
+          "prime": 31,
+          "rank": 27,
+          "ncols": 27,
+          "full_rank": true,
+          "rows_seen": 27,
+          "seconds": 0.000852599972859025,
+          "max_basis_row_len": 6
+        }
+      ],
+      "full_rank_primes": [
+        5,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31
+      ],
+      "exception_candidate_primes": [
+        2,
+        3,
+        7
+      ]
+    },
+    {
+      "case": "N218_raw_sign1",
+      "path": "_results\\rc3d_rowhash_source_witness_smoke_2026-05-12\\N218_raw_sign1",
+      "q": 3863,
+      "ncols": 83,
+      "source_rows": 83,
+      "square": true,
+      "status": "ok",
+      "pivot_strategy": "max",
+      "prime_results": [
+        {
+          "prime": 2,
+          "rank": 80,
+          "ncols": 83,
+          "full_rank": false,
+          "rows_seen": 83,
+          "seconds": 0.0020850999862886965,
+          "max_basis_row_len": 13
+        },
+        {
+          "prime": 3,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.002552499994635582,
+          "max_basis_row_len": 18
+        },
+        {
+          "prime": 5,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.003825699968729168,
+          "max_basis_row_len": 22
+        },
+        {
+          "prime": 7,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.005223400017712265,
+          "max_basis_row_len": 20
+        },
+        {
+          "prime": 11,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.021129700005985796,
+          "max_basis_row_len": 23
+        },
+        {
+          "prime": 13,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.01809309999225661,
+          "max_basis_row_len": 23
+        },
+        {
+          "prime": 17,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.005239800026174635,
+          "max_basis_row_len": 23
+        },
+        {
+          "prime": 19,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.005968599987681955,
+          "max_basis_row_len": 23
+        },
+        {
+          "prime": 23,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.006387499975971878,
+          "max_basis_row_len": 23
+        },
+        {
+          "prime": 29,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.006618599989451468,
+          "max_basis_row_len": 23
+        },
+        {
+          "prime": 31,
+          "rank": 83,
+          "ncols": 83,
+          "full_rank": true,
+          "rows_seen": 83,
+          "seconds": 0.003008900035638362,
+          "max_basis_row_len": 23
+        }
+      ],
+      "full_rank_primes": [
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31
+      ],
+      "exception_candidate_primes": [
+        2
+      ]
+    },
+    {
+      "case": "N60168_raw_sign1",
+      "path": "_results\\rc3c_source_witness_60168_raw_2026-05-12\\N60168_raw_sign1",
+      "ncols": 31680,
+      "source_rows": 31680,
+      "status": "skipped_max_ncols",
+      "prime_results": []
+    }
+  ]
+}

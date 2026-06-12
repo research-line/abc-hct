@@ -1,0 +1,89 @@
+{
+  "tool": "mstar_s5_negative_other_crt_pair_count",
+  "input_json": "_results/mstar_s5_109_axis_transition_profile_60168_raw_2026-05-14.json",
+  "level": 60168,
+  "p1_d_representative_count": 384,
+  "quotient_d_target_count": 192,
+  "predicted_image_count_distribution": [
+    {
+      "key": "2",
+      "count": 192
+    }
+  ],
+  "actual_image_count_distribution": [
+    {
+      "key": "2",
+      "count": 192
+    }
+  ],
+  "sign_set_distribution": [
+    {
+      "key": "('+', '-')",
+      "count": 192
+    }
+  ],
+  "predicted_equals_actual_distribution": [
+    {
+      "key": "True",
+      "count": 192
+    }
+  ],
+  "h_distribution": [
+    {
+      "key": "552",
+      "count": 88
+    },
+    {
+      "key": "184",
+      "count": 88
+    },
+    {
+      "key": "24",
+      "count": 8
+    },
+    {
+      "key": "8",
+      "count": 8
+    }
+  ],
+  "dg_distribution": [
+    {
+      "key": "d=1,g=1",
+      "count": 88
+    },
+    {
+      "key": "d=1,g=3",
+      "count": 44
+    },
+    {
+      "key": "d=3,g=1",
+      "count": 44
+    },
+    {
+      "key": "d=1,g=23",
+      "count": 4
+    },
+    {
+      "key": "d=23,g=1",
+      "count": 4
+    },
+    {
+      "key": "d=1,g=69",
+      "count": 2
+    },
+    {
+      "key": "d=3,g=23",
+      "count": 2
+    },
+    {
+      "key": "d=23,g=3",
+      "count": 2
+    },
+    {
+      "key": "d=69,g=1",
+      "count": 2
+    }
+  ],
+  "bad_targets": [],
+  "seconds_total": 4.097155338000007
+}

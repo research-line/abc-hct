@@ -1,0 +1,58 @@
+{
+  "_status": "TEMPLATE — NOCH KEIN GUELTIGES ZERTIFIKAT. Platzhalter <<FILL: ...>> aus echten _results-Artefakten ausfuellen (T5-Rowhash, Kernelbasis-Bindung, Source-Block-Hash). Bekannte Felder (Pairing, Stage-IDs, det) sind aus der Kalibratorbilanz Loop 259 eingetragen. Danach mit _scripts/psc2_verifier.py (load_real_and_verify) pruefen.",
+  "meta": {
+    "psc_version": "PSC-2",
+    "case": "60168/raw",
+    "q": 2,
+    "created": "2026-06-01",
+    "campaign": "Trace-Plücker Content No-Escape (_proof-notes/trace_pluecker_content_noescape_2026-05-31.md)"
+  },
+  "claim": {
+    "statement": "q does not divide delta([A;R]); ell_q(coker[A;R]) = 0 (full q-adic drainage, not just first layer)",
+    "ell_q": 0
+  },
+  "data": {
+    "n": 31680,
+    "rank_A_mod_q": 31678,
+    "d_q": 2,
+    "s_repair_rows": 2,
+    "_note": "n, rank, d_q gemaess Kalibratorbilanz (60168/raw Source-Witness 31680 Zeilen, mod-2-Defekt 2)."
+  },
+  "repair_rows": [
+    {"stage_id": "T_5_minus_2_batch_11/575", "rowhash": "<<FILL: SHA-256 der T5-Repair-Zeile aus dem kanonischen Trace-Transcript>>"},
+    {"stage_id": "T_7_minus_0_batch_1/1",   "rowhash": "<<FILL: SHA-256 der T7-Repair-Zeile (laut Notizen vorhanden/gebunden)>>"}
+  ],
+  "kernel_basis": {
+    "d_q": 2,
+    "columns_mod_q": "<<FILL: rechte Kernelbasis K (31680 x 2) von A mod 2 ODER via binding>>",
+    "binding": "<<FILL: SHA-256-Bindung der Kernelbasis an den 60168/raw-Source-Witness>>"
+  },
+  "pairing": {
+    "RK_mod_q": [[1, 1], [1, 0]],
+    "_note": "Bekannt aus Loop 259 (q=2 Source-Cokernel-Pairing, BEWEISNOTIZ_2). Muss aus R*K mod 2 mit der oben gebundenen Kernelbasis reproduziert werden."
+  },
+  "unit_minor": {
+    "repair_rows_index": [0, 1],
+    "det_mod_q": 1,
+    "_note": "det([[1,1],[1,0]]) = -1 ≡ 1 (mod 2) = Einheit ⟹ 2 ∤ δ ⟹ ell_2 = 0 (AP-5 Schubert-Gate)."
+  },
+  "verification": {
+    "verifier": "_scripts/psc2_verifier.py (Selbsttest am Toy-Modell PASS; load_real_and_verify noch nicht ausgefuehrt)",
+    "checks": {
+      "AK_eq_0_mod_q": "<<FILL: pruefen, sobald K vorliegt>>",
+      "rank_A_eq_n_minus_d": "<<FILL>>",
+      "rank_K_eq_d": "<<FILL>>",
+      "det_RK_unit_mod_q": true,
+      "rank_AR_eq_n": "<<FILL>>"
+    }
+  },
+  "labels": {
+    "certificate_level": false,
+    "canonical_level": false,
+    "_note": "certificate_level wird true, sobald K + Rowhashes echt gebunden sind. canonical_level bleibt OFFEN bis A_E,R_E als kanonischer HCT-Trace-Quotient nachgewiesen sind (S2a/S2b, Drache D1)."
+  },
+  "provenance": {
+    "source_block": "<<FILL: Pfad+SHA-256 des kanonischen Source-Blocks A (60168/raw)>>",
+    "transcripts": ["<<FILL: Rowhash-Transcript(s) der Source-/Repair-Zeilen, SHA-256>>"]
+  }
+}

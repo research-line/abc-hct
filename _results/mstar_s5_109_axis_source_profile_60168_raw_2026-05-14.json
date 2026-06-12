@@ -1,0 +1,2025 @@
+{
+  "tool": "mstar_s5_109_axis_source_profile",
+  "level": 60168,
+  "weight": 2,
+  "sign": 1,
+  "q": 3863,
+  "nsyms": 126720,
+  "ncols": 31680,
+  "d_axis_definition": "v odd, gcd(u,N) odd, 109|gcd(u,N), and u=gcd(u,N)",
+  "d_axis_size": 192,
+  "manin_rows_checked": 126720,
+  "manin_d_hit_count_distribution": [
+    {
+      "key": "0",
+      "count": 124416
+    },
+    {
+      "key": "1",
+      "count": 2304
+    }
+  ],
+  "d_columns_with_sources": 192,
+  "source_count_distribution": [
+    {
+      "key": "12",
+      "count": 192
+    }
+  ],
+  "expected_relative_bucket_signature": "base-gcd-v-line:4|even-intermediate:4|target-109d-axis:4",
+  "bucket_signature_distribution": [
+    {
+      "key": "even-intermediate:4|odd-109-axis:4|standard-u=1:4",
+      "count": 138
+    },
+    {
+      "key": "even-intermediate:4|odd-109-axis:4|other:4",
+      "count": 54
+    }
+  ],
+  "relative_bucket_signature_distribution": [
+    {
+      "key": "base-gcd-v-line:4|even-intermediate:4|target-109d-axis:4",
+      "count": 192
+    }
+  ],
+  "target_d_distribution": [
+    {
+      "key": "1",
+      "count": 138
+    },
+    {
+      "key": "3",
+      "count": 46
+    },
+    {
+      "key": "23",
+      "count": 6
+    },
+    {
+      "key": "69",
+      "count": 2
+    }
+  ],
+  "target_gcd_v_distribution": [
+    {
+      "key": "1",
+      "count": 138
+    },
+    {
+      "key": "3",
+      "count": 46
+    },
+    {
+      "key": "23",
+      "count": 6
+    },
+    {
+      "key": "69",
+      "count": 2
+    }
+  ],
+  "target_u_gcd_v_joint_distribution": [
+    {
+      "key": "1,1",
+      "count": 88
+    },
+    {
+      "key": "3,1",
+      "count": 44
+    },
+    {
+      "key": "1,3",
+      "count": 44
+    },
+    {
+      "key": "23,1",
+      "count": 4
+    },
+    {
+      "key": "1,23",
+      "count": 4
+    },
+    {
+      "key": "69,1",
+      "count": 2
+    },
+    {
+      "key": "23,3",
+      "count": 2
+    },
+    {
+      "key": "3,23",
+      "count": 2
+    },
+    {
+      "key": "1,69",
+      "count": 2
+    }
+  ],
+  "source_bucket_distribution": [
+    {
+      "key": "even-intermediate",
+      "count": 768
+    },
+    {
+      "key": "odd-109-axis",
+      "count": 768
+    },
+    {
+      "key": "standard-u=1",
+      "count": 552
+    },
+    {
+      "key": "other",
+      "count": 216
+    }
+  ],
+  "relative_source_bucket_distribution": [
+    {
+      "key": "base-gcd-v-line",
+      "count": 768
+    },
+    {
+      "key": "even-intermediate",
+      "count": 768
+    },
+    {
+      "key": "target-109d-axis",
+      "count": 768
+    }
+  ],
+  "source_gcd_distribution": [
+    {
+      "key": "1",
+      "count": 552
+    },
+    {
+      "key": "109",
+      "count": 552
+    },
+    {
+      "key": "2",
+      "count": 276
+    },
+    {
+      "key": "3",
+      "count": 184
+    },
+    {
+      "key": "327",
+      "count": 184
+    },
+    {
+      "key": "4",
+      "count": 138
+    },
+    {
+      "key": "8",
+      "count": 138
+    },
+    {
+      "key": "6",
+      "count": 92
+    },
+    {
+      "key": "12",
+      "count": 46
+    },
+    {
+      "key": "24",
+      "count": 46
+    },
+    {
+      "key": "23",
+      "count": 24
+    },
+    {
+      "key": "2507",
+      "count": 24
+    },
+    {
+      "key": "46",
+      "count": 12
+    },
+    {
+      "key": "69",
+      "count": 8
+    },
+    {
+      "key": "7521",
+      "count": 8
+    },
+    {
+      "key": "92",
+      "count": 6
+    },
+    {
+      "key": "184",
+      "count": 6
+    },
+    {
+      "key": "138",
+      "count": 4
+    },
+    {
+      "key": "276",
+      "count": 2
+    },
+    {
+      "key": "552",
+      "count": 2
+    }
+  ],
+  "source_u_distribution": [
+    {
+      "key": "1",
+      "count": 552
+    },
+    {
+      "key": "109",
+      "count": 552
+    },
+    {
+      "key": "2",
+      "count": 276
+    },
+    {
+      "key": "3",
+      "count": 184
+    },
+    {
+      "key": "327",
+      "count": 184
+    },
+    {
+      "key": "4",
+      "count": 138
+    },
+    {
+      "key": "8",
+      "count": 138
+    },
+    {
+      "key": "6",
+      "count": 92
+    },
+    {
+      "key": "12",
+      "count": 46
+    },
+    {
+      "key": "24",
+      "count": 46
+    },
+    {
+      "key": "23",
+      "count": 24
+    },
+    {
+      "key": "2507",
+      "count": 24
+    },
+    {
+      "key": "46",
+      "count": 12
+    },
+    {
+      "key": "69",
+      "count": 8
+    },
+    {
+      "key": "7521",
+      "count": 8
+    },
+    {
+      "key": "92",
+      "count": 6
+    },
+    {
+      "key": "184",
+      "count": 6
+    },
+    {
+      "key": "138",
+      "count": 4
+    },
+    {
+      "key": "276",
+      "count": 2
+    },
+    {
+      "key": "552",
+      "count": 2
+    }
+  ],
+  "missing_d_columns": [],
+  "sample_d_columns": [
+    {
+      "col": 108,
+      "uv": [
+        109,
+        1
+      ],
+      "target_d": 1,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 109,
+          "source": [
+            1,
+            108
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 110,
+          "source": [
+            1,
+            109
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 60059,
+          "source": [
+            1,
+            60058
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 60060,
+          "source": [
+            1,
+            60059
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 60441,
+          "source": [
+            2,
+            545
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 74937,
+          "source": [
+            2,
+            29537
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 115504,
+          "source": [
+            12,
+            545
+          ],
+          "source_gcd_u": 12,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 116808,
+          "source": [
+            12,
+            4457
+          ],
+          "source_gcd_u": 12,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 124806,
+          "source": [
+            109,
+            1
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125243,
+          "source": [
+            109,
+            442
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125245,
+          "source": [
+            109,
+            444
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125351,
+          "source": [
+            109,
+            551
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        }
+      ]
+    },
+    {
+      "col": 326,
+      "uv": [
+        327,
+        1
+      ],
+      "target_d": 3,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 327,
+          "source": [
+            1,
+            326
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 328,
+          "source": [
+            1,
+            327
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 59841,
+          "source": [
+            1,
+            59840
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 59842,
+          "source": [
+            1,
+            59841
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 65890,
+          "source": [
+            2,
+            11443
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 69488,
+          "source": [
+            2,
+            18639
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 109269,
+          "source": [
+            8,
+            2935
+          ],
+          "source_gcd_u": 8,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 113851,
+          "source": [
+            8,
+            12099
+          ],
+          "source_gcd_u": 8,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 126150,
+          "source": [
+            327,
+            1
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126176,
+          "source": [
+            327,
+            40
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126285,
+          "source": [
+            327,
+            226
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126333,
+          "source": [
+            327,
+            367
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        }
+      ]
+    },
+    {
+      "col": 544,
+      "uv": [
+        109,
+        221
+      ],
+      "target_d": 1,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 545,
+          "source": [
+            1,
+            544
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 546,
+          "source": [
+            1,
+            545
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 59623,
+          "source": [
+            1,
+            59622
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 59624,
+          "source": [
+            1,
+            59623
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 102969,
+          "source": [
+            6,
+            545
+          ],
+          "source_gcd_u": 6,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 107710,
+          "source": [
+            6,
+            19505
+          ],
+          "source_gcd_u": 6,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 108074,
+          "source": [
+            8,
+            545
+          ],
+          "source_gcd_u": 8,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 115046,
+          "source": [
+            8,
+            14489
+          ],
+          "source_gcd_u": 8,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 124916,
+          "source": [
+            109,
+            112
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125024,
+          "source": [
+            109,
+            221
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125025,
+          "source": [
+            109,
+            222
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125133,
+          "source": [
+            109,
+            331
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        }
+      ]
+    },
+    {
+      "col": 761,
+      "uv": [
+        109,
+        79
+      ],
+      "target_d": 1,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 763,
+          "source": [
+            1,
+            762
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 764,
+          "source": [
+            1,
+            763
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 59405,
+          "source": [
+            1,
+            59404
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 59406,
+          "source": [
+            1,
+            59405
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 97826,
+          "source": [
+            4,
+            5119
+          ],
+          "source_gcd_u": 4,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 100226,
+          "source": [
+            4,
+            9919
+          ],
+          "source_gcd_u": 4,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 104130,
+          "source": [
+            6,
+            4027
+          ],
+          "source_gcd_u": 6,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 104786,
+          "source": [
+            6,
+            5995
+          ],
+          "source_gcd_u": 6,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 124884,
+          "source": [
+            109,
+            79
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125166,
+          "source": [
+            109,
+            364
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125274,
+          "source": [
+            109,
+            473
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125323,
+          "source": [
+            109,
+            522
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        }
+      ]
+    },
+    {
+      "col": 978,
+      "uv": [
+        327,
+        307
+      ],
+      "target_d": 3,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 981,
+          "source": [
+            1,
+            980
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 982,
+          "source": [
+            1,
+            981
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 59187,
+          "source": [
+            1,
+            59186
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 59188,
+          "source": [
+            1,
+            59187
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 61639,
+          "source": [
+            2,
+            2941
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 73739,
+          "source": [
+            2,
+            27141
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 96738,
+          "source": [
+            4,
+            2943
+          ],
+          "source_gcd_u": 4,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 101314,
+          "source": [
+            4,
+            12095
+          ],
+          "source_gcd_u": 4,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 126190,
+          "source": [
+            327,
+            61
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126258,
+          "source": [
+            327,
+            164
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126305,
+          "source": [
+            327,
+            286
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126313,
+          "source": [
+            327,
+            307
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        }
+      ]
+    },
+    {
+      "col": 1193,
+      "uv": [
+        109,
+        251
+      ],
+      "target_d": 1,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 1199,
+          "source": [
+            1,
+            1198
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 1200,
+          "source": [
+            1,
+            1199
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 58969,
+          "source": [
+            1,
+            58968
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 58970,
+          "source": [
+            1,
+            58969
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 62076,
+          "source": [
+            2,
+            3815
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 73302,
+          "source": [
+            2,
+            26267
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 122000,
+          "source": [
+            24,
+            4663
+          ],
+          "source_gcd_u": 24,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 122171,
+          "source": [
+            24,
+            5341
+          ],
+          "source_gcd_u": 24,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 124946,
+          "source": [
+            109,
+            142
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 124996,
+          "source": [
+            109,
+            192
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125054,
+          "source": [
+            109,
+            251
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125104,
+          "source": [
+            109,
+            301
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        }
+      ]
+    },
+    {
+      "col": 1408,
+      "uv": [
+        109,
+        85
+      ],
+      "target_d": 1,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 1417,
+          "source": [
+            1,
+            1416
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 1418,
+          "source": [
+            1,
+            1417
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 58751,
+          "source": [
+            1,
+            58750
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 58752,
+          "source": [
+            1,
+            58751
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 62184,
+          "source": [
+            2,
+            4031
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 73194,
+          "source": [
+            2,
+            26051
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 120474,
+          "source": [
+            24,
+            85
+          ],
+          "source_gcd_u": 24,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 122934,
+          "source": [
+            24,
+            9919
+          ],
+          "source_gcd_u": 24,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 124890,
+          "source": [
+            109,
+            85
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125160,
+          "source": [
+            109,
+            358
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125268,
+          "source": [
+            109,
+            467
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125329,
+          "source": [
+            109,
+            528
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        }
+      ]
+    },
+    {
+      "col": 1624,
+      "uv": [
+        327,
+        37
+      ],
+      "target_d": 3,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 1635,
+          "source": [
+            1,
+            1634
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 1636,
+          "source": [
+            1,
+            1635
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 58533,
+          "source": [
+            1,
+            58532
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 58534,
+          "source": [
+            1,
+            58533
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 65563,
+          "source": [
+            2,
+            10789
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 69815,
+          "source": [
+            2,
+            19293
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 95430,
+          "source": [
+            4,
+            327
+          ],
+          "source_gcd_u": 4,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 102622,
+          "source": [
+            4,
+            14711
+          ],
+          "source_gcd_u": 4,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 126152,
+          "source": [
+            327,
+            4
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126174,
+          "source": [
+            327,
+            37
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126297,
+          "source": [
+            327,
+            262
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126321,
+          "source": [
+            327,
+            331
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        }
+      ]
+    },
+    {
+      "col": 1838,
+      "uv": [
+        109,
+        65
+      ],
+      "target_d": 1,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 1853,
+          "source": [
+            1,
+            1852
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 1854,
+          "source": [
+            1,
+            1853
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 58315,
+          "source": [
+            1,
+            58314
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 58316,
+          "source": [
+            1,
+            58315
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 96629,
+          "source": [
+            4,
+            2725
+          ],
+          "source_gcd_u": 4,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 101423,
+          "source": [
+            4,
+            12313
+          ],
+          "source_gcd_u": 4,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 103478,
+          "source": [
+            6,
+            2071
+          ],
+          "source_gcd_u": 6,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 105438,
+          "source": [
+            6,
+            7951
+          ],
+          "source_gcd_u": 6,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 124870,
+          "source": [
+            109,
+            65
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125180,
+          "source": [
+            109,
+            378
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125288,
+          "source": [
+            109,
+            487
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125309,
+          "source": [
+            109,
+            508
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        }
+      ]
+    },
+    {
+      "col": 2050,
+      "uv": [
+        109,
+        523
+      ],
+      "target_d": 1,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 2071,
+          "source": [
+            1,
+            2070
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 2072,
+          "source": [
+            1,
+            2071
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 58097,
+          "source": [
+            1,
+            58096
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 58098,
+          "source": [
+            1,
+            58097
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 108179,
+          "source": [
+            8,
+            755
+          ],
+          "source_gcd_u": 8,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 114941,
+          "source": [
+            8,
+            14279
+          ],
+          "source_gcd_u": 8,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 124834,
+          "source": [
+            109,
+            29
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125216,
+          "source": [
+            109,
+            414
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125273,
+          "source": [
+            109,
+            472
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125324,
+          "source": [
+            109,
+            523
+          ],
+          "source_gcd_u": 109,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 125487,
+          "source": [
+            138,
+            407
+          ],
+          "source_gcd_u": 138,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 125551,
+          "source": [
+            138,
+            763
+          ],
+          "source_gcd_u": 138,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        }
+      ]
+    },
+    {
+      "col": 2266,
+      "uv": [
+        327,
+        79
+      ],
+      "target_d": 3,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 2289,
+          "source": [
+            1,
+            2288
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 2290,
+          "source": [
+            1,
+            2289
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 57879,
+          "source": [
+            1,
+            57878
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 57880,
+          "source": [
+            1,
+            57879
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 64910,
+          "source": [
+            2,
+            9483
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 70468,
+          "source": [
+            2,
+            20599
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 108288,
+          "source": [
+            8,
+            973
+          ],
+          "source_gcd_u": 8,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 114832,
+          "source": [
+            8,
+            14061
+          ],
+          "source_gcd_u": 8,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 126202,
+          "source": [
+            327,
+            79
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126246,
+          "source": [
+            327,
+            146
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126306,
+          "source": [
+            327,
+            289
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126312,
+          "source": [
+            327,
+            304
+          ],
+          "source_gcd_u": 327,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        }
+      ]
+    },
+    {
+      "col": 2484,
+      "uv": [
+        2507,
+        1
+      ],
+      "target_d": 23,
+      "target_gcd_v": 1,
+      "source_count": 12,
+      "bucket_counts": {
+        "even-intermediate": 4,
+        "odd-109-axis": 4,
+        "standard-u=1": 4
+      },
+      "relative_bucket_counts": {
+        "base-gcd-v-line": 4,
+        "even-intermediate": 4,
+        "target-109d-axis": 4
+      },
+      "sources": [
+        {
+          "row_index": 2507,
+          "source": [
+            1,
+            2506
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 2508,
+          "source": [
+            1,
+            2507
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 57661,
+          "source": [
+            1,
+            57660
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 57662,
+          "source": [
+            1,
+            57661
+          ],
+          "source_gcd_u": 1,
+          "source_bucket": "standard-u=1",
+          "relative_source_bucket": "base-gcd-v-line"
+        },
+        {
+          "row_index": 66435,
+          "source": [
+            2,
+            12533
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 68943,
+          "source": [
+            2,
+            17549
+          ],
+          "source_gcd_u": 2,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 116154,
+          "source": [
+            12,
+            2495
+          ],
+          "source_gcd_u": 12,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 116158,
+          "source": [
+            12,
+            2507
+          ],
+          "source_gcd_u": 12,
+          "source_bucket": "even-intermediate",
+          "relative_source_bucket": "even-intermediate"
+        },
+        {
+          "row_index": 126650,
+          "source": [
+            2507,
+            1
+          ],
+          "source_gcd_u": 2507,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126661,
+          "source": [
+            2507,
+            12
+          ],
+          "source_gcd_u": 2507,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126663,
+          "source": [
+            2507,
+            14
+          ],
+          "source_gcd_u": 2507,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        },
+        {
+          "row_index": 126673,
+          "source": [
+            2507,
+            47
+          ],
+          "source_gcd_u": 2507,
+          "source_bucket": "odd-109-axis",
+          "relative_source_bucket": "target-109d-axis"
+        }
+      ]
+    }
+  ],
+  "relative_nonstandard_bucket_examples": [],
+  "seconds_total": 6.044486319000001
+}

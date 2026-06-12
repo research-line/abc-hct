@@ -1,0 +1,52 @@
+{
+  "date": "2026-06-11",
+  "clique_size_distribution_rows": {
+    "3": 84468,
+    "1": 1,
+    "2": 2,
+    "4": 13,
+    "6": 9911,
+    "5": 21743,
+    "9": 2,
+    "11": 8,
+    "12": 28,
+    "13": 10495,
+    "10": 1
+  },
+  "graph_mean_degree": 21.23241792929293,
+  "turan_lower_bound": 5699.7848998257905,
+  "greedy_independent_set_size": 27489,
+  "greedy_is_fraction_of_cols": 0.21692708333333333,
+  "verification_G_eq_I": true,
+  "cancellation": {
+    "64": {
+      "theta_prime_median": 0.0006340740095236337,
+      "theta_prime_p95": 0.007232612861213078,
+      "theta_prime_max": 0.009882117688026184,
+      "cancellation_median": 1.0,
+      "cancellation_p95": 1.0
+    },
+    "128": {
+      "theta_prime_median": 0.0018739743891877931,
+      "theta_prime_p95": 0.005556186005067148,
+      "theta_prime_max": 0.011881422071818384,
+      "cancellation_median": 0.4794083824429696,
+      "cancellation_p95": 1.0
+    },
+    "256": {
+      "theta_prime_median": 0.0020977765506464893,
+      "theta_prime_p95": 0.006564284161023171,
+      "theta_prime_max": 0.009888301258571493,
+      "cancellation_median": 0.2451220067788109,
+      "cancellation_p95": 0.7654416287308244
+    },
+    "512": {
+      "theta_prime_median": 0.002471778384325081,
+      "theta_prime_p95": 0.007412998510956071,
+      "theta_prime_max": 0.010247947734613986,
+      "cancellation_median": 0.13325759837909246,
+      "cancellation_p95": 0.3989866178908078
+    }
+  },
+  "seed": 20260611
+}

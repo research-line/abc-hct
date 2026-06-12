@@ -1,0 +1,129 @@
+{
+  "tool": "mstar_h3a_restline_kernel_quotient",
+  "case_dir": "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\remod_q5077_smoke_n109_2026-05-23\\N109_raw_sign1_splitlast",
+  "level": 109,
+  "mode": "raw",
+  "q": 5077,
+  "ncols_v_si": 27,
+  "rows_seen": 27,
+  "manin_t_rows": 18,
+  "manin_t_rank": 18,
+  "manin_t_max_basis_row_len": 5,
+  "hecke_rows": 8,
+  "quotient_ncols": 9,
+  "quotient_rank": 8,
+  "quotient_kernel_dim": 1,
+  "kernel_engine": "sparse-python",
+  "matrix_entries": null,
+  "matrix_seconds": null,
+  "kernel_seconds": 0.002737899892963469,
+  "seconds": 0.038627800066024065,
+  "free_columns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    16
+  ],
+  "kernel_support_size": 3,
+  "kernel_entries_mod_q": [
+    [
+      6,
+      1
+    ],
+    [
+      7,
+      4615
+    ],
+    [
+      8,
+      2771
+    ]
+  ],
+  "kernel_entries_signed_head": [
+    [
+      6,
+      1
+    ],
+    [
+      7,
+      -462
+    ],
+    [
+      8,
+      -2306
+    ]
+  ],
+  "repair_projected_support_size": 7,
+  "repair_projected_entries_mod_q": [
+    [
+      1,
+      2538
+    ],
+    [
+      2,
+      5076
+    ],
+    [
+      4,
+      5075
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      5074
+    ],
+    [
+      7,
+      5076
+    ],
+    [
+      8,
+      3
+    ]
+  ],
+  "repair_projected_entries_signed": [
+    [
+      1,
+      2538
+    ],
+    [
+      2,
+      -1
+    ],
+    [
+      4,
+      -2
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      -3
+    ],
+    [
+      7,
+      -1
+    ],
+    [
+      8,
+      3
+    ]
+  ],
+  "repair_pairing_mod_q": 3695,
+  "repair_pairing_signed": -1382,
+  "repair_pairing_nonzero": true,
+  "source_pairing_nonzero": 0,
+  "source_annihilated": true,
+  "source_pairing_examples": [],
+  "ready_for_al_scalar": true
+}

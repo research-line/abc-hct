@@ -1,0 +1,22 @@
+{
+  "base_rank": 84464,
+  "candidate_prime": 7,
+  "hecke_rows": 42255,
+  "level": 240672,
+  "matrix_entries": 9946499,
+  "mode": "raw",
+  "ncols": 126720,
+  "phase": "computing_source_quotient_kernel",
+  "q": 3863,
+  "quotient_ncols": 42256,
+  "seconds": 2839.3619101047516,
+  "snapshot": {
+    "bytes": 35253001,
+    "path": "_results/mstar_h3a_240672_raw_restline_t7_minikill_2026-05-17_work/source_rows_snapshot.jsonl",
+    "row_count": 126719,
+    "sha256": "2dc5a425c4a9425c04976a546871d69f6ee85c9a029fc9e414d0237ac5b3c3d5"
+  },
+  "source_rows_seen": 126000,
+  "started_at": "2026-05-17T14:59:48+0200",
+  "tool": "mstar_h3a_restline_minikill"
+}

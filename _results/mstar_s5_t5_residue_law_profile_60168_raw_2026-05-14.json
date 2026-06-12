@@ -1,0 +1,138 @@
+{
+  "tool": "mstar_s5_t5_residue_law_profile",
+  "level": 60168,
+  "weight": 2,
+  "mode": "raw",
+  "sign": 1,
+  "q": 3863,
+  "nsyms": 126720,
+  "ncols": 31680,
+  "d_axis_size": 192,
+  "t5_rows_checked": 126720,
+  "odd_d_hit_rows": 1536,
+  "odd_rows_one_d_hit": 1536,
+  "odd_rows_one_matrix_hit": 1536,
+  "residue_law_good_rows": 1536,
+  "source_u_distribution": [
+    {
+      "key": "1",
+      "count": 1104
+    },
+    {
+      "key": "3",
+      "count": 368
+    },
+    {
+      "key": "23",
+      "count": 48
+    },
+    {
+      "key": "69",
+      "count": 16
+    }
+  ],
+  "matrix_a_distribution": [
+    {
+      "key": "4",
+      "count": 384
+    },
+    {
+      "key": "2",
+      "count": 384
+    },
+    {
+      "key": "3",
+      "count": 384
+    },
+    {
+      "key": "1",
+      "count": 384
+    }
+  ],
+  "source_u_matrix_a_distribution": [
+    {
+      "key": "u=1,a=4",
+      "count": 276
+    },
+    {
+      "key": "u=1,a=2",
+      "count": 276
+    },
+    {
+      "key": "u=1,a=3",
+      "count": 276
+    },
+    {
+      "key": "u=1,a=1",
+      "count": 276
+    },
+    {
+      "key": "u=3,a=3",
+      "count": 92
+    },
+    {
+      "key": "u=3,a=1",
+      "count": 92
+    },
+    {
+      "key": "u=3,a=4",
+      "count": 92
+    },
+    {
+      "key": "u=3,a=2",
+      "count": 92
+    },
+    {
+      "key": "u=23,a=3",
+      "count": 12
+    },
+    {
+      "key": "u=23,a=4",
+      "count": 12
+    },
+    {
+      "key": "u=23,a=1",
+      "count": 12
+    },
+    {
+      "key": "u=23,a=2",
+      "count": 12
+    },
+    {
+      "key": "u=69,a=1",
+      "count": 4
+    },
+    {
+      "key": "u=69,a=2",
+      "count": 4
+    },
+    {
+      "key": "u=69,a=3",
+      "count": 4
+    },
+    {
+      "key": "u=69,a=4",
+      "count": 4
+    }
+  ],
+  "target_u_distribution": [
+    {
+      "key": "109",
+      "count": 1104
+    },
+    {
+      "key": "327",
+      "count": 368
+    },
+    {
+      "key": "2507",
+      "count": 48
+    },
+    {
+      "key": "7521",
+      "count": 16
+    }
+  ],
+  "bad_rows": [],
+  "seconds_total": 8.207594626
+}

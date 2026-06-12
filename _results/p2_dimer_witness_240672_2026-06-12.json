@@ -1,0 +1,242 @@
+{
+  "date": "2026-06-12",
+  "level": 240672,
+  "ncols": 126720,
+  "kernel_dim_after_witness": 607,
+  "operators_log": [
+    {
+      "p": 3,
+      "rows": 6000,
+      "rank_added": 0,
+      "kernel_dim_after": 607
+    },
+    {
+      "p": 5,
+      "rows": 6000,
+      "rank_added": 0,
+      "kernel_dim_after": 607
+    },
+    {
+      "p": 7,
+      "rows": 8000,
+      "rank_added": 330,
+      "kernel_dim_after": 277
+    },
+    {
+      "p": 11,
+      "rows": 8000,
+      "rank_added": 124,
+      "kernel_dim_after": 153
+    },
+    {
+      "p": 13,
+      "rows": 8000,
+      "rank_added": 21,
+      "kernel_dim_after": 132
+    },
+    {
+      "p": 17,
+      "rows": 8000,
+      "rank_added": 21,
+      "kernel_dim_after": 111
+    },
+    {
+      "p": 19,
+      "rows": 6000,
+      "rank_added": 0,
+      "kernel_dim_after": 111
+    },
+    {
+      "p": 23,
+      "rows": 8000,
+      "rank_added": 28,
+      "kernel_dim_after": 83
+    }
+  ],
+  "final_kernel_dim": 83,
+  "kernel_verified": 83,
+  "dimer_found_mask": null,
+  "combo_results_best": [
+    {
+      "mask": 3571719496009816897290240,
+      "support": 64241,
+      "defects_m0": 20235,
+      "m_hist": {
+        "0": 20235,
+        "2": 64228
+      }
+    },
+    {
+      "mask": 16842752,
+      "support": 63977,
+      "defects_m0": 20495,
+      "m_hist": {
+        "0": 20495,
+        "2": 63968
+      }
+    },
+    {
+      "mask": 4398046511360,
+      "support": 63926,
+      "defects_m0": 20544,
+      "m_hist": {
+        "0": 20544,
+        "2": 63919
+      }
+    },
+    {
+      "mask": 570425344,
+      "support": 63868,
+      "defects_m0": 20604,
+      "m_hist": {
+        "0": 20604,
+        "2": 63859
+      }
+    },
+    {
+      "mask": 68719542272,
+      "support": 63793,
+      "defects_m0": 20679,
+      "m_hist": {
+        "0": 20679,
+        "2": 63784
+      }
+    },
+    {
+      "mask": 671088640,
+      "support": 63790,
+      "defects_m0": 20683,
+      "m_hist": {
+        "0": 20683,
+        "2": 63780
+      }
+    },
+    {
+      "mask": 34359738370,
+      "support": 63778,
+      "defects_m0": 20694,
+      "m_hist": {
+        "0": 20694,
+        "2": 63769
+      }
+    },
+    {
+      "mask": 1073774592,
+      "support": 63774,
+      "defects_m0": 20698,
+      "m_hist": {
+        "0": 20698,
+        "2": 63765
+      }
+    },
+    {
+      "mask": 562951027163136,
+      "support": 63772,
+      "defects_m0": 20700,
+      "m_hist": {
+        "0": 20700,
+        "2": 63763
+      }
+    },
+    {
+      "mask": 17213423616,
+      "support": 63766,
+      "defects_m0": 20703,
+      "m_hist": {
+        "0": 20703,
+        "2": 63760
+      }
+    },
+    {
+      "mask": 1026,
+      "support": 63762,
+      "defects_m0": 20709,
+      "m_hist": {
+        "0": 20709,
+        "2": 63754
+      }
+    },
+    {
+      "mask": 1099545182208,
+      "support": 63761,
+      "defects_m0": 20712,
+      "m_hist": {
+        "0": 20712,
+        "2": 63751
+      }
+    },
+    {
+      "mask": 8796160131072,
+      "support": 63757,
+      "defects_m0": 20715,
+      "m_hist": {
+        "0": 20715,
+        "2": 63748
+      }
+    },
+    {
+      "mask": 35184908959744,
+      "support": 63743,
+      "defects_m0": 20728,
+      "m_hist": {
+        "0": 20728,
+        "2": 63735
+      }
+    },
+    {
+      "mask": 1048608,
+      "support": 63734,
+      "defects_m0": 20738,
+      "m_hist": {
+        "0": 20738,
+        "2": 63725
+      }
+    },
+    {
+      "mask": 1100048498688,
+      "support": 63733,
+      "defects_m0": 20738,
+      "m_hist": {
+        "0": 20738,
+        "2": 63725
+      }
+    },
+    {
+      "mask": 2251800887427072,
+      "support": 63727,
+      "defects_m0": 20745,
+      "m_hist": {
+        "0": 20745,
+        "2": 63718
+      }
+    },
+    {
+      "mask": 1125900980584448,
+      "support": 63719,
+      "defects_m0": 20753,
+      "m_hist": {
+        "0": 20753,
+        "2": 63710
+      }
+    },
+    {
+      "mask": 9223372037928517632,
+      "support": 63710,
+      "defects_m0": 20762,
+      "m_hist": {
+        "0": 20762,
+        "2": 63701
+      }
+    },
+    {
+      "mask": 147573952590750154752,
+      "support": 63710,
+      "defects_m0": 20762,
+      "m_hist": {
+        "0": 20762,
+        "2": 63701
+      }
+    }
+  ],
+  "total_seconds": 705.2448062896729
+}

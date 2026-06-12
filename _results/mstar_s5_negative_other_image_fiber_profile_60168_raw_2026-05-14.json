@@ -1,0 +1,115 @@
+{
+  "tool": "mstar_s5_negative_other_image_fiber_profile",
+  "input_json": "_results/mstar_s5_109_axis_transition_profile_60168_raw_2026-05-14.json",
+  "level": 60168,
+  "other_record_count": 1152,
+  "image_v_mod109_zero_count": 1152,
+  "source_v_mod109_zero_count": 384,
+  "image_u_eq_target_gcd_v_count": 1152,
+  "crt_inverse_relation_count": 1152,
+  "crt_sign_distribution": [
+    {
+      "key": "plus",
+      "count": 576
+    },
+    {
+      "key": "minus",
+      "count": 576
+    }
+  ],
+  "s_swap_target_distribution": [
+    {
+      "key": "swap=target|S=mirror",
+      "count": 576
+    },
+    {
+      "key": "S=target|swap=mirror",
+      "count": 576
+    }
+  ],
+  "fields": [
+    {
+      "field": "base-gcd-v-line:id:-1:other",
+      "count": 384,
+      "image_v_mod109_zero_count": 384,
+      "source_v_mod109_zero_count": 384,
+      "image_u_eq_target_gcd_v_count": 384,
+      "crt_sign_distribution": [
+        {
+          "key": "plus",
+          "count": 192
+        },
+        {
+          "key": "minus",
+          "count": 192
+        }
+      ],
+      "s_swap_target_distribution": [
+        {
+          "key": "swap=target|S=mirror",
+          "count": 192
+        },
+        {
+          "key": "S=target|swap=mirror",
+          "count": 192
+        }
+      ]
+    },
+    {
+      "field": "even-intermediate:T:-1:other",
+      "count": 384,
+      "image_v_mod109_zero_count": 384,
+      "source_v_mod109_zero_count": 0,
+      "image_u_eq_target_gcd_v_count": 384,
+      "crt_sign_distribution": [
+        {
+          "key": "minus",
+          "count": 192
+        },
+        {
+          "key": "plus",
+          "count": 192
+        }
+      ],
+      "s_swap_target_distribution": [
+        {
+          "key": "S=target|swap=mirror",
+          "count": 192
+        },
+        {
+          "key": "swap=target|S=mirror",
+          "count": 192
+        }
+      ]
+    },
+    {
+      "field": "target-109d-axis:TT:-1:other",
+      "count": 384,
+      "image_v_mod109_zero_count": 384,
+      "source_v_mod109_zero_count": 0,
+      "image_u_eq_target_gcd_v_count": 384,
+      "crt_sign_distribution": [
+        {
+          "key": "minus",
+          "count": 192
+        },
+        {
+          "key": "plus",
+          "count": 192
+        }
+      ],
+      "s_swap_target_distribution": [
+        {
+          "key": "S=target|swap=mirror",
+          "count": 192
+        },
+        {
+          "key": "swap=target|S=mirror",
+          "count": 192
+        }
+      ]
+    }
+  ],
+  "bad_records": [],
+  "seconds_total": 3.6703030620000003
+}

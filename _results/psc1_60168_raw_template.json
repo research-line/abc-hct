@@ -1,0 +1,45 @@
+{
+  "_status": "TEMPLATE — NOCH KEINE GUELTIGEN ZERTIFIKATE. Drei PSC-1-Instanzen (q=3,5,31) fuer 60168/raw. Platzhalter <<FILL: ...>> aus echten _results-Artefakten ausfuellen (Repair-Rowhash, Kernel-Vektor-Bindung, Source-Block-Hash). Pro q als eigene Datei instanziieren: psc1_60168_raw_q3_certificate.json etc. Pruefen mit _scripts/psc2_verifier.py (verify_psc2, d_q=1).",
+  "_schema": "_scripts/psc1_certificate_schema.json",
+  "_repair_roles": "q=3: durch T5 repariert; q=5,31: redundant durch T5 ODER T7 (Kalibratorbilanz). q=2 ist NICHT hier (zweidimensional, s. psc2_60168_raw_q2_template.json).",
+  "instances": [
+    {
+      "meta": {"psc_version": "PSC-1", "case": "60168/raw", "q": 3, "created": "2026-06-01", "campaign": "PSC-1 One-Row Repair + Canonicity (_proof-notes/psc1_canonicity_2026-06-01.md)"},
+      "claim": {"statement": "q does not divide delta([A;r]); ell_q(coker[A;r]) = 0 (full q-adic drainage)", "ell_q": 0},
+      "data": {"n": 31680, "rank_A_mod_q": 31679, "d_q": 1},
+      "repair_row": {"stage_id": "T_5_minus_2_batch_11/575", "rowhash": "<<FILL: SHA-256 der T5-Repair-Zeile>>"},
+      "kernel_vector": {"entries_mod_q": "<<FILL: rechter Kernel-Vektor k von A mod 3 ODER via binding>>", "binding": "<<FILL: SHA-256-Bindung an Source-Witness>>"},
+      "scalar_pairing": {"r_dot_k_mod_q": "<<FILL: r·k mod 3, muss != 0 sein>>"},
+      "verification": {"verifier": "_scripts/psc2_verifier.py (verify_psc2, d_q=1; --selftest-psc1 PASS)", "checks": {"Ak_eq_0_mod_q": "<<FILL>>", "rank_A_eq_n_minus_1": "<<FILL>>", "r_dot_k_unit_mod_q": "<<FILL>>", "rank_Ar_eq_n": "<<FILL>>"}},
+      "labels": {"certificate_level": false, "presentation_level": false, "canonical_level": false},
+      "provenance": {"source_block": "<<FILL>>", "transcripts": ["<<FILL>>"]}
+    },
+    {
+      "meta": {"psc_version": "PSC-1", "case": "60168/raw", "q": 5, "created": "2026-06-01"},
+      "claim": {"statement": "q does not divide delta([A;r]); ell_q(coker[A;r]) = 0 (full q-adic drainage)", "ell_q": 0},
+      "data": {"n": 31680, "rank_A_mod_q": 31679, "d_q": 1},
+      "repair_row": {"stage_id": "<<FILL: T5 ODER T7 (redundant fuer q=5)>>", "rowhash": "<<FILL>>"},
+      "kernel_vector": {"entries_mod_q": "<<FILL: Kernel-Vektor k von A mod 5>>", "binding": "<<FILL>>"},
+      "scalar_pairing": {"r_dot_k_mod_q": "<<FILL: != 0 mod 5>>"},
+      "verification": {"verifier": "_scripts/psc2_verifier.py (verify_psc2, d_q=1)", "checks": {"Ak_eq_0_mod_q": "<<FILL>>", "rank_A_eq_n_minus_1": "<<FILL>>", "r_dot_k_unit_mod_q": "<<FILL>>", "rank_Ar_eq_n": "<<FILL>>"}},
+      "labels": {"certificate_level": false, "presentation_level": false, "canonical_level": false},
+      "provenance": {"source_block": "<<FILL>>", "transcripts": ["<<FILL>>"]}
+    },
+    {
+      "meta": {"psc_version": "PSC-1", "case": "60168/raw", "q": 31, "created": "2026-06-01"},
+      "claim": {"statement": "q does not divide delta([A;r]); ell_q(coker[A;r]) = 0 (full q-adic drainage)", "ell_q": 0},
+      "data": {"n": 31680, "rank_A_mod_q": 31679, "d_q": 1},
+      "repair_row": {"stage_id": "<<FILL: T5 ODER T7 (redundant fuer q=31)>>", "rowhash": "<<FILL>>"},
+      "kernel_vector": {"entries_mod_q": "<<FILL: Kernel-Vektor k von A mod 31>>", "binding": "<<FILL>>"},
+      "scalar_pairing": {"r_dot_k_mod_q": "<<FILL: != 0 mod 31>>"},
+      "verification": {"verifier": "_scripts/psc2_verifier.py (verify_psc2, d_q=1)", "checks": {"Ak_eq_0_mod_q": "<<FILL>>", "rank_A_eq_n_minus_1": "<<FILL>>", "r_dot_k_unit_mod_q": "<<FILL>>", "rank_Ar_eq_n": "<<FILL>>"}},
+      "labels": {"certificate_level": false, "presentation_level": false, "canonical_level": false},
+      "provenance": {"source_block": "<<FILL>>", "transcripts": ["<<FILL>>"]}
+    }
+  ],
+  "combined_local_drainage_manifest": {
+    "_goal": "Nach q=2 (PSC-2) + q=3,5,31 (PSC-1): kombiniertes Manifest {2,3,5,31} -> ell_q=0. = sauberer LOKALER Zertifikatsblock fuer 60168/raw. NICHT global (PCAT/FAQS bleibt offen).",
+    "primes": [2, 3, 5, 31],
+    "certificates": ["psc2_60168_raw_q2_certificate.json", "psc1_60168_raw_q3_certificate.json", "psc1_60168_raw_q5_certificate.json", "psc1_60168_raw_q31_certificate.json"]
+  }
+}

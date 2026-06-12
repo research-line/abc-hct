@@ -1,0 +1,852 @@
+{
+  "date": "2026-05-10",
+  "purpose": "Loop 122 H2C-C probe: classify the p=2 Frey local block by r=v2(abc).",
+  "sample_summary": {
+    "1": {
+      "sample_count": 213,
+      "expected": "bounded additive",
+      "signatures": [
+        {
+          "minimal_delta_v2": 6,
+          "kodaira_2": "III",
+          "c2": 2,
+          "f2": 5,
+          "v2_c2_plus_v2_delta2": 2
+        }
+      ]
+    },
+    "2": {
+      "sample_count": 213,
+      "expected": "bounded additive",
+      "signatures": [
+        {
+          "minimal_delta_v2": 8,
+          "kodaira_2": "I0*",
+          "c2": 2,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 4
+        },
+        {
+          "minimal_delta_v2": 8,
+          "kodaira_2": "I1*",
+          "c2": 2,
+          "f2": 3,
+          "v2_c2_plus_v2_delta2": 4
+        },
+        {
+          "minimal_delta_v2": 8,
+          "kodaira_2": "I1*",
+          "c2": 4,
+          "f2": 3,
+          "v2_c2_plus_v2_delta2": 5
+        }
+      ]
+    },
+    "3": {
+      "sample_count": 213,
+      "expected": "bounded additive",
+      "signatures": [
+        {
+          "minimal_delta_v2": 10,
+          "kodaira_2": "I2*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 3
+        },
+        {
+          "minimal_delta_v2": 10,
+          "kodaira_2": "III*",
+          "c2": 2,
+          "f2": 3,
+          "v2_c2_plus_v2_delta2": 2
+        }
+      ]
+    },
+    "4": {
+      "sample_count": 213,
+      "expected": "bounded good/additive",
+      "signatures": [
+        {
+          "minimal_delta_v2": 0,
+          "kodaira_2": "I0",
+          "c2": 1,
+          "f2": 0,
+          "v2_c2_plus_v2_delta2": 0
+        },
+        {
+          "minimal_delta_v2": 12,
+          "kodaira_2": "I4*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 4
+        }
+      ]
+    },
+    "5": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 2,
+          "kodaira_2": "I2",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 14,
+          "kodaira_2": "I6*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 3
+        }
+      ]
+    },
+    "6": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 4,
+          "kodaira_2": "I4",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 3
+        },
+        {
+          "minimal_delta_v2": 4,
+          "kodaira_2": "I4",
+          "c2": 4,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 4
+        },
+        {
+          "minimal_delta_v2": 16,
+          "kodaira_2": "I8*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 6
+        }
+      ]
+    },
+    "7": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 6,
+          "kodaira_2": "I6",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 6,
+          "kodaira_2": "I6",
+          "c2": 6,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 18,
+          "kodaira_2": "I10*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 3
+        }
+      ]
+    },
+    "8": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 8,
+          "kodaira_2": "I8",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 4
+        },
+        {
+          "minimal_delta_v2": 8,
+          "kodaira_2": "I8",
+          "c2": 8,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 6
+        },
+        {
+          "minimal_delta_v2": 20,
+          "kodaira_2": "I12*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 4
+        }
+      ]
+    },
+    "9": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 10,
+          "kodaira_2": "I10",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 10,
+          "kodaira_2": "I10",
+          "c2": 10,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 22,
+          "kodaira_2": "I14*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 3
+        }
+      ]
+    },
+    "10": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 12,
+          "kodaira_2": "I12",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 3
+        },
+        {
+          "minimal_delta_v2": 12,
+          "kodaira_2": "I12",
+          "c2": 12,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 4
+        },
+        {
+          "minimal_delta_v2": 24,
+          "kodaira_2": "I16*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 5
+        }
+      ]
+    },
+    "11": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 14,
+          "kodaira_2": "I14",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 14,
+          "kodaira_2": "I14",
+          "c2": 14,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 26,
+          "kodaira_2": "I18*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 3
+        }
+      ]
+    },
+    "12": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 16,
+          "kodaira_2": "I16",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 5
+        },
+        {
+          "minimal_delta_v2": 16,
+          "kodaira_2": "I16",
+          "c2": 16,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 8
+        },
+        {
+          "minimal_delta_v2": 28,
+          "kodaira_2": "I20*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 4
+        }
+      ]
+    },
+    "13": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 18,
+          "kodaira_2": "I18",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 18,
+          "kodaira_2": "I18",
+          "c2": 18,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 30,
+          "kodaira_2": "I22*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 3
+        }
+      ]
+    },
+    "14": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 20,
+          "kodaira_2": "I20",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 3
+        },
+        {
+          "minimal_delta_v2": 20,
+          "kodaira_2": "I20",
+          "c2": 20,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 4
+        },
+        {
+          "minimal_delta_v2": 32,
+          "kodaira_2": "I24*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 7
+        }
+      ]
+    },
+    "15": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 22,
+          "kodaira_2": "I22",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 22,
+          "kodaira_2": "I22",
+          "c2": 22,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 34,
+          "kodaira_2": "I26*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 3
+        }
+      ]
+    },
+    "16": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 24,
+          "kodaira_2": "I24",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 4
+        },
+        {
+          "minimal_delta_v2": 24,
+          "kodaira_2": "I24",
+          "c2": 24,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 6
+        },
+        {
+          "minimal_delta_v2": 36,
+          "kodaira_2": "I28*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 4
+        }
+      ]
+    },
+    "17": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 26,
+          "kodaira_2": "I26",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 26,
+          "kodaira_2": "I26",
+          "c2": 26,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 38,
+          "kodaira_2": "I30*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 3
+        }
+      ]
+    },
+    "18": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 28,
+          "kodaira_2": "I28",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 3
+        },
+        {
+          "minimal_delta_v2": 28,
+          "kodaira_2": "I28",
+          "c2": 28,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 4
+        },
+        {
+          "minimal_delta_v2": 40,
+          "kodaira_2": "I32*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 5
+        }
+      ]
+    },
+    "19": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 30,
+          "kodaira_2": "I30",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 30,
+          "kodaira_2": "I30",
+          "c2": 30,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 42,
+          "kodaira_2": "I34*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 3
+        }
+      ]
+    },
+    "20": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 32,
+          "kodaira_2": "I32",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 6
+        },
+        {
+          "minimal_delta_v2": 32,
+          "kodaira_2": "I32",
+          "c2": 32,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 10
+        },
+        {
+          "minimal_delta_v2": 44,
+          "kodaira_2": "I36*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 4
+        }
+      ]
+    },
+    "21": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 34,
+          "kodaira_2": "I34",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 34,
+          "kodaira_2": "I34",
+          "c2": 34,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 46,
+          "kodaira_2": "I38*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 3
+        }
+      ]
+    },
+    "22": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 36,
+          "kodaira_2": "I36",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 3
+        },
+        {
+          "minimal_delta_v2": 36,
+          "kodaira_2": "I36",
+          "c2": 36,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 4
+        },
+        {
+          "minimal_delta_v2": 48,
+          "kodaira_2": "I40*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 6
+        }
+      ]
+    },
+    "23": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 38,
+          "kodaira_2": "I38",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 38,
+          "kodaira_2": "I38",
+          "c2": 38,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 2
+        },
+        {
+          "minimal_delta_v2": 50,
+          "kodaira_2": "I42*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 3
+        }
+      ]
+    },
+    "24": {
+      "sample_count": 213,
+      "expected": "potentially multiplicative depth",
+      "signatures": [
+        {
+          "minimal_delta_v2": 40,
+          "kodaira_2": "I40",
+          "c2": 2,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 4
+        },
+        {
+          "minimal_delta_v2": 40,
+          "kodaira_2": "I40",
+          "c2": 40,
+          "f2": 1,
+          "v2_c2_plus_v2_delta2": 6
+        },
+        {
+          "minimal_delta_v2": 52,
+          "kodaira_2": "I44*",
+          "c2": 4,
+          "f2": 4,
+          "v2_c2_plus_v2_delta2": 4
+        }
+      ]
+    }
+  },
+  "ledger_rows": [
+    {
+      "label": "Reyssat_raw",
+      "a": 2,
+      "b": 6436341,
+      "c": 6436343,
+      "r_v2_abc": 1,
+      "expected": "bounded additive",
+      "minimal_delta_v2": 6,
+      "kodaira_2": "III",
+      "c2": 2,
+      "v2_c2": 1,
+      "v2_delta2": 1,
+      "f2": 5,
+      "allowance_v2_c2_plus_v2_delta2": 2
+    },
+    {
+      "label": "Reyssat_ANC_orientation",
+      "a": 6436341,
+      "b": 2,
+      "c": 6436343,
+      "r_v2_abc": 1,
+      "expected": "bounded additive",
+      "minimal_delta_v2": 6,
+      "kodaira_2": "III",
+      "c2": 2,
+      "v2_c2": 1,
+      "v2_delta2": 1,
+      "f2": 5,
+      "allowance_v2_c2_plus_v2_delta2": 2
+    },
+    {
+      "label": "ABCHome_2",
+      "a": 121,
+      "b": 48234375,
+      "c": 48234496,
+      "r_v2_abc": 21,
+      "expected": "potentially multiplicative depth",
+      "minimal_delta_v2": 34,
+      "kodaira_2": "I34",
+      "c2": 34,
+      "v2_c2": 1,
+      "v2_delta2": 1,
+      "f2": 1,
+      "allowance_v2_c2_plus_v2_delta2": 2
+    },
+    {
+      "label": "classic_4374",
+      "a": 1,
+      "b": 4374,
+      "c": 4375,
+      "r_v2_abc": 1,
+      "expected": "bounded additive",
+      "minimal_delta_v2": 6,
+      "kodaira_2": "III",
+      "c2": 2,
+      "v2_c2": 1,
+      "v2_delta2": 1,
+      "f2": 5,
+      "allowance_v2_c2_plus_v2_delta2": 2
+    },
+    {
+      "label": "classic_2401",
+      "a": 1,
+      "b": 2400,
+      "c": 2401,
+      "r_v2_abc": 5,
+      "expected": "potentially multiplicative depth",
+      "minimal_delta_v2": 14,
+      "kodaira_2": "I6*",
+      "c2": 4,
+      "v2_c2": 2,
+      "v2_delta2": 1,
+      "f2": 4,
+      "allowance_v2_c2_plus_v2_delta2": 3
+    },
+    {
+      "label": "1+8=9",
+      "a": 1,
+      "b": 8,
+      "c": 9,
+      "r_v2_abc": 3,
+      "expected": "bounded additive",
+      "minimal_delta_v2": 10,
+      "kodaira_2": "I2*",
+      "c2": 4,
+      "v2_c2": 2,
+      "v2_delta2": 1,
+      "f2": 4,
+      "allowance_v2_c2_plus_v2_delta2": 3
+    },
+    {
+      "label": "1+63=64",
+      "a": 1,
+      "b": 63,
+      "c": 64,
+      "r_v2_abc": 6,
+      "expected": "potentially multiplicative depth",
+      "minimal_delta_v2": 4,
+      "kodaira_2": "I4",
+      "c2": 4,
+      "v2_c2": 2,
+      "v2_delta2": 2,
+      "f2": 1,
+      "allowance_v2_c2_plus_v2_delta2": 4
+    },
+    {
+      "label": "1+80=81",
+      "a": 1,
+      "b": 80,
+      "c": 81,
+      "r_v2_abc": 4,
+      "expected": "bounded good/additive",
+      "minimal_delta_v2": 12,
+      "kodaira_2": "I4*",
+      "c2": 4,
+      "v2_c2": 2,
+      "v2_delta2": 2,
+      "f2": 4,
+      "allowance_v2_c2_plus_v2_delta2": 4
+    },
+    {
+      "label": "5+27=32",
+      "a": 5,
+      "b": 27,
+      "c": 32,
+      "r_v2_abc": 5,
+      "expected": "potentially multiplicative depth",
+      "minimal_delta_v2": 2,
+      "kodaira_2": "I2",
+      "c2": 2,
+      "v2_c2": 1,
+      "v2_delta2": 1,
+      "f2": 1,
+      "allowance_v2_c2_plus_v2_delta2": 2
+    },
+    {
+      "label": "3+125=128",
+      "a": 3,
+      "b": 125,
+      "c": 128,
+      "r_v2_abc": 7,
+      "expected": "potentially multiplicative depth",
+      "minimal_delta_v2": 18,
+      "kodaira_2": "I10*",
+      "c2": 4,
+      "v2_c2": 2,
+      "v2_delta2": 1,
+      "f2": 4,
+      "allowance_v2_c2_plus_v2_delta2": 3
+    },
+    {
+      "label": "13+243=256",
+      "a": 13,
+      "b": 243,
+      "c": 256,
+      "r_v2_abc": 8,
+      "expected": "potentially multiplicative depth",
+      "minimal_delta_v2": 8,
+      "kodaira_2": "I8",
+      "c2": 2,
+      "v2_c2": 1,
+      "v2_delta2": 3,
+      "f2": 1,
+      "allowance_v2_c2_plus_v2_delta2": 4
+    },
+    {
+      "label": "32+49=81",
+      "a": 32,
+      "b": 49,
+      "c": 81,
+      "r_v2_abc": 5,
+      "expected": "potentially multiplicative depth",
+      "minimal_delta_v2": 2,
+      "kodaira_2": "I2",
+      "c2": 2,
+      "v2_c2": 1,
+      "v2_delta2": 1,
+      "f2": 1,
+      "allowance_v2_c2_plus_v2_delta2": 2
+    },
+    {
+      "label": "1+4095=4096",
+      "a": 1,
+      "b": 4095,
+      "c": 4096,
+      "r_v2_abc": 12,
+      "expected": "potentially multiplicative depth",
+      "minimal_delta_v2": 16,
+      "kodaira_2": "I16",
+      "c2": 16,
+      "v2_c2": 4,
+      "v2_delta2": 4,
+      "f2": 1,
+      "allowance_v2_c2_plus_v2_delta2": 8
+    },
+    {
+      "label": "625+2048=2673",
+      "a": 625,
+      "b": 2048,
+      "c": 2673,
+      "r_v2_abc": 11,
+      "expected": "potentially multiplicative depth",
+      "minimal_delta_v2": 26,
+      "kodaira_2": "I18*",
+      "c2": 4,
+      "v2_c2": 2,
+      "v2_delta2": 1,
+      "f2": 4,
+      "allowance_v2_c2_plus_v2_delta2": 3
+    },
+    {
+      "label": "1+1023=1024",
+      "a": 1,
+      "b": 1023,
+      "c": 1024,
+      "r_v2_abc": 10,
+      "expected": "potentially multiplicative depth",
+      "minimal_delta_v2": 12,
+      "kodaira_2": "I12",
+      "c2": 12,
+      "v2_c2": 2,
+      "v2_delta2": 2,
+      "f2": 1,
+      "allowance_v2_c2_plus_v2_delta2": 4
+    }
+  ],
+  "conclusion": {
+    "r_1_2_3": "bounded additive finite Tate-algorithm cases",
+    "r_4": "bounded good/additive finite Tate-algorithm cases",
+    "r_ge_5": "potentially multiplicative rank-1 Tate/Néron depth plus bounded star/wild variant",
+    "h2c_c_reduction": "rank-1 2-adic depth plus uniform bounded wild/star comparison index"
+  }
+}

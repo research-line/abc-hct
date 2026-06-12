@@ -1,0 +1,428 @@
+{
+  "date": "2026-06-11",
+  "n_triples": 240,
+  "q_check_passed": 240,
+  "n_skipped_big": 1,
+  "power_image_pairs_xge100": [
+    {
+      "src_rank": 1,
+      "src_slot": "c",
+      "k": 2,
+      "img": [
+        [
+          164,
+          "b"
+        ]
+      ]
+    },
+    {
+      "src_rank": 5,
+      "src_slot": "c",
+      "k": 2,
+      "img": [
+        [
+          73,
+          "c"
+        ]
+      ]
+    },
+    {
+      "src_rank": 6,
+      "src_slot": "a",
+      "k": 3,
+      "img": [
+        [
+          202,
+          "a"
+        ]
+      ]
+    },
+    {
+      "src_rank": 37,
+      "src_slot": "c",
+      "k": 3,
+      "img": [
+        [
+          26,
+          "a"
+        ]
+      ]
+    },
+    {
+      "src_rank": 97,
+      "src_slot": "a",
+      "k": 2,
+      "img": [
+        [
+          232,
+          "a"
+        ]
+      ]
+    },
+    {
+      "src_rank": 115,
+      "src_slot": "c",
+      "k": 3,
+      "img": [
+        [
+          90,
+          "a"
+        ]
+      ]
+    },
+    {
+      "src_rank": 155,
+      "src_slot": "a",
+      "k": 3,
+      "img": [
+        [
+          202,
+          "a"
+        ]
+      ]
+    },
+    {
+      "src_rank": 189,
+      "src_slot": "a",
+      "k": 3,
+      "img": [
+        [
+          26,
+          "a"
+        ]
+      ]
+    },
+    {
+      "src_rank": 191,
+      "src_slot": "a",
+      "k": 2,
+      "img": [
+        [
+          17,
+          "a"
+        ]
+      ]
+    },
+    {
+      "src_rank": 209,
+      "src_slot": "a",
+      "k": 2,
+      "img": [
+        [
+          29,
+          "c"
+        ],
+        [
+          41,
+          "a"
+        ],
+        [
+          162,
+          "c"
+        ]
+      ]
+    }
+  ],
+  "full_doubling_images": [
+    {
+      "src_rank": 5,
+      "img_rank": 73
+    }
+  ],
+  "sharing": {
+    "7": {
+      "n_primes_gt_P0": 238,
+      "pairs_ge1": 17265,
+      "pairs_ge2": 5696,
+      "null_ge1_mean": 17185.18,
+      "null_ge1_sd": 216.97167464901955,
+      "null_ge2_mean": 5806.465,
+      "null_ge2_sd": 126.53101902300479,
+      "z_ge1": 0.3678821216138887,
+      "z_ge2": -0.8730270320506653,
+      "components_ge2_sizes_top": [
+        237
+      ],
+      "n_isolated": 3,
+      "top_multi_sharing_pairs": [
+        {
+          "ranks": [
+            48,
+            142
+          ],
+          "n_common": 10,
+          "common_primes": [
+            11,
+            17,
+            19,
+            23,
+            37,
+            43,
+            61,
+            127,
+            173,
+            4817
+          ]
+        },
+        {
+          "ranks": [
+            32,
+            216
+          ],
+          "n_common": 6,
+          "common_primes": [
+            11,
+            13,
+            17,
+            23,
+            29,
+            47
+          ]
+        },
+        {
+          "ranks": [
+            101,
+            211
+          ],
+          "n_common": 6,
+          "common_primes": [
+            11,
+            13,
+            19,
+            23,
+            29,
+            53
+          ]
+        },
+        {
+          "ranks": [
+            32,
+            117
+          ],
+          "n_common": 5,
+          "common_primes": [
+            11,
+            13,
+            17,
+            23,
+            29
+          ]
+        },
+        {
+          "ranks": [
+            32,
+            174
+          ],
+          "n_common": 5,
+          "common_primes": [
+            11,
+            13,
+            17,
+            23,
+            29
+          ]
+        },
+        {
+          "ranks": [
+            101,
+            174
+          ],
+          "n_common": 5,
+          "common_primes": [
+            11,
+            13,
+            19,
+            23,
+            29
+          ]
+        }
+      ]
+    },
+    "13": {
+      "n_primes_gt_P0": 236,
+      "pairs_ge1": 9595,
+      "pairs_ge2": 1449,
+      "null_ge1_mean": 9518.71,
+      "null_ge1_sd": 98.6773322501171,
+      "null_ge2_mean": 1557.145,
+      "null_ge2_sd": 76.1103407888836,
+      "z_ge1": 0.7731258867703159,
+      "z_ge2": -1.42089759261458,
+      "components_ge2_sizes_top": [
+        231
+      ],
+      "n_isolated": 9,
+      "top_multi_sharing_pairs": [
+        {
+          "ranks": [
+            48,
+            142
+          ],
+          "n_common": 9,
+          "common_primes": [
+            17,
+            19,
+            23,
+            37,
+            43,
+            61,
+            127,
+            173,
+            4817
+          ]
+        },
+        {
+          "ranks": [
+            10,
+            32
+          ],
+          "n_common": 4,
+          "common_primes": [
+            17,
+            23,
+            29,
+            31
+          ]
+        },
+        {
+          "ranks": [
+            32,
+            216
+          ],
+          "n_common": 4,
+          "common_primes": [
+            17,
+            23,
+            29,
+            47
+          ]
+        },
+        {
+          "ranks": [
+            48,
+            188
+          ],
+          "n_common": 4,
+          "common_primes": [
+            17,
+            23,
+            37,
+            43
+          ]
+        },
+        {
+          "ranks": [
+            101,
+            211
+          ],
+          "n_common": 4,
+          "common_primes": [
+            19,
+            23,
+            29,
+            53
+          ]
+        },
+        {
+          "ranks": [
+            142,
+            188
+          ],
+          "n_common": 4,
+          "common_primes": [
+            17,
+            23,
+            37,
+            43
+          ]
+        }
+      ]
+    },
+    "50": {
+      "n_primes_gt_P0": 227,
+      "pairs_ge1": 1402,
+      "pairs_ge2": 42,
+      "null_ge1_mean": 1417.135,
+      "null_ge1_sd": 7.078613917992702,
+      "null_ge2_mean": 29.545,
+      "null_ge2_sd": 6.851129468927002,
+      "z_ge1": -2.138130455388907,
+      "z_ge2": 1.8179484209850514,
+      "components_ge2_sizes_top": [
+        190
+      ],
+      "n_isolated": 50,
+      "top_multi_sharing_pairs": [
+        {
+          "ranks": [
+            48,
+            142
+          ],
+          "n_common": 4,
+          "common_primes": [
+            61,
+            127,
+            173,
+            4817
+          ]
+        },
+        {
+          "ranks": [
+            183,
+            224
+          ],
+          "n_common": 3,
+          "common_primes": [
+            53,
+            83,
+            107
+          ]
+        },
+        {
+          "ranks": [
+            34,
+            153
+          ],
+          "n_common": 2,
+          "common_primes": [
+            89,
+            109
+          ]
+        },
+        {
+          "ranks": [
+            141,
+            187
+          ],
+          "n_common": 2,
+          "common_primes": [
+            73,
+            79
+          ]
+        },
+        {
+          "ranks": [
+            141,
+            240
+          ],
+          "n_common": 2,
+          "common_primes": [
+            73,
+            79
+          ]
+        },
+        {
+          "ranks": [
+            187,
+            240
+          ],
+          "n_common": 2,
+          "common_primes": [
+            73,
+            79
+          ]
+        }
+      ]
+    }
+  }
+}

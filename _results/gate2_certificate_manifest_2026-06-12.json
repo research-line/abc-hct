@@ -1,0 +1,40 @@
+{
+  "certificate": "GATE-2 double-q eigenvalue isolation, level 240672, sign +1",
+  "date_frozen": "2026-06-12",
+  "claim": "Witness-generated Hecke quotient (baseline qdim=48) collapses to the f_E eigenline (qdim=1) under {T13, T17, T19, U23}, independently mod q=3863 and mod q=5077; conservative direction rank_Fq <= rank_Q gives qdim_Q = 1 exactly.",
+  "artifacts": {
+    "witness_source_rows": {
+      "path": "_results/rc3c_cremona_witness_240672_raw_q3863_2026-06-05/N240672_raw_sign1/source_rows.jsonl",
+      "sha256": "2d9c56c73d44a5b2d4f86901d52baa2c34309dbb9eb632673c4ffcc716516554",
+      "bytes": 35206361,
+      "lines": 126672
+    },
+    "script_v2b": {
+      "path": "_scripts/t7_replay_fingerprint_v2.py",
+      "sha256": "97d528b67e4f3a7bc2f0ed5a682d541b0c9b85e8033b662c30c0a008ef6267d8",
+      "bytes": 12252
+    },
+    "script_v3": {
+      "path": "_scripts/t7_replay_fingerprint_v3.py",
+      "sha256": "f3a567e8d23f3f7bf697afb0aa9a226763fc582858bb9aff3c9c0f181e1d1d25",
+      "bytes": 15192
+    },
+    "log_v2b_q3863": {
+      "path": "_results/t7_replay_fingerprint_240672_v2b_2026-06-09.log",
+      "sha256": "fdc344d0bbdfd6f21cb76bcbab5a0fda4d61ddb9c5bb0d7579067caf03931be0",
+      "bytes": 3233
+    },
+    "log_v3_q5077": {
+      "path": "_results/t7_replay_fingerprint_240672_v3_q5077_2026-06-10.log",
+      "sha256": "8f353414e8403d4857753056e2f083410711c4c444a0b45dab74d56a115d6e94",
+      "bytes": 4269
+    }
+  },
+  "caveats": [
+    "C1 subset semantics (characterize witness-generated quotient; Ribet form absent)",
+    "C2 single instance (one level, one witness)",
+    "C3 eigenvalues LMFDB-verified (240672.g1)"
+  ],
+  "terminology": "p=23 || N: operator is U23 (script label T_23); HeilbronnCremona validated for U_p at p||N (8/8, 2026-06-10)",
+  "full_certificate": "_proof-notes/MG_gate2_certificate_240672_2026-06-12.md"
+}

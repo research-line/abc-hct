@@ -1,0 +1,27 @@
+{
+  "id": "p2_dimer_witness_240672_2026-06-11",
+  "title": "N=240672 p2-Kern-Schnitt (mod 2) + Dimer-Extraktion (B2 p1: Frustrations-Replikation Stufe 1)",
+  "status": "queued",
+  "priority": 10,
+  "allowed_hosts": [
+    "mac-studio"
+  ],
+  "disallowed_hosts": [
+    "ASUS-GEI"
+  ],
+  "depends_on_success": [],
+  "defer_while_process_regex": [
+    "t7_replay_fingerprint"
+  ],
+  "resource_policy": {
+    "min_free_mem_gb": 10.0,
+    "max_load_1min": 6.0
+  },
+  "backend": {
+    "type": "sage",
+    "allow_docker": false
+  },
+  "command": "{sage} _scripts/p2_dimer_witness_240672.py --kstop 8",
+  "expected_runtime_hours": "2-8 (Witness-Replay mod 2 ~Minuten; Hecke-Schnitt haengt an Sage syms.apply; Abbruch-Logik: KSTOP/Saturation)",
+  "notes": "Erst NACH Ende des t7_replay-v3-Laufs starten (defer-Regex). Erwartung: Witness-Kern 607 -> Schnitt via T3+1,T5,T7,T11,T13(,T17,T19,U23+1) mod 2 auf <=8 -> Vollenumeration der Kombinationen auf Dimer-Eigenschaft (jedes manin-Dreieck genau 2 Support-Kanten). Output: JSON + Kernbasis-npz + ggf. Dimer-npy. Kontext: abc/_proof-notes/MG_b2_p2_frustration_law_2026-06-11.md; lokale Vorarbeit _results/b2_kernel_basis_240672_2026-06-11.*"
+}

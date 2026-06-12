@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-13",
+  "level": 60168,
+  "per_prime": {
+    "3": {
+      "kernel_dim": 1,
+      "dims_filtration": [
+        1,
+        1
+      ],
+      "elementary_divisor_exponents": [
+        2
+      ],
+      "v_p_det": 2,
+      "kmax_hit": false
+    },
+    "5": {
+      "kernel_dim": 1,
+      "dims_filtration": [
+        1
+      ],
+      "elementary_divisor_exponents": [
+        1
+      ],
+      "v_p_det": 1,
+      "kmax_hit": false
+    },
+    "31": {
+      "kernel_dim": 1,
+      "dims_filtration": [
+        1
+      ],
+      "elementary_divisor_exponents": [
+        1
+      ],
+      "v_p_det": 1,
+      "kmax_hit": false
+    },
+    "2": {
+      "kernel_dim": 2,
+      "dims_filtration": [
+        2,
+        1
+      ],
+      "elementary_divisor_exponents": [
+        2,
+        1
+      ],
+      "v_p_det": 3,
+      "kmax_hit": false
+    }
+  },
+  "D_W_abs": 11160,
+  "D_W_factored": "2^3 * 3^2 * 5^1 * 31^1",
+  "exact": true,
+  "note": "D(W) = |det| des vollrangigen Witness-Systems; Exponenten via Kern-Filtration mit Korrekturspalten (jede Stufe Z-exakt verifiziert; KMAX=10)."
+}

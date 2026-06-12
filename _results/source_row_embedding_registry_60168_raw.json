@@ -1,0 +1,51 @@
+{
+  "_status": "AUTO-EMITTED by source_stage_classifier — Klassifikation+Rowhash real; family_canonical_defined=false (Mathematik offen).",
+  "_schema": "_scripts/source_row_embedding_registry_schema.json",
+  "meta": {
+    "case": "60168/raw",
+    "q": 3863,
+    "n_source_rows": 31680,
+    "created": "2026-06-01",
+    "source": "_results/rc3d_rowhash_source_witness_60168_raw_2026-05-12/N60168_raw_sign1/source_rows.jsonl"
+  },
+  "families": [
+    {
+      "family": "manin",
+      "stage_prefix": "manin_T_relations_after_SI",
+      "row_count": 21104,
+      "n_rowhash_bound": 21104,
+      "family_canonical_defined": false,
+      "transcript_bound": false,
+      "canonical_definition": "Manin-2-/3-Term-Relationen + T-Relationen nach S/I-Quotient (definieren H_1)",
+      "sample_rowhash": "c431fbbba67e040b4a2f70c0064e8abce798e978e441310d510a355661cd380c"
+    },
+    {
+      "family": "T_5_minus_2",
+      "stage_prefix": "T_5_minus_2_batch_1",
+      "row_count": 10576,
+      "n_rowhash_bound": 10576,
+      "family_canonical_defined": false,
+      "transcript_bound": false,
+      "canonical_definition": "T_5 v - a_5(E) v, a_5(E)=2 (Hecke-Eigenrelation)",
+      "sample_rowhash": "492908141f41222515b9cfd422581ed5fbacf8dcfe913571fcfd76d05deee521"
+    }
+  ],
+  "column_basis": {
+    "column_basis_compatible": false,
+    "column_basis_hash": "<<FILL>>"
+  },
+  "labels": {
+    "source_embedding_level": false,
+    "source_presentation_equality": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "embedding_holds_if": "alle Familien family_canonical_defined + transcript_bound + voll rowhash-gebunden + column_basis_compatible",
+    "but_not": [
+      "CQ-3s",
+      "H3",
+      "PCAT/FAQS",
+      "abc"
+    ]
+  }
+}

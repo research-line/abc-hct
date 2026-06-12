@@ -4,7 +4,7 @@
 The runner is intentionally conservative:
 - it is meant to run on Mac Studio / server / desktop, not on the laptop;
 - it starts at most one queued job at a time;
-- each job is declared as JSON under _compute_queue/jobs;
+- each job is declared as JSON under compute_queue/jobs;
 - long Sage commands are launched detached and tracked via state JSON.
 """
 
@@ -25,11 +25,58 @@ from typing import Any
 
 
 DATE = "2026-05-23"
-QUEUE_DIR = "_compute_queue"
+QUEUE_DIR = "compute_queue"
+
+# Slot-Koordination mit dem Memory-Watchdog (v5+):
+# Der Watchdog schreibt compute_slot_status.json (pull_ok, overflow_locked).
+# Der Runner registriert gestartete Jobs als PID-Dateien in RUNNER_JOBS_DIR,
+# damit der Watchdog sie in count_active_compute mitzaehlt (sonst saehe er
+# Runner-gestartete Jobs nicht und das Slot-Modell briche).
+MEMWATCH_DIR = Path.home() / ".memwatchdog"
+SLOT_STATUS_PATH = MEMWATCH_DIR / "compute_slot_status.json"
+RUNNER_JOBS_DIR = MEMWATCH_DIR / "runner_jobs"
 
 
 def now() -> float:
     return time.time()
+
+
+def read_slot_status() -> dict[str, Any]:
+    """Liest den Watchdog-Slot-Status. Leeres dict, wenn nicht vorhanden/frisch."""
+    try:
+        d = read_json(SLOT_STATUS_PATH)
+    except Exception:
+        return {}
+    # Veralteter Status (>90s = 1.5x Watchdog-Poll) -> als nicht vorhanden
+    # behandeln (Watchdog tot/haengt -> kein Pull, Race-Schutz).
+    if now() - float(d.get("ts", 0)) > 90:
+        return {}
+    return d
+
+
+def register_runner_job(job_id: str, pid: int) -> None:
+    try:
+        RUNNER_JOBS_DIR.mkdir(parents=True, exist_ok=True)
+        (RUNNER_JOBS_DIR / f"{job_id}.pid").write_text(str(pid), encoding="utf-8")
+    except Exception:
+        pass
+
+
+def cleanup_runner_jobs() -> None:
+    """Entfernt PID-Dateien beendeter Runner-Jobs (analog Watchdog-cleanup)."""
+    try:
+        if not RUNNER_JOBS_DIR.exists():
+            return
+        for f in RUNNER_JOBS_DIR.glob("*.pid"):
+            try:
+                pid = int(f.read_text().strip())
+            except Exception:
+                f.unlink(missing_ok=True)
+                continue
+            if not pid_alive(pid):
+                f.unlink(missing_ok=True)
+    except Exception:
+        pass
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -75,7 +122,7 @@ def process_matches(patterns: list[str]) -> list[str]:
     rows = ps_rows()
     hits: list[str] = []
     for row in rows:
-        if "abc_compute_queue_runner.py" in row:
+        if "compute_queue_runner.py" in row:
             continue
         for pat in patterns:
             if re.search(pat, row):
@@ -84,14 +131,112 @@ def process_matches(patterns: list[str]) -> list[str]:
     return hits
 
 
+def proc_state(pid: int) -> str | None:
+    """ps-Statusbuchstabe (R/S/Z/...) oder None, wenn Prozess nicht existiert."""
+    try:
+        out = subprocess.check_output(
+            ["ps", "-o", "state=", "-p", str(pid)], text=True, stderr=subprocess.DEVNULL
+        )
+    except Exception:
+        return None
+    s = out.strip()
+    return s[:1] if s else None
+
+
 def pid_alive(pid: int) -> bool:
     if pid <= 0:
         return False
     try:
         os.kill(pid, 0)
-        return True
     except OSError:
         return False
+    # Zombies existieren in der Prozesstabelle, laufen aber nicht mehr.
+    # Ohne diesen Check hielt der Runner <defunct>-Jobs fuer "running"
+    # und blockierte die Queue (Vorfall 2026-06-12).
+    return proc_state(pid) != "Z"
+
+
+def _exit_code_from_status(status: int) -> int:
+    try:
+        return os.waitstatus_to_exitcode(status)
+    except AttributeError:  # Python < 3.9
+        if os.WIFEXITED(status):
+            return os.WEXITSTATUS(status)
+        return -os.WTERMSIG(status)
+
+
+def mark_job_file(root: Path, job_id: str, status: str, reason: str) -> None:
+    jp = root / QUEUE_DIR / "jobs" / f"{job_id}.json"
+    if not jp.exists():
+        return
+    try:
+        jd = read_json(jp)
+        if str(jd.get("status", "")).lower() in {"completed", "done", "failed", "blocked", "disabled"}:
+            return
+        jd["status"] = status
+        jd["completed_unix"] = now()
+        jd["completed_reason"] = reason
+        write_json(jp, jd)
+    except Exception:
+        pass
+
+
+def finalize_job_by_pid(root: Path, pid: int, code: int) -> None:
+    """Schliesst den running-Job mit dieser PID anhand des Exit-Codes ab.
+
+    Exit 0  -> State "success" + Job-Datei "completed" (Auto-Done).
+    Exit >0 -> State/Job-Datei "failed" (deterministischer Scriptfehler,
+               kein Retry-Brennen).
+    Signal (<0) -> State "killed", Job-Datei unangetastet (transient:
+               manueller kill/OOM -> Neustart durch Runner erlaubt).
+    """
+    state_dir = root / QUEUE_DIR / "state"
+    if not state_dir.exists():
+        return
+    for sp in state_dir.glob("*.state.json"):
+        try:
+            st = read_json(sp)
+        except Exception:
+            continue
+        if int(st.get("pid", -1)) != pid or st.get("status") != "running":
+            continue
+        job_id = st.get("job_id") or sp.name[: -len(".state.json")]
+        st["exit_code"] = code
+        st["completed_unix"] = now()
+        st["updated_unix"] = now()
+        if code == 0:
+            st["status"] = "success"
+            st["reason"] = "process exited 0 (auto-done)"
+            write_json(sp, st)
+            mark_job_file(root, job_id, "completed", "auto-done: exit 0")
+        elif code > 0:
+            st["status"] = "failed"
+            st["reason"] = f"process exited {code}"
+            write_json(sp, st)
+            mark_job_file(root, job_id, "failed", f"auto-fail: exit {code}")
+        else:
+            st["status"] = "killed"
+            st["reason"] = f"terminated by signal {-code} (transient; retry allowed)"
+            write_json(sp, st)
+        return
+
+
+def reap_children(root: Path) -> None:
+    """Reapt beendete Kindprozesse und verbucht ihre Exit-Codes (Auto-Done).
+
+    Der Runner startet Jobs detached, bleibt aber Parent: ohne wait()
+    wurden fertige Jobs zu Zombies (pid_alive sah sie als running), und
+    nach einem Daemon-Neustart wurden fertige Jobs mangels Erfolgs-
+    kriterium NEU gestartet (Vorfaelle 2026-06-12/13, u. a. 16.5h-Job).
+    """
+    while True:
+        try:
+            pid, status = os.waitpid(-1, os.WNOHANG)
+        except (ChildProcessError, OSError):
+            return
+        if pid == 0:
+            return
+        finalize_job_by_pid(root, pid, _exit_code_from_status(status))
 
 
 def get_free_mem_gb() -> float | None:
@@ -282,8 +427,10 @@ def dependencies_met(root: Path, job: dict[str, Any]) -> tuple[bool, str]:
 
 def job_eligible(root: Path, job: dict[str, Any], jobs: list[dict[str, Any]]) -> tuple[bool, str, dict[str, Any]]:
     job_status = str(job.get("status", "pending")).lower()
-    if job_status in {"paused", "blocked", "disabled"}:
-        return False, f"job status {job_status}: {job.get('pause_reason') or job.get('block_reason') or 'manual hold'}", {}
+    if job_status in {"paused", "blocked", "disabled", "completed", "done", "failed"}:
+        note = (job.get('pause_reason') or job.get('block_reason')
+                or job.get('completed_reason') or job.get('resolution') or 'manual hold')
+        return False, f"job status {job_status}: {note}", {}
 
     aliases = host_aliases()
     allowed = {str(x) for x in job.get("allowed_hosts", [])}
@@ -298,19 +445,51 @@ def job_eligible(root: Path, job: dict[str, Any], jobs: list[dict[str, Any]]) ->
         st = load_state(root, job["id"])
         st.update({"status": "success", "reason": reason, "updated_unix": now()})
         write_json(state_path(root, job["id"]), st)
+        jp = job.get("_path")
+        if jp:
+            try:
+                jd = read_json(Path(jp))
+                if str(jd.get("status", "")).lower() not in {"completed", "done"}:
+                    jd["status"] = "completed"
+                    jd["completed_unix"] = now()
+                    jd["completed_reason"] = reason
+                    write_json(Path(jp), jd)
+            except Exception:
+                pass
         return False, "already successful", {}
 
     st = load_state(root, job["id"])
+    if st.get("status") == "finished_unverified":
+        return False, ("finished unverified: pid gone without exit info -- "
+                       "verify outputs, then mark job done or requeue (delete state)"), {}
+    if st.get("status") == "failed":
+        return False, f"state failed: {st.get('reason', 'exit != 0')} -- requeue manually", {}
     if st.get("status") == "running":
         pid = int(st.get("pid", 0))
         if pid_alive(pid):
             return False, f"already running pid={pid}", {}
-        st.update({"status": "stopped_or_failed", "updated_unix": now(), "reason": "pid not alive"})
+        # PID weg, aber kein Exit-Code eingesammelt (z. B. Runner-Neustart
+        # dazwischen, Kind von launchd adoptiert): NICHT blind neu starten
+        # (Vorfall 2026-06-13: fertiger 16.5h-Job wurde rerun-gestartet).
+        st.update({"status": "finished_unverified", "updated_unix": now(),
+                   "reason": "pid gone, exit code unknown (runner restart between?)"})
         write_json(state_path(root, job["id"]), st)
+        return False, "finished_unverified: pid gone without exit info", {}
 
     active = active_queue_job(root, jobs)
     if active:
-        return False, f"another queue job is running: {active}", {}
+        # Ein Queue-Job laeuft bereits. Ein weiterer (Extra-Slot) ist nur erlaubt,
+        # wenn der Watchdog Kapazitaet signalisiert (pull_ok). pull_ok wird vom
+        # Watchdog nach jedem Start in den Cooldown gesetzt -> hoechstens 1 Extra
+        # gleichzeitig in flight (User-Slot-Modell).
+        slot = read_slot_status()
+        if not slot.get("pull_ok"):
+            why = "pressure/cooldown" if slot else "no fresh watchdog slot status"
+            return False, f"queue job running, kein Pull-Slot ({why}): {active}", {}
+        # pull_ok=true -> Extra-Slot erlaubt, weiter pruefen.
+        # HINWEIS: Kein oberer RAM-Guard hier -- falls der gestartete Job das
+        # System in Level 4 drueckt, faengt der Watchdog das ab (Schritt 3:
+        # pausiert + overflow_locked). resource_policy bleibt Per-Job-Untergrenze.
 
     ok, reason = dependencies_met(root, job)
     if not ok:
@@ -366,6 +545,7 @@ def launch_job(root: Path, job: dict[str, Any], ctx: dict[str, Any], dry_run: bo
     )
     state["pid"] = proc.pid
     write_json(state_path(root, job["id"]), state)
+    register_runner_job(job["id"], proc.pid)
     return state
 
 
@@ -381,6 +561,8 @@ def collect_jobs(root: Path) -> list[dict[str, Any]]:
 
 
 def run_once(root: Path, dry_run: bool = False) -> dict[str, Any]:
+    reap_children(root)
+    cleanup_runner_jobs()
     jobs = collect_jobs(root)
     decisions = []
     for job in jobs:

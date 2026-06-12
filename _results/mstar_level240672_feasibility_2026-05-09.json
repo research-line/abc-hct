@@ -1,0 +1,490 @@
+{
+  "date": "2026-05-09",
+  "purpose": "Feasibility probe for a full level-240672 Hecke/modular-symbol test modulo 3863.",
+  "level": 240672,
+  "q": 3863,
+  "main_level": {
+    "level": 240672,
+    "factor": "2^5 * 3 * 23 * 109",
+    "index": 506880,
+    "sturm_bound_weight2": 84480,
+    "prime_factors": [
+      2,
+      3,
+      23,
+      109
+    ],
+    "cusps": 64,
+    "elliptic_order2_points": 0,
+    "elliptic_order3_points": 0,
+    "genus": 42209,
+    "dimension_cusp_forms": 42209,
+    "dimension_new_cusp_forms": 4752,
+    "dimension_old_cusp_forms": 37457
+  },
+  "divisor_count": 48,
+  "proper_old_level_count": 47,
+  "old_levels_top_by_new_dimension": [
+    {
+      "level": 40112,
+      "factor": "2^4 * 23 * 109",
+      "index": 63360,
+      "sturm_bound_weight2": 10560,
+      "prime_factors": [
+        2,
+        23,
+        109
+      ],
+      "cusps": 24,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 5269,
+      "dimension_cusp_forms": 5269,
+      "dimension_new_cusp_forms": 1188,
+      "dimension_old_cusp_forms": 4081,
+      "level_ratio_N_over_M": 6,
+      "degeneracy_multiplicity_tau_N_over_M": 4,
+      "oldspace_contribution_at_N": 4752
+    },
+    {
+      "level": 80224,
+      "factor": "2^5 * 23 * 109",
+      "index": 126720,
+      "sturm_bound_weight2": 21120,
+      "prime_factors": [
+        2,
+        23,
+        109
+      ],
+      "cusps": 32,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 10545,
+      "dimension_cusp_forms": 10545,
+      "dimension_new_cusp_forms": 2376,
+      "dimension_old_cusp_forms": 8169,
+      "level_ratio_N_over_M": 3,
+      "degeneracy_multiplicity_tau_N_over_M": 2,
+      "oldspace_contribution_at_N": 4752
+    },
+    {
+      "level": 120336,
+      "factor": "2^4 * 3 * 23 * 109",
+      "index": 253440,
+      "sturm_bound_weight2": 42240,
+      "prime_factors": [
+        2,
+        3,
+        23,
+        109
+      ],
+      "cusps": 48,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 21097,
+      "dimension_cusp_forms": 21097,
+      "dimension_new_cusp_forms": 2376,
+      "dimension_old_cusp_forms": 18721,
+      "level_ratio_N_over_M": 2,
+      "degeneracy_multiplicity_tau_N_over_M": 2,
+      "oldspace_contribution_at_N": 4752
+    },
+    {
+      "level": 20056,
+      "factor": "2^3 * 23 * 109",
+      "index": 31680,
+      "sturm_bound_weight2": 5280,
+      "prime_factors": [
+        2,
+        23,
+        109
+      ],
+      "cusps": 16,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 2633,
+      "dimension_cusp_forms": 2633,
+      "dimension_new_cusp_forms": 594,
+      "dimension_old_cusp_forms": 2039,
+      "level_ratio_N_over_M": 12,
+      "degeneracy_multiplicity_tau_N_over_M": 6,
+      "oldspace_contribution_at_N": 3564
+    },
+    {
+      "level": 60168,
+      "factor": "2^3 * 3 * 23 * 109",
+      "index": 126720,
+      "sturm_bound_weight2": 21120,
+      "prime_factors": [
+        2,
+        3,
+        23,
+        109
+      ],
+      "cusps": 32,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 10545,
+      "dimension_cusp_forms": 10545,
+      "dimension_new_cusp_forms": 1188,
+      "dimension_old_cusp_forms": 9357,
+      "level_ratio_N_over_M": 4,
+      "degeneracy_multiplicity_tau_N_over_M": 3,
+      "oldspace_contribution_at_N": 3564
+    },
+    {
+      "level": 2507,
+      "factor": "23 * 109",
+      "index": 2640,
+      "sturm_bound_weight2": 440,
+      "prime_factors": [
+        23,
+        109
+      ],
+      "cusps": 4,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 219,
+      "dimension_cusp_forms": 219,
+      "dimension_new_cusp_forms": 199,
+      "dimension_old_cusp_forms": 20,
+      "level_ratio_N_over_M": 96,
+      "degeneracy_multiplicity_tau_N_over_M": 12,
+      "oldspace_contribution_at_N": 2388
+    },
+    {
+      "level": 7521,
+      "factor": "3 * 23 * 109",
+      "index": 10560,
+      "sturm_bound_weight2": 1760,
+      "prime_factors": [
+        3,
+        23,
+        109
+      ],
+      "cusps": 8,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 877,
+      "dimension_cusp_forms": 877,
+      "dimension_new_cusp_forms": 395,
+      "dimension_old_cusp_forms": 482,
+      "level_ratio_N_over_M": 32,
+      "degeneracy_multiplicity_tau_N_over_M": 6,
+      "oldspace_contribution_at_N": 2370
+    },
+    {
+      "level": 15042,
+      "factor": "2 * 3 * 23 * 109",
+      "index": 31680,
+      "sturm_bound_weight2": 5280,
+      "prime_factors": [
+        2,
+        3,
+        23,
+        109
+      ],
+      "cusps": 16,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 2633,
+      "dimension_cusp_forms": 2633,
+      "dimension_new_cusp_forms": 397,
+      "dimension_old_cusp_forms": 2236,
+      "level_ratio_N_over_M": 16,
+      "degeneracy_multiplicity_tau_N_over_M": 5,
+      "oldspace_contribution_at_N": 1985
+    },
+    {
+      "level": 5014,
+      "factor": "2 * 23 * 109",
+      "index": 7920,
+      "sturm_bound_weight2": 1320,
+      "prime_factors": [
+        2,
+        23,
+        109
+      ],
+      "cusps": 8,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 657,
+      "dimension_cusp_forms": 657,
+      "dimension_new_cusp_forms": 197,
+      "dimension_old_cusp_forms": 460,
+      "level_ratio_N_over_M": 48,
+      "degeneracy_multiplicity_tau_N_over_M": 10,
+      "oldspace_contribution_at_N": 1970
+    },
+    {
+      "level": 10028,
+      "factor": "2^2 * 23 * 109",
+      "index": 15840,
+      "sturm_bound_weight2": 2640,
+      "prime_factors": [
+        2,
+        23,
+        109
+      ],
+      "cusps": 12,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 1315,
+      "dimension_cusp_forms": 1315,
+      "dimension_new_cusp_forms": 198,
+      "dimension_old_cusp_forms": 1117,
+      "level_ratio_N_over_M": 24,
+      "degeneracy_multiplicity_tau_N_over_M": 8,
+      "oldspace_contribution_at_N": 1584
+    },
+    {
+      "level": 30084,
+      "factor": "2^2 * 3 * 23 * 109",
+      "index": 63360,
+      "sturm_bound_weight2": 10560,
+      "prime_factors": [
+        2,
+        3,
+        23,
+        109
+      ],
+      "cusps": 24,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 5269,
+      "dimension_cusp_forms": 5269,
+      "dimension_new_cusp_forms": 396,
+      "dimension_old_cusp_forms": 4873,
+      "level_ratio_N_over_M": 8,
+      "degeneracy_multiplicity_tau_N_over_M": 4,
+      "oldspace_contribution_at_N": 1584
+    },
+    {
+      "level": 1744,
+      "factor": "2^4 * 109",
+      "index": 2640,
+      "sturm_bound_weight2": 440,
+      "prime_factors": [
+        2,
+        109
+      ],
+      "cusps": 12,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 215,
+      "dimension_cusp_forms": 215,
+      "dimension_new_cusp_forms": 54,
+      "dimension_old_cusp_forms": 161,
+      "level_ratio_N_over_M": 138,
+      "degeneracy_multiplicity_tau_N_over_M": 8,
+      "oldspace_contribution_at_N": 432
+    },
+    {
+      "level": 3488,
+      "factor": "2^5 * 109",
+      "index": 5280,
+      "sturm_bound_weight2": 880,
+      "prime_factors": [
+        2,
+        109
+      ],
+      "cusps": 16,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 433,
+      "dimension_cusp_forms": 433,
+      "dimension_new_cusp_forms": 108,
+      "dimension_old_cusp_forms": 325,
+      "level_ratio_N_over_M": 69,
+      "degeneracy_multiplicity_tau_N_over_M": 4,
+      "oldspace_contribution_at_N": 432
+    },
+    {
+      "level": 5232,
+      "factor": "2^4 * 3 * 109",
+      "index": 10560,
+      "sturm_bound_weight2": 1760,
+      "prime_factors": [
+        2,
+        3,
+        109
+      ],
+      "cusps": 24,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 869,
+      "dimension_cusp_forms": 869,
+      "dimension_new_cusp_forms": 108,
+      "dimension_old_cusp_forms": 761,
+      "level_ratio_N_over_M": 46,
+      "degeneracy_multiplicity_tau_N_over_M": 4,
+      "oldspace_contribution_at_N": 432
+    },
+    {
+      "level": 10464,
+      "factor": "2^5 * 3 * 109",
+      "index": 21120,
+      "sturm_bound_weight2": 3520,
+      "prime_factors": [
+        2,
+        3,
+        109
+      ],
+      "cusps": 32,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 1745,
+      "dimension_cusp_forms": 1745,
+      "dimension_new_cusp_forms": 216,
+      "dimension_old_cusp_forms": 1529,
+      "level_ratio_N_over_M": 23,
+      "degeneracy_multiplicity_tau_N_over_M": 2,
+      "oldspace_contribution_at_N": 432
+    },
+    {
+      "level": 872,
+      "factor": "2^3 * 109",
+      "index": 1320,
+      "sturm_bound_weight2": 220,
+      "prime_factors": [
+        2,
+        109
+      ],
+      "cusps": 8,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 107,
+      "dimension_cusp_forms": 107,
+      "dimension_new_cusp_forms": 27,
+      "dimension_old_cusp_forms": 80,
+      "level_ratio_N_over_M": 276,
+      "degeneracy_multiplicity_tau_N_over_M": 12,
+      "oldspace_contribution_at_N": 324
+    },
+    {
+      "level": 2616,
+      "factor": "2^3 * 3 * 109",
+      "index": 5280,
+      "sturm_bound_weight2": 880,
+      "prime_factors": [
+        2,
+        3,
+        109
+      ],
+      "cusps": 16,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 0,
+      "genus": 433,
+      "dimension_cusp_forms": 433,
+      "dimension_new_cusp_forms": 54,
+      "dimension_old_cusp_forms": 379,
+      "level_ratio_N_over_M": 92,
+      "degeneracy_multiplicity_tau_N_over_M": 6,
+      "oldspace_contribution_at_N": 324
+    },
+    {
+      "level": 327,
+      "factor": "3 * 109",
+      "index": 440,
+      "sturm_bound_weight2": 73,
+      "prime_factors": [
+        3,
+        109
+      ],
+      "cusps": 4,
+      "elliptic_order2_points": 0,
+      "elliptic_order3_points": 2,
+      "genus": 35,
+      "dimension_cusp_forms": 35,
+      "dimension_new_cusp_forms": 19,
+      "dimension_old_cusp_forms": 16,
+      "level_ratio_N_over_M": 736,
+      "degeneracy_multiplicity_tau_N_over_M": 12,
+      "oldspace_contribution_at_N": 228
+    },
+    {
+      "level": 218,
+      "factor": "2 * 109",
+      "index": 330,
+      "sturm_bound_weight2": 55,
+      "prime_factors": [
+        2,
+        109
+      ],
+      "cusps": 4,
+      "elliptic_order2_points": 2,
+      "elliptic_order3_points": 0,
+      "genus": 26,
+      "dimension_cusp_forms": 26,
+      "dimension_new_cusp_forms": 10,
+      "dimension_old_cusp_forms": 16,
+      "level_ratio_N_over_M": 1104,
+      "degeneracy_multiplicity_tau_N_over_M": 20,
+      "oldspace_contribution_at_N": 200
+    },
+    {
+      "level": 109,
+      "factor": "109",
+      "index": 110,
+      "sturm_bound_weight2": 18,
+      "prime_factors": [
+        109
+      ],
+      "cusps": 2,
+      "elliptic_order2_points": 2,
+      "elliptic_order3_points": 2,
+      "genus": 8,
+      "dimension_cusp_forms": 8,
+      "dimension_new_cusp_forms": 8,
+      "dimension_old_cusp_forms": 0,
+      "level_ratio_N_over_M": 2208,
+      "degeneracy_multiplicity_tau_N_over_M": 24,
+      "oldspace_contribution_at_N": 192
+    }
+  ],
+  "old_levels_with_positive_new_dimension_count": 39,
+  "sturm_trace_scale": {
+    "sturm_bound_weight2": 84480,
+    "good_primes_up_to_sturm": 8231,
+    "first_good_primes": [
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      29,
+      31,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      61,
+      67,
+      71,
+      73,
+      79,
+      83
+    ],
+    "last_good_prime_to_sturm": 84467,
+    "hasse_abs_trace_difference_lt_q_for_p_less_than": 932673.0625,
+    "sturm_bound_below_hasse_unique_limit": true,
+    "meaning": "For p below (q/4)^2, congruence of two rational elliptic trace sequences mod q forces integer equality at that p by Hasse bounds. This does not identify non-rational higher-dimensional factors."
+  },
+  "timed_modular_symbols_smoke_tests": [
+    {
+      "status": "skipped",
+      "reason": "The first version of this script timed out under an outer 240s timeout before producing JSON; direct ModularSymbols construction is deferred."
+    }
+  ],
+  "interpretation": {
+    "direct_full_projector_risk": "A direct mod-q Hecke projector at N=240672 must work in a space of the size reported by dimension_cusp_forms/genus and across thousands of Sturm primes.",
+    "next_viable_paths": [
+      "Use a dedicated modular-symbol/Hecke decomposition with persistence and timeouts.",
+      "Target possible old levels one by one instead of materializing the full level.",
+      "Formulate an abstract M* envelope absorbing global congruence primes such as 3863."
+    ]
+  }
+}

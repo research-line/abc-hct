@@ -1,0 +1,33 @@
+{
+  "_status": "TEMPLATE — Idealrichtung konsistent deklariert (Fitt0 superset Produkt => obere Schranke), aber alle Definitionen false und Q_E_is_quotient_ring false. Pruefen mit _scripts/h3_typecheck_verifier.py. Erwartung: definitions_ready=false, h3_type_checked=false.",
+  "_schema": "_scripts/h3_typecheck_schema.json",
+  "meta": {
+    "case": "60168/raw",
+    "created": "2026-06-01",
+    "campaign": "H3 Type-Check Contract (_proof-notes/h3_typecheck_contract_2026-06-01.md)"
+  },
+  "fitting_package": {
+    "A_E_defined": false,
+    "M_E_defined": false,
+    "lambda_E_defined": false,
+    "rho_E_defined": false,
+    "Q_E_defined": false
+  },
+  "category": {
+    "name": "IKM higher-codim congruence / Khan-Maithani determinantal ring — Sprache passt, Spezialisierung offen",
+    "Q_E_is_quotient_ring": false
+  },
+  "direction": {
+    "inclusion": "Fitt0_contains_product",
+    "length_inequality": "ell(Q_E) <= nu(eta_ext(E)) + nu(D_H3(E))"
+  },
+  "labels": {
+    "definitions_ready": false,
+    "h3_type_checked": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "typecheck_holds_if": "alle fuenf Definitionen UND Q_E_is_quotient_ring UND direction==Fitt0_contains_product",
+    "but_not": ["behauptet KEIN H3", "kein canonical_level", "PCAT/FAQS", "abc"]
+  }
+}

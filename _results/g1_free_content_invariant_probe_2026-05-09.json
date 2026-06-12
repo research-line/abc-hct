@@ -1,0 +1,233 @@
+{
+  "status": "ok",
+  "purpose": "GL_2(Z)-invariant content diagnostic on the free rank-2 part of the integral G1 quotient.",
+  "source": "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\g1_integral_lattice_quotient_probe_2026-05-09.json",
+  "results": [
+    {
+      "label": "5+27=32",
+      "ell": 3,
+      "N_cond": 30,
+      "frey_row_free_tail": [
+        0,
+        1
+      ],
+      "frey_column_free_tail": [
+        0,
+        -2
+      ],
+      "frey_row_content": 1,
+      "frey_column_content": 2,
+      "controls_tested": 15,
+      "control_row_content_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 2.3333333333333335,
+        "count_ge_frey": 15,
+        "count_le_frey": 5,
+        "count_eq_frey": 5,
+        "distribution": {
+          "1": 5,
+          "3": 10
+        }
+      },
+      "control_column_content_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 1.2666666666666666,
+        "count_ge_frey": 3,
+        "count_le_frey": 14,
+        "count_eq_frey": 2,
+        "distribution": {
+          "1": 12,
+          "2": 2,
+          "3": 1
+        }
+      }
+    },
+    {
+      "label": "1+8=9",
+      "ell": 5,
+      "N_cond": 48,
+      "frey_row_free_tail": [
+        1,
+        -2
+      ],
+      "frey_column_free_tail": [
+        2,
+        -1
+      ],
+      "frey_row_content": 1,
+      "frey_column_content": 1,
+      "controls_tested": 5,
+      "control_row_content_stats": {
+        "min": 1,
+        "max": 1,
+        "mean": 1.0,
+        "count_ge_frey": 5,
+        "count_le_frey": 5,
+        "count_eq_frey": 5,
+        "distribution": {
+          "1": 5
+        }
+      },
+      "control_column_content_stats": {
+        "min": 1,
+        "max": 6,
+        "mean": 2.6,
+        "count_ge_frey": 5,
+        "count_le_frey": 2,
+        "count_eq_frey": 2,
+        "distribution": {
+          "1": 2,
+          "2": 1,
+          "3": 1,
+          "6": 1
+        }
+      }
+    },
+    {
+      "label": "13+243=256",
+      "ell": 5,
+      "N_cond": 78,
+      "frey_row_free_tail": [
+        -1,
+        4
+      ],
+      "frey_column_free_tail": [
+        17,
+        1
+      ],
+      "frey_row_content": 1,
+      "frey_column_content": 1,
+      "controls_tested": 48,
+      "control_row_content_stats": {
+        "min": 1,
+        "max": 13,
+        "mean": 3.75,
+        "count_ge_frey": 48,
+        "count_le_frey": 18,
+        "count_eq_frey": 18,
+        "distribution": {
+          "1": 18,
+          "3": 9,
+          "5": 14,
+          "7": 3,
+          "9": 2,
+          "13": 2
+        }
+      },
+      "control_column_content_stats": {
+        "min": 1,
+        "max": 10,
+        "mean": 1.9375,
+        "count_ge_frey": 48,
+        "count_le_frey": 29,
+        "count_eq_frey": 29,
+        "distribution": {
+          "1": 29,
+          "2": 9,
+          "3": 4,
+          "4": 4,
+          "8": 1,
+          "10": 1
+        }
+      }
+    },
+    {
+      "label": "1+80=81",
+      "ell": 3,
+      "N_cond": 240,
+      "frey_row_free_tail": [
+        -2,
+        0
+      ],
+      "frey_column_free_tail": [
+        -2,
+        0
+      ],
+      "frey_row_content": 2,
+      "frey_column_content": 2,
+      "controls_tested": 48,
+      "control_row_content_stats": {
+        "min": 0,
+        "max": 6,
+        "mean": 1.5625,
+        "count_ge_frey": 17,
+        "count_le_frey": 44,
+        "count_eq_frey": 13,
+        "distribution": {
+          "0": 2,
+          "1": 29,
+          "2": 13,
+          "4": 2,
+          "6": 2
+        }
+      },
+      "control_column_content_stats": {
+        "min": 1,
+        "max": 37,
+        "mean": 2.5833333333333335,
+        "count_ge_frey": 14,
+        "count_le_frey": 39,
+        "count_eq_frey": 5,
+        "distribution": {
+          "1": 34,
+          "2": 5,
+          "3": 3,
+          "4": 1,
+          "5": 3,
+          "15": 1,
+          "37": 1
+        }
+      }
+    },
+    {
+      "label": "3+125=128",
+      "ell": 3,
+      "N_cond": 240,
+      "frey_row_free_tail": [
+        2,
+        3
+      ],
+      "frey_column_free_tail": [
+        -48,
+        -3
+      ],
+      "frey_row_content": 1,
+      "frey_column_content": 3,
+      "controls_tested": 48,
+      "control_row_content_stats": {
+        "min": 1,
+        "max": 3,
+        "mean": 1.6041666666666667,
+        "count_ge_frey": 48,
+        "count_le_frey": 26,
+        "count_eq_frey": 26,
+        "distribution": {
+          "1": 26,
+          "2": 15,
+          "3": 7
+        }
+      },
+      "control_column_content_stats": {
+        "min": 1,
+        "max": 31,
+        "mean": 3.0416666666666665,
+        "count_ge_frey": 15,
+        "count_le_frey": 36,
+        "count_eq_frey": 3,
+        "distribution": {
+          "1": 31,
+          "2": 2,
+          "3": 3,
+          "4": 5,
+          "5": 3,
+          "6": 1,
+          "8": 1,
+          "22": 1,
+          "31": 1
+        }
+      }
+    }
+  ]
+}

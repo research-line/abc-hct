@@ -1,0 +1,45 @@
+{
+  "_status": "PARTIAL CLAIM — Rowhash + Sparse-Zeile + a_5=2 REAL an Superset-Witness gebunden (2026-05-14), aber Formal-Origin-Transcript fehlt und vier Konventionen + binding offen. trace_row_ready=false bewusst. Pruefen mit _scripts/trace_row_embedding_verifier.py.",
+  "_schema": "_scripts/trace_row_embedding_schema.json",
+  "_evidence_source": "_results/s5_mixed_superset_witness_60168_raw_2026-05-14/N60168_raw_source_plus_p2repair_sign1/mixed_rows.jsonl",
+  "meta": {
+    "case": "60168/raw",
+    "ell": 5,
+    "created": "2026-06-01",
+    "campaign": "T5-2 Trace-Embedding Evidence (_proof-notes/t5_minus_2_trace_embedding_evidence_2026-06-01.md)"
+  },
+  "trace_row": {
+    "stage_id": "T_5_minus_2_batch_11/575",
+    "rowhash": "2578c0ce429aef9be25542091120652f1809745705c80d5053aea547c898e3f5",
+    "a_ell_E": 2,
+    "claimed_class": "T_5 - a_5(E) = T_5 - 2  (a_5(E)=2)"
+  },
+  "_evidence": {
+    "witness_file": "_results/s5_mixed_superset_witness_60168_raw_2026-05-14/N60168_raw_source_plus_p2repair_sign1/mixed_rows.jsonl",
+    "pairing_witness": "_results/mstar_s2_source_cokernel_pairing_60168_raw_q2_2026-05-15.json",
+    "N": 60168, "mode": "raw", "sign": 1, "q": 3863,
+    "superset_index": 31680, "origin": "repair_only",
+    "exported_sparse_row": [[7037, 3862], [7038, 1], [7039, 3862], [7040, 3862], [7041, 3862], [10015, 2], [22583, 3862]],
+    "symmetric_lift": "3862 = -1 mod 3863 (gleicher balancierter Lift wie T7)",
+    "pairing_facts": {"source_defect_dim": 2, "right_kernel_dim": 2, "pairing_rank": 2, "superset_rank": 31680, "saturates": true, "pairing_matrix": [[1, 1], [1, 0]]},
+    "MISSING_for_T5_unlike_T7": ["source_manin_symbol", "formal_hecke_row", "quotient_compression_mapping (kein mstar_s5_t5_row_origin)"]
+  },
+  "conventions": {
+    "hecke_convention_verified": false,
+    "compression_convention_verified": false,
+    "sign_convention_verified": false,
+    "integer_lift_convention_verified": false
+  },
+  "canonical_trace_module_binding": {
+    "module_id": "<<FILL: kanonisches HCT-Trace-Relationenmodul M_E von 60168/raw (CQ-3 offen)>>",
+    "bound": false
+  },
+  "labels": {
+    "trace_row_embedding": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "embedding_holds_if": "rowhash UND a_ell_E gesetzt (beide ja) UND Formal-Origin gezogen UND vier Konventionen gegen kanonisches Q_E verifiziert (offen) UND binding.bound (offen)",
+    "but_not": ["Rowhash+Sparse-Zeile allein reichen NICHT (Formal-Origin fehlt)", "canonical_level (nur CQ-4)", "PCAT/FAQS", "abc"]
+  }
+}

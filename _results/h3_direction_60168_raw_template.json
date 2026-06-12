@@ -1,0 +1,35 @@
+{
+  "_status": "TEMPLATE — H3-Richtung konsistent DEKLARIERT, aber H3 NICHT bewiesen (ikm_type_check offen, Q_E noch nicht als kanonisch nachgewiesen). Pruefen mit _scripts/h3_direction_verifier.py. Erwartung: bounded_quantity=hct_fitting_length, canonical_ready=false, ikm_type_checked=false.",
+  "_schema": "_scripts/h3_direction_schema.json",
+  "meta": {
+    "case": "60168/raw",
+    "created": "2026-06-01",
+    "campaign": "Canonical HCT Trace Quotient (_proof-notes/canonical_hct_trace_quotient_blueprint_2026-06-01.md)"
+  },
+  "fitting_object": {
+    "name": "Q_E = coker(rho_E)  [Kanonizitaet = CQ-3, noch offen]",
+    "is_canonical_Q_E": false
+  },
+  "inclusion": {
+    "direction": "Fitt0_contains_product",
+    "statement": "Fitt_0(Q_E) superset eta_ext(E) * D_H3(E)"
+  },
+  "valuations": {
+    "nu_eta_ext": "<<FILL: ganzzahlig >=0>>",
+    "nu_D_H3": "<<FILL: ganzzahlig >=0>>",
+    "ell_Q_E_claimed": "<<FILL: ganzzahlig >=0>>"
+  },
+  "ikm_type_check": {
+    "checked": false,
+    "category": "determinantal ring of maximal minors (Khan-Maithani) / IKM higher-codim congruence ideal — Sprache passt, Spezialisierung offen",
+    "note": "Q_E=coker(rho_E) ist NICHT automatisch Quotientenring in der IKM-Kategorie; H1-H4 (Paper B) offen."
+  },
+  "labels": {
+    "canonical_ready": false,
+    "canonical_level": false
+  },
+  "no_overclaim": {
+    "direction_meaning": "Fitt0_contains_product <=> ell(Q_E) <= nu(eta_ext)+nu(D_H3) (OBERE Laengenschranke). Die Gegenrichtung waere eine untere Schranke und nutzlos.",
+    "but_not": ["beweist NICHT H3", "beweist NICHT Kanonizitaet von Q_E (CQ-3)", "kein PCAT/FAQS/abc"]
+  }
+}

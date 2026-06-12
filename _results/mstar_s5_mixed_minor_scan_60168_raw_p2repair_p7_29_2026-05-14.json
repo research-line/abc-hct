@@ -1,0 +1,111 @@
+{
+  "tool": "mstar_s5_modular_exception_scan",
+  "description": "modular rank scan for S5 exception-prime recursion",
+  "primes": [
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29
+  ],
+  "pivot_strategy": "max",
+  "rank_engine": "sage-matrix",
+  "results": [
+    {
+      "case": "N60168_raw_p2_sign1",
+      "path": "_results/s5_repair_witness_60168_raw_p2_2026-05-13/N60168_raw_p2_sign1",
+      "q": 3863,
+      "ncols": 31680,
+      "source_rows": 31680,
+      "square": true,
+      "status": "ok",
+      "pivot_strategy": "max",
+      "rank_engine": "sage-matrix",
+      "prime_results": [
+        {
+          "prime": 7,
+          "rank": 31679,
+          "ncols": 31680,
+          "full_rank": false,
+          "rows_seen": 31680,
+          "seconds": 188.262389836,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 11,
+          "rank": 31679,
+          "ncols": 31680,
+          "full_rank": false,
+          "rows_seen": 31680,
+          "seconds": 172.68627510700003,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 13,
+          "rank": 31680,
+          "ncols": 31680,
+          "full_rank": true,
+          "rows_seen": 31680,
+          "seconds": 165.69618157799994,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 17,
+          "rank": 31679,
+          "ncols": 31680,
+          "full_rank": false,
+          "rows_seen": 31680,
+          "seconds": 187.34916502800002,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 19,
+          "rank": 31680,
+          "ncols": 31680,
+          "full_rank": true,
+          "rows_seen": 31680,
+          "seconds": 160.61605101100008,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 23,
+          "rank": 31680,
+          "ncols": 31680,
+          "full_rank": true,
+          "rows_seen": 31680,
+          "seconds": 163.76695573100005,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        },
+        {
+          "prime": 29,
+          "rank": 31680,
+          "ncols": 31680,
+          "full_rank": true,
+          "rows_seen": 31680,
+          "seconds": 147.43936848199996,
+          "rank_engine": "sage-matrix",
+          "max_basis_row_len": null
+        }
+      ],
+      "full_rank_primes": [
+        13,
+        19,
+        23,
+        29
+      ],
+      "exception_candidate_primes": [
+        7,
+        11,
+        17
+      ]
+    }
+  ]
+}

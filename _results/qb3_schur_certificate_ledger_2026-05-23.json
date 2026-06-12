@@ -1,0 +1,83 @@
+{
+  "tool": "qb3_schur_certificate_ledger",
+  "date": "2026-05-23",
+  "project": "HCT/abc",
+  "q": 3863,
+  "formula": {
+    "block_matrix": "G = [[A,b],[b^T,c]] = C B_AL C^T",
+    "schur_scalar": "s = c - b^T A^-1 b",
+    "inverse_entry": "(G^-1)_{rr} = s^-1",
+    "q_b": "Q_B(phi) = beta^2 * s^-1",
+    "nonvanishing_criterion": "beta != 0 and s != 0"
+  },
+  "cases": [
+    {
+      "case": "109/raw",
+      "source": "_results\\mstar_h3a_pi_to_sage_basis_n109_2026-05-16.json",
+      "q": 3863,
+      "beta_signed": 705,
+      "q_b_signed": 722,
+      "det_b_al_signed": 26,
+      "inverse_repair_diagonal_mod_q": 848,
+      "inverse_repair_diagonal_signed": 848,
+      "schur_scalar_mod_q": 41,
+      "schur_scalar_signed": 41,
+      "criterion_status": "passed",
+      "reading": "With beta != 0, Q_B = beta^2 * (G^-1)_{rr}.  In the block form G=[[A,b],[b^T,c]], the repair Schur scalar is s=c-b^T A^-1 b and (G^-1)_{rr}=s^-1.  The smoke gives s=41 mod 3863."
+    },
+    {
+      "case": "80224/raw",
+      "source": "_results\\mstar_h3a_restline_kernel_quotient_80224_raw_2026-05-17.json",
+      "q": 3863,
+      "quotient_kernel_dim": 1,
+      "source_annihilated": true,
+      "beta_mod_q": 3862,
+      "beta_signed": -1,
+      "repair_pairing_nonzero": true,
+      "ready_for_al_scalar": true,
+      "criterion_status": "blocked_missing_al_pairing",
+      "needed_certificate": {
+        "source_block_A_rank": "full",
+        "schur_scalar": "nonzero in GF(q)",
+        "equivalent_rank_jump": "rank(G) = rank(A) + 1",
+        "q_b_formula": "Q_B = beta^2 / schur_scalar"
+      },
+      "heuristic_prediction": {
+        "source": "_proof-notes/MG_pari_intersection_pairing_alternative_2026-05-18.md",
+        "predicted_q_b_signed": -239,
+        "predicted_schur_scalar_mod_q": 3071,
+        "predicted_schur_scalar_signed": -792,
+        "use": "falsification heuristic only, not a proof input"
+      }
+    },
+    {
+      "case": "80224/anc",
+      "source": "_results\\mstar_h3a_restline_kernel_quotient_80224_anc_2026-05-17.json",
+      "q": 3863,
+      "quotient_kernel_dim": 1,
+      "source_annihilated": true,
+      "beta_mod_q": 3862,
+      "beta_signed": -1,
+      "repair_pairing_nonzero": true,
+      "ready_for_al_scalar": true,
+      "criterion_status": "blocked_missing_al_pairing",
+      "needed_certificate": {
+        "source_block_A_rank": "full",
+        "schur_scalar": "nonzero in GF(q)",
+        "equivalent_rank_jump": "rank(G) = rank(A) + 1",
+        "q_b_formula": "Q_B = beta^2 / schur_scalar"
+      },
+      "heuristic_prediction": null
+    },
+    {
+      "case": "120336/raw",
+      "criterion_status": "blocked_missing_restline_kernel_json",
+      "note": "RC3c/order data exist, but the restline_kernel_quotient JSON with beta/source-annihilation fields is not present locally."
+    },
+    {
+      "case": "240672/raw",
+      "criterion_status": "blocked_missing_restline_kernel_json",
+      "note": "RC3c/order data exist and the minikill status file is present, but the restline_kernel_quotient JSON is not present locally."
+    }
+  ]
+}

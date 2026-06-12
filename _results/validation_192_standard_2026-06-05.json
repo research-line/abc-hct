@@ -1,0 +1,70 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "sage",
+  "backend_used": "sage",
+  "q": 3863,
+  "raw_a": 2,
+  "raw_b": 6,
+  "sign": 1,
+  "primes": [
+    5,
+    7,
+    11,
+    13
+  ],
+  "stop_on_zero": true,
+  "hecke_family": "standard",
+  "rank_engine": "quotient-numpy-dense",
+  "rank_algorithm": null,
+  "hecke_batch_size": 0,
+  "max_hecke_batches_per_prime": 0,
+  "pivot_strategy": "max",
+  "hecke_row_order": "natural",
+  "hecke_row_seed": 151,
+  "skip_existing_pivot": false,
+  "runs": [
+    {
+      "backend": "sage",
+      "level": 192,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2,
+        "7": 0,
+        "11": -4,
+        "13": 2
+      },
+      "manin_symbols": 384,
+      "columns_after_2term": 96,
+      "gamma0_index": 384,
+      "status": "killed",
+      "error": null,
+      "seconds_total": 0.15274977684020996,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 360,
+          "nnz_added": 1044,
+          "total_rows": 360,
+          "total_nnz": 1044,
+          "rank": 60,
+          "quotient_dim": 36,
+          "seconds_rank": 0.0032339096069335938,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2",
+          "rows_added": 384,
+          "nnz_added": 2270,
+          "total_rows": 744,
+          "total_nnz": 3314,
+          "rank": 96,
+          "quotient_dim": 0,
+          "seconds_rank": 0.03699803352355957,
+          "killed": true
+        }
+      ]
+    }
+  ]
+}

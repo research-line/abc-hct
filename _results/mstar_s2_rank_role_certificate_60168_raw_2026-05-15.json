@@ -1,0 +1,57 @@
+{
+  "tool": "manual_s2_rank_role_certificate",
+  "date": "2026-05-15",
+  "case": "60168/raw",
+  "source_witness": "_results/rc3d_rowhash_source_witness_60168_raw_2026-05-12/N60168_raw_sign1",
+  "mixed_witness": "_results/s5_mixed_superset_witness_60168_raw_2026-05-14/N60168_raw_source_plus_p2repair_sign1",
+  "single_row_role_source": "_results/mstar_s5_mixed_single_row_roles_2026-05-14.json",
+  "q2_pairing_source": "_results/mstar_s2_source_cokernel_pairing_60168_raw_q2_2026-05-15.json",
+  "rows": {
+    "t5": "T_5_minus_2_batch_11/575",
+    "t7": "T_7_minus_0_batch_1/1"
+  },
+  "ncols": 31680,
+  "certificates": [
+    {
+      "prime": 2,
+      "source_rank": 31678,
+      "defect_dim": 2,
+      "rank_source_plus_t5": 31679,
+      "rank_source_plus_t7": 31679,
+      "rank_source_plus_t5_t7": 31680,
+      "certificate": "explicit_right_kernel_pairing",
+      "pairing_matrix_columns_t5_t7": [[1, 1], [1, 0]]
+    },
+    {
+      "prime": 3,
+      "source_rank": 31679,
+      "defect_dim": 1,
+      "rank_source_plus_t5": 31680,
+      "rank_source_plus_t7": 31679,
+      "rank_source_plus_t5_t7": 31680,
+      "certificate": "rank_role_quotient_generator",
+      "basis_free_conclusion": "t5 has nonzero image in the one-dimensional source cokernel"
+    },
+    {
+      "prime": 5,
+      "source_rank": 31679,
+      "defect_dim": 1,
+      "rank_source_plus_t5": 31680,
+      "rank_source_plus_t7": 31680,
+      "rank_source_plus_t5_t7": 31680,
+      "certificate": "rank_role_quotient_generator",
+      "basis_free_conclusion": "t5 and t7 each have nonzero image in the one-dimensional source cokernel"
+    },
+    {
+      "prime": 31,
+      "source_rank": 31679,
+      "defect_dim": 1,
+      "rank_source_plus_t5": 31680,
+      "rank_source_plus_t7": 31680,
+      "rank_source_plus_t5_t7": 31680,
+      "certificate": "rank_role_quotient_generator",
+      "basis_free_conclusion": "t5 and t7 each have nonzero image in the one-dimensional source cokernel"
+    }
+  ],
+  "conclusion": "All source exceptions q<=100 are saturated by the canonical repair set {t5,t7}; for q=3,5,31 the rank-role data is already the invariant quotient-generator certificate."
+}

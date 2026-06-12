@@ -1,0 +1,19 @@
+{
+  "tool": "mstar_h3a_restline_kernel_quotient",
+  "phase": "done",
+  "case_dir": "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\remod_q5077_smoke_n109_2026-05-23\\N109_raw_sign1_splitlast",
+  "q": 5077,
+  "ncols_v_si": 27,
+  "kernel_engine": "sparse-python",
+  "started_unix": 1779564243.7204525,
+  "rows_seen": 27,
+  "manin_t_rank": 18,
+  "hecke_rows": 8,
+  "quotient_ncols": 9,
+  "quotient_basis_rank": 8,
+  "matrix_entries": null,
+  "seconds": 0.039,
+  "quotient_kernel_dim": 1,
+  "repair_pairing_signed": -1382,
+  "ready_for_al_scalar": true
+}

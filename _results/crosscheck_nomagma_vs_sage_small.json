@@ -1,0 +1,62 @@
+[
+  {
+    "label": "11a1",
+    "N": 11,
+    "q": 3863,
+    "nomagma_qdim": 1,
+    "sage_engine_qdim": 1,
+    "sage_qdim": 1,
+    "match_quotient_proj": true,
+    "match_sage_engine": true,
+    "ncols": 3,
+    "manin_rank": 1
+  },
+  {
+    "label": "37a1",
+    "N": 37,
+    "q": 3863,
+    "nomagma_qdim": 1,
+    "sage_engine_qdim": 1,
+    "sage_qdim": 1,
+    "match_quotient_proj": true,
+    "match_sage_engine": true,
+    "ncols": 9,
+    "manin_rank": 6
+  },
+  {
+    "label": "43a1",
+    "N": 43,
+    "q": 3863,
+    "nomagma_qdim": 1,
+    "sage_engine_qdim": 1,
+    "sage_qdim": 1,
+    "match_quotient_proj": true,
+    "match_sage_engine": true,
+    "ncols": 11,
+    "manin_rank": 7
+  },
+  {
+    "label": "14a1",
+    "N": 14,
+    "q": 3863,
+    "nomagma_qdim": 1,
+    "sage_engine_qdim": 1,
+    "sage_qdim": 1,
+    "match_quotient_proj": true,
+    "match_sage_engine": true,
+    "ncols": 7,
+    "manin_rank": 3
+  },
+  {
+    "label": "389a1",
+    "N": 389,
+    "q": 3863,
+    "nomagma_qdim": 1,
+    "sage_engine_qdim": 1,
+    "sage_qdim": 1,
+    "match_quotient_proj": true,
+    "match_sage_engine": true,
+    "ncols": 97,
+    "manin_rank": 64
+  }
+]

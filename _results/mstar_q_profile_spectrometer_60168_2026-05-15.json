@@ -1,0 +1,87 @@
+{
+  "date": "2026-05-15",
+  "kind": "q_profile_spectrometer",
+  "rows": [
+    {
+      "source_file": "mstar_nomagma_sparse_hecke_quotient_60168_raw_T5_quotient_numpy_mac_2026-05-10.json",
+      "level": 60168,
+      "mode": "raw",
+      "q": 3863,
+      "status": "killed",
+      "operators": [
+        "T_5-2"
+      ],
+      "operator_counts": {
+        "T_5-2": 13
+      },
+      "operator_reductions": {
+        "T_5-2": 10576
+      },
+      "manin_qdim": 10576,
+      "final_qdim": 0,
+      "trace_codim_S": 10576,
+      "residual_fraction": 0.0,
+      "hecke_stages": 13,
+      "stages_per_log_level": 1.1812924069845856,
+      "avg_tail_reduction": 288.0,
+      "estimated_extra_batches_if_tail_persists": 0
+    },
+    {
+      "source_file": "mstar_nomagma_qdep_60168_raw_q997_T5cap14_2026-05-15.json",
+      "level": 60168,
+      "mode": "raw",
+      "q": 997,
+      "status": "survivor_candidate",
+      "operators": [
+        "T_5-2"
+      ],
+      "operator_counts": {
+        "T_5-2": 14
+      },
+      "operator_reductions": {
+        "T_5-2": 9240
+      },
+      "manin_qdim": 10576,
+      "final_qdim": 1336,
+      "trace_codim_S": 9240,
+      "residual_fraction": 0.12632375189107414,
+      "hecke_stages": 14,
+      "stages_per_log_level": 1.2721610536757075,
+      "avg_tail_reduction": 385.6666666666667,
+      "estimated_extra_batches_if_tail_persists": 4
+    },
+    {
+      "source_file": "mstar_nomagma_qdep_60168_raw_q997_T5cap3_T7T11T13_2026-05-15.json",
+      "level": 60168,
+      "mode": "raw",
+      "q": 997,
+      "status": "survivor_candidate",
+      "operators": [
+        "T_11-0",
+        "T_13--6",
+        "T_5-2",
+        "T_7-0"
+      ],
+      "operator_counts": {
+        "T_5-2": 3,
+        "T_7-0": 3,
+        "T_11-0": 3,
+        "T_13--6": 3
+      },
+      "operator_reductions": {
+        "T_5-2": 2789,
+        "T_7-0": 2789,
+        "T_11-0": 2789,
+        "T_13--6": 2203
+      },
+      "manin_qdim": 10576,
+      "final_qdim": 6,
+      "trace_codim_S": 10570,
+      "residual_fraction": 0.0005673222390317701,
+      "hecke_stages": 12,
+      "stages_per_log_level": 1.0904237602934637,
+      "avg_tail_reduction": 734.3333333333334,
+      "estimated_extra_batches_if_tail_persists": 1
+    }
+  ]
+}

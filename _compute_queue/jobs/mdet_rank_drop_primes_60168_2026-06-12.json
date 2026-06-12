@@ -1,0 +1,25 @@
+{
+  "id": "mdet_rank_drop_primes_60168_2026-06-12",
+  "title": "M-DET 1a: Rangabfall-Primes 60168-Witness (Satz-A-Entscheidungstest)",
+  "status": "queued",
+  "priority": 10,
+  "allowed_hosts": [
+    "mac-studio"
+  ],
+  "disallowed_hosts": [
+    "ASUS-GEI"
+  ],
+  "depends_on_success": [],
+  "defer_while_process_regex": [],
+  "resource_policy": {
+    "min_free_mem_gb": 8.0,
+    "max_load_1min": 6.0
+  },
+  "backend": {
+    "type": "sage",
+    "allow_docker": false
+  },
+  "command": "{sage} _scripts/mdet_rank_drop_primes_60168.py",
+  "expected_runtime_hours": "0.5-2 (17 sparse GF(p)-Raenge, 31680^2, nnz 137k)",
+  "notes": "Entscheidungstest fuer Satz A (MG_conditional_single_curve_theorem_2026-06-12.md): rank_p ueber 17 Primes; Modalwert = rank_Q; Drop-Primes = Teiler von D(W). Vorhersage aus Block-det-Inventar: nur {2,3,19}(+bad 23/109). Kann parallel zu p2_dimer laufen (beide moderat); Runner startet eh sequentiell."
+}

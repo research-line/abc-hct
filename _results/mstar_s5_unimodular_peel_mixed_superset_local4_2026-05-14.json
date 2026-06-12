@@ -1,0 +1,61 @@
+{
+  "tool": "mstar_s5_unimodular_peel_probe",
+  "description": "determinant-safe unit leaf peel for S5 near-unimodular route",
+  "max_core_det": 160,
+  "pivot_abs_limit": 4,
+  "results": [
+    {
+      "case": "N60168_raw_source_plus_p2repair_sign1",
+      "path": "_results\\s5_mixed_superset_witness_60168_raw_2026-05-14\\N60168_raw_source_plus_p2repair_sign1",
+      "q": 3863,
+      "nrows": 31682,
+      "ncols": 31680,
+      "square": false,
+      "total_nnz": 137286,
+      "unit_edge_fraction": 0.9229855921215565,
+      "coefficient_counts": {
+        "-4": 1,
+        "-2": 1651,
+        "-1": 85056,
+        "1": 41657,
+        "2": 8919,
+        "3": 2
+      },
+      "pivot_abs_limit": 4,
+      "pivot_abs_counts": {
+        "1": 16,
+        "4": 1
+      },
+      "peeled_unit_pivots": 17,
+      "peeled_by_row": 1,
+      "peeled_by_col": 16,
+      "core_rows": 31665,
+      "core_cols": 31663,
+      "core_nnz": 137229,
+      "core_avg_row_degree": 4.333775461866414,
+      "core_avg_col_degree": 4.334049205697502,
+      "core_l1": 147800,
+      "core_max_abs_entry": 3,
+      "core_row_degree_histogram": {
+        "3": 21092,
+        "4": 7,
+        "5": 4,
+        "6": 29,
+        "7": 10533
+      },
+      "core_col_degree_histogram": {
+        "2": 6344,
+        "3": 33,
+        "4": 11535,
+        "5": 8561,
+        "6": 1942,
+        "7": 2222,
+        "8": 945,
+        "9": 79,
+        "10": 2
+      },
+      "core_det_if_small": null,
+      "interpretation": "large_core"
+    }
+  ]
+}

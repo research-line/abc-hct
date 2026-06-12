@@ -1,0 +1,28 @@
+{
+  "tool": "mstar_s5_sparse_basis_deletion_pairs",
+  "case": "N60168_raw_source_plus_p2repair_sign1",
+  "path": "_results\\s5_mixed_superset_witness_60168_raw_2026-05-14\\N60168_raw_source_plus_p2repair_sign1",
+  "ncols": 31680,
+  "row_count": 31682,
+  "results": [
+    {
+      "prime": 2,
+      "pivot_strategy": "max",
+      "row_order": "original",
+      "rank": 31680,
+      "ncols": 31680,
+      "full_rank": true,
+      "rows_seen_until_full": 31682,
+      "deleted_indices": [
+        21104,
+        31678
+      ],
+      "deleted_row_ids": [
+        "T_5_minus_2_batch_1/0",
+        "T_5_minus_2_batch_11/574"
+      ],
+      "deleted_count": 2,
+      "seconds": 4497.344890999957
+    }
+  ]
+}

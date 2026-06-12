@@ -1,0 +1,103 @@
+{
+  "date": "2026-05-10",
+  "backend_requested": "auto",
+  "backend_used": "sage",
+  "q": 3863,
+  "raw_a": 2,
+  "raw_b": 6,
+  "sign": 1,
+  "primes": [
+    5,
+    7,
+    11,
+    13
+  ],
+  "stop_on_zero": false,
+  "hecke_family": "cremona",
+  "rank_engine": "quotient-numpy-dense",
+  "rank_algorithm": null,
+  "hecke_batch_size": 1000,
+  "max_hecke_batches_per_prime": 48,
+  "pivot_strategy": "max",
+  "hecke_row_order": "natural",
+  "hecke_row_seed": 151,
+  "skip_existing_pivot": false,
+  "runs": [
+    {
+      "backend": "sage",
+      "level": 192,
+      "q": 3863,
+      "sign": 1,
+      "mode": "raw",
+      "traces": {
+        "5": 2,
+        "7": 0,
+        "11": -4,
+        "13": 2
+      },
+      "manin_symbols": 384,
+      "columns_after_2term": 96,
+      "gamma0_index": 384,
+      "status": "survivor_candidate",
+      "error": null,
+      "seconds_total": 0.3457028865814209,
+      "stages": [
+        {
+          "stage": "manin_T_relations_after_SI",
+          "rows_added": 360,
+          "nnz_added": 1044,
+          "total_rows": 360,
+          "total_nnz": 1044,
+          "rank": 60,
+          "quotient_dim": 36,
+          "seconds_rank": 0.0030629634857177734,
+          "killed": false
+        },
+        {
+          "stage": "T_5_minus_2_batch_1",
+          "rows_added": 384,
+          "nnz_added": 4052,
+          "total_rows": 744,
+          "total_nnz": 5096,
+          "rank": 88,
+          "quotient_dim": 8,
+          "seconds_rank": 0.018662214279174805,
+          "killed": false
+        },
+        {
+          "stage": "T_7_minus_0_batch_1",
+          "rows_added": 384,
+          "nnz_added": 5292,
+          "total_rows": 1128,
+          "total_nnz": 10388,
+          "rank": 92,
+          "quotient_dim": 4,
+          "seconds_rank": 0.030333995819091797,
+          "killed": false
+        },
+        {
+          "stage": "T_11_minus_-4_batch_1",
+          "rows_added": 384,
+          "nnz_added": 8696,
+          "total_rows": 1512,
+          "total_nnz": 19084,
+          "rank": 95,
+          "quotient_dim": 1,
+          "seconds_rank": 0.04087018966674805,
+          "killed": false
+        },
+        {
+          "stage": "T_13_minus_2_batch_1",
+          "rows_added": 384,
+          "nnz_added": 10152,
+          "total_rows": 1896,
+          "total_nnz": 29236,
+          "rank": 95,
+          "quotient_dim": 1,
+          "seconds_rank": 0.04278922080993652,
+          "killed": false
+        }
+      ]
+    }
+  ]
+}

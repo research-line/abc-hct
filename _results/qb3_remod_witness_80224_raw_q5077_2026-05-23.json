@@ -1,0 +1,10 @@
+{
+  "case_dir": "_results\\h3a_residue_line_witness_80224_raw_standard_2026-05-16\\N80224_raw_sign1_splitlast",
+  "q_orig": 3863,
+  "q_prime": 5077,
+  "max_abs_original": 4,
+  "rows_written": 31680,
+  "out_dir": "_results\\h3a_residue_line_witness_80224_raw_remod_q5077_2026-05-23\\N80224_raw_sign1_splitlast",
+  "manifest_path": "_results\\h3a_residue_line_witness_80224_raw_remod_q5077_2026-05-23\\N80224_raw_sign1_splitlast\\manifest.json",
+  "rows_path": "_results\\h3a_residue_line_witness_80224_raw_remod_q5077_2026-05-23\\N80224_raw_sign1_splitlast\\mixed_rows.jsonl"
+}

@@ -1,0 +1,1853 @@
+{
+  "summary": {
+    "date": "2026-05-10",
+    "purpose": "Trace-word partition and index proxy for the Small-Index Hecke Generator route.",
+    "N": 240672,
+    "q": 3863,
+    "levels": [
+      109,
+      218,
+      327,
+      872,
+      1744,
+      2507,
+      3488,
+      15042,
+      20056,
+      40112
+    ],
+    "tested_primes": [
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      29,
+      31,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      61,
+      67,
+      71,
+      73,
+      79,
+      83,
+      89,
+      97
+    ],
+    "bad_primes_stripped_for_external_gcd": [
+      2,
+      3,
+      23,
+      109
+    ],
+    "orbit_count": 119,
+    "dimension_sum": 2604,
+    "orbit_count_by_level": {
+      "109": 3,
+      "218": 5,
+      "327": 4,
+      "872": 6,
+      "1744": 17,
+      "2507": 5,
+      "3488": 10,
+      "15042": 28,
+      "20056": 9,
+      "40112": 32
+    },
+    "loaded_dim_by_level": {
+      "109": 8,
+      "218": 10,
+      "327": 19,
+      "872": 27,
+      "1744": 54,
+      "2507": 199,
+      "3488": 108,
+      "15042": 397,
+      "20056": 594,
+      "40112": 1188
+    },
+    "first_k_trace_only_full_partition": 4,
+    "first_k_dim_plus_trace_full_partition": 4,
+    "first_k_external_frey_gcd_zero": 4,
+    "small_test_primes_4": [
+      5,
+      7,
+      11,
+      13
+    ],
+    "k4_trace_only_collision_clusters": 0,
+    "k4_dim_plus_trace_collision_clusters": 0,
+    "k4_external_nontrivial_count": 0,
+    "k4_external_sum_log_over_logN": 0.0,
+    "interpretation": "On loaded oldlevel orbit traces, small trace words rapidly separate the available orbit set and the Frey-relative external gcd mass vanishes by k=4. This supports the Small-Index Hecke Generator heuristic for loaded oldlevels but remains a trace-level proxy, not a proof for the true newlevel N=240672."
+  },
+  "partition_by_k": [
+    {
+      "k": 1,
+      "primes": [
+        5
+      ],
+      "last_prime": 5,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 29,
+        "singleton_cluster_count": 2,
+        "singleton_orbit_count": 2,
+        "singleton_dim_sum": 39,
+        "collision_cluster_count": 27,
+        "collision_orbit_count": 117,
+        "collision_dim_sum": 2565,
+        "collision_pair_count": 294,
+        "collision_dim_pair_sum": 109860,
+        "max_cluster_size": 11,
+        "max_cluster_dim_sum": 192,
+        "max_cluster_labels": [
+          "109.2.a.c",
+          "327.2.a.d",
+          "872.2.a.a",
+          "1744.2.a.c",
+          "1744.2.a.m",
+          "15042.2.a.j",
+          "15042.2.a.l",
+          "15042.2.a.x"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 69,
+        "singleton_cluster_count": 38,
+        "singleton_orbit_count": 38,
+        "singleton_dim_sum": 806,
+        "collision_cluster_count": 31,
+        "collision_orbit_count": 81,
+        "collision_dim_sum": 1798,
+        "collision_pair_count": 84,
+        "collision_dim_pair_sum": 55391,
+        "max_cluster_size": 6,
+        "max_cluster_dim_sum": 6,
+        "max_cluster_labels": [
+          "2507.2.a.a",
+          "15042.2.a.b",
+          "15042.2.a.c",
+          "20056.2.a.a",
+          "40112.2.a.a",
+          "40112.2.a.d"
+        ]
+      }
+    },
+    {
+      "k": 2,
+      "primes": [
+        5,
+        7
+      ],
+      "last_prime": 7,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 102,
+        "singleton_cluster_count": 93,
+        "singleton_orbit_count": 93,
+        "singleton_dim_sum": 2546,
+        "collision_cluster_count": 9,
+        "collision_orbit_count": 26,
+        "collision_dim_sum": 58,
+        "collision_pair_count": 27,
+        "collision_dim_pair_sum": 94,
+        "max_cluster_size": 4,
+        "max_cluster_dim_sum": 5,
+        "max_cluster_labels": [
+          "872.2.a.a",
+          "1744.2.a.c",
+          "15042.2.a.l",
+          "40112.2.a.b"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 106,
+        "singleton_cluster_count": 97,
+        "singleton_orbit_count": 97,
+        "singleton_dim_sum": 2575,
+        "collision_cluster_count": 9,
+        "collision_orbit_count": 22,
+        "collision_dim_sum": 29,
+        "collision_pair_count": 17,
+        "collision_dim_pair_sum": 32,
+        "max_cluster_size": 3,
+        "max_cluster_dim_sum": 3,
+        "max_cluster_labels": [
+          "872.2.a.a",
+          "1744.2.a.c",
+          "40112.2.a.b"
+        ]
+      }
+    },
+    {
+      "k": 3,
+      "primes": [
+        5,
+        7,
+        11
+      ],
+      "last_prime": 11,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 118,
+        "singleton_cluster_count": 117,
+        "singleton_orbit_count": 117,
+        "singleton_dim_sum": 2600,
+        "collision_cluster_count": 1,
+        "collision_orbit_count": 2,
+        "collision_dim_sum": 4,
+        "collision_pair_count": 1,
+        "collision_dim_pair_sum": 4,
+        "max_cluster_size": 2,
+        "max_cluster_dim_sum": 4,
+        "max_cluster_labels": [
+          "1744.2.a.d",
+          "1744.2.a.f"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 118,
+        "singleton_cluster_count": 117,
+        "singleton_orbit_count": 117,
+        "singleton_dim_sum": 2600,
+        "collision_cluster_count": 1,
+        "collision_orbit_count": 2,
+        "collision_dim_sum": 4,
+        "collision_pair_count": 1,
+        "collision_dim_pair_sum": 4,
+        "max_cluster_size": 2,
+        "max_cluster_dim_sum": 4,
+        "max_cluster_labels": [
+          "1744.2.a.d",
+          "1744.2.a.f"
+        ]
+      }
+    },
+    {
+      "k": 4,
+      "primes": [
+        5,
+        7,
+        11,
+        13
+      ],
+      "last_prime": 13,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 5,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "last_prime": 17,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 6,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "last_prime": 19,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 7,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29
+      ],
+      "last_prime": 29,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 8,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31
+      ],
+      "last_prime": 31,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 9,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37
+      ],
+      "last_prime": 37,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 10,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41
+      ],
+      "last_prime": 41,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 11,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43
+      ],
+      "last_prime": 43,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 12,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47
+      ],
+      "last_prime": 47,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 13,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53
+      ],
+      "last_prime": 53,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 14,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59
+      ],
+      "last_prime": 59,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 15,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61
+      ],
+      "last_prime": 61,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 16,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67
+      ],
+      "last_prime": 67,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 17,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71
+      ],
+      "last_prime": 71,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 18,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73
+      ],
+      "last_prime": 73,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 19,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79
+      ],
+      "last_prime": 79,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 20,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83
+      ],
+      "last_prime": 83,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 21,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89
+      ],
+      "last_prime": 89,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    },
+    {
+      "k": 22,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97
+      ],
+      "last_prime": 97,
+      "usable_orbit_count": 119,
+      "usable_dim_sum": 2604,
+      "total_dim_sum": 2604,
+      "trace_only": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      },
+      "dim_plus_trace": {
+        "cluster_count": 119,
+        "singleton_cluster_count": 119,
+        "singleton_orbit_count": 119,
+        "singleton_dim_sum": 2604,
+        "collision_cluster_count": 0,
+        "collision_orbit_count": 0,
+        "collision_dim_sum": 0,
+        "collision_pair_count": 0,
+        "collision_dim_pair_sum": 0,
+        "max_cluster_size": 1,
+        "max_cluster_dim_sum": 1,
+        "max_cluster_labels": [
+          "109.2.a.a"
+        ]
+      }
+    }
+  ],
+  "frey_external_gcd_by_k": [
+    {
+      "k": 1,
+      "primes": [
+        5
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 128,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 395.28489928968247,
+      "sum_log_external_gcd_over_logN": 31.900478489190334,
+      "max_external_gcd": 127,
+      "max_external_gcd_factor": "127",
+      "external_prime_support": [
+        5,
+        7,
+        11,
+        17,
+        19,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        73,
+        97,
+        103,
+        127
+      ],
+      "external_prime_support_count": 15
+    },
+    {
+      "k": 2,
+      "primes": [
+        5,
+        7
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 14,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 25.65262611056406,
+      "sum_log_external_gcd_over_logN": 2.0702309875783578,
+      "max_external_gcd": 17,
+      "max_external_gcd_factor": "17",
+      "external_prime_support": [
+        5,
+        7,
+        17
+      ],
+      "external_prime_support_count": 3
+    },
+    {
+      "k": 3,
+      "primes": [
+        5,
+        7,
+        11
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 6,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 12.77712281109126,
+      "sum_log_external_gcd_over_logN": 1.0311457182437294,
+      "max_external_gcd": 17,
+      "max_external_gcd_factor": "17",
+      "external_prime_support": [
+        5,
+        7,
+        17
+      ],
+      "external_prime_support_count": 3
+    },
+    {
+      "k": 4,
+      "primes": [
+        5,
+        7,
+        11,
+        13
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 5,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 6,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 7,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 8,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 9,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 10,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 11,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 12,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 13,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 14,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 15,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 16,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 17,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 18,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 19,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 20,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 21,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    },
+    {
+      "k": 22,
+      "primes": [
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97
+      ],
+      "orbit_mode_count": 238,
+      "external_nontrivial_count": 0,
+      "q3863_survivor_count": 0,
+      "sum_log_external_gcd": 0.0,
+      "sum_log_external_gcd_over_logN": 0.0,
+      "max_external_gcd": 1,
+      "max_external_gcd_factor": "1",
+      "external_prime_support": [],
+      "external_prime_support_count": 0
+    }
+  ]
+}

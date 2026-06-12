@@ -1,0 +1,17 @@
+{
+  "case_dir": "_results/s5_repair_witness_60168_raw_p2_2026-05-13/N60168_raw_p2_sign1",
+  "transcript_dir": "_results/s5_repair_transcript_60168_raw_T5b13_T7b1_2026-05-13/N60168_raw_sign1",
+  "level": 60168,
+  "mode": "raw",
+  "sign": 1,
+  "q": 3863,
+  "repair_prime": 2,
+  "ncols": 31680,
+  "repair_row_count": 31680,
+  "rank": 31680,
+  "full_rank": true,
+  "transcript_checked": true,
+  "rows_bound_to_transcript": 31680,
+  "checks_ok": true,
+  "problems": []
+}

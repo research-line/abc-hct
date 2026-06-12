@@ -1,0 +1,55 @@
+{
+  "tool": "mstar_s5_d_axis_boundary_pairing",
+  "level": 60168,
+  "weight": 2,
+  "sign": 1,
+  "q": 3863,
+  "p1_d_representative_count": 384,
+  "mirror_pair_count": 192,
+  "quotient_d_column_count": 192,
+  "quotient_d_u_distribution": [
+    {
+      "key": "109",
+      "count": 138
+    },
+    {
+      "key": "327",
+      "count": 46
+    },
+    {
+      "key": "2507",
+      "count": 6
+    },
+    {
+      "key": "7521",
+      "count": 2
+    }
+  ],
+  "quotient_hits_per_pair_distribution": [
+    {
+      "key": "1",
+      "count": 192
+    }
+  ],
+  "pair_u_distribution": [
+    {
+      "key": "109",
+      "count": 138
+    },
+    {
+      "key": "327",
+      "count": 46
+    },
+    {
+      "key": "2507",
+      "count": 6
+    },
+    {
+      "key": "7521",
+      "count": 2
+    }
+  ],
+  "mirror_residue_failures": 0,
+  "bad_pairs": [],
+  "seconds_total": 3.744869446000001
+}

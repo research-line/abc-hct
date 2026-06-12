@@ -1,0 +1,41 @@
+{
+  "date": "2026-06-11",
+  "rank_mod2": 31678,
+  "free_cols": [
+    0,
+    1
+  ],
+  "v_in_span_as": "k0+k1",
+  "nonv_kernel_vectors": {
+    "k0": {
+      "support_size": 15699,
+      "frac": 0.4955492424242424,
+      "manin_m_dist": {
+        "0": 5418,
+        "2": 15686
+      },
+      "complement_is_dimer": false,
+      "overlap_with_v": 10468,
+      "verified_kernel": true
+    },
+    "k1": {
+      "support_size": 15891,
+      "frac": 0.5016098484848485,
+      "manin_m_dist": {
+        "0": 5224,
+        "2": 15880
+      },
+      "complement_is_dimer": false,
+      "overlap_with_v": 10660,
+      "verified_kernel": true
+    }
+  },
+  "kasteleyn_triangle_product_dist": {
+    "-1": 10552,
+    "1": 10552
+  },
+  "kasteleyn_dimer_edge_sign_dist": {
+    "-1": 10552,
+    "1": 10552
+  }
+}

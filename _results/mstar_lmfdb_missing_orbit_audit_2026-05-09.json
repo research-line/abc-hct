@@ -1,0 +1,159 @@
+{
+  "date": "2026-05-09",
+  "source": "LMFDB public read-only PostgreSQL mirror",
+  "purpose": "Audit whether the remaining Loop 107 oldlevels have usable orbit/eigenvalue/charpoly data.",
+  "levels": [
+    60168,
+    80224,
+    120336
+  ],
+  "summary": {
+    "levels_with_newspace_rows": [
+      60168,
+      80224,
+      120336
+    ],
+    "levels_with_usable_orbit_data": [],
+    "levels_with_usable_charpoly_data": []
+  },
+  "rows": [
+    {
+      "level": 60168,
+      "level_factor": "2^3 * 3 * 23 * 109",
+      "newspaces": [
+        {
+          "label": "60168.2.a",
+          "dim": 1188,
+          "mf_new_dim": 1188,
+          "num_forms": null,
+          "hecke_orbit_dims": null,
+          "hecke_orbit_code": 33614600,
+          "trace_bound": null,
+          "trace_display": [
+            0,
+            0,
+            0,
+            8
+          ],
+          "good_prime_total_traces": {
+            "5": 0,
+            "7": 8,
+            "11": 0,
+            "13": 8,
+            "17": 16,
+            "19": 0,
+            "29": 16,
+            "31": 8
+          }
+        }
+      ],
+      "counts": {
+        "mf_newforms": 0,
+        "mf_newforms_trivial": 0,
+        "mf_hecke_nf": 0,
+        "mf_hecke_cc": 0
+      },
+      "charpoly_counts": [
+        {
+          "label": "60168.2.a",
+          "hecke_orbit_code": 33614600,
+          "rows_by_p": []
+        }
+      ],
+      "usable_orbit_data": false,
+      "usable_charpoly_data": false
+    },
+    {
+      "level": 80224,
+      "level_factor": "2^5 * 23 * 109",
+      "newspaces": [
+        {
+          "label": "80224.2.a",
+          "dim": 2376,
+          "mf_new_dim": 2376,
+          "num_forms": null,
+          "hecke_orbit_dims": null,
+          "hecke_orbit_code": 33634656,
+          "trace_bound": null,
+          "trace_display": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "good_prime_total_traces": {
+            "5": 0,
+            "7": 0,
+            "11": 0,
+            "13": 0,
+            "17": -16,
+            "19": 0,
+            "29": 0,
+            "31": 0
+          }
+        }
+      ],
+      "counts": {
+        "mf_newforms": 0,
+        "mf_newforms_trivial": 0,
+        "mf_hecke_nf": 0,
+        "mf_hecke_cc": 0
+      },
+      "charpoly_counts": [
+        {
+          "label": "80224.2.a",
+          "hecke_orbit_code": 33634656,
+          "rows_by_p": []
+        }
+      ],
+      "usable_orbit_data": false,
+      "usable_charpoly_data": false
+    },
+    {
+      "level": 120336,
+      "level_factor": "2^4 * 3 * 23 * 109",
+      "newspaces": [
+        {
+          "label": "120336.2.a",
+          "dim": 2376,
+          "mf_new_dim": 2376,
+          "num_forms": null,
+          "hecke_orbit_dims": null,
+          "hecke_orbit_code": 33674768,
+          "trace_bound": null,
+          "trace_display": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "good_prime_total_traces": {
+            "5": 0,
+            "7": 0,
+            "11": 0,
+            "13": 0,
+            "17": 0,
+            "19": 0,
+            "29": 0,
+            "31": 0
+          }
+        }
+      ],
+      "counts": {
+        "mf_newforms": 0,
+        "mf_newforms_trivial": 0,
+        "mf_hecke_nf": 0,
+        "mf_hecke_cc": 0
+      },
+      "charpoly_counts": [
+        {
+          "label": "120336.2.a",
+          "hecke_orbit_code": 33674768,
+          "rows_by_p": []
+        }
+      ],
+      "usable_orbit_data": false,
+      "usable_charpoly_data": false
+    }
+  ]
+}

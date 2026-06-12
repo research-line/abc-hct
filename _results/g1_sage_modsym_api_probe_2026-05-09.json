@@ -1,0 +1,379 @@
+{
+  "status": "ok",
+  "module": {
+    "class": "ModularSymbolsSubspace_with_category",
+    "repr": "Modular Symbols subspace of dimension 6 of Modular Symbols space of dimension 13 for Gamma_0(30) of weight 2 with sign 0 over Finite Field of size 3",
+    "interesting_methods": [
+      "_HeckeSubmodule__ambient",
+      "_ModularSymbolsSpace__character",
+      "_ModularSymbolsSpace__group",
+      "_ModularSymbolsSpace__sign",
+      "_ModularSymbolsSubspace__ambient_hecke_module",
+      "_ModularSymbolsSubspace__is_cuspidal",
+      "_hecke_image_of_ith_basis_vector",
+      "_q_expansion_basis_eigen",
+      "_q_expansion_basis_hecke_dual",
+      "_set_is_cuspidal",
+      "abvarquo_cuspidal_subgroup",
+      "abvarquo_rational_cuspidal_subgroup",
+      "ambient",
+      "ambient_hecke_module",
+      "ambient_module",
+      "basis",
+      "basis_matrix",
+      "coordinate_vector",
+      "cuspidal_submodule",
+      "cuspidal_subspace",
+      "dimension_of_associated_cuspform_space",
+      "dual_eigenvector",
+      "integral_basis",
+      "is_ambient",
+      "is_cuspidal",
+      "linear_combination_of_basis",
+      "modular_symbols_of_sign",
+      "q_expansion_basis",
+      "q_expansion_cuspforms"
+    ]
+  },
+  "ambient": {
+    "class": "ModularSymbolsAmbient_wt2_g0_with_category",
+    "repr": "Modular Symbols space of dimension 13 for Gamma_0(30) of weight 2 with sign 0 over Finite Field of size 3",
+    "interesting_methods": [
+      "_AmbientHeckeModule__free_module",
+      "_AmbientHeckeModule__rank",
+      "_HeckeModule_free_module__basis",
+      "_ModularSymbolsAmbient__boundary_map",
+      "_ModularSymbolsAmbient__cuspidal_submodule",
+      "_ModularSymbolsAmbient__heilbronn_operator",
+      "_ModularSymbolsAmbient__manin_symbol",
+      "_ModularSymbolsAmbient__rank",
+      "_ModularSymbolsAmbient_wt2_g0__boundary_space",
+      "_ModularSymbolsAmbient_wtk_g0__manin_symbols",
+      "_ModularSymbolsSpace__character",
+      "_ModularSymbolsSpace__group",
+      "_ModularSymbolsSpace__sign",
+      "_action_on_modular_symbols",
+      "_cuspidal_new_submodule_dimension_formula",
+      "_cuspidal_submodule_dimension_formula",
+      "_hecke_image_of_ith_basis_element",
+      "_hecke_image_of_ith_basis_vector",
+      "_manin_basis",
+      "_manin_generators",
+      "_manin_gens_to_basis",
+      "_matrix_of_operator_on_modular_symbols",
+      "_modular_symbol_0_to_alpha",
+      "_q_expansion_basis_eigen",
+      "_q_expansion_basis_hecke_dual",
+      "abvarquo_cuspidal_subgroup",
+      "abvarquo_rational_cuspidal_subgroup",
+      "ambient",
+      "ambient_hecke_module",
+      "ambient_module",
+      "basis",
+      "basis_matrix",
+      "coordinate_vector",
+      "cuspidal_submodule",
+      "cuspidal_subspace",
+      "cusps",
+      "dimension_of_associated_cuspform_space",
+      "dual_eigenvector",
+      "integral_basis",
+      "is_ambient",
+      "is_cuspidal",
+      "linear_combination_of_basis",
+      "manin_basis",
+      "manin_generators",
+      "manin_gens_to_basis",
+      "manin_symbol",
+      "manin_symbols",
+      "manin_symbols_basis",
+      "modular_symbol",
+      "modular_symbol_sum",
+      "modular_symbols_of_level",
+      "modular_symbols_of_sign",
+      "modular_symbols_of_weight",
+      "q_expansion_basis",
+      "q_expansion_cuspforms"
+    ]
+  },
+  "trials": [
+    {
+      "label": "M0.modular_symbol([0, QQ(5)/32])",
+      "ok": true,
+      "type": "ModularSymbolsElement",
+      "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "ModularSymbolsElement",
+        "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+        "parent": "Modular Symbols space of dimension 13 for Gamma_0(30) of weight 2 with sign 0 over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "length": "TypeError: object of type 'ModularSymbolsElement' has no len()"
+      }
+    },
+    {
+      "label": "M0.modular_symbol([QQ(0), QQ(5)/32])",
+      "ok": true,
+      "type": "ModularSymbolsElement",
+      "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "ModularSymbolsElement",
+        "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+        "parent": "Modular Symbols space of dimension 13 for Gamma_0(30) of weight 2 with sign 0 over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "length": "TypeError: object of type 'ModularSymbolsElement' has no len()"
+      }
+    },
+    {
+      "label": "M0([0, QQ(5)/32])",
+      "ok": true,
+      "type": "ModularSymbolsElement",
+      "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "ModularSymbolsElement",
+        "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+        "parent": "Modular Symbols space of dimension 13 for Gamma_0(30) of weight 2 with sign 0 over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "length": "TypeError: object of type 'ModularSymbolsElement' has no len()"
+      }
+    },
+    {
+      "label": "M0.linear_combination_of_basis([1,0,...])",
+      "ok": false,
+      "error": "ValueError: x (=[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) must be of length 2 or 3"
+    },
+    {
+      "label": "M.modular_symbol([0, QQ(5)/32])",
+      "ok": false,
+      "error": "AttributeError: 'ModularSymbolsSubspace_with_category' object has no attribute 'modular_symbol'"
+    },
+    {
+      "label": "M.modular_symbol([QQ(0), QQ(5)/32])",
+      "ok": false,
+      "error": "AttributeError: 'ModularSymbolsSubspace_with_category' object has no attribute 'modular_symbol'"
+    },
+    {
+      "label": "M([0, QQ(5)/32])",
+      "ok": false,
+      "error": "TypeError: x does not coerce to an element of this Hecke module"
+    },
+    {
+      "label": "M.linear_combination_of_basis([1,0,...])",
+      "ok": true,
+      "type": "ModularSymbolsSubspace_with_category.element_class",
+      "repr": "(5,2) + (6,5) + 2*(6,19) + (15,1) + 2*(15,2)",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "ModularSymbolsSubspace_with_category.element_class",
+        "repr": "(5,2) + (6,5) + 2*(6,19) + (15,1) + 2*(15,2)",
+        "parent": "Modular Symbols subspace of dimension 6 of Modular Symbols space of dimension 13 for Gamma_0(30) of weight 2 with sign 0 over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "length": "NotImplementedError: <abstract method monomial_coefficients at 0x7f5cc5ade400>"
+      }
+    },
+    {
+      "label": "ambient.modular_symbol([0, QQ(5)/32])",
+      "ok": true,
+      "type": "ModularSymbolsElement",
+      "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "ModularSymbolsElement",
+        "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+        "parent": "Modular Symbols space of dimension 13 for Gamma_0(30) of weight 2 with sign 0 over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "length": "TypeError: object of type 'ModularSymbolsElement' has no len()"
+      }
+    },
+    {
+      "label": "ambient.modular_symbol([QQ(0), QQ(5)/32])",
+      "ok": true,
+      "type": "ModularSymbolsElement",
+      "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "ModularSymbolsElement",
+        "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+        "parent": "Modular Symbols space of dimension 13 for Gamma_0(30) of weight 2 with sign 0 over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "length": "TypeError: object of type 'ModularSymbolsElement' has no len()"
+      }
+    },
+    {
+      "label": "ambient([0, QQ(5)/32])",
+      "ok": true,
+      "type": "ModularSymbolsElement",
+      "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "ModularSymbolsElement",
+        "repr": "(6,1) + 2*(6,13) + (15,1) + 2*(15,2)",
+        "parent": "Modular Symbols space of dimension 13 for Gamma_0(30) of weight 2 with sign 0 over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "length": "TypeError: object of type 'ModularSymbolsElement' has no len()"
+      }
+    },
+    {
+      "label": "ambient.linear_combination_of_basis([1,0,...])",
+      "ok": false,
+      "error": "ValueError: x (=[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]) must be of length 2 or 3"
+    }
+  ],
+  "extra_trials": [
+    {
+      "label": "ambient.coordinate_vector(e)",
+      "ok": true,
+      "type": "Vector_modn_dense",
+      "repr": "(0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 1, 2)",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "Vector_modn_dense",
+        "repr": "(0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 1, 2)",
+        "parent": "Vector space of dimension 13 over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "degree": "13",
+        "length": "13"
+      }
+    },
+    {
+      "label": "M0.coordinate_vector(e)",
+      "ok": true,
+      "type": "Vector_modn_dense",
+      "repr": "(0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 1, 2)",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "Vector_modn_dense",
+        "repr": "(0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 1, 2)",
+        "parent": "Vector space of dimension 13 over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "degree": "13",
+        "length": "13"
+      }
+    },
+    {
+      "label": "M.coordinate_vector(e)",
+      "ok": false,
+      "error": "ArithmeticError: vector is not in free module"
+    },
+    {
+      "label": "ambient.coordinate_vector(M0(e))",
+      "ok": true,
+      "type": "Vector_modn_dense",
+      "repr": "(0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 1, 2)",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "Vector_modn_dense",
+        "repr": "(0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 1, 2)",
+        "parent": "Vector space of dimension 13 over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "degree": "13",
+        "length": "13"
+      }
+    },
+    {
+      "label": "M0.free_module()",
+      "ok": true,
+      "type": "FreeModule_ambient_field_with_category",
+      "repr": "Vector space of dimension 13 over Finite Field of size 3",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "FreeModule_ambient_field_with_category",
+        "repr": "Vector space of dimension 13 over Finite Field of size 3",
+        "parent": "<class 'sage.modules.free_module.FreeModule_ambient_field_with_category'>",
+        "base_ring": "Finite Field of size 3",
+        "degree": "13",
+        "dimension": "13"
+      }
+    },
+    {
+      "label": "ambient.free_module()",
+      "ok": true,
+      "type": "FreeModule_ambient_field_with_category",
+      "repr": "Vector space of dimension 13 over Finite Field of size 3",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "FreeModule_ambient_field_with_category",
+        "repr": "Vector space of dimension 13 over Finite Field of size 3",
+        "parent": "<class 'sage.modules.free_module.FreeModule_ambient_field_with_category'>",
+        "base_ring": "Finite Field of size 3",
+        "degree": "13",
+        "dimension": "13"
+      }
+    },
+    {
+      "label": "M.free_module()",
+      "ok": true,
+      "type": "FreeModule_submodule_field_with_category",
+      "repr": "Vector space of degree 13 and dimension 6 over Finite Field of size 3\nBasis matrix:\n[0 1 0 0 0 1 0 2 0 0 0 1 2]\n[0 0 1 0 0 1 0 2 0 2 1 0 0]\n[0 0 0 1 0 1 0 2 0 0 0 1 2]\n[0 0 0 0 1 0 0 2 0 0 0 0 0]\n[0 0 0 0 0 0 1 2 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 1 0 2 0 0]",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "FreeModule_submodule_field_with_category",
+        "repr": "Vector space of degree 13 and dimension 6 over Finite Field of size 3\nBasis matrix:\n[0 1 0 0 0 1 0 2 0 0 0 1 2]\n[0 0 1 0 0 1 0 2 0 2 1 0 0]\n[0 0 0 1 0 1 0 2 0 0 0 1 2]\n[0 0 0 0 1 0 0 2 0 0 0 0 0]\n[0 0 0 0 0 0 1 2 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 1 0 2 0 0]",
+        "parent": "<class 'sage.modules.free_module.FreeModule_submodule_field_with_category'>",
+        "base_ring": "Finite Field of size 3",
+        "degree": "13",
+        "dimension": "6"
+      }
+    },
+    {
+      "label": "M.basis_matrix()",
+      "ok": true,
+      "type": "Matrix_modn_dense_float",
+      "repr": "[0 1 0 0 0 1 0 2 0 0 0 1 2]\n[0 0 1 0 0 1 0 2 0 2 1 0 0]\n[0 0 0 1 0 1 0 2 0 0 0 1 2]\n[0 0 0 0 1 0 0 2 0 0 0 0 0]\n[0 0 0 0 0 0 1 2 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 1 0 2 0 0]",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "Matrix_modn_dense_float",
+        "repr": "[0 1 0 0 0 1 0 2 0 0 0 1 2]\n[0 0 1 0 0 1 0 2 0 2 1 0 0]\n[0 0 0 1 0 1 0 2 0 0 0 1 2]\n[0 0 0 0 1 0 0 2 0 0 0 0 0]\n[0 0 0 0 0 0 1 2 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 1 0 2 0 0]",
+        "parent": "Full MatrixSpace of 6 by 13 dense matrices over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "length": "TypeError: object of type 'sage.matrix.matrix_modn_dense_float.Matrix_modn_dense_float' has no len()"
+      }
+    },
+    {
+      "label": "ambient.basis_matrix()",
+      "ok": true,
+      "type": "Matrix_modn_dense_float",
+      "repr": "[1 0 0 0 0 0 0 0 0 0 0 0 0]\n[0 1 0 0 0 0 0 0 0 0 0 0 0]\n[0 0 1 0 0 0 0 0 0 0 0 0 0]\n[0 0 0 1 0 0 0 0 0 0 0 0 0]\n[0 0 0 0 1 0 0 0 0 0 0 0 0]\n[0 0 0 0 0 1 0 0 0 0 0 0 0]\n[0 0 0 0 0 0 1 0 0 0 0 0 0]\n[0 0 0 0 0 0 0 1 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 1 0 0 0 0]\n[0 0 0 0 0 0 0 0 0 1 0 0 0]\n[0 0 0 0 0 0 0 0 0 0 1 0 0]\n[0 0 0 0 0 0 0 0 0 0 0 1 0]\n[0 0 0 0 0 0 0 0 0 0 0 0 1]",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "Matrix_modn_dense_float",
+        "repr": "[1 0 0 0 0 0 0 0 0 0 0 0 0]\n[0 1 0 0 0 0 0 0 0 0 0 0 0]\n[0 0 1 0 0 0 0 0 0 0 0 0 0]\n[0 0 0 1 0 0 0 0 0 0 0 0 0]\n[0 0 0 0 1 0 0 0 0 0 0 0 0]\n[0 0 0 0 0 1 0 0 0 0 0 0 0]\n[0 0 0 0 0 0 1 0 0 0 0 0 0]\n[0 0 0 0 0 0 0 1 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 1 0 0 0 0]\n[0 0 0 0 0 0 0 0 0 1 0 0 0]\n[0 0 0 0 0 0 0 0 0 0 1 0 0]\n[0 0 0 0 0 0 0 0 0 0 0 1 0]\n[0 0 0 0 0 0 0 0 0 0 0 0 1]",
+        "parent": "Full MatrixSpace of 13 by 13 dense matrices over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "length": "TypeError: object of type 'sage.matrix.matrix_modn_dense_float.Matrix_modn_dense_float' has no len()"
+      }
+    },
+    {
+      "label": "M0.basis_matrix()",
+      "ok": true,
+      "type": "Matrix_modn_dense_float",
+      "repr": "[1 0 0 0 0 0 0 0 0 0 0 0 0]\n[0 1 0 0 0 0 0 0 0 0 0 0 0]\n[0 0 1 0 0 0 0 0 0 0 0 0 0]\n[0 0 0 1 0 0 0 0 0 0 0 0 0]\n[0 0 0 0 1 0 0 0 0 0 0 0 0]\n[0 0 0 0 0 1 0 0 0 0 0 0 0]\n[0 0 0 0 0 0 1 0 0 0 0 0 0]\n[0 0 0 0 0 0 0 1 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 1 0 0 0 0]\n[0 0 0 0 0 0 0 0 0 1 0 0 0]\n[0 0 0 0 0 0 0 0 0 0 1 0 0]\n[0 0 0 0 0 0 0 0 0 0 0 1 0]\n[0 0 0 0 0 0 0 0 0 0 0 0 1]",
+      "has_vector": false,
+      "vector_repr": null,
+      "summary": {
+        "type": "Matrix_modn_dense_float",
+        "repr": "[1 0 0 0 0 0 0 0 0 0 0 0 0]\n[0 1 0 0 0 0 0 0 0 0 0 0 0]\n[0 0 1 0 0 0 0 0 0 0 0 0 0]\n[0 0 0 1 0 0 0 0 0 0 0 0 0]\n[0 0 0 0 1 0 0 0 0 0 0 0 0]\n[0 0 0 0 0 1 0 0 0 0 0 0 0]\n[0 0 0 0 0 0 1 0 0 0 0 0 0]\n[0 0 0 0 0 0 0 1 0 0 0 0 0]\n[0 0 0 0 0 0 0 0 1 0 0 0 0]\n[0 0 0 0 0 0 0 0 0 1 0 0 0]\n[0 0 0 0 0 0 0 0 0 0 1 0 0]\n[0 0 0 0 0 0 0 0 0 0 0 1 0]\n[0 0 0 0 0 0 0 0 0 0 0 0 1]",
+        "parent": "Full MatrixSpace of 13 by 13 dense matrices over Finite Field of size 3",
+        "base_ring": "Finite Field of size 3",
+        "length": "TypeError: object of type 'sage.matrix.matrix_modn_dense_float.Matrix_modn_dense_float' has no len()"
+      }
+    }
+  ]
+}

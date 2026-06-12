@@ -1,0 +1,55 @@
+{
+  "status": "ok",
+  "purpose": "Stage-A Hecke maximal ideal eigenspace localization for G1/P1'.",
+  "offset": 5,
+  "cases_run": 1,
+  "note": "This reports the m_ell eigenspace cut and a Stage-B ambient quotient probe for C_lambda={0,a/c}.",
+  "results": [
+    {
+      "label": "classic_2401",
+      "a": 1,
+      "b": 2400,
+      "c": 2401,
+      "ell": 7,
+      "N_cond": 1680,
+      "D_ell": 2,
+      "drop_primes": [
+        2
+      ],
+      "module_dimension": 722,
+      "hecke_primes_used": [
+        11,
+        13,
+        17,
+        19
+      ],
+      "kernel_trace": [
+        {
+          "q": 11,
+          "a_q_mod_ell": 4,
+          "localized_dim": 142
+        },
+        {
+          "q": 13,
+          "a_q_mod_ell": 5,
+          "localized_dim": 102
+        },
+        {
+          "q": 17,
+          "a_q_mod_ell": 2,
+          "localized_dim": 52
+        },
+        {
+          "q": 19,
+          "a_q_mod_ell": 3,
+          "localized_dim": 30
+        }
+      ],
+      "candidate_m_ell_eigenspace_dimension": 30,
+      "stage_b_cycle_quotient_probe": {
+        "status": "skipped",
+        "reason": "disabled by --no-cycle-probe"
+      }
+    }
+  ]
+}

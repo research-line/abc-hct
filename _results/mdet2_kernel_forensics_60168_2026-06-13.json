@@ -1,0 +1,295 @@
+{
+  "date": "2026-06-13",
+  "level": 60168,
+  "n_triangles": 21104,
+  "stage_histogram": {
+    "manin_T_relations_after_SI": 21104,
+    "T_5_minus_2_batch_1": 1000,
+    "T_5_minus_2_batch_2": 1000,
+    "T_5_minus_2_batch_3": 1000,
+    "T_5_minus_2_batch_4": 1000,
+    "T_5_minus_2_batch_5": 1000,
+    "T_5_minus_2_batch_6": 1000,
+    "T_5_minus_2_batch_7": 1000,
+    "T_5_minus_2_batch_8": 1000,
+    "T_5_minus_2_batch_9": 1000,
+    "T_5_minus_2_batch_10": 1000,
+    "T_5_minus_2_batch_11": 575,
+    "T_5_minus_2_batch_13": 1
+  },
+  "per_prime": {
+    "3": {
+      "kernel_dim": 1,
+      "vectors": [
+        {
+          "basis_index": 0,
+          "support_size": 21157,
+          "support_frac": 0.6678345959595959,
+          "value_hist_lift": {
+            "-1": 10494,
+            "1": 10663
+          },
+          "triangle_m_hist": {
+            "0": 2368,
+            "2": 13929,
+            "3": 4807
+          },
+          "triangle_pattern_m3": {
+            "zweigleich": 4807
+          },
+          "window_density_max": 359,
+          "windows_nonzero": 64,
+          "window_size": 495,
+          "incident_stage_hist": {
+            "manin_T_relations_after_SI": 42279,
+            "T_5_minus_2_batch_1": 4586,
+            "T_5_minus_2_batch_13": 2,
+            "T_5_minus_2_batch_5": 4653,
+            "T_5_minus_2_batch_8": 4685,
+            "T_5_minus_2_batch_4": 4644,
+            "T_5_minus_2_batch_9": 4675,
+            "T_5_minus_2_batch_6": 4678,
+            "T_5_minus_2_batch_7": 4689,
+            "T_5_minus_2_batch_3": 4583,
+            "T_5_minus_2_batch_10": 4627,
+            "T_5_minus_2_batch_2": 4686,
+            "T_5_minus_2_batch_11": 2723
+          }
+        }
+      ]
+    },
+    "5": {
+      "kernel_dim": 1,
+      "vectors": [
+        {
+          "basis_index": 0,
+          "support_size": 25381,
+          "support_frac": 0.8011679292929293,
+          "value_hist_lift": {
+            "-2": 6227,
+            "-1": 6373,
+            "1": 6293,
+            "2": 6488
+          },
+          "triangle_m_hist": {
+            "0": 849,
+            "2": 10037,
+            "3": 10218
+          },
+          "triangle_pattern_m3": {
+            "verschieden": 6754,
+            "zweigleich": 3464
+          },
+          "window_density_max": 415,
+          "windows_nonzero": 64,
+          "window_size": 495,
+          "incident_stage_hist": {
+            "manin_T_relations_after_SI": 50728,
+            "T_5_minus_2_batch_1": 5595,
+            "T_5_minus_2_batch_13": 3,
+            "T_5_minus_2_batch_5": 5657,
+            "T_5_minus_2_batch_8": 5652,
+            "T_5_minus_2_batch_4": 5660,
+            "T_5_minus_2_batch_9": 5628,
+            "T_5_minus_2_batch_6": 5556,
+            "T_5_minus_2_batch_7": 5572,
+            "T_5_minus_2_batch_3": 5533,
+            "T_5_minus_2_batch_10": 5521,
+            "T_5_minus_2_batch_2": 5519,
+            "T_5_minus_2_batch_11": 3203
+          }
+        }
+      ]
+    },
+    "31": {
+      "kernel_dim": 1,
+      "vectors": [
+        {
+          "basis_index": 0,
+          "support_size": 30633,
+          "support_frac": 0.9669507575757575,
+          "value_hist_lift": {
+            "-15": 1022,
+            "-14": 1009,
+            "-13": 1014,
+            "-12": 1020,
+            "-11": 1035,
+            "-10": 1074,
+            "-9": 1025,
+            "-8": 968,
+            "-7": 1021,
+            "-6": 1021,
+            "-5": 1006,
+            "-4": 1037,
+            "-3": 1009,
+            "-2": 1070,
+            "-1": 1046,
+            "1": 1035,
+            "2": 1033,
+            "3": 987,
+            "4": 1010,
+            "5": 994,
+            "6": 1003,
+            "7": 959,
+            "8": 1024,
+            "9": 1011,
+            "10": 1075,
+            "11": 1050,
+            "12": 997,
+            "13": 986,
+            "14": 1043,
+            "15": 1049
+          },
+          "triangle_m_hist": {
+            "0": 25,
+            "2": 2013,
+            "3": 19066
+          },
+          "triangle_pattern_m3": {
+            "verschieden": 18397,
+            "zweigleich": 669
+          },
+          "window_density_max": 489,
+          "windows_nonzero": 64,
+          "window_size": 495,
+          "incident_stage_hist": {
+            "manin_T_relations_after_SI": 61224,
+            "T_5_minus_2_batch_1": 6777,
+            "T_5_minus_2_batch_13": 4,
+            "T_5_minus_2_batch_5": 6774,
+            "T_5_minus_2_batch_8": 6775,
+            "T_5_minus_2_batch_4": 6766,
+            "T_5_minus_2_batch_9": 6754,
+            "T_5_minus_2_batch_6": 6746,
+            "T_5_minus_2_batch_7": 6768,
+            "T_5_minus_2_batch_3": 6762,
+            "T_5_minus_2_batch_10": 6751,
+            "T_5_minus_2_batch_2": 6771,
+            "T_5_minus_2_batch_11": 3877
+          }
+        }
+      ]
+    },
+    "2": {
+      "kernel_dim": 2,
+      "vectors": [
+        {
+          "basis_index": 0,
+          "support_size": 15699,
+          "support_frac": 0.4955492424242424,
+          "value_hist_lift": {
+            "1": 15699
+          },
+          "triangle_m_hist": {
+            "0": 5418,
+            "2": 15686
+          },
+          "triangle_pattern_m3": {},
+          "window_density_max": 269,
+          "windows_nonzero": 64,
+          "window_size": 495,
+          "incident_stage_hist": {
+            "T_5_minus_2_batch_1": 3517,
+            "T_5_minus_2_batch_13": 2,
+            "manin_T_relations_after_SI": 31372,
+            "T_5_minus_2_batch_5": 3478,
+            "T_5_minus_2_batch_8": 3509,
+            "T_5_minus_2_batch_6": 3473,
+            "T_5_minus_2_batch_7": 3458,
+            "T_5_minus_2_batch_4": 3467,
+            "T_5_minus_2_batch_9": 3444,
+            "T_5_minus_2_batch_2": 3535,
+            "T_5_minus_2_batch_3": 3461,
+            "T_5_minus_2_batch_10": 3491,
+            "T_5_minus_2_batch_11": 2056
+          }
+        },
+        {
+          "basis_index": 1,
+          "support_size": 15891,
+          "support_frac": 0.5016098484848485,
+          "value_hist_lift": {
+            "1": 15891
+          },
+          "triangle_m_hist": {
+            "0": 5224,
+            "2": 15880
+          },
+          "triangle_pattern_m3": {},
+          "window_density_max": 279,
+          "windows_nonzero": 64,
+          "window_size": 495,
+          "incident_stage_hist": {
+            "manin_T_relations_after_SI": 31760,
+            "T_5_minus_2_batch_1": 3507,
+            "T_5_minus_2_batch_13": 2,
+            "T_5_minus_2_batch_5": 3498,
+            "T_5_minus_2_batch_8": 3537,
+            "T_5_minus_2_batch_6": 3476,
+            "T_5_minus_2_batch_7": 3482,
+            "T_5_minus_2_batch_4": 3451,
+            "T_5_minus_2_batch_9": 3424,
+            "T_5_minus_2_batch_2": 3479,
+            "T_5_minus_2_batch_3": 3511,
+            "T_5_minus_2_batch_10": 3519,
+            "T_5_minus_2_batch_11": 2014
+          }
+        }
+      ]
+    }
+  },
+  "status": "done",
+  "support_overlaps": {
+    "p2b0_vs_p2b1": {
+      "intersection": 5231,
+      "union": 26359,
+      "jaccard": 0.19845214158351987
+    },
+    "p2b0_vs_p3b0": {
+      "intersection": 10516,
+      "union": 26340,
+      "jaccard": 0.39924069855732724
+    },
+    "p2b0_vs_p5b0": {
+      "intersection": 12541,
+      "union": 28539,
+      "jaccard": 0.43943375731455203
+    },
+    "p2b0_vs_p31b0": {
+      "intersection": 15186,
+      "union": 31146,
+      "jaccard": 0.48757464842997494
+    },
+    "p2b1_vs_p3b0": {
+      "intersection": 10597,
+      "union": 26451,
+      "jaccard": 0.4006275755169937
+    },
+    "p2b1_vs_p5b0": {
+      "intersection": 12740,
+      "union": 28532,
+      "jaccard": 0.4465161923454367
+    },
+    "p2b1_vs_p31b0": {
+      "intersection": 15367,
+      "union": 31157,
+      "jaccard": 0.49321179831177586
+    },
+    "p3b0_vs_p5b0": {
+      "intersection": 16946,
+      "union": 29592,
+      "jaccard": 0.5726547715598811
+    },
+    "p3b0_vs_p31b0": {
+      "intersection": 20451,
+      "union": 31339,
+      "jaccard": 0.6525734707552889
+    },
+    "p5b0_vs_p31b0": {
+      "intersection": 24553,
+      "union": 31461,
+      "jaccard": 0.7804265598677728
+    }
+  },
+  "total_seconds": 18535.13997721672
+}

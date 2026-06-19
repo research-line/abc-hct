@@ -1,0 +1,196 @@
+{
+  "date": "2026-06-14",
+  "purpose": "B1 spreading kill-or-keep test (Ajtai-reverse necessary condition)",
+  "data_source": "de Smit 241 good ABC triples (q>=1.4), 2019",
+  "n_triples": 240,
+  "ab_verified": 240,
+  "parse_errors": [
+    "80"
+  ],
+  "max_q_error": 4.975522094352591e-05,
+  "mean_dq_allpairs": 0.03451862622036262,
+  "thresholds": [
+    {
+      "obs": {
+        "threshold": 0.5,
+        "n_edges": 21003,
+        "mean_degree": 175.025,
+        "max_component": 240,
+        "n_components": 1,
+        "largest_comp_frac": 1.0,
+        "mean_dq_edge": 0.03642059229633861
+      },
+      "null": {
+        "n_edges": {
+          "mean": 8662.634,
+          "sd": 654.6035319519748,
+          "n": 500
+        },
+        "max_component": {
+          "mean": 238.704,
+          "sd": 1.1190996381019878,
+          "n": 500
+        },
+        "largest_comp_frac": {
+          "mean": 0.9946,
+          "sd": 0.00466291515875828,
+          "n": 500
+        },
+        "mean_degree": {
+          "mean": 72.18861666666668,
+          "sd": 5.455029432933123,
+          "n": 500
+        },
+        "mean_dq_edge": {
+          "mean": 0.03603057142137502,
+          "sd": 0.002063444094268067,
+          "n": 500
+        }
+      },
+      "z_edges": 18.851664248132035,
+      "z_comp": 1.1580738263824575
+    },
+    {
+      "obs": {
+        "threshold": 0.667,
+        "n_edges": 5252,
+        "mean_degree": 43.766666666666666,
+        "max_component": 237,
+        "n_components": 4,
+        "largest_comp_frac": 0.9875,
+        "mean_dq_edge": 0.042512852246763135
+      },
+      "null": {
+        "n_edges": {
+          "mean": 1001.492,
+          "sd": 171.04002436856703,
+          "n": 500
+        },
+        "max_component": {
+          "mean": 189.69,
+          "sd": 8.199628040344269,
+          "n": 500
+        },
+        "largest_comp_frac": {
+          "mean": 0.790375,
+          "sd": 0.03416511683476779,
+          "n": 500
+        },
+        "mean_degree": {
+          "mean": 8.345766666666666,
+          "sd": 1.425333536404725,
+          "n": 500
+        },
+        "mean_dq_edge": {
+          "mean": 0.04102158478748159,
+          "sd": 0.007226412742198393,
+          "n": 500
+        }
+      },
+      "z_edges": 24.850955299449424,
+      "z_comp": 5.769773917453657
+    },
+    {
+      "obs": {
+        "threshold": 0.75,
+        "n_edges": 3861,
+        "mean_degree": 32.175,
+        "max_component": 236,
+        "n_components": 5,
+        "largest_comp_frac": 0.9833333333333333,
+        "mean_dq_edge": 0.04732962962962963
+      },
+      "null": {
+        "n_edges": {
+          "mean": 671.306,
+          "sd": 131.08286067980055,
+          "n": 500
+        },
+        "max_component": {
+          "mean": 174.4,
+          "sd": 11.175508936956742,
+          "n": 500
+        },
+        "largest_comp_frac": {
+          "mean": 0.7266666666666667,
+          "sd": 0.04656462057065309,
+          "n": 500
+        },
+        "mean_degree": {
+          "mean": 5.594216666666666,
+          "sd": 1.0923571723316712,
+          "n": 500
+        },
+        "mean_dq_edge": {
+          "mean": 0.047198159107745975,
+          "sd": 0.009920667230571448,
+          "n": 500
+        }
+      },
+      "z_edges": 24.333417682968843,
+      "z_comp": 5.51205321811273
+    },
+    {
+      "obs": {
+        "threshold": 1.0,
+        "n_edges": 498,
+        "mean_degree": 4.15,
+        "max_component": 210,
+        "n_components": 31,
+        "largest_comp_frac": 0.875,
+        "mean_dq_edge": 0.04377811244979919
+      },
+      "null": {
+        "n_edges": {
+          "mean": 51.868,
+          "sd": 29.741462237085788,
+          "n": 500
+        },
+        "max_component": {
+          "mean": 38.136,
+          "sd": 23.884587164110666,
+          "n": 500
+        },
+        "largest_comp_frac": {
+          "mean": 0.1589,
+          "sd": 0.09951911318379444,
+          "n": 500
+        },
+        "mean_degree": {
+          "mean": 0.43223333333333336,
+          "sd": 0.24784551864238155,
+          "n": 500
+        },
+        "mean_dq_edge": {
+          "mean": 0.05052226068082062,
+          "sd": 0.02718682920261699,
+          "n": 500
+        }
+      },
+      "z_edges": 15.000338464989817,
+      "z_comp": 7.195602704753691
+    }
+  ],
+  "operations": [
+    {
+      "name": "Skalierung+Primitivierung",
+      "valid": true,
+      "delta_q": 0.0,
+      "expansion": "Orbit=1 (primitiv invariant) -> KEINE Expansion"
+    },
+    {
+      "name": "additive Stoerung (a+e, b, c)",
+      "valid": false,
+      "delta_q": null,
+      "expansion": "verletzt a+b=c -> ungueltig (Rigiditaet)"
+    },
+    {
+      "name": "Primexponent-Bump im Radikal",
+      "valid": false,
+      "delta_q": null,
+      "expansion": "veraendert c, a+b=c neu zu loesen -> keine lokale Operation"
+    }
+  ],
+  "keep_signals": [],
+  "verdict": "KILL"
+}

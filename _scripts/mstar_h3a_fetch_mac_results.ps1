@@ -2,11 +2,15 @@ param(
     [string]$MacHost = "lukas@100.119.69.90",
     [string]$KeyPath = "$env:USERPROFILE\.ssh\id_ed25519_mcmc",
     [string]$RemoteRoot = "/Users/lukas/compute/abc_hct",
-    [string]$LocalRoot = "C:\Users\User\OneDrive\.TOPICS\.RESEARCH\.LAB\.HCT\abc",
+    [string]$LocalRoot = "",
     [switch]$DryRun
 )
 
 $ErrorActionPreference = "Stop"
+
+if (-not $LocalRoot) {
+    $LocalRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
+}
 
 function Run-Checked {
     param([string[]]$Command)

@@ -2,7 +2,7 @@
 
 ## Projekt
 
-- Projekt: `C:\Users\User\OneDrive\.TOPICS\.RESEARCH\.LAB\.HCT\abc`
+- Projekt: `abc` (lokaler HCT/abc-Arbeitsbaum; absoluter Pfad absichtlich nicht im Repo)
 - Paper: `abc_Theta_Tamagawa_EN.tex`, `abc_Theta_Tamagawa_DE.tex`
 - Auswahlgrund: Im zentralen `CHECKED-REGISTRY.md` war für das Root-Paper der HCT/abc-Linie noch kein eigener `research-zitation-check` dokumentiert. Der Ast hatte EN/DE-Fassungen und eine aktive mathematische Bibliographie.
 

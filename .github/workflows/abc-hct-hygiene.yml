@@ -40,6 +40,11 @@ jobs:
               "_data/",
               "logs/",
               "_results/*.log",
+              "_compute_queue/logs/",
+              "_compute_queue/state/*.json",
+              "_results/*.pid",
+              "_results/PROOF_PAPER_MATH_CHECK_*.md",
+              "_results/REVIEW_CHAIN_*.md",
           ]
           gitignore = Path(".gitignore").read_text(encoding="utf-8")
           missing = [rule for rule in required_ignore_rules if rule not in gitignore]
@@ -66,12 +71,51 @@ jobs:
               "logs/",
               "_logs/",
           )
+          forbidden_globs = (
+              "_results/PROOF_PAPER_MATH_CHECK_*.md",
+              "_results/REVIEW_CHAIN_*.md",
+          )
           violations = [
               path
               for path in tracked
-              if Path(path).name in forbidden_exact or path.startswith(forbidden_prefixes)
+              if Path(path).name in forbidden_exact
+              or path.startswith(forbidden_prefixes)
+              or any(Path(path).match(pattern) for pattern in forbidden_globs)
           ]
           if violations:
               print("Forbidden internal files are tracked:")
               print("\n".join(violations))
+              sys.exit(1)
+
+          local_path_tokens = (
+              r"C:\Users\User\\",
+              "C:/Users/User/",
+              "/c/Users/User/",
+              "/mnt/c/Users/User/",
+          )
+          text_suffixes = {
+              ".md",
+              ".txt",
+              ".py",
+              ".sh",
+              ".ps1",
+              ".json",
+              ".jsonl",
+              ".yml",
+              ".yaml",
+              ".toml",
+          }
+          path_leaks = []
+          for path in tracked:
+              if Path(path).suffix.lower() not in text_suffixes:
+                  continue
+              try:
+                  content = Path(path).read_text(encoding="utf-8", errors="ignore")
+              except OSError:
+                  continue
+              if any(token in content for token in local_path_tokens):
+                  path_leaks.append(path)
+          if path_leaks:
+              print("Tracked files contain host-specific absolute paths:")
+              print("\n".join(path_leaks))
               sys.exit(1)

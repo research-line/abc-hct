@@ -1,0 +1,232 @@
+{
+  "n_triples": 241,
+  "qset_fixed": [
+    101,
+    251,
+    1009,
+    3863,
+    5077
+  ],
+  "B_fixed_q_length": {
+    "101": {
+      "char_len_mean": 0.0166,
+      "char_len_max": 1,
+      "tate_len_mean": 0.0,
+      "tate_len_max": 0
+    },
+    "251": {
+      "char_len_mean": 0.00415,
+      "char_len_max": 1,
+      "tate_len_mean": 0.0,
+      "tate_len_max": 0
+    },
+    "1009": {
+      "char_len_mean": 0.0,
+      "char_len_max": 0,
+      "tate_len_mean": 0.0,
+      "tate_len_max": 0
+    },
+    "3863": {
+      "char_len_mean": 0.0,
+      "char_len_max": 0,
+      "tate_len_mean": 0.0,
+      "tate_len_max": 0
+    },
+    "5077": {
+      "char_len_mean": 0.0,
+      "char_len_max": 0,
+      "tate_len_mean": 0.0,
+      "tate_len_max": 0
+    }
+  },
+  "C_curve_specific_length": {
+    "n_triples": 241,
+    "mean_L_total": 4.552,
+    "max_L_total": 20,
+    "mean_L_char": 4.137,
+    "mean_L_tate": 0.415,
+    "global_max_depth_char": 3,
+    "global_max_depth_tate": 2,
+    "depth_hist_char": {
+      "1": 919,
+      "2": 36,
+      "3": 2
+    },
+    "depth_hist_tate": {
+      "1": 98,
+      "2": 1
+    },
+    "corr(L_total, q_abc)": -0.1654,
+    "corr(L_total, omega)": 0.2316,
+    "frac_pairs_depth1_char": 0.9603,
+    "frac_pairs_depth1_tate": 0.9899
+  },
+  "rows_head": [
+    {
+      "rank": 1,
+      "q_abc": 1.6299,
+      "omega": 3,
+      "L_char": 3,
+      "L_tate": 2,
+      "L_total": 5,
+      "n_pairs": 5,
+      "max_depth_char": 1,
+      "max_depth_tate": 1
+    },
+    {
+      "rank": 2,
+      "q_abc": 1.626,
+      "omega": 5,
+      "L_char": 0,
+      "L_tate": 0,
+      "L_total": 0,
+      "n_pairs": 0,
+      "max_depth_char": 0,
+      "max_depth_tate": 0
+    },
+    {
+      "rank": 3,
+      "q_abc": 1.6235,
+      "omega": 7,
+      "L_char": 2,
+      "L_tate": 1,
+      "L_total": 3,
+      "n_pairs": 3,
+      "max_depth_char": 1,
+      "max_depth_tate": 1
+    },
+    {
+      "rank": 4,
+      "q_abc": 1.5808,
+      "omega": 5,
+      "L_char": 3,
+      "L_tate": 1,
+      "L_total": 4,
+      "n_pairs": 4,
+      "max_depth_char": 1,
+      "max_depth_tate": 1
+    },
+    {
+      "rank": 5,
+      "q_abc": 1.5679,
+      "omega": 3,
+      "L_char": 0,
+      "L_tate": 0,
+      "L_total": 0,
+      "n_pairs": 0,
+      "max_depth_char": 0,
+      "max_depth_tate": 0
+    },
+    {
+      "rank": 6,
+      "q_abc": 1.5471,
+      "omega": 3,
+      "L_char": 1,
+      "L_tate": 1,
+      "L_total": 2,
+      "n_pairs": 2,
+      "max_depth_char": 1,
+      "max_depth_tate": 1
+    },
+    {
+      "rank": 7,
+      "q_abc": 1.5444,
+      "omega": 9,
+      "L_char": 3,
+      "L_tate": 1,
+      "L_total": 4,
+      "n_pairs": 4,
+      "max_depth_char": 1,
+      "max_depth_tate": 1
+    },
+    {
+      "rank": 8,
+      "q_abc": 1.5367,
+      "omega": 7,
+      "L_char": 2,
+      "L_tate": 0,
+      "L_total": 2,
+      "n_pairs": 2,
+      "max_depth_char": 1,
+      "max_depth_tate": 0
+    },
+    {
+      "rank": 9,
+      "q_abc": 1.527,
+      "omega": 6,
+      "L_char": 1,
+      "L_tate": 0,
+      "L_total": 1,
+      "n_pairs": 1,
+      "max_depth_char": 1,
+      "max_depth_tate": 0
+    },
+    {
+      "rank": 10,
+      "q_abc": 1.5222,
+      "omega": 8,
+      "L_char": 2,
+      "L_tate": 0,
+      "L_total": 2,
+      "n_pairs": 2,
+      "max_depth_char": 1,
+      "max_depth_tate": 0
+    },
+    {
+      "rank": 11,
+      "q_abc": 1.5094,
+      "omega": 8,
+      "L_char": 4,
+      "L_tate": 1,
+      "L_total": 5,
+      "n_pairs": 5,
+      "max_depth_char": 1,
+      "max_depth_tate": 1
+    },
+    {
+      "rank": 12,
+      "q_abc": 1.5033,
+      "omega": 7,
+      "L_char": 7,
+      "L_tate": 1,
+      "L_total": 8,
+      "n_pairs": 8,
+      "max_depth_char": 1,
+      "max_depth_tate": 1
+    },
+    {
+      "rank": 13,
+      "q_abc": 1.5028,
+      "omega": 4,
+      "L_char": 8,
+      "L_tate": 1,
+      "L_total": 9,
+      "n_pairs": 7,
+      "max_depth_char": 2,
+      "max_depth_tate": 1
+    },
+    {
+      "rank": 14,
+      "q_abc": 1.4976,
+      "omega": 5,
+      "L_char": 1,
+      "L_tate": 0,
+      "L_total": 1,
+      "n_pairs": 1,
+      "max_depth_char": 1,
+      "max_depth_tate": 0
+    },
+    {
+      "rank": 15,
+      "q_abc": 1.4924,
+      "omega": 8,
+      "L_char": 7,
+      "L_tate": 0,
+      "L_total": 7,
+      "n_pairs": 7,
+      "max_depth_char": 1,
+      "max_depth_tate": 0
+    }
+  ],
+  "note": "Laengenebene (Codex L2): Tiefen v_q(r^2-1), v_q(2e_r) je exz. Paar. B: fixed grosses q blind. C: Tiefenverteilung + gewichtete Laengensumme L_total; qualitaets-flach? => Substanz von Glied 2b auf Laengenebene erhaertet."
+}

@@ -1,0 +1,61 @@
+{
+  "id": "r1_faithful_al_80224_raw_2026-06-14",
+  "title": "R1 faithful-AL Schur certificate for 80224/raw (queued after cache preflights)",
+  "status": "queued",
+  "priority": 14,
+  "allowed_hosts": [
+    "mac-studio"
+  ],
+  "disallowed_hosts": [
+    "ASUS-GEI"
+  ],
+  "defer_while_process_regex": [
+    "mstar_h3a_restline_kernel_quotient.py",
+    "mstar_h3a_rc3c_witness_verify_rank.py",
+    "mstar_h3a_qb3_wiedemann_production.sage",
+    "mstar_h3a_qb3_wiedemann_production_finite_pairing.sage",
+    "mstar_h3a_qb3_faithful_al_wiedemann.sage"
+  ],
+  "resource_policy": {
+    "min_free_mem_gb": 16.0,
+    "max_load_1min": 8.0
+  },
+  "backend": {
+    "type": "sage",
+    "allow_docker": false
+  },
+  "command": "{sage} _scripts/mstar_h3a_qb3_wiedemann_production.sage --certificate-mode matrix-free-schur --case-dir _results/h3a_residue_line_witness_80224_raw_remod_q5077_2026-05-23/N80224_raw_sign1_splitlast --pi-json _results/mstar_h3a_restline_kernel_quotient_remod_q5077_80224_raw_mac_2026-05-24.json --out-json _results/r1_faithful_al_80224_raw_2026-06-14.json --out-md _results/r1_faithful_al_80224_raw_2026-06-14.md --status-json _results/r1_faithful_al_80224_raw_2026-06-14.status.json --seed-start 1 --seed-count 16 --solve-seed-start 1001 --solve-seed-count 16 --suffix-terms 4 --progress-every 100 --projection-progress-every 1000 --module-base-ring finite --bal-mode sign0-tensor-solve --bal-cache-dir _cache/bal_factors --bal-cache-read --bal-cache-write --pari-stack-mb 16384 --matrix-free-schur-allow-large",
+  "expected_outputs": [
+    "_results/r1_faithful_al_80224_raw_2026-06-14.json",
+    "_results/r1_faithful_al_80224_raw_2026-06-14.md"
+  ],
+  "success_json": {
+    "path": "_results/r1_faithful_al_80224_raw_2026-06-14.json",
+    "field": "faithful_al_certificate_found",
+    "equals": true
+  },
+  "release_reason": "Queued after both Mac-only cache gates passed. P-cache preflight: status=preflight_plus_basis_cached, P_nnz=445729, P_sha256=11467568e85ee55fe4c3cad77ec90f0bc1c5cb477ed99838290783a91470e366. Cache-read preflight with --pari-stack-mb 16384: status=preflight_matrix_free_schur_ready, T_nnz=822593, T_sha256=e17b4f9f9259770962c519b8a3eba6b757df12d208f5ade4fa4263a4241b20b3, W_nnz=8939237, W_sha256=5ea387c1d8ee629dddc71d3ad9ece38e660577bc430e5bf8986b99ee7cc2314e, deterministic bal_apply and A_matvec recorded.",
+  "unlock_requirements": [
+    "DONE: Mac-only P-cache preflight with --bal-cache-write --bal-stop-after-plus-cache verified status=preflight_plus_basis_cached, P_nnz=445729, P_sha256=11467568e85ee55fe4c3cad77ec90f0bc1c5cb477ed99838290783a91470e366 for 80224/raw.",
+    "DONE: Mac-only matrix-free-schur preflight with --bal-cache-read --bal-cache-write --matrix-free-schur-preflight-only --pari-stack-mb 16384 verified T_nnz=822593, W_nnz=8939237, deterministic bal_apply, and deterministic A_matvec for 80224/raw.",
+    "Avoid the known 80224/raw crash path at building_B_AL_pairing / M0._pari_pairing(); previous Mac attempts stopped there after roughly 4300-4440 seconds.",
+    "N=109 Mac/Sage matrix-free-schur smoke with real C_src has passed for q=3863 and q=5077, including Vector-Wiedemann solve residual checks.",
+    "N=109 cache/resume smokes passed: P-cache stop, cache preflight, full cache Wiedemann, and q5077 regression.",
+    "Verify the 80224 output schema includes faithful_al_certificate_found, operator_kind, rank_A, rank_A_full, schur_nonzero, input hashes, and transcript/checkpoint metadata.",
+    "Keep laptop Sage disabled for this path."
+  ],
+  "notes": [
+    "Created after 2026-06-14 crash recovery and R1 preflight.",
+    "Preflight report: _results/r1_faithful_al_80224_preflight_2026-06-14.{json,md}.",
+    "N=109 faithful-AL smokes passed: _results/r1_faithful_al_wiedemann_n109_q3863_2026-06-14.{json,md} and _results/r1_faithful_al_wiedemann_n109_q5077_2026-06-14.{json,md}.",
+    "N=109 tensor-solve faithful-AL smokes passed: _results/r1_faithful_al_tensor_solve_n109_q3863_2026-06-15.{json,md} and _results/r1_faithful_al_tensor_solve_n109_q5077_2026-06-15.{json,md}.",
+    "80224/raw tensor-solve guard report: _results/r1_faithful_al_tensor_solve_80224_raw_guard_2026-06-15.{json,md}.",
+    "N=109 matrix-free-schur smokes passed: _results/r1_matrix_free_schur_n109_q3863_2026-06-15.{json,md} and _results/r1_matrix_free_schur_n109_q5077_2026-06-15.{json,md}.",
+    "80224/raw matrix-free-schur preflight stopped at plus basis: _results/r1_matrix_free_schur_80224_raw_preflight_2026-06-15.{json,md,status.json,log}.",
+    "80224/raw P-cache preflight passed: _results/r1_matrix_free_schur_80224_raw_plus_cache_2026-06-15.{json,md,status.json,log}; remote cache _cache/bal_factors/N80224_q5077_sign0_plus_basis.{sobj,json}.",
+    "80224/raw cache-read preflight passed with 16 GiB PARI stack: _results/r1_matrix_free_schur_80224_raw_cache_preflight_pari16g_2026-06-15.{json,md,status.json,log}; remote caches _cache/bal_factors/N80224_q5077_sign0_pari_tensor.{sobj,json} and _cache/bal_factors/N80224_q5077_sign0_atkin_lehner_W.{sobj,json}.",
+    "Plusbasis cache/resume smokes passed: _results/r1_matrix_free_schur_n109_q3863_plus_cache_2026-06-15.*, _results/r1_matrix_free_schur_n109_q3863_cache_preflight_2026-06-15.*, _results/r1_matrix_free_schur_n109_q3863_cache_full_2026-06-15.*, _results/r1_matrix_free_schur_n109_q5077_cache_regression_2026-06-15.*.",
+    "Old job qb3_wiedemann_80224_raw_2026-05-23 is identity-like and must not be reactivated for faithful AL.",
+    "Released to queued on 2026-06-15 after the 80224 P-cache and tensor/W/A_matvec preflights completed."
+  ]
+}

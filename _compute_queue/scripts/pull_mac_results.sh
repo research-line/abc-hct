@@ -15,7 +15,9 @@
 set -u
 KEY="$HOME/.ssh/id_ed25519_mcmc"
 MAC="lukas@100.119.69.90"
-ABC="/c/Users/User/OneDrive/.TOPICS/.RESEARCH/.LAB/.HCT/abc"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+ABC="${ABC_OVERRIDE:-$REPO_ROOT}"
 LOG="$ABC/_compute_queue_pull.log"
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT

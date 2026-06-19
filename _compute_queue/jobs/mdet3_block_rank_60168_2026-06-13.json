@@ -1,0 +1,32 @@
+{
+  "id": "mdet3_block_rank_60168_2026-06-13",
+  "title": "M-DET 3: Block-Rang-Test Manin vs Hecke (Drop-Prime-Lokalisierung)",
+  "status": "completed",
+  "priority": 10,
+  "allowed_hosts": [
+    "mac-studio"
+  ],
+  "disallowed_hosts": [
+    "ASUS-GEI"
+  ],
+  "depends_on_success": [],
+  "defer_while_process_regex": [],
+  "resource_policy": {
+    "min_free_mem_gb": 8.0,
+    "max_load_1min": 6.0
+  },
+  "backend": {
+    "type": "sage",
+    "allow_docker": false
+  },
+  "command": "{sage} _scripts/mdet3_block_rank_60168.py",
+  "success_json": {
+    "path": "_results/mdet3_block_rank_60168_2026-06-13.json",
+    "field": "status",
+    "equals": "done"
+  },
+  "expected_runtime_hours": "0.3-1 (12 GF(p)-Raenge auf 2 Bloecken, 21k+32k Zeilen x 31680, sparse)",
+  "notes": "Satz-B-Diagnostik nach Torsions-Lemma: trennt geometrische Drops (Defekt schon im Manin-Block = level-uniform, Torsion S/T) von Hecke-Drops (Defekt erst im vollen System = arithmetisch, Eichler-Shimura mod 5 / nicht-rat. Bahn 31). Erwartung: 2,3 geometrisch; 5 teils/Hecke; 31 Hecke. Kontroll-Prim 101 = ℚ-Rang-Proxy. Deferred bis 240672 fertig. success_json -> Auto-Done.",
+  "completed_unix": 1781428145.6590998,
+  "completed_reason": "auto-done: exit 0"
+}

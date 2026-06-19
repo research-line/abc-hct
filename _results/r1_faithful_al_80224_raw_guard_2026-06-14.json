@@ -1,0 +1,45 @@
+{
+  "tool": "mstar_h3a_qb3_faithful_al_wiedemann",
+  "date": "2026-06-14",
+  "status": "blocked_matrix_free_faithful_al_required",
+  "faithful_al_certificate_found": false,
+  "reason": "Quotient dimension exceeds dense guard. Refusing to fall back to identity-pairing; implement a matrix-free faithful-AL operator before running this level.",
+  "case_dir": "_results/h3a_residue_line_witness_80224_raw_remod_q5077_2026-05-23/N80224_raw_sign1_splitlast",
+  "pi_json": "_results/mstar_h3a_restline_kernel_quotient_remod_q5077_80224_raw_mac_2026-05-24.json",
+  "level": 80224,
+  "N": 80224,
+  "q": 5077,
+  "quotient_dim_from_free_columns": 10568,
+  "max_dense_dim": 256,
+  "operator_kind": "not_constructed",
+  "operator_is_identity": false,
+  "operator_kind_not_identity": true,
+  "input_hashes": {
+    "case_manifest_sha256": "bc543938d47a718a098eb5fb9f084ad01ad42f1de17fa08efa0a41264e1ef35f",
+    "case_rows_sha256": "d5179cc724245312725837cff05bec2d8413facf6207bde6f771ad9f9fcc791a",
+    "pi_json_sha256": "db18f587fe4622f80e44409e0ee68c124b54f96c8a7a5dfa4b8c6babc12c8372",
+    "operator_script_sha256": "bfec5d65a96947080b295eef61c81cc7250153f659202ccc193fd8f1e3b006cb"
+  },
+  "transcript": {
+    "scope": "guard_only_no_matvec",
+    "checkpoint_stride": 0,
+    "matvec_checkpoints": []
+  },
+  "transcript_metadata": {
+    "scope": "guard_only_no_matvec",
+    "checkpoint_stride": 0,
+    "matvec_checkpoints": [],
+    "operator_logic": "faithful_al_required_identity_fallback_refused",
+    "seed_start": 1,
+    "seed_count": 16,
+    "suffix_terms": 4
+  },
+  "seconds": 0.009,
+  "queue_compat": {
+    "seed_start": 1,
+    "seed_count": 16,
+    "suffix_terms": 4,
+    "checkpoint_stride": 0,
+    "note": "Accepted for queue compatibility; dense smoke uses direct Schur."
+  }
+}

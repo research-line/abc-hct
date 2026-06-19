@@ -1,0 +1,97 @@
+{
+  "date": "2026-06-16",
+  "tool": "r1_faithful_al_80224_status_check",
+  "claim_upgrade": false,
+  "verdict": "running_or_incomplete",
+  "status_file": {
+    "path": "_results\\r1_faithful_al_80224_raw_2026-06-14.status.json",
+    "exists": true,
+    "bytes": 3225,
+    "mtime_local": "2026-06-16T18:06:59"
+  },
+  "final_json_file": {
+    "path": "_results\\r1_faithful_al_80224_raw_2026-06-14.json",
+    "exists": false
+  },
+  "final_md_file": {
+    "path": "_results\\r1_faithful_al_80224_raw_2026-06-14.md",
+    "exists": false
+  },
+  "canonical_script": {
+    "path": "_scripts\\mstar_h3a_qb3_wiedemann_production.sage",
+    "exists": true,
+    "bytes": 61498,
+    "mtime_local": "2026-06-15T08:54:51",
+    "sha256": "6f98fe6fe96a45668e859666fd4389d9ef9369955439f5d5bcf3d9d4ee6916a5"
+  },
+  "asus_alias_script": {
+    "path": "_scripts\\mstar_h3a_qb3_wiedemann_production-ASUS-GEI.sage",
+    "exists": true,
+    "bytes": 61498,
+    "mtime_local": "2026-06-15T08:54:51",
+    "sha256": "6f98fe6fe96a45668e859666fd4389d9ef9369955439f5d5bcf3d9d4ee6916a5"
+  },
+  "current_status": {
+    "phase": "matrix_free_schur_rank_seed",
+    "seconds": 110087.798,
+    "target_rank": 10567,
+    "quotient_dim": 10568,
+    "sequence_length": 21138,
+    "sequence_length_expected": 21138,
+    "pairing_kind": "_pari_tensor_solve",
+    "primary_pairing_materialized": false,
+    "P_sha256": "11467568e85ee55fe4c3cad77ec90f0bc1c5cb477ed99838290783a91470e366",
+    "T_sha256": "e17b4f9f9259770962c519b8a3eba6b757df12d208f5ade4fa4263a4241b20b3",
+    "W_sha256": "5ea387c1d8ee629dddc71d3ad9ece38e660577bc430e5bf8986b99ee7cc2314e"
+  },
+  "checks": [
+    {
+      "name": "status_json_present",
+      "state": "pass",
+      "detail": "_results\\r1_faithful_al_80224_raw_2026-06-14.status.json"
+    },
+    {
+      "name": "canonical_script_present",
+      "state": "pass",
+      "detail": "_scripts\\mstar_h3a_qb3_wiedemann_production.sage"
+    },
+    {
+      "name": "canonical_script_has_new_hash",
+      "state": "pass",
+      "detail": "6f98fe6fe96a45668e859666fd4389d9ef9369955439f5d5bcf3d9d4ee6916a5"
+    },
+    {
+      "name": "asus_alias_matches_canonical",
+      "state": "pass",
+      "detail": "canonical=6f98fe6fe96a45668e859666fd4389d9ef9369955439f5d5bcf3d9d4ee6916a5; alias=6f98fe6fe96a45668e859666fd4389d9ef9369955439f5d5bcf3d9d4ee6916a5"
+    },
+    {
+      "name": "sequence_length_matches_rank_target",
+      "state": "pass",
+      "detail": "sequence_length=21138; expected=21138"
+    },
+    {
+      "name": "status_pairing_tensor_solve",
+      "state": "pass",
+      "detail": "_pari_tensor_solve"
+    },
+    {
+      "name": "status_primary_pairing_not_materialized",
+      "state": "pass",
+      "detail": "False"
+    }
+  ],
+  "final_checks": [
+    {
+      "name": "final_json_present",
+      "state": "fail",
+      "detail": "_results\\r1_faithful_al_80224_raw_2026-06-14.json"
+    },
+    {
+      "name": "final_md_present",
+      "state": "fail",
+      "detail": "_results\\r1_faithful_al_80224_raw_2026-06-14.md"
+    }
+  ],
+  "next_action": "Keinen lokalen Sage-Lauf starten. Auf Mac-Final-JSON/MD warten; danach faithful_al_certificate_found=true, rank_A_full=true, rank_A=target, schur_nonzero=true und nicht-identische Tensor-Solve-Operator-Metadaten verlangen."
+}

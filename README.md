@@ -26,11 +26,9 @@ Repository hygiene:
 - It also checks that the private-research `.gitignore` still excludes proof notes, handoffs, local state, raw data snapshots, and transient logs.
 - Long calculations remain outside GitHub Actions and must use the project compute queue or a designated remote compute host.
 
-Primary local project path:
+Primary local working tree:
 
-```text
-C:\Users\User\OneDrive\.TOPICS\.RESEARCH\.LAB\.HCT\abc
-```
+This repository is curated from the local abc/HCT project root; host-specific absolute paths are intentionally omitted from version control.
 
 Current computational milestone:
 

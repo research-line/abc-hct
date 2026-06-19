@@ -1,0 +1,268 @@
+{
+  "n_triples": 241,
+  "qset_fixed": [
+    101,
+    251,
+    1009,
+    3863,
+    5077
+  ],
+  "A_fixed_q_diagnose": {
+    "101": {
+      "char_mean": 0.0166,
+      "char_max": 1,
+      "tate_mean": 0.0,
+      "tate_max": 0,
+      "char_frac>0": 0.0166,
+      "tate_frac>0": 0.0,
+      "expected_random_char_per_omega": 0.02
+    },
+    "251": {
+      "char_mean": 0.00415,
+      "char_max": 1,
+      "tate_mean": 0.0,
+      "tate_max": 0,
+      "char_frac>0": 0.0041,
+      "tate_frac>0": 0.0,
+      "expected_random_char_per_omega": 0.008
+    },
+    "1009": {
+      "char_mean": 0.0,
+      "char_max": 0,
+      "tate_mean": 0.0,
+      "tate_max": 0,
+      "char_frac>0": 0.0,
+      "tate_frac>0": 0.0,
+      "expected_random_char_per_omega": 0.001984
+    },
+    "3863": {
+      "char_mean": 0.0,
+      "char_max": 0,
+      "tate_mean": 0.0,
+      "tate_max": 0,
+      "char_frac>0": 0.0,
+      "tate_frac>0": 0.0,
+      "expected_random_char_per_omega": 0.000518
+    },
+    "5077": {
+      "char_mean": 0.0,
+      "char_max": 0,
+      "tate_mean": 0.0,
+      "tate_max": 0,
+      "char_frac>0": 0.0,
+      "tate_frac>0": 0.0,
+      "expected_random_char_per_omega": 0.000394
+    }
+  },
+  "B_curve_specific_scan": {
+    "n_triples": 241,
+    "mean_n_qall": 3.237,
+    "mean_n_qtate": 0.361,
+    "mean_mult_tate": 0.411,
+    "max_n_qall": 9,
+    "corr(n_qall, omega)": 0.3443,
+    "corr(n_qall, q_abc)": -0.217,
+    "corr(n_qtate, q_abc)": 0.0712,
+    "corr(mult_tate, omega)": -0.1077,
+    "frac_triples_with_qtate>0": 0.3485
+  },
+  "scan_rows_head": [
+    {
+      "rank": 1,
+      "q_abc": 1.6299,
+      "omega": 3,
+      "n_qchar": 2,
+      "n_qtate": 1,
+      "n_qall": 2,
+      "mult_char": 3,
+      "mult_tate": 2,
+      "max_exp": 10,
+      "qtate_primes": [
+        5
+      ]
+    },
+    {
+      "rank": 2,
+      "q_abc": 1.626,
+      "omega": 5,
+      "n_qchar": 0,
+      "n_qtate": 0,
+      "n_qall": 0,
+      "mult_char": 0,
+      "mult_tate": 0,
+      "max_exp": 6,
+      "qtate_primes": []
+    },
+    {
+      "rank": 3,
+      "q_abc": 1.6235,
+      "omega": 7,
+      "n_qchar": 2,
+      "n_qtate": 1,
+      "n_qall": 3,
+      "mult_char": 2,
+      "mult_tate": 1,
+      "max_exp": 22,
+      "qtate_primes": [
+        11
+      ]
+    },
+    {
+      "rank": 4,
+      "q_abc": 1.5808,
+      "omega": 5,
+      "n_qchar": 3,
+      "n_qtate": 1,
+      "n_qall": 4,
+      "mult_char": 3,
+      "mult_tate": 1,
+      "max_exp": 11,
+      "qtate_primes": [
+        11
+      ]
+    },
+    {
+      "rank": 5,
+      "q_abc": 1.5679,
+      "omega": 3,
+      "n_qchar": 0,
+      "n_qtate": 0,
+      "n_qall": 0,
+      "mult_char": 0,
+      "mult_tate": 0,
+      "max_exp": 7,
+      "qtate_primes": []
+    },
+    {
+      "rank": 6,
+      "q_abc": 1.5471,
+      "omega": 3,
+      "n_qchar": 1,
+      "n_qtate": 1,
+      "n_qall": 1,
+      "mult_char": 1,
+      "mult_tate": 1,
+      "max_exp": 10,
+      "qtate_primes": [
+        5
+      ]
+    },
+    {
+      "rank": 7,
+      "q_abc": 1.5444,
+      "omega": 9,
+      "n_qchar": 3,
+      "n_qtate": 1,
+      "n_qall": 4,
+      "mult_char": 3,
+      "mult_tate": 1,
+      "max_exp": 23,
+      "qtate_primes": [
+        23
+      ]
+    },
+    {
+      "rank": 8,
+      "q_abc": 1.5367,
+      "omega": 7,
+      "n_qchar": 2,
+      "n_qtate": 0,
+      "n_qall": 2,
+      "mult_char": 2,
+      "mult_tate": 0,
+      "max_exp": 17,
+      "qtate_primes": []
+    },
+    {
+      "rank": 9,
+      "q_abc": 1.527,
+      "omega": 6,
+      "n_qchar": 1,
+      "n_qtate": 0,
+      "n_qall": 1,
+      "mult_char": 1,
+      "mult_tate": 0,
+      "max_exp": 13,
+      "qtate_primes": []
+    },
+    {
+      "rank": 10,
+      "q_abc": 1.5222,
+      "omega": 8,
+      "n_qchar": 2,
+      "n_qtate": 0,
+      "n_qall": 2,
+      "mult_char": 2,
+      "mult_tate": 0,
+      "max_exp": 18,
+      "qtate_primes": []
+    },
+    {
+      "rank": 11,
+      "q_abc": 1.5094,
+      "omega": 8,
+      "n_qchar": 2,
+      "n_qtate": 1,
+      "n_qall": 2,
+      "mult_char": 4,
+      "mult_tate": 1,
+      "max_exp": 12,
+      "qtate_primes": [
+        7
+      ]
+    },
+    {
+      "rank": 12,
+      "q_abc": 1.5033,
+      "omega": 7,
+      "n_qchar": 5,
+      "n_qtate": 1,
+      "n_qall": 5,
+      "mult_char": 7,
+      "mult_tate": 1,
+      "max_exp": 22,
+      "qtate_primes": [
+        11
+      ]
+    },
+    {
+      "rank": 13,
+      "q_abc": 1.5028,
+      "omega": 4,
+      "n_qchar": 3,
+      "n_qtate": 1,
+      "n_qall": 3,
+      "mult_char": 6,
+      "mult_tate": 1,
+      "max_exp": 8,
+      "qtate_primes": [
+        3
+      ]
+    },
+    {
+      "rank": 14,
+      "q_abc": 1.4976,
+      "omega": 5,
+      "n_qchar": 1,
+      "n_qtate": 0,
+      "n_qall": 1,
+      "mult_char": 1,
+      "mult_tate": 0,
+      "max_exp": 13,
+      "qtate_primes": []
+    },
+    {
+      "rank": 15,
+      "q_abc": 1.4924,
+      "omega": 8,
+      "n_qchar": 5,
+      "n_qtate": 0,
+      "n_qall": 5,
+      "mult_char": 7,
+      "mult_tate": 0,
+      "max_exp": 10,
+      "qtate_primes": []
+    }
+  ],
+  "note": "A: fixed grosses q ist fuer BEIDE Kanaele blind (Artefakt). B: kurvenspezifische lokal-exzeptionelle Masse; tate-Kanal q|e_p. Lokaler Support-Indikator (CR-2b-a), ENTSCHEIDET CR-2b-b NICHT (-> R5.2 global)."
+}

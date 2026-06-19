@@ -1,0 +1,71 @@
+{
+  "date": "2026-06-14",
+  "level": 60168,
+  "ncols": 31680,
+  "manin_rows": 21104,
+  "full_rows": 31680,
+  "control_prime": 101,
+  "ranks": {
+    "manin": {
+      "101": 21104,
+      "2": 21104,
+      "3": 21104,
+      "5": 21104,
+      "31": 21104,
+      "7": 21104
+    },
+    "full": {
+      "101": 31680,
+      "2": 31678,
+      "3": 31679,
+      "5": 31679,
+      "31": 31679,
+      "7": 31680
+    }
+  },
+  "status": "done",
+  "defects_vs_control": {
+    "manin": {
+      "2": 0,
+      "3": 0,
+      "5": 0,
+      "31": 0,
+      "7": 0
+    },
+    "full": {
+      "2": 2,
+      "3": 1,
+      "5": 1,
+      "31": 1,
+      "7": 0
+    }
+  },
+  "classification": {
+    "2": {
+      "defect_manin": 0,
+      "defect_full": 2,
+      "class": "HECKE (Defekt erst im vollen System)"
+    },
+    "3": {
+      "defect_manin": 0,
+      "defect_full": 1,
+      "class": "HECKE (Defekt erst im vollen System)"
+    },
+    "5": {
+      "defect_manin": 0,
+      "defect_full": 1,
+      "class": "HECKE (Defekt erst im vollen System)"
+    },
+    "31": {
+      "defect_manin": 0,
+      "defect_full": 1,
+      "class": "HECKE (Defekt erst im vollen System)"
+    },
+    "7": {
+      "defect_manin": 0,
+      "defect_full": 0,
+      "class": "kein Drop"
+    }
+  },
+  "total_seconds": 368.95531702041626
+}

@@ -103,7 +103,7 @@ for sp in stuck_primes:
         indices[f"ell={ell}"] = idx
 
     # ell = p Fall (p-primaer)
-    # Fuer p ungerade, p �174 e: gcd(p^n, p-1)=1, gcd(p^n, 2e)=gcd(p^n, 2e)
+    # Fuer p ungerade, p teilt e nicht: gcd(p^n, p-1)=1, gcd(p^n, 2e)=gcd(p^n, 2e)
     n = 1
     idx_p_primary = gcd(p**n, p-1) * gcd(p**n, c_p)
     # Aber: fuer ell=p ist die Euler-Char anders!
@@ -158,7 +158,7 @@ print("   → LOGARITHMISCH in e, nicht linear.")
 print()
 print("2. Fuer ell = p, n=1:")
 print("   [H¹:H¹_f] = p² * gcd(p, 2e)")
-print("   → Fuer p �174 e: Index = p² (KONSTANT, unabhaengig von e!)")
+print("   → Fuer p teilt e nicht: Index = p² (KONSTANT, unabhaengig von e!)")
 print("   → Fuer p | e: Index = p³ (sieht nur ob p|e, nicht wie oft)")
 print()
 print("3. FAZIT: Der lokale Selmer-Index ist TATE-ZIRKULAER.")

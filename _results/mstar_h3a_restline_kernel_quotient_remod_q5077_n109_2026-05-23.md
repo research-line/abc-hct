@@ -4,7 +4,7 @@ This is the quotient-functional input for the later AL scalar test
 `Q_B(phi)=phi B_AL^{-1} phi^T`.
 
 ```text
-case:                   C:\Users\User\OneDrive\.TOPICS\.RESEARCH\.LAB\.HCT\abc\_results\remod_q5077_smoke_n109_2026-05-23\N109_raw_sign1_splitlast
+case:                   _results/remod_q5077_smoke_n109_2026-05-23/N109_raw_sign1_splitlast
 level/mode/q:           109 / raw / 5077
 V_SI columns:           27
 T-Manin rows/rank:      18 / 18

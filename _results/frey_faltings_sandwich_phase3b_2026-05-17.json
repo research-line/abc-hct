@@ -2,7 +2,7 @@
   "meta": {
     "script": "_scripts/frey_faltings_sandwich_phase3b.py",
     "date": "2026-05-17",
-    "input": "/mnt/c/Users/User/OneDrive/.TOPICS/.RESEARCH/.LAB/.HCT/abc/_results/frey_watkins_saturation_phase3b_2026-05-17.json"
+    "input": "_results/frey_watkins_saturation_phase3b_2026-05-17.json"
   },
   "summary": {
     "n": 60,

@@ -1,0 +1,84 @@
+{
+  "tool": "r1_faithful_al_80224_preflight",
+  "date": "2026-06-14",
+  "status": "ready_for_draft_job",
+  "purpose": "Preflight only; no Sage and no heavy computation executed.",
+  "inputs_ready": true,
+  "case": {
+    "label": "80224/raw q'=5077 remod",
+    "case_dir": "_results\\h3a_residue_line_witness_80224_raw_remod_q5077_2026-05-23\\N80224_raw_sign1_splitlast",
+    "manifest": {
+      "path": "_results\\h3a_residue_line_witness_80224_raw_remod_q5077_2026-05-23\\N80224_raw_sign1_splitlast\\manifest.json",
+      "exists": true,
+      "bytes": 962,
+      "mtime_utc": "2026-05-23T23:03:53+00:00",
+      "sha256": "bc543938d47a718a098eb5fb9f084ad01ad42f1de17fa08efa0a41264e1ef35f"
+    },
+    "rows": {
+      "path": "_results\\h3a_residue_line_witness_80224_raw_remod_q5077_2026-05-23\\N80224_raw_sign1_splitlast\\mixed_rows.jsonl",
+      "exists": true,
+      "bytes": 10089155,
+      "mtime_utc": "2026-05-23T23:03:53+00:00"
+    },
+    "manifest_level": 80224,
+    "manifest_q": 5077,
+    "manifest_mode": "raw",
+    "manifest_ncols": 31680
+  },
+  "pi_json": {
+    "file": {
+      "path": "_results\\mstar_h3a_restline_kernel_quotient_remod_q5077_80224_raw_mac_2026-05-24.json",
+      "exists": true,
+      "bytes": 278629,
+      "mtime_utc": "2026-05-24T01:28:04+00:00",
+      "sha256": "db18f587fe4622f80e44409e0ee68c124b54f96c8a7a5dfa4b8c6babc12c8372"
+    },
+    "free_columns": 10568,
+    "kernel_entries": 4855,
+    "repair_entries": 6,
+    "ready_for_al_scalar": true
+  },
+  "existing_identity_certificate": {
+    "file": {
+      "path": "_results\\mstar_h3a_qb3_wiedemann_production_remod_q5077_80224_raw_identity_mac_2026-05-26.json",
+      "exists": true,
+      "bytes": 1090439,
+      "mtime_utc": "2026-06-12T23:11:11.872778+00:00",
+      "sha256": "35823d1d68ec54c30cbf358f2d4383a01c625af1f5c26c0f1eb4b5cd2fa7e55f"
+    },
+    "accepted_certificate_found": true,
+    "pairing_kind": "identity",
+    "target_rank": 10567,
+    "degree": 10567,
+    "constant_signed": 1344,
+    "sufficient_for_r1_faithful_al": false,
+    "reason": "This is the old identity-pairing fingerprint. R1 now needs a faithful AL certificate for rank(A) and s_N != 0, not a reactivation of the identity run."
+  },
+  "queue_safety": {
+    "old_job": {
+      "path": "_compute_queue\\jobs\\qb3_wiedemann_80224_raw_2026-05-23.json",
+      "exists": true,
+      "bytes": 3312,
+      "mtime_utc": "2026-05-30T19:33:42+00:00",
+      "sha256": "5da33d51efe52038c6197da1f2fff5f6c4cd96210ddad73391e387834fa77ade"
+    },
+    "old_job_status": "blocked",
+    "old_job_identity_like": true,
+    "do_not_reactivate_old_job": true,
+    "reason": "The old job targets the identity finite-pairing production path and is marked blocked/completed-via-manual identity output."
+  },
+  "next_mac_job_contract": {
+    "goal": "matrix-free faithful-AL Schur certificate for 80224/raw",
+    "must_prove": [
+      "rank(A) is full for the real C_src source block",
+      "Schur scalar s_N is nonzero over q=5077 and ideally a second q",
+      "operator construction is not identity-pairing"
+    ],
+    "must_not_do": [
+      "do not start local Sage on the laptop",
+      "do not mark identity-pairing output as faithful AL",
+      "do not reactivate qb3_wiedemann_80224_raw_2026-05-23 without changing the operator path"
+    ],
+    "suggested_first_artifact": "_proof-notes/MG_r1_faithful_al_80224_job_plan_2026-06-14.md"
+  }
+}

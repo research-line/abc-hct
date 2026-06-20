@@ -105,8 +105,13 @@ jobs:
               ".yaml",
               ".toml",
           }
+          # Diese Workflow-Datei definiert die Suchmuster selbst als
+          # String-Literale und ist daher kein echter Leak.
+          self_workflow = ".github/workflows/abc-hct-hygiene.yml"
           path_leaks = []
           for path in tracked:
+              if path == self_workflow:
+                  continue
               if Path(path).suffix.lower() not in text_suffixes:
                   continue
               try:

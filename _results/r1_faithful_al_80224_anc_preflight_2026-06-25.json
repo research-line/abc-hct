@@ -1,0 +1,245 @@
+{
+  "tool": "r1_faithful_al_80224_anc_preflight",
+  "date": "2026-06-25",
+  "status": "ready_for_mac_cache_gate",
+  "purpose": "Preflight only; no Sage and no heavy computation executed.",
+  "claim_upgrade": false,
+  "case": {
+    "label": "80224/anc q=3863 standard",
+    "case_dir": "_results\\h3a_residue_line_witness_80224_anc_standard_2026-05-16\\N80224_anc_sign1_splitlast",
+    "manifest": {
+      "path": "_results\\h3a_residue_line_witness_80224_anc_standard_2026-05-16\\N80224_anc_sign1_splitlast\\manifest.json",
+      "exists": true,
+      "bytes": 764,
+      "mtime_utc": "2026-05-16T07:29:07+00:00",
+      "sha256": "46ed2d141c1aa2df46b31bd2bcff1aa6a71582a18c29a5ab05c499fc118e0dd8"
+    },
+    "rows": {
+      "path": "_results\\h3a_residue_line_witness_80224_anc_standard_2026-05-16\\N80224_anc_sign1_splitlast\\mixed_rows.jsonl",
+      "exists": true,
+      "bytes": 10057475,
+      "mtime_utc": "2026-05-16T07:29:07+00:00",
+      "sha256": "df74a6bd8b3e4fee7c11528ebb3a579d434da593c48d96e01d14918e39115c15"
+    },
+    "rows_sha256_computed": "df74a6bd8b3e4fee7c11528ebb3a579d434da593c48d96e01d14918e39115c15",
+    "manifest_level": 80224,
+    "manifest_mode": "anc",
+    "manifest_q": 3863,
+    "manifest_ncols": 31680,
+    "manifest_rows_sha256": "df74a6bd8b3e4fee7c11528ebb3a579d434da593c48d96e01d14918e39115c15"
+  },
+  "pi_json": {
+    "file": {
+      "path": "_results\\mstar_h3a_restline_kernel_quotient_80224_anc_2026-05-17.json",
+      "exists": true,
+      "bytes": 278626,
+      "mtime_utc": "2026-05-24T13:24:49+00:00",
+      "sha256": "0cb150add984214d4ae97c708acbd1c383f13f13e66f9712c65af19e8cfc69d7"
+    },
+    "level": 80224,
+    "mode": "anc",
+    "q": 3863,
+    "quotient_ncols": 10568,
+    "quotient_rank": 10567,
+    "quotient_kernel_dim": 1,
+    "free_columns": 10568,
+    "kernel_entries": 4855,
+    "repair_entries": 6,
+    "repair_pairing_signed": -1,
+    "source_annihilated": true,
+    "ready_for_al_scalar": true
+  },
+  "old_identity_finite_queue_jobs": [
+    {
+      "file": {
+        "path": "_compute_queue\\jobs\\qb3_wiedemann_80224_anc_2026-05-23.json",
+        "exists": true,
+        "bytes": 2763,
+        "mtime_utc": "2026-06-25T00:33:33.089398+00:00",
+        "sha256": "4d58deaeb69e58b82cd25eb8dd80e19636935ff47af6fa9d998c93ffd11b3f20"
+      },
+      "status": "blocked",
+      "success_field": "accepted_certificate_found",
+      "blocked_reason": "Blocked 2026-06-25 by GPT/Codex: obsolete finite/identity-pairing path. After the 80224/raw faithful-AL closure, 80224/anc must use the matrix-free faithful-AL Schur route with faithful_al_certificate_found, not accepted_certificate_found."
+    },
+    {
+      "file": {
+        "path": "compute_queue\\jobs\\qb3_wiedemann_80224_anc_2026-05-23.json",
+        "exists": true,
+        "bytes": 2787,
+        "mtime_utc": "2026-06-24T23:10:45.969135+00:00",
+        "sha256": "eeb2160f4ef8d55036c31ef7ffb45c40f0f68a73dca484d77c89ffdf37c65648"
+      },
+      "status": "blocked",
+      "success_field": "accepted_certificate_found",
+      "blocked_reason": "Blocked 2026-06-25 by GPT/Codex: obsolete finite/identity-pairing path. After the 80224/raw faithful-AL closure, 80224/anc must use the matrix-free faithful-AL Schur route with faithful_al_certificate_found, not accepted_certificate_found."
+    }
+  ],
+  "raw_reference": {
+    "file": {
+      "path": "_results\\r1_faithful_al_80224_raw_2026-06-14.json",
+      "exists": true,
+      "bytes": 1102746,
+      "mtime_utc": "2026-06-24T04:18:17.126506+00:00",
+      "sha256": "1b303793ff0475dda129fcbee4e01e58c1061e33a8e533540700f96b3695727a"
+    },
+    "level": 80224,
+    "mode": "raw",
+    "q": 5077,
+    "certificate_mode": "matrix-free-schur",
+    "rank_A": 10567,
+    "target_rank": 10567,
+    "schur_scalar_signed": 1789,
+    "q_b_from_schur_signed": 1243,
+    "faithful_al_certificate_found": true
+  },
+  "field_decision": {
+    "recommended_next_field": 3863,
+    "recommendation": "use_q3863_cache_gate_first",
+    "q5077_anc_artifacts_present": false,
+    "q5077_anc_artifact_count": 0,
+    "rationale": "Der vollständige anc-Standardinput liegt bereits über q=3863 vor. Der raw-Abschluss über q=5077 ist ein gültiger Vergleichsanker, aber keine Voraussetzung für ein anc-Schur-Gate über einem endlichen Feld. Daher zuerst q=3863-Cache-Gates laufen lassen; q=5077-Remod bleibt für Redundanz, Uniformisierung oder ein Scheitern von q=3863 reserviert."
+  },
+  "gates": [
+    {
+      "name": "case_dir_present",
+      "state": "pass",
+      "detail": "_results\\h3a_residue_line_witness_80224_anc_standard_2026-05-16\\N80224_anc_sign1_splitlast"
+    },
+    {
+      "name": "manifest_present",
+      "state": "pass",
+      "detail": "_results\\h3a_residue_line_witness_80224_anc_standard_2026-05-16\\N80224_anc_sign1_splitlast\\manifest.json"
+    },
+    {
+      "name": "rows_present",
+      "state": "pass",
+      "detail": "_results\\h3a_residue_line_witness_80224_anc_standard_2026-05-16\\N80224_anc_sign1_splitlast\\mixed_rows.jsonl"
+    },
+    {
+      "name": "manifest_level_80224",
+      "state": "pass",
+      "detail": "80224"
+    },
+    {
+      "name": "manifest_mode_anc",
+      "state": "pass",
+      "detail": "anc"
+    },
+    {
+      "name": "manifest_q_3863",
+      "state": "pass",
+      "detail": "3863"
+    },
+    {
+      "name": "pi_json_present",
+      "state": "pass",
+      "detail": "_results\\mstar_h3a_restline_kernel_quotient_80224_anc_2026-05-17.json"
+    },
+    {
+      "name": "pi_level_80224",
+      "state": "pass",
+      "detail": "80224"
+    },
+    {
+      "name": "pi_mode_anc",
+      "state": "pass",
+      "detail": "anc"
+    },
+    {
+      "name": "pi_q_3863",
+      "state": "pass",
+      "detail": "3863"
+    },
+    {
+      "name": "ready_for_al_scalar",
+      "state": "pass",
+      "detail": "True"
+    },
+    {
+      "name": "source_annihilated",
+      "state": "pass",
+      "detail": "True"
+    },
+    {
+      "name": "quotient_ncols_10568",
+      "state": "pass",
+      "detail": "10568"
+    },
+    {
+      "name": "quotient_rank_10567",
+      "state": "pass",
+      "detail": "10567"
+    },
+    {
+      "name": "kernel_dim_1",
+      "state": "pass",
+      "detail": "1"
+    },
+    {
+      "name": "free_columns_10568",
+      "state": "pass",
+      "detail": "10568"
+    },
+    {
+      "name": "repair_entries_present",
+      "state": "pass",
+      "detail": "6"
+    },
+    {
+      "name": "driver_present",
+      "state": "pass",
+      "detail": "_scripts\\mstar_h3a_qb3_wiedemann_production.sage"
+    },
+    {
+      "name": "old_queue_jobs_blocked",
+      "state": "pass",
+      "detail": "blocked; blocked"
+    },
+    {
+      "name": "raw_reference_closed",
+      "state": "pass",
+      "detail": "found=True; mode=matrix-free-schur"
+    },
+    {
+      "name": "rows_sha256_matches_manifest",
+      "state": "pass",
+      "detail": "computed=df74a6bd8b3e4fee7c11528ebb3a579d434da593c48d96e01d14918e39115c15; manifest=df74a6bd8b3e4fee7c11528ebb3a579d434da593c48d96e01d14918e39115c15"
+    }
+  ],
+  "proposed_mac_gate_sequence": [
+    {
+      "name": "plus_basis_cache_gate",
+      "status_after_success": "preflight_plus_basis_cached",
+      "command": "{sage} _scripts/mstar_h3a_qb3_wiedemann_production.sage --certificate-mode matrix-free-schur --case-dir _results/h3a_residue_line_witness_80224_anc_standard_2026-05-16/N80224_anc_sign1_splitlast --pi-json _results/mstar_h3a_restline_kernel_quotient_80224_anc_2026-05-17.json --out-json _results/r1_matrix_free_schur_80224_anc_plus_cache_2026-06-25.json --out-md _results/r1_matrix_free_schur_80224_anc_plus_cache_2026-06-25.md --status-json _results/r1_matrix_free_schur_80224_anc_plus_cache_2026-06-25.status.json --seed-start 1 --seed-count 16 --solve-seed-start 1001 --solve-seed-count 16 --suffix-terms 4 --progress-every 100 --projection-progress-every 1000 --module-base-ring finite --bal-mode sign0-tensor-solve --bal-cache-dir _cache/bal_factors --bal-cache-read --bal-cache-write --pari-stack-mb 16384 --matrix-free-schur-allow-large --bal-stop-after-plus-cache"
+    },
+    {
+      "name": "tensor_W_A_matvec_cache_gate",
+      "status_after_success": "preflight_matrix_free_schur_ready",
+      "command": "{sage} _scripts/mstar_h3a_qb3_wiedemann_production.sage --certificate-mode matrix-free-schur --case-dir _results/h3a_residue_line_witness_80224_anc_standard_2026-05-16/N80224_anc_sign1_splitlast --pi-json _results/mstar_h3a_restline_kernel_quotient_80224_anc_2026-05-17.json --out-json _results/r1_matrix_free_schur_80224_anc_cache_preflight_2026-06-25.json --out-md _results/r1_matrix_free_schur_80224_anc_cache_preflight_2026-06-25.md --status-json _results/r1_matrix_free_schur_80224_anc_cache_preflight_2026-06-25.status.json --seed-start 1 --seed-count 16 --solve-seed-start 1001 --solve-seed-count 16 --suffix-terms 4 --progress-every 100 --projection-progress-every 1000 --module-base-ring finite --bal-mode sign0-tensor-solve --bal-cache-dir _cache/bal_factors --bal-cache-read --bal-cache-write --pari-stack-mb 16384 --matrix-free-schur-preflight-only"
+    },
+    {
+      "name": "full_matrix_free_schur_job",
+      "status_after_success": "faithful_al_certificate_found",
+      "command": "{sage} _scripts/mstar_h3a_qb3_wiedemann_production.sage --certificate-mode matrix-free-schur --case-dir _results/h3a_residue_line_witness_80224_anc_standard_2026-05-16/N80224_anc_sign1_splitlast --pi-json _results/mstar_h3a_restline_kernel_quotient_80224_anc_2026-05-17.json --out-json _results/r1_faithful_al_80224_anc_2026-06-25.json --out-md _results/r1_faithful_al_80224_anc_2026-06-25.md --status-json _results/r1_faithful_al_80224_anc_2026-06-25.status.json --seed-start 1 --seed-count 16 --solve-seed-start 1001 --solve-seed-count 16 --suffix-terms 4 --progress-every 100 --projection-progress-every 1000 --module-base-ring finite --bal-mode sign0-tensor-solve --bal-cache-dir _cache/bal_factors --bal-cache-read --bal-cache-write --pari-stack-mb 16384 --matrix-free-schur-allow-large"
+    }
+  ],
+  "next_job_contract": {
+    "id": "r1_faithful_al_80224_anc_2026-06-25",
+    "status": "blocked_until_cache_gates_pass",
+    "must_produce": [
+      "certificate_mode=matrix-free-schur",
+      "pairing_kind=_pari_tensor_solve",
+      "primary_pairing_materialized=false",
+      "rank_A_full=true",
+      "schur_nonzero=true",
+      "faithful_al_certificate_found=true",
+      "input hashes and rank/solve certificate fields"
+    ],
+    "must_not_use": [
+      "mstar_h3a_qb3_wiedemann_production_finite_pairing.sage",
+      "accepted_certificate_found as success criterion",
+      "identity-pairing output as R1 faithful-AL evidence"
+    ]
+  }
+}

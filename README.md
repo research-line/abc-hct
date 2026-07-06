@@ -46,3 +46,8 @@ Frey-Watkins exploratory batch:
 - `_scripts/frey_watkins_phase2.gp` reproduces the PARI/GP Phase-2 calculation for 15 classical Frey triples.
 - `_scripts/frey_watkins_phase2.py` is a Sage/Python helper with the same Phase-2 triple list.
 - Main result: naive universal `log m / log N >= 1` is falsified on the sample, while the quality-conditional pattern `rho >= (q-1)+c` remains empirically supported.
+
+## LLM Context
+
+- [LLM context](llms.txt) contains canonical links, interfaces, search phrases, and safety boundaries for AI coding assistants.
+

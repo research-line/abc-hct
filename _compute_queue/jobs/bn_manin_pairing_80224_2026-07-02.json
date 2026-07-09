@@ -1,0 +1,56 @@
+{
+  "id": "bn_manin_pairing_80224_2026-07-02",
+  "title": "B_N Manin pairing (petersson_transfer) for CFR-3.4 / Satz 2 — phi'-Konstruktion auf 80224/raw",
+  "status": "blocked",
+  "priority": 12,
+  "allowed_hosts": [
+    "mac-studio"
+  ],
+  "disallowed_hosts": [
+    "ASUS-GEI"
+  ],
+  "defer_while_process_regex": [
+    "mstar_h3a_qb3_wiedemann_production.sage",
+    "mstar_h3a_qb3_wiedemann_production_finite_pairing.sage",
+    "mstar_h3a_qb3_faithful_al_wiedemann.sage"
+  ],
+  "resource_policy": {
+    "min_free_mem_gb": 20.0,
+    "max_load_1min": 8.0
+  },
+  "backend": {
+    "type": "sage",
+    "allow_docker": false
+  },
+  "command": "{sage} _scripts/mstar_h3a_manin_pairing_wrapper.sage --case-dir _results/h3a_residue_line_witness_80224_raw_standard_2026-05-16/N80224_raw_sign1_splitlast --pi-json _results/mstar_h3a_restline_kernel_quotient_80224_raw_2026-05-17.json --realization sign0 --pairing-source petersson_transfer --frey-a 2 --frey-b 6436341 --pari-stack-mb 16384 --module-base-ring finite --hecke-primes 5,7,11,13 --e0-col 0 --status-json _results/bn_manin_pairing_80224_raw_2026-07-02.status.json --out-json _results/bn_manin_pairing_80224_raw_2026-07-02.json --out-md _results/bn_manin_pairing_80224_raw_2026-07-02.md",
+  "expected_outputs": [
+    "_results/bn_manin_pairing_80224_raw_2026-07-02.json",
+    "_results/bn_manin_pairing_80224_raw_2026-07-02.md"
+  ],
+  "success_json": {
+    "path": "_results/bn_manin_pairing_80224_raw_2026-07-02.json",
+    "field": "gate_green",
+    "equals": true
+  },
+  "release_reason": "QUEUED 2026-07-02 (Session 2) after the delta-allowance gate at N=109 turned GREEN: delta = B((T5-a5)r_N,-) lies in the span of the FULL T7-residual-line allowance family {B((T7-a7)e_c,-)} on the class level of the witness image; the corrected functional phi' = B(r_N,-) - sum lambda_c B((T7-a7)e_c,-) annihilates ALL source rows with phi'(r_N) != 0 (new 705-analogue; convention-robust: green for both a_p conventions and reproduced independently by delta script and wrapper). This job runs the same phi'-construction on 80224/raw. NOTE: RESEARCH PROBE of an open hypothesis, not a proof; success_json=gate_green means self-adjointness + full source annihilation + phi'!=0 + phi'(r_N)!=0.",
+  "unlock_requirements": [
+    "DONE 2026-07-02: wrapper built (bridged mode + AL-twist candidate selection + _pari_pairing fallback + q-from-pi-json fix).",
+    "DONE 2026-07-02 (VALIDATION GATE RESULT, N=109): NEGATIVE for the ambient sign-+1 realization — both intersection_pairing (not present in local Sage) and _pari_pairing fail ('input matrix must be nonsingular'). This is the anticipated sign-+1 degeneration in its hardest form: the pairing structurally pairs M^+ with M^-, not M^+ with itself. Artefacts: _results/bn_manin_pairing_n109_validation_2026-07-02.{json,md}.",
+    "DONE 2026-07-02 (CONSTRUCTIBILITY PROBE): the sign-0 realization works — ModularSymbols(Gamma0(109),2,sign=0)._pari_pairing() exists with FULL RANK 17/17. The viable path is therefore: realize B_N on the sign-0 space (perfect pairing), map r_N into sign-0 via the +1 section, evaluate B_N(r_N, w_N y) there.",
+    "DONE 2026-07-02: sign-0 refactor built (--realization sign0, I-orbit averaging bridge, candidate selection by the CFR-3.4 criterion itself). N=109 re-validation NEGATIVE with certificate: _pari_pairing is NOT a Hecke-compatible pairing (all 8 twist/transpose candidates fail self-adjointness AND (T_l^T-a_l)phi=0). Artefacts: _results/bn_manin_pairing_n109_sign0_2026-07-02.*.",
+    "DONE 2026-07-02: B0 source FOUND and certified — pullback of PARI mspetersson Gram through the mseval duality (B = A^-T*Bsym*A^-1). Hecke-self-adjoint on l=5,7, rank n0-1, alternating. Script: _scripts/merel_pairing_probe_n109.py.",
+    "DONE 2026-07-02 (class-level calibration, N=109, q=3863): raw identity phi_N = B(r_N,-) part-falsified — 18/26 source rows annihilated, violators = exactly the T_5_minus_2 batch = the measured allowance term.",
+    "DONE 2026-07-02 (Session 2, DELTA-ALLOWANCE GATE GREEN): delta in span of the FULL T7-residual family (rank 8; +Eisenstein rank 10/17 — no trivial span). phi' annihilates all 26 source rows, phi'(r_N) = 1772 (109a1 convention) / -1065 (frey convention a5=2,a7=0) != 0; Q7 = 0 (the non-vanishing certificate MOVED from Q7 to phi'(r_N)). Limits documented: delta NOT in span as full M0 functional; (T5-a5)r_N leaves the bridge image (rank 9->10) — identity holds exactly on the class level of the witness image, where CFR-3.4 needs it. Wrapper branch --pairing-source petersson_transfer wired, N=109 gate green in wrapper (both conventions), matrix-mseval scaling optimization validated by regression (identical phi' values). Artefacts: _results/merel_delta_allowance_n109{,_frey}_2026-07-02.json, _results/bn_manin_pairing_n109_petersson_transfer{,_frey}_2026-07-02.*; Addendum No. 4 in _proof-notes/MG_h3a_manin_pairing_identification_2026-05-16.md.",
+    "NOTE: ap convention for production = FREY witness curve (rc3c frey_ap, triple 2 + 3^10*109 = 23^5): --frey-a 2 --frey-b 6436341 (a5=2, a7=0 — matches the stage names T_5_minus_2 / T_7_minus_0). NOT the 109a1 values.",
+    "NOTE: Laptop Sage disabled; run on mac-studio via the queue runner only."
+  ],
+  "notes": [
+    "Prepared by the 2026-07-02 focus audit (_results/AUDIT_REVIEW_2026-07-02.md, Empf. 3.2); requeued after the Session-2 delta-allowance gate.",
+    "Structural identity (now in corrected form): phi'_N = B_N(r_N,-) - allowance correction annihilates the source space with phi'_N(r_N) != 0; CFR-3.4 'up to allowance' on the witness class level.",
+    "SCALING RISK (accepted): sign0-dim at 80224 is 21121. mspetersson on that dimension is untested and may be very expensive (dense QQ Gram); the mseval transfer is one PARI call per basis generator (21121 calls, matrix argument — optimization validated at N=109); the mod-q inversion/multiplications are ~21121^3 field ops (hours) with ~15-20 GB peak for dense GF(3863) matrices. min_free_mem_gb=20 set accordingly; job defers behind running Wiedemann anyway. If mspetersson itself explodes, the fallback is to materialize B only on the bridged witness image (rank ~10^4 columns), not all of M0.",
+    "CODEX ADVERSARIAL REVIEW RESULT (2026-07-02, _codex/CODEX_DELTA_REVIEW_ANTWORT_2026-07-02.md): status 'operationally yellow' — phi'(r_N) != 0 is REPRESENTATIVE-DEPENDENT (N(S) meet allowance does not vanish on r_N; e.g. 1772 + 2584*687 = 0 mod 3863), so it is NOT a canonical non-vanishing certificate yet. Wrapper now measures this: fields phi_prime_rN_invariant / gate_invariant (N=109: false) and batch_rank_equals_all (N=109: true — violator system structurally suffices there). success_json stays gate_green (operational probe); gate_invariant is the stronger open gate. Also open per review: Satz-2 scope (witness-quotient reading holds, M0-global form falsified) and rank-8 structure question — this 80224 run supplies exactly those cross-level data points.",
+    "Also feeds Satz 3 (2-primary via B_N 2-adic structure), Satz 4 TFR-B (A_E^Eis needs (r_N, phi_N, B_N, allowance value)), and Satz 5 coverage table.",
+    "After 80224: clone for 120336 and 240672 (N=109 already done).",
+    "2026-07-10 Fable-5-Operator: BLOCKED (manual hold) nach Crash-Loop-Diagnose: >=8 Launches 08.-09.07. alle ~4,25h vom Kernel-OOM gekillt (kein status.json, kein Checkpoint, Log nur PARI-Stack-Zeilen, Mac im Memory-EMERGENCY free<90MB). Wrapper braucht Cache-Reuse (N80224_q3863_sign0-Caches existieren vom anc-Lauf) + Phasen-Status + gestuften RAM-Plan vor Requeue. Slot frei fuer r1_faithful_al_120336_raw."
+  ]
+}

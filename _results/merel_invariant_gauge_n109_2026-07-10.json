@@ -1,0 +1,379 @@
+{
+  "tool": "merel_invariant_gauge_n109",
+  "version": 1,
+  "date": "2026-07-10",
+  "N": 109,
+  "spec_session": "team-lead symplektische Eichung N=109 (2026-07-10)",
+  "builds_on": "merel_delta_allowance_n109.py (v3 / version 4)",
+  "q_prime_5077_note": "SKIPPED: mixed_rows.jsonl-Zeilen sind GF(3863)-Residuen, kein Rohinteger -> mod-5077-Reduktion waere falsch (3862 != -1 mod 5077).",
+  "n0": 17,
+  "ap_curve_109a1": {
+    "5": 3,
+    "7": 2,
+    "11": 1,
+    "13": 0
+  },
+  "primary_field_q": 3863,
+  "bridged_cols": 27,
+  "B_kernel_dim_mod_q": 1,
+  "conventions": {
+    "standard": {
+      "tag": "standard",
+      "a5": 3,
+      "a7": 2,
+      "qw": 3863,
+      "phi_prime_rN": 1772,
+      "phi_prime_annihilates_all26": true,
+      "phi_prime_vector_signed": [
+        0,
+        -1068,
+        -462,
+        -1305,
+        -1644,
+        511,
+        1909,
+        -130,
+        18,
+        0,
+        -789,
+        345,
+        -1708,
+        511,
+        -1398,
+        -72,
+        0
+      ],
+      "allowance_rank": 8,
+      "dim_WA": 9,
+      "dim_WA_mod_kerB": 8,
+      "dim_WI": 2,
+      "dim_WI_cap_kerB": 1,
+      "dim_WI_mod_kerB": 1,
+      "dim_BWI": 1,
+      "NS_dim": 9,
+      "dim_v3_inter": 2,
+      "dim_pure_BWA_cap_NS": 1,
+      "match_BWI_eq_pure_BWAcapNS": true,
+      "match_BWI_subset_v3": true,
+      "match_v3_subset_BWI": false,
+      "match_BWI_eq_v3": false,
+      "v3_ns_witness": {
+        "inter_dim": 2,
+        "psi_rN": 687,
+        "Q7": 0
+      },
+      "WI_gram_signed": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "WI_gram_rank": 0,
+      "WI_symplectic_nondegenerate": false,
+      "g": 0,
+      "WI_basis_diag": [
+        {
+          "in_kerB": true,
+          "B_w_rN": 0
+        },
+        {
+          "in_kerB": false,
+          "B_w_rN": 1491
+        }
+      ],
+      "gauge_shifted_phiprime_rN": [
+        1772,
+        281
+      ],
+      "gauge_freedom_nontrivial_on_rN": true,
+      "q7_ungauged": 1871,
+      "q7_ungauged_T7e0": 0,
+      "h7e0_eq_T7e0": false,
+      "source_span_dim": 8,
+      "rank_S_plus_rN": 9,
+      "rank_S_plus_rN_plus_h7e0": 9,
+      "rank_S_plus_rN_plus_T7e0": 9,
+      "h7e0_in_source_span": false,
+      "T7e0_in_source_span": true,
+      "rN_in_source_span": false,
+      "h7e0_in_S_plus_rN": true,
+      "T7e0_in_S_plus_rN": true,
+      "ns_landkarte": [
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": -1119,
+          "psi_h7e0": 508,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 1119,
+          "psi_h7e0": -508,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": -1119,
+          "psi_h7e0": 508,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        }
+      ],
+      "exists_psi_detecting_h7e0": true,
+      "exists_psi_detecting_T7e0": false,
+      "exists_psi_detecting_rN": true,
+      "ns_detection_image_dim_rN_h7e0": 1,
+      "psi_q7_pure_I": [
+        {
+          "iota_rN": 1030,
+          "iota_h7e0": -1341,
+          "iota_T7e0": 0
+        }
+      ],
+      "psi_q7_v3_I": [
+        {
+          "iota_rN": 1527,
+          "iota_h7e0": 446,
+          "iota_T7e0": 0
+        },
+        {
+          "iota_rN": -92,
+          "iota_h7e0": 1830,
+          "iota_T7e0": 0
+        }
+      ],
+      "allowance_gauge_moves_q7": true,
+      "allowance_gauge_moves_q7_T7e0": false,
+      "inv": null,
+      "inv_q7": null,
+      "verdict_line": "g=0: W_I isotrop; symplektische Eichung nicht kanonisch verfuegbar -- Befund dokumentieren, integrale Route.",
+      "verdict_cfr5": "inv_Q7 kanonisch n/a (g=0) bzw. =0, ABER es existiert psi in N(S) mit psi(h7e0)!=0: die B_N-erzeugte Loesungsschar trifft h7e0 nicht, doch der Loesungsraum enthaelt CFR-5-taugliche Funktionale -- Konstruktions- vs. Existenzfrage TRENNEN (B_N-Route ist fuers CFR-5-Gate die falsche Auswahlvorschrift). ZUSATZ: h7e0-Detektion ist MAXIMAL an r_N gekoppelt (Detektions-Bild dim 1, festes Verhaeltnis) -- kein von r_N unabhaengiges Zertifikat.",
+      "verdict_cfr5_T7e0": "psi(T7e0)=0 fuer ALLE psi in N(S) (T7e0 liegt klassen-eben im Span der Source-Zeilen) -- ERNSTER Struktur-Befund gegen CFR-5 bei N=109 in der Witness-Lesart; sofort zurueckmelden."
+    },
+    "frey": {
+      "tag": "frey",
+      "a5": 2,
+      "a7": 0,
+      "qw": 3863,
+      "phi_prime_rN": -1065,
+      "phi_prime_annihilates_all26": true,
+      "phi_prime_vector_signed": [
+        0,
+        -1677,
+        326,
+        125,
+        109,
+        1684,
+        -1869,
+        -885,
+        -1097,
+        0,
+        1817,
+        -1660,
+        1575,
+        1684,
+        -310,
+        38,
+        0
+      ],
+      "allowance_rank": 8,
+      "dim_WA": 9,
+      "dim_WA_mod_kerB": 8,
+      "dim_WI": 2,
+      "dim_WI_cap_kerB": 1,
+      "dim_WI_mod_kerB": 1,
+      "dim_BWI": 1,
+      "NS_dim": 9,
+      "dim_v3_inter": 2,
+      "dim_pure_BWA_cap_NS": 1,
+      "match_BWI_eq_pure_BWAcapNS": true,
+      "match_BWI_subset_v3": true,
+      "match_v3_subset_BWI": false,
+      "match_BWI_eq_v3": false,
+      "v3_ns_witness": {
+        "inter_dim": 2,
+        "psi_rN": -1552,
+        "Q7": 0
+      },
+      "WI_gram_signed": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "WI_gram_rank": 0,
+      "WI_symplectic_nondegenerate": false,
+      "g": 0,
+      "WI_basis_diag": [
+        {
+          "in_kerB": true,
+          "B_w_rN": 0
+        },
+        {
+          "in_kerB": false,
+          "B_w_rN": 147
+        }
+      ],
+      "gauge_shifted_phiprime_rN": [
+        -1065,
+        -1212
+      ],
+      "gauge_freedom_nontrivial_on_rN": true,
+      "q7_ungauged": -1070,
+      "q7_ungauged_T7e0": 0,
+      "h7e0_eq_T7e0": false,
+      "source_span_dim": 8,
+      "rank_S_plus_rN": 9,
+      "rank_S_plus_rN_plus_h7e0": 9,
+      "rank_S_plus_rN_plus_T7e0": 9,
+      "h7e0_in_source_span": false,
+      "T7e0_in_source_span": true,
+      "rN_in_source_span": false,
+      "h7e0_in_S_plus_rN": true,
+      "T7e0_in_S_plus_rN": true,
+      "ns_landkarte": [
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": -1119,
+          "psi_h7e0": 508,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 1119,
+          "psi_h7e0": -508,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": -1119,
+          "psi_h7e0": 508,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        },
+        {
+          "psi_rN": 0,
+          "psi_h7e0": 0,
+          "psi_T7e0": 0
+        }
+      ],
+      "exists_psi_detecting_h7e0": true,
+      "exists_psi_detecting_T7e0": false,
+      "exists_psi_detecting_rN": true,
+      "ns_detection_image_dim_rN_h7e0": 1,
+      "psi_q7_pure_I": [
+        {
+          "iota_rN": -1201,
+          "iota_h7e0": -1388,
+          "iota_T7e0": 0
+        }
+      ],
+      "psi_q7_v3_I": [
+        {
+          "iota_rN": -224,
+          "iota_h7e0": -751,
+          "iota_T7e0": 0
+        },
+        {
+          "iota_rN": -61,
+          "iota_h7e0": -1222,
+          "iota_T7e0": 0
+        }
+      ],
+      "allowance_gauge_moves_q7": true,
+      "allowance_gauge_moves_q7_T7e0": false,
+      "inv": null,
+      "inv_q7": null,
+      "verdict_line": "g=0: W_I isotrop; symplektische Eichung nicht kanonisch verfuegbar -- Befund dokumentieren, integrale Route.",
+      "verdict_cfr5": "inv_Q7 kanonisch n/a (g=0) bzw. =0, ABER es existiert psi in N(S) mit psi(h7e0)!=0: die B_N-erzeugte Loesungsschar trifft h7e0 nicht, doch der Loesungsraum enthaelt CFR-5-taugliche Funktionale -- Konstruktions- vs. Existenzfrage TRENNEN (B_N-Route ist fuers CFR-5-Gate die falsche Auswahlvorschrift). ZUSATZ: h7e0-Detektion ist MAXIMAL an r_N gekoppelt (Detektions-Bild dim 1, festes Verhaeltnis) -- kein von r_N unabhaengiges Zertifikat.",
+      "verdict_cfr5_T7e0": "psi(T7e0)=0 fuer ALLE psi in N(S) (T7e0 liegt klassen-eben im Span der Source-Zeilen) -- ERNSTER Struktur-Befund gegen CFR-5 bei N=109 in der Witness-Lesart; sofort zurueckmelden."
+    }
+  },
+  "l_family_ranks_standard_ap": {
+    "l=7": {
+      "a_l": 2,
+      "family_size": 25,
+      "rank": 8
+    },
+    "l=11": {
+      "a_l": 1,
+      "family_size": 25,
+      "rank": 8
+    },
+    "l=13": {
+      "a_l": 0,
+      "family_size": 25,
+      "rank": 8
+    }
+  },
+  "self_validation": {
+    "standard_phi_prime_rN": 1772,
+    "standard_phi_prime_rN_ref": 1772,
+    "standard_psi_rN": 687,
+    "standard_psi_rN_ref": 687,
+    "standard_dim_v3_inter": 2,
+    "standard_dim_v3_inter_ref": 2,
+    "standard_allowance_rank": 8,
+    "standard_allowance_rank_ref": 8,
+    "standard_phi_vec_matches_ref": true,
+    "frey_phi_prime_rN": -1065,
+    "frey_phi_prime_rN_ref": -1065,
+    "PASS": true
+  },
+  "seconds": 4.2
+}

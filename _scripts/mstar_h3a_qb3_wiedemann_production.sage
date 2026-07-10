@@ -517,6 +517,7 @@ def build_bal_factors(
     cache_overwrite=False,
     stop_after_plus_cache=False,
     pari_stack_mb=0,
+    pari_stack_max_mb=0,
 ):
     if bal_mode == "sign0-finite":
         save_status({
@@ -648,17 +649,30 @@ def build_bal_factors(
         return P, None, None, "plus-cache-only"
     if int(pari_stack_mb or 0) > 0:
         stack_bytes = int(pari_stack_mb) * 1024 * 1024
+        # Ohne sizemax setzt cypari2 size=sizemax fest -> PARI kann NICHT
+        # dynamisch wachsen (msinit-Overflow bei fixem Limit) bzw. ein grosser
+        # fixer Stack sprengt als voll gemappter VM-Block das System (OOM).
+        # Mit pari_stack_max_mb waechst PARI selbst (gp-Verhalten): kleiner
+        # Start, grosses Maximum. Empirie 2026-07-10 (CCX33): msinit(120336)
+        # via gp mit Wachstum 16->64 GB in 158 s OK; fixe 56/80-GiB-Stacks
+        # im Sage-Kontext -> Kernel-OOM (total_vm 168/235 GB).
+        max_bytes = int(pari_stack_max_mb or 0) * 1024 * 1024
         save_status({
             "phase": "allocating_pari_stack",
             "pari_stack_mb": int(pari_stack_mb),
             "pari_stack_bytes": int(stack_bytes),
+            "pari_stack_max_mb": int(pari_stack_max_mb or 0),
         })
         from sage.libs.pari import pari as _pari_alloc
-        _pari_alloc.allocatemem(stack_bytes, silent=True)
+        if max_bytes > stack_bytes:
+            _pari_alloc.allocatemem(stack_bytes, max_bytes, silent=True)
+        else:
+            _pari_alloc.allocatemem(stack_bytes, silent=True)
         save_status({
             "phase": "allocated_pari_stack",
             "pari_stack_mb": int(pari_stack_mb),
             "pari_stack_bytes": int(stack_bytes),
+            "pari_stack_max_mb": int(pari_stack_max_mb or 0),
         })
     if bal_mode == "sign0-tensor-solve":
         E = None
@@ -1279,6 +1293,7 @@ def run(args):
         cache_overwrite=args.bal_cache_overwrite,
         stop_after_plus_cache=args.bal_stop_after_plus_cache,
         pari_stack_mb=args.pari_stack_mb,
+        pari_stack_max_mb=args.pari_stack_max_mb,
     )
     save_status()
 
@@ -1871,6 +1886,17 @@ def parse_args():
             "before constructing _pari_tensor/_pari_pairing. This is intended "
             "for Mac-only large-level preflights; default leaves Sage/PARI's "
             "stack unchanged."
+        ),
+    )
+    parser.add_argument(
+        "--pari-stack-max-mb",
+        type=int,
+        default=0,
+        help=(
+            "If positive and larger than --pari-stack-mb, pass as sizemax to "
+            "pari.allocatemem so the PARI stack can GROW dynamically up to "
+            "this many MiB (gp-like behaviour). Avoids both fixed-limit "
+            "overflows and OOM from fully-mapped huge fixed stacks."
         ),
     )
     parser.add_argument(

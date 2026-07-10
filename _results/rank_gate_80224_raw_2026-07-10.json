@@ -1,0 +1,92 @@
+{
+  "tool": "rank_gate_witness",
+  "version": 2,
+  "date": "2026-07-10T00:43:20+00:00",
+  "author": "LG",
+  "method": "quotient",
+  "case_dir": "_results/h3a_residue_line_witness_80224_raw_standard_2026-05-16/N80224_raw_sign1_splitlast",
+  "level": 80224,
+  "mode": "raw",
+  "q": 3863,
+  "q_from_manifest": 3863,
+  "ncols": 31680,
+  "rows_file_sha256": "df74a6bd8b3e4fee7c11528ebb3a579d434da593c48d96e01d14918e39115c15",
+  "repair_only_row_id_manifest": "T_7_minus_0_batch_1/1",
+  "kernel_source": {
+    "loaded_from": "_results/mstar_h3a_restline_kernel_quotient_80224_raw_2026-05-17.json",
+    "quotient_kernel_dim": 1,
+    "quotient_ncols": 10568,
+    "quotient_rank": 10567
+  },
+  "manin_t_rows": 21112,
+  "manin_t_rank": 21112,
+  "manin_t_max_basis_row_len": 356,
+  "hecke_rows": 10567,
+  "quotient_ncols": 10568,
+  "n_source_rows": 31679,
+  "repair_only_row_id_seen": "T_7_minus_0_batch_1/1",
+  "repair_id_matches_manifest": true,
+  "manin_t_basis_seconds": 0.2,
+  "free_columns_match_kernel_json": true,
+  "quotient_rank": 10567,
+  "kernel_dim": 1,
+  "kernel_support_size": 4855,
+  "repair_projected_support_size": 6,
+  "h7e0_projected_support_size": 7,
+  "repair_pairing_selfcheck": {
+    "computed_mod_q": 3862,
+    "kernel_json_mod_q": 3862,
+    "match": true
+  },
+  "source_pairing_nonzero": 0,
+  "source_annihilated": true,
+  "eval_rN": 3862,
+  "eval_rN_signed": -1,
+  "eval_rN_nonzero": true,
+  "eval_h7e0": 1,
+  "eval_h7e0_signed": 1,
+  "column_mapping_used": {
+    "layout": "direct_witness_columns",
+    "e_c": "raw witness column c (0-indexed)",
+    "h7e0_fan": {
+      "0": 2,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1
+    },
+    "projected_to_quotient": true,
+    "note": "Witness-seitige Fan-Formel h7e0 = 2 e0 + e1 + ... + e6, Addendum Nr.5 (3); gegen manin_T reduziert und in den Quotienten projiziert."
+  },
+  "kernel_dim_gt_1": false,
+  "c_ambiguous": false,
+  "c": 3862,
+  "c_signed": -1,
+  "alt_layout_shift1": {
+    "h7e0_fan": {
+      "1": 2,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1
+    },
+    "eval_h7e0_signed": 1,
+    "c_signed": -1,
+    "note": "e_c = Spalte c+1; NUR Kontrolle. Bei N=109 ergibt dies NICHT c=400."
+  },
+  "reference_comparisons": {},
+  "verdict": {
+    "kernel_dim": 1,
+    "kernel_dim_is_1": true,
+    "eval_rN_nonzero": true,
+    "c": 3862,
+    "c_signed": -1,
+    "gate_clean": true,
+    "bridge_invariance_vs_c400": null
+  },
+  "seconds": 116.8
+}

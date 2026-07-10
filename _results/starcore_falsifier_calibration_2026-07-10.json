@@ -1,0 +1,555 @@
+{
+ "_meta": {
+  "created": "2026-07-10",
+  "author": "LG",
+  "mode": "train",
+  "note": "Selbst-Kalibrierung des starcore_falsifier. Programm-Instrument, kein Claim.",
+  "all_calibrators_ok": true
+ },
+ "corpus_meta": {
+  "created": "2026-07-10",
+  "author": "LG",
+  "note": "Programm-Instrument, kein Claim. Feature-Cache fuer starcore_falsifier T0-T5.",
+  "watkins_csv": "watkins_v3_final_a+b80.csv",
+  "watkins_header": [
+   "a",
+   "b",
+   "c",
+   "N",
+   "deg",
+   "quality",
+   "ratio_eps0.01",
+   "ratio_eps0.1"
+  ],
+  "degphi_column": "deg",
+  "degphi_assumption": "Watkins-Spalte 'deg' als Modulgrad deg phi interpretiert",
+  "smooth_primes": [
+   2,
+   3,
+   5,
+   7,
+   11,
+   13,
+   17
+  ],
+  "smooth_bound": 1000000,
+  "smooth_construction": "voll-glatte S-Unit-Tripel a+b=c, a<=b, alle S-glatt, gcd(a,b)=1, c<=bound",
+  "n_watkins": 982,
+  "n_smooth": 1412,
+  "n_random": 4000,
+  "n_total": 6394,
+  "random_control_c_range": [
+   10,
+   1000000
+  ]
+ },
+ "corpus_stats": {
+  "n_total": 6394,
+  "n_buckets_ge2": 218,
+  "n_in_buckets": 2374,
+  "omega_range": [
+   1,
+   12
+  ],
+  "n_highq": 37,
+  "n_degphi": 981
+ },
+ "thresholds": {
+  "T1_within_bucket_variance_ratio_max": 0.1,
+  "T2_omega_scaling_growth_factor_max": 2.0,
+  "T3_partial_corr_abs_max": 0.3,
+  "T4_min_abs_cohen_d": 0.5,
+  "T4_min_group_size": 10,
+  "T5_precondition_within_ratio_max": 0.1,
+  "T5_cardinality_eta2_min": 0.98,
+  "_meta": {
+   "created": "2026-07-10",
+   "author": "LG",
+   "note": "Praeregistrierte Schwellen fuer starcore_falsifier T1-T5. Programm-Instrument, kein Claim.",
+   "principle": "Schwellen nach Prinzip gesetzt (runde Werte, nicht datengetunt); die Kalibratoren bestaetigen die Trennung mit Marge. Bei Erwartung != Ergebnis wird die TEST-LOGIK korrigiert, nicht die Schwelle nachgezogen (Fahndungsblatt Guard).",
+   "spec": "MG_starcore_fahndungsblatt_2026-07-10.md (Section E) + Konzeptnote 2026-07-03"
+  },
+  "justification": {
+   "T1": "Ein bewertungs-stiller G aendert sich nicht mit Exponenten -> die Within-Bucket-Varianz (gleicher rad-Traeger, wachsende Exponenten) ist ~ 0. KILL wenn > 10% der Gesamtvarianz aus Within-Bucket-Variation stammt. Zusaetzlich KILL wenn G konstant ist (keine Reaktion auf rad-Variation = sieht das Radikal nicht).",
+   "T2": "rad^{o(1)}-Ziel erlaubt nur O(1) pro bad prime -> |G|/omega beschraenkt. KILL wenn das obere (90%-)Quantil von |G|/omega vom untersten zum obersten omega-Terzil um mehr als Faktor 2 waechst (Tamagawa-/p+-1-Klasse akkumuliert Groesse pro Primteiler). Der Quotient von Quantilen ist skalenfrei (G-Skala kuerzt sich).",
+   "T3": "Nicht-Zirkularitaet (N3): partielle Korrelation corr(G, log deg phi | log rad) muss ~ 0 sein. |partielle Korrelation| > 0.30 (mehr als schwacher Zusammenhang) -> versteckter deg-phi-/Perioden-Proxy -> KILL.",
+   "T4": "Nutzen/Trennschaerfe: |Cohen d| >= 0.50 (mittlerer Effekt) zwischen hochqualitativen (q > 1.2) und magnitude-gematchten Zufallstripeln. Darunter PARK (nutzlos != falsch), KEIN Kill. Mindest-Power (T4_min_group_size=10): sind weniger als 10 auswertbare Tripel je Gruppe vorhanden (z.B. auf dem duennen Holdout), ist die Effektgroesse nicht belastbar -> T4 = datenlos (ehrlich) statt Zufallsverdikt. T4 ist weich; auf unterbesetzten Splits nicht asserted.",
+   "T5": "Support-only (N5): (A) bewertungs-blind (Within-Ratio <= 0.10, gleiches Signal wie T1) UND (B) omega (Support-Kardinalitaet) erklaert >= 98% der Between-Bucket-Varianz -> G traegt nur die Kardinalitaet des Traegers, kein arithmetisches Gewicht davon, WELCHE Primzahlen -> KILL. Ein arithmetisch gewichtetes G (z.B. log rad = Summe log p) erfuellt (A), aber NICHT (B) (unterscheidet gleich-grosse Traeger verschiedener Primzahlen) und ueberlebt T5."
+  }
+ },
+ "reports": [
+  {
+   "candidate": "G_omega",
+   "meta": {
+    "name": "G_omega",
+    "advice_level": "A1",
+    "mechanism_class": "derived",
+    "description": "omega(rad(abc)) = Anzahl distinkter Primteiler (reine Traegermengen-Funktion)"
+   },
+   "mode": "train",
+   "n_active_triples": 5390,
+   "n_usable_buckets": 180,
+   "tests": {
+    "T0": {
+     "test": "T0",
+     "metric": null,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "advice_level": "A1",
+      "mechanism_class": "derived"
+     }
+    },
+    "T1": {
+     "test": "T1",
+     "metric": 0.0,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "n_buckets": 180,
+      "n_triples": 2168,
+      "within_ratio": 0.0,
+      "threshold_max": 0.1
+     }
+    },
+    "T2": {
+     "test": "T2",
+     "metric": 1.0,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "q90_bottom_tercile": 1.0,
+      "q90_top_tercile": 1.0,
+      "omega_lo_cut": 5.0,
+      "omega_hi_cut": 6.0,
+      "growth_factor": 1.0,
+      "threshold_max": 2.0
+     }
+    },
+    "T3": {
+     "test": "T3",
+     "metric": 0.1552,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "t3_status": "computed",
+      "degphi_column": "deg",
+      "n": 830,
+      "partial_corr": 0.155246089628442,
+      "threshold_abs_max": 0.3
+     }
+    },
+    "T4": {
+     "test": "T4",
+     "metric": -1.393,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "n_highq": 35,
+      "n_control": 2845,
+      "cohen_d": -1.3930036544615954,
+      "auc": 0.14013055485814713,
+      "c_range_highq": [
+       81,
+       892143
+      ],
+      "threshold_min_abs_d": 0.5,
+      "min_group_size": 10
+     }
+    },
+    "T5": {
+     "test": "T5",
+     "metric": 1.0,
+     "verdict": "kill",
+     "kill_grund": "support-only: omega (Kardinalitaet) erklaert 100.0% (>=98%) der Between-Bucket-Varianz -> G traegt nur WIE VIELE, nicht WELCHE Primzahlen (N5)",
+     "detail": {
+      "n_buckets": 180,
+      "within_ratio": 0.0,
+      "precond_within_max": 0.1,
+      "cardinality_eta2_min": 0.98,
+      "condition_A_exponent_blind": true,
+      "cardinality_eta2": 1.0,
+      "total_between_ss": 2514.106549815498
+     }
+    }
+   },
+   "gesamt_verdikt": "kill",
+   "kill_gruende": [
+    "T5: support-only: omega (Kardinalitaet) erklaert 100.0% (>=98%) der Between-Bucket-Varianz -> G traegt nur WIE VIELE, nicht WELCHE Primzahlen (N5)"
+   ],
+   "expectation": {
+    "overall": "kill",
+    "asserts": {
+     "T5": "kill",
+     "T1": "pass",
+     "T2": "pass"
+    }
+   },
+   "calibration_ok": true,
+   "calibration_problems": [],
+   "calibration_notes": []
+  },
+  {
+   "candidate": "G_lograd",
+   "meta": {
+    "name": "G_lograd",
+    "advice_level": "A3",
+    "mechanism_class": "presupposed",
+    "description": "log rad(abc) = Zielgroesse selbst als Input (praesupponiert)"
+   },
+   "mode": "train",
+   "n_active_triples": 5390,
+   "n_usable_buckets": 180,
+   "tests": {
+    "T0": {
+     "test": "T0",
+     "metric": null,
+     "verdict": "kill",
+     "kill_grund": "mechanism_class=presupposed -> Zielgroesse als Input vorausgesetzt (KILL ohne Rechnung)",
+     "detail": {
+      "advice_level": "A3"
+     }
+    }
+   },
+   "gesamt_verdikt": "kill",
+   "kill_gruende": [
+    "T0: mechanism_class=presupposed -> Zielgroesse als Input vorausgesetzt (KILL ohne Rechnung)"
+   ],
+   "expectation": {
+    "overall": "kill",
+    "asserts": {
+     "T0": "kill"
+    }
+   },
+   "calibration_ok": true,
+   "calibration_problems": [],
+   "calibration_notes": []
+  },
+  {
+   "candidate": "G_quality_proxy",
+   "meta": {
+    "name": "G_quality_proxy",
+    "advice_level": "A1",
+    "mechanism_class": "derived",
+    "description": "log c (Groessen-Proxy; waechst mit Exponenten-Aufblaehung im Bucket)"
+   },
+   "mode": "train",
+   "n_active_triples": 5390,
+   "n_usable_buckets": 180,
+   "tests": {
+    "T0": {
+     "test": "T0",
+     "metric": null,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "advice_level": "A1",
+      "mechanism_class": "derived"
+     }
+    },
+    "T1": {
+     "test": "T1",
+     "metric": 0.441689,
+     "verdict": "kill",
+     "kill_grund": "Var(G|Bucket)/Var(G) = 0.4417 > 0.10 -> bewertungs-sensitiv (Exponenten-Aufblaehung wirkt)",
+     "detail": {
+      "n_buckets": 180,
+      "n_triples": 2168,
+      "within_ratio": 0.4416890362306308,
+      "threshold_max": 0.1
+     }
+    },
+    "T2": {
+     "test": "T2",
+     "metric": 1.0849,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "q90_bottom_tercile": 1.6565598014857543,
+      "q90_top_tercile": 1.7972266757638697,
+      "omega_lo_cut": 5.0,
+      "omega_hi_cut": 6.0,
+      "growth_factor": 1.0849150596024077,
+      "threshold_max": 2.0
+     }
+    },
+    "T3": {
+     "test": "T3",
+     "metric": -0.0175,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "t3_status": "computed",
+      "degphi_column": "deg",
+      "n": 830,
+      "partial_corr": -0.017503980329361252,
+      "threshold_abs_max": 0.3
+     }
+    },
+    "T4": {
+     "test": "T4",
+     "metric": 0.1346,
+     "verdict": "park",
+     "kill_grund": "|Cohen d| = 0.135 < 0.50 -> keine Trennschaerfe (PARK, kein Kill)",
+     "detail": {
+      "n_highq": 35,
+      "n_control": 2845,
+      "cohen_d": 0.13459795894104695,
+      "auc": 0.539116244037158,
+      "c_range_highq": [
+       81,
+       892143
+      ],
+      "threshold_min_abs_d": 0.5,
+      "min_group_size": 10
+     }
+    },
+    "T5": {
+     "test": "T5",
+     "metric": null,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "n_buckets": 180,
+      "within_ratio": 0.4416890362306308,
+      "precond_within_max": 0.1,
+      "cardinality_eta2_min": 0.98,
+      "condition_A_exponent_blind": false,
+      "reason": "nicht support-only: G ist bewertungs-sensitiv (within_ratio 0.4417 > 0.10) -> T1-Domaene"
+     }
+    }
+   },
+   "gesamt_verdikt": "kill",
+   "kill_gruende": [
+    "T1: Var(G|Bucket)/Var(G) = 0.4417 > 0.10 -> bewertungs-sensitiv (Exponenten-Aufblaehung wirkt)"
+   ],
+   "expectation": {
+    "overall": "kill",
+    "asserts": {
+     "T1": "kill"
+    }
+   },
+   "calibration_ok": true,
+   "calibration_problems": [],
+   "calibration_notes": []
+  },
+  {
+   "candidate": "G_noise",
+   "meta": {
+    "name": "G_noise",
+    "advice_level": "A0",
+    "mechanism_class": "derived",
+    "description": "deterministischer Pseudo-Zufall aus sha256(a,b,c)"
+   },
+   "mode": "train",
+   "n_active_triples": 5390,
+   "n_usable_buckets": 180,
+   "tests": {
+    "T0": {
+     "test": "T0",
+     "metric": null,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "advice_level": "A0",
+      "mechanism_class": "derived"
+     }
+    },
+    "T1": {
+     "test": "T1",
+     "metric": 0.885032,
+     "verdict": "kill",
+     "kill_grund": "Var(G|Bucket)/Var(G) = 0.8850 > 0.10 -> bewertungs-sensitiv (Exponenten-Aufblaehung wirkt)",
+     "detail": {
+      "n_buckets": 180,
+      "n_triples": 2168,
+      "within_ratio": 0.8850322763333043,
+      "threshold_max": 0.1
+     }
+    },
+    "T2": {
+     "test": "T2",
+     "metric": 0.652,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "q90_bottom_tercile": 0.21023342280188423,
+      "q90_top_tercile": 0.1370631500965331,
+      "omega_lo_cut": 5.0,
+      "omega_hi_cut": 6.0,
+      "growth_factor": 0.6519569927075586,
+      "threshold_max": 2.0
+     }
+    },
+    "T3": {
+     "test": "T3",
+     "metric": 0.0037,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "t3_status": "computed",
+      "degphi_column": "deg",
+      "n": 830,
+      "partial_corr": 0.003744460089263974,
+      "threshold_abs_max": 0.3
+     }
+    },
+    "T4": {
+     "test": "T4",
+     "metric": 0.0919,
+     "verdict": "park",
+     "kill_grund": "|Cohen d| = 0.092 < 0.50 -> keine Trennschaerfe (PARK, kein Kill)",
+     "detail": {
+      "n_highq": 35,
+      "n_control": 2845,
+      "cohen_d": 0.09188395666568254,
+      "auc": 0.526407230730605,
+      "c_range_highq": [
+       81,
+       892143
+      ],
+      "threshold_min_abs_d": 0.5,
+      "min_group_size": 10
+     }
+    },
+    "T5": {
+     "test": "T5",
+     "metric": null,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "n_buckets": 180,
+      "within_ratio": 0.8850322763333043,
+      "precond_within_max": 0.1,
+      "cardinality_eta2_min": 0.98,
+      "condition_A_exponent_blind": false,
+      "reason": "nicht support-only: G ist bewertungs-sensitiv (within_ratio 0.8850 > 0.10) -> T1-Domaene"
+     }
+    }
+   },
+   "gesamt_verdikt": "kill",
+   "kill_gruende": [
+    "T1: Var(G|Bucket)/Var(G) = 0.8850 > 0.10 -> bewertungs-sensitiv (Exponenten-Aufblaehung wirkt)"
+   ],
+   "expectation": {
+    "overall": "kill",
+    "asserts": {
+     "T1": "kill",
+     "T4": "park"
+    }
+   },
+   "calibration_ok": true,
+   "calibration_problems": [],
+   "calibration_notes": []
+  },
+  {
+   "candidate": "G_degphi_proxy",
+   "meta": {
+    "name": "G_degphi_proxy",
+    "advice_level": "A2",
+    "mechanism_class": "derived",
+    "description": "log(deg phi) (Modulgrad-Proxy; nur Watkins-Subkorpus mit deg-Spalte)"
+   },
+   "mode": "train",
+   "n_active_triples": 5390,
+   "n_usable_buckets": 180,
+   "tests": {
+    "T0": {
+     "test": "T0",
+     "metric": null,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "advice_level": "A2",
+      "mechanism_class": "derived"
+     }
+    },
+    "T1": {
+     "test": "T1",
+     "metric": 0.153359,
+     "verdict": "kill",
+     "kill_grund": "Var(G|Bucket)/Var(G) = 0.1534 > 0.10 -> bewertungs-sensitiv (Exponenten-Aufblaehung wirkt)",
+     "detail": {
+      "n_buckets": 137,
+      "n_triples": 477,
+      "within_ratio": 0.15335941668845904,
+      "threshold_max": 0.1
+     }
+    },
+    "T2": {
+     "test": "T2",
+     "metric": 0.8951,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "q90_bottom_tercile": 3.025999682971109,
+      "q90_top_tercile": 2.708540623881857,
+      "omega_lo_cut": 4.0,
+      "omega_hi_cut": 5.0,
+      "growth_factor": 0.8950895266527088,
+      "threshold_max": 2.0
+     }
+    },
+    "T3": {
+     "test": "T3",
+     "metric": 1.0,
+     "verdict": "kill",
+     "kill_grund": "|corr(G, log deg phi | log rad)| = 1.000 > 0.30 -> versteckter deg-phi-/Perioden-Proxy (N3)",
+     "detail": {
+      "t3_status": "computed",
+      "degphi_column": "deg",
+      "n": 830,
+      "partial_corr": 1.0,
+      "threshold_abs_max": 0.3
+     }
+    },
+    "T4": {
+     "test": "T4",
+     "metric": null,
+     "verdict": "dataless",
+     "kill_grund": "underpowered: n_highq=0, n_control=0 (< 10) -> Effektgroesse nicht belastbar",
+     "detail": {
+      "n_highq": 0,
+      "n_control": 0,
+      "cohen_d": null,
+      "auc": null,
+      "c_range_highq": [
+       81,
+       892143
+      ],
+      "threshold_min_abs_d": 0.5,
+      "min_group_size": 10
+     }
+    },
+    "T5": {
+     "test": "T5",
+     "metric": null,
+     "verdict": "pass",
+     "kill_grund": "",
+     "detail": {
+      "n_buckets": 137,
+      "within_ratio": 0.15335941668845904,
+      "precond_within_max": 0.1,
+      "cardinality_eta2_min": 0.98,
+      "condition_A_exponent_blind": false,
+      "reason": "nicht support-only: G ist bewertungs-sensitiv (within_ratio 0.1534 > 0.10) -> T1-Domaene"
+     }
+    }
+   },
+   "gesamt_verdikt": "kill",
+   "kill_gruende": [
+    "T1: Var(G|Bucket)/Var(G) = 0.1534 > 0.10 -> bewertungs-sensitiv (Exponenten-Aufblaehung wirkt)",
+    "T3: |corr(G, log deg phi | log rad)| = 1.000 > 0.30 -> versteckter deg-phi-/Perioden-Proxy (N3)"
+   ],
+   "expectation": {
+    "overall": "kill",
+    "asserts": {
+     "T3": "kill"
+    }
+   },
+   "calibration_ok": true,
+   "calibration_problems": [],
+   "calibration_notes": []
+  }
+ ]
+}

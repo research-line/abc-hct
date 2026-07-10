@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "created": "2026-07-10",
+    "author": "LG",
+    "note": "Praeregistrierte Schwellen fuer starcore_falsifier T1-T5. Programm-Instrument, kein Claim.",
+    "principle": "Schwellen nach Prinzip gesetzt (runde Werte, nicht datengetunt); die Kalibratoren bestaetigen die Trennung mit Marge. Bei Erwartung != Ergebnis wird die TEST-LOGIK korrigiert, nicht die Schwelle nachgezogen (Fahndungsblatt Guard).",
+    "spec": "MG_starcore_fahndungsblatt_2026-07-10.md (Section E) + Konzeptnote 2026-07-03"
+  },
+  "T1_within_bucket_variance_ratio_max": 0.10,
+  "T2_omega_scaling_growth_factor_max": 2.0,
+  "T3_partial_corr_abs_max": 0.30,
+  "T4_min_abs_cohen_d": 0.50,
+  "T4_min_group_size": 10,
+  "T5_precondition_within_ratio_max": 0.10,
+  "T5_cardinality_eta2_min": 0.98,
+  "justification": {
+    "T1": "Ein bewertungs-stiller G aendert sich nicht mit Exponenten -> die Within-Bucket-Varianz (gleicher rad-Traeger, wachsende Exponenten) ist ~ 0. KILL wenn > 10% der Gesamtvarianz aus Within-Bucket-Variation stammt. Zusaetzlich KILL wenn G konstant ist (keine Reaktion auf rad-Variation = sieht das Radikal nicht).",
+    "T2": "rad^{o(1)}-Ziel erlaubt nur O(1) pro bad prime -> |G|/omega beschraenkt. KILL wenn das obere (90%-)Quantil von |G|/omega vom untersten zum obersten omega-Terzil um mehr als Faktor 2 waechst (Tamagawa-/p+-1-Klasse akkumuliert Groesse pro Primteiler). Der Quotient von Quantilen ist skalenfrei (G-Skala kuerzt sich).",
+    "T3": "Nicht-Zirkularitaet (N3): partielle Korrelation corr(G, log deg phi | log rad) muss ~ 0 sein. |partielle Korrelation| > 0.30 (mehr als schwacher Zusammenhang) -> versteckter deg-phi-/Perioden-Proxy -> KILL.",
+    "T4": "Nutzen/Trennschaerfe: |Cohen d| >= 0.50 (mittlerer Effekt) zwischen hochqualitativen (q > 1.2) und magnitude-gematchten Zufallstripeln. Darunter PARK (nutzlos != falsch), KEIN Kill. Mindest-Power (T4_min_group_size=10): sind weniger als 10 auswertbare Tripel je Gruppe vorhanden (z.B. auf dem duennen Holdout), ist die Effektgroesse nicht belastbar -> T4 = datenlos (ehrlich) statt Zufallsverdikt. T4 ist weich; auf unterbesetzten Splits nicht asserted.",
+    "T5": "Support-only (N5): (A) bewertungs-blind (Within-Ratio <= 0.10, gleiches Signal wie T1) UND (B) omega (Support-Kardinalitaet) erklaert >= 98% der Between-Bucket-Varianz -> G traegt nur die Kardinalitaet des Traegers, kein arithmetisches Gewicht davon, WELCHE Primzahlen -> KILL. Ein arithmetisch gewichtetes G (z.B. log rad = Summe log p) erfuellt (A), aber NICHT (B) (unterscheidet gleich-grosse Traeger verschiedener Primzahlen) und ueberlebt T5."
+  }
+}

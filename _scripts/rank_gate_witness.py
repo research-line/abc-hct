@@ -361,7 +361,7 @@ def project(base: SparseRowBasis, raw_row: dict[int, int],
 
 def run_quotient(case_dir: Path, q_override: int | None, status_path: Path | None,
                  progress_every: int, ref_eval_rn: int | None, ref_c: int | None,
-                 kernel_json: Path | None) -> dict[str, Any]:
+                 kernel_json: Path | None, annihilation_sample: int = 0) -> dict[str, Any]:
     t0 = time.time()
     manifest = read_manifest(case_dir)
     q = int(q_override) if q_override is not None else int(manifest["q"])
@@ -496,17 +496,30 @@ def run_quotient(case_dir: Path, q_override: int | None, status_path: Path | Non
                                "note": "c bekannt; source-annihilation-Vollcheck laeuft noch",
                                "seconds": round(time.time() - t0, 1)})
 
-    # Source annihilation confirmation (all hecke rows vanish on the kernel)
+    # Source annihilation confirmation (hecke rows vanish on the kernel).
+    # Full check by default; --annihilation-sample N re-checks a spread sample
+    # of N hecke rows (fast independent confirmation on very large levels; the
+    # loaded kernel artifact already carries its own FULL source_annihilated).
+    if annihilation_sample and 0 < annihilation_sample < len(hecke_rows):
+        step = len(hecke_rows) / annihilation_sample
+        idxs = sorted({int(j * step) for j in range(annihilation_sample)})
+        check_items = [(k, hecke_rows[k]) for k in idxs]
+        out["annihilation_check_mode"] = f"sampled_{len(idxs)}_of_{len(hecke_rows)}_spread"
+    else:
+        check_items = list(enumerate(hecke_rows))
+        out["annihilation_check_mode"] = "full"
     src_nonzero = 0
-    for i, hr in enumerate(hecke_rows):
+    for done, (i, hr) in enumerate(check_items):
         if dot_sparse(project(base, hr, col_map, q), kernel_vector, q):
             src_nonzero += 1
-        if progress_every and (i + 1) % progress_every == 0:
+        if progress_every and (done + 1) % progress_every == 0:
             write_status(status_path, {"phase": "source_annihilation_check", "method": "quotient",
-                                       "hecke_checked": i + 1, "hecke_total": len(hecke_rows),
+                                       "hecke_checked": done + 1, "hecke_total": len(check_items),
+                                       "check_mode": out["annihilation_check_mode"],
                                        "source_pairing_nonzero_so_far": src_nonzero,
                                        "c_signed": signed_lift(prelim_c, q) if prelim_c is not None else None,
                                        "seconds": round(time.time() - t0, 1)})
+    out["source_rows_checked"] = len(check_items)
     out["source_pairing_nonzero"] = src_nonzero
     out["source_annihilated"] = src_nonzero == 0
 
@@ -584,9 +597,12 @@ def write_md(out: dict[str, Any], out_md: Path) -> None:
                          f"vs. artefakt={sc.get('kernel_json_mod_q')} -> match={sc.get('match')}")
         lines.append("")
     if "source_annihilated" in out:
-        lines += [f"- source_annihilated (alle Hecke-Zeilen verschwinden auf phi): "
+        _mode = out.get("annihilation_check_mode", "full")
+        _checked = out.get("source_rows_checked")
+        _checked_txt = f", geprueft={_checked}" if _checked is not None else ""
+        lines += [f"- source_annihilated (Hecke-Zeilen verschwinden auf phi): "
                   f"{out.get('source_annihilated')} "
-                  f"(nonzero={out.get('source_pairing_nonzero')})", ""]
+                  f"(nonzero={out.get('source_pairing_nonzero')}; Modus={_mode}{_checked_txt})", ""]
     if ref:
         lines += ["## Referenz-Vergleiche", ""]
         if "ref_eval_rN" in ref:
@@ -621,6 +637,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--out-md", type=Path, default=None)
     p.add_argument("--status-json", type=Path, default=None)
     p.add_argument("--progress-every", type=int, default=2000)
+    p.add_argument("--annihilation-sample", type=int, default=0,
+                   help="0=Vollcheck; N>0 prueft eine gespreizte Stichprobe von N Hecke-Zeilen")
     p.add_argument("--ref-eval-rN", type=int, default=None, help="Referenz eval_rN (N=109: 705)")
     p.add_argument("--ref-c", type=int, default=None, help="Referenz c (gebridgt N=109: 400)")
     return p.parse_args()
@@ -638,7 +656,8 @@ def main() -> int:
                       getattr(args, "ref_eval_rN"), args.ref_c)
     else:
         out = run_quotient(args.case_dir, args.q, args.status_json, args.progress_every,
-                           getattr(args, "ref_eval_rN"), args.ref_c, args.kernel_json)
+                           getattr(args, "ref_eval_rN"), args.ref_c, args.kernel_json,
+                           args.annihilation_sample)
     if args.out_json:
         args.out_json.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n",
                                  encoding="utf-8")

@@ -1,0 +1,530 @@
+{
+  "tool": "ot2prime_minitest_n645_l11",
+  "date": "2026-07-10",
+  "note": "Instanz-Zertifikat fuer N=645/ell=11. Kein abc-Claim.",
+  "curve_ainvs": "(0, 38, 0, -215, 0)",
+  "conductor": 645,
+  "frey_ab": [
+    5,
+    43
+  ],
+  "ell": 11,
+  "index_gamma0": 1056,
+  "sturm_bound": 176,
+  "bad_primes": [
+    3,
+    5,
+    43
+  ],
+  "deg_phi": 88,
+  "deg_phi_factor": "2^3 * 11",
+  "congruence_number": "88",
+  "congruence_number_factor": "2^3 * 11",
+  "ell_divides_congruence_number": true,
+  "n_orbits": 12,
+  "target_orbit_indices": [
+    3
+  ],
+  "design_outcome": 3,
+  "design_outcome_label": "full_sturm_fremde_orbit_OT2_gegenbeispiel",
+  "killed_by_U_p_primes": [],
+  "verified_full_congruence_orbits": [
+    10
+  ],
+  "ideal_full_congruence_orbits": [
+    10
+  ],
+  "ideal_vs_direct_agree": true,
+  "congruence_reports": [
+    {
+      "orbit_index": 0,
+      "is_target": false,
+      "field": {
+        "degree": 1,
+        "defining_polynomial": "x"
+      },
+      "good_away_from_N": false,
+      "good_plus_bad_U_p": false,
+      "full_sturm": false,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "I_bad": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "I_all": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "direct_verify_full_congruence": false,
+      "direct_verify_lambda_norm": null
+    },
+    {
+      "orbit_index": 1,
+      "is_target": false,
+      "field": {
+        "degree": 1,
+        "defining_polynomial": "x"
+      },
+      "good_away_from_N": false,
+      "good_plus_bad_U_p": false,
+      "full_sturm": false,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "I_bad": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "I_all": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "direct_verify_full_congruence": false,
+      "direct_verify_lambda_norm": null
+    },
+    {
+      "orbit_index": 2,
+      "is_target": false,
+      "field": {
+        "degree": 1,
+        "defining_polynomial": "x"
+      },
+      "good_away_from_N": false,
+      "good_plus_bad_U_p": false,
+      "full_sturm": false,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "I_bad": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "I_all": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "direct_verify_full_congruence": false,
+      "direct_verify_lambda_norm": null
+    },
+    {
+      "orbit_index": 3,
+      "is_target": true,
+      "field": {
+        "degree": 1,
+        "defining_polynomial": "x"
+      },
+      "good_away_from_N": true,
+      "good_plus_bad_U_p": true,
+      "full_sturm": true,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "11",
+        "gens": [
+          "11"
+        ]
+      },
+      "I_bad": {
+        "norm": "11",
+        "gens": [
+          "11"
+        ]
+      },
+      "I_all": {
+        "norm": "11",
+        "gens": [
+          "11"
+        ]
+      },
+      "direct_verify_full_congruence": true,
+      "direct_verify_lambda_norm": "11"
+    },
+    {
+      "orbit_index": 4,
+      "is_target": false,
+      "field": {
+        "degree": 1,
+        "defining_polynomial": "x"
+      },
+      "good_away_from_N": false,
+      "good_plus_bad_U_p": false,
+      "full_sturm": false,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "I_bad": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "I_all": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "direct_verify_full_congruence": false,
+      "direct_verify_lambda_norm": null
+    },
+    {
+      "orbit_index": 5,
+      "is_target": false,
+      "field": {
+        "degree": 1,
+        "defining_polynomial": "x"
+      },
+      "good_away_from_N": false,
+      "good_plus_bad_U_p": false,
+      "full_sturm": false,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "I_bad": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "I_all": {
+        "norm": "1",
+        "gens": [
+          "1"
+        ]
+      },
+      "direct_verify_full_congruence": false,
+      "direct_verify_lambda_norm": null
+    },
+    {
+      "orbit_index": 6,
+      "is_target": false,
+      "field": {
+        "degree": 2,
+        "defining_polynomial": "x^2 - 2"
+      },
+      "good_away_from_N": false,
+      "good_plus_bad_U_p": false,
+      "full_sturm": false,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a6"
+        ]
+      },
+      "I_bad": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a6"
+        ]
+      },
+      "I_all": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a6"
+        ]
+      },
+      "direct_verify_full_congruence": false,
+      "direct_verify_lambda_norm": null
+    },
+    {
+      "orbit_index": 7,
+      "is_target": false,
+      "field": {
+        "degree": 3,
+        "defining_polynomial": "x^3 + 2*x^2 - 2*x - 2"
+      },
+      "good_away_from_N": false,
+      "good_plus_bad_U_p": false,
+      "full_sturm": false,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a7",
+          "a7^2"
+        ]
+      },
+      "I_bad": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a7",
+          "a7^2"
+        ]
+      },
+      "I_all": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a7",
+          "a7^2"
+        ]
+      },
+      "direct_verify_full_congruence": false,
+      "direct_verify_lambda_norm": null
+    },
+    {
+      "orbit_index": 8,
+      "is_target": false,
+      "field": {
+        "degree": 3,
+        "defining_polynomial": "x^3 - 4*x + 2"
+      },
+      "good_away_from_N": false,
+      "good_plus_bad_U_p": false,
+      "full_sturm": false,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a8",
+          "a8^2"
+        ]
+      },
+      "I_bad": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a8",
+          "a8^2"
+        ]
+      },
+      "I_all": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a8",
+          "a8^2"
+        ]
+      },
+      "direct_verify_full_congruence": false,
+      "direct_verify_lambda_norm": null
+    },
+    {
+      "orbit_index": 9,
+      "is_target": false,
+      "field": {
+        "degree": 3,
+        "defining_polynomial": "x^3 - x^2 - 4*x + 2"
+      },
+      "good_away_from_N": false,
+      "good_plus_bad_U_p": false,
+      "full_sturm": false,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a9",
+          "a9^2"
+        ]
+      },
+      "I_bad": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a9",
+          "a9^2"
+        ]
+      },
+      "I_all": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a9",
+          "a9^2"
+        ]
+      },
+      "direct_verify_full_congruence": false,
+      "direct_verify_lambda_norm": null
+    },
+    {
+      "orbit_index": 10,
+      "is_target": false,
+      "field": {
+        "degree": 5,
+        "defining_polynomial": "x^5 + 4*x^4 - 3*x^3 - 26*x^2 - 22*x + 2"
+      },
+      "good_away_from_N": true,
+      "good_plus_bad_U_p": true,
+      "full_sturm": true,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "11",
+        "gens": [
+          "10*a10^4 + 1",
+          "10*a10^4 + a10",
+          "10*a10^4 + a10^2",
+          "21/2*a10^4 + 1/2*a10^3",
+          "11*a10^4"
+        ]
+      },
+      "I_bad": {
+        "norm": "11",
+        "gens": [
+          "10*a10^4 + 1",
+          "10*a10^4 + a10",
+          "10*a10^4 + a10^2",
+          "21/2*a10^4 + 1/2*a10^3",
+          "11*a10^4"
+        ]
+      },
+      "I_all": {
+        "norm": "11",
+        "gens": [
+          "10*a10^4 + 1",
+          "10*a10^4 + a10",
+          "10*a10^4 + a10^2",
+          "21/2*a10^4 + 1/2*a10^3",
+          "11*a10^4"
+        ]
+      },
+      "direct_verify_full_congruence": true,
+      "direct_verify_lambda_norm": "11"
+    },
+    {
+      "orbit_index": 11,
+      "is_target": false,
+      "field": {
+        "degree": 5,
+        "defining_polynomial": "x^5 - 2*x^4 - 5*x^3 + 8*x^2 + 4*x - 2"
+      },
+      "good_away_from_N": false,
+      "good_plus_bad_U_p": false,
+      "full_sturm": false,
+      "killed_by_U_p": [],
+      "I_good": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a11",
+          "a11^2",
+          "1/2*a11^4 + 1/2*a11^3",
+          "a11^4"
+        ]
+      },
+      "I_bad": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a11",
+          "a11^2",
+          "1/2*a11^4 + 1/2*a11^3",
+          "a11^4"
+        ]
+      },
+      "I_all": {
+        "norm": "1",
+        "gens": [
+          "1",
+          "a11",
+          "a11^2",
+          "1/2*a11^4 + 1/2*a11^3",
+          "a11^4"
+        ]
+      },
+      "direct_verify_full_congruence": false,
+      "direct_verify_lambda_norm": null
+    }
+  ],
+  "snf_test": {
+    "ambient": "ModularSymbols(645,2,sign=1)",
+    "dim": 92,
+    "hecke_side_convention": "row",
+    "variant_i_away_from_N": {
+      "n_generators": 91,
+      "free_rank": 1,
+      "torsion_invariant_factors": [
+        "2",
+        "2",
+        "2",
+        "2",
+        "2",
+        "4",
+        "4",
+        "8"
+      ],
+      "torsion_order": "4096",
+      "torsion_order_factor": "2^12",
+      "length_per_ell": {
+        "2": 12,
+        "3": 0,
+        "5": 0,
+        "7": 0,
+        "11": 0
+      }
+    },
+    "variant_ii_full": {
+      "n_generators": 176,
+      "free_rank": 1,
+      "torsion_invariant_factors": [
+        "2",
+        "2",
+        "2",
+        "2",
+        "2",
+        "2",
+        "2",
+        "2"
+      ],
+      "torsion_order": "256",
+      "torsion_order_factor": "2^8",
+      "length_per_ell": {
+        "2": 8,
+        "3": 0,
+        "5": 0,
+        "7": 0,
+        "11": 0
+      }
+    },
+    "killed_ell_away_to_full": [
+      {
+        "ell": 2,
+        "length_away": 12,
+        "length_full": 8,
+        "killed": 4
+      }
+    ],
+    "full_is_2group_only": true
+  },
+  "seconds": 26.431
+}

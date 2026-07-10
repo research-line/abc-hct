@@ -1,7 +1,7 @@
 {
   "tool": "rank_gate_witness",
   "version": 2,
-  "date": "2026-07-10T01:08:26+00:00",
+  "date": "2026-07-10T01:20:02+00:00",
   "author": "LG",
   "method": "quotient",
   "case_dir": "_results/h3a_residue_line_witness_240672_raw_standard_auto_2026-05-17/N240672_raw_sign1_splitlast",
@@ -26,7 +26,7 @@
   "n_source_rows": 126719,
   "repair_only_row_id_seen": "T_7_minus_0_batch_1/1",
   "repair_id_matches_manifest": true,
-  "manin_t_basis_seconds": 0.7,
+  "manin_t_basis_seconds": 0.8,
   "free_columns_match_kernel_json": true,
   "quotient_rank": 42255,
   "kernel_dim": 1,
@@ -38,8 +38,8 @@
     "kernel_json_mod_q": 3862,
     "match": true
   },
-  "annihilation_check_mode": "sampled_4000_of_42255_spread",
-  "source_rows_checked": 4000,
+  "annihilation_check_mode": "full",
+  "source_rows_checked": 42255,
   "source_pairing_nonzero": 0,
   "source_annihilated": true,
   "eval_rN": 3862,
@@ -90,5 +90,5 @@
     "gate_clean": true,
     "bridge_invariance_vs_c400": null
   },
-  "seconds": 348.3
+  "seconds": 4030.0
 }

@@ -1,6 +1,15 @@
 # abc-hct
 
+![Python](https://img.shields.io/badge/Python-3.12-blue.svg)
+![SageMath](https://img.shields.io/badge/SageMath-10.x-orange.svg)
+![PARI/GP](https://img.shields.io/badge/PARI%2FGP-2.15-green.svg)
+![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--07--25-blue.svg)
+
 Private working repository for the HCT/abc research line.
+
+> [!NOTE]
+> This repository contains AI-oriented context guidelines and safety boundaries in [llms.txt](llms.txt).
+
 
 Current scope:
 

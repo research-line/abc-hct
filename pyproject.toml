@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "abc-hct"
+version = "0.1.0"
+description = "Curated calculation scripts, reproduction harness codes, and machine-readable result certificates for Hecke curves and Manin-Hecke quotients"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "HCT Research Line Team" }
+]
+keywords = [
+    "hecke-curves",
+    "manin-hecke-quotients",
+    "number-theory",
+    "sagemath",
+    "pari-gp",
+    "arithmetic-geometry",
+    "frey-watkins"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/research-line/abc-hct"
+Repository = "https://github.com/research-line/abc-hct"
+Documentation = "https://github.com/research-line/abc-hct#readme"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = ["_scripts"]

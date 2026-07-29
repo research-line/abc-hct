@@ -3,13 +3,33 @@
 ![Python](https://img.shields.io/badge/Python-3.12-blue.svg)
 ![SageMath](https://img.shields.io/badge/SageMath-10.x-orange.svg)
 ![PARI/GP](https://img.shields.io/badge/PARI%2FGP-2.15-green.svg)
-![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--07--27-blue.svg)
+![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--07--29-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 Private working repository for the HCT/abc research line.
 
 > [!NOTE]
-> This repository contains AI-oriented context guidelines and safety boundaries in [llms.txt](llms.txt).
+> This repository contains AI-oriented context guidelines, canonical search phrases, and safety boundaries in [llms.txt](llms.txt).
 
+## Quick Navigation
+
+| Resource | Description |
+|---|---|
+| [llms.txt](llms.txt) | LLM context guidelines, search phrases & safety boundaries |
+| [CHANGELOG.md](CHANGELOG.md) | Release history and maintenance audit log |
+| [REPRODUCIBILITY_H3A_2026-05-17.md](REPRODUCIBILITY_H3A_2026-05-17.md) | Overview of H3a reproducibility batch and certificates |
+
+## System Architecture & Calculation Pipeline
+
+```mermaid
+graph TD
+    A["SageMath / Python Driver"] --> B["Manin Symbol Pairing Engine"]
+    B --> C["Hecke Algebra Operators (T_5, T_7)"]
+    C --> D["Manin-Hecke Quotient Kernel Certifier"]
+    D --> E["Machine-Readable Results (_results/)"]
+    F["PARI/GP Script (_scripts/frey_watkins_phase2.gp)"] --> G["Frey-Watkins Saturation Checker"]
+    G --> E
+```
 
 Current scope:
 
@@ -59,4 +79,3 @@ Frey-Watkins exploratory batch:
 ## LLM Context
 
 - [LLM context](llms.txt) contains canonical links, interfaces, search phrases, and safety boundaries for AI coding assistants.
-

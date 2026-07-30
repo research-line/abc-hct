@@ -2,6 +2,14 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [0.1.2] - 2026-07-30
+
+### Changed
+- Technical hygiene & documentation maintenance check (Pfad A, 2026-07-30).
+- Updated `llms.txt` header `Last-checked` date to `2026-07-30`.
+- Updated `README.md` LLM-Ready status badge timestamp to `2026-07-30`.
+- Verified Python script syntax compilation (`python -m compileall _scripts`, 270 scripts clean).
+
 ## [0.1.1] - 2026-07-29
 
 ### Changed

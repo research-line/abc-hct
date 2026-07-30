@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.12-blue.svg)
 ![SageMath](https://img.shields.io/badge/SageMath-10.x-orange.svg)
 ![PARI/GP](https://img.shields.io/badge/PARI%2FGP-2.15-green.svg)
-![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--07--29-blue.svg)
+![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--07--30-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 Private working repository for the HCT/abc research line.

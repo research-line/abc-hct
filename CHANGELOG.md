@@ -2,6 +2,13 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [0.1.3] - 2026-08-01
+
+### Changed
+- Technical hygiene and documentation maintenance check.
+- Updated the `llms.txt` `Last-checked` header and the README LLM-Ready badge to `2026-08-01`.
+- Verified syntax-only Python compilation for `_scripts/` and `_compute_queue/scripts/`.
+
 ## [0.1.2] - 2026-07-30
 
 ### Changed

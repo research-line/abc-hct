@@ -1,21 +1,26 @@
 # abc-hct
 
+[![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
+[![Deutsch](https://img.shields.io/badge/Sprache-Deutsch-yellow.svg)](README_de.md)
 ![Python](https://img.shields.io/badge/Python-3.12-blue.svg)
 ![SageMath](https://img.shields.io/badge/SageMath-10.x-orange.svg)
 ![PARI/GP](https://img.shields.io/badge/PARI%2FGP-2.15-green.svg)
-![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--08--01-blue.svg)
+![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--08--05-blue.svg)
+![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)
+![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 Private working repository for the HCT/abc research line.
 
 > [!NOTE]
-> This repository contains AI-oriented context guidelines, canonical search phrases, and safety boundaries in [llms.txt](llms.txt).
+> Machine-readable repository context guidelines, canonical search phrases, and safety boundaries are maintained in [llms.txt](llms.txt).
 
 ## Quick Navigation
 
 | Resource | Description |
 |---|---|
 | [llms.txt](llms.txt) | LLM context guidelines, search phrases & safety boundaries |
+| [README_de.md](README_de.md) | Deutsche Dokumentationsfassung / German documentation parity |
 | [CHANGELOG.md](CHANGELOG.md) | Release history and maintenance audit log |
 | [REPRODUCIBILITY_H3A_2026-05-17.md](REPRODUCIBILITY_H3A_2026-05-17.md) | Overview of H3a reproducibility batch and certificates |
 

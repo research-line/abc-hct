@@ -2,7 +2,17 @@
 
 All notable changes to this repository will be documented in this file.
 
-## [0.1.3] - 2026-08-01
+## [0.1.4] - 2026-08-05
+
+### Added
+- Created `README_de.md` for full German documentation parity with language switcher navigation.
+- Added `research-line` Ecosystem and `open-bricks` Umbrella Shields.io badges to `README.md` and `README_de.md`.
+
+### Changed
+- Discoverability, SEO & README design maintenance check (Pfad B, 2026-08-05).
+- Updated `llms.txt` header `Last-checked` date to `2026-08-05` and added German documentation link.
+- Updated `README.md` LLM-Ready status badge timestamp to `2026-08-05`.
+- Verified Python script syntax compilation (`python -m compileall _scripts`).
 
 ### Changed
 - Technical hygiene and documentation maintenance check.

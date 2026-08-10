@@ -13,6 +13,8 @@ All notable changes to this repository will be documented in this file.
 - Updated `llms.txt` header `Last-checked` date to `2026-08-05` and added German documentation link.
 - Updated `README.md` LLM-Ready status badge timestamp to `2026-08-05`.
 - Verified Python script syntax compilation (`python -m compileall _scripts`).
+- Technical hygiene and documentation maintenance check (2026-08-10).
+- Verified Python script syntax compilation (`python -m compileall -q _scripts _compute_queue/scripts`).
 
 ### Changed
 - Technical hygiene and documentation maintenance check.

@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/Python-3.12-blue.svg)
 ![SageMath](https://img.shields.io/badge/SageMath-10.x-orange.svg)
 ![PARI/GP](https://img.shields.io/badge/PARI%2FGP-2.15-green.svg)
-![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--08--05-blue.svg)
+![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--08--10-blue.svg)
 ![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)
 ![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)

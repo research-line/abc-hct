@@ -1,0 +1,33 @@
+{
+  "task_id": 1304,
+  "date": "2026-08-12",
+  "tool": "task1304_r1_faithful_al_certificate_validation",
+  "claim_upgrade": false,
+  "archived_certificate": {
+    "faithful_al_certificate_found": true,
+    "rank_A_full": true,
+    "rank_A": 10567,
+    "rank_A_target": 10567,
+    "rank_certificate_degree": 10567,
+    "rank_certificate_sequence_length": 21138,
+    "rank_connection_verified": true,
+    "rank_constant_nonzero": true,
+    "solve_connection_verified": true,
+    "solve_vector_relation_zero": true,
+    "solve_residual_zero": true,
+    "schur_nonzero": true,
+    "primary_pairing_materialized": false,
+    "operator_kind": "pari_tensor_solve_atkin_lehner_twist",
+    "pairing_kind": "_pari_tensor_solve"
+  },
+  "status_check_verdict": "faithful_al_certificate_ready",
+  "provenance_checks": {
+    "pi_json_hash_matches_local": true,
+    "remod_case_manifest_available_locally": false,
+    "remod_case_rows_available_locally": false,
+    "current_operator_script_hash_matches_embedded_remote_hash": false,
+    "embedded_remote_operator_script_sha256": "6f98fe6fe96a45668e859666fd4389d9ef9369955439f5d5bcf3d9d4ee6916a5",
+    "current_local_operator_script_sha256": "0a2c2b6e7a98f7c65d179ca76c61bf363e4f64f51dd7166e5293e6e20aa6890e"
+  },
+  "scope": "Archiviertes Remote-Zertifikat auf Schema-, Rang-, Solve- und Schur-Felder geprüft; kein neuer Compute-Lauf und kein Claim-Upgrade."
+}

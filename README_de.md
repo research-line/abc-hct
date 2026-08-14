@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/Python-3.12-blue.svg)
 ![SageMath](https://img.shields.io/badge/SageMath-10.x-orange.svg)
 ![PARI/GP](https://img.shields.io/badge/PARI%2FGP-2.15-green.svg)
-![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--08--10-blue.svg)
+![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--08--14-blue.svg)
 ![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)
 ![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
@@ -57,6 +57,7 @@ Repository-Hygiene:
 
 - GitHub Actions führt bei Pushes und Pull Requests `abc-hct hygiene` aus.
 - Der Workflow prüft die Python-Syntax für `_scripts/` und `_compute_queue/scripts/`.
+- Er führt die automatisierte Pytest-Testsuite (`test_policy`, `test_metadata`, `test_scripts_compilation`) aus.
 - Er stellt sicher, dass `.gitignore` weiterhin Beweisnotizen, Handoffs, lokalen Status, rohe Daten-Snapshots und transiente Logs ausschließt.
 - Lange Berechnungen verbleiben außerhalb von GitHub Actions in der lokalen Compute-Queue oder auf dedizierten Remote-Compute-Hosts.
 

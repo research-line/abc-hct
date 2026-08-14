@@ -2,6 +2,20 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [0.1.5] - 2026-08-14
+
+### Added
+- Added automated pytest test suite in `tests/` (`test_policy.py`, `test_metadata.py`, `test_scripts_compilation.py`) covering repository hygiene, privacy boundaries, metadata sync, and Python syntax compilation.
+- Added `[tool.ruff]` and updated `[tool.pytest.ini_options]` configuration in `pyproject.toml`.
+- Added pytest verification step to GitHub Actions CI workflow (`.github/workflows/abc-hct-hygiene.yml`).
+
+### Changed
+- Technical hygiene & maintenance check (Pfad A, 2026-08-14).
+- Updated `llms.txt` header `Last-checked` date to `2026-08-14`.
+- Updated `README.md` and `README_de.md` LLM-Ready status badges to `2026-08-14`.
+- Verified Python script syntax compilation across all 270 research scripts under `_scripts/`.
+- Verified automated pytest suite (100% PASS).
+
 ## [0.1.4] - 2026-08-05
 
 ### Added

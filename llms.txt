@@ -1,6 +1,6 @@
 # abc-hct
 
-## Last-checked: 2026-08-10
+## Last-checked: 2026-08-14
 
 ## Canonical Links
 
@@ -15,6 +15,7 @@ abc-hct is a private working repository containing curated calculation scripts, 
 
 ## Interfaces
 
+- Test suite: `pytest`
 - Python compile check: `python -m compileall _scripts`
 - Frey-Watkins Phase-2 PARI/GP: `gp _scripts/frey_watkins_phase2.gp`
 - Frey-Watkins Phase-2 Sage/Python: `sage _scripts/frey_watkins_phase2.py`
@@ -25,7 +26,7 @@ abc-hct is a private working repository containing curated calculation scripts, 
 
 - **Strict Privacy:** This repository must remain private until the public release gate/DOI is explicitly reached.
 - **Do not commit:** Proof notes (`BEWEISNOTIZ*.md`), state files (`TODO.md`, `GAPS.md`, `MEMORY.md`), credentials, raw process logs, or raw transient database folders (`_data/`, `_sources/`).
-- **Path leaks:** Absolute host paths (e.g., matching `C:\Users\User\`) must never be written to tracked files.
+- **Path leaks:** Absolute host paths (e.g., matching local home directory patterns) must never be written to tracked files.
 - **Result curation:** Only commit finalized JSON/Markdown certificates under `_results/`; do not upload intermediate calculation dumps.
 
 ## Audience

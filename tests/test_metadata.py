@@ -15,7 +15,7 @@ def test_pyproject_toml_structure():
     assert "project" in data
     project = data["project"]
     assert project.get("name") == "abc-hct"
-    assert "version" in project
+    assert project.get("version") == "0.1.6"
     assert "description" in project
     assert project.get("requires-python") == ">=3.10"
     assert "license" in project
@@ -28,7 +28,7 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# abc-hct" in content
-    assert "## Last-checked: 2026-08-14" in content
+    assert "## Last-checked: 2026-08-16" in content
     assert "## Canonical Links" in content
     assert "## Summary" in content
     assert "## Interfaces" in content
@@ -37,7 +37,7 @@ def test_llms_txt_structure_and_timestamp():
 
 
 def test_readme_and_readme_de_parity():
-    """Verify that README.md and README_de.md are present with synchronized badges."""
+    """Verify that README.md and README_de.md are present with synchronized badges and sibling matrix."""
     readme_en = REPO_ROOT / "README.md"
     readme_de = REPO_ROOT / "README_de.md"
 
@@ -58,12 +58,29 @@ def test_readme_and_readme_de_parity():
     assert "CHANGELOG.md" in de_content
 
     # Check status badges
-    assert "LLM--Ready-2026--08--14" in en_content
-    assert "LLM--Ready-2026--08--14" in de_content
+    assert "Version-0.1.6-blue.svg" in en_content
+    assert "Version-0.1.6-blue.svg" in de_content
+    assert "LLM--Ready-2026--08--16" in en_content
+    assert "LLM--Ready-2026--08--16" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in en_content
     assert "Umbrella-open--bricks-purple.svg" in de_content
+
+    # Sibling research matrix links
+    for slug in [
+        "functional-stability-theory",
+        "fst-nash",
+        "economic-sanctions-coercive-diplomacy",
+        "prompt-archaeology-casestudy2",
+        "CultureEvolution",
+        "connes-cvs",
+        "direct-beam",
+        "DevCenter",
+        "CodeBox",
+    ]:
+        assert slug in en_content, f"Missing sibling link {slug} in README.md"
+        assert slug in de_content, f"Missing sibling link {slug} in README_de.md"
 
 
 def test_changelog_structure():
@@ -72,4 +89,12 @@ def test_changelog_structure():
     assert changelog_path.exists(), "CHANGELOG.md must exist"
     content = changelog_path.read_text(encoding="utf-8")
 
-    assert "## [0.1.5] - 2026-08-14" in content
+    assert "## [0.1.6] - 2026-08-16" in content
+
+
+def test_utf8_encoding_all_docs():
+    """Verify that all documentation and text files decode strictly as UTF-8."""
+    for rel_path in ["README.md", "README_de.md", "llms.txt", "CHANGELOG.md", "pyproject.toml"]:
+        doc_file = REPO_ROOT / rel_path
+        if doc_file.exists():
+            doc_file.read_text(encoding="utf-8")

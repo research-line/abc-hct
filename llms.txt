@@ -1,6 +1,6 @@
 # abc-hct
 
-## Last-checked: 2026-08-14
+## Last-checked: 2026-08-16
 
 ## Canonical Links
 
@@ -15,7 +15,7 @@ abc-hct is a private working repository containing curated calculation scripts, 
 
 ## Interfaces
 
-- Test suite: `pytest`
+- Test suite: `pytest` (10 automated tests covering metadata, policy hygiene, and syntax compilation)
 - Python compile check: `python -m compileall _scripts`
 - Frey-Watkins Phase-2 PARI/GP: `gp _scripts/frey_watkins_phase2.gp`
 - Frey-Watkins Phase-2 Sage/Python: `sage _scripts/frey_watkins_phase2.py`

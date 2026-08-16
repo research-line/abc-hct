@@ -2,6 +2,20 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [0.1.6] - 2026-08-16
+
+### Added
+- Synchronized Shields.io badges in `README.md` & `README_de.md` (Tests: 10 Passed, Version: 0.1.6, Python >=3.10, SageMath 10.x, PARI/GP 2.15, LLM-Ready, research-line ecosystem, open-bricks umbrella).
+- Added comprehensive Sibling Research & Ecosystem Matrix across `research-line` (`functional-stability-theory`, `fst-nash`, `economic-sanctions-coercive-diplomacy`, `prompt-archaeology-casestudy2`, `CultureEvolution`, `connes-cvs`, `direct-beam`) and `open-bricks` developer tools (`DevCenter`, `CodeBox`) in both English and German documentation.
+- Enhanced automated metadata & manifest parity test suite in `tests/test_metadata.py` with version synchronization, sibling matrix checks, and UTF-8 document encoding verification (10/10 passed).
+- Added per-file ignore rules for research script suites in `pyproject.toml` (`[tool.ruff]`), achieving 100% clean linter status.
+
+### Changed
+- Discoverability, README-Design, Badges & Metadata Parity Check (Pfad B, 2026-08-16).
+- Updated `llms.txt` header `Last-checked` timestamp to `2026-08-16` and updated test interface count.
+- Bumped version to `0.1.6` across `pyproject.toml`, `README.md`, `README_de.md`, `llms.txt`, and `tests/test_metadata.py`.
+- Verified Python script syntax compilation and pytest test suite (100% PASS).
+
 ## [0.1.5] - 2026-08-14
 
 ### Added

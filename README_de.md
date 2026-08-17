@@ -85,6 +85,29 @@ Dieses Repository wird aus dem lokalen abc/HCT-Projekt-Root kuratiert; host-spez
 
 Der Magma-freie Sage/Python Manin-Hecke-Quotient über `GF(3863)` hat den gemappten Basket `60168/80224/120336/240672` sowohl im `raw`- als auch im `anc`-Modus terminiert. Verbleibende Arbeiten betreffen theoretisches Embedding, Rang-Zertifizierung und einheitlichen FAQS/M*-Transfer.
 
+## Beleg-Zuordnung: Ergebnis <-> Test <-> Paper
+
+Jede Ergebniskategorie unten wird in mindestens einem der Paper zitiert, die dieses Repository belegt. `DOI` ist die Zenodo-Concept-DOI (löst immer auf die neueste Version auf); `Paper`/`Referenz` benennt das zitierende Manuskript und, wo das Paper einen exakten Dateinamen festlegt, diesen Dateinamen.
+
+| Ergebniskategorie | Level / Umfang | Reproduktionsskript(e) | Ergebnisdateien (`_results/`) | Zitiert von |
+|---|---|---|---|---|
+| Magma-freier Manin-Hecke-Quotient (Basket-Terminierung) | `60168, 80224, 120336, 240672` (`raw`+`anc`) über `GF(3863)` | `_scripts/mstar_nomagma_*.py` | `mstar_nomagma_*` (127 Dateien) | Paper A "Global Congruence Routes"/"Hecke Diagnostics"; Paper B `mstar_nomagma_result_audit_2026-05-12.md`, `mstar_nomagma_rc3d_rowhash_60168_raw*_2026-05-12.md` |
+| H3a-Restlinien-Zeugen (RC3c) | alle 4 Level, `raw`+`anc` | `_scripts/mstar_h3a_*.py` | `mstar_h3a_*` (Zeugen pro Level, Cusp-Fan-Rangketten, Prefix-Profile) | Paper A "The bridge search" (Tabelle 1, `raw`/`anc`-Ledger je Level); `REPRODUCIBILITY_H3A_2026-05-17.md` |
+| M-DET Block-Rang / Rank-Drop-Primes | `60168`, `240672` | `_scripts/mdet3_block_rank_60168.py` | `mdet3_block_rank_60168_2026-06-14.*`, `mdet_240672_rank_drop_primes_2026-06-13.*` | Paper B (exakter Dateiname zitiert) |
+| R1 Faithful-AL Q_B-Schur-Zertifikat | `80224/raw` | Compute-Queue-Job `r1_faithful_al_80224_raw_2026-06-14` + `r1_faithful_al_80224_raw_field_check_2026-06-27.py` (automatischer Feld-Check) | `r1_faithful_al_80224_raw_2026-06-14.*`, `r1_faithful_al_80224_raw_field_check_2026-06-27.*` | Paper B (exakter Dateiname zitiert; Feld-Check ergänzt 2026-08-17, T-20260816-04) |
+| Self-Averaging-Diagnostik | Qualitäts-Tail, dyadische Buckets | `_scripts/abc_quality_self_averaging_probe*.py` | `abc_quality_self_averaging_probe_2026-06-14.*` | Paper A "Self-averaging diagnostic" (`subsec:self_averaging`) |
+| Frey-Watkins-Sättigung (Phase 1-3b, h_delta) | 15 klassische Frey-Tripel + 60-Punkte-Sage-Sample | `_scripts/frey_watkins_phase2.gp`, `_scripts/frey_watkins_phase2.py`, `_scripts/frey_watkins_phase3.py`, `_scripts/frey_faltings_sandwich_phase3b.py` | `frey_watkins_saturation_phase*`, `frey_faltings_sandwich_phase3b_2026-05-17.*` | Paper A (naive FWS falsifiziert / qualitätskonditionales FWS-c bestätigt) |
+| CX2/CX3 Codex-vorgeschlagene Kill-or-Go-Tests | de-Smit-Champion-Stichprobe (n=230-240) | `_scripts/cx2_cx3_codex_tests.py` | `cx2_cx3_codex_tests_2026-06-11.*` | Negativkontrollen, referenziert über die Routen-Audits des Programms |
+
+`llms.txt` und `_compute_queue/README.md` tragen dieselbe Zuordnung in maschinenlesbarer bzw. Queue-Form. Dateinamen, die ein Paper per exaktem Pfad zitiert, die hier aber noch nicht vorhanden waren, gelten als **offene Vollständigkeitslücken** und werden durch Nachtragen der Datei geschlossen (siehe `CHANGELOG.md` für so geschlossene Lücken).
+
+| Paper | DOI (Concept) | Status |
+|---|---|---|
+| Paper A -- "From Landscape to Atlas: Multi-Route Cartography of an Ongoing Expedition Toward the *abc* Conjecture" | [10.5281/zenodo.21916900](https://doi.org/10.5281/zenodo.21916900) | live, versioniert |
+| Paper B -- "Beneath the *abc* Landscape: Hecke Quotients and the HCT Route" | noch nicht veröffentlicht | Entwurf, unveröffentlicht |
+
+**Proof Notes:** Das `_proof-notes/`-Verzeichnis des Projekts enthält >1000 explorative Routennotizen. Gemäß der gestuften Proof-Note-Freigabepolitik der Pipeline werden einzelne Notizen erst repo-fähig, wenn sie terminal, vom Paper inhaltlich gedeckt, querverweisfrei zu aktiven Routen und privacy-hygienisch sind (siehe `_templates`/`.RESEARCH/CLAUDE.md`, "Gestufte Proof-Note-Freigabe"). Bisher wurde keine einzelne Notiz für dieses Repository freigegeben; das ist eine separate, fortlaufende Kuratierungsaufgabe und kein Blocker für die obige Ergebnis-/Reproduktions-/Paper-Zuordnung.
+
 ## Neuester kuratierter Batch
 
 - `2026-05-17`: H3a/Magma-freie Reproduktionsskripte und maschinenlesbare Zertifikate wurden unter `_scripts/` und `_results/` ergänzt.

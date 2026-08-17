@@ -85,6 +85,29 @@ This repository is curated from the local abc/HCT project root; host-specific ab
 
 The no-Magma Sage/Python Manin-Hecke quotient over `GF(3863)` has killed the mapped basket `60168/80224/120336/240672` in both `raw` and `anc` modes. The remaining work is theoretical embedding, rank certification, and uniform FAQS/M* transfer.
 
+## Evidence Mapping: Result <-> Reproducer <-> Paper
+
+Every result category below is cited in at least one of the papers that this repository backs. `DOI` is the Zenodo concept DOI (always resolves to the latest version); `Paper`/`Reference` names the citing manuscript and, where the paper pins an exact filename, that filename.
+
+| Result category | Levels / scope | Reproducer script(s) | Result files (`_results/`) | Cited by |
+|---|---|---|---|---|
+| No-Magma Manin-Hecke quotient (basket kill) | `60168, 80224, 120336, 240672` (`raw`+`anc`) over `GF(3863)` | `_scripts/mstar_nomagma_*.py` | `mstar_nomagma_*` (127 files) | Paper A "Global Congruence Routes"/"Hecke Diagnostics"; Paper B `mstar_nomagma_result_audit_2026-05-12.md`, `mstar_nomagma_rc3d_rowhash_60168_raw*_2026-05-12.md` |
+| H3a residue-line witnesses (RC3c) | all 4 levels, `raw`+`anc` | `_scripts/mstar_h3a_*.py` | `mstar_h3a_*` (per-level witnesses, cusp-fan rank chains, prefix profiles) | Paper A "The bridge search" (Table 1, `raw`/`anc` per-level ledger); `REPRODUCIBILITY_H3A_2026-05-17.md` |
+| M-DET block-rank / rank-drop-primes | `60168`, `240672` | `_scripts/mdet3_block_rank_60168.py` | `mdet3_block_rank_60168_2026-06-14.*`, `mdet_240672_rank_drop_primes_2026-06-13.*` | Paper B (exact filenames cited) |
+| R1 faithful-AL Q_B-Schur certificate | `80224/raw` | Compute-queue job `r1_faithful_al_80224_raw_2026-06-14` + `r1_faithful_al_80224_raw_field_check_2026-06-27.py` (automated field check) | `r1_faithful_al_80224_raw_2026-06-14.*`, `r1_faithful_al_80224_raw_field_check_2026-06-27.*` | Paper B (exact filename cited; field-check added 2026-08-17, T-20260816-04) |
+| Self-averaging diagnostic | quality tail, dyadic buckets | `_scripts/abc_quality_self_averaging_probe*.py` | `abc_quality_self_averaging_probe_2026-06-14.*` | Paper A "Self-averaging diagnostic" (`subsec:self_averaging`) |
+| Frey-Watkins saturation (Phase 1-3b, h_delta) | 15 classical Frey triples + 60-point Sage sample | `_scripts/frey_watkins_phase2.gp`, `_scripts/frey_watkins_phase2.py`, `_scripts/frey_watkins_phase3.py`, `_scripts/frey_faltings_sandwich_phase3b.py` | `frey_watkins_saturation_phase*`, `frey_faltings_sandwich_phase3b_2026-05-17.*` | Paper A (naive-FWS-falsified / quality-conditional-FWS-c framing) |
+| CX2/CX3 Codex-suggested kill-or-go tests | de-Smit-champion sample (n=230-240) | `_scripts/cx2_cx3_codex_tests.py` | `cx2_cx3_codex_tests_2026-06-11.*` | negative controls referenced across the programme's route audits |
+
+`llms.txt` and `_compute_queue/README.md` carry the same mapping in machine-readable/queue form. Filenames a paper cites by exact path but that were not yet present here are treated as **open completeness gaps** and closed by adding the file (see `CHANGELOG.md` for closures made under this convention).
+
+| Paper | DOI (concept) | Status |
+|---|---|---|
+| Paper A -- "From Landscape to Atlas: Multi-Route Cartography of an Ongoing Expedition Toward the *abc* Conjecture" | [10.5281/zenodo.21916900](https://doi.org/10.5281/zenodo.21916900) | live, versioned |
+| Paper B -- "Beneath the *abc* Landscape: Hecke Quotients and the HCT Route" | not yet published | draft, unreleased |
+
+**Proof notes:** the project's `_proof-notes/` directory holds >1000 exploratory/route notes. Per the pipeline's staged proof-note release policy, individual notes become repo-eligible only once terminal, paper-covered, cross-reference-clean, and privacy-hygienic (see `_templates`/`.RESEARCH/CLAUDE.md`, "Gestufte Proof-Note-Freigabe"). None have been individually cleared for this repository yet; that is a separate, ongoing curation task, not a blocker for the result/reproducer/paper mapping above.
+
 ## Latest Curated Batch
 
 - `2026-05-17`: H3a/no-Magma reproduction scripts and machine-readable certificates were added under `_scripts/` and `_results/`.

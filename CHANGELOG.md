@@ -2,6 +2,43 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [Unreleased] - 2026-08-17 (T-20260816-04, public-readiness curation)
+
+### Fixed
+- **Privacy leak (host paths):** 8 tracked `_results/*.json` files leaked the
+  absolute local path `C:\Users\User\OneDrive\...\abc\...` in JSON-escaped
+  form (`source`/`case_dir`/`file`/`scripts` provenance fields); 2 further
+  tracked `.status.json` files leaked the absolute Windows-Store Python
+  interpreter path in a logged `cmd` array. Neither leak was catchable by
+  `tests/test_policy.py::test_no_host_path_leaks`, because its
+  `LOCAL_PATH_TOKENS` only matched single-backslash path forms, not the
+  JSON-escaped double-backslash form these files actually used. Redacted all
+  10 files (relative paths / generic `"python"`); hardened
+  `LOCAL_PATH_TOKENS` with the JSON-escaped token so this class of leak is
+  now caught going forward. Fix applies going forward only; the leak remains
+  present in historical commits (documented risk, see public-readiness
+  checklist).
+- **Stray cross-host duplicates:** 106 untracked `*-WORKSTATION-LG.*` files
+  (another host's checkout mirrored into this OneDrive folder before the
+  per-host-suffix hygiene convention existed here) removed from the local
+  working copy; `.gitignore` now excludes `*-WORKSTATION-LG.*`/`*-ASUS-GEI.*`
+  and the OneDrive<->local-clone mirror descriptors `README_MIRROR.md` /
+  `REPO.pointer.json` (system infra, not repo content).
+
+### Added
+- Evidence-mapping section ("Evidence Mapping: Result <-> Reproducer <->
+  Paper") in `README.md` & `README_de.md`: ties result categories to their
+  reproducer scripts, `_results/` files, citing paper section, and Zenodo
+  DOI.
+- 2 result files explicitly cited by exact filename in Paper B
+  ("Beneath the *abc* Landscape") but missing from the repo:
+  `r1_faithful_al_80224_raw_field_check_2026-06-27.{json,md}` (added; clean
+  automated field-check output, no internal paths/names).
+  `MAC_COMPUTE_STATUS_2026-06-27.md` (deliberately **not** added: internal
+  operational status log with Tailscale IP, real first name in a Mac path,
+  and references to internal steering files — flagged for the paper-text
+  review, not repo-curatable as-is).
+
 ## [0.1.6] - 2026-08-16
 
 ### Added

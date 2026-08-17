@@ -1,3 +1,17 @@
+# Cross-host duplicate/stale artifacts (T-20260816-04, 2026-08-17): another
+# host's checkout ended up mirrored into this OneDrive folder before the
+# *-<HOST>.* hygiene convention existed for this repo. Same content, only
+# EOL/staleness differs from the tracked canonical files -- never commit these.
+*-WORKSTATION-LG.*
+*-ASUS-GEI.*
+
+# OneDrive<->local-clone hybrid-mirror infra descriptors (system tooling, not
+# repo content) -- describe the mirror mechanism itself, reference internal
+# host paths / sync slots. See .TOPICS/.RESEARCH/RESEARCH_GIT_HYBRID_POLICY.md
+# and .SYNC/REPO-POINTER-SCHEMA.md.
+README_MIRROR.md
+REPO.pointer.json
+
 # Private/internal research control files
 # Proof notes stay out until journal publication plus explicit release.
 BEWEISNOTIZ*.md

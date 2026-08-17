@@ -1,7 +1,7 @@
 {
   "status": "ok",
   "purpose": "GL_2(Z)-invariant content diagnostic on the free rank-2 part of the integral G1 quotient.",
-  "source": "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\g1_integral_lattice_quotient_probe_2026-05-09.json",
+  "source": "_results\\g1_integral_lattice_quotient_probe_2026-05-09.json",
   "results": [
     {
       "label": "5+27=32",

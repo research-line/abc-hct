@@ -9,8 +9,8 @@
   "steps": [
     {
       "cmd": [
-        "C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\python.exe",
-        "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_scripts\\mstar_h3a_make_residue_line_witness.py",
+        "python",
+        "_scripts\\mstar_h3a_make_residue_line_witness.py",
         "--source-case-dir",
         "_results\\rc3c_quotient_metadata_smoke_n109_2026-05-16\\N109_raw_sign1",
         "--out-case-dir",
@@ -25,8 +25,8 @@
     },
     {
       "cmd": [
-        "C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\python.exe",
-        "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_scripts\\mstar_h3a_residue_line_order_certificate.py",
+        "python",
+        "_scripts\\mstar_h3a_residue_line_order_certificate.py",
         "_results\\h3a_wait_postprocess_smoke_n109_2026-05-16\\N109_raw_sign1_splitlast",
         "--expect-stage-prefix",
         "T_5_minus_2",
@@ -42,8 +42,8 @@
     },
     {
       "cmd": [
-        "C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\python.exe",
-        "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_scripts\\mstar_h3a_rc3c_witness_verify_rank.py",
+        "python",
+        "_scripts\\mstar_h3a_rc3c_witness_verify_rank.py",
         "_results\\h3a_wait_postprocess_smoke_n109_2026-05-16\\N109_raw_sign1_splitlast",
         "--out-json",
         "_results\\mstar_h3a_wait_postprocess_smoke_n109_2026-05-16_rank_verify.json",

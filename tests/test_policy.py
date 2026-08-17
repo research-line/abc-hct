@@ -45,6 +45,13 @@ LOCAL_PATH_TOKENS = (
     "C:/Users/User/",
     "/c/Users/User/",
     "/mnt/c/Users/User/",
+    # JSON-escaped form (backslashes doubled on disk in .json/.jsonl files);
+    # the single-backslash token above does not match this substring, so
+    # result-file provenance fields ("source"/"case_dir"/"file"/"scripts")
+    # slipped through undetected until T-20260816-04 (2026-08-17) found 8
+    # tracked .json files leaking the plain single-backslash token's escaped
+    # counterpart.
+    r"C:\\Users\\User\\",
 )
 
 TEXT_SUFFIXES = {

@@ -11,7 +11,7 @@
 
 ## Summary
 
-abc-hct is a private working repository containing curated calculation scripts, reproduction harness codes, and machine-readable result certificates for the Hecke curves and Manin-Hecke quotients route within the HCT/abc research line. It integrates Python, SageMath, and PARI/GP workflows to analyze Hecke quotient ranks, Frey curves, and modular symbol pairings without requiring proprietary packages like Magma.
+abc-hct is a curated research repository containing calculation scripts, reproduction harness codes, and machine-readable result certificates for the Hecke curves and Manin-Hecke quotients route within the HCT/abc research line. It integrates Python, SageMath, and PARI/GP workflows to analyze Hecke quotient ranks, Frey curves, and modular symbol pairings without requiring proprietary packages like Magma.
 
 ## Interfaces
 
@@ -24,7 +24,7 @@ abc-hct is a private working repository containing curated calculation scripts, 
 
 ## Safety Boundaries
 
-- **Strict Privacy:** This repository must remain private until the public release gate/DOI is explicitly reached.
+- **Public since 2026-08-18** (the DOI/public-release gate was reached: Paper A live since 2026-08-13, DOI 10.5281/zenodo.21916900). Internal proof notes, working states, and unpublished routes still stay out of this repository by default (see Repository Policy in README.md) -- being public does not lift the curation boundary.
 - **Do not commit:** Proof notes (`BEWEISNOTIZ*.md`), state files (`TODO.md`, `GAPS.md`, `MEMORY.md`), credentials, raw process logs, or raw transient database folders (`_data/`, `_sources/`).
 - **Path leaks:** Absolute host paths (e.g., matching local home directory patterns) must never be written to tracked files.
 - **Result curation:** Only commit finalized JSON/Markdown certificates under `_results/`; do not upload intermediate calculation dumps.

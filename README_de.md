@@ -12,7 +12,7 @@
 [![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)](https://github.com/open-bricks)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Privates Arbeits-Repository für die Forschungslinie HCT/abc.
+Kuratiertes Forschungs-Repository für die Forschungslinie HCT/abc.
 
 > [!NOTE]
 > Maschinenlesbare Kontext-Richtlinien, kanonische Suchbegriffe und Sicherheitsgrenzen für KI-Assistenten sind in [llms.txt](llms.txt) hinterlegt.
@@ -61,7 +61,7 @@ graph TD
 
 ## Repository-Richtlinien
 
-- Repository bis zum Erreichen des entsprechenden DOI-/Public-Release-Gates privat halten.
+- Öffentlich seit 2026-08-18 (DOI-/Public-Release-Gate erreicht: Paper A live seit 2026-08-13, DOI [10.5281/zenodo.21916900](https://doi.org/10.5281/zenodo.21916900)).
 - GitHub empfängt Berechnungsskripte und reproduzierbare Ergebnisse, keine internen Beweisnotizen.
 - `BEWEISNOTIZ*`, `_proof-notes/`, Handoffs, rohe Agenten-Transkripte, Zugangsdaten oder Beweis-Scratch nicht committen.
 - Interne Steuer-/Zustandsdateien wie `TODO.md`, `GAPS.md`, `AKTIONSPLAN.md`, `MEMORY.md`, `IDEENSPEICHER*.md`, lokale Quell-Caches und rohe `_data/`-Snapshots bleiben standardmäßig lokal.

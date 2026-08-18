@@ -12,7 +12,7 @@
 [![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)](https://github.com/open-bricks)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Private working repository for the HCT/abc research line.
+Curated research repository for the HCT/abc research line.
 
 > [!NOTE]
 > Machine-readable repository context guidelines, canonical search phrases, and safety boundaries are maintained in [llms.txt](llms.txt).
@@ -61,7 +61,7 @@ graph TD
 
 ## Repository Policy
 
-- Keep this repository private until the corresponding DOI/public release gate is reached.
+- Public since 2026-08-18 (DOI/public release gate reached: Paper A live since 2026-08-13, DOI [10.5281/zenodo.21916900](https://doi.org/10.5281/zenodo.21916900)).
 - GitHub normally receives computation scripts and reproducible results, not internal proof notebooks.
 - Do not push `BEWEISNOTIZ*`, `_proof-notes/`, handoffs, raw agent transcripts, credentials, or proof scratch by default.
 - Internal control/state files such as `TODO.md`, `GAPS.md`, `AKTIONSPLAN.md`, `MEMORY.md`, `IDEENSPEICHER*.md`, local source caches, and raw `_data/` snapshots stay local by default.

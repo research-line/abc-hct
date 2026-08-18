@@ -2,9 +2,36 @@
 
 All notable changes to this repository will be documented in this file.
 
-## [Unreleased] - 2026-08-17 (T-20260816-04, public-readiness curation)
+## [Unreleased] - T-20260816-04 (public-readiness curation and release)
 
-### Fixed
+### 2026-08-18 -- Public release
+
+#### Changed
+- **Repository made public** (user-approved release gate: Paper A live since
+  2026-08-13, DOI 10.5281/zenodo.21916900). Verified reachable anonymously
+  (`raw.githubusercontent.com`, HTTP 200) immediately after the switch.
+- Zenodo record 21964107 (Paper A, v1.2) now carries a related identifier
+  `isSupplementedBy -> https://github.com/research-line/abc-hct`
+  (in-place metadata edit via `paper_publisher.py --modify-last
+  --github-url`, no new version; before/after metadata diff confirmed this
+  was the only field that changed; the tool's built-in live-verification
+  passed).
+- Removed now-stale "private repository" wording from `README.md`,
+  `README_de.md`, and `llms.txt` (self-description must match reality once
+  public).
+- `.LAB/.HCT/abc/GITHUB_REPO.md` (project-internal status doc) updated to
+  record the public switch and the new related identifier.
+
+#### Deferred (documented, not executed)
+- Code-Availability section in Paper A/B LaTeX sources: prepared text ready,
+  insertion deferred to each paper's next due version (a pure link addition
+  does not by itself justify a new Zenodo version per pipeline policy).
+- Individual proof-note curation under `_proof-notes/` (>1000 candidates):
+  out of scope for this pass, tracked as a follow-up.
+
+### 2026-08-17 -- Public-readiness curation
+
+#### Fixed
 - **Privacy leak (host paths):** 8 tracked `_results/*.json` files leaked the
   absolute local path `C:\Users\User\OneDrive\...\abc\...` in JSON-escaped
   form (`source`/`case_dir`/`file`/`scripts` provenance fields); 2 further
@@ -25,7 +52,7 @@ All notable changes to this repository will be documented in this file.
   and the OneDrive<->local-clone mirror descriptors `README_MIRROR.md` /
   `REPO.pointer.json` (system infra, not repo content).
 
-### Added
+#### Added
 - Evidence-mapping section ("Evidence Mapping: Result <-> Reproducer <->
   Paper") in `README.md` & `README_de.md`: ties result categories to their
   reproducer scripts, `_results/` files, citing paper section, and Zenodo

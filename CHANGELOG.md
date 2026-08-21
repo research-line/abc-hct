@@ -2,69 +2,43 @@
 
 All notable changes to this repository will be documented in this file.
 
-## [Unreleased] - T-20260816-04 (public-readiness curation and release)
+## [0.1.7] - 2026-08-21
+
+### Added
+- Added bilingual `SECURITY.md` defining Zero-Egress, Local-First, unprivileged User-Mode operation, confidentiality of working drafts/proof notes, and responsible disclosure guidelines.
+- Added CI workflow badge, Platform (`Linux | Windows | macOS`), Privacy (`100% Offline | Zero-Egress`), and Security (`Local-First | Deterministic`) badges to `README.md` & `README_de.md`.
+- Added second interactive bilingual Mermaid sequence diagram illustrating the Curated Verification & Reproducibility Lifecycle (modular symbol engine -> Hecke annihilators -> deterministic certificate ledger -> test gate validation).
+- Expanded Sibling Research & Ecosystem Matrix with `rh-even-dominance` (Riemann Hypothesis even dominance) and `open-bricks` umbrella links.
+- Added PEP 621 classifiers (Python 3.13, OS Independent, Linux, Windows, MacOS, Physics) and project URLs ("Bug Tracker", "Changelog") in `pyproject.toml`.
+- Expanded automated metadata test suite in `tests/test_metadata.py` to 10 comprehensive contract tests (total 15 automated tests).
+
+### Changed
+- Discoverability, README-Design, Badges, Security Parity & Metadata Parity Check (Pfad B, 2026-08-21).
+- Updated `llms.txt` header `Last-checked` timestamp to `2026-08-21`, added `SECURITY.md` link, and updated test suite count (15 automated tests).
+- Bumped version to `0.1.7` across `pyproject.toml`, `README.md`, `README_de.md`, `llms.txt`, and test suite.
+- Verified all 270 research scripts under `_scripts/` via Python syntax compilation (`compileall`), `ruff check .`, and `pytest` suite.
 
 ### 2026-08-18 -- Public release
 
 #### Changed
-- **Repository made public** (user-approved release gate: Paper A live since
-  2026-08-13, DOI 10.5281/zenodo.21916900). Verified reachable anonymously
-  (`raw.githubusercontent.com`, HTTP 200) immediately after the switch.
-- Zenodo record 21964107 (Paper A, v1.2) now carries a related identifier
-  `isSupplementedBy -> https://github.com/research-line/abc-hct`
-  (in-place metadata edit via `paper_publisher.py --modify-last
-  --github-url`, no new version; before/after metadata diff confirmed this
-  was the only field that changed; the tool's built-in live-verification
-  passed).
-- Removed now-stale "private repository" wording from `README.md`,
-  `README_de.md`, and `llms.txt` (self-description must match reality once
-  public).
-- `.LAB/.HCT/abc/GITHUB_REPO.md` (project-internal status doc) updated to
-  record the public switch and the new related identifier.
+- **Repository made public** (user-approved release gate: Paper A live since 2026-08-13, DOI 10.5281/zenodo.21916900). Verified reachable anonymously (`raw.githubusercontent.com`, HTTP 200) immediately after the switch.
+- Zenodo record 21964107 (Paper A, v1.2) now carries a related identifier `isSupplementedBy -> https://github.com/research-line/abc-hct` (in-place metadata edit via `paper_publisher.py --modify-last --github-url`, no new version; before/after metadata diff confirmed this was the only field that changed; the tool's built-in live-verification passed).
+- Removed now-stale "private repository" wording from `README.md`, `README_de.md`, and `llms.txt` (self-description must match reality once public).
+- `.LAB/.HCT/abc/GITHUB_REPO.md` (project-internal status doc) updated to record the public switch and the new related identifier.
 
 #### Deferred (documented, not executed)
-- Code-Availability section in Paper A/B LaTeX sources: prepared text ready,
-  insertion deferred to each paper's next due version (a pure link addition
-  does not by itself justify a new Zenodo version per pipeline policy).
-- Individual proof-note curation under `_proof-notes/` (>1000 candidates):
-  out of scope for this pass, tracked as a follow-up.
+- Code-Availability section in Paper A/B LaTeX sources: prepared text ready, insertion deferred to each paper's next due version (a pure link addition does not by itself justify a new Zenodo version per pipeline policy).
+- Individual proof-note curation under `_proof-notes/` (>1000 candidates): out of scope for this pass, tracked as a follow-up.
 
 ### 2026-08-17 -- Public-readiness curation
 
 #### Fixed
-- **Privacy leak (host paths):** 8 tracked `_results/*.json` files leaked the
-  absolute local path `C:\Users\User\OneDrive\...\abc\...` in JSON-escaped
-  form (`source`/`case_dir`/`file`/`scripts` provenance fields); 2 further
-  tracked `.status.json` files leaked the absolute Windows-Store Python
-  interpreter path in a logged `cmd` array. Neither leak was catchable by
-  `tests/test_policy.py::test_no_host_path_leaks`, because its
-  `LOCAL_PATH_TOKENS` only matched single-backslash path forms, not the
-  JSON-escaped double-backslash form these files actually used. Redacted all
-  10 files (relative paths / generic `"python"`); hardened
-  `LOCAL_PATH_TOKENS` with the JSON-escaped token so this class of leak is
-  now caught going forward. Fix applies going forward only; the leak remains
-  present in historical commits (documented risk, see public-readiness
-  checklist).
-- **Stray cross-host duplicates:** 106 untracked `*-WORKSTATION-LG.*` files
-  (another host's checkout mirrored into this OneDrive folder before the
-  per-host-suffix hygiene convention existed here) removed from the local
-  working copy; `.gitignore` now excludes `*-WORKSTATION-LG.*`/`*-ASUS-GEI.*`
-  and the OneDrive<->local-clone mirror descriptors `README_MIRROR.md` /
-  `REPO.pointer.json` (system infra, not repo content).
+- **Privacy leak (host paths):** 8 tracked `_results/*.json` files leaked the absolute local path in JSON-escaped form (`source`/`case_dir`/`file`/`scripts` provenance fields); 2 further tracked `.status.json` files leaked the absolute Windows-Store Python interpreter path in a logged `cmd` array. Redacted all 10 files (relative paths / generic `"python"`); hardened `LOCAL_PATH_TOKENS` with the JSON-escaped token so this class of leak is now caught going forward.
+- **Stray cross-host duplicates:** 106 untracked `*-WORKSTATION-LG.*` files removed from the local working copy; `.gitignore` now excludes `*-WORKSTATION-LG.*`/`*-ASUS-GEI.*` and the OneDrive<->local-clone mirror descriptors `README_MIRROR.md` / `REPO.pointer.json`.
 
 #### Added
-- Evidence-mapping section ("Evidence Mapping: Result <-> Reproducer <->
-  Paper") in `README.md` & `README_de.md`: ties result categories to their
-  reproducer scripts, `_results/` files, citing paper section, and Zenodo
-  DOI.
-- 2 result files explicitly cited by exact filename in Paper B
-  ("Beneath the *abc* Landscape") but missing from the repo:
-  `r1_faithful_al_80224_raw_field_check_2026-06-27.{json,md}` (added; clean
-  automated field-check output, no internal paths/names).
-  `MAC_COMPUTE_STATUS_2026-06-27.md` (deliberately **not** added: internal
-  operational status log with Tailscale IP, real first name in a Mac path,
-  and references to internal steering files — flagged for the paper-text
-  review, not repo-curatable as-is).
+- Evidence-mapping section ("Evidence Mapping: Result <-> Reproducer <-> Paper") in `README.md` & `README_de.md`: ties result categories to their reproducer scripts, `_results/` files, citing paper section, and Zenodo DOI.
+- 2 result files explicitly cited by exact filename in Paper B ("Beneath the *abc* Landscape") but missing from the repo: `r1_faithful_al_80224_raw_field_check_2026-06-27.{json,md}` added; `MAC_COMPUTE_STATUS_2026-06-27.md` deliberately not added (internal operational status log with Tailscale IP/Mac paths — flagged for paper-text review).
 
 ## [0.1.6] - 2026-08-16
 

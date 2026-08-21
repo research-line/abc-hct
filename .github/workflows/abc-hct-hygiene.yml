@@ -24,7 +24,10 @@ jobs:
           python-version: "3.12"
 
       - name: Install test dependencies
-        run: pip install pytest
+        run: pip install pytest ruff
+
+      - name: Lint codebase
+        run: ruff check .
 
       - name: Compile Python entry points
         run: python -m compileall -q _scripts _compute_queue/scripts

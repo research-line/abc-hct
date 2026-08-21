@@ -2,12 +2,16 @@
 
 [![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
 [![Deutsch](https://img.shields.io/badge/Sprache-Deutsch-yellow.svg)](README_de.md)
-[![Tests](https://img.shields.io/badge/Tests-10%20Passed-brightgreen.svg)](tests/)
-[![Version](https://img.shields.io/badge/Version-0.1.6-blue.svg)](pyproject.toml)
-[![Python](https://img.shields.io/badge/Python-%3E%3D3.10-blue.svg)](pyproject.toml)
+[![CI](https://github.com/research-line/abc-hct/actions/workflows/abc-hct-hygiene.yml/badge.svg)](https://github.com/research-line/abc-hct/actions/workflows/abc-hct-hygiene.yml)
+[![Tests](https://img.shields.io/badge/Tests-15%20Passed-brightgreen.svg)](tests/)
+[![Version](https://img.shields.io/badge/Version-0.1.7-blue.svg)](pyproject.toml)
+[![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](pyproject.toml)
+[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](#)
+[![Privacy](https://img.shields.io/badge/Privacy-100%25%20Offline%20%7C%20Zero--Egress-success.svg)](#)
+[![Security](https://img.shields.io/badge/Security-Local--First%20%7C%20Deterministisch-blue.svg)](SECURITY.md)
 [![SageMath](https://img.shields.io/badge/SageMath-10.x-orange.svg)](https://www.sagemath.org/)
 [![PARI/GP](https://img.shields.io/badge/PARI%2FGP-2.15-green.svg)](https://pari.math.u-bordeaux.fr/)
-[![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--08--16-blue.svg)](llms.txt)
+[![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--08--21-blue.svg)](llms.txt)
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)](https://github.com/research-line)
 [![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)](https://github.com/open-bricks)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -15,13 +19,14 @@
 Kuratiertes Forschungs-Repository für die Forschungslinie HCT/abc.
 
 > [!NOTE]
-> Maschinenlesbare Kontext-Richtlinien, kanonische Suchbegriffe und Sicherheitsgrenzen für KI-Assistenten sind in [llms.txt](llms.txt) hinterlegt.
+> Maschinenlesbare Kontext-Richtlinien, kanonische Suchbegriffe und Sicherheitsgrenzen für KI-Assistenten sind in [llms.txt](llms.txt) hinterlegt. Sicherheitsgarantien und Zero-Egress-Richtlinien sind in [SECURITY.md](SECURITY.md) definiert.
 
 ## Schnellnavigation
 
 | Ressource | Beschreibung |
 |---|---|
 | [llms.txt](llms.txt) | LLM-Kontextrichtlinien, Suchphrasen & Sicherheitsgrenzen |
+| [SECURITY.md](SECURITY.md) | Sicherheitsrichtlinie, Zero-Egress-Garantien & Meldewege |
 | [README.md](README.md) | Englische Dokumentationsfassung / English primary documentation |
 | [CHANGELOG.md](CHANGELOG.md) | Release-Historie und Wartungsprotokoll |
 | [REPRODUCIBILITY_H3A_2026-05-17.md](REPRODUCIBILITY_H3A_2026-05-17.md) | Übersicht des H3a-Reproduzierbarkeits-Batches und der Zertifikate |
@@ -38,6 +43,24 @@ graph TD
     G --> E
 ```
 
+## Kuratierter Verifikations- & Reproduzierbarkeits-Lebenszyklus
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant D as Treiber / Verifizierer (_scripts/)
+    participant M as Manin-Symbol-Engine
+    participant H as Hecke-Algebra (T_5, T_7)
+    participant C as Zertifikats-Ledger (_results/)
+    participant G as Gate-Hygiene (pytest / CI)
+
+    D->>M: Berechne Modulsymbol-Paarungen über GF(3863)
+    M->>H: Wende dünnbesetzte Hecke-Operator-Annihilatoren an
+    H->>C: Erzeuge deterministisches Rang-Zertifikat
+    C->>G: Prüfe Zertifikat-Hash und Dimensionsabfälle
+    G-->>D: Gebe verifizierten Quotienten-Status aus
+```
+
 ## Geschwisterforschungs- & Ökosystem-Matrix
 
 | Repository | Fokus & Domäne | Sprache / Stack | Status |
@@ -49,8 +72,10 @@ graph TD
 | [CultureEvolution](https://github.com/research-line/CultureEvolution) | Kulturelle Evolutionsmodelle & Multi-Agenten-Populationsdynamik | Python / Jupyter | Aktiv |
 | [connes-cvs](https://github.com/research-line/connes-cvs) | Connes-Spurformel & globale Feldverteilungen | Python / SageMath | Aktiv |
 | [direct-beam](https://github.com/research-line/direct-beam) | Optische Strahlungs- & Beugungsmuster-Modellierung | Python / NumPy | Aktiv |
+| [rh-even-dominance](https://github.com/research-line/rh-even-dominance) | Riemannsche Vermutung Even-Dominanz & spektrale Schranken | Python / SageMath | Aktiv |
 | [DevCenter](https://github.com/dev-bricks/DevCenter) | Entwickler-Arbeitsbereich & Projektorchestrierung | TypeScript / Electron | Aktiv |
 | [CodeBox](https://github.com/dev-bricks/CodeBox) | Mehrsprachige Code-Ausführung & Sandboxing | Rust / TypeScript | Aktiv |
+| [open-bricks](https://github.com/open-bricks/open-bricks) | Dachplattform für offene modulare Software- & Forschungsbausteine | Python / Markdown | Aktiv |
 
 ## Aktueller Umfang
 

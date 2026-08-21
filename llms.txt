@@ -1,12 +1,13 @@
 # abc-hct
 
-## Last-checked: 2026-08-16
+## Last-checked: 2026-08-21
 
 ## Canonical Links
 
 - Repository: https://github.com/research-line/abc-hct
 - Documentation (EN): `README.md`
 - Documentation (DE): `README_de.md`
+- Security Policy: `SECURITY.md`
 - Reproducibility batch overview: `REPRODUCIBILITY_H3A_2026-05-17.md`
 
 ## Summary
@@ -15,7 +16,7 @@ abc-hct is a curated research repository containing calculation scripts, reprodu
 
 ## Interfaces
 
-- Test suite: `pytest` (10 automated tests covering metadata, policy hygiene, and syntax compilation)
+- Test suite: `pytest` (15 automated tests covering metadata, policy hygiene, security parity, and syntax compilation)
 - Python compile check: `python -m compileall _scripts`
 - Frey-Watkins Phase-2 PARI/GP: `gp _scripts/frey_watkins_phase2.gp`
 - Frey-Watkins Phase-2 Sage/Python: `sage _scripts/frey_watkins_phase2.py`

@@ -2,12 +2,16 @@
 
 [![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
 [![Deutsch](https://img.shields.io/badge/Sprache-Deutsch-yellow.svg)](README_de.md)
-[![Tests](https://img.shields.io/badge/Tests-10%20Passed-brightgreen.svg)](tests/)
-[![Version](https://img.shields.io/badge/Version-0.1.6-blue.svg)](pyproject.toml)
-[![Python](https://img.shields.io/badge/Python-%3E%3D3.10-blue.svg)](pyproject.toml)
+[![CI](https://github.com/research-line/abc-hct/actions/workflows/abc-hct-hygiene.yml/badge.svg)](https://github.com/research-line/abc-hct/actions/workflows/abc-hct-hygiene.yml)
+[![Tests](https://img.shields.io/badge/Tests-15%20Passed-brightgreen.svg)](tests/)
+[![Version](https://img.shields.io/badge/Version-0.1.7-blue.svg)](pyproject.toml)
+[![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](pyproject.toml)
+[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](#)
+[![Privacy](https://img.shields.io/badge/Privacy-100%25%20Offline%20%7C%20Zero--Egress-success.svg)](#)
+[![Security](https://img.shields.io/badge/Security-Local--First%20%7C%20Deterministic-blue.svg)](SECURITY.md)
 [![SageMath](https://img.shields.io/badge/SageMath-10.x-orange.svg)](https://www.sagemath.org/)
 [![PARI/GP](https://img.shields.io/badge/PARI%2FGP-2.15-green.svg)](https://pari.math.u-bordeaux.fr/)
-[![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--08--16-blue.svg)](llms.txt)
+[![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--08--21-blue.svg)](llms.txt)
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)](https://github.com/research-line)
 [![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)](https://github.com/open-bricks)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -15,13 +19,14 @@
 Curated research repository for the HCT/abc research line.
 
 > [!NOTE]
-> Machine-readable repository context guidelines, canonical search phrases, and safety boundaries are maintained in [llms.txt](llms.txt).
+> Machine-readable repository context guidelines, canonical search phrases, and safety boundaries are maintained in [llms.txt](llms.txt). Security guarantees and zero-egress policies are outlined in [SECURITY.md](SECURITY.md).
 
 ## Quick Navigation
 
 | Resource | Description |
 |---|---|
 | [llms.txt](llms.txt) | LLM context guidelines, search phrases & safety boundaries |
+| [SECURITY.md](SECURITY.md) | Security policy, zero-egress guarantees & disclosure guidelines |
 | [README_de.md](README_de.md) | Deutsche Dokumentationsfassung / German documentation parity |
 | [CHANGELOG.md](CHANGELOG.md) | Release history and maintenance audit log |
 | [REPRODUCIBILITY_H3A_2026-05-17.md](REPRODUCIBILITY_H3A_2026-05-17.md) | Overview of H3a reproducibility batch and certificates |
@@ -38,6 +43,24 @@ graph TD
     G --> E
 ```
 
+## Curated Verification & Reproducibility Lifecycle
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant D as Driver / Verifier (_scripts/)
+    participant M as Manin Symbol Engine
+    participant H as Hecke Algebra (T_5, T_7)
+    participant C as Certificate Ledger (_results/)
+    participant G as Gate Hygiene (pytest / CI)
+
+    D->>M: Compute modular symbol pairings over GF(3863)
+    M->>H: Apply sparse Hecke operator annihilators
+    H->>C: Emit deterministic rank certificate
+    C->>G: Verify certificate hash and dimension drops
+    G-->>D: Output verified quotient status
+```
+
 ## Sibling Research & Ecosystem Matrix
 
 | Repository | Focus & Domain | Language / Stack | Status |
@@ -49,8 +72,10 @@ graph TD
 | [CultureEvolution](https://github.com/research-line/CultureEvolution) | Cultural evolution models & multi-agent population dynamics | Python / Jupyter | Active |
 | [connes-cvs](https://github.com/research-line/connes-cvs) | Connes trace formula & global field distributions | Python / SageMath | Active |
 | [direct-beam](https://github.com/research-line/direct-beam) | Optical beam & diffraction pattern modeling | Python / NumPy | Active |
+| [rh-even-dominance](https://github.com/research-line/rh-even-dominance) | Riemann Hypothesis even dominance & spectral bounds | Python / SageMath | Active |
 | [DevCenter](https://github.com/dev-bricks/DevCenter) | Developer workspace & project orchestration | TypeScript / Electron | Active |
 | [CodeBox](https://github.com/dev-bricks/CodeBox) | Multi-language code execution & sandboxing | Rust / TypeScript | Active |
+| [open-bricks](https://github.com/open-bricks/open-bricks) | Umbrella platform connecting open modular software & research engines | Python / Markdown | Active |
 
 ## Current Scope
 

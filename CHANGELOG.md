@@ -2,6 +2,21 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [0.1.8] - 2026-08-25
+
+### Added
+- Hardened GitHub Actions CI workflow (`.github/workflows/abc-hct-hygiene.yml`) with workflow concurrency grouping (`cancel-in-progress: true`) and standardized on `actions/checkout@v4` and `actions/setup-python@v5`.
+- Added PEP 621 ecosystem URLs (`Parent Organization = https://github.com/research-line`, `Umbrella Ecosystem = https://github.com/open-bricks`) in `pyproject.toml`.
+- Hardened bilingual `SECURITY.md` with structured Supported Versions matrix (`0.1.x`), 48-hour response SLA, and official ecosystem contacts (`security@open-bricks.org`, `lukas@open-bricks.org`).
+- Hardened `.gitignore` with synchronization conflict patterns (`*.sync-conflict-*`, `*.conflict`), temporary lockfiles (`LOCK*.txt`), and test/linter caches (`.ruff_cache/`, `.pytest_cache/`).
+- Added 4 new contract tests to `tests/test_metadata.py` verifying CI concurrency & action versions, PEP 621 ecosystem URLs, security policy SLA/matrix/contacts, and gitignore hygiene patterns (14 metadata contract tests, 19 total automated tests).
+
+### Changed
+- Technical repository hygiene, CI concurrency hardening, PEP 621 ecosystem URLs, and contract test expansion (Pfad A, 2026-08-25).
+- Updated `llms.txt` header `Last-checked` timestamp to `2026-08-25` and updated interface test count (19 automated tests).
+- Bumped version to `0.1.8` across `pyproject.toml`, `README.md`, `README_de.md`, `llms.txt`, and test suite.
+- Synchronized Shields.io test badge to `Tests-19 Passed` and LLM-Ready badge to `2026-08-25` in both `README.md` and `README_de.md`.
+
 ## [0.1.7] - 2026-08-21
 
 ### Added

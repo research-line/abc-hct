@@ -155,3 +155,10 @@ credentials.json
 _archive/
 Plan.txt
 # <<< RESEARCH-PIPELINE MANAGED GITIGNORE <<<
+
+# Synchronization conflict copies & temporary lockfiles
+*.sync-conflict-*
+*.conflict
+LOCK*.txt
+.ruff_cache/
+.pytest_cache/

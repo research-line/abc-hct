@@ -28,13 +28,23 @@
 - Machine-readable result certificates are deterministically generated and verified through reproducible mathematical pipelines.
 - Test suites enforce syntactic, semantic, and structural parity across all public releases.
 
+### Supported Versions / Unterstützte Versionen
+
+| Version | Supported / Unterstützt | Notes / Anmerkungen |
+|---|---|---|
+| `0.1.x` | :white_check_mark: | Current active release line / Aktive Release-Linie |
+| `< 0.1.0` | :x: | Legacy preview releases / Veraltete Vorschau-Stände |
+
 ### Reporting Security Concerns
 
 If you discover any security, privacy, or leak vulnerabilities within this repository, please report them responsibly:
 
 - **Primary Contact:** `security@ellmos.ai`
 - **Secondary Contact:** `support@lukasgeiger.com`
+- **Ecosystem Coordination:** `security@open-bricks.org`, `lukas@open-bricks.org`
 - **GitHub Security Advisories:** [Report a Vulnerability](https://github.com/research-line/abc-hct/security/advisories/new)
+
+**Response SLA:** We acknowledge security reports within 48 hours and provide continuous updates throughout the remediation process.
 
 Please do not open public issues for sensitive security or credential disclosures until coordinated disclosure has occurred.
 
@@ -70,6 +80,9 @@ Sollten Sie Sicherheits-, Datenschutz- oder Informationsleck-Schwachstellen entd
 
 - **Primäre Kontaktadresse:** `security@ellmos.ai`
 - **Sekundäre Kontaktadresse:** `support@lukasgeiger.com`
+- **Ökosystem-Koordination:** `security@open-bricks.org`, `lukas@open-bricks.org`
 - **GitHub Security Advisories:** [Schwachstelle melden](https://github.com/research-line/abc-hct/security/advisories/new)
+
+**Reaktions-SLA:** Wir bestätigen den Empfang von Sicherheitsmeldungen innerhalb von 48 Stunden und informieren kontinuierlich über den Behebungsfortschritt.
 
 Bitte eröffnen Sie keine öffentlichen Issues für vertrauliche Sicherheits- oder Leak-Meldungen vor Abschluss der koordinierten Behebung.

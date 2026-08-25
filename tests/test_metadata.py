@@ -15,7 +15,7 @@ def test_pyproject_toml_structure():
     assert "project" in data
     project = data["project"]
     assert project.get("name") == "abc-hct"
-    assert project.get("version") == "0.1.7"
+    assert project.get("version") == "0.1.8"
     assert "description" in project
     assert project.get("requires-python") == ">=3.10"
     assert "license" in project
@@ -31,6 +31,18 @@ def test_pyproject_toml_structure():
     assert "Documentation" in urls
     assert "Bug Tracker" in urls
     assert "Changelog" in urls
+    assert "Parent Organization" in urls
+    assert "Umbrella Ecosystem" in urls
+
+
+def test_pep621_ecosystem_urls():
+    """Verify that PEP 621 project URLs link to the research-line org and open-bricks umbrella."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+    urls = data.get("project", {}).get("urls", {})
+
+    assert urls.get("Parent Organization") == "https://github.com/research-line"
+    assert urls.get("Umbrella Ecosystem") == "https://github.com/open-bricks"
 
 
 def test_llms_txt_structure_and_timestamp():
@@ -40,7 +52,7 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# abc-hct" in content
-    assert "## Last-checked: 2026-08-21" in content
+    assert "## Last-checked: 2026-08-25" in content
     assert "## Canonical Links" in content
     assert "SECURITY.md" in content
     assert "## Summary" in content
@@ -73,12 +85,12 @@ def test_readme_and_readme_de_parity():
     assert "CHANGELOG.md" in de_content
 
     # Check status badges
-    assert "Version-0.1.7-blue.svg" in en_content
-    assert "Version-0.1.7-blue.svg" in de_content
-    assert "Tests-15%20Passed" in en_content
-    assert "Tests-15%20Passed" in de_content
-    assert "LLM--Ready-2026--08--21" in en_content
-    assert "LLM--Ready-2026--08--21" in de_content
+    assert "Version-0.1.8-blue.svg" in en_content
+    assert "Version-0.1.8-blue.svg" in de_content
+    assert "Tests-19%20Passed" in en_content
+    assert "Tests-19%20Passed" in de_content
+    assert "LLM--Ready-2026--08--25" in en_content
+    assert "LLM--Ready-2026--08--25" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in en_content
@@ -119,6 +131,19 @@ def test_security_policy_structure():
     assert "https://github.com/research-line/abc-hct/security/advisories/new" in content
 
 
+def test_security_policy_supported_versions_sla_and_contacts():
+    """Verify that SECURITY.md defines supported versions matrix, 48h response SLA, and ecosystem contacts."""
+    sec_path = REPO_ROOT / "SECURITY.md"
+    content = sec_path.read_text(encoding="utf-8")
+
+    assert "Supported Versions" in content
+    assert "0.1.x" in content
+    assert "48 hours" in content
+    assert "48 Stunden" in content
+    assert "security@open-bricks.org" in content
+    assert "lukas@open-bricks.org" in content
+
+
 def test_sibling_research_matrix_parity():
     """Verify that all sibling repositories are correctly linked in both README files."""
     en_content = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
@@ -148,7 +173,7 @@ def test_changelog_structure():
     assert changelog_path.exists(), "CHANGELOG.md must exist"
     content = changelog_path.read_text(encoding="utf-8")
 
-    assert "## [0.1.7] - 2026-08-21" in content
+    assert "## [0.1.8] - 2026-08-25" in content
 
 
 def test_ci_workflow_integrity():
@@ -160,6 +185,30 @@ def test_ci_workflow_integrity():
     assert "pytest" in content
     assert "ruff check ." in content
     assert "python -m compileall" in content
+
+
+def test_ci_concurrency_and_action_versions():
+    """Verify that GitHub Actions workflow defines concurrency group, cancel-in-progress, and standard actions."""
+    workflow_path = REPO_ROOT / ".github" / "workflows" / "abc-hct-hygiene.yml"
+    content = workflow_path.read_text(encoding="utf-8")
+
+    assert "concurrency:" in content
+    assert "cancel-in-progress: true" in content
+    assert "actions/checkout@v4" in content
+    assert "actions/setup-python@v5" in content
+
+
+def test_gitignore_hygiene_patterns():
+    """Verify that .gitignore excludes sync conflicts, lockfiles, and test/linter caches."""
+    gitignore_path = REPO_ROOT / ".gitignore"
+    assert gitignore_path.exists(), ".gitignore must exist"
+    content = gitignore_path.read_text(encoding="utf-8")
+
+    assert "*.sync-conflict-*" in content
+    assert "*.conflict" in content
+    assert "LOCK*.txt" in content
+    assert ".ruff_cache/" in content
+    assert ".pytest_cache/" in content
 
 
 def test_utf8_encoding_all_docs():
@@ -180,13 +229,13 @@ def test_utf8_encoding_all_docs():
 
 
 def test_version_parity_across_all_manifests():
-    """Verify that version 0.1.7 is synchronized across pyproject.toml, READMEs, and CHANGELOG."""
+    """Verify that version 0.1.8 is synchronized across pyproject.toml, READMEs, and CHANGELOG."""
     pyproject_path = REPO_ROOT / "pyproject.toml"
     data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
     version = data["project"]["version"]
 
-    assert version == "0.1.7"
+    assert version == "0.1.8"
     assert f"Version-{version}-blue.svg" in (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     assert f"Version-{version}-blue.svg" in (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
-    assert f"## [{version}] - 2026-08-21" in (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    assert f"## [{version}] - 2026-08-25" in (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
 

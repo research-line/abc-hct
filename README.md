@@ -1,5 +1,8 @@
 # abc-hct
 
+<img src="assets/banner.png" width="100%" alt="Abc Hct banner">
+
+
 ![Python](https://img.shields.io/badge/Python-3.12-blue.svg)
 ![SageMath](https://img.shields.io/badge/SageMath-10.x-orange.svg)
 ![PARI/GP](https://img.shields.io/badge/PARI%2FGP-2.15-green.svg)

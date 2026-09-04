@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "abc-hct"
-version = "0.1.0"
+version = "0.1.8"
 description = "Curated calculation scripts, reproduction harness codes, and machine-readable result certificates for Hecke curves and Manin-Hecke quotients"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -25,18 +25,41 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Operating System :: OS Independent",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
 
 [project.urls]
 Homepage = "https://github.com/research-line/abc-hct"
 Repository = "https://github.com/research-line/abc-hct"
 Documentation = "https://github.com/research-line/abc-hct#readme"
+"Bug Tracker" = "https://github.com/research-line/abc-hct/issues"
+Changelog = "https://github.com/research-line/abc-hct/blob/main/CHANGELOG.md"
+"Parent Organization" = "https://github.com/research-line"
+"Umbrella Ecosystem" = "https://github.com/open-bricks"
 
 [tool.pytest.ini_options]
 minversion = "7.0"
 addopts = "-ra -q"
-testpaths = ["_scripts"]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"_scripts/*" = ["E401", "E402", "E701", "E702", "E731", "E741", "F401", "F403", "F405", "F541", "F841", "W291", "W293"]
+"_compute_queue/*" = ["E401", "E402", "E701", "E702", "E731", "E741", "F401", "F403", "F405", "F541", "F841", "W291", "W293"]
+"tests/*" = ["E501"]

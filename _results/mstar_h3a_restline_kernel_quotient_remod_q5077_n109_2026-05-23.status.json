@@ -1,7 +1,7 @@
 {
   "tool": "mstar_h3a_restline_kernel_quotient",
   "phase": "done",
-  "case_dir": "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\remod_q5077_smoke_n109_2026-05-23\\N109_raw_sign1_splitlast",
+  "case_dir": "_results\\remod_q5077_smoke_n109_2026-05-23\\N109_raw_sign1_splitlast",
   "q": 5077,
   "ncols_v_si": 27,
   "kernel_engine": "sparse-python",

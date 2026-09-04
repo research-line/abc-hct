@@ -10,21 +10,34 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   hygiene:
-    name: Syntax and repository policy
+    name: Syntax, policy and automated tests
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
+      - name: Install test dependencies
+        run: pip install pytest ruff
+
+      - name: Lint codebase
+        run: ruff check .
+
       - name: Compile Python entry points
         run: python -m compileall -q _scripts _compute_queue/scripts
+
+      - name: Run automated test suite
+        run: pytest
 
       - name: Check private research repository policy
         shell: python
@@ -105,12 +118,15 @@ jobs:
               ".yaml",
               ".toml",
           }
-          # Diese Workflow-Datei definiert die Suchmuster selbst als
-          # String-Literale und ist daher kein echter Leak.
-          self_workflow = ".github/workflows/abc-hct-hygiene.yml"
+          # Diese Workflow-Datei und tests/test_policy.py definieren die Suchmuster
+          # selbst als String-Literale und sind daher keine echten Leaks.
+          exempt_files = {
+              ".github/workflows/abc-hct-hygiene.yml",
+              "tests/test_policy.py",
+          }
           path_leaks = []
           for path in tracked:
-              if path == self_workflow:
+              if path in exempt_files:
                   continue
               if Path(path).suffix.lower() not in text_suffixes:
                   continue

@@ -10,9 +10,9 @@
     13
   ],
   "input_files": [
-    "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\mstar_level240672_feasibility_2026-05-09.json",
-    "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\mstar_lmfdb_missing_orbit_audit_2026-05-09.json",
-    "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\mstar_oldlevel_t5_charpoly_scan_2026-05-09.json"
+    "_results\\mstar_level240672_feasibility_2026-05-09.json",
+    "_results\\mstar_lmfdb_missing_orbit_audit_2026-05-09.json",
+    "_results\\mstar_oldlevel_t5_charpoly_scan_2026-05-09.json"
   ],
   "existing_t5_scan_summary": {
     "worker_count": 6,

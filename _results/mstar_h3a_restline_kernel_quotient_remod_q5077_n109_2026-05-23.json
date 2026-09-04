@@ -1,6 +1,6 @@
 {
   "tool": "mstar_h3a_restline_kernel_quotient",
-  "case_dir": "C:\\Users\\User\\OneDrive\\.TOPICS\\.RESEARCH\\.LAB\\.HCT\\abc\\_results\\remod_q5077_smoke_n109_2026-05-23\\N109_raw_sign1_splitlast",
+  "case_dir": "_results\\remod_q5077_smoke_n109_2026-05-23\\N109_raw_sign1_splitlast",
   "level": 109,
   "mode": "raw",
   "q": 5077,

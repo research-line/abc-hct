@@ -44,7 +44,7 @@ If you discover any security, privacy, or leak vulnerabilities within this repos
 - **Ecosystem Coordination:** `security@open-bricks.org`, `lukas@open-bricks.org`
 - **GitHub Security Advisories:** [Report a Vulnerability](https://github.com/research-line/abc-hct/security/advisories/new)
 
-**Response SLA:** We acknowledge security reports within 48 hours and provide continuous updates throughout the remediation process.
+**Response SLA:** Initial acknowledgment within 48 hours, triage and assessment within 5 business days, with continuous updates throughout the remediation process.
 
 Please do not open public issues for sensitive security or credential disclosures until coordinated disclosure has occurred.
 
@@ -83,6 +83,6 @@ Sollten Sie Sicherheits-, Datenschutz- oder Informationsleck-Schwachstellen entd
 - **Ökosystem-Koordination:** `security@open-bricks.org`, `lukas@open-bricks.org`
 - **GitHub Security Advisories:** [Schwachstelle melden](https://github.com/research-line/abc-hct/security/advisories/new)
 
-**Reaktions-SLA:** Wir bestätigen den Empfang von Sicherheitsmeldungen innerhalb von 48 Stunden und informieren kontinuierlich über den Behebungsfortschritt.
+**Reaktions-SLA:** Erstbestätigung innerhalb von 48 Stunden, Triage und Risikobewertung innerhalb von 5 Werktagen, mit kontinuierlichen Status-Updates während des Behebungsprozesses.
 
 Bitte eröffnen Sie keine öffentlichen Issues für vertrauliche Sicherheits- oder Leak-Meldungen vor Abschluss der koordinierten Behebung.

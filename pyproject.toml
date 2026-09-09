@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "abc-hct"
-version = "0.1.8"
+version = "0.1.9"
 description = "Curated calculation scripts, reproduction harness codes, and machine-readable result certificates for Hecke curves and Manin-Hecke quotients"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -43,12 +43,13 @@ Repository = "https://github.com/research-line/abc-hct"
 Documentation = "https://github.com/research-line/abc-hct#readme"
 "Bug Tracker" = "https://github.com/research-line/abc-hct/issues"
 Changelog = "https://github.com/research-line/abc-hct/blob/main/CHANGELOG.md"
+Security = "https://github.com/research-line/abc-hct/blob/main/SECURITY.md"
 "Parent Organization" = "https://github.com/research-line"
 "Umbrella Ecosystem" = "https://github.com/open-bricks"
 
 [tool.pytest.ini_options]
 minversion = "7.0"
-addopts = "-ra -q"
+addopts = "-ra -v"
 testpaths = ["tests"]
 
 [tool.ruff]

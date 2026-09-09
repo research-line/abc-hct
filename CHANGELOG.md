@@ -2,6 +2,21 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [0.1.9] - 2026-09-09
+
+### Added
+- Added PEP 621 `Security` URL pointing to `SECURITY.md` in `pyproject.toml`.
+- Hardened bilingual `SECURITY.md` with explicit 5-business-day / 5-Werktage triage and assessment commitment complementing the 48-hour initial response SLA.
+- Hardened `.gitignore` with comprehensive multi-host conflict patterns (`*-conflict-*`, `*-CONFLIT-*`, `*.sync-temp-*`), multi-agent locks (`LOCK`, `LOCK.*`, `*.lock`), packaging/coverage caches (`.coverage`, `coverage/`, `htmlcov/`, `wheelhouse/`, `.wheel-smoke/`), and temp files (`*.tmp`, `*.bak`, `*.swp`, `*~`).
+- Hardened GitHub Actions CI workflow (`.github/workflows/abc-hct-hygiene.yml`) by including `tests` in compileall check and standardizing pytest execution to `pytest -v`.
+
+### Changed
+- Technical repository hygiene, PEP 621 Security URL, SLA triage hardening, `.gitignore` patterns, and contract test expansion (Pfad A, 2026-09-09).
+- Standardized `pyproject.toml` pytest `addopts` to `-ra -v`.
+- Updated `llms.txt` header `Last-checked` timestamp to `2026-09-09`.
+- Bumped version to `0.1.9` across `pyproject.toml`, `README.md`, `README_de.md`, `llms.txt`, and test suite.
+- Synchronized Shields.io version badge to `Version-0.1.9-blue.svg` and LLM-Ready badge to `2026-09-09` in both `README.md` and `README_de.md`.
+
 ## [0.1.8] - 2026-08-25
 
 ### Added

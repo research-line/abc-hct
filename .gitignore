@@ -157,8 +157,27 @@ Plan.txt
 # <<< RESEARCH-PIPELINE MANAGED GITIGNORE <<<
 
 # Synchronization conflict copies & temporary lockfiles
+*-conflict-*
 *.sync-conflict-*
 *.conflict
+*-CONFLIT-*
+*.sync-temp-*
+LOCK
+LOCK.*
+*.lock
 LOCK*.txt
+
+# Build, test, and linting caches
 .ruff_cache/
 .pytest_cache/
+.coverage
+coverage/
+htmlcov/
+wheelhouse/
+.wheel-smoke/
+
+# Temporary and backup files
+*.tmp
+*.bak
+*.swp
+*~

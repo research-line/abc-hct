@@ -1,0 +1,136 @@
+================================================================================
+abc-hct -- Marketing, Discoverability & Architecture Audit (Pfad B)
+================================================================================
+Datum: 2026-09-10
+Status: ACTIVE / HARDENED (Pfad B Discoverability & Architecture Verified)
+Repository: https://github.com/research-line/abc-hct
+Organization: research-line | Umbrella Ecosystem: open-bricks
+Canonical Clone: C:\_Local_DEV\repos\abc-hct
+Active Version: 0.1.10 | Language Stage: Bilingual Core (DE + EN)
+
+--------------------------------------------------------------------------------
+1. EXECUTIVE SUMMARY & VALUE PROPOSITION
+--------------------------------------------------------------------------------
+abc-hct (research-line/abc-hct) is a curated research repository containing calculation
+scripts, reproduction harness codes, and machine-readable result certificates for the
+Hecke curves and Manin-Hecke quotients route within the HCT/abc research line.
+
+Key Value Propositions:
+- Deterministic Arithmetic Geometry: Curated computational verification pipelines
+  analyzing Hecke quotient ranks, Frey curves, and modular symbol pairings.
+- No-Magma Algebraic Engines: Open-source SageMath and Python implementations for
+  modular symbol pairings over GF(3863), eliminating reliance on proprietary software.
+- Frey-Watkins Saturation & Rank Drop Diagnostics: Standalone PARI/GP and Sage/Python
+  reproduction scripts testing Frey triples and certifying M-DET block-ranks.
+- Machine-Readable Certificate Ledger: Over 120 verified computational certificates
+  stored under _results/ providing verifiable provenance for peer-reviewed research.
+- Scholarly Paper Alignment: Directly backs Zenodo Paper A ("From Landscape to Atlas:
+  Multi-Route Cartography of an Ongoing Expedition Toward the abc Conjecture",
+  DOI 10.5281/zenodo.21916900) and upcoming Paper B.
+- Zero-Egress Privacy & Reproducibility: 100% offline local-first execution with
+  unprivileged user-mode execution and complete isolation from external telemetry.
+- Bilingual Open Science Parity: 100% documentation and navigation parity across
+  English and German with machine-readable discovery specifications in llms.txt.
+
+--------------------------------------------------------------------------------
+2. TARGET AUDIENCES & PERSONAS
+--------------------------------------------------------------------------------
+1. Computational Number Theorists & Arithmetic Geometers:
+   Researchers investigating Frey curves, Manin-Hecke quotients, Hecke operator
+   annihilators, and modular curves who require reproducible, verified algorithms.
+2. Open-Science & Reproducibility Verifiers:
+   Scholars and peer-reviewers auditing calculations backing Paper A and Paper B,
+   verifying certificate hashes, and re-running independent verification harnesses.
+3. Computer Algebra Engineers & Mathematical Tool Builders:
+   Developers seeking high-performance open-source SageMath and PARI/GP workflows
+   for modular symbol pairing over finite fields without closed-source dependencies.
+4. Autonomous Research Agents & LLM Evaluators:
+   AI coding and reasoning agents indexing scientific repositories via structured
+   manifests (llms.txt), clear boundary policies, and deterministic contract tests.
+
+--------------------------------------------------------------------------------
+3. SEARCH PHRASES & DISCOVERABILITY KEYWORDS
+--------------------------------------------------------------------------------
+Primary Canonical ID:
+  research-line/abc-hct
+
+High-Intent Query Phrases:
+- abc conjecture hecke curves manin hecke quotients
+- no magma manin symbol pairing modular curves sagemath
+- frey watkins saturation calculation pari gp
+- hecke algebra quotient rank certification
+- modular symbol pairings finite fields gf 3863
+- arithmetic geometry reproduction harness open bricks
+- research line abc conjecture computational verification
+- mstar hecke quotient kernel certifier python
+
+Ecosystem & Topic Tags:
+- abc-conjecture, hecke-curves, manin-hecke-quotients, number-theory,
+  arithmetic-geometry, sagemath, pari-gp, modular-symbols, frey-curves,
+  open-science, research-line, open-bricks
+
+--------------------------------------------------------------------------------
+4. GOVERNANCE & RUNTIME INVARIANTS (10 GUARANTEES)
+--------------------------------------------------------------------------------
+- INV-DET-01: Deterministic Algebraic Verification
+  All Hecke operator applications, modular symbol pairings over GF(3863), and kernel
+  rank calculations are strictly deterministic and reproducible without stochastic variance.
+- INV-ZE-02: 100% Offline & Zero-Egress Privacy
+  All calculations, verification scripts, and test runners operate completely offline
+  with zero external network calls or telemetry exfiltration.
+- INV-CUR-03: Curated Evidence & Non-Pollution
+  Strict separation between curated publishable reproduction harnesses and private
+  research proof scratch; uncurated notes, handoffs, and raw snapshots remain isolated.
+- INV-CERT-04: Machine-Readable Certificate Ledger
+  Every milestone computational result is stored as a machine-readable JSON/text certificate
+  in _results/ with verifiable checksums and exact script reproducibility mapping.
+- INV-ENV-05: Cross-Platform Math Environment Isolation
+  Python 3.10-3.13 harness with explicit dependencies on SageMath 10.x and PARI/GP 2.15,
+  bounded compute queue execution, and clean fallback handling.
+- INV-MSTAR-06: No-Magma Modular Symbol Engine
+  Manin-Hecke quotient computations execute via self-contained open-source SageMath/Python
+  algorithms without proprietary Magma computational dependencies.
+- INV-SEC-07: Local-First Sandboxing & Non-Elevation
+  Compute queue scripts and pytest test runners execute strictly in unprivileged user-mode
+  without system elevation or modifying files outside the repository tree.
+- INV-LIC-08: Permissive Open-Science Licensing
+  Code and reproduction harnesses released under the standard MIT License, fully compatible
+  with open science dissemination and Zenodo archival.
+- INV-DOC-09: Bilingual & LLM-Ready Parity
+  100% structural and anchor parity between README.md and README_de.md, complemented by
+  machine-readable architectural manifests in llms.txt.
+- INV-SLA-10: 48-Hour Security Response & 5-Day Triage SLA
+  Guaranteed acknowledgement of security and vulnerability disclosures within 48 hours
+  and formal triage within 5 business days via security@open-bricks.org and GitHub Advisories.
+
+--------------------------------------------------------------------------------
+5. ECOSYSTEM SIBLINGS & CROSS-ORGANIZATION MATRIX
+--------------------------------------------------------------------------------
+Cross-Org Ecosystem Collaborations:
+- research-line/functional-stability-theory (Functional Stability Theory framework)
+- research-line/fst-nash (Algorithmic game theory & evolutionary Nash stability)
+- research-line/economic-sanctions-coercive-diplomacy (Quantitative sanctions analysis)
+- research-line/prompt-archaeology-casestudy2 (Prompt archaeology & reasoning trajectory)
+- research-line/connes-cvs (Connes trace formula & global field distributions)
+- research-line/direct-beam (Optical beam & diffraction pattern modeling)
+- research-line/rh-even-dominance (Riemann Hypothesis even dominance & spectral bounds)
+- entertain-and-more/CultureEvolution (Cultural evolution models & 4X strategy game)
+- dev-bricks/DevCenter (Developer workspace & project orchestration)
+- dev-bricks/CodeBox (Multi-language code execution & sandboxing)
+- dev-bricks/automation-master (Multi-agent pipeline orchestration)
+- file-bricks/cleaner-tree (Local-first filesystem maintenance)
+- file-bricks/SoftwareCenter (Centralized software package catalog)
+- doc-bricks/USR_pic2pic (Unprivileged local batch image converter)
+- ellmos-ai/ellmos-installer (Non-elevated dual-gate installer engine)
+- open-bricks/open-bricks (Umbrella open source portfolio & governance)
+
+--------------------------------------------------------------------------------
+6. STRATEGIC ROADMAP & FUTURE DISCOVERABILITY
+--------------------------------------------------------------------------------
+- Phase 1 (v0.1.10): Pfad B Marketing & Discoverability upgrade, bilingual 14-point
+  navigation, 10 research invariants, third-party license inventory, local marketing
+  log, and contract test hardening.
+- Phase 2 (v0.2.0): Theoretical embedding, rank certification, and uniform FAQS/M*
+  transfer verification scripts.
+- Phase 3: Coordinated Zenodo archival, release of Paper B reproducibility artifacts,
+  and DOI citation linking across the open-bricks research network.

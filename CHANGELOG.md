@@ -2,6 +2,25 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [0.1.10] - 2026-09-10
+
+### Added
+- Created `THIRD_PARTY_LICENSES.md` detailing open-science software licenses and copyrights for SageMath, PARI/GP, Python stdlib, pytest, and ruff.
+- Created `MARKETING-LOG.txt` outlining executive value propositions, 4 research personas, high-intent discovery search queries, 10 governance invariants, and cross-organizational sibling synergies.
+- Created standard MIT `LICENSE` file for the HCT Research Line Team and open-bricks umbrella.
+- Added comprehensive table of 10 Governance & Research Invariants (`INV-DET-01` through `INV-SLA-10`) to both `README.md` and `README_de.md`.
+- Expanded Sibling Research & Ecosystem Matrix to 16 cross-organization partner repositories.
+- Added PEP 621 URLs for `Third-Party Licenses` and `Marketing Log` in `pyproject.toml`.
+- Added Security SLA badge (`48h Response | 5d Triage`) to both `README.md` and `README_de.md`.
+- Expanded automated contract test suite in `tests/test_metadata.py` with 5 new tests verifying `THIRD_PARTY_LICENSES.md`, `MARKETING-LOG.txt`, `LICENSE`, 14-point navigation parity, and 10 research invariants.
+
+### Changed
+- Elevated repository discoverability, bilingual architecture, and documentation to modern Pfad B standards (Pfad B, 2026-09-10).
+- Standardized 14-point Quick Navigation / Schnellnavigation across `README.md` and `README_de.md` with 100% reciprocal anchor parity.
+- Synchronized `llms.txt` header to `Last-checked: 2026-09-10`, added canonical links to `MARKETING-LOG.txt` and `THIRD_PARTY_LICENSES.md`, and updated interface test count.
+- Synchronized version to `0.1.10` across `pyproject.toml`, `README.md`, `README_de.md`, `llms.txt`, and test suites.
+- Synchronized Shields.io version badge to `Version-0.1.10-blue.svg` and LLM-Ready badge to `2026-09-10`.
+
 ## [0.1.9] - 2026-09-09
 
 ### Added

@@ -1,6 +1,6 @@
 # abc-hct
 
-## Last-checked: 2026-09-09
+## Last-checked: 2026-09-10
 
 ## Canonical Links
 
@@ -8,6 +8,10 @@
 - Documentation (EN): `README.md`
 - Documentation (DE): `README_de.md`
 - Security Policy: `SECURITY.md`
+- Discoverability & Marketing Log: `MARKETING-LOG.txt`
+- Third-Party Licenses: `THIRD_PARTY_LICENSES.md`
+- Release History: `CHANGELOG.md`
+- License: `LICENSE`
 - Reproducibility batch overview: `REPRODUCIBILITY_H3A_2026-05-17.md`
 
 ## Summary
@@ -16,12 +20,25 @@ abc-hct is a curated research repository containing calculation scripts, reprodu
 
 ## Interfaces
 
-- Test suite: `pytest` (19 automated tests covering metadata, policy hygiene, security parity, and syntax compilation)
-- Python compile check: `python -m compileall _scripts`
+- Test suite: `pytest` (24 automated tests covering metadata, policy hygiene, security parity, third-party licenses, navigation parity, invariants, and syntax compilation)
+- Python compile check: `python -m compileall _scripts tests`
 - Frey-Watkins Phase-2 PARI/GP: `gp _scripts/frey_watkins_phase2.gp`
 - Frey-Watkins Phase-2 Sage/Python: `sage _scripts/frey_watkins_phase2.py`
 - Main quotient cert verification: `python _scripts/mstar_h3a_rc3c_witness_verify_rank.py`
 - Local compute logs & state: stored under `_compute_queue/` (gitignored)
+
+## Safety & Governance Invariants
+
+- `INV-DET-01`: Deterministic algebraic verification (zero stochastic variance).
+- `INV-ZE-02`: 100% offline & zero-egress privacy (no network/telemetry calls).
+- `INV-CUR-03`: Curated evidence & non-pollution (proof notes and raw state isolated).
+- `INV-CERT-04`: Machine-readable certificate ledger in `_results/` with checksum verification.
+- `INV-ENV-05`: Cross-platform math environment isolation (Python 3.10-3.13, SageMath 10.x, PARI/GP 2.15).
+- `INV-MSTAR-06`: No-Magma modular symbol engine over GF(3863).
+- `INV-SEC-07`: Local-first sandboxing & unprivileged user-mode execution.
+- `INV-LIC-08`: Permissive open-science MIT licensing.
+- `INV-DOC-09`: Bilingual & LLM-ready parity across English and German documentation.
+- `INV-SLA-10`: 48-hour security response & 5-day triage commitment.
 
 ## Safety Boundaries
 

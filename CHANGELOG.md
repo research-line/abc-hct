@@ -2,6 +2,24 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [0.1.11] - 2026-09-11
+
+### Added
+- Added PEP 621 canonical `"LLM Ready"` URL in `pyproject.toml` pointing to `llms.txt`.
+- Added `timeout-minutes: 15` runaway guardrail to GitHub Actions CI workflow (`.github/workflows/abc-hct-hygiene.yml`).
+- Added multi-host conflict patterns (`*-WORKSTATION*`, `*-ASUS-GEI*`, `* (kopie)*`, `* (copy)*`), multi-agent lockfiles (`uv.lock`, `LOCK.permissions.json`), and test caches (`.tox/`, `.mypy_cache/`, `.coverage.*`) to `.gitignore`.
+- Added 6 new automated contract tests in `tests/test_metadata.py` verifying extended ruff linter rule compliance, CI timeout guardrails, PEP 621 extended URLs, multi-host git exclusions, recent changelog entries, and recent marketing log hygiene audits (bringing suite to 30 automated tests).
+- Added Section 7 (Technical Hygiene & Maintenance Audit) to `MARKETING-LOG.txt`.
+
+### Changed
+- Technical repository hygiene, CI hardening, PEP 621 URLs, and contract test expansion (Pfad A, 2026-09-11).
+- Expanded `[tool.ruff.lint].select` to 10 standard rule sets (`E`, `F`, `W`, `I`, `UP`, `B`, `SIM`, `C4`, `PT`, `RUF`) with clean zero-error compliance across the entire repository.
+- Standardized test runner command in GitHub Actions CI workflow to `python -m pytest -ra -v`.
+- Standardized import sorting across test modules with automatic isort formatting.
+- Updated `llms.txt` header `Last-checked` timestamp to `2026-09-11` and synchronized test baseline to 30 automated tests.
+- Bumped version to `0.1.11` across `pyproject.toml`, `README.md`, `README_de.md`, `llms.txt`, and test suites.
+- Synchronized Shields.io version badge to `Version-0.1.11-blue.svg`, test badge to `Tests-30%20Passed`, and LLM-Ready badge to `2026-09-11` in both `README.md` and `README_de.md`.
+
 ## [0.1.10] - 2026-09-10
 
 ### Added

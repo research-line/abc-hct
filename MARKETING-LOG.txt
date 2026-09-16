@@ -6,7 +6,7 @@ Status: ACTIVE / HARDENED (Pfad B Discoverability & Architecture Verified)
 Repository: https://github.com/research-line/abc-hct
 Organization: research-line | Umbrella Ecosystem: open-bricks
 Canonical Clone: C:\_Local_DEV\repos\abc-hct
-Active Version: 0.1.10 | Language Stage: Bilingual Core (DE + EN)
+Active Version: 0.1.11 | Language Stage: Bilingual Core (DE + EN)
 
 --------------------------------------------------------------------------------
 1. EXECUTIVE SUMMARY & VALUE PROPOSITION
@@ -134,3 +134,21 @@ Cross-Org Ecosystem Collaborations:
   transfer verification scripts.
 - Phase 3: Coordinated Zenodo archival, release of Paper B reproducibility artifacts,
   and DOI citation linking across the open-bricks research network.
+
+--------------------------------------------------------------------------------
+7. TECHNICAL HYGIENE & MAINTENANCE AUDIT (PFAD A - 2026-09-11)
+--------------------------------------------------------------------------------
+- Date: 2026-09-11 | Audit Type: Pfad A (Technical Hygiene & CI Hardening)
+- Active Version: 0.1.11 | Release Status: Production Hardened
+- Code Hygiene & Toolchain:
+  * Expanded [tool.ruff.lint].select to 10 standard rule sets (E, F, W, I, UP, B, SIM, C4, PT, RUF) with clean zero-error compliance.
+  * Standardized test imports with automatic isort formatting.
+- CI Workflow Hardening:
+  * Hardened GitHub Actions workflow (.github/workflows/abc-hct-hygiene.yml) with timeout-minutes: 15 runaway guardrail.
+  * Standardized test runner execution to 'python -m pytest -ra -v'.
+- Exclusions & Multi-Host Protection:
+  * Hardened .gitignore against multi-host conflict files (*-WORKSTATION*, *-ASUS-GEI*, * (kopie)*, * (copy)*), multi-agent locks (uv.lock, LOCK.permissions.json), and cache directories (.tox/, .mypy_cache/, .coverage.*).
+- PEP 621 Standard Metadata:
+  * Added canonical "LLM Ready" URL pointing to llms.txt under [project.urls] in pyproject.toml.
+- Contract Test Suite:
+  * Expanded automated test suite from 24 to 30 tests in tests/test_metadata.py (+6 contract tests verifying linter compliance, CI timeout guardrails, PEP 621 ecosystem URLs, multi-host exclusions, changelog entries, and marketing audit).

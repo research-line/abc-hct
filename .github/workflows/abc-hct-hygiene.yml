@@ -18,6 +18,7 @@ jobs:
   hygiene:
     name: Syntax, policy and automated tests
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -37,7 +38,7 @@ jobs:
         run: python -m compileall -q _scripts _compute_queue/scripts tests
 
       - name: Run automated test suite
-        run: pytest -v
+        run: python -m pytest -ra -v
 
       - name: Check private research repository policy
         shell: python

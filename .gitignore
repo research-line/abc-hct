@@ -162,19 +162,28 @@ Plan.txt
 *.conflict
 *-CONFLIT-*
 *.sync-temp-*
+*-WORKSTATION*
+*-ASUS-GEI*
+* (kopie)*
+* (copy)*
 LOCK
 LOCK.*
 *.lock
 LOCK*.txt
+uv.lock
+LOCK.permissions.json
 
 # Build, test, and linting caches
 .ruff_cache/
 .pytest_cache/
 .coverage
+.coverage.*
 coverage/
 htmlcov/
 wheelhouse/
 .wheel-smoke/
+.tox/
+.mypy_cache/
 
 # Temporary and backup files
 *.tmp

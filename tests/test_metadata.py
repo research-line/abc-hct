@@ -1,7 +1,8 @@
 """Metadata, security, documentation, and Pfad B contract parity tests for abc-hct."""
 
-from pathlib import Path
 import re
+from pathlib import Path
+
 import tomllib
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -16,7 +17,7 @@ def test_pyproject_toml_structure():
     assert "project" in data
     project = data["project"]
     assert project.get("name") == "abc-hct"
-    assert project.get("version") == "0.1.10"
+    assert project.get("version") == "0.1.11"
     assert "description" in project
     assert project.get("requires-python") == ">=3.10"
     assert "license" in project
@@ -37,6 +38,7 @@ def test_pyproject_toml_structure():
     assert "Umbrella Ecosystem" in urls
     assert "Third-Party Licenses" in urls
     assert "Marketing Log" in urls
+    assert "LLM Ready" in urls
 
 
 def test_pep621_ecosystem_urls():
@@ -50,6 +52,7 @@ def test_pep621_ecosystem_urls():
     assert urls.get("Security") == "https://github.com/research-line/abc-hct/blob/main/SECURITY.md"
     assert urls.get("Third-Party Licenses") == "https://github.com/research-line/abc-hct/blob/main/THIRD_PARTY_LICENSES.md"
     assert urls.get("Marketing Log") == "https://github.com/research-line/abc-hct/blob/main/MARKETING-LOG.txt"
+    assert urls.get("LLM Ready") == "https://github.com/research-line/abc-hct/blob/main/llms.txt"
 
 
 def test_llms_txt_structure_and_timestamp():
@@ -59,7 +62,7 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# abc-hct" in content
-    assert "## Last-checked: 2026-09-10" in content
+    assert "## Last-checked: 2026-09-11" in content
     assert "## Canonical Links" in content
     assert "SECURITY.md" in content
     assert "THIRD_PARTY_LICENSES.md" in content
@@ -92,12 +95,12 @@ def test_readme_and_readme_de_parity():
         assert doc in de_content, f"Missing {doc} in README_de.md"
 
     # Check status badges
-    assert "Version-0.1.10-blue.svg" in en_content
-    assert "Version-0.1.10-blue.svg" in de_content
-    assert "Tests-24%20Passed" in en_content
-    assert "Tests-24%20Passed" in de_content
-    assert "LLM--Ready-2026--09--10" in en_content
-    assert "LLM--Ready-2026--09--10" in de_content
+    assert "Version-0.1.11-blue.svg" in en_content
+    assert "Version-0.1.11-blue.svg" in de_content
+    assert "Tests-30%20Passed" in en_content
+    assert "Tests-30%20Passed" in de_content
+    assert "LLM--Ready-2026--09--11" in en_content
+    assert "LLM--Ready-2026--09--11" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in en_content
@@ -338,12 +341,72 @@ def test_utf8_encoding_all_docs():
 
 
 def test_version_parity_across_all_manifests():
-    """Verify that version 0.1.10 is synchronized across pyproject.toml, READMEs, and CHANGELOG."""
+    """Verify that version 0.1.11 is synchronized across pyproject.toml, READMEs, and CHANGELOG."""
     pyproject_path = REPO_ROOT / "pyproject.toml"
     data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
     version = data["project"]["version"]
 
-    assert version == "0.1.10"
+    assert version == "0.1.11"
     assert f"Version-{version}-blue.svg" in (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     assert f"Version-{version}-blue.svg" in (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
-    assert f"## [{version}] - 2026-09-10" in (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    assert f"## [{version}] - 2026-09-11" in (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+
+
+def test_extended_ruff_linter_compliance():
+    """Verify that ruff linter select configuration covers all standard rule sets."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+    select_rules = set(data.get("tool", {}).get("ruff", {}).get("lint", {}).get("select", []))
+    expected_rule_sets = {"E", "F", "W", "I", "UP", "B", "SIM", "C4", "PT", "RUF"}
+    assert expected_rule_sets.issubset(select_rules), f"Missing ruff rule sets: {expected_rule_sets - select_rules}"
+
+
+def test_ci_timeout_minutes_guardrail():
+    """Verify that CI hygiene workflow defines runaway timeout-minutes guardrail."""
+    workflow_path = REPO_ROOT / ".github" / "workflows" / "abc-hct-hygiene.yml"
+    content = workflow_path.read_text(encoding="utf-8")
+    assert "timeout-minutes: 15" in content
+    assert "python -m pytest -ra -v" in content
+
+
+def test_pep621_extended_urls():
+    """Verify that PEP 621 URLs in pyproject.toml define LLM Ready canonical manifest link."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+    urls = data.get("project", {}).get("urls", {})
+    assert "LLM Ready" in urls
+    assert urls["LLM Ready"] == "https://github.com/research-line/abc-hct/blob/main/llms.txt"
+
+
+def test_multi_host_git_exclusions():
+    """Verify that .gitignore excludes multi-host sync conflicts, agent locks, and tox/mypy caches."""
+    gitignore_path = REPO_ROOT / ".gitignore"
+    content = gitignore_path.read_text(encoding="utf-8")
+    for pattern in [
+        "*-WORKSTATION*",
+        "*-ASUS-GEI*",
+        "* (kopie)*",
+        "* (copy)*",
+        "uv.lock",
+        "LOCK.permissions.json",
+        ".tox/",
+        ".mypy_cache/",
+        ".coverage.*",
+    ]:
+        assert pattern in content, f"Missing gitignore exclusion pattern: {pattern}"
+
+
+def test_marketing_log_recent_hygiene_entry():
+    """Verify that MARKETING-LOG.txt documents the latest technical hygiene audit for 2026-09-11."""
+    mkt_path = REPO_ROOT / "MARKETING-LOG.txt"
+    content = mkt_path.read_text(encoding="utf-8")
+    assert "2026-09-11" in content
+    assert "7. TECHNICAL HYGIENE & MAINTENANCE AUDIT" in content
+
+
+def test_changelog_recent_pfad_a_entry():
+    """Verify that CHANGELOG.md documents the 0.1.11 release and Pfad A hygiene improvements."""
+    changelog_path = REPO_ROOT / "CHANGELOG.md"
+    content = changelog_path.read_text(encoding="utf-8")
+    assert "## [0.1.11] - 2026-09-11" in content
+    assert "Pfad A" in content

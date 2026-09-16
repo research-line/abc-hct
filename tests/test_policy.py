@@ -1,7 +1,7 @@
 """Policy and repository hygiene tests for abc-hct research line."""
 
-from pathlib import Path
 import subprocess
+from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 

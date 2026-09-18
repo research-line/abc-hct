@@ -157,23 +157,38 @@ Plan.txt
 # <<< RESEARCH-PIPELINE MANAGED GITIGNORE <<<
 
 # Synchronization conflict copies & temporary lockfiles
+*conflicted copy*
 *-conflict-*
 *.sync-conflict-*
 *.conflict
 *-CONFLIT-*
 *.sync-temp-*
-*-WORKSTATION*
-*-ASUS-GEI*
 * (kopie)*
+* (Kopie)*
 * (copy)*
+* (Copy)*
+*-WORKSTATION*
+*-WORKSTATION-LG*
+*-ASUS*
+*-ASUS-GEI*
+*-LAPTOP*
+*-Mac Studio*
+*-MacBook*
 LOCK
 LOCK.*
 *.lock
 LOCK*.txt
-uv.lock
 LOCK.permissions.json
+LOCK.user.*
+LOCK.until.*
+LOCK.condition.*
+uv.lock
+!package-lock.json
 
-# Build, test, and linting caches
+# Build, test, packaging, and linting caches
+build/
+dist/
+*.egg-info/
 .ruff_cache/
 .pytest_cache/
 .coverage
@@ -184,9 +199,14 @@ wheelhouse/
 .wheel-smoke/
 .tox/
 .mypy_cache/
+.hypothesis/
+.turbo/
+.nyc_output/
 
 # Temporary and backup files
 *.tmp
 *.bak
 *.swp
 *~
+*.orig
+*.rej

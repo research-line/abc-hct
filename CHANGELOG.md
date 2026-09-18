@@ -2,6 +2,25 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [0.1.12] - 2026-09-18
+
+### Added
+- Provisioned standard automated GitHub Actions workflows:
+  * `.github/workflows/stale.yml`: automated issue and pull request stale lifecycle management with `actions/stale@v9`, daily schedule (`cron: '30 1 * * *'`), `timeout-minutes: 10`, concurrency group, and least-privilege permissions (`issues: write`, `pull-requests: write`).
+  * `.github/workflows/welcome.yml`: automated greeting and contribution guidelines for first-time contributors with `actions/first-interaction@v3`, `timeout-minutes: 5`, concurrency group, and least-privilege permissions (`issues: write`, `pull-requests: write`).
+- Declared PEP 621 `license-files = ["LICENSE", "THIRD_PARTY_LICENSES.md"]` in `pyproject.toml`.
+- Configured `norecursedirs` under `[tool.pytest.ini_options]` in `pyproject.toml` to guard against traversal into version control, cache directories, compute queues, and raw research state.
+- Expanded multi-host sync conflict protection and canonical agent locks in `.gitignore` (`*conflicted copy*`, `* (Kopie)*`, `* (Copy)*`, `*-LAPTOP*`, `*-Mac Studio*`, `*-MacBook*`, `LOCK.user.*`, `LOCK.until.*`, `LOCK.condition.*`, `!package-lock.json`, `.hypothesis/`, `.turbo/`, `.nyc_output/`, `*.orig`, `*.rej`).
+- Added 6 new automated contract tests in `tests/test_metadata.py` verifying stale & welcome CI workflows, pyproject license files & norecursedirs, expanded gitignore patterns, and release synchronization (elevating test suite to 36 tests).
+- Added Section 8 (Technical Hygiene & Maintenance Audit) to `MARKETING-LOG.txt`.
+
+### Changed
+- Technical repository hygiene, CI workflow provisioning, multi-host defense, and contract test expansion (Pfad A, 2026-09-18).
+- Updated `THIRD_PARTY_LICENSES.md` with 2026-09-18 verification date, explicitly asserting unprivileged `RunAsInvoker` execution, zero-copyleft boundaries, and 10 research governance invariants.
+- Updated `llms.txt` header `Last-checked` timestamp to `2026-09-18` and updated interface test count to 36 automated tests.
+- Bumped version to `0.1.12` across `pyproject.toml`, `README.md`, `README_de.md`, `llms.txt`, and test suites.
+- Synchronized Shields.io version badge to `Version-0.1.12-blue.svg`, test badge to `Tests-36%20Passed`, and LLM-Ready badge to `2026-09-18` across `README.md` and `README_de.md`.
+
 ## [0.1.11] - 2026-09-11
 
 ### Added

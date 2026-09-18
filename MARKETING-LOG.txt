@@ -152,3 +152,25 @@ Cross-Org Ecosystem Collaborations:
   * Added canonical "LLM Ready" URL pointing to llms.txt under [project.urls] in pyproject.toml.
 - Contract Test Suite:
   * Expanded automated test suite from 24 to 30 tests in tests/test_metadata.py (+6 contract tests verifying linter compliance, CI timeout guardrails, PEP 621 ecosystem URLs, multi-host exclusions, changelog entries, and marketing audit).
+
+--------------------------------------------------------------------------------
+8. TECHNICAL HYGIENE & MAINTENANCE AUDIT (PFAD A - 2026-09-18)
+--------------------------------------------------------------------------------
+- Date: 2026-09-18 | Audit Type: Pfad A (Technical Hygiene & CI Hardening)
+- Active Version: 0.1.12 | Release Status: Production Hardened
+- CI Workflow Provisioning & Hardening:
+  * Provisioned standard stale issues and PRs lifecycle workflow (.github/workflows/stale.yml) with actions/stale@v9, daily schedule (cron: '30 1 * * *'), timeout-minutes: 10, concurrency isolation, and least-privilege permissions (issues: write, pull-requests: write).
+  * Provisioned standard welcome workflow (.github/workflows/welcome.yml) with actions/first-interaction@v3, timeout-minutes: 5, concurrency isolation, and least-privilege permissions.
+  * Reaffirmed abc-hct-hygiene.yml with timeout-minutes: 15, cancel-in-progress: true, and permissions: contents: read.
+- Exclusions & Multi-Host Protection:
+  * Hardened .gitignore against multi-host conflict files (*conflicted copy*, *-WORKSTATION*, *-WORKSTATION-LG*, *-ASUS*, *-ASUS-GEI*, *-LAPTOP*, *-Mac Studio*, *-MacBook*, * (kopie)*, * (Kopie)*, * (copy)*, * (Copy)*).
+  * Hardened against multi-agent lockfiles (LOCK, LOCK.*, *.lock, LOCK*.txt, LOCK.permissions.json, LOCK.user.*, LOCK.until.*, LOCK.condition.*, uv.lock, !package-lock.json).
+  * Expanded cache and transient exclusions (build/, dist/, *.egg-info/, .hypothesis/, .turbo/, .nyc_output/, *.orig, *.rej).
+- PEP 621 Standard Packaging & Test Config:
+  * Bumped package version to 0.1.12 in pyproject.toml.
+  * Declared license-files = ["LICENSE", "THIRD_PARTY_LICENSES.md"].
+  * Configured norecursedirs in [tool.pytest.ini_options] to exclude .git, caches, compute queues, and raw data folders.
+- Governance & License Compliance:
+  * Updated THIRD_PARTY_LICENSES.md with 2026-09-18 audit date, affirming unprivileged RunAsInvoker non-elevation mode, zero-copyleft isolation, and INV-DET-01..INV-SLA-10 guarantees.
+- Contract Test Suite:
+  * Expanded automated test suite from 30 to 36 tests (+6 contract tests verifying stale/welcome CI workflows, pyproject license-files & norecursedirs, multi-host git exclusions, changelog entries, and marketing audit).

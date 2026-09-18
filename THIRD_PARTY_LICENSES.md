@@ -2,7 +2,7 @@
 
 This document provides a comprehensive inventory of all third-party software libraries, mathematical engines, toolchains, and runtime environments utilized or referenced by **abc-hct** (`research-line/abc-hct`), including their respective licenses, copyright holders, and usage scopes.
 
-Last updated: **2026-09-10**
+Last updated: **2026-09-18**
 
 ---
 
@@ -56,3 +56,6 @@ Last updated: **2026-09-10**
 2. **Offline Local-First Execution**: All mathematical calculations, Sage/GP script invocations, and test suites execute strictly locally with zero outbound network egress.
 3. **Zero-Egress & Privacy**: No calculation telemetry, analytics, tracking tokens, or private proof logs are transmitted outside the local machine.
 4. **Staged Disclosure & Boundary Discipline**: Internal working notes (`BEWEISNOTIZ*.md`) and raw data snapshots remain isolated by strict `.gitignore` rules, ensuring version control contains only vetted, reproducible certificates.
+5. **Unprivileged User Mode (RunAsInvoker)**: All scripts, CLI harnesses, and automated verification suites operate strictly within non-elevated user-mode privilege boundaries without requiring administrative or root elevation.
+6. **Zero-Copyleft Isolation**: External copyleft algebra systems (SageMath, PARI/GP) are executed exclusively through out-of-process CLI interfaces and subprocess execution boundaries, guaranteeing complete zero-copyleft contamination of the MIT-licensed research codebase.
+7. **System & Research Invariant Verification**: Full architectural conformity is verified against all 10 governance invariants (`INV-DET-01` through `INV-SLA-10`).

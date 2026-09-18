@@ -17,7 +17,7 @@ def test_pyproject_toml_structure():
     assert "project" in data
     project = data["project"]
     assert project.get("name") == "abc-hct"
-    assert project.get("version") == "0.1.11"
+    assert project.get("version") == "0.1.12"
     assert "description" in project
     assert project.get("requires-python") == ">=3.10"
     assert "license" in project
@@ -62,7 +62,7 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# abc-hct" in content
-    assert "## Last-checked: 2026-09-11" in content
+    assert "## Last-checked: 2026-09-18" in content
     assert "## Canonical Links" in content
     assert "SECURITY.md" in content
     assert "THIRD_PARTY_LICENSES.md" in content
@@ -95,12 +95,12 @@ def test_readme_and_readme_de_parity():
         assert doc in de_content, f"Missing {doc} in README_de.md"
 
     # Check status badges
-    assert "Version-0.1.11-blue.svg" in en_content
-    assert "Version-0.1.11-blue.svg" in de_content
-    assert "Tests-30%20Passed" in en_content
-    assert "Tests-30%20Passed" in de_content
-    assert "LLM--Ready-2026--09--11" in en_content
-    assert "LLM--Ready-2026--09--11" in de_content
+    assert "Version-0.1.12-blue.svg" in en_content
+    assert "Version-0.1.12-blue.svg" in de_content
+    assert "Tests-36%20Passed" in en_content
+    assert "Tests-36%20Passed" in de_content
+    assert "LLM--Ready-2026--09--18" in en_content
+    assert "LLM--Ready-2026--09--18" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in en_content
@@ -341,15 +341,15 @@ def test_utf8_encoding_all_docs():
 
 
 def test_version_parity_across_all_manifests():
-    """Verify that version 0.1.11 is synchronized across pyproject.toml, READMEs, and CHANGELOG."""
+    """Verify that version 0.1.12 is synchronized across pyproject.toml, READMEs, and CHANGELOG."""
     pyproject_path = REPO_ROOT / "pyproject.toml"
     data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
     version = data["project"]["version"]
 
-    assert version == "0.1.11"
+    assert version == "0.1.12"
     assert f"Version-{version}-blue.svg" in (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     assert f"Version-{version}-blue.svg" in (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
-    assert f"## [{version}] - 2026-09-11" in (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    assert f"## [{version}] - 2026-09-18" in (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
 
 
 def test_extended_ruff_linter_compliance():
@@ -397,16 +397,115 @@ def test_multi_host_git_exclusions():
 
 
 def test_marketing_log_recent_hygiene_entry():
-    """Verify that MARKETING-LOG.txt documents the latest technical hygiene audit for 2026-09-11."""
+    """Verify that MARKETING-LOG.txt documents the latest technical hygiene audit for 2026-09-18."""
     mkt_path = REPO_ROOT / "MARKETING-LOG.txt"
     content = mkt_path.read_text(encoding="utf-8")
-    assert "2026-09-11" in content
-    assert "7. TECHNICAL HYGIENE & MAINTENANCE AUDIT" in content
+    assert "2026-09-18" in content
+    assert "8. TECHNICAL HYGIENE & MAINTENANCE AUDIT" in content
 
 
 def test_changelog_recent_pfad_a_entry():
-    """Verify that CHANGELOG.md documents the 0.1.11 release and Pfad A hygiene improvements."""
+    """Verify that CHANGELOG.md documents the 0.1.12 release and Pfad A hygiene improvements."""
     changelog_path = REPO_ROOT / "CHANGELOG.md"
     content = changelog_path.read_text(encoding="utf-8")
-    assert "## [0.1.11] - 2026-09-11" in content
+    assert "## [0.1.12] - 2026-09-18" in content
     assert "Pfad A" in content
+
+
+def test_ci_stale_workflow_present_and_hardened():
+    """Verify that GitHub Actions stale workflow exists and defines schedule, timeouts, and permissions."""
+    workflow_path = REPO_ROOT / ".github" / "workflows" / "stale.yml"
+    assert workflow_path.exists(), "stale.yml workflow must exist"
+    content = workflow_path.read_text(encoding="utf-8")
+
+    assert "actions/stale@v9" in content
+    assert "cron: '30 1 * * *'" in content
+    assert "timeout-minutes: 10" in content
+    assert "cancel-in-progress: true" in content
+    assert "issues: write" in content
+    assert "pull-requests: write" in content
+
+
+def test_ci_welcome_workflow_present_and_hardened():
+    """Verify that GitHub Actions welcome workflow exists and defines timeout and first-interaction action."""
+    workflow_path = REPO_ROOT / ".github" / "workflows" / "welcome.yml"
+    assert workflow_path.exists(), "welcome.yml workflow must exist"
+    content = workflow_path.read_text(encoding="utf-8")
+
+    assert "actions/first-interaction@v3" in content
+    assert "timeout-minutes: 5" in content
+    assert "cancel-in-progress: true" in content
+    assert "issues: write" in content
+    assert "pull-requests: write" in content
+
+
+def test_pyproject_license_files_and_norecursedirs():
+    """Verify that pyproject.toml defines license-files and norecursedirs configuration."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+
+    license_files = data.get("project", {}).get("license-files", [])
+    assert "LICENSE" in license_files
+    assert "THIRD_PARTY_LICENSES.md" in license_files
+
+    norecursedirs = data.get("tool", {}).get("pytest", {}).get("ini_options", {}).get("norecursedirs", [])
+    assert ".git" in norecursedirs
+    assert ".pytest_cache" in norecursedirs
+    assert "_compute_queue" in norecursedirs
+
+
+def test_gitignore_expanded_multihost_and_lock_rules():
+    """Verify that .gitignore defines expanded multi-host sync patterns and canonical lock rules."""
+    gitignore_path = REPO_ROOT / ".gitignore"
+    content = gitignore_path.read_text(encoding="utf-8")
+
+    for pattern in [
+        "*conflicted copy*",
+        "* (Kopie)*",
+        "* (Copy)*",
+        "*-LAPTOP*",
+        "*-Mac Studio*",
+        "*-MacBook*",
+        "LOCK.user.*",
+        "LOCK.until.*",
+        "LOCK.condition.*",
+        "uv.lock",
+        "!package-lock.json",
+        ".hypothesis/",
+        ".turbo/",
+        ".nyc_output/",
+        "*.orig",
+        "*.rej",
+    ]:
+        assert pattern in content, f"Missing expanded gitignore pattern: {pattern}"
+
+
+def test_third_party_licenses_governance_invariants():
+    """Verify that THIRD_PARTY_LICENSES.md asserts RunAsInvoker, Zero-Copyleft, and INV-DET-01..INV-SLA-10."""
+    tpl_path = REPO_ROOT / "THIRD_PARTY_LICENSES.md"
+    content = tpl_path.read_text(encoding="utf-8")
+
+    assert "2026-09-18" in content
+    assert "RunAsInvoker" in content
+    assert "Zero-Copyleft" in content
+    assert "INV-DET-01" in content
+    assert "INV-SLA-10" in content
+
+
+def test_release_manifest_cross_document_parity():
+    """Verify that version 0.1.12 and date 2026-09-18 maintain cross-document parity across all documentation."""
+    pyproject_data = tomllib.loads((REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+    version = pyproject_data["project"]["version"]
+    assert version == "0.1.12"
+
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+    changelog = (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    marketing = (REPO_ROOT / "MARKETING-LOG.txt").read_text(encoding="utf-8")
+    llms = (REPO_ROOT / "llms.txt").read_text(encoding="utf-8")
+
+    assert f"Version-{version}-blue.svg" in readme_en
+    assert f"Version-{version}-blue.svg" in readme_de
+    assert f"## [{version}] - 2026-09-18" in changelog
+    assert f"Active Version: {version}" in marketing
+    assert "Last-checked: 2026-09-18" in llms

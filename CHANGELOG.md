@@ -2,6 +2,25 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [0.1.13] - 2026-09-19
+
+### Added
+- Elevated repository discoverability, visual architecture, and documentation to modern 18-point bilingual Pfad B standards (2026-09-19).
+- Added Section 3 (Target Personas & Discoverability) with 4 structured personas (`[PERSONA-01]` Arithmetic Geometer & Number Theorist, `[PERSONA-02]` Computational Algebraist & Open-Science Researcher, `[PERSONA-03]` Mathematical Software Engineer & Proof Engineer, `[PERSONA-04]` Research Program Evaluator & Zenodo Archival Auditor) and high-intent discovery search queries in both `README.md` and `README_de.md`.
+- Added Section 4 (Comparative Matrix vs. Computational Frameworks) benchmarking `abc-hct` against 4 alternative frameworks (Proprietary Magma Scripts, Raw Ad-Hoc PARI/GP Scripts, Cloud CAS / CoCalc Notebooks, General CAS Mathematica/Maple) across all 10 invariants (`INV-DET-01` through `INV-SLA-10`).
+- Upgraded System Architecture to modern `flowchart TD` 5-tier topology and preserved sequence diagram verification flow with `autonumber` and 0 semicolons.
+- Added Section 11 (Modular Symbol Pairing & Basket Elimination Artifacts) detailing the GF(3863) quotient elimination across levels `60168`, `80224`, `120336`, and `240672`.
+- Added Section 18 statutory liability disclaimer according to German law (§ 521 BGB Gefälligkeitsrecht) in both `README.md` and `README_de.md`.
+- Added Level 1 SBOM Invariant Cross-Reference Matrix table in `THIRD_PARTY_LICENSES.md` auditing all 10 governance invariants and unprivileged `RunAsInvoker` non-elevation boundaries.
+- Enriched GitHub repository topics to full 20/20 topics via GitHub CLI.
+- Added 6 new automated contract tests in `tests/test_metadata.py` (verifying 18-point navigation parity, target personas, comparative matrix, statutory disclaimer § 521 BGB, Level 1 SBOM invariant table, and version 0.1.13 cross-document parity; total 42 tests).
+- Added Section 9 (Pfad B Discoverability & Visual Architecture Audit) in `MARKETING-LOG.txt`.
+
+### Changed
+- Bumped version to `0.1.13` across `pyproject.toml`, `README.md`, `README_de.md`, `llms.txt`, and test suites.
+- Synchronized Shields.io badges (`Version-0.1.13-blue.svg`, test count badge, and `LLM--Ready-2026--09--19`) across both `README.md` and `README_de.md`.
+- Updated `llms.txt` header `Last-checked` timestamp to `2026-09-19` and updated interface test count to 42 automated tests.
+
 ## [0.1.12] - 2026-09-18
 
 ### Added

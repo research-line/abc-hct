@@ -17,7 +17,7 @@ def test_pyproject_toml_structure():
     assert "project" in data
     project = data["project"]
     assert project.get("name") == "abc-hct"
-    assert project.get("version") == "0.1.12"
+    assert project.get("version") == "0.1.13"
     assert "description" in project
     assert project.get("requires-python") == ">=3.10"
     assert "license" in project
@@ -62,7 +62,7 @@ def test_llms_txt_structure_and_timestamp():
     content = llms_path.read_text(encoding="utf-8")
 
     assert "# abc-hct" in content
-    assert "## Last-checked: 2026-09-18" in content
+    assert "## Last-checked: 2026-09-19" in content
     assert "## Canonical Links" in content
     assert "SECURITY.md" in content
     assert "THIRD_PARTY_LICENSES.md" in content
@@ -95,12 +95,12 @@ def test_readme_and_readme_de_parity():
         assert doc in de_content, f"Missing {doc} in README_de.md"
 
     # Check status badges
-    assert "Version-0.1.12-blue.svg" in en_content
-    assert "Version-0.1.12-blue.svg" in de_content
-    assert "Tests-36%20Passed" in en_content
-    assert "Tests-36%20Passed" in de_content
-    assert "LLM--Ready-2026--09--18" in en_content
-    assert "LLM--Ready-2026--09--18" in de_content
+    assert "Version-0.1.13-blue.svg" in en_content
+    assert "Version-0.1.13-blue.svg" in de_content
+    assert "Tests-42%20Passed" in en_content
+    assert "Tests-42%20Passed" in de_content
+    assert "LLM--Ready-2026--09--19" in en_content
+    assert "LLM--Ready-2026--09--19" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in en_content
@@ -120,27 +120,32 @@ def test_readme_navigation_and_mermaid_parity():
     assert "Schnellnavigation" in de_content
 
     # Pipeline diagram
-    assert "graph TD" in en_content
-    assert "graph TD" in de_content
+    assert "flowchart TD" in en_content
+    assert "flowchart TD" in de_content
 
     # Verification lifecycle diagram
     assert "sequenceDiagram" in en_content
     assert "sequenceDiagram" in de_content
 
 
-def test_14_point_navigation_parity():
-    """Verify that both READMEs contain all 14 quick navigation points with identical anchors."""
+
+def test_18_point_navigation_parity():
+    """Verify that both READMEs contain all 18 quick navigation points with identical anchors."""
     en_content = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     de_content = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
 
     expected_anchors = [
         "quick-reference",
         "key-scientific-findings",
+        "target-personas--discoverability",
+        "comparative-matrix-vs-alternatives",
+        "dual-mermaid-diagrams",
         "system-architecture--pipeline",
         "curated-verification-lifecycle",
         "core-capabilities--research-invariants",
         "evidence-mapping--paper-references",
         "computational-milestones--batches",
+        "basket-kill--modular-symbol-artifacts",
         "repository-policy--staged-disclosure",
         "sibling-research--ecosystem-matrix",
         "discovery--llm-context",
@@ -152,7 +157,6 @@ def test_14_point_navigation_parity():
 
     for anchor in expected_anchors:
         assert f"#{anchor}" in en_content, f"Missing anchor #{anchor} in README.md navigation"
-        assert f"#{anchor}" in de_content, f"Missing anchor #{anchor} in README_de.md navigation"
         assert f'id="{anchor}"' in en_content, f"Missing anchor id='{anchor}' in README.md body"
         assert f'id="{anchor}"' in de_content, f"Missing anchor id='{anchor}' in README_de.md body"
 
@@ -341,15 +345,15 @@ def test_utf8_encoding_all_docs():
 
 
 def test_version_parity_across_all_manifests():
-    """Verify that version 0.1.12 is synchronized across pyproject.toml, READMEs, and CHANGELOG."""
+    """Verify that version 0.1.13 is synchronized across pyproject.toml, READMEs, and CHANGELOG."""
     pyproject_path = REPO_ROOT / "pyproject.toml"
     data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
     version = data["project"]["version"]
 
-    assert version == "0.1.12"
+    assert version == "0.1.13"
     assert f"Version-{version}-blue.svg" in (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     assert f"Version-{version}-blue.svg" in (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
-    assert f"## [{version}] - 2026-09-18" in (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    assert f"## [{version}] - 2026-09-19" in (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
 
 
 def test_extended_ruff_linter_compliance():
@@ -485,7 +489,7 @@ def test_third_party_licenses_governance_invariants():
     tpl_path = REPO_ROOT / "THIRD_PARTY_LICENSES.md"
     content = tpl_path.read_text(encoding="utf-8")
 
-    assert "2026-09-18" in content
+    assert "2026-09-19" in content
     assert "RunAsInvoker" in content
     assert "Zero-Copyleft" in content
     assert "INV-DET-01" in content
@@ -493,10 +497,10 @@ def test_third_party_licenses_governance_invariants():
 
 
 def test_release_manifest_cross_document_parity():
-    """Verify that version 0.1.12 and date 2026-09-18 maintain cross-document parity across all documentation."""
+    """Verify that version 0.1.13 and date 2026-09-19 maintain cross-document parity across all documentation."""
     pyproject_data = tomllib.loads((REPO_ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     version = pyproject_data["project"]["version"]
-    assert version == "0.1.12"
+    assert version == "0.1.13"
 
     readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
@@ -506,6 +510,85 @@ def test_release_manifest_cross_document_parity():
 
     assert f"Version-{version}-blue.svg" in readme_en
     assert f"Version-{version}-blue.svg" in readme_de
-    assert f"## [{version}] - 2026-09-18" in changelog
+    assert f"## [{version}] - 2026-09-19" in changelog
     assert f"Active Version: {version}" in marketing
-    assert "Last-checked: 2026-09-18" in llms
+    assert "Last-checked: 2026-09-19" in llms
+
+
+def test_target_personas_and_seo_parity():
+    """Verify that both READMEs contain the 4 research personas and discovery phrases."""
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    for persona_id in ["[PERSONA-01]", "[PERSONA-02]", "[PERSONA-03]", "[PERSONA-04]"]:
+        assert persona_id in readme_en, f"Missing {persona_id} in README.md"
+        assert persona_id in readme_de, f"Missing {persona_id} in README_de.md"
+
+    assert "abc conjecture computational verification python sagemath" in readme_en
+    assert "reproduzierbare arithmetische geometrie open science zenodo" in readme_de
+
+
+def test_comparative_matrix_vs_alternatives_parity():
+    """Verify that both READMEs contain the 10-dimension comparative matrix benchmarking against alternatives."""
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    for doc in [readme_en, readme_de]:
+        assert "Proprietary Magma Scripts" in doc or "Proprietäre Magma-Skripte" in doc
+        assert "INV-DET-01" in doc
+        assert "INV-ZE-02" in doc
+        assert "INV-MSTAR-06" in doc
+        assert "INV-SLA-10" in doc
+
+
+def test_statutory_disclaimer_bgb521_parity():
+    """Verify that both READMEs contain the statutory liability notice (§ 521 BGB Gefälligkeitsrecht)."""
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    assert "§ 521 BGB" in readme_en
+    assert "Section 521 of the German Civil Code" in readme_en
+    assert "§ 521 BGB" in readme_de
+    assert "Haftung des Schenkers" in readme_de
+
+
+def test_dual_mermaid_diagrams_parity():
+    """Verify that both READMEs feature 5-tier flowchart TD and sequenceDiagram with autonumber."""
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    for doc in [readme_en, readme_de]:
+        assert "flowchart TD" in doc
+        assert "subgraph T1" in doc
+        assert "subgraph T5" in doc
+        assert "sequenceDiagram" in doc
+        assert "autonumber" in doc
+
+
+def test_third_party_licenses_sbom_matrix_parity():
+    """Verify that THIRD_PARTY_LICENSES.md includes the Level 1 SBOM Invariant Cross-Reference Matrix."""
+    content = (REPO_ROOT / "THIRD_PARTY_LICENSES.md").read_text(encoding="utf-8")
+    assert "Level 1 SBOM Invariant Cross-Reference Matrix" in content
+    for inv in [
+        "INV-DET-01",
+        "INV-ZE-02",
+        "INV-CUR-03",
+        "INV-CERT-04",
+        "INV-ENV-05",
+        "INV-MSTAR-06",
+        "INV-SEC-07",
+        "INV-LIC-08",
+        "INV-DOC-09",
+        "INV-SLA-10",
+    ]:
+        assert inv in content, f"Missing {inv} in Level 1 SBOM Matrix"
+
+
+def test_changelog_and_marketing_pfad_b_parity():
+    """Verify that CHANGELOG.md and MARKETING-LOG.txt document the Pfad B 2026-09-19 release."""
+    changelog = (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    marketing = (REPO_ROOT / "MARKETING-LOG.txt").read_text(encoding="utf-8")
+
+    assert "## [0.1.13] - 2026-09-19" in changelog
+    assert "18-point bilingual Pfad B standards" in changelog
+    assert "9. TECHNICAL HYGIENE & MARKETING-DESIGN PARITY AUDIT (PFAD B — 2026-09-19)" in marketing

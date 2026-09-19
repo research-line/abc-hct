@@ -6,7 +6,7 @@ Status: ACTIVE / HARDENED (Pfad B Discoverability & Architecture Verified)
 Repository: https://github.com/research-line/abc-hct
 Organization: research-line | Umbrella Ecosystem: open-bricks
 Canonical Clone: C:\_Local_DEV\repos\abc-hct
-Active Version: 0.1.11 | Language Stage: Bilingual Core (DE + EN)
+Active Version: 0.1.13 | Language Stage: Bilingual Core (DE + EN) | Stand: 2026-09-19
 
 --------------------------------------------------------------------------------
 1. EXECUTIVE SUMMARY & VALUE PROPOSITION
@@ -174,3 +174,40 @@ Cross-Org Ecosystem Collaborations:
   * Updated THIRD_PARTY_LICENSES.md with 2026-09-18 audit date, affirming unprivileged RunAsInvoker non-elevation mode, zero-copyleft isolation, and INV-DET-01..INV-SLA-10 guarantees.
 - Contract Test Suite:
   * Expanded automated test suite from 30 to 36 tests (+6 contract tests verifying stale/welcome CI workflows, pyproject license-files & norecursedirs, multi-host git exclusions, changelog entries, and marketing audit).
+
+--------------------------------------------------------------------------------
+9. TECHNICAL HYGIENE & MARKETING-DESIGN PARITY AUDIT (PFAD B — 2026-09-19)
+--------------------------------------------------------------------------------
+- Date: 2026-09-19 | Audit Type: Pfad B (Marketing, Discoverability & Visual Architecture)
+- Active Version: 0.1.13 | Release Status: Production Hardened
+- Visual Architecture & Dual Mermaid Diagrams:
+  * Flowchart TD 5-tier architecture topology covering Driver layer, Mathematical Engine,
+    Hecke Algebra Annihilators, Verification Hygiene, and Curated Certificate Ledger.
+  * Sequence diagram (sequenceDiagram) with autonumber, 0 semicolons, detailing the deterministic
+    quotient elimination and certificate generation lifecycle.
+- 18-Point Quick Navigation Parity:
+  * Upgraded README.md and README_de.md to symmetrical 18-point quick navigation with
+    100% reciprocal dual HTML anchors (<a id="..."></a>).
+- Target Personas & High-Intent SEO Queries:
+  * [PERSONA-01] Arithmetic Geometer & Number Theorist: Modular curves, Frey curves, Hecke algebra annihilators.
+  * [PERSONA-02] Computational Algebraist & Open-Science Researcher: Manin symbol pairings over GF(3863), rank drops.
+  * [PERSONA-03] Mathematical Software Engineer & Proof Engineer: Deterministic zero-egress pipelines, PEP 621, CI gates.
+  * [PERSONA-04] Research Program Evaluator & Zenodo Archival Auditor: Verifiable certificates for Zenodo Paper A & B.
+  * High-intent discoverability queries mapped to arithmetic geometry, no-magma CAS, and Zenodo open science.
+- Comparative Matrix vs. Alternatives:
+  * 10-dimension comparative matrix benchmarking abc-hct against 4 alternatives: Proprietary Magma Scripts,
+    Raw Ad-Hoc PARI/GP Scripts, Cloud CAS / CoCalc Notebooks, and General CAS (Mathematica/Maple),
+    evaluated across all 10 invariants (INV-DET-01 through INV-SLA-10).
+- Level 1 SBOM Invariant Cross-Reference Matrix:
+  * Added structured Level 1 SBOM Invariant table in THIRD_PARTY_LICENSES.md with audit status
+    for all 10 invariants and unprivileged RunAsInvoker non-elevation certification.
+- Statutory Liability Disclaimer:
+  * Incorporated German statutory liability notice pursuant to Section 521 BGB (Gefälligkeitsrecht)
+    in both README.md and README_de.md.
+- Discoverability & Ecosystem Enrichment:
+  * Expanded GitHub repository topics to full 20/20 topics via GitHub CLI.
+  * Enriched pyproject.toml discoverability keywords (abc-conjecture, modular-forms, modular-curves, etc.).
+- Contract Test Suite:
+  * Expanded automated test suite in tests/test_metadata.py to 42 tests (+6 contract tests verifying
+    18-point navigation parity, target personas, comparative matrix, statutory disclaimer, Level 1 SBOM matrix,
+    and version 0.1.13 cross-document parity).

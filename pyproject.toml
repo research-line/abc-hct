@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "abc-hct"
-version = "0.1.12"
+version = "0.1.13"
 description = "Curated calculation scripts, reproduction harness codes, and machine-readable result certificates for Hecke curves and Manin-Hecke quotients"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -20,7 +20,15 @@ keywords = [
     "sagemath",
     "pari-gp",
     "arithmetic-geometry",
-    "frey-watkins"
+    "frey-watkins",
+    "abc-conjecture",
+    "modular-forms",
+    "modular-curves",
+    "local-first",
+    "zero-egress",
+    "reproducible-research",
+    "open-science",
+    "zenodo"
 ]
 classifiers = [
     "Development Status :: 4 - Beta",

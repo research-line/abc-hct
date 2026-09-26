@@ -211,3 +211,33 @@ Cross-Org Ecosystem Collaborations:
   * Expanded automated test suite in tests/test_metadata.py to 42 tests (+6 contract tests verifying
     18-point navigation parity, target personas, comparative matrix, statutory disclaimer, Level 1 SBOM matrix,
     and version 0.1.13 cross-document parity).
+
+--------------------------------------------------------------------------------
+10. TECHNICAL HYGIENE & CI LIFECYCLE AUDIT (PFAD A — 2026-09-26)
+--------------------------------------------------------------------------------
+- Date: 2026-09-26 | Audit Type: Pfad A (Repository Hygiene & CI Hardening)
+- Active Version: 0.1.13 (strictly frozen per T-20260920-167562623)
+- CI/CD Lifecycle Workflow Provisioning & Hardening:
+  * .github/workflows/auto-assign.yml: Provisioned with actions/github-script@v7, timeout-minutes: 5,
+    concurrency cancel-in-progress: true (${{ github.workflow }}-${{ github.ref }}), and least-privilege
+    permissions (issues: write, pull-requests: write).
+  * .github/workflows/label-sync.yml: Provisioned with EndBug/label-sync@v2, timeout-minutes: 5,
+    concurrency cancel-in-progress: true, and least-privilege permissions (issues: write).
+  * .github/labels.yml: Provisioned with 11 standard governance labels per GOVERNANCE.md §4.2.
+  * .github/workflows/welcome.yml & stale.yml: Hardened concurrency groups to ${{ github.workflow }}-${{ github.ref }}.
+- Multi-Host Cloud-Sync & Lock Defense:
+  * Enhanced .gitignore with multi-host sync patterns (*-IDEAPAD*, *_WORKSTATION*, *_WORKSTATION-LG*,
+    *-WORKSTATION.*, *-WORKSTATION-LG.*), canonical agent lock defense (.automation-lock),
+    test caches (.pytest_temp/, .pytest_tmp*/), and OS artifacts (Desktop.ini, *.swo).
+- PEP 621 Standardisation & Pytest Hardening:
+  * Updated license-files in pyproject.toml to include NOTICE and THIRD_PARTY_LICENSES.txt.
+  * Registered Notice and Third-Party Licenses (Text) in project.urls.
+  * Hardened [tool.pytest.ini_options] with addopts = "-ra -v --basetemp=.pytest_temp" and
+    norecursedirs with temp directories and build caches.
+- Canonical NOTICE Attribution & Level 1 SBOM Text Inventory:
+  * Created standard Open-Source NOTICE attribution file (Copyright (c) 2026 Lukas Geiger, HCT Research Line Team).
+  * Created THIRD_PARTY_LICENSES.txt Level 1 SBOM text companion confirming unprivileged user-mode RunAsInvoker
+    operation, zero-copyleft boundaries, and 10 research governance invariants (INV-DET-01 through INV-SLA-10).
+  * Re-audited THIRD_PARTY_LICENSES.md Stand 2026-09-26.
+- Contract Test Expansion:
+  * Extended tests/test_metadata.py with 6 new automated contract tests.

@@ -169,11 +169,16 @@ Plan.txt
 * (Copy)*
 *-WORKSTATION*
 *-WORKSTATION-LG*
+*_WORKSTATION*
+*_WORKSTATION-LG*
+*-WORKSTATION.*
+*-WORKSTATION-LG.*
 *-ASUS*
 *-ASUS-GEI*
 *-LAPTOP*
 *-Mac Studio*
 *-MacBook*
+*-IDEAPAD*
 LOCK
 LOCK.*
 *.lock
@@ -182,6 +187,7 @@ LOCK.permissions.json
 LOCK.user.*
 LOCK.until.*
 LOCK.condition.*
+.automation-lock
 uv.lock
 !package-lock.json
 
@@ -191,6 +197,8 @@ dist/
 *.egg-info/
 .ruff_cache/
 .pytest_cache/
+.pytest_temp/
+.pytest_tmp*/
 .coverage
 .coverage.*
 coverage/
@@ -207,6 +215,8 @@ wheelhouse/
 *.tmp
 *.bak
 *.swp
+*.swo
+Desktop.ini
 *~
 *.orig
 *.rej

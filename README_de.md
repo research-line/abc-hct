@@ -18,6 +18,7 @@
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)](https://github.com/research-line)
 [![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)](https://github.com/open-bricks)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Attribution](https://img.shields.io/badge/Attribution-NOTICE-blue.svg)](NOTICE)
 
 Kuratiertes Forschungs-Repository für die Forschungslinie **HCT/abc** innerhalb der Organisation **research-line** und des Dachverbunds **open-bricks**.
 
@@ -408,7 +409,7 @@ python _scripts/mstar_h3a_rc3c_witness_verify_rank.py
 - **PARI/GP**: GNU General Public License Version 2 oder neuer (GPL-2.0+)
 - **pytest & Ruff**: MIT-Lizenz / Apache License 2.0
 
-Alle Urheberrechte, Lizenztexte und die Level-1 SBOM Invarianten-Kreuzreferenzmatrix sind in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) inventarisiert.
+Alle Urheberrechte, Lizenztexte und die Level-1 SBOM Invarianten-Kreuzreferenzmatrix sind in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) inventarisiert. Das Klartext-Inventar ist in [`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt) und die Urheberrechts-Attribution in [`NOTICE`](NOTICE) dokumentiert.
 
 ---
 
@@ -431,4 +432,4 @@ Dieses mathematische Open-Science-Forschungsprojekt und sämtliche Berechnungs- 
 
 This mathematical open-science research repository and all verification scripts are provided free of charge as open-source software. Pursuant to Section 521 of the German Civil Code (BGB), liability for defects in quality and title is limited to intent and gross negligence. Computational results are generated deterministically according to rigorous scientific standards, but do not replace formal peer review.
 
-Dieses Projekt ist unter der **MIT-Lizenz** lizenziert — siehe die Datei [`LICENSE`](LICENSE) für Details.
+Dieses Projekt ist unter der **MIT-Lizenz** lizenziert — siehe die Dateien [`LICENSE`](LICENSE) und [`NOTICE`](NOTICE) für Details.

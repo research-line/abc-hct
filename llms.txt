@@ -1,6 +1,6 @@
 # abc-hct
 
-## Last-checked: 2026-09-19
+## Last-checked: 2026-09-19 (Re-audited: 2026-09-26)
 
 ## Canonical Links
 
@@ -10,6 +10,8 @@
 - Security Policy: `SECURITY.md`
 - Discoverability & Marketing Log: `MARKETING-LOG.txt`
 - Third-Party Licenses: `THIRD_PARTY_LICENSES.md`
+- Third-Party Licenses (Text): `THIRD_PARTY_LICENSES.txt`
+- Attribution Notice: `NOTICE`
 - Release History: `CHANGELOG.md`
 - License: `LICENSE`
 - Reproducibility batch overview: `REPRODUCIBILITY_H3A_2026-05-17.md`

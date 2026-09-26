@@ -2,6 +2,20 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [Unreleased]
+
+### Added
+- **CI Lifecycle Workflows**: Provisioned `auto-assign.yml` (least-privilege `pull-requests: write`, `issues: write`, concurrency cancel-in-progress, 5m timeout) and `label-sync.yml` with `.github/labels.yml` containing 11 canonical governance labels. Hardened `welcome.yml` and `stale.yml` concurrency groups to `${{ github.workflow }}-${{ github.ref }}`.
+- **Canonical NOTICE Attribution**: Created standard Open-Source `NOTICE` file in repository root establishing clear copyright attribution (c) 2026 Lukas Geiger, HCT Research Line Team under research-line and open-bricks umbrella.
+- **Level 1 SBOM Text Inventory**: Added `THIRD_PARTY_LICENSES.txt` companion file documenting direct build and offline algebra engine dependencies with unprivileged `RunAsInvoker` non-elevation, zero-copyleft guarantees, and 10 research governance invariants (`INV-DET-01` through `INV-SLA-10`).
+- **Contract Test Expansion**: Extended `tests/test_metadata.py` with 6 new automated contract tests verifying CI auto-assign and label-sync workflows, labels.yml, NOTICE attribution, Level 1 SBOM text companion, and expanded lock defense rules.
+
+### Changed
+- **Technical Repository Hygiene**: Pfad A CI lifecycle hardening, lock defense, PEP 621 standardization, and contract test expansion (2026-09-26, Version 0.1.13 frozen per T-20260920-167562623).
+- **Multi-Host Lock Defense & Sync Hygiene**: Extended `.gitignore` with multi-host cloud-sync patterns (`*-IDEAPAD*`, `*_WORKSTATION*`, `*_WORKSTATION-LG*`, `*-WORKSTATION.*`, `*-WORKSTATION-LG.*`), lock defense (`.automation-lock`), test caches (`.pytest_temp/`, `.pytest_tmp*/`), and OS/editor artifacts (`Desktop.ini`, `*.swo`).
+- **PEP 621 Standardisation & Pytest Hardening**: Standardized `license-files` in `pyproject.toml` to include `NOTICE` and `THIRD_PARTY_LICENSES.txt`; added `Notice` and `Third-Party Licenses (Text)` URLs; hardened pytest options with `--basetemp=.pytest_temp` and extended `norecursedirs`.
+- **Level 1 SBOM Re-Audit**: Re-audited `THIRD_PARTY_LICENSES.md` Stand 2026-09-26 with cross-references to `NOTICE` and plain-text inventory.
+
 ## [0.1.13] - 2026-09-19
 
 ### Added

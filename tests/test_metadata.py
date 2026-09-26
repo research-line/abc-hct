@@ -592,3 +592,114 @@ def test_changelog_and_marketing_pfad_b_parity():
     assert "## [0.1.13] - 2026-09-19" in changelog
     assert "18-point bilingual Pfad B standards" in changelog
     assert "9. TECHNICAL HYGIENE & MARKETING-DESIGN PARITY AUDIT (PFAD B — 2026-09-19)" in marketing
+
+
+def test_ci_auto_assign_workflow_present_and_hardened():
+    """Verify that auto-assign workflow exists and defines least-privilege permissions and timeout."""
+    workflow_path = REPO_ROOT / ".github" / "workflows" / "auto-assign.yml"
+    assert workflow_path.exists(), "auto-assign.yml workflow must exist"
+    content = workflow_path.read_text(encoding="utf-8")
+
+    assert "actions/github-script@v7" in content
+    assert "timeout-minutes: 5" in content
+    assert "cancel-in-progress: true" in content
+    assert "issues: write" in content
+    assert "pull-requests: write" in content
+
+
+def test_ci_label_sync_workflow_and_labels_config():
+    """Verify that label-sync workflow and labels.yml exist with 11 standard governance labels."""
+    workflow_path = REPO_ROOT / ".github" / "workflows" / "label-sync.yml"
+    assert workflow_path.exists(), "label-sync.yml workflow must exist"
+    wf_content = workflow_path.read_text(encoding="utf-8")
+
+    assert "EndBug/label-sync@v2" in wf_content
+    assert "timeout-minutes: 5" in wf_content
+    assert "cancel-in-progress: true" in wf_content
+    assert "issues: write" in wf_content
+
+    labels_path = REPO_ROOT / ".github" / "labels.yml"
+    assert labels_path.exists(), "labels.yml must exist"
+    labels_content = labels_path.read_text(encoding="utf-8")
+
+    for label in [
+        "bug",
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "documentation",
+        "duplicate",
+        "wontfix",
+        "priority: high",
+        "priority: low",
+        "needs-triage",
+        "stale",
+    ]:
+        assert f"name: {label}" in labels_content or f"name: '{label}'" in labels_content, f"Missing label: {label}"
+
+
+def test_notice_attribution_file():
+    """Verify that canonical NOTICE attribution file exists in repository root."""
+    notice_path = REPO_ROOT / "NOTICE"
+    assert notice_path.exists(), "NOTICE file must exist in repo root"
+    content = notice_path.read_text(encoding="utf-8")
+
+    assert "abc-hct" in content
+    assert "Copyright (c) 2026 Lukas Geiger" in content
+    assert "research-line" in content
+    assert "open-bricks" in content
+    assert "MIT License" in content
+
+
+def test_level1_sbom_text_inventory():
+    """Verify that THIRD_PARTY_LICENSES.txt Level 1 SBOM companion file exists and documents invariants."""
+    sbom_path = REPO_ROOT / "THIRD_PARTY_LICENSES.txt"
+    assert sbom_path.exists(), "THIRD_PARTY_LICENSES.txt must exist in repo root"
+    content = sbom_path.read_text(encoding="utf-8")
+
+    assert "Audited: 2026-09-26" in content
+    assert "RunAsInvoker" in content
+    assert "Zero-Copyleft Isolation" in content
+    assert "Python Standard Library" in content
+    assert "SageMath" in content
+    assert "PARI/GP" in content
+    assert "INV-DET-01" in content
+    assert "INV-SLA-10" in content
+
+
+def test_gitignore_lock_defense_and_temp_caches():
+    """Verify that .gitignore defines multi-host patterns, lock defense, and temporary test caches."""
+    gitignore_path = REPO_ROOT / ".gitignore"
+    content = gitignore_path.read_text(encoding="utf-8")
+
+    for pattern in [
+        "*-IDEAPAD*",
+        "*_WORKSTATION*",
+        "*_WORKSTATION-LG*",
+        "*-WORKSTATION.*",
+        "*-WORKSTATION-LG.*",
+        ".automation-lock",
+        ".pytest_temp/",
+        ".pytest_tmp*/",
+        "Desktop.ini",
+        "*.swo",
+    ]:
+        assert pattern in content, f"Missing pattern in .gitignore: {pattern}"
+
+
+def test_pyproject_extended_license_files_and_notice_url():
+    """Verify that pyproject.toml defines NOTICE and THIRD_PARTY_LICENSES.txt in license-files and URLs."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+
+    license_files = data.get("project", {}).get("license-files", [])
+    assert "NOTICE" in license_files
+    assert "THIRD_PARTY_LICENSES.txt" in license_files
+
+    urls = data.get("project", {}).get("urls", {})
+    assert "Notice" in urls
+    assert "Third-Party Licenses (Text)" in urls
+
+    ini_options = data.get("tool", {}).get("pytest", {}).get("ini_options", {})
+    assert "--basetemp=.pytest_temp" in ini_options.get("addopts", "")
+    assert ".pytest_temp" in ini_options.get("norecursedirs", [])

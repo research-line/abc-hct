@@ -1,0 +1,47 @@
+# Third-Party Licenses & Software Inventory
+
+Project: abc-hct
+Audited: 2026-09-26 against Level 1 SBOM and runtime invariants.
+License: MIT License (see LICENSE and NOTICE)
+Repository: https://github.com/research-line/abc-hct
+Parent Organization: research-line (https://github.com/research-line)
+Umbrella Ecosystem: open-bricks (https://github.com/open-bricks)
+
+## Project License
+
+abc-hct is licensed under the MIT License. See `LICENSE` and `NOTICE`.
+
+## Computational Algebra & Number Theory Engines
+
+| Engine / Library | Scope | Version Spec | License | Source | Purpose |
+|---|---|---|---|---|---|
+| Python Standard Library | Runtime | >=3.10 | PSF-2.0 | https://python.org/ | Core runtime, script execution, JSON serialization, path handling |
+| SageMath | Offline CAS | >=10.0 | GPL-2.0+ | https://www.sagemath.org/ | Modular symbols pairing, Hecke algebra operators (T_5, T_7), quotient dimension |
+| PARI/GP | Offline CAS | >=2.15 | GPL-2.0+ | https://pari.math.u-bordeaux.fr/ | High-precision polynomial arithmetic, Frey-Watkins saturation verification |
+
+## Direct Build and Quality Assurance Tooling
+
+| Package | Declared Use | Constraint | License | Source |
+|---|---|---|---|---|
+| pytest | Automated test runner | >=7.0 | MIT | https://pytest.org/ |
+| ruff | Development linter | >=0.6 | MIT / Apache-2.0 | https://github.com/astral-sh/ruff |
+| setuptools | Build backend | >=61.0 | MIT | https://github.com/pypa/setuptools |
+
+## Zero-Copyleft Isolation & Unprivileged Execution Guarantee
+
+- Zero-Copyleft Isolation: All custom research algorithms, certifier scripts, and reproducibility harnesses in this repository remain independent original works distributed under the MIT License. External copyleft algebra systems (SageMath, PARI/GP) are executed exclusively through out-of-process CLI interfaces and subprocess execution boundaries, guaranteeing zero-copyleft contamination of the MIT-licensed research codebase.
+- Unprivileged User-Mode Operation (RunAsInvoker): All scripts, CLI harnesses, and automated verification suites operate strictly within non-elevated user-mode privilege boundaries without requiring administrative or root elevation.
+
+## Governance & Runtime Invariants
+
+abc-hct strictly enforces ten foundational research and architectural invariants:
+- INV-DET-01: Deterministic Algebraic Verification (deterministic arithmetic and reproducibility without stochastic variance)
+- INV-ZE-02: 100% Offline & Zero-Egress Privacy (complete offline execution with zero telemetry or network calls)
+- INV-CUR-03: Curated Evidence & Non-Pollution (strict .gitignore boundaries isolating private research scratch)
+- INV-CERT-04: Machine-Readable Certificate Ledger (deterministic JSON/Markdown certificates under _results/)
+- INV-ENV-05: Environment Isolation & Bounded Compute (clean execution queue with bounded timeout and fallback handling)
+- INV-MSTAR-06: No-Magma Modular Symbol Engine (eliminates commercial CAS reliance via open-source SageMath/Python)
+- INV-SEC-07: Local-First Sandboxing & Non-Elevation (strictly unprivileged user-mode execution: RunAsInvoker)
+- INV-LIC-08: Permissive Open-Science Licensing (standard permissive MIT License facilitating open-science reproduction)
+- INV-DOC-09: Bilingual & LLM-Ready Parity (100% reciprocal bilingual parity between README.md and README_de.md)
+- INV-SLA-10: 48h Response SLA & 5d Triage (committed response window for vulnerability reporting in SECURITY.md)

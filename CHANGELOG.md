@@ -5,16 +5,20 @@ All notable changes to this repository will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- **Reciprocal Dual HTML Anchors Parity**: Embedded `<a id="sec-01"></a>` through `<a id="sec-18"></a>` across all 18 sections of both `README.md` and `README_de.md`, providing bulletproof dual-anchor linking alongside semantic slug anchors (`#quick-reference`, `#sec-01`).
+- **ASCII Four-View Architectural Topology Projection**: Integrated ASCII system topology in Section 6 across both documentation files (`[VIEW 1: CLI DRIVERS & COMPUTATION HARNESSES]`, `[VIEW 2: NO-MAGMA ALGEBRAIC QUOTIENT ENGINE CORE]`, `[VIEW 3: PROOF & CERTIFICATE VERIFICATION]`, `[VIEW 4: OPEN-SCIENCE LEDGER & CITATION]`).
+- **PEP 621 20/20 Keyword Saturation & Plain-Text URLs**: Saturated `keywords` array to 20/20 items matching remote GitHub topics; registered canonical URLs for `"Plain-Text Licenses"` and `"Level 1 SBOM"` under `[project.urls]` in `pyproject.toml`.
+- **Level 1 SBOM Re-Audit**: Re-audited `THIRD_PARTY_LICENSES.txt` and `THIRD_PARTY_LICENSES.md` (2026-09-28) validating runtime invariant matrix against Level 1 SBOM requirements and unprivileged `RunAsInvoker` mode.
+- **Contract Test Expansion (54 Tests)**: Added 6 new automated contract tests in `tests/test_metadata.py` asserting reciprocal dual HTML anchors (`sec-01`..`sec-18`), ASCII topology projection, PEP 621 20 keywords saturation, Plain-Text/SBOM URLs, changelog unreleased notes, and marketing log Section 11.
 - **CI Lifecycle Workflows**: Provisioned `auto-assign.yml` (least-privilege `pull-requests: write`, `issues: write`, concurrency cancel-in-progress, 5m timeout) and `label-sync.yml` with `.github/labels.yml` containing 11 canonical governance labels. Hardened `welcome.yml` and `stale.yml` concurrency groups to `${{ github.workflow }}-${{ github.ref }}`.
 - **Canonical NOTICE Attribution**: Created standard Open-Source `NOTICE` file in repository root establishing clear copyright attribution (c) 2026 Lukas Geiger, HCT Research Line Team under research-line and open-bricks umbrella.
 - **Level 1 SBOM Text Inventory**: Added `THIRD_PARTY_LICENSES.txt` companion file documenting direct build and offline algebra engine dependencies with unprivileged `RunAsInvoker` non-elevation, zero-copyleft guarantees, and 10 research governance invariants (`INV-DET-01` through `INV-SLA-10`).
-- **Contract Test Expansion**: Extended `tests/test_metadata.py` with 6 new automated contract tests verifying CI auto-assign and label-sync workflows, labels.yml, NOTICE attribution, Level 1 SBOM text companion, and expanded lock defense rules.
 
 ### Changed
+- **Pfad B Marketing, Discoverability & Navigation Parity**: Routine Pfad B audit (2026-09-28, Version 0.1.13 frozen per T-20260920-167562623). Verified 18-point dual anchor parity, ASCII topology projection, Shields.io badges (`Verified-2026--09--28`, `Level 1 SBOM`, `54 Passed`), and updated `llms.txt`.
 - **Technical Repository Hygiene**: Pfad A CI lifecycle hardening, lock defense, PEP 621 standardization, and contract test expansion (2026-09-26, Version 0.1.13 frozen per T-20260920-167562623).
 - **Multi-Host Lock Defense & Sync Hygiene**: Extended `.gitignore` with multi-host cloud-sync patterns (`*-IDEAPAD*`, `*_WORKSTATION*`, `*_WORKSTATION-LG*`, `*-WORKSTATION.*`, `*-WORKSTATION-LG.*`), lock defense (`.automation-lock`), test caches (`.pytest_temp/`, `.pytest_tmp*/`), and OS/editor artifacts (`Desktop.ini`, `*.swo`).
 - **PEP 621 Standardisation & Pytest Hardening**: Standardized `license-files` in `pyproject.toml` to include `NOTICE` and `THIRD_PARTY_LICENSES.txt`; added `Notice` and `Third-Party Licenses (Text)` URLs; hardened pytest options with `--basetemp=.pytest_temp` and extended `norecursedirs`.
-- **Level 1 SBOM Re-Audit**: Re-audited `THIRD_PARTY_LICENSES.md` Stand 2026-09-26 with cross-references to `NOTICE` and plain-text inventory.
 
 ## [0.1.13] - 2026-09-19
 

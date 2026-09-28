@@ -14,21 +14,26 @@ authors = [
     { name = "HCT Research Line Team" }
 ]
 keywords = [
-    "hecke-curves",
-    "manin-hecke-quotients",
-    "number-theory",
-    "sagemath",
-    "pari-gp",
-    "arithmetic-geometry",
-    "frey-watkins",
     "abc-conjecture",
-    "modular-forms",
-    "modular-curves",
-    "local-first",
-    "zero-egress",
-    "reproducible-research",
+    "hecke-algebra",
+    "mathematics",
+    "number-theory",
+    "research",
     "open-science",
-    "zenodo"
+    "reproducible-research",
+    "zenodo",
+    "algebraic-geometry",
+    "arithmetic-geometry",
+    "computational-mathematics",
+    "local-first",
+    "modular-curves",
+    "modular-forms",
+    "open-bricks",
+    "pari-gp",
+    "sagemath",
+    "frey-curves",
+    "manin-symbols",
+    "no-magma"
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -57,6 +62,8 @@ Security = "https://github.com/research-line/abc-hct/blob/main/SECURITY.md"
 "Umbrella Ecosystem" = "https://github.com/open-bricks"
 "Third-Party Licenses" = "https://github.com/research-line/abc-hct/blob/main/THIRD_PARTY_LICENSES.md"
 "Third-Party Licenses (Text)" = "https://github.com/research-line/abc-hct/blob/main/THIRD_PARTY_LICENSES.txt"
+"Plain-Text Licenses" = "https://github.com/research-line/abc-hct/blob/main/THIRD_PARTY_LICENSES.txt"
+"Level 1 SBOM" = "https://github.com/research-line/abc-hct/blob/main/THIRD_PARTY_LICENSES.md"
 Notice = "https://github.com/research-line/abc-hct/blob/main/NOTICE"
 "Marketing Log" = "https://github.com/research-line/abc-hct/blob/main/MARKETING-LOG.txt"
 "LLM Ready" = "https://github.com/research-line/abc-hct/blob/main/llms.txt"

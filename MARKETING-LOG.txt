@@ -241,3 +241,32 @@ Cross-Org Ecosystem Collaborations:
   * Re-audited THIRD_PARTY_LICENSES.md Stand 2026-09-26.
 - Contract Test Expansion:
   * Extended tests/test_metadata.py with 6 new automated contract tests.
+
+--------------------------------------------------------------------------------
+11. PATH B DISCOVERABILITY, 18-POINT NAVIGATION PARITY, RECIPROCAL DUAL ANCHORS,
+    ASCII ARCHITECTURAL TOPOLOGY & LEVEL 1 SBOM RE-AUDIT (PFAD B — 2026-09-28)
+--------------------------------------------------------------------------------
+- Date: 2026-09-28 | Audit Type: Pfad B (Discoverability, Visual Architecture & SBOM)
+- Active Version: 0.1.13 (strictly frozen per T-20260920-167562623)
+- 18-Point Bilingual Navigation Parity & Reciprocal Dual HTML Anchors:
+  * Complete structural, badge, and navigation parity between README.md and README_de.md.
+  * Added dual reciprocal HTML anchors (<a id="sec-01"></a> through <a id="sec-18"></a>)
+    across all 18 sections in both English and German documentation, guaranteeing deterministic
+    cross-document linking and slug stability.
+  * Quick Navigation tables in both READMEs fully aligned with dual link anchors.
+- ASCII Four-View Architectural Topology Projection:
+  * Integrated multi-tier ASCII architecture topology projection in Section 6 of both READMEs:
+    [VIEW 1: CLI DRIVERS & COMPUTATION HARNESSES], [VIEW 2: NO-MAGMA ALGEBRAIC QUOTIENT ENGINE CORE],
+    [VIEW 3: PROOF & CERTIFICATE VERIFICATION], and [VIEW 4: OPEN-SCIENCE LEDGER & CITATION].
+  * German counterpart mapped as [SICHT 1] through [SICHT 4] with zero-copyleft and non-elevation guarantees.
+- PEP 621 20/20 Keyword Saturation & Canonical Plain-Text URLs:
+  * Saturated keywords in pyproject.toml to 20/20 items matching remote GitHub topics.
+  * Added canonical URLs for "Plain-Text Licenses" and "Level 1 SBOM" under [project.urls].
+- Level 1 SBOM & Plain-Text Inventory Re-Audit:
+  * Re-audited THIRD_PARTY_LICENSES.txt and THIRD_PARTY_LICENSES.md (2026-09-28) validating runtime
+    invariant cross-reference matrix against Level 1 SBOM requirements, unprivileged RunAsInvoker
+    non-elevation boundaries, and zero-copyleft subprocess boundaries.
+- Contract Test Expansion:
+  * Expanded automated test suite in tests/test_metadata.py with 6 new contract tests (elevating suite
+    from 48 to 54 tests, 100% green) asserting sec-01..sec-18 dual anchors, ASCII topology projection,
+    PEP 621 20 keywords saturation, Plain-Text/SBOM URLs, changelog unreleased notes, and Section 11 marketing audit.

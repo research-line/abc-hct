@@ -2,7 +2,7 @@
 
 This document provides a comprehensive inventory of all third-party software libraries, mathematical engines, toolchains, and runtime environments utilized or referenced by **abc-hct** (`research-line/abc-hct`), including their respective licenses, copyright holders, and usage scopes.
 
-Last updated: **2026-09-19** (Re-audited: **2026-09-26**)
+Last updated: **2026-09-19** (Re-audited: **2026-09-28**; previous audit: **2026-09-26**)
 
 ---
 

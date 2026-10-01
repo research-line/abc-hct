@@ -1,0 +1,2384 @@
+% =============================================================================
+% Das Brücken-Zertifikat -- ein zeilengenaues Prüfinstrument für
+% theorieübergreifende Transportargumente, mit vier Anwendungen auf die
+% abc-Literatur.
+% Entwurf v0.2 (Deutsch) -- 1:1-Fassung zur führenden englischen Version.
+% Projekt: abc_forensik/paper_bridge_certificate  (.RESEARCH/.LAB/.HCT)
+% Teil 3 der abc-Gap-Serie (Zählung nach Serienregister, Entscheid E2=a vom
+% 2026-08-13). KEIN Beweispapier und KEIN Fehler-Nachweis.
+% Siehe die Geltungsbereichs-Box nach dem Abstract.
+%
+% v0.2 (2026-08-16): übernimmt die gehärtete sechste Vertragskomponente des
+% inzwischen veröffentlichten Methodenpapiers (Teil 2, v0.2.4). Zwei Verdikte
+% aus v0.1 werden umcodiert -- Fall A Pflicht 6 (eingelöst -> liefert nicht)
+% und Fall C Pflicht 6 (eingelöst -> teilweise) -- und die Umwertung wird im
+% unnummerierten Abschnitt "Änderungen in Version 0.2" nach dem
+% Inhaltsverzeichnis offen ausgewiesen. Ferner: Split R6a/R6b, Versionsetikett
+% und Namespace-Hinweis für das Instrument, R8 als getriggerte Erweiterung (E8)
+% klargestellt, Fall C umbenannt in "vergleichende Diskriminierungsanwendung",
+% LANA-Mapping primär auf Pflicht 6 gebucht, Teil 2 als veröffentlicht zitiert.
+% v0.1 bleibt auf Zenodo unverändert erhalten.
+% =============================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}   % skalierbare Fonts -- nötig für microtype-Expansion
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage[a4paper,margin=2.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\hyphenation{Teich-mül-ler in-ter-uni-ver-sell In-de-ter-mi-na-cy
+  mul-ti-ra-di-al Pro-zes-sions-nor-mie-rung Nor-mie-rungs-wahl
+  Arith-me-ti-coid Arith-me-ti-coide Zer-ti-fi-kat}
+
+\emergencystretch=1.5em
+
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\hypersetup{
+  pdfencoding=unicode,
+  psdextra,
+  pdftitle={Das Brücken-Zertifikat},
+  pdfauthor={Lukas Geiger},
+  pdfsubject={Ein zeilengenaues Prüfinstrument für theorieübergreifende Transportargumente}
+}
+
+% Sprachspezifisches Zielnamen-Präfix, damit das zweisprachige Kombi-PDF die
+% Anker beider Sprachfassungen auseinanderhält.
+\makeatletter
+\renewcommand*{\HyperDestNameFilter}[1]{bc-de-#1}
+\makeatother
+
+% --- Umgebungen ---------------------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{obligation}{Pflicht}
+\newtheorem*{workinglemma}{Arbeitslemma (Brückenvertrag)}
+\newtheorem*{recipe}{Anwendungsrezept}
+
+% --- Notation -----------------------------------------------------------------
+\newcommand{\Brxi}{\mathrm{Br}_{\xi}}
+\newcommand{\LogVol}{\operatorname{LogVol}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\ordd}{\operatorname{ord}}
+\newcommand{\Thet}{\widetilde{\Theta}}
+
+% Jede Quellenangabe ist an einen benannten Extrakt gebunden, weil die hier
+% verwendeten Extrakte unabhängig durchnummeriert sind; eine bloße Zeilennummer
+% wäre mehrdeutig.
+\newcommand{\anchor}[2]{(#1, Extrakt Z.~#2)}
+
+\title{Das Brücken-Zertifikat:\\
+Ein zeilengenaues Prüfinstrument für theorieübergreifende\\
+Transportargumente, mit vier Anwendungen\\
+auf die $abc$-Literatur}
+\author{Lukas Geiger\\[2pt]
+\small Unabhängiger Forscher, Bernau, Deutschland\\
+\small ORCID: 0009-0005-7296-1534}
+\date{Oktober 2026 --- Version 0.3 (korrigierter Entwurf)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Eine wiederkehrende Argumentform der arithmetischen Geometrie trägt einen
+numerischen Readout aus einer Konstruktion heraus in einen Container, den sie
+mit einer zweiten teilt, und liest daran eine Ungleichung ab. Streitfälle über
+solche Schritte haben sich als ungewöhnlich widerstandsfähig gegen die üblichen
+Instrumente der mathematischen Begutachtung erwiesen: Die Beteiligten sind sich
+über nahezu jede Formel einig und uneins darüber, ob eine bestimmte Passage
+überhaupt ein Argument \emph{ist}. Diese Arbeit schlägt für genau diese Lage ein
+Instrument vor und berichtet, was es in vier Anwendungen zurückgegeben hat. Das
+Instrument --- ein \emph{Brücken-Zertifikat} --- legt sieben Pflichten des
+vorgeschlagenen Zertifikats für Übergänge von einer qualitativen Verknüpfung
+zu einer numerischen Membership-Aussage fest, ordnet sie als neunzeiliges Ledger an, das
+zeilenweise gegen den Wortlaut eines Primärtextes gefüllt wird, und bindet die
+Befunderfassung an Regeln: Verdikte betreffen die Zertifikatsform, nie die
+mathematische Wahrheit; jeder Befund trägt ein wörtliches Zitat mit Zeilenanker;
+Lücken werden typisiert statt graduiert; jeder Rückgriff auf Standardliteratur
+wird in ein Import-Ledger eingetragen; und jede Aussage der Form \glqq das steht nicht
+im Text\grqq{} wird zusammen mit den verwendeten Suchbegriffen berichtet. Vier
+Anwendungen werden vorgeführt, und sie leisten Verschiedenes. Am Beweis eines
+Korollars der interuniversellen Teichmüller-Theorie \emph{lokalisiert} das Ledger
+eine nicht eingelöste Pflicht: Die entscheidende Membership folge, so der Text,
+\glqq formal\grqq{} aus einem Paar deklarierter Eigenschaften, statt abgeleitet zu werden.
+Am Folgeband, den derselbe Text als seinen Quantifizierungsort benennt,
+\emph{schließt} das Ledger diesen Ort \emph{aus}: Die dortige Rechnung ist
+explizit und an jedem von ihr benannten Knoten geschlossen --- nachgerechnet hat
+diese Arbeit sie nicht ---, verbraucht die strittige Ungleichung aber als Eingabe,
+statt sie zu erzeugen. An einem unabhängigen Vergleichsprogramm in einer anderen
+Theorie
+dient das Ledger als \emph{vergleichende Diskriminierungsanwendung} und liefert
+eine anders geformte Lücke an anderer Adresse. An zwei nachgelagerten Anwendungen protokolliert es
+\emph{Vererbung}: Der strittige Schritt wird in einem Satz importiert und nie
+diskutiert. Im selben Zeitraum hat ein internationales Formalisierungsprojekt, das
+diese Arbeit nicht zitiert, an derselben Passage eine
+Kompatibilitätsaussage isoliert; wir ordnen ihre Objekte den vorgeschlagenen
+Rollen der Zertifikatspflichten zu. Dies beweist keine Implikation von der
+Kompatibilitätsgleichung des Berichts zur typisierten Ordnungsbedingung
+des Zertifikats. Nichts in dieser Arbeit ist die Behauptung, ein geprüftes
+Argument sei falsch, und nichts darin ist eine Aussage über die
+$abc$-Vermutung.
+\end{abstract}
+
+% -----------------------------------------------------------------------------
+% GELTUNGSBEREICH UND CLAIM-GRENZE
+% -----------------------------------------------------------------------------
+\begin{center}
+\fbox{%
+\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{%
+\medskip
+\textbf{Geltungsbereich und Claim-Grenze.}\par\medskip
+\begin{itemize}\setlength{\itemsep}{2pt}
+\item Diese Arbeit beweist \emph{nichts} über die $abc$-Vermutung. Sie enthält
+  keinen Beweis und keine Widerlegung, und keine Aussage darüber, ob die
+  Vermutung mit den behandelten Methoden beweisbar ist.
+\item Sie enthält \emph{keinen Fehler-Nachweis}. Eine Ledger-Zeile mit dem
+  Verdikt \glqq liefert nicht\grqq{} hält fest, dass eine benannte Pflicht \emph{im
+  geprüften Wortlaut} nicht eingelöst wird. Das ist eine Aussage über die Form
+  eines Zertifikats, nicht über die Wahrheit eines Satzes. \glqq Liefert nicht\grqq{} ist
+  nicht \glqq widerlegt\grqq.
+\item Sie \emph{verifiziert keine Schranke}. Keine Beweiszeile wurde
+  nachvollzogen, keine Abschätzung nachgerechnet, keine Konstante geprüft. Wo
+  berichtet wird, dass in einer Quelle gerechnet wird, ist das ein Befund
+  darüber, \emph{dass} und \emph{wo} gerechnet wird, keine Bestätigung, dass es
+  richtig ist.
+\item Sie ergreift in keinem bestehenden Streit über die geprüften Argumente
+  Partei. Bekannte Einwände gehen hier ausschließlich als Definition einer
+  Negativkontrolle ein, nie als Beleg.
+\item \textbf{Kein Autoritätsargument.} Weder die Selbstauskunft eines Autors,
+  ein Schritt genüge, noch die Auskunft eines Kritikers, er genüge nicht, zählt
+  hier als Beleg. In den geprüften Texten gefundene Selbsteinschätzungen sind
+  Prüfgegenstand, nicht Stütze.
+\item \textbf{Textbasis} sind \texttt{pdftotext}-Extrakte der Quell-PDFs. Alle
+  Zeilenangaben (\glqq Extrakt Z.~NNNN\grqq) sind Auffindhilfen in diese Extrakte und
+  \emph{keine} Seitenzählung der publizierten Dokumente. Anders als bei einer
+  rein prosabezogenen Prüfung hängt hier \emph{ein} Verdikt aus
+  Abschnitt~\ref{sec:caseA} an Symbolen, die bei der Extraktion verloren gingen;
+  die Rekonstruktion wird in Abschnitt~\ref{sec:reconstruction-A} offengelegt,
+  und die zugehörige Regel ist Bestandteil des Instruments
+  (Abschnitt~\ref{sec:reconstruction}).
+\item Die bibliographischen Einträge sind vorläufig und tragen ihre Provenienz;
+  drei von ihnen sind bewusst auf das Belegte reduziert. Siehe
+  Abschnitt~\ref{sec:limitations}, Punkt~\ref{lim:biblio}.
+\end{itemize}
+\medskip
+}}
+\end{center}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+% =============================================================================
+% ÄNDERUNGEN IN VERSION 0.2 -- bewusst unnummeriert: die Abschnittsnummerierung
+% der veröffentlichten Version 0.1 darf sich nicht verschieben.
+% =============================================================================
+\phantomsection
+\section*{Änderungen in Version 0.3}
+\addcontentsline{toc}{section}{Änderungen in Version 0.3}
+\label{sec:changes03}
+
+Diese Korrekturversion trennt das prospektive Rezept von den historischen
+Teilanwendungen, korrigiert den Fall-C-Verweis der Synopse auf ATS IV v2
+\S\,6.10/Theorem~6.10.1 und stellt die Originalnotation der LANA-Gleichung
+$\eta^q=\eta_S^{\mathrm{anab}}$ (9-1) wieder her.
+Der LANA-Abgleich ist eine vorgeschlagene Rollenzuordnung: Weder ein
+Volumenquotient noch die Gleichheit abstrakter Abbildungen beweist für sich
+die typisierte Halbgeradenbedingung des Zertifikats. Die erforderliche
+Objekt-, Auswertungs- und Schrankenbrücke bleibt offen.
+Die sieben Pflichten definieren den vorgeschlagenen Formvertrag; ihre
+universelle Notwendigkeit für jeden möglichen mathematischen Beweis ist
+nicht gezeigt. Fall D betrifft nachgelagerte Zhou-Importe, keine vollständige
+C7-Positivkontrolle oder nachgewiesene zyklische Abhängigkeit. Fall C beweist
+keinen mathematischen Widerspruch in ATS.
+Die schon vorbereiteten nummerierten Tabellen mit Beschriftungen und zwei
+Synopsen bleiben erhalten. Englischer und deutscher Text enthalten dieselben
+Korrekturen. Kein neues mathematisches Resultat und keine unabhängige
+Methodenvalidierung werden beansprucht.
+
+\medskip
+
+\section*{Änderungen in Version 0.2}
+\addcontentsline{toc}{section}{Änderungen in Version 0.2}
+\label{sec:changes02}
+
+Version 0.1 dieser Arbeit erschien, bevor das Methodenpapier der
+Serie~\cite{GeigerBCM2026} fertiggestellt war. Jenes Papier hat die sechste
+Vertragskomponente gehärtet: Eine gemeinsame numerische Auswertung im Container
+löst sie nicht mehr für sich allein ein; die Kompatibilitätsidentitäten, die die
+Behauptung braucht --- insbesondere $\nu_C \circ i_q = \nu_q$ auf dem
+ausgewiesenen Quellbereich ---, sind zwingend, und eine stipulierte Invarianz ist
+kein Beweis einer solchen Identität. Version 0.2 übernimmt diese Lesart, und mit
+ihr ändern sich zwei Verdikte, die Version 0.1 protokolliert hatte. Eine
+veröffentlichte Codierung darf nicht stillschweigend revidiert werden, deshalb
+werden beide hier benannt.
+
+\begin{itemize}
+\item \textbf{Fall~A, Pflicht~6: eingelöst $\rightarrow$ liefert nicht.} Version
+  0.1 protokollierte Pflicht~6 als \glqq über ihre erste Alternative\grqq{} eingelöst, weil
+  eine numerische Auswertung im Container existiert, und hielt fest, \glqq die
+  Fehlstelle sitzt bei Pflicht~7, nicht bei Pflicht~6\grqq. Unter der
+  Kompatibilitätslesart ergibt dieselbe Evidenz die umgekehrte Codierung --- und
+  die Evidenz stammt aus der Arbeit selbst: Der Block \glqq gesucht, nicht gefunden\grqq
+  in Abschnitt~\ref{sec:caseA} hielt bereits fest, dass die Identität
+  $\nu_C \circ i_q = \nu_q$ über die Container-Identifikation hinweg nicht im
+  Text steht und dass das eine vorhandene Kompatibilitätslemma auf einer anderen
+  Achse liegt. Für diese Änderung wurde keine Quelle neu geprüft und keine neue
+  Evidenz erhoben; geändert hat sich die Regel, gegen die die vorhandene Evidenz
+  gelesen wird.
+\item \textbf{Fall~C, Pflicht~6: eingelöst $\rightarrow$ teilweise.} Version 0.1
+  protokollierte Pflicht~6 als eingelöst, wieder über die erste Alternative. Die
+  Auswertung dort ist tatsächlich numerisch, aber die Kompatibilität hält nur
+  zwischen den Summen und wird stellenweise von der Quelle selbst dementiert ---
+  in einer Passage, die Version 0.1 einen Absatz weiter bereits zitierte.
+\end{itemize}
+
+Drei Folgen werden im Text mitgeführt statt auf diese Notiz beschränkt: Pflicht~6
+erhält eine eigene Ledger-Zeile (der Split R6a\,/\,R6b in
+Abschnitt~\ref{sec:splits}); das Anwendungsrezept in Abschnitt~\ref{sec:recipe}
+wird in Schritt~4 korrigiert, damit eine Nachnutzung nicht die abgelöste Lesart
+reproduziert; und die zusammenfassenden Aussagen, die den Fall-A-Befund mit einer
+eingelösten Pflicht~6 flankierten --- in der Ergebnistabelle, in der Rollentabelle
+von Abschnitt~\ref{sec:convergence} und im Schluss ---, werden nachgezogen.
+
+\paragraph{Was sich nicht geändert hat.} Der zentrale Befund bleibt unberührt:
+Pflicht~7 ist am geprüften Substep nicht eingelöst, und die Membership soll
+\glqq formal\grqq{} aus einem Eigenschaftspaar folgen. Das Abstract von Version 0.1 trug den
+Pflicht-6-Anspruch nicht und bleibt der Sache nach unverändert. Die Fälle~B
+und~D behalten ihre Verdikte, und kein Fall wurde neu auditiert.
+
+\paragraph{Die übrigen Änderungen sind terminologisch} und gleichen diese Arbeit
+an das fertiggestellte Methodenpapier an. Das Instrument erhält ein
+Versionsetikett, und seine präfixlosen Zeilenlabels werden eingeordnet
+(Abschnitt~\ref{sec:ledger}). Zeile R8 wird als getriggerte Erweiterung statt als
+Kernzeile ausgewiesen, was den Nenner korrigiert, ohne ihre Codierung zu ändern.
+Und Fall~C wird von \glqq Vergleichskontrolle\grqq{} in \emph{vergleichende
+Diskriminierungsanwendung} umbenannt, den Begriff von Teil~2 --- eine reine
+Umbenennung, denn diese Arbeit hielt bereits fest, dass eine echte
+Positivkontrolle nicht unter den geprüften Fällen war.
+
+\clearpage
+
+% =============================================================================
+\section{Einleitung}
+\label{sec:intro}
+% =============================================================================
+
+\subsection{Eine Meinungsverschiedenheit, die gewöhnliche Begutachtung nicht auflöst}
+
+Es gibt eine Klasse mathematischer Meinungsverschiedenheiten, bei der der übliche
+Reparaturmechanismus versagt. Es ist nicht so, dass eine Seite sich verrechnet
+hätte und die andere den Fehler fände. Es ist nicht so, dass ein Lemma falsch
+wäre und ein Gegenbeispiel die Sache entschiede. Es ist so, dass eine Textpassage
+von ihrem Autor als Argument und von einem Leser als Umformulierung gelesen wird
+und dass beide Lesarten den Kontakt mit den Formeln überstehen --- weil die
+Formeln nicht strittig sind.
+
+Die Passage im Zentrum dieser Arbeit hat diesen Charakter. Im dritten Band der
+interuniversellen Teichmüller-Theorie erreicht der Beweis eines Korollars einen
+Punkt, an dem zwei Größen --- ein numerischer Readout an einem Objekt und eine
+durch ein zweites Objekt bestimmte reelle Halbgerade --- in eine einzige
+Auswertung gebracht werden, und dann wird die Enthaltensein-Beziehung der ersten
+in der zweiten behauptet. Um diese Enthaltensein-Beziehung herum ist eine ganze
+arithmetische Konsequenz organisiert. Ob die Passage sie herstellt oder
+voraussetzt, wird seit Jahren ohne Konvergenz diskutiert.
+
+Gewöhnliche Begutachtungsprosa ist hier aus strukturellen Gründen ein schlechtes
+Instrument. Sie beantwortet die Frage \glqq ist das korrekt?\grqq. Wenn der Streit darum
+geht, ob eine gegebene Satzfolge überhaupt eine Ableitung ist, hat diese Frage
+keine stabile Bedeutung: Jede Seite beantwortet sie über einen anderen
+Gegenstand. Schlimmer noch, Prosabegutachtung erlaubt --- ja lädt dazu ein --- einen
+Zug, der den Streit prinzipiell unauflösbar macht, nämlich den Rückgriff auf
+Autorität. \glqq Der Autor sagt, die Konstruktion genüge\grqq{} und \glqq die Kritiker sagen, sie
+genüge nicht\grqq{} sind beides Aussagen über Personen. Sobald sie eintreten, ist der
+Text nicht mehr der Gegenstand.
+
+\subsection{Was ein Prüfinstrument stattdessen leistet}
+
+Die hier verfolgte Alternative besteht darin, nicht mehr zu fragen, ob das
+Argument korrekt ist, sondern eine Frage zu stellen, die ein Text aus sich heraus
+beantworten kann: \emph{Welche Pflichten muss eine Passage dieser Art einlösen,
+und welche davon löst dieser konkrete Wortlaut ein?}
+
+Diese Umformulierung erkauft vier Dinge.
+
+\begin{enumerate}
+\item \textbf{Sie ist am Text entscheidbar.} Ob ein Dokument ein Lemma enthält,
+  das eine bestimmte Implikation behauptet, ist eine Frage über das Dokument.
+  Zwei sorgfältige Leser können darüber streiten, ob ein Beweis überzeugt; sie
+  werden selten darüber streiten, ob ein Satz vorhanden ist.
+\item \textbf{Sie lokalisiert.} Ein Verdikt hängt an einer nummerierten Pflicht
+  und über sie an einem Zeilenbereich eines bestimmten Textes. Aus \glqq das Argument
+  hat eine Lücke\grqq{} wird \glqq Pflicht~7 ist an dieser Passage nicht eingelöst, und hier
+  ist der Satz, der an ihrer Stelle steht\grqq.
+\item \textbf{Sie ist symmetrisch.} Dasselbe Instrument wird unverändert auf
+  einen Vorschlag und auf seinen Konkurrenten angewandt. Eine Methode, die für
+  einen Text \glqq fällt durch\grqq{} liefert und für einen anderen kein Verfahren hat, ist
+  kein Instrument, sondern ein Urteil auf der Suche nach einem Gegenstand.
+\item \textbf{Sie begrenzt ihre eigenen Behauptungen.} Weil die Frage die Form
+  betrifft, kann die Antwort nicht stillschweigend zu einer Aussage über Wahrheit
+  anwachsen. Eine nicht eingelöste Pflicht ist ein fehlender
+  Zertifikatsbestandteil, keine Widerlegung --- und das Instrument ist so gebaut,
+  dass diese Unterscheidung in der Berichterstattung nicht verlorengehen kann.
+\end{enumerate}
+
+Der Preis ist ebenso klar und wird hier einmal genannt, weil alles in dieser
+Arbeit ihn erbt: Ein Instrument dieser Art kann niemals feststellen, dass ein
+Argument stichhaltig ist. Alle Pflichten können eingelöst sein und das Argument
+kann dennoch aus einem Grund falsch sein, nach dem das Instrument nicht sucht. Es
+kann nur feststellen, dass eine bestimmte, benannte Anforderung von einem
+bestimmten, zitierten Wortlaut erfüllt wird oder nicht.
+
+\subsection{Das Instrument in einem Absatz}
+
+Ein \emph{Brücken-Zertifikat}, geschrieben $\Brxi$, ist eine Liste von sieben
+Pflichten, die an einen Argumentationsschritt bestimmter Gestalt geknüpft sind:
+an einen Schritt, der einen numerischen Readout aus einer Konstruktion
+heraus\-trägt, in einen mit einer zweiten Konstruktion geteilten Container hinein,
+und dann am Ergebnis eine Ordnungsrelation abliest. Die Pflichten verlangen im
+Umriss, dass beide Seiten explizite numerische Readouts tragen, dass der geteilte
+Container mit typisierten Einbettungen kommt, dass die Identifikation zwischen
+den Seiten eine erlaubte Identifikation und nicht eine Namensgleichheit ist, dass
+das Indeterminacy-Budget in absorbierte und nichtabsorbierte Anteile zerlegt ist,
+dass eine numerische Auswertung im Container existiert, und --- als letzte und
+entscheidende --- dass die Ordnungsrelation aus der erlaubten Identifikation
+\emph{abgeleitet} und nicht neben ihr behauptet wird. Operationalisiert sind die
+Pflichten als Ledger aus neun Zeilen, jede eine Frage mit protokollierter
+Erwartung und protokolliertem Risiko, gegen einen Primärtext zu füllen. Um das
+Ledger herum liegen fünf Disziplinen, die seine Befunde nachprüfbar machen: ein
+Verdikt-Vokabular, das Form von Wahrheit trennt, eine Typologie, die Lücken
+klassifiziert statt sie zu graduieren, ein Import-Ledger für jeden Rückgriff auf
+Standardliteratur, eine Regel für die Berichterstattung über vergeblich Gesuchtes
+und eine Regel für die Offenlegung von Rekonstruktionen bei unvollkommener
+Textbasis. Abschnitt~\ref{sec:instrument} führt all das aus.
+
+\subsection{Quellen, Kürzel und Ankerkonvention}
+\label{sec:sources}
+
+Sieben Dokumente werden verwendet, in Gestalt von Textextrakten ihrer PDFs: sechs
+tragen die vier Anwendungen, das siebte ist der in Abschnitt~\ref{sec:convergence}
+geprüfte Zwischenbericht. Die Kürzel der linken Spalte gelten durchgehend; jede
+Quellenangabe dieser Arbeit trägt eines, weil die Extrakte unabhängig
+durchnummeriert sind und eine bloße Zeilennummer mehrdeutig wäre (siehe Tabelle~\ref{tab:primary_sources}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Kürzel & Quelle & Rolle in dieser Arbeit \\
+\midrule
+IUT-III & \cite{Mochizuki2021c} & Fall A: das Korollar und sein Beweis \\
+IUT-IV & \cite{Mochizuki2021d} & Fall B: der deklarierte Quantifizierungsort \\
+ATS-III & \cite{JoshiATSIII} & Fall C: Konstruktion und Volumentheorie \\
+ATS-IV & \cite{JoshiATSIV} & Fall C: der $abc$-Schluss und seine Brücke \\
+Zhou-I & \cite{ZhouI} & Fall D: erste nachgelagerte Anwendung \\
+Zhou-II & \cite{ZhouII} & Fall D: zweite nachgelagerte Anwendung \\
+LANA & \cite{LANA2026} & Abschnitt~\ref{sec:convergence}: unabhängige Formalisierung \\
+\bottomrule
+\end{tabular}
+\caption{Primärquellen-Korpus und methodische Rollen in den vier Fall-Auditierungen.}
+\label{tab:primary_sources}
+\end{table}
+
+Zitate stehen wörtlich so in den Extrakten; mathematische Symbole sind gesetzt,
+Auslassungen sind markiert, und jede Rekonstruktion eines bei der Extraktion
+verlorenen Symbols wird an Ort und Stelle offengelegt. Hervorhebungen innerhalb
+von Zitaten stammen von uns, sofern nicht anders vermerkt.
+
+\paragraph{Zitatsprache.} Die Zitate bleiben im englischen Originalwortlaut. Das
+ist kein Versäumnis der Übersetzung, sondern eine Konsequenz des Gegenstands: Der
+Wortlaut \emph{ist} hier die Evidenz. Ob ein Text \glqq follows formally\grqq{} schreibt oder
+einen Satz beweist, ist genau die Frage; eine Übersetzung dieser Stellen würde
+den Befund durch seine Wiedergabe ersetzen. Die Einordnung jedes Zitats steht
+deutsch daneben.
+
+\subsection{Aufbau}
+
+Abschnitt~\ref{sec:instrument} führt das Instrument vollständig aus --- alle sieben
+Pflichten und alle neun Zeilen --- und Abschnitt~\ref{sec:recipe} gibt das
+Anwendungsrezept an, damit es gegen ein anderes Transportargument als die hier
+geprüften vier ausgeführt werden kann. Die Abschnitte~\ref{sec:caseA}--\ref{sec:caseD} berichten die vier
+Anwendungen. Abschnitt~\ref{sec:convergence} sagt, was sie gemeinsam zeigen --- und
+ebenso ausführlich, was nicht. Abschnitt~\ref{sec:limitations} listet die
+Einschränkungen, Abschnitt~\ref{sec:conclusion} schließt ab.
+
+\paragraph{Ort in der Serie.} Dies ist Teil~3 der \emph{abc}-Gap-Serie. Teil~1 ist
+die veröffentlichte forensische Untersuchung derselben Passage~\cite{GeigerGap2026},
+auf der Abschnitt~\ref{sec:caseA} aufbaut und von der er dort abgegrenzt wird. Das
+hier ausgeführte Zertifikat ist eine Instanz einer breiteren Tor-Methodik --- die
+Instanz für numerische Membership ---, und diese breitere Methodik ist inzwischen
+als Teil~2 der Serie~\cite{GeigerBCM2026} erschienen. Version 0.1 dieser Arbeit
+setzte nichts daraus voraus, weil es sie noch nicht gab. Diese Version übernimmt
+eine Sache daraus und sagt, welche: die gehärtete Lesart von Pflicht~6
+(Abschnitt~\ref{sec:obligations}), derentwegen zwei Verdikte der ersten Version
+hier umcodiert werden --- siehe \glqq Änderungen in Version 0.2\grqq{} oben.
+Was diese Arbeit beiträgt, ist die Instanz und die vier unten berichteten
+Anwendungen, und diese füllen das Ledger nur zum Teil: Fall~A berichtet vier
+seiner neun Zeilen, wie die Abschnitte~\ref{sec:caseA} und~\ref{sec:convergence}
+festhalten.
+
+% =============================================================================
+\section{Das Brücken-Zertifikat}
+\label{sec:instrument}
+% =============================================================================
+
+\subsection{Die Frage}
+
+Das Instrument betrifft Schritte folgender Gestalt. Zwei Konstruktionen erzeugen
+zwei Objekte. Das erste trägt einen numerischen Readout $\nu_q$ --- in den unten
+behandelten Fällen ein normiertes logarithmisches Volumen. Das zweite bestimmt
+eine Zielmenge, in den unten behandelten Fällen eine abgeschlossene reelle
+Halbgerade $H_\Theta$. Die beiden Objekte werden dann in einem gemeinsamen
+Container vorgeführt, verbunden durch Daten, die wechselweise als Verknüpfung,
+Identifikation, Transport oder Korrespondenz beschrieben werden, und eine Aussage
+der Form
+\[
+  \nu_q(\text{erstes Objekt}) \in H_\Theta
+\]
+wird getroffen. Aus dieser Membership folgt unmittelbar eine Ungleichung, und
+diese Ungleichung ist der Zweck der ganzen Konstruktion.
+
+Die Frage des Zertifikats lautet:
+
+\begin{quote}
+Wann darf ein qualitatives Paket --- zwei Objekte, gemeinsame Labels, ein
+algorithmischer Transport, ein gemeinsamer Container --- als numerische
+Membership-Aussage in einer konkreten reellen Halbgeraden gelesen werden?
+\end{quote}
+
+Das ist bewusst enger als \glqq ist das Argument korrekt?\grqq{} und bewusst weiter als \glqq ist
+diese Formel richtig?\grqq. Es ist die Frage, um die der Streit tatsächlich geht.
+
+\subsection{Die sieben Pflichten}
+\label{sec:obligations}
+
+In der vorgeschlagenen Spezifikation enthält ein zulässiges Zertifikat $\Brxi$
+mindestens Folgendes. Dies sind Pflichten des gewählten Formvertrags, keine
+bewiesenen notwendigen Bedingungen für jeden möglichen mathematischen Beweis.
+
+\begin{obligation}[$q$-seitiges Objekt mit Readout]
+Ein Objekt $\mathrm{Obj}_q$ samt konkretem logvolumetrischem Readout $\nu_q$.
+\end{obligation}
+
+\begin{obligation}[$\Theta$-seitiges Objekt mit Ziel]
+Ein Objekt $\mathrm{Obj}_\Theta$ samt Zielhalbgerade
+$H_\Theta = \mathbb{R}_{\le -|\log(\Theta)|}$.
+\end{obligation}
+
+\begin{obligation}[Gemeinsamer Container mit typisierten Einbettungen]
+Ein Container $C$ samt explizit typisierten Einbettungen $i_q$, $i_\Theta$.
+\end{obligation}
+
+\begin{obligation}[Linkage-Daten]
+Label- und Linkage-Daten $L$, die nicht bloß angeben, dass beide Seiten dieselben
+Namen tragen, sondern dass eine bestimmte Identifikation \emph{erlaubt} ist.
+\end{obligation}
+
+\begin{obligation}[Getrenntes Indeterminacy-Budget]
+Ein Indeterminacy-Budget $I$, getrennt nach absorbierbarer Renormierung,
+Blurring und nichtabsorbierter Restlast.
+\end{obligation}
+
+\begin{obligation}[Kompatible Auswertung im Container]
+\label{obl:six}
+Eine numerische Auswertung $\nu_C$ im Container \emph{zusammen mit} den
+Kompatibilitätsidentitäten, die die Behauptung braucht --- insbesondere
+$\nu_C \circ i_q = \nu_q$ auf dem ausgewiesenen Quellbereich. Diese
+Kompatibilitätsklauseln sind zwingend: Die bloße Existenz einer numerischen
+Abbildung auf $C$ löst diese Pflicht nie ein, und eine stipulierte Invarianz gilt
+nicht als Beweis einer Kompatibilität.
+\end{obligation}
+
+\begin{obligation}[Ordnungskompatibilität]
+\label{obl:seven}
+Die Implikation selbst: Aus der erlaubten Linkage \emph{folgt}
+$\nu_q(\mathrm{Obj}_q) \in H_\Theta$.
+\end{obligation}
+
+Die Last des Zertifikats sitzt fast vollständig in den beiden letzten Pflichten,
+und ihre Unterscheidung ist das Nützlichste, was das Instrument liefert. Pflicht~6
+fragt, ob die beiden Seiten durch eine ausgewiesene Kompatibilität auf eine Skala
+gebracht sind --- nicht bloß, ob sie in einem Container untergebracht sind.
+Pflicht~7 fragt, ob die Ordnungsrelation zwischen den beiden Auswertungen
+abgeleitet ist. Die beiden können getrennt und aus verschiedenen Gründen
+ausfallen, und sie auseinanderzuhalten ist das, was einen diffusen Verdacht in
+zwei benennbare fehlende Aussagen verwandelt. Ohne die Pflichten~6 und~7 ist
+Kohabitation in einem gemeinsamen Container qualitative Nähe, nicht die
+numerische Aussage, die das Argument braucht.
+
+\paragraph{Herkunft des Wortlauts der sechsten Pflicht.} Version 0.1 dieser
+Arbeit formulierte Pflicht~6 disjunktiv: eine numerische Auswertung im Container
+\emph{oder} eine beweisbare Kompatibilität. Die konjunktive Fassung oben ist dem
+Methodenpapier der Serie~\cite{GeigerBCM2026} entnommen, in dem die entsprechende
+Vertragskomponente nach dem Erscheinen dieser Arbeit gehärtet wurde. Die Änderung
+ist nicht kosmetisch --- sie ist der Grund, weshalb hier zwei Verdikte aus
+Version 0.1 umcodiert werden (\glqq Änderungen in Version 0.2\grqq) --- und sie löst eine
+Spannung auf, die diese Arbeit von Anfang an trug: Das Arbeitslemma weiter unten
+verlangte bereits einen \glqq labelkompatiblen, skalenerhaltenden\grqq{} Auswertungsvertrag,
+also mehr, als die disjunktive Fassung von Pflicht~6 forderte.
+
+\paragraph{Wann eine Pflicht als eingelöst gilt.} Weil die Pflichten von
+verschiedener Art sind, ist auch die Evidenz verschieden, die sie einlöst; das
+vorab zu sagen, hält die Codierung symmetrisch statt bequem. Die Pflichten~1--5
+können durch eine ausdrückliche Festlegung eingelöst werden: eine Definition, eine
+deklarierte Eigenschaft, eine fixierte Konvention. Pflicht~6 verlangt mehr als ein
+gemeinsames Symbol und mehr als einen gemeinsamen Container: eine prüfbare
+Zuordnung beider Seiten zu einer Auswertung \emph{und} die
+Kompatibilitätsidentitäten, die diese Auswertung an die Readouts binden, die sie
+darstellen soll. Dass beide Seiten reelle Zahlen sind, gehört nicht dazu, und
+eine stipulierte Invarianz ebenso wenig. Pflicht~7 wird nur dort
+als eingelöst protokolliert, wo der Text eine getrennt identifizierbare Herleitung,
+ein benanntes Lemma oder ein ausdrücklich delegiertes Resultat enthält, das die
+Ordnungsrelation aus der erlaubten Identifikation gewinnt.
+
+Die negative Form dieser letzten Regel bindet diese Arbeit am stärksten, und sie
+ist bewusst schwach: Ein solches Element unter dem berichteten Quellenumfang und
+den berichteten Suchbegriffen nicht zu finden, ist ein \emph{dokumentarischer
+Nichtbefund}. Es ist kein Nachweis, dass keine Herleitung existiert, und kein
+Urteil darüber, ob die deklarierten Eigenschaften ausreichten, wenn die Herleitung
+ausgeschrieben wäre. Diese zweite Frage ist mathematisch, und
+Abschnitt~\ref{sec:cannot} hält fest, dass das Instrument sie nicht entscheidet. Tabelle~\ref{tab:obligations_taxonomy} bietet eine synoptische Taxonomie der sieben formalen Pflichten sowie der getriggerten Erweiterung, einschließlich ihrer mathematischen Objekte, operativen Anforderungen, zugeordneten Ledger-Zeilen und primären Fehlerrisiken.
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}lP{0.22\textwidth}P{0.25\textwidth}lP{0.22\textwidth}@{}}
+\toprule
+Pflicht & Mathematisches Objekt & Operative Anforderung & Zeile & Primäres Fehlerrisiko \\
+\midrule
+1 ($q$-Readout) & $(\mathrm{Obj}_q, \nu_q)$ & Expliziter log-volumetrischer Readout & R0, R2 & Skalenverlust / implizite Typisierung \\
+2 ($\Theta$-Ziel) & $(\mathrm{Obj}_\Theta, H_\Theta)$ & Abgeschlossene Ziel-Halbgerade $H_\Theta \subset \mathbb{R}$ & R0, R3 & Nachträgliche Zielverschiebung \\
+3 (Container) & $(C, i_q, i_\Theta)$ & Gemeinsamer Container mit Einbettungen & R1 & Fehlende Kohabitation \\
+4 (Koppelung) & $L \subset \mathrm{Obj}_q \times \mathrm{Obj}_\Theta$ & Zulässige Identifikation (Protokoll) & R4 & Namenskoinzidenz ohne Erlaubnis \\
+5 (Budget) & $I = (I_{\mathrm{abs}}, I_{\mathrm{res}})$ & Zerlegung in absorbierte/unabsorbierte Last & R5 & Verdeckter Zweitmodus \\
+6 (Auswertung) & $(\nu_C, \nu_C \circ i_q = \nu_q)$ & Containermetrik mit zwingender Identität & R6a & Skalenloser Container / Identitätslücke \\
+7 (Ordnung) & $\nu_q(\mathrm{Obj}_q) \in H_\Theta$ & Abgeleitete Ungleichungsimplikation & R6b & Behauptete Inklusion / Nicht-Ableitung \\
+\midrule
+Erw.~E8 & Modus-Zweig $M_2$ & Getriggerter sekundärer Auswertungskanal & E8 & Unausgewiesene Zweigwahl \\
+\bottomrule
+\end{tabular}
+\caption{Taxonomie der sieben Brückenzertifikats-Pflichten, formalen Signaturen und Prüfkriterien.}
+\label{tab:obligations_taxonomy}
+\end{table}
+
+\subsection{Das Ledger}
+\label{sec:ledger}
+
+Die Pflichten sind als neun Zeilen operationalisiert. Jede Zeile ist eine Frage
+an den Wortlaut eines Primärtextes; jede trägt eine protokollierte Erwartung, die
+\emph{vor} jeder Textprüfung festgelegt wurde, und ein protokolliertes Risiko ---
+den Fehlermodus, dessentwegen die Zeile existiert. Die Erwartung vorab
+festzuhalten ist keine Dekoration: Sie erlaubt einem späteren Leser zu sehen,
+welche Befunde eine vorgängige Überzeugung bestätigt und welche ihr widersprochen
+haben. Die Datierung gehört zur Behauptung und wird deshalb genannt: Die Pflichten,
+die Zeilen und ihre Erwartungen wurden im Mai~2026 aufgeschrieben; die vier unten
+berichteten Anwendungen wurden im August~2026 durchgeführt (Tabelle~\ref{tab:bc_ledger_rows}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.38\textwidth}P{0.17\textwidth}P{0.28\textwidth}@{}}
+\toprule
+Zeile & Test & Vorab-Erwartung & Risiko, das die Zeile abfängt \\
+\midrule
+R0 & Sind die beiden Linien getrennt typisiert? & ja & Scheingleichheit \\
+R1 & Ist ein gemeinsamer Container vorhanden? & ja & Container ersetzt keine Skala \\
+R2 & Bleibt der numerische Readout auf der $q$-Seite erhalten? & offen & Readout verliert seine Objektidentität \\
+R3 & Steht die Zielhalbgerade auf der $\Theta$-Seite fest? & ja & Halbgerade wird nachträglich verschoben \\
+R4 & Wird die $j^2$-Last adressiert? & offen & unverbuchte $O(\ell^2)$-Restlast \\
+R5 & Ist das Indeterminacy-Budget getrennt? & teilweise & Blurring versteckt einen zweiten Modus \\
+R6 & Wird Ordnungserhaltung bewiesen? & offen & qualitative Linkage reicht nicht \\
+R7 & Ist Approximation schwächer als Membership? & bei geschlossener Halbgerade wahrscheinlich nein & Scheinausweg \\
+R8 & Ist ein zweiter Modus sichtbar oder ausgeschlossen? & offen & der Kern der Frage \\
+\bottomrule
+\end{tabular}
+\caption{BC-Ledger v0: Neun Prüfzeilen mit operativen Testfragen, Vorab-Erwartungen und erfassten Fehlerrisiken.}
+\label{tab:bc_ledger_rows}
+\end{table}
+
+Drei Hinweise zum Lesen dieser Tabelle. Erstens heißt \glqq offen\grqq{} in der
+Erwartungsspalte, dass keine Erwartung festgelegt wurde, nicht dass eine negative
+Antwort erwartet wurde. Zweitens sind die Zeilen nicht gleichgewichtig. So wie sie
+formuliert ist, benennt R6 nur die Ordnungsfrage, trägt aber tatsächlich die
+Pflichten~6 und~7 zugleich --- eine Vermengung, die der Split in
+Abschnitt~\ref{sec:splits} auflöst und die zu benennen sich lohnt: Solange eine
+Zeile für die Ordnungsfrage existiert und keine für die Kompatibilitätsfrage,
+wird die zweite im Fließtext statt am Ledger beurteilt. R6 ist die Zeile, an der
+das Instrument informativ sein soll; R0, R1 und R3 sind Hygienezeilen, deren
+Hauptfunktion darin besteht, einen negativen Befund bei R6 interpretierbar statt
+generisch zu machen.
+
+Drittens ist die letzte Zeile keine Kernzeile, und sie als solche zu lesen
+verzerrt den Nenner. R8 fragt nach einem zweiten Auswertungsmodus, und das ist
+ein Merkmal des Gegenstandsmodells, nicht des Vertrags: Sie bildet auf keine
+Pflicht ab; sie ist nur dort aktiv, wo der Gegenstandsbereich der Behauptung
+tatsächlich mehrere Modi, Zweige oder Normierungen anbietet; und wo dieser
+Auslöser fehlt, ist sie außerhalb des Geltungsbereichs statt negativ. Das
+Nachfolgeinstrument führt sie deshalb außerhalb des Pflichten-Crosswalks, als
+getriggerte Erweiterung~E8, und berichtet einen Befund an diesem Label und nie an
+einer Vertragskomponente~\cite{GeigerBCM2026}. An der unten protokollierten
+Codierung ändert sich nichts; es ändert sich ihr Status --- und dass eine
+Vollständigkeitsaussage die acht Kernzeilen R0--R7 meint.
+
+\paragraph{Versionsetikett und Zeilen-Namespace.} Das hier ausgeführte Ledger ist
+das im Mai~2026 fixierte Zertifikats-Ledger. Seine Zeilen sind präfixlos, was
+harmlos war, solange es das einzige Ledger der Serie war, und nicht mehr harmlos
+ist: Das Nachfolgeinstrument~\cite{GeigerBCM2026} versieht seine Zeilen mit einem
+Versionspräfix (v1-T für das Transport-Ledger, v1-F für das vollständige), und
+gleiche Ziffernsuffixe über Instrumente hinweg bedeuten \emph{nicht} gleiche
+Semantik --- das R8 dieser Arbeit ist die Zweitmodus-Zeile, während die Zeile mit
+derselben Nummer im Transportinstrument eine andere Frage stellt. Jedes präfixlose
+Zeilenlabel im Folgenden ist ein Label des Ledgers dieser Arbeit, und die
+Entsprechung zu den Nachfolgezeilen ist ein Crosswalk, keine Identität. Wo ein
+Versionsetikett gebraucht wird, weist diese Version dem Ledger den Namen
+\textbf{BC-Ledger~v0} zu; das Etikett wird hier eingeführt und stammt nicht aus
+dem Serienregister, das für dieses Ledger bislang keines führt.
+
+\subsection{Verfeinerungen aus dem Gebrauch}
+\label{sec:splits}
+
+Drei Zeilen erwiesen sich als Vermischungen verschiedener Fragen, und das
+Instrument wurde entsprechend geschärft. Die ersten beiden Verfeinerungen sind
+\emph{Ergebnisse der Anwendungen} und waren nicht Bestandteil des fixierten
+Zertifikats; die dritte folgt aus der oben ausgeführten gehärteten Lesart von
+Pflicht~6. Keine der drei ist noch bloße Empfehlung: Im Nachfolgeinstrument sind
+alle drei normativ~\cite{GeigerBCM2026}. Die Fallberichte der
+Abschnitte~\ref{sec:caseA}--\ref{sec:caseD} bleiben überall dort bei den
+\emph{ursprünglichen} Zeilen, wo der Split am Befund nichts ändert, und berichten in der Regel
+am Split, wo er etwas ändert --- Fall~B an R4a und R4b, Fall~A an R6a und R6b.
+Auch die Befunde von Fall~C trennen sich an den beiden Hälften; sein Bericht
+behält die zusammengelegte Zeile der Version 0.1 bei, die Trennung wird im
+Fließtext von Abschnitt~\ref{sec:caseC} geführt.
+
+\paragraph{R2a / R2b.} Zeile R2 mischt zwei Transporte. \emph{R2a} fragt, ob der
+Readout den Transport \emph{innerhalb} eines Containers übersteht --- entlang des
+Links, den die Konstruktion selbst bereitstellt. \emph{R2b} fragt, ob er den
+Übergang \emph{zwischen} Containern übersteht. Nur R2b ist die eigentliche
+Brückenfrage. Die Unterscheidung wurde durch die vergleichende
+Diskriminierungsanwendung in
+Abschnitt~\ref{sec:caseC} erzwungen, wo die beiden Transporte sichtbar
+verschiedener Art sind, und durch Abschnitt~\ref{sec:caseA} bestätigt, wo R2b mit
+R6 zusammenfällt, weil die Identifikation der Container \emph{der} Brückenschritt
+ist.
+
+\paragraph{R4a / R4b.} Zeile R4 mischt den Ort, an dem eine Last beziffert wird,
+mit dem Ort, an dem sie gegen die Brücke verbucht wird. \emph{R4a} fragt, ob die
+Last in der Auswertung der $\Theta$-Seite überhaupt beziffert wird. \emph{R4b}
+fragt, ob sie an der Brückenstelle selbst verbucht wird. Die Unterscheidung wurde
+durch Abschnitt~\ref{sec:caseB} erzwungen: R4a ist mit ja zu beantworten und R4b
+mit nein, und ein einziges Wort für beides verdeckt zwei verschiedene Befunde.
+
+\paragraph{R6a / R6b.} Zeile R6 mischt die beiden tragenden Pflichten unter einer
+Frage, die nur eine von beiden benennt. \emph{R6a} fragt nach Pflicht~6: Ist die
+gemeinsame Auswertung von den Kompatibilitätsidentitäten begleitet, die sie an die
+beiden Readouts binden? \emph{R6b} fragt nach Pflicht~7: Ist die Ordnungsrelation
+aus der erlaubten Identifikation abgeleitet? Dieser Split ist nicht durch die
+Anwendungen entstanden, sondern durch die gehärtete Lesart von Pflicht~6
+(Abschnitt~\ref{sec:obligations}). Sobald eine gemeinsame Auswertung die sechste
+Pflicht nicht mehr für sich allein einlöst, kann eine einzige Zeile nicht beide
+Verdikte tragen --- Abschnitt~\ref{sec:caseC} gibt an den beiden Hälften
+verschiedene Antworten zurück, und Abschnitt~\ref{sec:caseA} gibt dieselbe
+Antwort aus zwei verschiedenen Gründen; in beiden Konstellationen hätte
+eine einzige zusammengelegte Zeile die Struktur verdeckt.
+
+Eine weitere Verfeinerung wird als offener Punkt vermerkt statt übernommen:
+Pflicht~3 (Container-Typisierung) geht bislang nur über R1 ins Ledger ein, und R1
+fragt, ob ein Container \emph{vorhanden} ist. Sowohl
+Abschnitt~\ref{sec:caseA} als auch Abschnitt~\ref{sec:caseC} legen nahe, dass die
+interessante Frage lautet, ob die Typisierung \emph{bis zum Schluss durchgehalten}
+wird --- eine andere Frage, die eine eigene Zeile verdient.
+
+\subsection{Verdikte und Konfidenz}
+
+Eine Zeile erhält eines von drei Verdikten, und das Vokabular ist festgelegt, weil
+lockere Verdiktsprache der Weg ist, auf dem Formbefunde zu Wahrheitsbehauptungen
+werden (siehe Tabelle~\ref{tab:verdict_taxonomy}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.70\textwidth}@{}}
+\toprule
+Verdikt & Bedeutung \\
+\midrule
+\textsc{liefert} & Die Pflicht wird vom geprüften Wortlaut eingelöst. \\
+\textsc{teilweise} & Ein Teil der Pflicht wird eingelöst und ein benannter Teil
+  nicht. Die Aufteilung ist zu nennen, nicht zu mitteln. \\
+\textsc{liefert nicht} & Die Pflicht wird vom geprüften Wortlaut nicht eingelöst.
+  Das ist \emph{keine} Behauptung, die Aussage sei falsch, und keine, sie könne
+  nicht anderswo eingelöst werden. \\
+\bottomrule
+\end{tabular}
+\caption{Verdikt-Vokabular für Zertifikats-Beurteilungen.}
+\label{tab:verdict_taxonomy}
+\end{table}
+
+Jedes Verdikt trägt eine Konfidenz, und die Konfidenz betrifft den
+\emph{Textbefund}, nicht die Mathematik: Hohe Konfidenz heißt, dass die Zitate
+eindeutig sind und dass kein Verdikt an einer zweifelhaften Lesart hängt. Ein
+Verdikt kann zugleich hochkonfident und in seiner Reichweite eng sein; wo das
+vorkommt, steht die Reichweitenbeschränkung neben dem Verdikt statt in ihm.
+
+Diese Stufen sind autorseitige Einschätzungen der Textlage --- Eindeutigkeit des
+Zitats, Genauigkeit des Ankers, Abdeckung der Suche und getragene
+Rekonstruktionslast. Sie sind keine kalibrierten Wahrscheinlichkeiten, und es gab
+keine unabhängige Zweitcodierung, also wird auch keine Übereinstimmung zwischen
+Codierenden berichtet. Sie sind als Aussage darüber zu lesen, wie fest der
+Wortlaut den Eintrag trägt, nicht als gemessene Zuverlässigkeit.
+
+\subsection{Lücken-Typologie}
+\label{sec:typology}
+
+Lücken werden typisiert, nicht graduiert. Graduierung (\glqq schwerwiegend\grqq,
+\glqq geringfügig\grqq) schmuggelt eine Bewertung ein, zu der das Instrument nicht befugt
+ist; Typisierung sagt, welche Art von Sache fehlt, was zugleich nützlicher und
+besser verteidigbar ist (Tabelle~\ref{tab:gap_taxonomy}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.76\textwidth}@{}}
+\toprule
+Typ & Beschreibung \\
+\midrule
+G & Ein fehlender oder nicht nachvollziehbarer Beweisschritt. \\
+Z & Ein Zitat trägt die behauptete Aussage nicht --- ein \emph{Import}-Fehler. \\
+D & Definitionsdrift: Ein Begriff wird anders benutzt, als er definiert wurde. \\
+N & Kein Fehler, aber eine beweisrelevante Unschärfe auf Konventions- oder
+  Notationsebene. \\
+\bottomrule
+\end{tabular}
+\caption{Typologie identifizierter Lücken und Textdefizite.}
+\label{tab:gap_taxonomy}
+\end{table}
+
+Die Typen kombinieren. Ein Schritt, dessen Reparatur sowohl ein fehlendes
+Argument als auch die Auflösung einer definitorischen Mehrdeutigkeit verlangt,
+wird als G+D erfasst, und beide Teile sind zu benennen.
+
+\subsection{Import-Ledger-Disziplin}
+\label{sec:importledger}
+
+Jeder Rückgriff auf Standardliteratur wird als \emph{Import} registriert, mit
+exakter Fundstelle in der publizierten Quelle. Die zugehörige Regel ist bewusst
+asymmetrisch:
+
+\begin{quote}
+Importe aus peer-reviewter Literatur gelten als vertrauenswürdig. Geprüft wird
+ihre \emph{Passung} --- ob die zitierte Aussage die Aussage ist, die das Argument
+braucht --- nicht ihr Beweis.
+\end{quote}
+
+Das ist der operative Gehalt des Z-Typs. Die Regel hält die Prüfung endlich: Ohne
+sie entartet jede Prüfung zu einer Prüfung der gesamten arithmetischen Geometrie.
+Sie hält die Prüfung auch in der Gegenrichtung ehrlich, denn ein Import, dessen
+Passung nicht geprüft wurde, muss als ungeprüft vermerkt und darf nicht
+übergangen werden.
+
+\subsection{Belegregeln}
+\label{sec:evidence}
+
+Vier Regeln bestimmen, was in eine Ledger-Zeile geschrieben werden darf.
+
+\paragraph{Kein Autoritätsargument.} Weder die Behauptung des geprüften Autors,
+ein Schritt genüge, noch die Behauptung eines Kritikers, er genüge nicht, ist
+Beleg. Das gilt in beide Richtungen und ist keine Höflichkeit: Die
+Selbsteinschätzung eines Autors ist Prüfgegenstand, und das Verdikt eines
+Kritikers ist für das Ledger nur die Definition dessen, wie eine Negativkontrolle
+aussähe.
+
+\paragraph{Wörtliches Zitat mit Anker.} Jeder Befund wird von einem zitierten
+Satz mit Zeilenanker in einen benannten Extrakt getragen. Ein Befund, der nicht
+zitiert werden kann, ist kein Befund.
+
+\paragraph{\glqq Gesucht, nicht gefunden\grqq.} Die Behauptung, etwas fehle in einem Text,
+wird zusammen mit den verwendeten Suchbegriffen und dem durchsuchten Bereich
+berichtet. Diese Regel macht negative Befunde falsifizierbar: Wer die Suche für
+zu eng hält, kann genau sehen, wie eng sie war, und sie wiederholen. Jeder
+Fallbericht, der auf einer Abwesenheitsbehauptung ruht, trägt einen solchen Block:
+Die Fälle~A, B und~D unten tun das. Fall~C behauptet keine Abwesenheit --- seine
+Befunde ruhen auf zitierten Passagen, die vorhanden sind --- und trägt deshalb
+keinen.
+
+\paragraph{Rekonstruktionsdisziplin.}
+\label{sec:reconstruction}
+Aus PDF extrahierter Text verliert Relationssymbole, griechische Buchstaben,
+Exponenten und Indizes. Wo ein lasttragender Satz betroffen ist, sind drei Dinge
+verlangt: Die Rekonstruktion muss ausdrücklich genannt, ihre Herleitung aus
+anderen Passagen desselben Dokuments angegeben und eine Gegenprobe an
+unabhängiger Stelle vorgeführt werden. Wo die naive Lesart einer beschädigten
+Zeile den Sinn umkehren würde, ist diese Zeile eigens zu markieren. Die Regel ist
+Bestandteil des Instruments, keine Entschuldigung dafür --- und sie ist hier
+relevant, weil in einer der vier Anwendungen ein Verdikt tatsächlich an einer
+solchen Rekonstruktion hängt (Abschnitt~\ref{sec:reconstruction-A}).
+
+\subsection{Das Arbeitslemma}
+
+Das ganze Instrument ist in einer Aussage verdichtet, die eine Aufgabenbeschreibung
+und kein Satz ist.
+
+\begin{workinglemma}
+Für die forensische Lesart eines Schritts der in
+Abschnitt~\ref{sec:instrument} beschriebenen Gestalt genügt es nicht, eine
+qualitative Relation zwischen den beiden Objekten in einem gemeinsamen Container
+zu zeigen. Erforderlich ist ein expliziter, labelverträglicher, skalenbewahrender
+und ordnungskompatibler numerischer Auswertungsvertrag $\Brxi$. Jeder Kandidat
+für einen zweiten Modus $T_2$ muss entweder in diesem Vertrag sichtbar sein oder
+als unzulässige versteckte Hilfsskala verbucht werden.
+\end{workinglemma}
+
+Durchgehend bezeichnet $T_2$ \emph{den zweiten Auswertungsmodus} --- eine zweite
+Skala, einen Shift oder eine zweite Verflechtung neben derjenigen, die das
+Argument ausweist --- und nichts sonst. Zeile R8 ist die Ledger-Zeile, die nach
+ihm fragt.
+
+Der Status dieser Aussage lautet: Arbeitslemma, nicht bewiesen. Sie ist als
+präziser Prüfauftrag für Primärtextstellen und für Positiv- und Negativkontrollen
+zu behandeln --- was der Rest dieser Arbeit mit ihr tut.
+
+\subsection{Was das Instrument nicht entscheiden kann}
+\label{sec:cannot}
+
+Positiv formuliert, damit es nicht als Bescheidenheit missverstanden wird.
+
+\begin{enumerate}
+\item \textbf{Es kann Stichhaltigkeit nicht bescheinigen.} Alle neun Zeilen können
+  liefern und das Argument kann dennoch aus einem Grund scheitern, nach dem keine
+  Zeile fragt.
+\item \textbf{Es kann mathematische Sachfragen nicht entscheiden.} Ob ein Paar
+  deklarierter Eigenschaften als Vertragslemma genügte, wenn es bewiesen wäre,
+  oder ob eine identische globale Normierung zweier isomorpher Kopien eines
+  Zahlkörpers als beweisbare Kompatibilität durchgeht --- das sind mathematische
+  Fragen. Das Ledger hält nur fest, dass der Text ein Eigenschaftspaar oder eine
+  Konvention liefert, wo er ein Lemma bräuchte.
+\item \textbf{Es kann nicht über die geprüften Dokumente hinaussehen.} Eine Zeile
+  mit \glqq liefert nicht\grqq{} ist eine Aussage über einen Wortlaut. Die Pflicht kann in
+  ungeprüftem Material eingelöst sein; wo diese Möglichkeit konkret ist, benennen
+  die Fallberichte sie.
+\item \textbf{Es kann eine nicht eingelöste Pflicht nicht von einer uneinlösbaren
+  unterscheiden.} Nichts am Instrument erlaubt den Schritt von \glqq hier nicht
+  abgeleitet\grqq{} zu \glqq nicht ableitbar\grqq.
+\end{enumerate}
+
+\subsection{Anwendung auf ein neues Argument}
+\label{sec:recipe}
+
+Das Instrument ist nicht an die vier unten behandelten Fälle gebunden. Das
+folgende Rezept ist ein aus den Anwendungen gewonnenes prospektives Protokoll.
+Es wurde nicht in jedem berichteten Fall vollständig ausgeführt: Insbesondere
+bleiben in Fall A Hygienezeilen offen, und die Hygiene-vor-R6-Regel entstand
+erst nach den Anwendungen. Das Rezept wird für neue Transportargumente angeboten;
+die historischen Teilanwendungen erfüllen dadurch nicht rückwirkend alle Schritte.
+
+\begin{recipe}
+\begin{enumerate}
+\item \textbf{Den Schritt lokalisieren.} Den Satz identifizieren, an dem eine
+  qualitative Relation zu einer numerischen Behauptung wird. Er steht in der
+  Regel nicht dort, wo die Selbstzusammenfassung des Dokuments ihn vermutet; die
+  Struktur am Text verifizieren und die Korrektur protokollieren, damit der
+  nächste Leser sie nicht neu herleiten muss.
+\item \textbf{Die beiden Seiten und den Container benennen.} Pflichten 1--3
+  füllen. Die Typisierung der Einbettungen protokollieren --- und protokollieren,
+  ob sie irgendwo vor dem Schluss fallengelassen wird.
+\item \textbf{Die Hygienezeilen} R0, R1, R3 \textbf{füllen.} Fällt eine von ihnen
+  aus, kann ein späterer Befund bei R6 ein Artefakt dieses Ausfalls statt ein
+  eigenständiges Ergebnis sein.
+\item \textbf{Pflicht~6 von Pflicht~7 trennen.} Zuerst fragen, ob der Container
+  eine numerische Auswertung trägt \emph{und} die Kompatibilitätsidentitäten, die
+  sie an die beiden Readouts binden --- insbesondere $\nu_C \circ i_q = \nu_q$
+  auf dem ausgewiesenen Quellbereich. Eine gemeinsame Auswertung allein löst
+  Pflicht~6 nie ein, und eine stipulierte Invarianz ist kein Beweis einer
+  Kompatibilität. Erst dann fragen, ob die Ordnungsrelation aus der erlaubten
+  Identifikation abgeleitet ist. Beide Fragen zu vermengen ist die häufigste Art,
+  einen Befund zu erzeugen, der zugleich unfair und uninformativ ist; die erste
+  auf die bloße Existenz einer gemeinsamen Skala zusammenzuziehen ist die
+  häufigste Art, einen zu großzügigen zu erzeugen.
+\item \textbf{Nach dem Vertragslemma ausdrücklich suchen}, mit protokollierten
+  Suchbegriffen, über das ganze Dokument und getrennt über den Beweisbereich. Das
+  Ergebnis in beiden Fällen festhalten.
+\item \textbf{Jede gefundene Lücke typisieren} (Abschnitt~\ref{sec:typology}) und
+  jeden Rückgriff auf externe Literatur ins Import-Ledger eintragen
+  (Abschnitt~\ref{sec:importledger}).
+\item \textbf{Den Block \glqq gesucht, nicht gefunden\grqq{} vor dem Verdikt schreiben},
+  nicht danach. Seine Funktion ist, das Verdikt zu beschränken, und das kann er
+  nicht, wenn er passend zu einem Verdikt verfasst wurde.
+\item \textbf{Die Reichweite getrennt vom Verdikt angeben.} \glqq Liefert nicht, hohe
+  Konfidenz, beschränkt auf Dokument $X$\grqq{} ist ein vollständiger Befund; \glqq liefert
+  nicht\grqq{} allein ist keiner.
+\end{enumerate}
+\end{recipe}
+
+% =============================================================================
+\section{Fall A: das Korollar und sein Beweis}
+\label{sec:caseA}
+% =============================================================================
+
+Die erste Anwendung gilt der Passage, für die das Instrument gebaut wurde: dem
+Beweis von Corollary 3.12 im dritten Band der interuniversellen
+Teichmüller-Theorie~\cite{Mochizuki2021c}. Gefüllt wurden die Zeilen R2, R4, R6
+und R8 --- R6 an beiden Hälften des in Abschnitt~\ref{sec:splits} eingeführten
+Splits, und R8 als die getriggerte Erweiterungszeile, die sie ist, nicht als
+Kernzeile; R0, R1, R3, R5 und R7 waren nicht Teil dieser Anwendung und bleiben
+offen (Abschnitt~\ref{sec:convergence}).
+
+\paragraph{Verhältnis zu Teil~1 der Serie.} Diese Passage ist bereits gedruckt
+lokalisiert. Eine frühere, reparaturorientierte Untersuchung desselben
+Programms~\cite{GeigerGap2026} verortet die Lücke am Übergang zwischen denselben
+Substeps und berichtet denselben Wortlaut --- dass die verlangte Ungleichung
+\glqq formal folge\grqq. Die vorliegende Anwendung wiederholt diese Diagnose nicht und
+verstärkt sie nicht, und sie beansprucht ihr gegenüber keine Priorität. Sie leistet
+Engeres: Sie codiert die dokumentarische Frage als eine Pflicht eines ausgewiesenen
+Zertifikats um, damit derselbe Ort mit drei weiteren Texten unter einem
+unveränderten Instrument verglichen werden kann. Dass zwei Wege verschiedener Art
+an derselben Adresse ankommen, wird hier als Befund über die Adresse festgehalten,
+nicht als zweite Detektion.
+
+Dies ist somit eine \emph{Teil}anwendung des Ledgers, und sie wird als solche
+berichtet. Das Rezept aus Abschnitt~\ref{sec:recipe}, das verlangt, die
+Hygienezeilen R0, R1 und~R3 zu füllen, bevor R6 gewertet wird, entstand später,
+aus der Erfahrung dieser Anwendungen --- ebenso wie die Zeilenaufspaltungen aus
+Abschnitt~\ref{sec:splits}, und aus demselben Grund werden die Fallberichte nicht
+nachträglich daran angepasst. Die Folge wird benannt statt aufgesogen: Was folgt,
+ist ein Befund über vier Zeilen. Die zu jeder Zeile protokollierte Konfidenz ist
+Konfidenz in diese Zeile; ein Gesamturteil des Zertifikats über diese Passage wird
+hier nicht beansprucht.
+
+\subsection{Die Passage lokalisieren}
+
+Die Substeps, in denen der Übergang stattfindet, stehen \emph{im Beweis} des
+Korollars, nicht in der Bemerkung, die ihn rekapituliert. Die Struktur, hier
+festgehalten, damit sie nicht neu hergeleitet werden muss (Tabelle~\ref{tab:case_a_text_blocks}):
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.30\textwidth}@{}}
+\toprule
+Block & Auszug Zeilen \\
+\midrule
+Proposition 3.9 (Log-Volumen für Pakete und Prozessionen) & 6365\,ff. \\
+Theorem 3.11 (multiradiale Algorithmen), Beweis & 8666\,ff., Beweis 9032 \\
+Remark 3.11.1 mit den deklarierten Eigenschaften & 9036--9300 \\
+Corollary 3.12, Aussage & 9851--9884 \\
+Corollary 3.12, Beweis & 9886\,ff. \\
+Step (x) (Indeterminacy-Bilanz) & 10237--10283 \\
+\textbf{Substeps (xi-a)--(xi-h)} & \textbf{10285--10496} \\
+Remark 3.12.2 einschließlich Toy-Modell & 10573\,ff., Toy-Modell 10733--10813 \\
+\bottomrule
+\end{tabular}
+\caption{Strukturblöcke und Zeilenanker des IUT-III Korollar-3.12-Beweisauszugs.}
+\label{tab:case_a_text_blocks}
+\end{table}
+
+Vier in Remark 3.11.1 deklarierte Eigenschaften kehren durchgehend wieder und
+werden wie in der Quelle abgekürzt: input prime-strip link (IPL),
+strip-holomorphe Ausdrückbarkeitsbedingung (SHE), algorithmic parallel transport
+(APT) und hidden internal structures (HIS).
+
+\subsection{Offenlegung der Rekonstruktion}
+\label{sec:reconstruction-A}
+
+Der Extrakt dieses Dokuments verliert Relationssymbole, Exponenten, Indizes und
+griechische Buchstaben. Anders als in den drei übrigen Anwendungen hängt hier
+\emph{ein} Verdikt an einer Rekonstruktion; die Herleitung wird deshalb
+vollständig angegeben, gemäß Abschnitt~\ref{sec:reconstruction}.
+
+\begin{enumerate}
+\item Die Zielmenge wird bei Z.~10385 definiert; der Extrakt liest
+  \texttt{R-|log()| d=ef \{ R | -|log()|\} R}, zu lesen als
+  $\mathbb{R}_{\le -|\log(\Theta)|} := \{\lambda \in \mathbb{R} \mid
+  \lambda \le -|\log(\Theta)|\} \subset \mathbb{R}$.
+\item Die Aussage des Korollars selbst legt die Richtung der Relation fest, bei
+  Z.~9882/9884: \glqq \dots\ i.e., $C_\Theta \ge -1$ for any real number
+  $C_\Theta \in \mathbb{R}$ such that
+  $-|\log(\Theta)| \le C_\Theta \cdot |\log(q)|$\grqq, also
+  $-|\log(\Theta)| \ge -|\log(q)|$.
+\item Beides zusammen macht Z.~10446/10448 eindeutig:
+  $-|\log(q)| \in \mathbb{R}_{\le -|\log(\Theta)|}$, \glqq hence also the inequality\grqq
+  $-|\log(q)| \le -|\log(\Theta)| \in \mathbb{R}$.
+\end{enumerate}
+
+Die strittige Membership steht damit als \emph{ausdrückliche Aussage} bei
+Z.~10446 --- mit den oben wiederhergestellten Relationssymbolen --- und ist nicht
+interpretativ von uns erschlossen.
+
+\paragraph{Prüfung am Seitenbild.} Weil ein Verdikt dieses Abschnitts an der
+Wiederherstellung hängt, wurden die beiden betroffenen Zeilen nicht nur am Extrakt,
+sondern an den veröffentlichten Seiten selbst geprüft. Beide Wiederherstellungen
+sind bestätigt. Auf S.~184 trägt die Seite die Membership
+$-|\log(q)| \in \mathbb{R}_{\le -|\log(\Theta)|}$ und darunter abgesetzt
+$-|\log(q)| \le -|\log(\Theta)| \in \mathbb{R}$, gefolgt von \glqq then follows
+formally\grqq; auf S.~174 trägt die Aussage des Korollars
+$-|\log(\Theta)| \ge -|\log(q)|$ samt dem oben zitierten Satz. Die vom Extrakt
+verlorenen Symbole stehen also in der Quelle, und zwar in der Form, die die
+Rekonstruktion angenommen hat. Dabei wurde zugleich ein Detail unserer eigenen
+Transkription korrigiert: Die Quelle schreibt durchgehend $C_\Theta$, nicht ein
+bloßes $C$; die Zitate hier folgen ihr jetzt.
+
+Eine weitere Zeile wird markiert, weil die naive Lesart ihren Sinn umkehrt. Bei
+Z.~10750 liest der Extrakt \texttt{in the sense that R -h = -2h R}; gemeint ist
+$\mathbb{R} \ni -h \neq -2h \in \mathbb{R}$, das \glqq $\neq$\grqq{} ist verloren. Der
+umgebende Satz sichert das ab: Die beiden Zuordnungen seien \glqq mutually
+incompatible and cannot be considered simultaneously\grqq
+\anchor{IUT-III}{10748--10749}. Wer hier \glqq $=$\grqq{} einsetzt, schließt das Gegenteil
+dessen, was die Passage sagt --- und das Seitenbild entscheidet es: S.~190 trägt
+\glqq [in the sense that $\mathbb{R} \ni -h \neq -2h \in \mathbb{R}$]\grqq.
+
+\subsection{R2 --- bleibt der \texorpdfstring{$q$}{q}-seitige Readout erhalten?}
+
+\textsc{Liefert}, mit hoher Konfidenz --- und der Grund ist strukturell
+interessant: Am entscheidenden Schritt findet gar kein Transport statt.
+
+Die $q$-Seite wird in der Aussage des Korollars selbst als indeterminacy-frei
+deklariert:
+
+\begin{quote}\small
+\glqq for the procession-normalized mono-analytic log-volume of the image of a
+$q$-pilot object \dots\ in the multiradial representation of Theorem 3.11, (i),
+\emph{which we do not regard as subject to the indeterminacies} (Ind1), (Ind2),
+(Ind3) described in Theorem 3.11, (i), (ii).\grqq
+\hfill\anchor{IUT-III}{9869--9873}
+\end{quote}
+
+Der unmittelbar vorangehende Absatz schreibt der $\Theta$-Seite genau das
+Gegenteil zu \anchor{IUT-III}{9862--9864}. Die Asymmetrie ist also
+\emph{deklariert}, nicht versehentlich. Der $q$-Pilot ist überdies der fixierte
+Bezugspunkt der Konstruktion --- Eigenschaft (IPL) nennt ihn \glqq the
+`coric'/`fixed' $q$-pilot $\mathcal{F}^{\Vdash\times}$-prime-strip\grqq
+\anchor{IUT-III}{9117--9122} ---, und Eigenschaft (APT) hält fest, dass es einen
+mengentheoretischen Transport gar nicht gibt:
+
+\begin{quote}\small
+\glqq This parallel transport mechanism \emph{does not consist of a simple instance of
+transport of some set-theoretic region} \dots\ \emph{via some set-theoretic
+function}. Rather, it consists of a construction algorithm that is simultaneously
+valid/executable/well-defined with respect to the arithmetic holomorphic
+structures in the domain and codomain of the $\Theta$-link\grqq
+\hfill\anchor{IUT-III}{9212--9219}
+\end{quote}
+
+Der Readout ist konkret: $-|\log(q)|$ ist \glqq the log-volume of the region that
+arises from the representation of the $q$-pilot object\grqq
+\anchor{IUT-III}{10387--10390}, auf einer Skala, die durch die Aussage verankert
+ist, \glqq global arithmetic degrees of objects of global realified Frobenioids may be
+interpreted as log-volumes\grqq{} \anchor{IUT-III}{10391--10393}.
+
+Pflicht~1 ist damit eingelöst, und Pflicht~4 ist auf der $q$-Seite eingelöst ---
+aber \emph{stipulativ}: Die Pilot-Identität wird durch die Deklarationen
+\glqq coric\grqq{}/\glqq fixed\grqq{} und \glqq do not regard as subject to\grqq{} geschützt, nicht durch eine
+bewiesene Relation hergestellt.
+
+\subsection{R4 --- wird die \texorpdfstring{$j^2$}{j\texttwosuperior}-Last adressiert?}
+
+\textsc{Teilweise}, mit hoher Konfidenz. Der Buchungsort ist benannt; die Last
+selbst wird dort nicht beziffert, und ihre Bezifferung ist ausdrücklich in den
+vierten Band ausgelagert.
+
+Die Last existiert und wird benannt: Die einschlägigen Monoide werden von den
+Theta-Werten $\{q^{j^2}\}_{j=1,\dots,\ell^*}$ erzeugt
+\anchor{IUT-III}{654--656}. Der Buchungsort ist die Prozessions-Normierung, und
+verbucht werden dort \emph{Labels}:
+
+\begin{quote}\small
+\glqq the procession-normalized mono-analytic log-volumes [i.e., where the average is
+taken over $j \in \mathbb{F}_\ell^*$] \dots\ are \emph{invariant with respect to
+the indeterminacies} (Ind1), (Ind2), and have the effect of \emph{converting the
+indeterminacy} (Ind3) \emph{into an inequality [from above]}.\grqq
+\hfill\anchor{IUT-III}{10261--10268}
+\end{quote}
+
+wobei die Mittelung \glqq the $\mathbb{F}_\ell^*$-symmetry acting on the labels of the
+theta values\grqq{} zugeschrieben wird \anchor{IUT-III}{10273--10276}. Das ist eine
+Buchung von Symmetrie, nicht von Größenordnung.
+
+Für das Korollar wird die Last dann ausdrücklich ausgeblendet, und die
+Auslagerung wird offen deklariert. Eigenschaft (HIS) benennt genau diese
+Anwendung:
+
+\begin{quote}\small
+\glqq if one takes the point of view --- \emph{as will be done in Corollary 3.12
+below!} --- that one is only interested in considering the \emph{qualitative
+logical aspects/consequences} \dots\ then \dots\ one may \dots\ \emph{forget that
+this construction algorithm \dots\ has anything to do with theta functions \dots\
+or theta values} $[\text{i.e., the } q^{j^2}]_{j=1,\dots,\ell^*}$!\grqq
+\hfill\anchor{IUT-III}{9225--9244}
+\end{quote}
+
+und unmittelbar danach:
+
+\begin{quote}\small
+\glqq unlike Corollary 3.12 below, which only concerns qualitative logical
+aspects/consequences \dots, \emph{the explicit computation to be performed in}
+[IUT-IV], \S\,1, \emph{of the log-volumes that occur in the statement of Corollary
+3.12 makes essential use of the way in which theta values occur} in the
+construction algorithm of Theorem 3.11.\grqq{} \hfill\anchor{IUT-III}{9263--9267}
+\end{quote}
+
+Eine Suche über den gesamten Beweisbereich nach den Theta-Werten, der
+Prozessions-Normierung und der Mittelung liefert Treffer \emph{ausschließlich} in
+Step (x); in den Substeps selbst kommt die Last nicht mehr vor.
+
+Ein Punkt der Fairness gehört ins Verdikt und nicht daneben. Der Fehlermodus,
+dessentwegen diese Zeile existiert --- eine Last, die in einer Koordinate
+verschwindet und unverbucht zurückkehrt ---, \emph{tritt hier nicht ein}. Was
+eintritt, ist eine deklarierte Arbeitsteilung zwischen einem qualitativen und
+einem quantitativen Band. Für das Zertifikat bleibt der Befund, dass die Last
+innerhalb des geprüften Dokuments an der strittigen Stelle nicht verbucht ist; die
+Unterscheidung zwischen \glqq anderswo verbucht, per Deklaration\grqq{} und \glqq verschleiert\grqq
+wird zugunsten der Quelle festgehalten.
+
+\subsection{R6 --- wird Ordnungserhaltung bewiesen?}
+
+\textsc{Liefert nicht} an beiden Hälften der Zeile, mit hoher Konfidenz. Das ist
+der Kernbefund der Anwendung, und er ist zweiteilig zu formulieren, weil die
+beiden Pflichten aus verschiedenen Gründen ausfallen und die Zeile in ihrer
+ursprünglichen Formulierung nur die zweite von beiden benennt.
+
+\paragraph{R6a --- Pflicht~6 ist nicht eingelöst: gemeinsame Auswertung, keine
+Kompatibilitätsidentität.} In Substep (xi-d) werden die beiden Seiten
+ausdrücklich in eine Auswertung gebracht:
+
+\begin{quote}\small
+\glqq it is only by forming [a suitable positive tensor power of] the determinant of
+the localizations of arithmetic vector bundles \dots\ and then applying the
+[suitably normalized \dots] log-volume to various regions \dots\ that we are able
+to obtain \emph{completely comparable objects}, namely,
+$\mathbb{R}_{\le -|\log(\Theta)|} := \{\lambda \in \mathbb{R} \mid \lambda \le
+-|\log(\Theta)|\} \subset \mathbb{R}$; $-|\log(q)| \in \mathbb{R}$\grqq
+\hfill\anchor{IUT-III}{10376--10385}
+\end{quote}
+
+Zusammen mit der oben zitierten Log-Volumen-Deutung arithmetischer Grade existiert
+damit eine numerische Auswertung $\nu_C$ im Container, und sie steht ausdrücklich
+da, statt erschlossen werden zu müssen. So viel wird zugunsten der Quelle
+protokolliert. Es ist aber nicht das, wonach Pflicht~6 fragt. Die Pflicht verlangt
+die Kompatibilitätsidentität $\nu_C \circ i_q = \nu_q$ über die Identifikation der
+beiden Container hinweg, und diese Identität steht nicht im Text: Der Block
+\glqq gesucht, nicht gefunden\grqq{} weiter unten hält die Suche fest --- und hält fest, dass
+das eine vorhandene Kompatibilitätslemma, die Log-Link-Kompatibilität der
+Log-Volumina, Kompatibilität \emph{innerhalb} einer vertikalen Spalte sichert und
+nicht über die Identifikation hinweg. Da eine gemeinsame Auswertung Pflicht~6 nie
+für sich allein einlöst (Abschnitt~\ref{sec:obligations}), liefert R6a nicht.
+
+\medskip\noindent
+Version 0.1 dieser Arbeit codierte diese Hälfte umgekehrt, auf der damals
+geltenden disjunktiven Fassung von Pflicht~6, und hielt fest, \glqq die Fehlstelle
+sitzt bei Pflicht~7, nicht bei Pflicht~6\grqq. Die Zitate sind unverändert, und keine
+Quelle wurde neu geprüft; die Codierung folgt dem gehärteten Wortlaut. Siehe
+\glqq Änderungen in Version 0.2\grqq.
+
+\paragraph{R6b --- Pflicht~7 wird gesetzt, nicht abgeleitet.} Substep (xi-e) fasst (SHE)
+operativ als Nebenbedingung an die zulässigen Operationen:
+
+\begin{quote}\small
+\glqq `expressibility relative to the arithmetic holomorphic structure in the
+1-column' [cf.\ (SHE)] amounts precisely to `\emph{expressibility via operations
+that are valid/executable/well-defined even when subject to the condition that
+the pilot-object log-volume associated to the input data prime-strip \dots\ be
+equal to the fixed value} $-|\log(q)| \in \mathbb{R}$'.\grqq
+\hfill\anchor{IUT-III}{10412--10420}
+\end{quote}
+
+und Substep (xi-f) zieht daraus die Membership:
+
+\begin{quote}\small
+\glqq the construction of the subset $\mathbb{R}_{\le -|\log(\Theta)|} \subset
+\mathbb{R}$ of possible pilot-object log-volumes of output data \emph{is subject
+to the condition} that this construction of output data possibilities
+\emph{constitutes, in particular, a construction} [perhaps only up to some sort of
+`approximation', as a result of various indeterminacies] \emph{of the
+pilot-object log-volume of the input data prime-strip}, namely,
+$-|\log(q)| \in \mathbb{R}$. The inclusion
+$-|\log(q)| \in \mathbb{R}_{\le -|\log(\Theta)|}$, hence also the inequality
+$-|\log(q)| \le -|\log(\Theta)| \in \mathbb{R}$ \dots\ \emph{then follows
+formally}.\grqq{} \hfill\anchor{IUT-III}{10437--10451}
+\end{quote}
+
+Substep (xi-g) benennt das Ergebnis als \glqq two \emph{tautologically equivalent} ways
+to compute the log-volume of the $q$-pilot object\grqq
+\anchor{IUT-III}{10453--10458}, und die Rekapitulation des Autors wiederholt das
+Muster: Die $q$-Verflechtung \glqq may be thought of as a special case of the
+$\Theta$-intertwining \dots\ Corollary 3.12 then follows, essentially formally\grqq
+\anchor{IUT-III}{10723--10731}.
+
+\paragraph{Das Toy-Modell schreibt die tragende Annahme als Annahme aus.} Ohne
+Labels widersprechen die beiden Zuordnungen einander
+\anchor{IUT-III}{10747--10750}; der entscheidende Schritt wird dann als
+Supposition eingeführt:
+
+\begin{quote}\small
+\glqq \emph{Now suppose that one verifies that one may construct} the `assignment with
+indeterminacies' \dots\ as a mathematical structure that is intrinsically
+associated to the underlying structure of the assignment $\Xi_q$ \dots\
+\emph{even if one forgets the labels} `$q$', `$\Theta$' \dots, i.e., \emph{even if
+one identifies} $q\mathbb{R}$, $\Theta\mathbb{R}$, in the usual way, with
+$\mathbb{R}$ [cf.\ the properties (IPL), (SHE)]\grqq
+\hfill\anchor{IUT-III}{10778--10784}
+\end{quote}
+
+woraus \glqq one then concludes formally\grqq{} die gewünschte Schranke folgt
+\anchor{IUT-III}{10806--10813}.
+
+\paragraph{Der Befund in Zertifikatssprache.} Im Realfall wird die Supposition
+durch die Konjunktion (IPL)\,$\wedge$\,(SHE) eingelöst --- also durch
+\emph{Eigenschaften, die dem Output eines Algorithmus zugesprochen werden}, nicht
+durch ein Kompatibilitätslemma $\nu_C \circ i_q = \nu_q$. An derselben Stelle wird
+zudem die von Pflicht~3 verlangte Container-Typisierung bewusst aufgegeben: Die
+Identifikation von $q\mathbb{R}$ mit $\Theta\mathbb{R}$ ist Voraussetzung des
+Schlusses, nicht sein Ergebnis. Das fehlende Element ist damit an beiden Hälften
+der Zeile ein und dasselbe, und es fehlt doppelt: Die Identität ist das, was
+Pflicht~6 verlangt, um die beiden Readouts durch Beweis statt durch Kohabitation
+auf eine Skala zu bringen, und sie ist das, was Pflicht~7 bräuchte, um die
+Ordnungsrelation über diese Skala hinweg zu tragen.
+
+\paragraph{Fairness: \glqq tautologically\grqq{} ist affirmativ gemeint.} Die Quelle
+verwendet dieses Wort zustimmend, nicht als Eingeständnis: Sie spricht davon,
+\glqq nontrivial, albeit essentially tautological, consequences \dots\ such as the
+inequality of Corollary 3.12\grqq{} zu ziehen \anchor{IUT-III}{8122--8125}. Für ihren
+Autor ist die Tautologizität die Leistung, nicht der Mangel. Das Wort als
+Selbstwiderlegung zu lesen wäre ein umgekehrtes Autoritätsargument und wird hier
+nicht getan. Das Ledger fragt nur, ob die Kompatibilitätsidentität ausgewiesen und
+ob die Ordnungsrelation \emph{abgeleitet} ist --- und nach dem Wortlaut ist
+beides nicht der Fall.
+
+\subsection{R8 --- ist ein zweiter Modus sichtbar oder ausgeschlossen?}
+
+\textsc{Teilweise}, mit hoher Konfidenz. Benannt und qualitativ bepreist, aber
+nicht als zweite Skala durch die Brücke geführt; auch nicht ausgeschlossen.
+
+Die Doppelstruktur wird ausdrücklich genannt: eine Prime-Strip, die
+\glqq \emph{simultaneously equipped with two intertwinings}\grqq{} ist, \glqq namely, the
+$\Theta$-intertwining, \emph{up to indeterminacies}, and the $q$-intertwining\grqq
+\anchor{IUT-III}{8114--8125}. Auch der Preis der Konstruktion wird deklariert:
+
+\begin{quote}\small
+\glqq this `solution' may be implemented \emph{only at the cost of admitting the
+`indeterminacy' constituted by the upper semi-compatibility of} (Ind3).\grqq
+\hfill\anchor{IUT-III}{10019--10031}
+\end{quote}
+
+und der Gehalt dieses Begriffs steht im Text selbst: \glqq upper semi-compatibility,
+i.e., in a word, \emph{one-sided inclusions, as opposed to precise equalities}\grqq
+\anchor{IUT-III}{8489--8490}.
+
+Was nicht geschieht, ist die Führung des zweiten Modus durch den strittigen
+Schritt. Vor der Brücke wird er in eine Richtung aufgelöst --- (Ind3) wird \glqq into
+an inequality [from above]\grqq{} überführt ---, und an der Brücke wird die interne
+Struktur durch (HIS) ausdrücklich vergessen. Sichtbar vor dem Schritt, suspendiert
+in ihm.
+
+Ein Beinahe-Treffer wird protokolliert statt unterschlagen: Eine Bemerkung, deren
+Titel (\glqq The log-shifted nature of the localization homomorphism\grqq) eine sichtbar
+geführte zweite Skala nahelegt, betrifft nur den Lokalisierungs-Homomorphismus
+einer früheren Proposition \anchor{IUT-III}{5551--5553} und trägt die Zeile nicht.
+
+\subsection{Ergebnis von Fall A}
+
+Die resultierenden Befunde über die auditierten Zeilen sind in Tabelle~\ref{tab:case_a_findings} zusammengefasst.
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.60\textwidth}l@{}}
+\toprule
+Zeile & Befund & Konfidenz \\
+\midrule
+R2 & \textsc{liefert} --- Readout definitorisch fixiert und indeterminacy-frei;
+  kein Transportschritt & hoch \\
+R4 & \textsc{teilweise} --- Ort benannt, Last nicht beziffert, Bezifferung
+  ausgelagert & hoch \\
+R6a & \textsc{liefert nicht} --- gemeinsame Auswertung vorhanden und explizit;
+  Kompatibilitätsidentität $\nu_C \circ i_q = \nu_q$ fehlt & hoch \\
+R6b & \textsc{liefert nicht} --- Membership über ein Eigenschaftspaar gesetzt;
+  folgt \glqq formally\grqq{} & hoch \\
+R8 & \textsc{teilweise} --- benannt und bepreist, an der Brücke suspendiert & hoch \\
+\bottomrule
+\end{tabular}
+\caption{Fall A: Zusammenfassung der Befunde über die auditierten BC-Ledger-Zeilen.}
+\label{tab:case_a_findings}
+\end{table}
+
+Die Adresse der beiden nicht eingelösten Pflichten ist ein einzelner Substep. Dort
+folgt die Membership \glqq then formally\grqq{} aus der Bedingung, dass die Konstruktion der
+Output-Möglichkeiten \emph{zugleich} eine Konstruktion des Input-Readouts sei
+\anchor{IUT-III}{10437--10451}. Was fehlt, ist eine Kompatibilitätsidentität
+$\nu_C \circ i_q = \nu_q$ über die Container-Identifikation hinweg, die Pflicht~6
+aus eigenem Recht verlangt, und darüber hinaus ein Vertragslemma, das die
+Ordnungsrelation aus der erlaubten Linkage \emph{ableitet}, wie Pflicht~7 es
+verlangt. An ihrer Stelle steht das Eigenschaftspaar, dessen Einlösung das
+Toy-Modell als Supposition ausschreibt. Was der Text an diesem Substep sehr wohl
+liefert, ist die gemeinsame Auswertung selbst, und zwar ausdrücklich --- das ist
+nicht nichts; aber eine gemeinsame Auswertung ohne die Identität ist genau die
+Kohabitation, die das Zertifikat von einer numerischen Aussage zu trennen gebaut
+wurde.
+
+\paragraph{Gesucht, nicht gefunden.} Über den gesamten Extrakt und getrennt über
+den Beweisbereich: ein Kompatibilitätslemma der Form $\nu_C \circ i_q = \nu_q$
+über die Container-Identifikation (Suchbegriffe: \texttt{compatib},
+\texttt{log-volume}, \texttt{equal}, \texttt{identif}); ein Zahlwert für den
+Approximationsterm (\texttt{approximation}, \texttt{epsilon}, \texttt{bound},
+\texttt{estimate}, \texttt{Ind3}); eine explizite Verbuchung der
+$O(\ell^2)$-Last an der Brücke (\texttt{theta value},
+\texttt{procession-normalized}, \texttt{average}); eine sichtbar geführte zweite
+Auswertungsskala an der Brücke (\texttt{log-shift}, \texttt{vertical shift},
+\texttt{two intertwinings}). Eine wichtige Präzisierung, damit der Negativbefund
+nicht als Nachlässigkeit gelesen wird: Ein echtes Kompatibilitätslemma
+\emph{existiert} --- die Log-Link-Kompatibilität der Log-Volumina
+\anchor{IUT-III}{10268--10272} ---, aber es liegt auf der falschen Achse. Es
+sichert Kompatibilität \emph{innerhalb} einer vertikalen Spalte, nicht über die
+Identifikation der beiden Auswertungscontainer hinweg --- und um genau diese geht
+es in Pflicht~6, auf der Pflicht~7 dann erst aufbauen müsste.
+
+\paragraph{Reichweite.} Hohe Konfidenz gilt den Textbefunden, Zeile für Zeile, im
+autorseitigen Sinn, wie ihn Abschnitt~\ref{sec:instrument} festlegt. Die Reichweite
+ist doppelt beschränkt: Geprüft wurde hier ausschließlich der dritte Band, und
+gefüllt wurden nur vier der neun Zeilen --- berichtet wird also ein Befund an vier
+Zeilen, kein Urteil des ganzen Zertifikats. Die von der Quelle selbst benannte
+quantitative Fortsetzung ist Gegenstand von Fall B.
+
+% =============================================================================
+\section{Fall B: der deklarierte Quantifizierungsort}
+\label{sec:caseB}
+% =============================================================================
+
+Fall A ließ eine konkrete Möglichkeit offen: Die an der Brücke nicht verbuchte
+Last könnte an dem Ort verbucht sein, an den der Text sie ausdrücklich
+auslagert. Die zweite Anwendung öffnet diesen Ort~\cite{Mochizuki2021d} und
+stellt zwei strikt getrennte Fragen.
+
+\begin{description}
+\item[F1] Wird die $j^2$-/Prozessions-Last dort tatsächlich beziffert?
+\item[F2] Leitet dieser Abschnitt die strittige Membership \emph{ab}, oder setzt
+  er das Korollar \emph{voraus}?
+\end{description}
+
+Die Trennung ist wesentlich, denn eine positive Antwort auf F1 wird leicht als
+Fortschritt bei F2 missverstanden, und das ist sie nicht.
+
+\subsection{F1: beziffert}
+
+\textsc{Beziffert}, mit hoher Konfidenz. Die Kette ist in der Quelle
+ausgeschrieben und wird hier nur nachgewiesen, nicht nachgerechnet.
+
+Der Theta-Wert geht als Eingangsgröße der Rechnung ein: \glqq $\lambda$\grqq{} wird als
+\glqq $\ordd(-)$\grqq{} des Elements $q_{v_j}^{j^2}$ an den schlechten Stellen gesetzt
+\anchor{IUT-IV}{1594--1597}. Der lokale Term trägt $j^2$ sichtbar, als
+$j^2/(2\ell(j+1))$ \anchor{IUT-IV}{1656--1657}; nach Gewichtung bleibt
+$j^2/(2\ell)$ \anchor{IUT-IV}{1669--1670}. Die Prozessions-Mittelung wertet dann
+die Quadratsumme explizit aus:
+
+\begin{quote}\small
+\glqq it remains to compute the average over $j \in \mathbb{F}_\ell^\star$.
+\emph{By averaging over} $j \in \{1,\dots,\ell^\star = (\ell-1)/2\}$ \emph{and
+applying} (E1), (E2), we obtain the `procession-normalized upper bound'
+\dots\ $= \frac{\ell+5}{4}\log(d_K) - \frac{\ell+1}{24}\log(q) + \dots$\grqq
+\hfill\anchor{IUT-IV}{1675--1684}
+\end{quote}
+
+die dabei angewandte Identität lautet $\frac{1}{n}\sum_{m=1}^{n} m^2 =
+\frac{1}{6}(2n+1)(n+1)$ \anchor{IUT-IV}{1379--1380}. Nach der lokalen
+Abschätzung überlebt der Koeffizient bis in die Endschranke, wo er als
+$-\frac{1}{6}\bigl(1 - \frac{12}{\ell^2}\bigr)\log(q)$ erscheint
+\anchor{IUT-IV}{1775--1776}, und ebenso in der Aussage des Theorems selbst
+\anchor{IUT-IV}{1352--1353}. Die verbleibende $\ell$-Abhängigkeit wird benannt und
+als \glqq an inevitable consequence of the fundamental role played \dots\ by the
+$\ell$-torsion points\grqq{} diskutiert \anchor{IUT-IV}{1909--1912}.
+
+Die dargestellte Kette lässt keinen Term unverbucht: Die Last entsteht
+nur an den schlechten Stellen, die guten nichtausgezeichneten Stellen liefern
+null, der archimedische Schritt wird eigens gerechnet, und der Schlussschritt
+summiert.
+
+\subsection{F2: setzt voraus}
+
+\textsc{Setzt voraus}, mit hoher Konfidenz, und der stärkste Beleg ist negativ.
+Drei vollständige Suchen über das ganze Dokument liefern: null Treffer für den
+$q$-Piloten; null Treffer für jede der vier deklarierten Eigenschaften, auf denen
+die Brücke in Fall A ruht; null Treffer für die Verflechtungen. Alle Vorkommen
+von \glqq pilot\grqq{} in diesem Dokument sind $\Theta$-Piloten. Ein Dokument, das unter den
+gesuchten Begriffen den $q$-Piloten nie nennt und die tragenden Eigenschaften nie
+erwähnt, liefert keine Herleitung der Brücke. Die nicht eingelöste Pflicht aus
+Fall A liegt außerhalb des Gegenstands dieses Abschnitts, soweit diese Begriffe
+reichen.
+
+Die Rahmung sagt dasselbe positiv. Der Abschnitt wird eingeführt als Erzeugung
+\glqq \emph{more explicit versions} \dots\ \emph{of the log-volume estimates for
+$\Theta$-pilot objects obtained in} [IUT-III], Corollary 3.12\grqq
+\anchor{IUT-IV}{456--458}, und sein Hauptsatz eröffnet mit \glqq \emph{Suppose that we
+are in the situation of} [IUT-III], Corollary 3.12\grqq
+\anchor{IUT-IV}{1281}.
+
+Ebenso die Beweislogik. Der Abschnitt liefert die obere Seite --- \glqq we thus obtain
+the following \emph{upper bound}\grqq{} \anchor{IUT-IV}{1773}, \glqq substituting back
+\dots\ we obtain the following \emph{upper bound for} `$C$'\grqq
+\anchor{IUT-IV}{1821} --- und importiert die untere:
+
+\begin{quote}\small
+\glqq and hence, \emph{by applying the inequality} `$C_\Theta \ge -1$' \emph{of} [IUT-III],
+Corollary 3.12, conclude that \dots\grqq{} \hfill\anchor{IUT-IV}{1355--1356}
+\end{quote}
+
+Diese importierte Ungleichung \emph{ist} die strittige Membership in
+Konstantenform: Die Konklusion des Korollars lautet
+$-|\log(\Theta)| \ge -|\log(q)|$, \glqq i.e., $C_\Theta \ge -1$ for any real number $C_\Theta$
+such that $-|\log(\Theta)| \le C_\Theta \cdot |\log(q)|$\grqq{} \anchor{IUT-III}{9878--9884}. Die
+Architektur, die der Text sich selbst aufschreibt, lautet also: Dieser Abschnitt
+begrenzt $C$ nach oben, das Korollar begrenzt $C$ nach unten, und erst beides
+zusammen sagt etwas über $\log(q)$. Eine obere Schranke für $C$ allein sagt
+nichts.
+
+Schließlich behandelt der Abschnitt nicht einmal die dritte Indeterminacy selbst.
+An allen drei Stellen, an denen sie auftritt, wird die Behandlung zurückdelegiert:
+Sie werde \glqq taken into account by the fact that we are considering upper bounds
+[cf.\ the discussion of Step (x) of the proof of \dots\ Corollary 3.12]\grqq
+\anchor{IUT-IV}{1609--1611}.
+
+\subsection{Konsequenz für das Ledger}
+
+Drei Konsequenzen, und nur die erste ist eine Verdiktänderung.
+
+\begin{enumerate}
+\item \textbf{Zeile R4 spaltet sich auf.} Die Last wird in der Auswertung der
+  $\Theta$-Seite beziffert (R4a: ja, im Verbund der beiden Bände) und nicht an
+  der Brücke verbucht (R4b: nein im dritten Band, nicht Gegenstand im vierten).
+  Ohne die Trennung verdeckt ein Wort zwei Befunde.
+\item \textbf{Die Auslagerung ist verifiziert.} Die Sorge, die die Zeile
+  motivierte --- eine Last, die in einer Koordinate verschwindet und unverbucht
+  zurückkehrt ---, trifft für die beiden Bände zusammen nicht zu: Der Theta-Wert
+  verschwindet im dritten und \emph{kehrt im vierten benannt und gerechnet
+  wieder}, an genau der Stelle, die der dritte angegeben hatte. Das wird zugunsten
+  der Quelle festgehalten.
+\item \textbf{Das R6-Verdikt bleibt an beiden Hälften unverändert, seine
+  Reichweite wächst.} Fall A hatte sein Verdikt unter den Vorbehalt gestellt,
+  dass nur ein Band geprüft wurde. Für den von diesem Band benannten Ort ist der
+  Vorbehalt jetzt abgearbeitet: Dort steht weder eine Kompatibilitätsidentität
+  noch ein Vertragslemma, und kein Kandidat für eines von beiden. Der Ort ist
+  nicht widersprüchlich, sondern thematisch unbeteiligt.
+\end{enumerate}
+
+Eine weitere Beobachtung gehört hierher, als Beobachtung zur Architektur und nicht
+als Urteil: Indem der vierte Band $C_\Theta \ge -1$ als Eingabe nimmt, macht er sichtbar,
+wie viel an der Membership hängt. Seine gesamte explizite Rechnung produziert eine
+obere Schranke, die ohne die vom Korollar gelieferte untere Schranke gar keine
+Aussage über $\log(q)$ ergibt.
+
+\paragraph{Gesucht, nicht gefunden.} Eine Ableitung der Membership irgendwo in
+diesem Band (Suchbegriffe: \texttt{q-pilot}, \texttt{pilot}, \texttt{holomorphic
+hull}, \texttt{inclusion}, \texttt{follows formally}, \texttt{tautolog},
+\texttt{Step (xi)}): nicht gefunden; der eine Treffer zum Substep liegt in einem
+späteren Abschnitt und verweist auf den dritten Band zurück. Ein Vertragslemma
+oder eine Diskussion des Eigenschaftspaars: nicht gefunden, null Treffer. Ein
+Zahlwert für den Approximationsterm des Toy-Modells: nicht gefunden --- und die
+naheliegende Gleichsetzung dieses Terms mit der hier gerechneten Schranke ist
+\emph{unsere} Zuordnung, kein Textbefund; der Text stellt sie nirgends her.
+
+\paragraph{Import-Ledger.} Das Verdikt von F2 hängt an einem einzigen Rückgriff auf
+fremdes Material, und die Disziplin aus Abschnitt~\ref{sec:importledger} verlangt,
+ihn einzutragen statt zu übergehen (Tabelle~\ref{tab:case_b_import_ledger}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}P{0.24\textwidth}P{0.66\textwidth}@{}}
+\toprule
+Feld & Eintrag \\
+\midrule
+Importierende Stelle & IUT-IV, \S\,1, im Beweis der dortigen Hauptabschätzung
+  \anchor{IUT-IV}{1355--1356} \\
+Importierte Aussage & die Ungleichung \glqq$C_\Theta \ge -1$\grqq{} aus IUT-III, Corollary 3.12 \\
+Benötigte Aussage & dieselbe Ungleichung: Der Abschnitt erzeugt eine
+  obere Schranke für $C$ und braucht eine untere, die er nicht herleitet \\
+Passung & exakt --- importierte und benötigte Aussage fallen zusammen \\
+Geprüft wurde & die Passung, nicht der Beweis, gemäß der asymmetrischen Regel aus
+  Abschnitt~\ref{sec:importledger} \\
+\bottomrule
+\end{tabular}
+\caption{Fall B: Import-Ledger-Eintrag für die IUT-IV-Hauptabschätzung.}
+\label{tab:case_b_import_ledger}
+\end{table}
+
+\noindent
+Ein Z-Typ-Versagen wird hier nicht protokolliert: Der Import trägt genau die
+Aussage, für die er aufgerufen wird. Gerade deshalb zählt der Eintrag. Die
+importierte Aussage ist diejenige, nach deren Herleitung Pflicht~7 fragt --- der
+Rückgriff ist also einwandfrei, und der Ort kann die Pflicht trotzdem nicht
+einlösen.
+
+% =============================================================================
+\section{Fall C: eine vergleichende Diskriminierungsanwendung in einer anderen
+Theorie}
+\label{sec:caseC}
+% =============================================================================
+
+Die dritte Anwendung ist kein zweiter Test desselben Textes. Sie wendet das
+unveränderte Instrument auf ein unabhängiges Vergleichsprogramm an~\cite{JoshiATSIII, JoshiATSIV}, das dieselbe Ungleichung auf anderem Weg
+erreicht. Ihre Funktion ist die Beantwortung einer Frage, die eine einzelne
+Anwendung nicht beantworten kann: Liefert das Zertifikat überall denselben Befund
+--- dann ist es eine Schablone und kein Instrument --- oder unterscheidet es?
+
+Das Etikett ist von Bedeutung und wird hier in den Begriffen des
+Methodenpapiers~\cite{GeigerBCM2026} festgelegt: Dies ist eine \emph{vergleichende
+Diskriminierungsanwendung}, keine Kontrolle. Version 0.1 nannte sie
+Vergleichskontrolle, was mehr beanspruchte, als der Fall tragen kann --- eine
+Kontrolle müsste ein Transportargument sein, dessen siebte Pflicht \emph{eingelöst
+ist}, und Abschnitt~\ref{sec:convergence} hielt bereits fest, dass kein solcher
+Fall unter den geprüften war. Die unten beschriebene Funktion bleibt unverändert;
+korrigiert wird allein der Name.
+
+Es unterscheidet. Drei der vier Zeilen liefern, die vierte liefert nur
+eingeschränkt, und die nicht eingelöste Pflicht sitzt an anderer Adresse und hat
+eine andere Gestalt. \emph{Wo} diese nicht eingelöste Pflicht sitzt, haben zwei
+spätere Korrekturen revidiert (Abschnitt~\ref{sec:caseC-nachtraege}); der
+Vergleich am Ende dieses Abschnitts gibt die revidierte Lesart wieder, nicht die
+erste Codierung, und die Revision wird als Teil des Falls berichtet.
+
+\subsection{R2: geliefert, über eine bewiesene Relation}
+
+Der Transport entlang des konstruktionseigenen Links erhält den Readout, und der
+$j^2$-Faktor wird sichtbar mitgeführt: Die Skalenrelation der Bewertungen steht
+als Teil eines Satzes, $|-|_{K'_{y_{w,j}}} = |-|^{j^2}_{K'_{y_{w,1}}}$ für
+$j = 1,\dots,\ell^*$ \anchor{ATS-III}{1544--1560}, und wird in der expliziten
+Berechnung der Bloch--Kato-Klassen der Theta-Werte verwendet
+\anchor{ATS-III}{6458--6484}. Die Auswertungsskala ist konkret: ein Log-Volumen
+mit angegebener Normierung \anchor{ATS-III}{6562--6596}. Pflicht~1 ist eingelöst;
+Pflicht~4 wird hier durch eine \emph{bewiesene Bewertungsrelation} eingelöst,
+nicht durch eine Stipulation.
+
+Das ist der Kontrast, der die Aufteilung R2a/R2b erzwungen hat. Es tritt auch ein
+zweiter Transport auf, zwischen zwei durch einen globalen Frobenius verbundenen
+Kopien der Umgebungsdaten, und dort wird die Identifikation \emph{durch eine
+Normierungswahl gesetzt}: \glqq Choose the same global normalization \dots\ With this
+choice \dots\ one has\grqq{} --- dies in der \emph{Aussage} von Theorem 6.10.1 aus
+ATS-IV \anchor{ATS-IV}{3186--3189}; der Beweis der resultierenden Gleichheit ist,
+im Beweis eben dieses Satzes, der eine Satz, sie sei \glqq a consequence of the choice
+of the same global normalization\grqq{} \anchor{ATS-IV}{3262--3266}. Dieselbe Zeile,
+zwei verschiedene Arten von Antwort.
+
+\subsection{R4: geliefert, über einen globalen Zwang}
+
+Die Last entsteht nur an den semistabilen Stellen, überlebt bis in die numerische
+Auswertung, und ihre Kompensation wird verbucht --- Buchungsinstrument ist die
+Produktformel:
+
+\begin{quote}\small
+\glqq the non-trivial scaling relationship \dots\ at primes $w \in
+V^{\mathrm{odd},ss}$ \emph{forces that suitable (re)normalization of valuations
+must be introduced} at primes $w \in V_{L'} - V^{\mathrm{odd},ss}$ so that the
+product formula \dots\ hold[s] for each normalized arithmeticoid\grqq
+\hfill\anchor{ATS-III}{1600--1609}
+\end{quote}
+
+Ehrlichkeit verlangt die Einschränkung daneben: Der Beweis dieser Aussage ist ein
+Satz, weshalb die \emph{Existenz} einer konsistenten kompensierenden Renormierung
+aus dem Zwang erschlossen und nicht konstruiert wird. Die Last ist verortet, nicht
+beziffert. Der Fehlermodus, dessentwegen die Zeile existiert, tritt nicht ein.
+
+\subsection{R6: teilweise --- als Ungleichung bewiesen, als Brücke konventionell}
+
+Die Ungleichung selbst ist ein Satz mit Beweis --- Theorem 9.11.1 aus ATS-III, in
+dessen \S\,9.11 \anchor{ATS-III}{6794--6806} --- und
+die Auswertung im Container ist echt numerisch, berechnet als Summe lokaler
+Beiträge \anchor{ATS-IV}{764--769}. Pflicht~6 ist \emph{teilweise} eingelöst: Die
+Auswertung ist numerisch, aber die Kompatibilität hält nur zwischen den Summen und
+wird stellenweise von der Quelle selbst dementiert --- wie die im nächsten Absatz
+zitierten Passagen es in den Worten der Quelle festhalten. Version 0.1 codierte
+diese Hälfte als \glqq über ihre erste Alternative\grqq{} eingelöst; unter dem gehärteten
+Wortlaut von Pflicht~6 ergeben dieselben Zitate den teilweisen Code, und die
+Begründung stand bereits im Text (\glqq Änderungen in Version 0.2\grqq).
+
+Die Brücke, die den Schluss trägt, ist eine andere Sache. Zwei Auswertungen in
+zwei durch den globalen Frobenius verbundenen Kopien werden durch eine mittlere
+Gleichheit verbunden, deren Beweis im Beweis von Theorem 6.10.1 vollständig
+lautet:
+
+\begin{quote}\small
+\glqq The middle equality is a tautology using the fact that the number fields
+provided by $y_0'$ and $y_0$ are identically normalized.\grqq
+\hfill\anchor{ATS-IV}{3272--3273}
+\end{quote}
+
+während derselbe Text den stellenweisen Vergleich, mit dem ein Leser sie prüfen
+könnte, ausdrücklich verbietet: \glqq one cannot claim that $z_p \le z_p'$ holds for
+all primes $p$ without violating the middle equality\grqq
+\anchor{ATS-IV}{816--819}, und der Unterschied durch Frobenius an jeder Stelle
+\glqq \emph{precludes direct comparison of various local quantities}\grqq
+\anchor{ATS-IV}{3208--3211}. Ordnungskompatibilität besteht damit nur zwischen den
+Summen, nie stellenweise.
+
+\subsection{R8: geliefert --- und deshalb ist der Rest lesbar}
+
+Der zweite Modus ist hier der globale Frobenius-Shift, und er ist nicht bloß
+vorhanden, sondern deklariert, asymmetrisch eingesetzt, gedeutet und als Korrektur
+der eigenen früheren Fassung markiert: Die untere Schranke wird in der einen, die
+obere in der anderen Kopie berechnet, \glqq the upper bound is not independent of this
+choice\grqq{} \anchor{ATS-IV}{733--743}, und eine eingeklammerte Notiz hält fest, dass
+\glqq [t]he previous release of this paper had omitted this Frobenius-shifting\grqq
+\anchor{ATS-IV}{755}.
+
+Das ist das stärkste Positivergebnis des Vergleichs, und sein Ertrag ist
+analytisch, nicht rhetorisch: \emph{Weil} der zweite Modus offengelegt statt in
+einer Normierung absorbiert wird, hat die Lücke bei R6 überhaupt eine Adresse.
+
+\subsection{Zwei spätere Korrekturen, die in entgegengesetzte Richtungen ziehen}
+\label{sec:caseC-nachtraege}
+
+Beide sind zu berichten, sonst wird der Fall falsch dargestellt.
+
+\paragraph{Stärkung.} Eine Quellenprüfung der beiden früheren Bände derselben
+Serie, gesondert als Werkzeug-Supplement dieser Serie
+veröffentlicht~\cite{GeigerGNC2026}, hat die oben offene Definitionsfrage
+entschieden: Das normierte Objekt ist pro Punkt eindeutig, \glqq the same global
+normalization\grqq{} ist also \emph{definitorisch}. Auf dieser Lesart ist die Identifikation nicht lasttragend,
+und die mittlere Gleichheit ruht stattdessen auf der konstruktionsbedingten
+Frobenius-Stabilität der kollationierten adelischen Menge --- also genau auf dem
+Mechanismus, den diese Anwendung unter R8 als geliefert eingestuft hat --- plus
+einer definitorischen Skalenpinnung. Übrig bleibt kein fehlendes Vertragslemma,
+sondern eine engere Frage nach einer Maßkonvention.
+
+\paragraph{Schwächung.} Eine Substanzprüfung des R6-tragenden Satzes ---
+Begleitarbeit dieser Serie, erschienen als Teil~5~\cite{GeigerSubstance2026} --- hat
+ergeben, dass sein Kernschritt, ein als \glqq clear from the construction\grqq{} deklariertes
+Enthaltensein, von der dafür zitierten Konstruktion nicht getragen wird. Das
+ist eine G+D-Lücke: ein fehlendes Argument (eine Supremum-Aussage steht, wo eine
+Maß-Aussage gebraucht wird) zusammen mit einer strukturellen Unschärfe darüber, wo
+die eine algebraische Struktur zur anderen wird. Die Reparaturpflicht ist benannt;
+der Befund ist kein Fehler-Nachweis.
+
+Beides zusammen fasst sich am besten in der Formulierung dieser beiden
+Prüfungen: Der Unterschied in der \emph{Form} bleibt, der Vorsprung in der
+\emph{Substanz} schrumpft.
+
+\paragraph{Die revidierte Codierung.} Zusammengenommen machen die beiden
+Korrekturen diesen Fall weder besser noch schlechter als die zuerst festgehaltene
+Codierung; sie \emph{verschieben} das Defizit. Die Zeilen R2, R4 und R8 sind von
+keiner der beiden Korrekturen berührt und liefern weiterhin. Was sich ändert, ist
+die Aufteilung innerhalb des \textsc{teilweise} von Zeile R6. Vor den Korrekturen
+war der eingelöste Teil die Ungleichung als bewiesener Satz und der fehlende Teil
+eine Brücke, die über eine konventionelle Identität geschlossen wird. Nach ihnen
+ist die Identität definitorisch und damit nicht der fehlende Teil, während der
+fehlende Teil im Satz selbst sitzt, an dessen Enthaltensein-Schritt. Das Verdikt
+bleibt \textsc{teilweise}, weil die Regel lautet, dass ein geteiltes Verdikt seine
+Aufteilung nennen und nicht mitteln muss --- und geändert hat sich die Aufteilung,
+nicht das Verdikt.
+
+Dass eine spätere, tiefere Lesart die erste eigene Codierung revidiert hat, wird
+hier berichtet und nicht geglättet. Ein Eintrag, den eine erneute Prüfung
+derselben Quellen korrigieren kann, ist ein prüfbarer Eintrag; das ist eine
+Eigenschaft, die man haben will. Es ist keine Behauptung, das Instrument sei
+validiert.
+
+\subsection{Was der Vergleich zeigt}
+
+Beide Argumente verfehlen Pflicht~7 im strengen Sinn des Ledgers, und sie
+verfehlen sie unterschiedlich --- was der ganze Sinn einer vergleichenden
+Diskriminierungsanwendung ist (Tabelle~\ref{tab:case_a_c_comparison}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.40\textwidth}P{0.40\textwidth}@{}}
+\toprule
+Zeile & Fall A & Fall C \\
+\midrule
+R2 & liefert --- kein Transport (deklariert) & liefert --- bewiesene
+  Bewertungsrelation; zweiter Transport konventionell \\
+R4 & teilweise --- Ort benannt, Bezifferung ausgelagert & liefert --- verbucht
+  über den Produktformel-Zwang \\
+R6 & liefert nicht an beiden Hälften --- keine Kompatibilitätsidentität, und
+  Membership folgt \glqq formally\grqq{} & teilweise, revidiert --- Kompatibilität nur
+  zwischen den Summen, stellenweise dementiert; Ungleichung von einem Satz
+  getragen, Defizit im Enthaltensein-Schritt dieses Satzes \\
+R8 & teilweise --- benannt, dann suspendiert & liefert --- offengelegt und
+  asymmetrisch genutzt \\
+\bottomrule
+\end{tabular}
+\caption{Komparative Diskriminationsmatrix: BC-Ledger-Befunde in Fall A (IUT-III) gegenüber Fall C (ATS-IV).}
+\label{tab:case_a_c_comparison}
+\end{table}
+
+Der Unterschied, auf den es ankommt, ist die \emph{Gestalt} der nicht eingelösten
+Pflicht, und die Korrekturen oben haben verschoben, wo diese Gestalt in Fall C
+sitzt, ohne zu ändern, dass es ein identifizierbarer Schritt ist. In Fall C ist das
+Defizit lokalisiert: Nach den Korrekturen sitzt es an einem einzelnen
+Enthaltensein-Schritt innerhalb des Satzes, der die Ungleichung trägt, während es
+zuvor an der konventionellen Identität gelesen wurde, die die beiden Auswertungen
+verbindet. In Fall A ist sie flächig: eine Konjunktion zweier deklarierter
+Eigenschaften, verteilt über eine Bemerkung und vier Substeps, eingelöst durch
+einen Schluss, den der Text selbst formal nennt. Der Gegensatz ist der zwischen
+einem Defizit an einem identifizierbaren Schritt und einem über mehrere verteilten.
+Er ist keine Aussage darüber, was schwerer wiegt --- die Typologie aus
+Abschnitt~\ref{sec:typology} typisiert Lücken und graduiert sie bewusst nicht.
+
+% =============================================================================
+\section{Fall D: nachgelagerte Anwendungen}
+\label{sec:caseD}
+% =============================================================================
+
+Die vierte Anwendung stellt zwei Arbeiten, die die strittige Ungleichung
+\emph{benutzen}~\cite{ZhouI, ZhouII}, eine andere Frage: Setzen sie das
+Zertifikat voraus, umgehen sie es, oder führen sie eine alternative Skala ein? Ein
+Befund hier kann die Lücke nicht detektieren --- er kann nur zeigen, wie sie sich
+fortpflanzt.
+
+\paragraph{Anmerkung zum Etikett.} Diese Arbeiten sind im zugrundeliegenden
+Material unter einem Namen abgelegt, der in ihnen nicht vorkommt; die verwendeten
+Kurven sind Frey--Hellegouarch-Kurven, und der Autor ist ein einzelner Autor. Das
+Etikett ist ein Ablage-Artefakt und wird hier nicht verwendet.
+
+\subsection{Wo die Schranke eintritt}
+
+In der ersten Arbeit erscheint die strittige Ungleichung als Proposition~1.9, deren
+Formel~(1.7), und ihr gesamter Beweis ist ein Satz: Sie folge \glqq from the
+$\mu_6$-version of\grqq{} dem Korollar aus Fall A \anchor{Zhou-I}{728--732}. Die
+Formelnummer wird danach genau einmal verwendet, im Beweis der folgenden
+Proposition \anchor{Zhou-I}{753--757}, und Proposition~1.9 wird nie wieder
+aufgegriffen. Es gibt keine Herleitung, kein Zwischenlemma und kein Vertragslemma
+der von Pflicht~7 verlangten Art.
+
+Alles, was die Arbeit eigenständig beiträgt, liegt stromabwärts auf der
+$\Theta$-Seite: eine schärfere Hüllen-Schranke \anchor{Zhou-I}{482--496}, ein
+eigener Readout des $\Theta$-Piloten \anchor{Zhou-I}{677--725} und eigene
+Konstanten in der Zielungleichung \anchor{Zhou-I}{742--751}, die die Arbeit selbst
+als Verbesserung gegenüber einer früheren expliziten Abschätzung ausweist
+\anchor{Zhou-I}{1931--1934}.
+
+Die zweite Arbeit nennt das Korollar überhaupt nicht. Sie erbt die Brücke über die
+erste Arbeit, und zwar genau an der Brückenproposition
+\anchor{Zhou-II}{291--292}, und sie geht weiter: Eine Bemerkung verfolgt, wo eine
+Hypothese in den vier zitierten Bänden verwendet wird, und schließt aus dieser
+Verfolgung, deren Resultate gälten \glqq still \dots\ for\grqq{} eine andere Klasse von
+Ausgangsdaten \anchor{Zhou-II}{267--280}. Der strittige Substep wird nie berührt.
+
+\subsection{Schweigen, und ein aufschlussreicher Kontrast}
+
+Suchen über beide Dokumente liefern null Treffer für die bekannte Kritik, für die
+Indeterminacies, für die multiradiale Konstruktion, für die Piloten und für jeden
+gesuchten Begriff aus dem Feld Streit oder Korrektheit. Die Positionierung
+geschieht stattdessen implizit, durch das Wort \glqq unconditionally\grqq{} für die
+Konsequenzen \anchor{Zhou-I}{29--30}.
+
+Was das über eine bloße Abwesenheit hinaushebt, ist der Kontrast. Beide Arbeiten
+praktizieren durchaus explizite Rigorositätsvorbehalte --- die zweite sagt offen,
+dass sie einen Schritt auslässt, und \glqq claim[s] that we can always do the similar
+things presented above\grqq{} \anchor{Zhou-II}{153--156} ---, wenden sie aber nur auf
+eigene Auslassungen an, nie auf den importierten Schritt.
+
+\subsection{Keine alternative Skala}
+
+Die Log-Volumen-Normierung wird aus dem vierten Band der Quelltheorie zitiert
+statt ersetzt \anchor{Zhou-I}{474--480}. Die schärferen Schranken, der eigene
+Readout und die neuen Konstanten liegen sämtlich auf den Seiten der Brücke, nicht
+in ihr. Eine Frage bleibt ausdrücklich unentschieden: ob ein expliziter Faktor in
+der importierten Ungleichung eine Renormierung derselben Größe ist, die das
+Korollar in seine Notation einfaltet, oder eine davon verschiedene Größe, war im
+Quellenumfang jener Anwendung nicht entscheidbar und ist als Folgeprüfung vermerkt
+statt beantwortet.
+
+\subsection{Ergebnis von Fall D}
+
+Beide Arbeiten \emph{setzen} das Zertifikat \emph{voraus}. Keine umgeht es, und
+keine führt eine alternative Skala dafür ein. Die erste steuert ein Element von
+Pflicht~6 bei --- ihren eigenen expliziten numerischen Readout auf der
+$\Theta$-Seite ---, liefert aber keine Kompatibilitätsidentität, und sie
+übernimmt Pflicht~7 vollständig. Die nicht eingelöste Pflicht wird also
+stromabwärts nicht geschlossen, sondern unbesehen geerbt und in der zweiten Arbeit
+zusätzlich auf eine Datenklasse ausgedehnt, die die zitierten Bände nicht
+behandeln.
+
+\paragraph{Gesucht, nicht gefunden.} Beide Extrakte wurden case-insensitiv
+durchsucht; die Zahlen stehen als erste Arbeit\,/\,zweite Arbeit.
+\texttt{Scholze} 0/0; \texttt{Stix} 0/0; \texttt{indetermin} 0/0;
+\texttt{multiradial} 0/0; \texttt{Theta-pilot}, \texttt{q-pilot},
+\texttt{theta pilot} 0/0; \texttt{Frobenioid} 0/0; \texttt{controvers},
+\texttt{criticis}, \texttt{criticiz}, \texttt{dispute}, \texttt{debate} 0/0;
+\texttt{gap in}, \texttt{not verif}, \texttt{unverif}, \texttt{validity},
+\texttt{correctness} 0/0. Zwei Suchbegriffe liefern Treffer, und keiner davon ist
+eine Auseinandersetzung: das maskierte \texttt{3.12} liefert 1/0, wobei der eine
+Treffer die Zitation bei \anchor{Zhou-I}{732} ist, und \texttt{log-theta-lattice}
+liefert 1/1, in beiden Fällen der Titel eines Literaturverzeichnis-Eintrags
+\anchor{Zhou-I}{2583--2584}, \anchor{Zhou-II}{2254--2255}. Die Reichweite dieses
+Blocks ist die Reichweite dieser Wortliste: Eine unter anderer Terminologie
+geführte Auseinandersetzung wäre damit nicht erfasst worden.
+
+\paragraph{Versionsvorbehalt.} Die zweite Arbeit bezeichnet sich in der ersten
+Zeile ihres Abstracts selbst als ältere, noch zu aktualisierende Fassung
+\anchor{Zhou-II}{10}. Jeder Befund über sie ist ein Befund über diese Fassung;
+eine spätere Fassung könnte insbesondere den Vererbungsschritt anders begründen.
+
+% =============================================================================
+\section{Was die vier Anwendungen gemeinsam zeigen}
+\label{sec:convergence}
+% =============================================================================
+
+\subsection{Vier verschiedene Rollen, nicht vier Detektionen}
+
+Es wäre bequem und falsch, zu sagen, der Befund sei viermal bestätigt worden. Die
+vier Anwendungen leisten Verschiedenes, und sie getrennt zu benennen ist zugleich
+genauer und informativer (Tabelle~\ref{tab:applications_roles}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.20\textwidth}P{0.48\textwidth}@{}}
+\toprule
+Fall & Rolle & Was er feststellt \\
+\midrule
+A & \textbf{Detektion} & Die Pflichten~6 und~7 sind an einem benannten Substep
+  nicht eingelöst: Die Kompatibilitätsidentität ist nicht ausgewiesen, und die
+  Ordnungsrelation ist nicht abgeleitet. \\
+B & \textbf{Weg\-schließung} & Der Ort, an den die Bezifferung ausgelagert wird,
+  ist explizit und an den von ihm benannten Knoten geschlossen und kann Pflicht~7
+  nicht einlösen, weil er die strittige Ungleichung als Eingabe verbraucht. \\
+C & \textbf{Vergleichende Diskri\-minierung} & Das Instrument unterscheidet: drei Zeilen
+  liefern, und die nicht eingelöste Pflicht sitzt an anderer Adresse, in anderer
+  Theorie, mit anderer Gestalt --- an einer Adresse, die im Lauf dieser Arbeit
+  durch eine genauere Lesart derselben Quellen revidiert wurde. \\
+D & \textbf{Fort\-pflanzung} & Nachgelagerte Arbeiten erben die nicht eingelöste
+  Pflicht ungeprüft und dehnen das Geerbte in einem Fall aus. \\
+\bottomrule
+\end{tabular}
+\caption{Systematische Rollen und methodische Funktionen der vier Fallanwendungen.}
+\label{tab:applications_roles}
+\end{table}
+
+Nur A ist eine Detektion. B ist das Gegenteil einer zweiten Detektion: Es stellt
+fest, dass ein bestimmter Kandidatenort \emph{nicht} der Ort ist, an dem die
+Pflicht eingelöst wird, was die Suche verengt statt sie zu wiederholen. C ist eine
+Diskriminierungsanwendung, deren Wert darin liegt, eine \emph{andere} Antwort zu
+liefern. D sagt
+nichts darüber, ob die Pflicht eingelöst werden kann; es sagt, dass keine der
+beiden geprüften Fassungen das tut.
+
+Fall B trägt eine zweite Funktion, die zu benennen sich lohnt, weil sie der
+einzige interne Beleg dafür ist, dass das Instrument auch etwas anderes als ein
+Defizit zurückgeben kann. Unter denselben Kriterien, die in Fall A eine nicht
+eingelöste Pflicht protokollieren, liefert der in Fall B geprüfte Text eine
+explizite bezifferte Kette und einen exakt passenden Import an den tragenden
+Knoten: Auf diese Fragen fällt die Antwort positiv aus. Das ist ein
+\emph{positiver dokumentarischer Vergleich}, keine Validierung --- Fall B ist kein
+Ort, an dem Pflicht~7 eingelöst werden könnte, und kann deshalb genau die Zeile
+nicht prüfen, an der das Zertifikat dem Vorwurf am stärksten ausgesetzt ist, es sei
+auf seine Antwort hin gebaut.
+
+\subsection{Die Adresse ist über unabhängige Texte hinweg stabil}
+
+Für eine vollständige synoptische Gesamtschau fasst Tabelle~\ref{tab:synoptic_cross_case_matrix} alle vier Fallanwendungen bezüglich Primärquellen, Theorierahmen, BC-Ledger-Kernbefunden, Lückentypen und methodischen Funktionen im Argumentationsgang zusammen.
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{2.5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}lP{0.15\textwidth}P{0.21\textwidth}P{0.20\textwidth}lP{0.14\textwidth}@{}}
+\toprule
+Fall & Primärquelle & Theoretischer Kontext & BC-Ledger-Befund & Defizit & Rolle \\
+\midrule
+A & IUT-III, Kor.~3.12 & Inter-universelle Teichmüller-Theorie & R6a/R6b \textsc{liefert nicht} & G (Schritt xi-e) & Detektion \\
+B & IUT-IV, \S\,1 & Explizite Log-Volumen-Quantifizierung & R4 \textsc{teilweise} / Import exakt & Z-frei & Weg\-schlie\-ßung \\
+C & ATS-IV v2, \S\,6.10, Thm.~6.10.1 & Arithmetische Teichmüller-Räume & R6 \textsc{teilweise} (revidiert) & G (Summenebene) & Diskrim. \\
+D & Zhou-I/II & Nachgelagerte diophantische Anw. & R6 \textsc{geerbt} & G (importiert) & Vererbung \\
+\bottomrule
+\end{tabular}
+\caption{Synoptische Gesamtschau aller vier Anwendungen: Gegenstand, Kernbefunde, Lückentypen und methodische Rollen.}
+\label{tab:synoptic_cross_case_matrix}
+\end{table}
+
+Was die vier gemeinsam feststellen, ist enger und, wie wir meinen, dauerhafter als
+eine Zählung von Bestätigungen. \emph{Zwei} textlich unabhängige Werkkomplexe ---
+die Theorie der Fälle~A und~B und das Programm aus Fall~C ---, mit einem
+unveränderten Instrument geprüft, legen die Last des Arguments auf dieselbe
+Passage: den Schritt von einem gemeinsamen Container zu einer abgeleiteten
+Ordnungsrelation. Keiner von beiden vollzieht diesen Schritt, und keiner löst auch
+die unmittelbar davorstehende Pflicht ein --- wobei sie dort unterschiedlich
+ausfallen, was den Vergleich erst informativ macht. Ein dritter Komplex,
+Fall~D, legt nichts: Er importiert den Schritt aus dem ersten, wie sein eigener
+Text sagt, und kann deshalb nichts bestätigen --- was er beiträgt, ist die
+Beobachtung, dass die Pflicht ungeprüft weiterwandert. Pflicht~6 ist in Fall~A
+nicht eingelöst, weil die Kompatibilitätsidentität schlicht fehlt; in Fall~C
+teilweise, weil die Kompatibilität zwischen den Summen hält und stellenweise
+dementiert ist; und in Fall~D nur auf einer Seite ergänzt. Pflicht~7 ist im
+strengen Sinn des Ledgers in keinem von ihnen eingelöst.
+
+Dass das Instrument die Fälle dennoch scharf trennt --- \glqq liefert nicht\grqq{} gegen
+\glqq teilweise\grqq{} gegen \glqq geerbt\grqq{} ---, spricht gegen die Lesart, der gemeinsame Befund sei
+bloß ein Artefakt der Zertifikatskonstruktion. Entschieden ist die Frage damit
+nicht. Eine echte Positivkontrolle --- ein Transportargument derselben Gestalt,
+dessen siebte Pflicht \emph{eingelöst ist} --- war unter den geprüften Fällen nicht
+dabei, und diese Lücke zu benennen gehört zum Befund und ist keine Randbemerkung.
+
+\subsection{Ein unabhängiges Formalisierungsprojekt erreicht denselben Ort}
+
+Im selben Zeitraum hat ein internationales Formalisierungsprojekt einen
+Zwischenbericht veröffentlicht~\cite{LANA2026}, der an derselben Passage ein
+Kompatibilitätsproblem isoliert. In seinen eigenen Worten:
+
+\begin{quote}\small
+\glqq we isolate a specific compatibility problem at the final stage of the argument:
+the relation between the construction arising directly from the $q$-pilot in its
+native arithmetic holomorphic structure and the construction obtained by anabelian
+and Kummer-theoretic methods through the multiradial procedure. \dots\
+\emph{Project LANA has not yet reconstructed a proof of the required
+compatibility}.\grqq{} \hfill\anchor{LANA}{11--16}
+\end{quote}
+
+und zum Status dieser Aussage:
+
+\begin{quote}\small
+\glqq the proof of the final numerical inequality \emph{hinges on the compatibility}
+(9-1) \emph{which is not manifestly false. However, we \dots\ do not have a proof
+of} (9-1) \emph{at this time}.\grqq{} \hfill\anchor{LANA}{2988--2990}
+\end{quote}
+
+Die verlangte Aussage ist eine Existenzbehauptung: Konstruiert werden zwei
+Isomorphismen punktierter reeller Vektorräume mit gemeinsamem Ziel --- der eine
+aus dem $q$-Piloten \glqq together with the native arithmetic holomorphic structure\grqq
+\anchor{LANA}{2807--2812}, der andere anabelisch und abhängig von der Wahl einer
+Integralstruktur, \glqq subject to indeterminacies\grqq{} \anchor{LANA}{2783--2803} ---, und
+gewünscht wird, \glqq that \emph{there exists some suitable} $S$ \emph{such that}
+$\eta^q = \eta_S^{\mathrm{anab}}$\grqq{} \anchor{LANA}{2815--2819}.
+
+Der Quotient $R^{\mathrm{ss}}$ des Berichts identifiziert adelische messbare
+Mengen, wenn ihre Volumina gleich sind. Diese Definition beweist keine
+Gleichheit der beiden konkreten Pilotklassen oder der Abbildungen in (9-1).
+Die Gleichung bleibt im zitierten Bericht ein offenes Ziel (PDF S.~46, 48--49).
+Es folgt eine vorgeschlagene objektweise Rollenzuordnung
+(Tabelle~\ref{tab:lana_mapping}); sie liefert die fehlende getypte
+Implikation zu Pflicht~7 nicht.
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}P{0.27\textwidth}P{0.37\textwidth}P{0.23\textwidth}@{}}
+\toprule
+Pflicht & Objekt im Bericht & Anker \\
+\midrule
+3 --- Container, typisierte Einbettungen & das gemeinsame Ziel mit seinen zwei
+  typisierten Abbildungen & 2790--2812 \\
+4 --- erlaubte Identifikation & stipulierte Quellidentifikationen plus die Wahl
+  von $S$ & 2937--2939 \\
+5 --- getrenntes Budget & zwei Indeterminacies auf der anabelischen Seite, die
+  dritte als Ambiguität der $S$-Wahl & 2786, 2973--2974 \\
+\textbf{6 --- kompatible Auswertung} & das gemeinsame Ziel ist
+  konstruktionsgemäß der Volumen-Auswertungsquotient, aber \textbf{die verlangte
+  Gleichheit der beiden Auswertungs-Isomorphismen --- eine
+  Kompatibilitätsidentität im Sinne dieser Pflicht --- ist gefordert und
+  unbewiesen} & 2790--2794, 2815--2819, 2988--2990 \\
+7 --- Ordnungskompatibilität & hier keine getypte Implikation belegt;
+  Objekt, normierte Auswertung und Halbgeradenschranke bleiben zu verbinden & 2815--2819 \\
+\bottomrule
+\end{tabular}
+\caption{Abgleich zwischen den Objekten des Formalisierungsberichts (Projekt LANA) und den Zertifikatspflichten.}
+\label{tab:lana_mapping}
+\end{table}
+
+Drei Aussagen über diese Konvergenz, und bewusst keine vierte.
+
+\begin{enumerate}
+\item \textbf{Vorgeschlagene Rollenzuordnung, keine Validierung.} Die
+  Abbildungen und ihre verlangte Kompatibilität können eine Frage an Pflicht~6
+  motivieren. Das identifiziert sie nicht formal mit dem Zertifikatsvertrag.
+\item \textbf{Die getypte Brücke fehlt weiterhin.} Eine Implikation von (9-1)
+  zu Pflicht~7 verlangt die begründete Wahl von $S$, die relevanten Objekte und
+  Quotientenrepräsentanten, eine gemeinsame normierte Log-Auswertung sowie
+  Orientierung und Obergrenze der Zielhalbgerade. Die Gleichheit zweier
+  abstrakter Abbildungen allein liefert diese Voraussetzungen nicht.
+\item \textbf{Hier wird kein Ordnungsschluss abgeleitet.} Wären diese
+  Voraussetzungen und eine geeignete Vergleichsschranke bewiesen, könnte
+  eine kompatible Auswertung ein Ordnungsargument tragen. Weder diese Arbeit
+  noch der zitierte Zwischenbericht liefert die vollständige Kette.
+  Die Zuordnung bleibt ein Forschungsauftrag, keine bewiesene einseitige
+  Implikation und keine Widerlegung.
+\end{enumerate}
+
+Auch die eigene Position des Berichts ist genau festzuhalten, weil sie dem
+Verdikt-Vokabular aus Abschnitt~\ref{sec:instrument} entspricht und keiner der
+Parteipositionen: Die Kompatibilität sei \glqq not manifestly false\grqq, und einen Beweis
+dafür gebe es nicht. Das ist dieselbe Unterscheidung, auf der das Ledger besteht.
+\emph{Liefert nicht ist nicht widerlegt} --- und die Konvergenz, soweit sie
+besteht, ist eine Konvergenz darauf, wo die Frage sitzt, nicht auf eine Antwort.
+
+\paragraph{Was \glqq unabhängig\grqq{} hier heißt --- und was nicht.} Das Wort wird in einem
+streng belegten Sinn verwendet. Das Zertifikat und seine neun Zeilen wurden im
+Mai~2026 fixiert, bevor eine der vier hier berichteten Anwendungen durchgeführt
+wurde; diese fanden im August~2026 statt; der Zwischenbericht erschien im Juli~2026
+und zitiert diese Arbeit nicht. Das ist die gesamte Evidenz, und sie trägt genau
+eine begrenzte chronologische Beobachtung --- dass das anfängliche Ledger dem
+Bericht vorausgeht. Einfluss auf spätere Anwendungen oder Revisionen ist damit
+nicht ausgeschlossen; auch die Abwesenheit von Kontakt oder Einfluss in einer
+der Richtungen ist nicht belegt;
+das wäre eine Aussage über Personen, die keine Lektüre der Dokumente entscheiden
+könnte, und sie wird deshalb nicht getroffen.
+
+Zwei weitere Einschränkungen gehören unmittelbar hierher. Der Bericht ist ein
+Zwischenbericht, seine Autoren protokollieren internen Dissens, und unsere
+Abbildung ist eine objektweise Zuordnung, kein Äquivalenzbeweis. Die Abbildung
+setzt außerdem die Pflichten~1 und~2 voraus, statt sie auszuweisen: Die beiden
+Objekte und die Zielhalbgerade gelten als bereits typisiert, und in der Tabelle
+oben werden nur die Pflichten~3 bis~7 zugeordnet.
+
+\subsection{Was nicht gezeigt ist}
+
+\begin{enumerate}
+\item \textbf{Fünf von neun Zeilen sind ungefüllt.} Die Zeilen R0, R1, R3, R5 und
+  R7 waren in keiner der vier Anwendungen Gegenstand und sind in allen offen. R5
+  wurde nur berührt, soweit R4 es erzwang. Ein Ledger mit vier gefüllten Zeilen
+  ist ein Teil-Ledger, und die obigen Übersichtstabellen sind so zu lesen. Die
+  vier sind zudem nicht von einheitlichem Status, und der Nenner sollte das nicht
+  verdecken: Drei von ihnen --- R2, R4 und R6, letztere an beiden Hälften ihres
+  Splits berichtet --- sind Kernzeilen, während R8 die getriggerte Erweiterung
+  aus Abschnitt~\ref{sec:ledger} ist, die auf keine Pflicht abbildet und ohne
+  ihren Auslöser außerhalb des Geltungsbereichs liegt. Eine Vollständigkeitsaussage
+  über das Zertifikat ist eine Aussage über die acht Kernzeilen R0--R7, von denen
+  drei gefüllt wurden.
+\item \textbf{Keine Aussage über Korrektheit.} In keinem der vier Fälle wurde eine
+  Beweiszeile nachvollzogen oder eine Abschätzung nachgerechnet. Insbesondere
+  stellt Fall B fest, \emph{dass} und wo gerechnet wird, nicht, dass es stimmt.
+\item \textbf{Keine Aussage über Reparierbarkeit.} Nichts hier sagt, dass die
+  nicht eingelöste Pflicht nicht eingelöst werden kann; eine konkrete Route ---
+  ob irgendein Text einen Satz enthält, der die Ordnungsrelation aus dem
+  deklarierten Eigenschaftspaar ableitet, statt sie formal zu ziehen --- wurde als
+  verbleibender Hebel benannt und nicht verfolgt.
+\item \textbf{Keine Aussage über die Vermutung.} Das Wort \glqq Lücke\grqq{} bedeutet in
+  dieser Arbeit \glqq eine Pflicht eines benannten Zertifikats, die ein zitierter
+  Wortlaut nicht einlöst\grqq. Es bedeutet nicht, dass die $abc$-Vermutung offen oder
+  geschlossen ist, und es bedeutet nicht, dass eine hier geprüfte Theorie falsch
+  ist.
+\end{enumerate}
+
+% =============================================================================
+\section{Einschränkungen}
+\label{sec:limitations}
+% =============================================================================
+
+Dieser Abschnitt sagt, was die Arbeit nicht tut, in den Begriffen der
+zugrundeliegenden Prüfungen.
+
+\begin{enumerate}
+\item \textbf{Kein Beweis wurde nachvollzogen.} Kein Satz einer geprüften Quelle
+  wurde Zeile für Zeile verifiziert, keine Abschätzung nachgerechnet, keine
+  Konstante geprüft. Klassifiziert wurde die Struktur der Begründung.
+\item \textbf{Vier von neun Zeilen, davon drei Kernzeilen.} Siehe
+  Abschnitt~\ref{sec:convergence}. Die Zeilen-Splits aus
+  Abschnitt~\ref{sec:splits} waren nicht Bestandteil des fixierten Zertifikats
+  --- zwei entstanden aus dem Gebrauch, der dritte aus der gehärteten Lesart von
+  Pflicht~6 --- und sie sind nur im Nachfolgeinstrument~\cite{GeigerBCM2026}
+  normativ. Die Fallberichte bleiben deshalb überall dort bei den ursprünglichen
+  Zeilen, wo der Split am Befund nichts ändert, damit keiner Anwendung
+  zugeschrieben wird, sie habe eine Zeile gefüllt, die es zum Zeitpunkt ihrer
+  Durchführung noch nicht gab. Wo der Split etwas ändert, nutzen sie ihn und sagen
+  es: Fall~B berichtet an R4a und R4b, Fall~A an R6a und R6b (die Trennung von
+  Fall~C wird im Fließtext gegen die zusammengelegte Zeile geführt). Version 0.1 hielt
+  ohne Einschränkung fest, die Fallberichte berichteten gegen die ursprünglichen
+  Zeilen; das beschrieb die eigene Praxis dieser Arbeit zu weit, denn Fall~B zog
+  seine einzige Verdikts-Änderung bereits aus dem R4-Split.
+\item \textbf{Ein Verdikt ruht auf einer Rekonstruktion.} In Fall A hat die
+  tragende Zeile bei der Extraktion ein Relationssymbol verloren. Die
+  Rekonstruktion und ihre Gegenproben sind in
+  Abschnitt~\ref{sec:reconstruction-A} offengelegt; die Allgemeinformel \glqq kein
+  Schluss hängt an der Stellung eines Symbols\grqq{} wäre für diese Arbeit falsch und
+  wird bewusst nicht verwendet.
+\item \textbf{Fall C trägt zwei spätere Korrekturen in entgegengesetzte
+  Richtungen} (Abschnitt~\ref{sec:caseC-nachtraege}), und der Fall ist mit beiden
+  zu lesen. Die der zweiten zugrundeliegende Substanzprüfung ist ihrerseits eine
+  Form- und Substanzprüfung, keine Widerlegung; sie ist als
+  Teil~5~\cite{GeigerSubstance2026} erschienen, ebenso wie die der ersten
+  zugrundeliegende Quellenprüfung~\cite{GeigerGNC2026}.
+\item \textbf{Fall D beschreibt eine Fassung eines Dokuments.} Die zweite Arbeit
+  erklärt sich selbst für überholt \anchor{Zhou-II}{10}. Ihre Befunde sind an die
+  Fassung gebunden.
+\item \textbf{Die Konvergenz aus Abschnitt~\ref{sec:convergence} ist
+  objektweise}, nicht formal. Eine Äquivalenz zwischen der siebten Pflicht des
+  Zertifikats und der Kompatibilitätsaussage des Berichts wird weder behauptet
+  noch bewiesen, und die Implikation, die wir angeben, läuft nur in eine Richtung.
+\item \textbf{Mathematische Sachfragen bleiben planmäßig offen}, nicht aus
+  Versehen --- siehe Abschnitt~\ref{sec:cannot}, Punkt~2.
+\item \textbf{Das Instrument ist über diese Anwendungen hinaus nicht validiert.}
+  Vier Anwendungen in zwei Theorien sind eine kleine Stichprobe. Ob das Zertifikat
+  in anderen Feldern nützlich unterscheidet, ist ungeprüft; das Rezept aus
+  Abschnitt~\ref{sec:recipe} wird angeboten, damit es geprüft werden kann.
+\item \label{lim:biblio} \textbf{Bibliographische Disziplin.} Jeder Eintrag wurde
+  vor dieser Fassung gegen die Originalquelle geprüft (Verifikationslauf vom
+  13.~August~2026). Die Titel von~\cite{ZhouI} und~\cite{ZhouII} waren zunächst
+  weggelassen --- das dieser Arbeit zugrundeliegende Material protokollierte ihre
+  Kennungen, ihren Autor und ihre Zugehörigkeit, zitierte ihre Titel aber nicht,
+  und einen plausiblen Titel zu erfinden wäre schlechter als ihn wegzulassen ---
+  und wurden anschließend aus den arXiv-Einträgen selbst ergänzt. Die
+  gelegentlich neben~\cite{LANA2026} genannte Formalisierungsnotiz vom April 2026
+  wird bewusst \emph{nicht} zitiert: Sie wurde gesichert, aber nicht gelesen, und
+  eine ungelesene Quelle hat in einem Literaturverzeichnis nichts zu suchen.
+\item \textbf{Textbasis sind Extrakte.} Alle Zitate stammen aus
+  \texttt{pdftotext}-Extrakten; Zeilenangaben sind Auffindhilfen, keine
+  Seitenzählung.
+\end{enumerate}
+
+% =============================================================================
+\section{Fazit}
+\label{sec:conclusion}
+% =============================================================================
+
+Die Meinungsverschiedenheit, von der diese Arbeit ausgeht, ist zunächst keine über
+Mathematik. Sie handelt davon, was eine bestimmte Satzfolge \emph{ist}. Für diese
+Art von Streit sind die üblichen Instrumente schlecht geeignet, weil sie eine
+Frage stellen --- ist das korrekt? ---, die beide Seiten über verschiedene
+Gegenstände beantworten, und weil sie dem Autoritätsargument eine Tür offenlassen,
+die sich von innerhalb einer Prosabegutachtung nicht schließen lässt.
+
+Das Brücken-Zertifikat ersetzt diese Frage durch eine, die ein Text über sich
+selbst beantworten kann: Welche von sieben benannten Pflichten löst dieser
+Wortlaut ein? Um diese Frage herum liegen Disziplinen, die die Antworten
+nachprüfbar statt bloß zuversichtlich machen --- typisierte statt graduierter
+Lücken, ein Import-Ledger, protokollierte Suchbegriffe für jeden Negativbefund,
+offengelegte Rekonstruktionen und ein Verdikt-Vokabular, in dem \glqq nicht eingelöst\grqq
+nicht stillschweigend zu \glqq widerlegt\grqq{} werden kann.
+
+Viermal angewandt, hat das Instrument vier verschiedene Dinge getan, und das ist
+das Ergebnis, das zu behalten sich lohnt. Es hat zwei nicht eingelöste Pflichten
+an einem benannten Substep detektiert und sie voneinander getrennt --- eine
+Kompatibilitätsidentität, die nicht ausgewiesen ist, und eine Ordnungsrelation,
+die nicht aus ihr abgeleitet ist --- eine Unterscheidung, auf die es ankommt, weil
+sie einen diffusen Verdacht in zwei bestimmte fehlende Aussagen verwandelt statt
+in eine allgemeine Klage. Es hat den
+einen Ort weggeschlossen, an den die Quelle selbst ihre Bezifferung auslagert,
+indem es zeigte, dass die dortige Rechnung explizit, an den von ihr benannten
+Knoten geschlossen und stromabwärts des strittigen Schritts liegt. Es hat
+unterschieden, als es auf ein unabhängiges Vergleichsprogramm angewandt wurde, und
+drei liefernde Zeilen sowie eine anders
+geformte Lücke an anderer Adresse zurückgegeben --- und es hat, als eine genauere
+Lesart derselben Quellen es verlangte, die eigene erste Codierung dieses Falls
+revidiert, statt sie stehen zu lassen. Und es hat protokolliert, dass
+zwei nachgelagerte Anwendungen die nicht eingelöste Pflicht in einem Satz erben,
+ohne sie zu prüfen.
+
+Was dieses Bild ändern würde, ist ein einzelnes, angebbares Objekt: ein Satz, der
+die Ordnungsrelation aus der erlaubten Identifikation ableitet, statt sie formal
+aus Eigenschaften zu ziehen, die einer Konstruktion zugesprochen werden. Dass ein
+solcher Satz im geprüften Material nicht gefunden wurde, ist eine Aussage über
+dieses Material. Ob er anderswo existiert oder bewiesen werden kann, ist eine
+mathematische Frage --- und sie ist die Frage, die dieses Instrument in einer
+Form übergeben soll, die präzise genug ist, um daran zu arbeiten.
+
+% =============================================================================
+% KI-OFFENLEGUNG -- Pipeline-Standard, eingebunden aus der kanonischen Vorlage
+% (zweisprachig, bringt eigenes \section* mit). Die Vorlage nennt Rechenskripte
+% und Läufe; diese Arbeit hat keine, weshalb der Einschränkungsabsatz darunter
+% nach unten abweicht -- so verlangt es die Vorlage selbst. Die Einschränkung
+% NICHT streichen: ohne sie behauptete die Offenlegung nicht getane Arbeit.
+% =============================================================================
+\phantomsection
+\addcontentsline{toc}{section}{AI Disclosure / KI-Offenlegung}
+\input{ai_disclosure_STANDARD}
+
+\medskip
+
+\noindent
+\emph{Einschränkung für diese Arbeit:} Zu dieser Arbeit gehören keine
+Rechenskripte und keine Berechnungsläufe; die entsprechenden Punkte des
+Standardtextes (Erstellung und Prüfung der Rechenskripte, Ausführung und
+Auswertung der Berechnungsläufe, versionierte Skripte mit Ergebnisdateien und
+Prüfsummen) treffen hier nicht zu. Die Arbeit besteht aus Textbefunden an lokalen
+PDF-Extrakten.
+
+\medskip
+
+\noindent
+\emph{Restriction for this paper:} this work involved no computational scripts and
+no computational runs; the corresponding items of the standard text (creation and
+checking of computational scripts, execution and evaluation of computational runs,
+versioned scripts with stored result files and checksums) do not apply here. The
+work consists of textual findings against local PDF extracts.
+
+% =============================================================================
+% LITERATURVERZEICHNIS
+% Die Provenienz der Metadaten steht pro Eintrag, in drei Graden: (i) wörtlich
+% im dieser Arbeit zugrundeliegenden Material zitiert; (ii) Kennung und Version
+% gegen den lokalen Extrakt-Kopf verifiziert; (iii) aus der quellengeprüften
+% Bibliographie einer Schwesterarbeit desselben Programms übernommen. Kein
+% Eintrag ohne einen dieser drei Grade.
+% Pflicht-Quellencheck abgeschlossen am 2026-08-13 (WebFetch/WebSearch gegen
+% arXiv, Project Euclid/EMS Press und die zitierten Manuskripte selbst) für
+% alle 11 Einträge; siehe _results/QUELLENCHECK_BIBITEMS_2026-08-13.md. Die
+% drei zuvor als vorläufig markierten Einträge (ZhouI, ZhouII, MFHMP) sind
+% unten vervollständigt; alle übrigen Einträge wurden unverändert bestätigt.
+% =============================================================================
+\begin{thebibliography}{99}
+\addcontentsline{toc}{section}{Literatur}
+\small
+
+% Provenienz (i): vollständige bibliographische Daten wörtlich im
+% zugrundeliegenden Material zitiert, aus der Bibliographie von Zhou I
+% (Extrakt Z. 2583-2584).
+\bibitem{Mochizuki2021c}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory III: Canonical Splittings of
+the Log-theta-lattice}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), Nr.~1/2, 403--626.
+\newblock Hier zitiert als IUT-III; der verwendete Extrakt stammt von der
+Institutsfassung 2020.
+
+% Provenienz (ii)+(iii): Kennung und Rolle im zugrundeliegenden Material
+% verifiziert; Zeitschriftendaten aus der quellengeprüften Bibliographie der
+% Schwesterarbeit zur globalen Normierung im selben Programm.
+\bibitem{Mochizuki2021d}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory IV: Log-volume Computations
+and Set-theoretic Foundations}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), Nr.~1/2, 627--723.
+\newblock Hier zitiert als IUT-IV; der verwendete Extrakt stammt von der
+Institutsfassung 2020.
+
+% Provenienz (iii). Die Bände I und II werden nur als Kontext zitiert, auf dem
+% die geprüften Konstruktionen ruhen; kein Befund dieser Arbeit ruht auf ihnen.
+\bibitem{Mochizuki2021a}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory I: Construction of Hodge
+Theaters}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), Nr.~1/2, 3--207.
+
+\bibitem{Mochizuki2021b}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory II:
+Hodge--Arakelov-theoretic Evaluation}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), Nr.~1/2, 209--401.
+
+% Provenienz (ii) für Kennung und Version (gegen den lokalen Extrakt-Kopf
+% verifiziert), (iii) für den Titel.
+\bibitem{JoshiATSIII}
+K.~Joshi.
+\newblock \emph{Construction of Arithmetic Teichmuller Spaces III: A `Rosetta
+Stone' and a proof of Mochizuki's Corollary 3.12}.
+\newblock arXiv:2401.13508, Version v4 (2025). Hier zitiert als ATS-III.
+
+\bibitem{JoshiATSIV}
+K.~Joshi.
+\newblock \emph{Construction of Arithmetic Teichmuller Spaces IV: Proof of the
+abc-conjecture}. Preliminary version for comments.
+\newblock arXiv:2403.10430, Version v2 (2025). Hier zitiert als ATS-IV.
+
+% Provenienz (i) für Kennung, Version, Autor und Zugehörigkeit, sämtlich im
+% zugrundeliegenden Material zitiert; die Titel sind dort NICHT zitiert. Titel
+% verifiziert am 2026-08-13 per WebFetch der arXiv-Abstract-Seiten
+% (arxiv.org/abs/2503.14510 und arxiv.org/abs/2510.05448).
+\bibitem{ZhouI}
+Z.-P.~Zhou.
+\newblock \emph{The inter-universal Teichmüller theory and new Diophantine
+results over the rational numbers. I}.
+\newblock Institute for Theoretical Sciences, Westlake University.
+\newblock arXiv:2503.14510, Version v1 (2025). Hier zitiert als Zhou-I.
+
+\bibitem{ZhouII}
+Z.-P.~Zhou.
+\newblock \emph{The inter-universal Teichmüller theory and new Diophantine
+results over rational numbers. II}.
+\newblock Institute for Theoretical Sciences, Westlake University.
+\newblock arXiv:2510.05448, Version v1 (2025). Hier zitiert als Zhou-II. Das
+Dokument bezeichnet sich selbst als ältere, noch zu aktualisierende Fassung.
+
+% Provenienz (i): Titel und Spiegel im zugrundeliegenden Material protokolliert.
+% Datum am 2026-08-13 von „17. Juli 2026" auf „16. Juli 2026" korrigiert, um mit
+% der Fußzeile des Dokuments selbst übereinzustimmen, verifiziert per direktem
+% WebFetch des PDFs
+% (ncatlab.org/nlab/files/LANAProject-Report-July2026.pdf); zur Diskrepanz mit
+% Sekundärberichten, die den 17. Juli nennen, siehe
+% _results/QUELLENCHECK_BIBITEMS_2026-08-13.md.
+\bibitem{LANA2026}
+Project LANA.
+\newblock \emph{Interim Report}.
+\newblock 16.~Juli 2026 (Dokumentdatum; manche Sekundärberichte zur
+Veröffentlichung nennen den 17.~Juli 2026). Hier zitiert als LANA.
+
+% Provenienz (iii). Nur als Definition der Negativkontrolle zitiert; kein Befund
+% dieser Arbeit verwendet die Quelle als Beleg. Kanonische Quelle und Datum
+% verifiziert am 2026-08-13 per WebFetch des Manuskript-PDFs.
+\bibitem{ScholzeStix2018}
+P.~Scholze und J.~Stix.
+\newblock \emph{Why abc is still a conjecture}.
+\newblock Manuskript, 16.~Juli 2018. Verfügbar unter
+\url{https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf}.
+
+% Provenienz (i): Titel und Autoren wörtlich im zugrundeliegenden Material
+% zitiert, aus der Bibliographie von Zhou I (Extrakt Z. 2589-2591). Publikations-
+% daten verifiziert am 2026-08-13 per WebFetch der Project-Euclid-Artikelseite
+% (Kodai Mathematical Journal).
+\bibitem{MFHMP}
+S.~Mochizuki, I.~Fesenko, Y.~Hoshi, A.~Minamide und W.~Porowski.
+\newblock \emph{Explicit estimates in inter-universal Teichmüller theory}.
+\newblock Kodai Math. J. \textbf{45} (2022), Nr.~2, 175--236.
+\newblock In Fall D als die Vergleichsarbeit für die nachgelagerten Konstanten
+genannt.
+
+% Eigene Vorarbeiten derselben Serie. Metadaten aus den Live-Zenodo-Records
+% (geprüft 2026-08-13); es sind die beiden bereits erschienenen Teile der Serie.
+\bibitem{GeigerGap2026}
+L.~Geiger.
+\newblock \emph{The Gap in IUTchIII, Corollary 3.12: From Attempted Repair to
+Structural Diagnosis}.
+\newblock Preprint, Version 6.3, Zenodo (2026).
+\newblock \url{https://doi.org/10.5281/zenodo.21899747}.
+\newblock Teil~1 der \emph{abc}-Gap-Serie; die veröffentlichte forensische
+Untersuchung der in Fall~A geprüften Passage.
+
+% Teil 2 derselben Serie, das Methodenpapier. Erschienen am 2026-08-16, während
+% diese Version vorbereitet wurde; seine gehärtete sechste Vertragskomponente ist
+% der Grund für die beiden in „Änderungen in Version 0.2" ausgewiesenen
+% Umcodierungen.
+\bibitem{GeigerBCM2026}
+L.~Geiger.
+\newblock \emph{The Bridge-Contract Criterion: A Form Audit for Transport
+Arguments, with an Instantiation in the $abc$ Literature}.
+\newblock Preprint, Version 0.2, Zenodo (2026).
+\newblock \url{https://doi.org/10.5281/zenodo.21960477}.
+\newblock Concept-DOI \url{https://doi.org/10.5281/zenodo.21960476}.
+\newblock Teil~2 der \emph{abc}-Gap-Serie; das Methodenpapier, dessen gehärtete
+sechste Vertragskomponente in Abschnitt~\ref{sec:obligations} dieser Version
+übernommen wird.
+
+\bibitem{GeigerSubstance2026}
+L.~Geiger.
+\newblock \emph{The Joshi ATS Series under the Bridge-Certificate Standard: A
+Targeted Substance Audit and an All-Place Rigidity Classification of Effective
+Normalization Weights}.
+\newblock Preprint, Version 0.2, Zenodo (2026).
+\newblock \url{https://doi.org/10.5281/zenodo.21956399}.
+\newblock Concept-DOI \url{https://doi.org/10.5281/zenodo.21956398}.
+\newblock Teil~5 derselben Serie; die in
+Abschnitt~\ref{sec:caseC-nachtraege} zitierte Substanzprüfung.
+
+\bibitem{GeigerGNC2026}
+L.~Geiger.
+\newblock \emph{Global Normalization in Joshi's Arithmetic Teichmüller Theory:
+What the Identification Carries --- and What Carries the Theorem}.
+\newblock Preprint, Version 1.1, Zenodo (2026).
+\newblock \url{https://doi.org/10.5281/zenodo.21924254}.
+\newblock Werkzeug-Supplement derselben Serie; die Quellenprüfung, die der ersten
+der beiden Korrekturen in Abschnitt~\ref{sec:caseC-nachtraege} zugrunde liegt.
+
+\end{thebibliography}
+
+\end{document}

@@ -97,8 +97,8 @@ def test_readme_and_readme_de_parity():
     # Check status badges
     assert "Version-0.1.13-blue.svg" in en_content
     assert "Version-0.1.13-blue.svg" in de_content
-    assert ("Tests-54%20Passed" in en_content or "Tests-42%20Passed" in en_content)
-    assert ("Tests-54%20Passed" in de_content or "Tests-42%20Passed" in de_content)
+    assert ("Tests-58%20Passed" in en_content or "Tests-54%20Passed" in en_content or "Tests-42%20Passed" in en_content)
+    assert ("Tests-58%20Passed" in de_content or "Tests-54%20Passed" in de_content or "Tests-42%20Passed" in de_content)
     assert "LLM--Ready-2026--09--19" in en_content
     assert "LLM--Ready-2026--09--19" in de_content
     assert "Ecosystem-research--line-blue.svg" in en_content
@@ -329,6 +329,7 @@ def test_utf8_encoding_all_docs():
     doc_files = [
         "README.md",
         "README_de.md",
+        "CONTRIBUTING.md",
         "SECURITY.md",
         "llms.txt",
         "CHANGELOG.md",
@@ -788,3 +789,72 @@ def test_marketing_log_pfad_b_entry_20260928():
     assert "2026-09-28" in marketing
     assert "ASCII Four-View Architectural Topology Projection" in marketing
     assert "PEP 621 20/20 Keyword Saturation" in marketing
+
+
+def test_contributing_file_exists_and_bilingual_structure():
+    """Verify that CONTRIBUTING.md exists in repo root with bilingual structure and quality gates."""
+    contrib_path = REPO_ROOT / "CONTRIBUTING.md"
+    assert contrib_path.exists(), "CONTRIBUTING.md must exist in repo root"
+    content = contrib_path.read_text(encoding="utf-8")
+
+    assert "# Contributing to abc-hct / Mitwirken an abc-hct" in content
+    assert "## English" in content
+    assert "## Deutsch" in content
+
+    # Check invariant references
+    assert "INV-DET-01" in content
+    assert "INV-ZE-02" in content
+    assert "INV-SEC-07" in content
+    assert "INV-SLA-10" in content
+    assert "RunAsInvoker" in content
+
+    # Check version freeze and ticket reference
+    assert "0.1.13" in content
+    assert "T-20260920-167562623" in content
+
+    # Check pre-commit quality gates
+    assert "pytest" in content
+    assert "ruff check ." in content
+    assert "compileall" in content
+    assert "git diff --check" in content
+
+    # Check zero-copyleft and offline guarantees
+    assert "Zero-Copyleft" in content
+    assert "SECURITY.md" in content
+
+
+def test_pyproject_contributing_url():
+    """Verify that pyproject.toml defines Contributing URL under [project.urls]."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+    urls = data.get("project", {}).get("urls", {})
+
+    assert "Contributing" in urls
+    assert urls["Contributing"] == "https://github.com/research-line/abc-hct/blob/main/CONTRIBUTING.md"
+
+
+def test_readme_and_readme_de_contributing_parity():
+    """Verify that README.md and README_de.md include synchronized Contributing badges and documentation links."""
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    assert "Contributing-Welcome-brightgreen.svg" in readme_en
+    assert "Mitwirken-Willkommen-brightgreen.svg" in readme_de
+    assert "Verified-2026--10--01" in readme_en
+    assert "Geprüft-2026--10--01" in readme_de
+
+    assert "CONTRIBUTING.md" in readme_en
+    assert "CONTRIBUTING.md" in readme_de
+
+
+def test_sbom_and_marketing_audit_20261001():
+    """Verify that Level 1 SBOM companion and MARKETING-LOG.txt document the 2026-10-01 Pfad A audit."""
+    sbom_txt = (REPO_ROOT / "THIRD_PARTY_LICENSES.txt").read_text(encoding="utf-8")
+    sbom_md = (REPO_ROOT / "THIRD_PARTY_LICENSES.md").read_text(encoding="utf-8")
+    marketing = (REPO_ROOT / "MARKETING-LOG.txt").read_text(encoding="utf-8")
+
+    assert "2026-10-01" in sbom_txt
+    assert "2026-10-01" in sbom_md
+    assert "12. TECHNICAL HYGIENE, CONTRIBUTING GUIDELINES" in marketing
+    assert "2026-10-01" in marketing
+    assert "CONTRIBUTING.md" in marketing

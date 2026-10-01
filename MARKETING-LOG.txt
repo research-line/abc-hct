@@ -270,3 +270,31 @@ Cross-Org Ecosystem Collaborations:
   * Expanded automated test suite in tests/test_metadata.py with 6 new contract tests (elevating suite
     from 48 to 54 tests, 100% green) asserting sec-01..sec-18 dual anchors, ASCII topology projection,
     PEP 621 20 keywords saturation, Plain-Text/SBOM URLs, changelog unreleased notes, and Section 11 marketing audit.
+
+--------------------------------------------------------------------------------
+12. TECHNICAL HYGIENE, CONTRIBUTING GUIDELINES, LEVEL 1 SBOM COMPANION RE-AUDIT
+    & CONTRACT TEST SUITE EXPANSION (PFAD A — 2026-10-01)
+--------------------------------------------------------------------------------
+- Date: 2026-10-01 | Audit Type: Pfad A (Repository Hygiene, Quality Gates & SBOM)
+- Active Version: 0.1.13 (strictly frozen per T-20260920-167562623)
+- Bilingual Contributing Guidelines (CONTRIBUTING.md):
+  * Authored comprehensive bilingual (EN/DE) contribution specification in repository root.
+  * Formulated Plan D local development workflow, unprivileged user-mode execution (RunAsInvoker),
+    zero-copyleft subprocess isolation for SageMath / PARI/GP, and zero-egress offline privacy guarantees.
+  * Codified pre-commit quality gates: full pytest suite, ruff linting, compileall syntax check,
+    and git whitespace hygiene.
+  * Reasserted strict version-freeze discipline at v0.1.13 under engineering ticket T-20260920-167562623.
+- PEP 621 Metadata Alignment:
+  * Registered canonical "Contributing" URL in pyproject.toml under [project.urls].
+- Level 1 SBOM Text Companion & Inventory Re-Audit:
+  * Re-audited THIRD_PARTY_LICENSES.txt Level 1 SBOM text companion and THIRD_PARTY_LICENSES.md
+    as of 2026-10-01, confirming unprivileged RunAsInvoker operation, zero-copyleft boundaries,
+    and 10 research governance invariants (INV-DET-01 through INV-SLA-10).
+- Documentation & Discoverability Parity:
+  * Updated README.md and README_de.md with "Verified: 2026-10-01" / "Geprüft: 2026-10-01" and
+    "Contributing: Welcome" / "Mitwirken: Willkommen" badges.
+  * Updated Section 14 (Discovery & LLM Context) and Section 15 (Project Structure) trees with CONTRIBUTING.md.
+  * Updated llms.txt canonical links and audit status to 2026-10-01.
+- Contract Test Suite Expansion:
+  * Expanded automated test suite in tests/test_metadata.py with 4 new contract tests (elevating
+    suite from 54 to 58 tests, 100% green).

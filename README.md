@@ -5,8 +5,9 @@
 [![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
 [![Deutsch](https://img.shields.io/badge/Sprache-Deutsch-yellow.svg)](README_de.md)
 [![CI](https://github.com/research-line/abc-hct/actions/workflows/abc-hct-hygiene.yml/badge.svg)](https://github.com/research-line/abc-hct/actions/workflows/abc-hct-hygiene.yml)
-[![Verified](https://img.shields.io/badge/Verified-2026--09--28-blue.svg)](#)
-[![Tests](https://img.shields.io/badge/Tests-54%20Passed-brightgreen.svg)](tests/)
+[![Verified](https://img.shields.io/badge/Verified-2026--10--01-blue.svg)](#)
+[![Contributing](https://img.shields.io/badge/Contributing-Welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Tests](https://img.shields.io/badge/Tests-58%20Passed-brightgreen.svg)](tests/)
 [![Version](https://img.shields.io/badge/Version-0.1.13-blue.svg)](pyproject.toml)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](pyproject.toml)
 [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](#)
@@ -25,7 +26,7 @@
 Curated research repository for the **HCT/abc** research line within the **research-line** organization and **open-bricks** umbrella.
 
 > [!NOTE]
-> Machine-readable repository context guidelines, canonical search phrases, and safety boundaries are maintained in [`llms.txt`](llms.txt). Discoverability dossier in [`MARKETING-LOG.txt`](MARKETING-LOG.txt). Third-party open-science dependency inventory in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) and plain-text companion in [`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt). Security guarantees and 48-hour SLA are outlined in [`SECURITY.md`](SECURITY.md). Last checked: **2026-09-28**.
+> Machine-readable repository context guidelines, canonical search phrases, and safety boundaries are maintained in [`llms.txt`](llms.txt). Discoverability dossier in [`MARKETING-LOG.txt`](MARKETING-LOG.txt). Third-party open-science dependency inventory in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) and plain-text companion in [`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt). Security guarantees and 48-hour SLA are outlined in [`SECURITY.md`](SECURITY.md). Contribution guidelines in [`CONTRIBUTING.md`](CONTRIBUTING.md). Last checked: **2026-10-01**.
 
 ---
 
@@ -398,6 +399,7 @@ The core computational achievement of this repository is the complete open-sourc
 `abc-hct` provides structured, machine-readable specifications to ensure autonomous agents and scholars can ingest architecture and status without token overhead:
 
 - **[`llms.txt`](llms.txt)**: Fast-loading LLM index detailing module boundaries, invariants, testing gates, and research interfaces.
+- **[`CONTRIBUTING.md`](CONTRIBUTING.md)**: Bilingual guidelines for local Plan D development, pre-commit quality gates, and invariant compliance.
 - **[`MARKETING-LOG.txt`](MARKETING-LOG.txt)**: Discoverability dossier covering value propositions, research personas, search phrases, and strategic roadmaps.
 - **[`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md)**: Open-source licensing inventory covering engine runtimes, toolchains, and mathematical libraries.
 - **[`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt)**: Plain-text Level 1 SBOM companion inventory for offline tooling and non-elevation audits.
@@ -422,6 +424,7 @@ abc-hct/
 │   └── test_scripts_compilation.py # Python syntax compilation tests
 ├── pyproject.toml              # PEP 621 metadata, toolchain & pytest configuration
 ├── CHANGELOG.md                # Semantic version release changelog
+├── CONTRIBUTING.md            # Bilingual contribution & Plan D guidelines
 ├── MARKETING-LOG.txt           # Discoverability, SEO, & Persona audit
 ├── THIRD_PARTY_LICENSES.md     # Mathematical engine & toolchain license inventory
 ├── THIRD_PARTY_LICENSES.txt    # Level 1 SBOM plain-text companion inventory

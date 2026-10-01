@@ -11,7 +11,7 @@ Manuskript (26 Seiten), ihre LaTeX-Quellen und die beiden KI-Offenlegungen.
 Version 1.2 ist ein korrigierter Entwurf; die Veröffentlichung des neuen
 Zenodo-Records erfolgt in einem getrennten Schritt.
 
-Die Reparatur korrigiert die ATS-IV-Domäne zum vervollständigten Körper und
+Die Reparatur korrigiert die überstrichene ATS-IV-Domäne und
 stellt die äußeren Betragsstriche im logarithmischen Volumenvergleich wieder
 her. Sie trennt Absolutbetragsnormierung, Haar-Maß und Modul und zieht die
 allgemeine Gleichsetzung von algebraischer Hülle und konvexer Hülle zurück.

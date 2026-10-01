@@ -10,7 +10,7 @@ This package contains the English manuscript (24 pages), the German manuscript
 (26 pages), their LaTeX sources and the two AI-disclosure inputs. Version 1.2
 is a corrective draft; publication of the new Zenodo record is a separate step.
 
-The repair corrects the ATS IV domain to the completed field and restores the
+The repair corrects the overlined ATS IV domain and restores the
 outer absolute-value bars in the logarithmic-volume comparison. It separates
 absolute-value normalization, Haar measure and the module, and retracts the
 generic identification of the algebraic hull with the convex hull. The

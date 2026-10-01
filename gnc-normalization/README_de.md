@@ -8,8 +8,9 @@ ist [10.5281/zenodo.21924253](https://doi.org/10.5281/zenodo.21924253).
 
 Dieses Paket enthält das englische Manuskript (24 Seiten), das deutsche
 Manuskript (26 Seiten), ihre LaTeX-Quellen und die beiden KI-Offenlegungen.
-Version 1.2 ist ein korrigierter Entwurf; die Veröffentlichung des neuen
-Zenodo-Records erfolgt in einem getrennten Schritt.
+Der korrigierte Entwurf v1.2 ist als [Zenodo 23092166](https://doi.org/10.5281/zenodo.23092166)
+veröffentlicht. Beide öffentlichen PDF-Downloads wurden unabhängig gegen die
+Manifest-Hashes geprüft.
 
 Die Reparatur korrigiert die überstrichene ATS-IV-Domäne und
 stellt die äußeren Betragsstriche im logarithmischen Volumenvergleich wieder

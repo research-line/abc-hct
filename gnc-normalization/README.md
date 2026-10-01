@@ -7,8 +7,9 @@ record is [v1.1](https://doi.org/10.5281/zenodo.21924254); the version family is
 [10.5281/zenodo.21924253](https://doi.org/10.5281/zenodo.21924253).
 
 This package contains the English manuscript (24 pages), the German manuscript
-(26 pages), their LaTeX sources and the two AI-disclosure inputs. Version 1.2
-is a corrective draft; publication of the new Zenodo record is a separate step.
+(26 pages), their LaTeX sources and the two AI-disclosure inputs. The corrective
+draft v1.2 is published as [Zenodo 23092166](https://doi.org/10.5281/zenodo.23092166).
+Both public PDF downloads were independently checked against the manifest.
 
 The repair corrects the overlined ATS IV domain and restores the
 outer absolute-value bars in the logarithmic-volume comparison. It separates

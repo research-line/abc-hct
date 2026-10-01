@@ -1,0 +1,1719 @@
+\input{glyphtounicode}
+\pdfgentounicode=1
+% =============================================================================
+% Global Normalization in Joshi's Arithmetic Teichmuller Theory
+% Assessment / classification paper -- corrective draft v1.2 (English)
+% Project: DRAFT__Global_Normalization_Contract_Lemma  (.RESEARCH/.LAB/.HCT)
+% Basis: OUTLINE.md; _proof-notes/LEMMA_FORMULIERUNG_V1_2026-08-12.md;
+%        P1_QUELLENPRUEFUNG_NORMIERUNG_2026-08-12.md;
+%        P2_TERM_KLASSIFIKATION_THM6101_2026-08-13.md;
+%        R-E2_MASSPINNUNG_2026-08-13.md
+% v1.1 (13 Aug 2026): branch-conditional revision. Every verdict that depends on
+%        the selection rule for lambda_y is now marked for the branch under which
+%        it holds (Section 3.5 trilemma); Lemma~1 (rigidity of the product-formula
+%        multiplier) added in Section 3.6; Section 7 rewritten (the former
+%        three-reading frame is superseded); AI disclosure switched to the
+%        pipeline standard by \input. Report: _results/V11_TRILEMMA_REVISION_2026-08-13.md
+% This is NOT a proof paper. See the scope box after the abstract.
+% =============================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[a4paper,margin=2.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue,unicode=true]{hyperref}
+\def\HyperDestNameFilter{en.}
+
+
+\hyphenation{Ara-ke-lov arith-me-ti-coid arith-me-ti-coids ho-lo-mor-phoid
+  ho-lo-mor-phoids nor-mal-i-za-tion pa-ram-e-tri-za-tion char-ac-ter-i-za-tion}
+
+% v1.1: the revision added several paragraphs dense in unbreakable math atoms;
+% a little extra stretch keeps them inside the text block.
+\emergencystretch=1.5em
+
+% ragged-right paragraph columns for the two classification tables
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\hypersetup{
+  unicode=true,
+  pdfencoding=unicode,
+  psdextra,
+  breaklinks=true,
+  pdftitle={Global Normalization in Joshi's Arithmetic Teichmüller Theory},
+  pdfauthor={Lukas Geiger},
+  pdfsubject={Assessment of the normalization identification in ATS~IV Theorem~6.10.1},
+  pdfkeywords={Arithmetic Teichmüller Theory, Global Normalization, Scale Identification, Invariance Taxonomy, Trilemma, Joshi, Mochizuki, Scholze--Stix}
+}
+
+% --- theorem-like environments ------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{question}{Question}
+\theoremstyle{plain}
+\newtheorem*{derivationD}{Conditional derivation D-1}
+\newtheorem{lemmaR}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{findingF}{Finding F-NEU-1}
+\newtheorem*{criterionK}{Criterion~K (candidate)}
+
+% --- notation -----------------------------------------------------------------
+\newcommand{\arith}{\operatorname{arith}}
+\newcommand{\hol}{\operatorname{hol}}
+\newcommand{\ordd}{\operatorname{ord}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\LogVol}{\operatorname{LogVol}}
+\newcommand{\Thet}{\widetilde{\Theta}}
+\newcommand{\Ynum}{Y_L}
+
+% Every source citation is anchored to a named extract, because the four
+% extracts carry independent line numbering.
+\newcommand{\anchor}[2]{(#1, extract l.~#2)}
+
+\title{Global Normalization in Joshi's Arithmetic Teichmüller Theory:\\
+What the Identification Carries --- and What Carries the Theorem}
+\author{Lukas Geiger\\[2pt]
+\small Independent Researcher, Bernau, Germany\\
+\small ORCID: 0009-0005-7296-1534}
+\date{2 October 2026 --- Corrective draft v1.2}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+This assessment asks what the same global normalization carries in
+Theorem~6.10.1 of Joshi's ATS~IV (arXiv:2403.10430v2). Under the explicitly
+place-wise Artin--Whaples reading, number-field absolute values are identified
+definitionally; the rule selecting the coordinate $\lambda_y$ remains an open
+correspondence question. An elementary product-formula lemma constrains
+multipliers of the standard valuations to one global scalar. The exclusion of a
+fixed product-formula hyperplane remains conditional on assumptions (F1)--(F2).
+The three normalization branches are diagnostic, not exhaustive.
+This corrective version distinguishes the source's asserted Frobenius stability
+of a collated family from the unverified transport to the two indexed hulls in E2.
+It corrects three source readings: ATS~IV states its height domain as
+$\overline L^*$, E2 equates absolute values of log-volumes, and the algebraic
+holomorphic hull of ATS~III is not generically a convex closure. An explicit
+counterexample gives $\operatorname{conv}(\mathbb Z_p\cdot1)=\mathbb Z_p\cdot1
+\subsetneq\mathcal O_E=\operatorname{hull}(\mathbb Z_p\cdot1)$ in an unramified
+quadratic extension $E/\mathbb Q_p$. This does not refute the specialized
+tensor-region assertions or the ATS bounds. Normalized additive Haar measure is
+kept separate from powers of an absolute value: $m(p\mathbb Z_p)=p^{-1}$ does not
+become $p^{-c}$ by changing a valuation exponent. Accordingly the previous
+positive claim of cross-frame measure pinning is withdrawn in every branch.
+A hull- and measure-compatible indexed transport is named as a possible
+sufficient route stronger than the displayed absolute-value equality, not as a
+proved or necessary condition. The selection rule, indexed E2 transport,
+compatible measure and weight bindings, and order comparison remain open.
+No proof or disproof of $abc$, Mochizuki's Corollary~3.12, or Joshi's estimates
+is claimed.
+\end{abstract}
+
+\clearpage
+% -----------------------------------------------------------------------------
+% SCOPE AND CLAIM BOUNDARY
+% -----------------------------------------------------------------------------
+\begin{center}
+\fbox{%
+\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{%
+\medskip
+\textbf{Scope and claim boundary.}\par\medskip
+\begin{itemize}\setlength{\itemsep}{2pt}
+\item This paper proves \emph{nothing} about the $abc$ conjecture, about
+  inter-universal Teichmüller theory, about Mochizuki's Corollary~3.12, or about
+  the correctness of Joshi's bounds. It contains no proof and no disproof of any
+  of these.
+\item It \emph{verifies no bound}. No proof line of ATS~IV Theorem~6.10.1, of
+  Corollary~9.11.1.1, or of Corollary~3.12 was followed step by step; no estimate
+  was recomputed.
+\item What it does: it \emph{classifies definitions and the structure of
+  justification} in one named theorem, and states for each of its components
+  whether that component is definitional, supplied by construction,
+  branch-conditional, or open.
+\item It takes no position in the dispute between Joshi and
+  Scholze--Stix~\cite{ScholzeStix2018} on the mobility of the product-formula hyperplane. Where
+  that dispute is touched, it is reported, not adjudicated.
+\item The structural analogy sketched in Section~\ref{sec:b2outlook} is a working
+  hypothesis of the present program about the \emph{shape of arguments}. It is
+  not a mathematical connection and, in particular, not a claim about the Riemann
+  hypothesis.
+\item The central open item of this version --- that the passages we read state no
+  rule selecting the normalization coordinate of a moved arithmeticoid
+  (Section~\ref{sec:trilemma}) --- is a \emph{definitional gap}: a rule we did not
+  find, which may well stand in material we have not read. It is not a refutation
+  of ATS~III Corollary~4.2.2.4 and not an error claim of any kind. Lemma~1
+  (Section~\ref{sec:rigidity}) constrains which rules the product formula
+  \emph{alone} can supply; it does not assert that no such rule exists.
+\item Where a tension between two passages of a source is recorded, this is an
+  invitation to resolve it and a candidate for correspondence with the author ---
+  not a claim that it is unresolvable, and not an error claim.
+\item \textbf{Textual basis} are \texttt{pdftotext} extracts of the arXiv PDFs.
+  All line references (``extract l.~NNNN'') are finding aids into those extracts
+  and are \emph{not} pagination of the published documents. Direct visual
+  readback covered the source-PDF pages for equation (5.3.3),
+  Theorem~5.10.1(3)--(4), Theorem~10.20.1(3),
+  Definition~4.4.2/formula (4.4.5), and Theorem~6.10.1. No blanket
+  OCR-robustness claim is made; in particular, the E1 absolute-value bars and the
+  direction of the fiber exponent were checked in the source PDFs.
+\end{itemize}
+\medskip
+}}
+\end{center}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+% =============================================================================
+\section{Introduction: the point at issue}
+% =============================================================================
+
+\subsection{The finding that prompted this paper}
+
+The present paper is the fourth part of a small research program whose third
+part was a structured ``ledger test'' of the argumentative architecture of ATS~IV:
+a requirement-by-requirement check of which load-bearing steps of the paper are
+supplied, which are referenced, and which are asserted. That test returned one
+requirement --- the one concerning the comparability of the two arithmeticoids
+entering Theorem~6.10.1 --- as met only \emph{in part}. The reason was not a gap
+in a computation. It was that the identification carrying the middle equality of
+the theorem is, in the text's own word, a tautology
+\anchor{ATS~IV}{3272--3273}, while the very same theorem's remark forbids the
+place-by-place comparison that a reader might otherwise use to check it.
+
+The two textual poles are these. On the one hand the theorem opens with a choice:
+
+\begin{quote}\small
+``Choose the same global normalization for the number field provided by the
+arithmeticoids $y_0'$ and $y_0$. With this choice of simultaneous global
+normalization one has \ldots'' \hfill\anchor{ATS~IV}{3185--3187}
+\end{quote}
+
+prepared in the introduction by
+
+\begin{quote}\small
+``Each arithmeticoid $y_0' = \phi(y_0)$, $y_0$ provides an isomorphic copy of our
+number field and hence one has chosen the same global normalization for both the
+copies, the [sic] it does not matter which arithmeticoid is used for global
+computations.'' \hfill\anchor{ATS~IV}{740--743}
+\end{quote}
+
+On the other hand, immediately below the theorem, the same text states:
+
+\begin{quote}\small
+``as arithmeticoids $y_0' \neq y_0$ as they differ by Frobenius at each prime
+$v \in V_L$ and this, together with choice of concurrent global normalization for
+the copy of the (same) number field they provide \emph{precludes direct comparison
+of various local quantities}.'' \hfill\anchor{ATS~IV}{3207--3211}
+\end{quote}
+
+Both passages are Joshi's. They motivate a question about the identification
+of number-field element scales, but do not place the entire E2 equality on
+that identification. The indexed sets, algebraic hulls, measures and weights
+require their own bindings.
+
+\begin{question}\label{q:main}
+Does the phrase ``same global normalization'', as used in ATS~IV Theorem~6.10.1,
+\emph{assert} an isometry between the two valuation scales, or does it
+\emph{establish} one by definition?
+\end{question}
+
+The two answers have very different consequences. If the phrase asserts an
+isometry, then something is being claimed that a reader is entitled to see proved,
+and the program's working name for the missing statement --- a \emph{global
+normalization contract lemma} --- would be justified. If the phrase establishes
+the element-scale identity definitionally, then no separate lemma is needed
+for that limited identity. What carries the indexed hull and volume equality
+is a further question.
+
+This paper answers Question~\ref{q:main} in the second sense --- conditionally on
+a reading that the sources leave open, as Section~\ref{sec:trilemma} sets out ---
+and then pursues the follow-up question, because the follow-up is where the
+substance turned out to be.
+
+\subsection{Sources, labels, and citation discipline}
+\label{sec:sources}
+
+Four documents are used as primary text. Throughout we use the short labels in
+the left column; every source citation in this paper carries such a label,
+because the four extracts have independent line numbering and a bare line number
+would be ambiguous. Table~\ref{tab:sources} summarizes the primary source corpus and assigned roles.
+
+\begin{table}[htbp]
+\centering
+\caption{Primary source corpus and assigned labels in this assessment.}
+\label{tab:sources}
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Label & Source & Role in this paper \\
+\midrule
+ATS~II & arXiv:2303.01662v3~\cite{JoshiATSII}
+  & behavior of valuations along the Frobenius fiber \\
+ATS~II(1/2) & arXiv:2305.10398v12~\cite{JoshiATSIIhalf}
+  & definition of $\arith(L)^{\mathrm{nor}}$; period mapping; heights \\
+ATS~III & arXiv:2401.13508~\cite{JoshiATSIII}
+  & normalization convention; hyperplane; volume theory \\
+ATS~IV & arXiv:2403.10430~\cite{JoshiATSIV}
+  & Theorem~6.10.1 and its surrounding apparatus \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In Joshi's own bibliographies these appear as ``[Joshi, 2023b]'' (ATS~II),
+``[Joshi, 2023a]'' (ATS~II(1/2)) and ``[Joshi, 2024c]'' (ATS~III); the assignment
+of the first two was verified against the bibliography of ATS~IV
+\anchor{ATS~IV}{3807--3810}, the third is the identification used consistently in
+the working notes underlying this paper. Where we reproduce a passage, the wording
+is verbatim from the extract; mathematical symbols have been typeset, and
+ellipses are marked. Two OCR-level readings were made explicitly: the string
+``ptvh-power'' in ATS~II(1/2) Remark~5.9.2 is read as ``$p_v$-th power'', and the
+subscript/superscript placements in the displayed normalization equations were
+checked against their surrounding prose.
+
+\subsection{What follows}
+
+Section~\ref{sec:equivariance} sharpens the question: the naive form ``is $F$
+invariant?'' misses the structure, because both the evaluated object and the scale
+in which it is evaluated move. Section~\ref{sec:definition} establishes the meaning
+of the phrase under the place-wise reading of the definition of
+$\arith(L)^{\mathrm{nor}}$; its
+Section~\ref{sec:trilemma} then states the trilemma that the definition leaves
+open, and Section~\ref{sec:rigidity} proves the lemma that constrains it.
+Section~\ref{sec:D1} shows by an elementary derivation, under two assumptions
+stated with it, that the product-formula hyperplane really does move, which
+excludes --- under those assumptions --- the one reading under which the phrase
+would have had non-trivial content.
+Section~\ref{sec:terms} classifies the terms of Theorem~6.10.1 and locates the
+candidate carrier. Section~\ref{sec:measure} separates local conventions from
+the open cross-frame measure and hull obligations. Section~\ref{sec:fneu} states the open question at
+the margin --- the one that the trilemma grew out of.
+Section~\ref{sec:assessment} draws the consequences and states the limitations.
+Verdicts that depend on the branch are marked as such where they are stated; the
+summary of which verdict holds under which branch is Table~\ref{tab:branches}.
+
+% =============================================================================
+\section{Sharpening the question: equivariance, not invariance}
+\label{sec:equivariance}
+% =============================================================================
+
+\subsection{Both sides move}
+
+A first attempt to formalize Question~\ref{q:main} would ask: is the quantity $F$
+invariant under a change of arithmeticoid? That formulation is wrong, and seeing
+why is the first substantive step.
+
+In the absolute-value equality (with the indexing detailed in E2 below)
+\[
+ \bigl|\log\Vol(\operatorname{hull}(\Thet^{\varphi(y_0)}))\bigr|
+ =\bigl|\log\Vol(\operatorname{hull}(\Thet^{y_0}))\bigr|
+\]
+\emph{both} arguments move: the evaluated object and the scale in which the
+evaluation happens. The correct form of the statement is therefore not invariance
+but an indexed, frame-dependent comparison. An isometric transport would be
+ a possible sufficient route; the absolute-value equality alone does not imply it. This matters in
+both directions. A statement of this type is not automatically trivial --- being
+an isometry is a substantive property --- but it is also not automatically empty
+when it holds, unlike a mere renaming. Whether the phrase ``identically
+normalized'' asserts such an isometry or produces it by an identification is
+exactly Question~\ref{q:main}.
+
+The relevant structural facts are stated by Joshi himself. The schemes are
+isomorphic:
+
+\begin{quote}\small
+``the schemes underlying these holomorphoids are isomorphic to $X/L$''
+\hfill\anchor{ATS~IV}{426--427}
+\end{quote}
+
+while the analytic structures, and with them the valuation scales, are not:
+
+\begin{quote}\small
+``arithmetic (and geometry) provided by the holomorphoids $\hol(X/L)_y$ and
+$\hol(X/L)_{y'}$ \ldots\ occur at intrinsically different valuation scales''
+\hfill\anchor{ATS~IV}{450--453}
+\end{quote}
+
+and this difference is not an inconvenience of the construction but its purpose:
+
+\begin{quote}\small
+``It is precisely the existence of such intrinsic differences in valuation scales
+which the averaging techniques \ldots\ exploit''
+\hfill\anchor{ATS~IV}{457--459}
+\end{quote}
+
+\subsection{Two precision levels of the question}
+
+Two versions of the question can be stated, of unequal maturity.
+
+\paragraph{(L-weak) The invariance class.}
+Let $N$ be a fixed choice of identical global normalization for the copies of $L$
+provided by $y_0$ and $\varphi(y_0)$. Characterize the class
+\[
+  G \;:=\; \bigl\{\, F \;:\; F(y_0) = F(\varphi(y_0)) \text{ is \emph{provable}
+  under } N \,\bigr\},
+\]
+where $F$ is evaluated covariantly (object and scale transported together) and
+``provable'' explicitly \emph{excludes} that the equality follows from the
+definition of $N$ or from a notational convention.
+
+A proof that $F \in G$ would have the shape of a chain of equalities carrying
+$F(\varphi(y_0))$ into $F(y_0)$ using only steps that either run over data
+demonstrably fixed by $\varphi$, or exploit a demonstrated compensation of two
+changes. The text supplies a formal model for the first kind: the proof of ATS~IV
+Proposition~4.4.4 reduces $\log(q_M) = \log(q_{L_{\mathrm{mod}}})$ to the degree
+formula $\sum_{w\mid v} e_{w\mid v} f_{w\mid v} = [M : L_{\mathrm{mod}}]$
+\anchor{ATS~IV}{1866--1928}. That is a genuine proof by classical means --- but it
+establishes invariance under \emph{field extension}, not under $\varphi$, and is
+therefore a template here, not an answer.
+
+Several source passages delimit the proposed class. ATS~IV reports that
+Tate-parameter absolute values rise under Frobenius
+\anchor{ATS~IV}{567--569}, that the normalized Tate-idele degree is
+non-constant on $\Ynum$ \anchor{ATS~IV}{2055--2075}, and that height
+is written on $\overline L^*\times\Ynum$
+\anchor{ATS~IV}{550--559}. ATS~III reports movement of the
+product-formula hyperplane \anchor{ATS~III}{518--522}.
+These are source-reported examples and indications, not four independently
+proved failures of Frobenius invariance. A displayed domain alone proves
+neither non-constancy nor variation along a particular Frobenius orbit.
+The height statement and F-NEU-1 retain the separate domain and proof
+obligations of Section~\ref{sec:fneu}; D-1 retains (F1)--(F2).
+
+\paragraph{(L-strong) Order compatibility after summation.}
+Give a criterion under which global invariance yields \emph{order compatibility}
+between two families of local contributions, although place-by-place
+comparability is excluded. The side condition is not invented; it is Joshi's:
+
+\begin{quote}\small
+``one cannot claim that $z_p \le z_p'$ holds for all primes $p$ without violating
+the middle equality of (1.5.1)'' \hfill\anchor{ATS~IV}{817--819}
+\end{quote}
+
+This second version is the less developed of the two: it names the structure but
+offers no candidate class of admissible local distributions. We record that as the
+largest substantive arrear of the formulation phase; it is not resolved in this
+paper.
+
+\subsection{A separating criterion}
+
+The classification used in Sections~\ref{sec:terms} and~\ref{sec:measure} rests on
+a criterion that we state as a hypothesis, not as a theorem.
+
+\begin{criterionK}
+A quantity is the more likely to be invariant in the load-bearing sense, the more
+completely it factors over data that $\varphi$ demonstrably fixes (the underlying
+scheme, field degrees, residue field cardinalities), and the less so, the more
+directly it reads the \emph{valuation scale} $|\cdot|_{K_{y_v}}$ of the
+arithmeticoid.
+\end{criterionK}
+
+The criterion's discriminating power can be read off the theorem itself, because
+Theorem~6.10.1 contains both types side by side: its first equality concerns
+$q_\ell$, whose defining formula runs over $\ordd_w(q_w)$ and $\log w$, while its
+middle equality concerns $\log \Vol$, which through
+$\LogVol(\pi \mathcal{O}) = \log|\pi|$ reads the scale directly. Separating the
+two was the first result of the formulation phase; carrying the separation through
+is the business of Section~\ref{sec:terms}. Table~\ref{tab:invariance_classes}
+summarizes the resulting taxonomy of invariance classes under an arithmeticoid shift.
+
+\begin{table}[htbp]
+\centering
+\caption{Taxonomy of invariance classes and the separating Criterion~K under an arithmeticoid shift $\varphi$.}
+\label{tab:invariance_classes}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}P{0.07\textwidth}P{0.24\textwidth}P{0.24\textwidth}P{0.23\textwidth}P{0.14\textwidth}@{}}
+\toprule
+Class & Invariance Character & Factorization Basis & Exemplars in ATS~IV & Gap Role \\
+\midrule
+\textbf{T} & Trivial / definitional & Factors over $\varphi$-fixed scheme \& degree data ($[M:\mathbb{Q}]$, $e, f$) & $\ordd_w(q_w)$, $\log w$, $q_\ell$ (\S\,4.4) & Harmless \\
+\textbf{B} & Bound-invariance (global) & Preserved under global summation / product formula & $\sum_v \log |x|_v = 0$, $A' = CA$ & Constraining \\
+\textbf{F} & Fiber-equivariance & Transforms equivariantly along Frobenius fiber & Period map $\operatorname{per}_{\arith}$, $\Thet$ & Structural \\
+\textbf{N} & Non-invariance (untilt) & Directly evaluates untilt valuation scale $|\cdot|_{K_{y_v}}$ & Tate idele $\log(TI)$, Kummer map & Obstructing \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =============================================================================
+\section{The definition under the place-wise reading:
+\texorpdfstring{$\arith(L)^{\mathrm{nor}}$}{arith(L)nor}
+is unique per point}
+\label{sec:definition}
+% =============================================================================
+
+\subsection{Three candidate readings (not exhaustive)}
+
+Before consulting the definition, the phrase ``same global normalization'' admits
+at least three readings. It is useful to state these three because two can be
+excluded on grounds internal to the text; the list is diagnostic, not a claim of
+logical exhaustiveness.
+
+\begin{description}
+\item[N1.] Both arithmeticoids are normalized in the sense of the standing
+  convention, i.e.,\ the product formula holds in each.
+\item[N2.] Both have the \emph{same} product-formula hyperplane,
+  $H_{y_0} = H_{\varphi(y_0)}$.
+\item[N3.] A coordinated choice is made within the \emph{residual freedom} that
+  the normalization condition leaves open --- the thought being that
+  $\prod_v |x|_{K_v} = 1$ does not fix the individual $|\cdot|_{K_v}$.
+\end{description}
+
+For example, a further mechanism could supplement the product-formula condition
+with a global selection rule that fixes the residual scalar $c$, without returning
+to the place-wise Artin--Whaples binding of branch~(a)/N1$'$ and without allowing
+the place-selective freedom of branch~(c)/N3. These three readings therefore organize the
+source passages at hand; they do not partition every possible selection rule.
+
+Reading N1 cannot be what is meant on its own, because the convention is already
+universal in the series:
+
+\begin{quote}\small
+``I will also assume throughout this paper that all arithmeticoids $\arith(L)_y$
+are normalized i.e.\ $\arith(L)_y = \arith(L)^{\mathrm{nor}}_y$ \ldots\ i.e.\ the
+valuations on each component of $y$ are normalized so that the Artin--Whaples
+product formula (\cite{ArtinWhaples1945}) holds for each $x \in L^*$:
+$\prod_{v \in V_L} |x|_{K_v} = 1$'' \hfill\anchor{ATS~III}{858--863}
+\end{quote}
+
+Under N1, the sentence in Theorem~6.10.1 would add nothing that does not hold
+anyway. Reading N2 stands in visible tension with the text's own emphasis on the
+mobility of the hyperplane, to which we return in Section~\ref{sec:D1}. That
+leaves N3 as the reading that would carry content --- and N3 is precisely the one
+whose definition is not stated in ATS~III or ATS~IV, but in the earlier paper.
+
+\subsection{What the definition actually says}
+
+The definition of the normalized arithmeticoid is given in ATS~II(1/2)
+\S\,5.3. The relevant passages are:
+
+\begin{quote}\small
+``The fundamental global constraint \ldots\ is the validity of the product formula
+for $L$ \ldots\ for the \emph{standard choice of normalizations} for valuations
+$(L_v, |\cdot|_v)$ (given in [Artin and Whaples, 1945]) \ldots\ (5.3.1)
+$\prod |x|_v = 1$'' \hfill\anchor{ATS~II(1/2)}{1840--1848}
+\end{quote}
+
+\begin{quote}\small
+``Now suppose one is given a $y = (\psi_v) \in \Ynum$ \ldots\ Since the two
+valuations $|\cdot|_v$ and $|\cdot|_{K_{\psi_v}}$ on $L_v$ are \emph{equivalent,
+there exist, for each $v \in V_L$, real numbers $\lambda_v \in \mathbb{R}$} such
+that (5.3.3) $(L_v, |\cdot|_v) = (L_v, |\cdot|^{\lambda_v}_{K_{\psi_v}})$.''
+\hfill\anchor{ATS~II(1/2)}{1852--1858}
+\end{quote}
+
+\begin{quote}\small
+``(5.3.5) $\lambda_y = (\lambda_v)$ \ldots\ \emph{is the normalization coordinate
+of $y$}. When valuations induced on $\{L_v\}$ by the local data of $\arith(L)_y$
+are normalized so that (5.3.4) holds, I will write this as
+$\arith(L)^{\mathrm{nor}}_y$'' \hfill\anchor{ATS~II(1/2)}{1867--1873}
+\end{quote}
+
+\begin{quote}\small
+``Because the absolute values $(|\cdot|_{K_{\psi_v}})$ depend on $y \in \Ynum$,
+one has (5.3.7) $\lambda_{y'} \neq \lambda_y$ in general and hence one says that
+the \emph{product formula normalization of $y$ moves with $y$} $\in \Ynum$.
+Especially, one sees that there is \emph{no uniform choice} of the normalization
+coordinate $\lambda_y$ for all $y \in \Ynum$.''
+\hfill\anchor{ATS~II(1/2)}{1884--1891}
+\end{quote}
+
+Two further pieces of context belong here. Each point $y$ carries a
+\emph{canonical} valuation, obtained via the Fargues--Fontaine curve~\cite{FarguesFontaine2018},
+and alongside it the \emph{$L_v$-standard normalized}
+valuation with $|p|_{K_v} = 1/p^{f_v}$ \anchor{ATS~II(1/2)}{802--840}. And the
+impossibility of normalizing everything at once is stated as a statement about the
+family:
+
+\begin{quote}\small
+``Regardless of the choice of a normalization \ldots\ one cannot normalize
+valuations of all untilts of $\bar{L}_v$ \emph{simultaneously}. More precisely the
+function $y \mapsto |p|_{K_y}$ is not a constant function.''
+\hfill\anchor{ATS~II(1/2)}{802--840, Rem.~2.7.1}
+\end{quote}
+
+\subsection{Three consequences}
+
+\paragraph{(i) Read as a place-wise binding, (5.3.3) determines the normalization
+uniquely for each fixed $y$.}
+The exponent $\lambda_v$ is fixed by (5.3.3) as the conversion exponent between
+the canonical $K_{\psi_v}$-valuation and the Artin--Whaples standard valuation.
+This is the classical uniqueness statement for equivalent absolute values: if
+$|\cdot|_1$ is non-trivial and $|\cdot|_2 = |\cdot|_1^{\,a}$ for some $a > 0$,
+then $a$ is unique, being computable as $\log|y|_2/\log|y|_1$ for any $y$ with
+$|y|_1 > 1$ \cite[Prop.~7.8, p.~108]{Milne2020}. Read this way there is \emph{no
+residual freedom} within which anything could be ``coordinated''. That reading is
+natural --- and it is the one this section's verdict rests on --- but it is not
+the only one the sources admit; Section~\ref{sec:trilemma} states the alternative.
+
+\paragraph{(ii) On elements of the number field the normalized valuations agree
+with the standard ones, for every $y$.}
+That is the content of (5.3.3)/(5.3.4). What moves with $y$ is the
+\emph{coordinate} $\lambda_y$ --- the position of the standard scale relative to
+the canonical untilt scale --- not the value $|x|$ for $x \in L$.
+
+\paragraph{(iii) The non-simultaneity is a statement about the family.}
+Remark~2.7.1 denies a $y$-uniform normalization across $\Ynum$; it is not an
+obstruction to the pointwise normalization of any individual $y$. Distinguishing
+the family statement from the point statement is what makes (i) and the quoted
+``no uniform choice'' compatible rather than contradictory.
+
+\subsection{Decision of the trichotomy, under the place-wise reading}
+\label{sec:trichotomy}
+
+\begin{itemize}
+\item \textbf{N3 is vacuous} --- if (5.3.3) is read as a place-wise binding.
+  Section \S\,5.3 then leaves no residual freedom: the freedom conjectured in the
+  formulation phase --- that $\prod_v |x|_v = 1$ does not pin the individual
+  absolute values --- does not exist, because it is not \emph{some}
+  product-formula-compatible family that is chosen, but \emph{the} one bound to
+  the Artin--Whaples standard by (5.3.3). Section~\ref{sec:trilemma} shows that
+  this qualification is not idle: elsewhere in the series a residual freedom of
+  exactly the N3 kind is \emph{exercised}.
+\item \textbf{N2 is excluded under the assumptions (F1)--(F2)} of the derivation
+  of Section~\ref{sec:D1}; without them it is textually disfavored but open. The
+  exclusion is branch-independent --- it uses only the movement of $\lambda_y$
+  along a Frobenius fiber, which every branch retains --- but it is not
+  assumption-free: (F1)--(F2) place the standard point of ATS~IV on such a fiber
+  and supply the coordinate transformation at two finite places.
+\item \textbf{N1$'$ holds under that reading and is then the meaning of the
+  phrase.} By N1$'$ we mean a sharpened form of N1: both copies are taken in their
+  (individually unique) normalized form, whereby elements of the number field
+  receive the same standard absolute values in both copies. This is the only thing
+  that ``Choose the same global normalization for the number field provided by the
+  arithmeticoids $y_0'$ and $y_0$'' can mean, given a place-wise reading of
+  \S\,5.3, and it is exactly what Joshi's own justification says: the
+  arithmeticoids ``provide an isomorphic copy \ldots\ hence one has chosen the same
+  global normalization''.
+\end{itemize}
+
+The wording as a ``choice'' is, in this light, mildly misleading: there would be
+nothing to choose. It would be the invocation of the standing convention of
+ATS~III, under which all arithmeticoids are normalized. Question~\ref{q:main}
+would thereby be answered in its second alternative --- the phrase establishes the
+identity by definition and does not assert an isometry --- and on the level of
+number-field elements a ``missing contract lemma'' of the conjectured form would
+not exist.
+
+We write this in the conditional deliberately. The verdict is sound \emph{given}
+the place-wise reading of (5.3.3), and that reading is the natural one for the
+wording of \S\,5.3 taken by itself. It is not, however, the reading under which
+the normalization is used in the rest of the series. The next subsection sets out
+the resulting alternative, and every later verdict of this paper is marked for the
+branches under which it holds.
+
+Independently of the branch, the definition identifies \emph{nothing} on the
+untilt level, where the canonical valuations of neighboring points on a Frobenius
+fiber demonstrably differ already on $\mathbb{Q}_p$. Which of the quantities in
+Theorem~6.10.1 live on which level is the subject of Section~\ref{sec:terms}.
+
+% -----------------------------------------------------------------------------
+\subsection{What the definition does not state: a trilemma for
+\texorpdfstring{$\lambda_y$}{lambda\_y}}
+\label{sec:trilemma}
+% -----------------------------------------------------------------------------
+
+The preceding subsection assumed an answer to a question the sources do not
+address: \emph{which rule selects the normalization coordinate $\lambda_y$ when
+the arithmeticoid moves?} We searched the passages listed in
+Section~\ref{sec:sources} for such a rule and did not find one. What we did find
+is that the two candidate answers are both used --- in different places.
+
+\paragraph{The place-wise reading is what \S\,5.3 says.}
+Equation (5.3.3) fixes $\lambda_v$ as the exponent converting the canonical
+valuation into the Artin--Whaples standard one, and (5.3.5) speaks of
+\emph{the} normalization coordinate. On that reading (5.3.4) is a rewriting of
+(5.3.1) rather than an additional constraint --- the text itself says the product
+formula ``reads'' that way.
+
+\paragraph{A place-selective freedom is what the later papers exercise.}
+ATS~III states that the scaling at the semi-stable places compels a
+re-normalization \emph{at the other places}:
+
+\begin{quote}\small
+``the non-trivial scaling relationship established by Theorem~4.2.2.1(3) at primes
+$w \in V_{\mathrm{odd},ss}$ \emph{forces that suitable (re)normalization of
+valuations must be introduced at primes} $w \in V_{L'} - V_{\mathrm{odd},ss}$ so
+that the product formula to continue to hold for each normalized arithmeticoid
+$\arith(L)^{\mathrm{nor}}_{y'_j}$.'' \hfill\anchor{ATS~III}{1600--1609}
+\end{quote}
+
+The same mechanism appears as a structural property in Theorem~4.6.1(4)
+\anchor{ATS~III}{1786--1791}, and ATS~IV explains the movement of heights by it:
+the local contributions are ``\emph{bound together} \ldots\ by means of the
+(global) product formula'', so that the global Frobenius ``changes global heights
+in a subtle and complicated way in order to ensure that the product formula
+holds'' \anchor{ATS~IV}{585--589}. An instruction to introduce a re-normalization
+at other places presupposes that at those places something is still free to be
+chosen --- which is precisely the freedom that a place-wise reading of (5.3.3)
+denies.
+
+\paragraph{Three diagnostic branches (not exhaustive).}
+Since no rule is stated, three source-motivated possibilities must be kept apart:
+
+\begin{description}
+\item[(a) Standard-bound.] $\lambda_y$ \emph{is} the tuple determined place by
+  place by (5.3.3). Then $\arith(L)^{\mathrm{nor}}_y$ is well defined, and
+  Section~\ref{sec:trichotomy} applies as written --- but there is nothing to
+  ``introduce'' at the other places, and the instruction quoted above has no
+  object.
+\item[(b) Product-formula-bound.] $\lambda_y$ is any tuple for which the product
+  formula holds. Then it is well defined only up to a scalar, by Lemma~1 below,
+  and the freedom is \emph{not} place-selective.
+\item[(c) Place-selective.] $\lambda_y$ is selected by some further rule that
+  leaves genuine place-by-place freedom. This is what the passages just quoted
+  use --- but the rule itself is not given in the material we read, and it is not
+  reconcilable with reading (5.3.3) as a place-wise binding.
+\end{description}
+
+Whether (a), (b) or (c) --- or a further global selection rule such as the one
+noted above --- is intended cannot, as far as we can see, be decided from the
+text. It is the natural first question of any correspondence about this material,
+and we formulate it as such in Section~\ref{sec:fneu}.
+
+% -----------------------------------------------------------------------------
+\subsection{What the product formula alone can supply: a rigidity lemma}
+\label{sec:rigidity}
+% -----------------------------------------------------------------------------
+
+Branch (b) can be settled. The product formula constrains the multiplier tuple far
+more strongly than one might expect: it determines it completely, up to one global
+scalar.
+
+\paragraph{Conversion multipliers used by the lemma.}
+Let $\lambda^{\mathrm{std}}_{y,v}>0$ satisfy
+$|x|_{K_{y_v}}^{\lambda^{\mathrm{std}}_{y,v}}=|x|^{\mathrm{std}}_v$ on $L_v$,
+and write $\lambda_{y,v}=\mu_v\lambda^{\mathrm{std}}_{y,v}$.
+Then $|x|_{K_{y_v}}^{\lambda_{y,v}}=(|x|^{\mathrm{std}}_v)^{\mu_v}$.
+The following lemma constrains $\mu$, not directly $\lambda_y$.
+Branch~(a) fixes $\mu_v=1$; branch~(b) restricts positive conversion exponents
+to $\mu_v=c>0$. It makes no corresponding assertion about Haar measures.
+
+\begin{lemmaR}[Rigidity of the product-formula multiplier]
+\label{lem:rigidity}
+Let $L$ be a number field, and for each place $v$ let $|\cdot|^{\mathrm{std}}_v$
+denote the Artin--Whaples standard absolute value, so that
+$\sum_v \log|x|^{\mathrm{std}}_v = 0$ for all $x \in L^*$. Let
+$(\mu_v)_{v \in V_L}$ be real numbers with
+\[
+  \sum_{v \in V_L} \mu_v \cdot \log|x|^{\mathrm{std}}_v \;=\; 0
+  \qquad \text{for all } x \in L^*.
+\]
+Then all $\mu_v$ are equal.
+\end{lemmaR}
+
+\noindent\emph{Proof sketch.}
+For $L = \mathbb{Q}$ the statement is immediate and needs nothing beyond the
+standard absolute values. Substituting $x = p$ for a prime $p$ gives
+$\log|p|_p = -\log p$, $\log|p|_\infty = +\log p$ and $\log|p|_q = 0$ for primes
+$q \neq p$, so the hypothesis reads $(\mu_\infty - \mu_p)\log p = 0$, i.e.,\
+$\mu_p = \mu_\infty$ for every prime $p$; $x = -1$ adds no condition, and
+$\mathbb{Q}^*$ is generated by $-1$ and the primes.
+
+For a general number field the same two steps are used, with two classical inputs.
+First, for a unit $x \in \mathcal{O}_L^*$ all finite terms vanish, and by
+Dirichlet's unit theorem the vectors $(\log|x|_v)_{v \text{ arch}}$ span the
+trace-zero hyperplane of the archimedean coordinates; hence $\mu_v$ is constant
+$= c$ over the archimedean places. Second, for a finite place $v$ let $h$ be the
+class number of $L$ and $\pi$ a generator of the principal ideal
+$\mathfrak{p}_v^{\,h}$; substituting $x = \pi$ gives
+$-\mu_v \cdot h\log N(\mathfrak{p}_v) + c \cdot h\log N(\mathfrak{p}_v) = 0$, i.e.,\
+$\mu_v = c$. \hfill$\square$
+
+\paragraph{Status and provenance.}
+The lemma is elementary and certainly not new in substance; we state it because
+the constraint it expresses is used implicitly in the material and, as far as we
+could determine, is nowhere cited there. The $\mathbb{Q}$-case above is complete
+as it stands. The general case uses Dirichlet's unit theorem and the finiteness of
+the class number, both classical; we give no section number for either, because we
+did not verify one in an edition we hold. We deliberately do \emph{not} attribute
+the lemma to~\cite{ArtinWhaples1945}: the product-formula characterization proved
+there concerns which fields admit such a system of absolute values, and we could
+not obtain the full text to check whether a uniqueness statement about the
+multipliers is included. Anyone citing this lemma should either prove it, as here,
+or verify a source directly.
+
+\paragraph{Consequence for branch (b), stated with care.}
+By Lemma~\ref{lem:rigidity} the admissible tuples in branch (b) are exactly
+$\mu \equiv c$ with $c > 0$. Two things follow, and they pull in opposite
+directions.
+
+First, the freedom that branch (b) grants is \emph{uniform}, never selective. A
+global factor multiplies every local contribution alike; it cannot raise the
+contribution at one place and lower it at another. Wherever the material describes
+a re-normalization at the non-semi-stable places as \emph{compensating} a scaling
+at the semi-stable ones, that description asks for more than the product formula
+by itself can deliver. This is a statement about what one constraint implies --- it
+is not a claim that Corollary~4.2.2.4 is false, and not a claim that no rule
+achieving the described effect exists. It says that such a rule would have to come
+from somewhere other than the product formula, and it thereby sharpens what a
+resolution of the trilemma would have to supply.
+
+Second, the scalar $c$ is not fixed by the constraint. For a projective object
+such as the hyperplane $H_y$ this is harmless --- $c$ cancels, since coefficient
+vectors define the same hyperplane exactly when they are proportional --- but for
+a quantity that is linear in $\lambda$, such as a height, it is not: the value
+changes by the factor $c$. Branch (b) therefore leaves the scale of such
+quantities undetermined unless a further convention is added.
+
+\begin{table}[htbp]
+\centering
+\caption{Which verdict of this paper holds under which branch of the trilemma of
+Section~\ref{sec:trilemma}. ``---'' marks a verdict that the branch does not
+support as stated. Branch-independence is not the same as
+assumption-freedom: the first row holds in every branch \emph{under the
+assumptions} (F1)--(F2) of Section~\ref{sec:D1}, and the fifth row identifies the
+carrier of the middle equality without establishing the transport to the two
+indexed hull evaluations displayed in (E2) (Section~\ref{sec:residues}).}
+\label{tab:branches}
+\small
+\begin{tabular}{@{}P{0.22\textwidth}P{0.15\textwidth}P{0.15\textwidth}P{0.17\textwidth}P{0.10\textwidth}@{}}
+\toprule
+Verdict & (a) standard-bound & (b) PF-bound & (c) place-selective & \shortstack{Evidence\\level} \\
+\midrule
+N2 excluded (D-1, under (F1)--(F2)) & holds & holds & holds & \textbf{O} \\[3pt]
+N3 vacuous & holds & partly: freedom exists but is not selective & --- & \textbf{O} \\[3pt]
+Scale identification definitional (N1$'$) & holds & up to the scalar $c$ & --- & \textbf{D} \\[3pt]
+E1 ($q_\ell$) invariant & holds & holds & holds (reads no scale) & \textbf{D} \\[3pt]
+E2 candidate carrier ($\varphi$-stability of $\Thet$; indexed transport untraced)
+  & holds & holds & holds & \textbf{S} \\[3pt]
+E2 measure compatibility & open & open & open & \textbf{O} \\[3pt]
+Nothing identified on the untilt level & holds & holds & holds & \textbf{D} \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+{\footnotesize \textbf{D}: definitional;\quad \textbf{S}: source-asserted;\quad
+\textbf{O}: open or conditional.\par}
+\end{table}
+
+% =============================================================================
+\section{The period mapping really moves: the conditional exclusion of N2}
+\label{sec:D1}
+% =============================================================================
+
+\subsection{The mobility of the hyperplane in the sources}
+
+Each normalized arithmeticoid provides a degree homomorphism and, through the
+logarithm of the product formula, a hyperplane:
+
+\begin{quote}\small
+``(2) Each normalized arithmeticoid $\arith(L)_y$ provides a degree homomorphism
+\ldots\ $(x_v) \mapsto \sum_{v \in V_L} \log(|x_v|_{K_{y_v}}) = \deg_{y_j}((x_v)_{v \in V_L})$.
+(3) As a consequence, each normalized $\arith(L)^{\mathrm{nor}}_y$ provides a
+hyperplane $H_{y_j} \subset V_L$ given by the logarithm of product formula equation
+(2.1.1)'' \hfill\anchor{ATS~III}{1762--1783}
+\end{quote}
+
+The hyperplane is not fixed:
+
+\begin{quote}\small
+``the above arithmetic period mapping is a highly non-trivial global arithmetic
+period mapping in which an arithmetic avatar $\arith(L)_y$ provides a hyperplane
+$H_y$ (as above) \emph{which moves under symmetries (such as the actions of the
+absolute Galois group, global Frobenius and $L^*$)}''
+\hfill\anchor{ATS~III}{518--522}
+\end{quote}
+
+and, correspondingly, ``the global arithmetic period mapping is non-constant''
+\anchor{ATS~III}{869--870}. The reason given is the interplay of local freedom and
+global constraint:
+
+\begin{quote}\small
+``the valuations on untilts parameterized by a Fargues--Fontaine curve at some
+arbitrary prime \ldots\ cannot be all simultaneously normalized and on the other
+hand, local changes of valuations are globally constrained by the validity of the
+product formula'' \hfill\anchor{ATS~III}{515--518}
+\end{quote}
+
+In the earlier paper the hyperplane is given \emph{explicitly with the
+normalization coordinates as coefficients}:
+
+\begin{quote}\small
+``$H_y = \{ z = (z_v) \in \bigoplus_v \mathbb{R} : \sum_v \lambda_v z_v = 0 \}$''
+\hfill\anchor{ATS~II(1/2)}{2199--2206}
+\end{quote}
+
+together with the statement that ``one has a natural and \emph{non-constant}
+mapping $y \mapsto H_y$ \ldots\ called the period mapping''
+\anchor{ATS~II(1/2)}{2227--2233}, whose non-constancy is proved as being
+``immediate from the fact that \emph{normalizations of arithmeticoids do not carry
+over} because locally at each prime $v$, valuations \emph{cannot be simultaneously
+normalized}'' \anchor{ATS~II(1/2)}{2238--2243}. Remark~5.10.2(5) of the same paper
+notes that the impossibility objection of Scholze--Stix~\cite{ScholzeStix2018}
+addresses exactly this phenomenon; ATS~III likewise records that Scholze--Stix
+dispute the mobility of $H_y$ \anchor{ATS~III}{522--525}. We report this
+disagreement and take no side in it.
+
+\subsection{The behavior along the Frobenius fiber}
+
+On the fiber $\{y_n\}_{n \in \mathbb{Z}}$ over the canonical point --- the
+deck-transformation, i.e.,\ Frobenius, orbit --- the sources state:
+
+\begin{itemize}
+\item the Kummer embeddings $\mathbb{Z}_p(1) \to B$ attached to $y_n$ and
+  $y_{n-1}$ ``differ as $\mathbb{Z}_p$-submodules by a $p$-multiple''
+  \anchor{ATS~II}{2119--2120};
+\item ``One has $|p|_{K_{y_{n-1}}} = |p|^{1/p}_{K_{y_n}}$''
+  \anchor{ATS~II}{2122};
+\item ``the valuations of $p$, \emph{and hence of the Tate parameters} of the
+  holomorphoids \ldots\ \emph{grow along the fiber} $\{y_n\}$''
+  \anchor{ATS~II}{2127--2131};
+\item ``each $y_n$ comes with a canonical valuation on its residue field
+  $K_{y_n}$ \ldots\ but the valuations provided by $y_{n-1}$ and $y_n$ \emph{are
+  not the same on $\mathbb{Q}_p$}'' \anchor{ATS~II}{2184--2188}.
+\end{itemize}
+
+and, for the action at all places at once, that the global Frobenius relates the
+local multiplicative structures of $L$ and $L^{(1)}$ ``through the \emph{$p_v$-th
+power mapping for each $v \in V_L$}'' \anchor{ATS~II(1/2)}{2149--2153}.
+
+\subsection{The derivation}
+
+\begin{derivationD}
+Assume \textbf{(F1)} that the standard point $y_0$ used in ATS~IV \S\,4.1 lies in a
+Frobenius fiber to which ATS~II Theorem~10.20.1(3) applies, and \textbf{(F2)} that
+ATS~II(1/2) Remark~5.9.2 induces $\lambda_{\varphi(y),v} = p_v \lambda_{y,v}$ at two
+finite places of distinct residue characteristic. Then
+$H_{\varphi(y)} \neq H_y$: the product-formula hyperplane is not preserved by the
+global Frobenius.
+\end{derivationD}
+
+\noindent\emph{Derivation.}
+\begin{enumerate}
+\item $H_y$ has coefficient vector $\lambda_y$
+  \anchor{ATS~II(1/2)}{2199--2206}.
+\item Along the canonical fiber one has
+  $|p|_{K_{y_{n-1}}} = |p|^{1/p}_{K_{y_n}}$ \anchor{ATS~II}{2122}. With the
+  standard condition $|p|^{\lambda_n}_{K_{y_n}} = 1/p$ (case $L = \mathbb{Q}$,
+  $v = p$) this yields $\lambda_{n-1} = p \cdot \lambda_n$.
+\item At \emph{every} place $v$, $\varphi$ acts as a $p_v$-th power step
+  \anchor{ATS~II(1/2)}{2149--2153}, i.e.,\ $\lambda_v \mapsto p_v \cdot \lambda_v$.
+  The step from the quoted statement --- which speaks of the local
+  \emph{multiplicative structures} --- to this statement about the
+  \emph{normalization coordinates} is read off the quotation by analogy with
+  step 2; it is carried out as a computation only in the case $L = \mathbb{Q}$,
+  $v = p$ there. This is assumption (F2).
+\item Two coefficient vectors define the same hyperplane only if they are
+  proportional by a \emph{single} scalar $c$. But $(p_v \lambda_v) = c(\lambda_v)$
+  would force $p_v = c$ for all $v$, which is impossible because the residue
+  characteristics vary. Hence $H_{\varphi(y)} \neq H_y$. \hfill$\square$
+\end{enumerate}
+
+\paragraph{Status of this derivation.}
+D-1 is \emph{our own} derivation --- elementary algebra plus a proportionality
+argument --- assembled from statements quoted verbatim above. It is \emph{not} a
+theorem of the source, and it is not presented as one. It is stated here because
+it settles reading N2, which the formulation phase had been able to classify only
+as ``documented-unlikely''.
+
+\paragraph{Two caveats, carried explicitly.}
+\begin{enumerate}
+\item[(i)] Step 2 computes in the canonical fiber over the canonical point. That
+  the standard points $y_0$ fixed in ATS~IV \S\,4.1 lie on such a fiber is
+  consistent with the statement that ``there are countably infinite possible
+  choices for the standard point $y_0$ \ldots\ Any one of the countably many
+  choices for $y_0$ are equally valid choices'' \anchor{ATS~III}{1723--1729}, but
+  it was not separately established here.
+\item[(ii)] The behavior at archimedean places is asserted in Remark~5.9.2 by the
+  phrase ``for each $v \in V_L$'', but was not separately checked. For D-1 this is
+  not needed: two finite places with distinct residue characteristics already
+  suffice for step 4.
+\end{enumerate}
+
+Under these two caveats --- which are the assumptions (F1)--(F2) of the statement
+above --- N2 is excluded rather than merely improbable, and the
+fixed-point reservation that the formulation phase had to carry --- the
+possibility that $y_0$ might happen to be a $\varphi$-fixed point --- is relieved:
+along canonical fibers the normalization coordinate demonstrably moves, and a
+fixed standard point would have to lie outside such fibers, for which nothing in
+the material speaks.
+
+% =============================================================================
+\section{Term classification of Theorem~6.10.1: three kinds of statement}
+\label{sec:terms}
+% =============================================================================
+
+\subsection{The chain}
+
+In simplified notation, Theorem~6.10.1 asserts the chain
+\begin{align}
+  -\bigl|\log\bigl(q_\ell^{\varphi(y_0)}\bigr)\bigr| &= -\bigl|\log\bigl(q_\ell^{y_0}\bigr)\bigr|
+  \tag{E1}\\[2pt]
+  -\bigl|\log\bigl(q_\ell^{y_0}\bigr)\bigr|
+  &\le -\tfrac{1}{\ell^*}\bigl|\log \Vol\bigl(\mathrm{hull}(\Thet^{I_M,\varphi(y_0)})\bigr)\bigr|
+  \;=\; -\tfrac{1}{\ell^*}\bigl|\log \Vol\bigl(\mathrm{hull}(\Thet^{I,y_0})\bigr)\bigr|
+  \;\le\; C_\Theta \bigl|\log\bigl(q_\ell^{y_0}\bigr)\bigr|
+  \tag{E2}
+\end{align}
+\anchor{ATS~IV}{3180--3205}, where the first inequality is attributed to Mochizuki~\cite{Mochizuki2021c}
+via the corresponding corollary of ATS~III. Our concern is
+the middle equality of (E2) and the equality (E1) --- not the inequalities, which
+we do not examine.
+
+\subsection{E1: \texorpdfstring{$q_\ell$}{q\_l} is a classical, \texorpdfstring{$y$}{y}-free quantity}
+
+The $q$-divisor of ATS~IV \S\,4.4 is defined by
+
+\begin{quote}\small
+``let $q_w$ at $C_{M_w}$ be a Tate parameter (\emph{well defined up to
+multiplication by a local unit and its order at $w$}). \ldots\
+$q_M = \sum_{w \in V^{\mathrm{odd},ss}_M} \ordd_w(q_w) \cdot w$''
+\hfill\anchor{ATS~IV}{1831--1846}
+\end{quote}
+
+The definition chain used by the theorem can be displayed compactly as
+\[
+ q_M=\sum_{w\in V_M^{\mathrm{odd},ss}}\ordd_w(q_w)\,w,
+ \qquad
+ \log(q_M)=\frac{1}{[M:\mathbb{Q}]}\deg(q_M)
+ =\frac{1}{[M:\mathbb{Q}]}
+   \sum_w \ordd_w(q_w)\log w,
+\]
+followed, immediately before Theorem~6.10.1, by
+$q_\ell^{y_0}=\tfrac{1}{2\ell}\log(q)$ computed in the $y_0$ frame
+\anchor{ATS~IV}{1831--1876, 2523--2528, 3180--3189}. Here $q$ is the
+\S\,5.4 shorthand for $q_{C/M}$, hence for the relevant \S\,4.4 divisor
+$q_M$; correspondingly, $\log(q)$ denotes the normalized arithmetic degree
+$\log(q_M)$, not a new object. Thus the superscript records the
+computational frame; the displayed scalar factors through the classical divisor
+and degree data.
+
+so that $\ordd_w(q_w)$ is the classical discrete-valuation order in the local
+field $M_w$; the parenthesis declares it a well-defined invariant of the
+definition. The proof of Proposition~4.4.4 is correspondingly classical
+throughout: uniformisers $\pi_w, \pi_v$, $q_v = \pi_v^\alpha$,
+$\ordd_w(q_w) = e_{w\mid v}\ordd_v(q_v)$, $\log w = f_{w\mid v}\log v$
+\anchor{ATS~IV}{1852--1876}. \emph{No $y$, no untilt and no holomorphoid occurs in
+it.} The $q$-divisor is a $y$-free classical object of the pair $(C_M, M)$.
+
+This settles E1 \emph{independently of the trilemma}, and the point is worth
+making explicitly, because it is the one verdict here that needs no branch. The
+quantities entering $q_\ell$ are integer orders $\ordd_w(q_w)$ and residue-field
+cardinalities. Neither reads an absolute value supplied by an arithmeticoid, and
+re-scaling a valuation by a positive exponent leaves the associated order
+unchanged --- a re-normalization in any of the three senses of
+Section~\ref{sec:trilemma} therefore cannot move $q_\ell$. So whichever branch is
+intended, $q_\ell^{y_0}$ and $q_\ell^{\varphi(y_0)}$ compute the \emph{same
+classical number}; the superscript records the ambient computational frame, but
+does not change the value. Under branch~(a) the same conclusion can be reached via
+N1$'$ --- both normalized copies read number-field elements in the same standard
+scale --- but that route is not needed, and using it as the reason would make an
+unconditional verdict look conditional. Direct visual readback of the ATS~IV
+source PDF, p.~66, also shows absolute-value bars on \emph{both} sides of E1. The
+one-sided version in the text extract was an extraction artefact. Hence no
+additional assumption such as $\log(q_\ell)\ge 0$ is required: E1 is
+definitionally true under the stated identification of $q_\ell$ with the
+\S\,4.4 $q$-divisor.
+
+\subsection{The apparent contradiction, and its resolution}
+
+At first sight this collides with an explicit statement of the same paper: ``the
+absolute values of Tate parameters rise under global Frobenius $\phi$''
+\anchor{ATS~IV}{567--569}. If Tate parameters rise, how can a quantity built from
+them be invariant?
+
+The resolution is that two \emph{different objects} are involved. First, the
+classical $q$-divisor of \S\,4.4, which is a combination of $\ordd_w$-values and
+is $y$-free --- this is what E1 speaks about. Second, the Tate idele and the
+untilt Tate parameters, which are $z$-dependent; these are what
+\S\,1.4(2), Proposition~4.5.12 and the fiber statements of ATS~II speak about:
+
+\begin{quote}\small
+``Let $\arith(L)^{\mathrm{nor}}_z$ be the \emph{normalized} arithmeticoid \ldots\
+the normalized arithmetic degree $\log(TI_{C/\arith(L)_z})$ \emph{is a function of
+$z$} \ldots\ one obtains a \emph{non-constant} function `normalized degree of the
+Tate divisor' $\Ynum \to \mathbb{R}$'' \hfill\anchor{ATS~IV}{2055--2075}
+\end{quote}
+
+Note that this non-constancy is asserted \emph{for the normalized} arithmeticoid:
+normalization does not remove it, because it does not live on the number-field
+level at all.
+
+The same distinction disposes of a trap that the formulation phase had marked as
+open. Joshi does document a holomorphoid dependence --- ``an important point of
+the theory is that $\mathrm{Tate}(C/M)$ depends on the choice of a holomorphoid
+$\hol(C/L)_y$ and one should write $\mathrm{Tate}(C/M)_y$ to indicate this
+choice'' \anchor{ATS~IV}{681--684} --- but he documents it for
+$\mathrm{Tate}(C/M)$, and he introduces $q$ precisely because $\mathrm{Tate}$
+lacks a stability property:
+
+\begin{quote}\small
+``The divisors $\mathrm{Tate}(C/M)$, $\mathrm{Tate}_2(C/M)$ are not stable under
+passage to field extensions \ldots\ so one replaces $\mathrm{Tate}(C/M)_2$ by the
+normalized arithmetic degree of another divisor $q = q(C/M)$ (\S\,4.4), which is
+similar to the divisor $\mathrm{Tate}$, but which receives contributions only from
+primes of $M$ lying over a prime \ldots\ of semi-stable reduction \ldots\ By
+Proposition~4.4.4, this new divisor $q$ is stable under base-field extensions.''
+\hfill\anchor{ATS~IV}{698--705}
+\end{quote}
+
+Transferring the documented $y$-dependence of $\mathrm{Tate}$ to $q$ would be a
+fallacy of object substitution; the index sets alone differ. What resolves the
+matter is not a compensation mechanism but the observation that the $y$-variance
+lives in a different formalization.
+
+\subsection{E2: family stability and the open indexed equality}
+The source PDF (ATS~IV v2, p.~66) equates \emph{absolute values} of
+log-volumes. The former transcription without those bars asserted a stronger
+statement. From $|a|=|b|$ one cannot infer $a=b$ without a common sign
+binding; no such binding has been established here for the exact indexed hulls
+and volume conventions in E2.
+
+\paragraph{The source assertion: stability of the collated set.}
+ATS~IV describes an adelic set which collates tuples of Tate parameters from
+holomorphoids and says it is stable under iterates of the global Frobenius
+\anchor{ATS~IV}{506--515}. This is evidence level~S, a source assertion.
+It identifies a candidate family-level carrier; it does not identify the
+$I_M,\varphi(y_0)$ and $I,y_0$ subsets, their ambient algebras, or their
+measures. We have not traced those bindings.
+
+\paragraph{Named transport: a sufficient stronger route, still open.}
+Write $T:B_{I_M,\varphi(y_0)}\longrightarrow B_{I,y_0}$ for a proposed map.
+One possible sufficient route would establish the ambient algebra and integral
+structures, an isometry, the set identity
+$T(\widetilde\Theta^{I_M,\varphi(y_0)})=\widetilde\Theta^{I,y_0}$,
+hull compatibility
+$T(\operatorname{hull}(S))=\operatorname{hull}(T(S))$,
+and preservation of the relevant measures and degree weights.
+These conditions would yield equality of the corresponding log-volumes,
+hence their absolute values. They are stronger than the source's
+absolute-value equality; they have not been shown necessary.
+The map and each compatibility remain open. No replacement measure proof is
+claimed from the generic hull counterexample or from a special algebra
+decomposition.
+
+\paragraph{The scale identification is only one layer.}
+Under branch~(a), number-field elements have the standard absolute values in
+each copy. Under branch~(b), the product formula restricts the conversion
+multipliers to a global scalar, but does not bind that scalar across frames.
+Neither observation proves E2 or transports normalized Haar measure.
+Under branch~(c), even the element-scale identification requires its own
+selection rule. The measure obligations of Section~\ref{sec:measure} are
+open in all three branches.
+
+\subsection{Where the work sits: the asymmetry of the two bounds}
+
+A third textual observation completes the picture. The two bounds of the chain are
+not computed in the same frame:
+
+\begin{quote}\small
+``by the virtue of stability under the global Frobenius morphism, one has the
+freedom of the choice of an arithmeticoid in the computing the \emph{lower bound}
+\ldots\ [it] is \emph{independent of the choice} \ldots\ the lower bound will be
+computed using $y_0' = \varphi(y_0)$ while the upper bound will be computed using
+$y_0$ (\emph{the upper bound is not independent of this choice}).''
+\hfill\anchor{ATS~IV}{733--742}
+\end{quote}
+
+The source also notes that a prior release omitted this Frobenius shift
+\anchor{ATS~IV}{755}. This locates a candidate role for the choice of frame;
+it does not settle the equality. Branch~(a) makes the element-scale
+identification definitional, while the shift, indexed sets, hulls and measures
+still need compatible bindings. Branch~(c) additionally leaves the
+selection-rule question. The present assessment does not verify either
+inequality or certify that family stability supplies the missing indexed step.
+
+\subsection{Classification table}
+
+Table~\ref{tab:terms} records the classification. Two rows are deliberately not
+forced into one of the invariance classes: $\Thet$ as a set is not a
+scalar-valued quantity to be classified as invariant or not, and
+$\log \Vol(\mathrm{hull}(\Thet))$ is the composite whose analysis is the subject
+of Section~\ref{sec:measure}.
+
+\begin{table}[htbp]
+\centering
+\caption{Term classification of Theorem~6.10.1 with assigned Evidence Levels. Class~T: definitional/trivially
+invariant (factors over $\varphi$-fixed data). Class~N: demonstrably not
+invariant (reads untilt data). Evidence levels: \textbf{D} (definitional), \textbf{S} (source-asserted), \textbf{T} (transport-verified), \textbf{O} (open or conditional). The classification is independent of the trilemma of
+Section~\ref{sec:trilemma}; in the last row, indexed transport and cross-frame
+measure compatibility remain open in every branch (Table~\ref{tab:branches}). Class~T and evidence level~T are distinct labels.}
+\label{tab:terms}
+\small
+\begin{tabular}{@{}P{0.24\textwidth}P{0.20\textwidth}P{0.06\textwidth}P{0.11\textwidth}P{0.24\textwidth}@{}}
+\toprule
+Term & Factors over & Class & \shortstack{Evidence\\level} & Behavior \\
+\midrule
+$\ordd_w(q_w)$ (\S\,4.4)
+  & discrete-valuation structure of $M_w$ ($\varphi$-fixed)
+  & T & \textbf{D} & invariant \\[3pt]
+$\log w$, $[M:\mathbb{Q}]$, $e_{w\mid v}$, $f_{w\mid v}$
+  & residue and degree data ($\varphi$-fixed)
+  & T & \textbf{D} & invariant \\[3pt]
+$q_\ell = \tfrac{1}{2\ell}\log(q)$
+  & only the above
+  & \textbf{T} & \textbf{D} & \textbf{E1 definitional}; source PDF has absolute values on both sides \\[3pt]
+Tate idele degree $\log(TI_{C/\arith(L)_z})$
+  & untilt valuations
+  & \textbf{N} & \textbf{S} & non-constant (Prop.\ 4.5.12) \\[3pt]
+Kummer embedding $\mathbb{Z}_p(1) \to B$
+  & choice of untilt $y_n$
+  & N & \textbf{S} & differs by a $p$-multiple (Thm.\ 10.20.1(2)) \\[3pt]
+$\Thet_{\mathrm{Mochizuki}}$ as a set
+  & the whole family (collated)
+  & --- & \textbf{S} & $\varphi$-stable by construction \\[3pt]
+$\log \Vol(\mathrm{hull}(\Thet))$
+  & set $+$ measure convention
+  & E2 & \textbf{O} & Absolute-value E2: indexed transport and measure compatibility open in every branch \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Criterion~K has illustrative examples in the classical $q$-divisor and
+the untilt-sensitive terms. These examples do not make it a general
+invariance theorem and do not classify the algebraic hull or the weighted
+cross-frame log-volume as transport-verified.
+
+% =============================================================================
+\section{Measure conventions and open cross-frame obligations}
+\label{sec:measure}
+
+\paragraph{Absolute value, Haar measure and multiplication module.}
+For each place and frame, distinguish the absolute value $|\cdot|_{y,v}$,
+the additive Haar measure $m_{y,v}$ normalized by
+$m_{y,v}(\mathcal O_{L'_w})=1$, and its multiplication module
+\[
+ \Delta_{y,v}(\alpha)=\frac{m_{y,v}(\alpha A)}{m_{y,v}(A)}
+\]
+for a measurable set $A$ of positive finite measure and $\alpha\ne0$.
+The equality $\Delta_{y,v}(\alpha)=|\alpha|_{y,v}$ requires a compatible
+absolute-value convention. On $\mathbb Q_p$, normalization forces
+\[
+ m(\mathbb Z_p)=1,\quad m(p\mathbb Z_p)=p^{-1},\quad |p|_p^c=p^{-c}.
+\]
+The second identity follows by partitioning $\mathbb Z_p$ into its $p$
+cosets modulo $p\mathbb Z_p$. Changing a valuation exponent does not change
+this normalized additive Haar measure. The scalar in
+Lemma~\ref{lem:rigidity} therefore provides no measure-transfer proof.
+
+\paragraph{Local volume conventions and degree weights.}
+ATS~III defines normalized Haar measure on the number-field completions
+by $\Vol_{L'_w}(\mathcal O_{L'_w})=1$
+\anchor{ATS~III}{6562--6572} and relates suitable fractional-ideal coset
+volumes to local absolute values
+\anchor{ATS~III}{6599--6620,6663--6676}.
+It specifies reciprocal local degrees as weights
+\anchor{ATS~III}{6678--6688}.
+These are statements about specified fields, integral structures and
+measure conventions. Their numerical ingredients are classical; they do not
+identify the ambient tensor algebras, exact theta sets, hulls, weighted
+components or measures across E2 frames. Standard element scales under
+branch~(a), or a common valuation exponent under branch~(b), are insufficient.
+Branch~(c) additionally leaves the element-scale choice open.
+
+\paragraph{Algebraic hull need not equal convex closure.}
+ATS~III v4, \S\S\,9.10.7--9.10.8 (pp.~125--127), defines the holomorphic
+hull through integer rings of field components of the tensor algebra.
+The former generic identification with convex closure was incorrect.
+Take $E/\mathbb Q_p$ unramified quadratic, $E_1=E$,
+$E_2=\mathbb Q_p$, the identity algebra map, and $U=\mathbb Z_p\cdot1$.
+The set is compact and already $\mathbb Z_p$-convex. The smallest hull
+of the prescribed form $\alpha\mathcal O_E$ containing $1$ is
+$\mathcal O_E$: if $1\in\alpha\mathcal O_E$, then
+$\alpha\mathcal O_E\supseteq\mathcal O_E$, with equality attained for
+$\alpha=1$. Thus
+\[
+ \operatorname{conv}(U)=\mathbb Z_p\cdot1
+ \subsetneq\mathcal O_E=\operatorname{hull}(U).
+\]
+Strictness follows from the $\mathbb Z_p$-ranks one and two.
+Convexity of a hull containing $U$ gives only
+$\operatorname{conv}(U)\subseteq\operatorname{hull}(U)$ in general.
+Admissibility of this $U$ as a specialized Mochizuki tensor product region
+has not been established. The example refutes our generic identification,
+not Proposition~9.10.8.1(3), Theorem~9.11.1, or $abc$.
+A proposed replacement through decomposition of finite étale algebras
+still needs the actual algebra maps, integral structures, sets, weights
+and indexed transport; it is not a verified positive measure argument.
+
+\paragraph{Revised conclusion.}
+The former assertion that the measure side factors without remainder over
+number-field data, or is pinned under branch~(a) and up to a scalar under
+branch~(b), is withdrawn. Cross-frame measure compatibility remains open
+in every branch. Identifying element scales does not close indexed E2.
+
+\begin{table}[htbp]
+\centering
+\caption{Components after correction. D: definitional; S: source-asserted;
+O: open or conditional.}
+\label{tab:resolution}
+\small
+\begin{tabular}{@{}P{0.23\textwidth}P{0.27\textwidth}P{0.08\textwidth}P{0.29\textwidth}@{}}
+\toprule
+Component & Basis & Level & Status \\
+\midrule
+Element scales & Place-wise standard reading & O
+ & Definitional under (a); global scalar under (b); open selection under (c) \\[3pt]
+E1 & Classical $q$-divisor & D
+ & Under the stated identification; absolute values on both sides \\[3pt]
+Collated family & Frobenius-stability assertion & S
+ & Candidate carrier; indexed E2 not established \\[3pt]
+Indexed E2 & Absolute values of log-volumes & O
+ & Open in every branch; unsigned equality not inferred \\[3pt]
+Measure and hull & Haar modules, integral structures, algebraic hull, degree weights & O
+ & Compatibility open in every branch; generic hull equality withdrawn \\[3pt]
+Selection rule & Coordinate $\lambda_y$ & O
+ & Open correspondence question \\[3pt]
+Local comparison & ATS~IV Remark~6.10.2 & S
+ & Expressly precluded \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% =============================================================================
+\section{Where the trilemma comes from: the height passage}
+\label{sec:fneu}
+% =============================================================================
+
+The trilemma of Section~\ref{sec:trilemma} was not part of the question this paper
+set out to answer. It emerged from a passage encountered while reading, and this
+section records how, because the guiding principle of the program is to document
+what was seen rather than to defend a position.
+
+\begin{findingF}
+The height passages of ATS~II(1/2) \S\S\,8.2--8.3 are indicators of a
+possible tension under the place-wise reading. The claimed non-constancy,
+its proof using a local valuation, and its domain $\mathbb P^n(\overline L)$
+must be checked separately. A selection rule for $\lambda_y$ may clarify
+the reading, but this paper has not settled the domain or proof questions.
+F-NEU-1 remains open.
+\end{findingF}
+
+The definition uses the \emph{normalized} valuations explicitly: ``Choose the
+standard normalization \ldots\ work with $\arith(L)^{\mathrm{nor}}_y$ \ldots\ work
+with the normalization coordinate $\lambda_y$'', giving
+$h(P) = \sum_v \max_j \log\bigl(|x_j|^{\lambda_v}_{K_{y_v}}\bigr)$
+\anchor{ATS~II(1/2)}{2947--2960}; and Lemma~8.2.3 derives the independence of the
+height from the choice of homogeneous coordinates precisely from the fact ``that
+we work with a normalized arithmeticoid'' \anchor{ATS~II(1/2)}{2982--2986}. Under
+a place-wise reading of (5.3.3) these normalized values agree, on elements of
+$L_v$, with the standard ones --- for \emph{every} $y$ --- so for
+$P \in \mathbb{P}^n(L)$ the height would be the classical, $y$-independent height
+in the sense of~\cite{BombieriGubler2006}. ATS~IV says as much about the
+definition: ``except for explicating the dependence on the arithmeticoid, the
+definition of height \ldots\ is the same as the one given in [Bombieri and Gubler,
+2006, \S\,1.5.1]'' \anchor{ATS~IV}{548--550}.
+
+Proposition~8.3.1, however, asserts that
+``$h_{\arith(L)}$ depends \emph{non-trivially} on $\arith(L)$''
+\anchor{ATS~II(1/2)}{2990--3004}, and its proof invokes the fact that
+``$y \mapsto |p|_{K_y}$ is a non-constant function'' --- which is the
+\emph{canonical}, unnormalized valuation function of Remark~2.7.1. Remark~8.3.2
+adds that ``the normalization of $\arith(L)^{\mathrm{nor}}_{y_1}$ \emph{cannot be
+carried over} to $\arith(L)^{\mathrm{nor}}_{y_2}$''
+\anchor{ATS~II(1/2)}{3008--3015}, which closes the one easy escape --- keeping
+$\lambda_{y_1}$ fixed while $y$ moves.
+
+Three possible readings require separate checks. The definition in
+ATS~II(1/2) \S\,8.2 and Lemma~8.2.3 uses a normalized height; its
+relationship to canonical local valuations must not be settled by replacing
+one object with another. In particular, Proposition~8.3.1 states
+non-constancy of that normalized height on $\mathbb P^n(\overline L)$,
+although its proof also uses an unnormalized local absolute value. The
+statement, proof step and domain remain distinct review obligations.
+
+The proposed restriction of $y$-dependence to $\overline L\setminus L$
+cannot be rejected merely from ATS~IV:545: the original PDF v2, p.~13,
+says $x\in\overline L^*$, not $x\in L^*$. Its application to integer
+$abc$-triples is a separate passage \anchor{ATS~IV}{608--616}.
+Independently, ATS~II(1/2) v12, Theorem~8.7.1 (pp.~54--55), really
+uses $x\in L^*$ and asserts general strictness
+\anchor{ATS~II(1/2)}{3210--3216}.
+This is a distinct textual indication, not a substitute for the incorrect
+ATS~IV quotation. The family assertion that normalization cannot be carried
+over does not by itself produce strictness at a fixed point.
+F-NEU-1 therefore remains an open correspondence question; none of these
+observations establishes a global error in ATS.
+
+What the passage does supply is the mechanism, and it is the mechanism that
+generates the trilemma. In \S\,8.5 the movement of the height is derived from the
+product-formula constraint:
+
+\begin{quote}\small
+``since one is working with normalized arithmeticoids $\arith(L)^{\mathrm{nor}}$,
+the normalization constraint i.e.,\ the product formula (5.3.4) implies that
+\emph{changes in $p$-adic valuations forced by the action of $n$ must be
+compensated by changes at other primes} so that the normalization constraint
+\ldots\ continues to hold.'' \hfill\anchor{ATS~II(1/2)}{3162--3193}
+\end{quote}
+
+Compensation at other places presupposes freedom at those places. So the operative
+meaning of $\arith(L)^{\mathrm{nor}}$ in this passage is not ``bound place by
+place to the Artin--Whaples standard'' but ``constrained, globally, by the product
+formula'' --- and then the question is which rule picks the coordinate out of the
+admissible set. That is branch (b) or (c) of Section~\ref{sec:trilemma}, and
+Lemma~\ref{lem:rigidity} says that (b) does not deliver what the passage needs,
+since the freedom the product formula leaves is a single global scalar and cannot
+be place-selective.
+
+\paragraph{The resulting question, and its status.}
+The precise question we would put to the author is therefore this: \emph{which
+rule selects the normalization coordinate $\lambda_y$ for a moved arithmeticoid?}
+Concretely --- is the normalized arithmeticoid the one whose induced absolute
+values on $L_v$ are the Artin--Whaples standard ones, as (5.3.3) suggests, or is
+$(\cdot)^{\mathrm{nor}}$ a constraint on a choice, for which the product formula
+alone is not sufficient to pin down $\lambda_y$?
+
+We make no error claim, against Proposition~8.3.1 or against anything else. The
+resolving passage may well stand in material we have not read, or follow from a
+reading of the definition that the author would supply at once. The two textual
+observations above --- the place-wise appearance of (5.3.3), and the
+place-selective use of the normalization in \S\,8.5, in ATS~III Corollary~4.2.2.4
+and in \S\,1.5 of ATS~IV --- are reported as observations. What has changed
+relative to the first version of this assessment is only this: the tension cannot
+be set aside as marginal, because the verdicts of
+Sections~\ref{sec:trichotomy}--\ref{sec:measure} depend on how it is resolved.
+That dependence is what Table~\ref{tab:branches} records. The reading of the
+sources underlying this section has been carried out in more detail in the
+companion verification of this program (Parts~V and~VI, in preparation).
+
+% =============================================================================
+\section{Assessment and consequences}
+\label{sec:assessment}
+% =============================================================================
+
+\subsection{For the ledger method}
+
+The original ledger located a question at the phrase declaring the
+normalization identification a tautology. Under the place-wise reading,
+that phrase indeed identifies number-field element scales definitionally.
+This limited conclusion does not discharge E2: the source's stability
+assertion concerns a collated family, whereas the theorem evaluates two
+indexed algebraic hulls with weighted volume conventions.
+
+The corrected audit separates these duties. It reports the family assertion
+at evidence level~S and keeps the indexed equality, sign binding and
+cross-frame measure compatibility at level~O. The generic hull identification
+used in the earlier positive measure argument is withdrawn.
+Under branch~(c), selection of the normalization coordinate is a further
+open duty. A formally acceptable ledger or a source-citation check is not
+a proof of those duties and does not strengthen an unverified bound.
+
+The method's useful output here is the correction of the actual source
+readings and a more precise set of open obligations. It is not a completed
+bridge certificate or acceptance of the entire ATS argument.
+
+\begin{table}[htbp]
+\centering
+\caption{Selected Gap-Series papers (non-exhaustive crosswalk): Target claims, primary diagnostic instruments, and core normalization/transport verdicts.}
+\label{tab:gap_series_crosswalk}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}P{0.14\textwidth}P{0.19\textwidth}P{0.20\textwidth}P{0.27\textwidth}P{0.12\textwidth}@{}}
+\toprule
+Part / Paper & Target Claim & Primary Instrument & Core Verdict & Status \\
+\midrule
+\textbf{Part~I}\newline (Method)
+  & Inter-universal transport
+  & Bridge-Contract Criterion (C1--C7)
+  & Foundational methodology; specifies explicit verification duties
+  & Published \\[3pt]
+\textbf{Part~IV}\newline (This Paper)
+  & Global normalization in ATS~IV Thm~6.10.1
+  & Invariance classification \& Trilemma taxonomy
+  & Identification is definitional under (a); transport of $\Thet$-hull untraced
+  & Corrective draft v1.2 \\[3pt]
+\textbf{Part~IV-B}\newline (BrXi App.)
+  & Self-application of $\mathrm{Br}_{\Xi}$
+  & Sub-bridge ledger audit
+  & Scope restriction; prevents cyclical domain inheritance across boundaries
+  & Draft v0.1 \\[3pt]
+\textbf{Part~V}\newline (Substance)
+  & Normalization weights in ATS
+  & All-place rigidity classification
+  & Excludes non-trivial place-selective scaling under global Artin--Whaples
+  & Draft v0.1 \\[3pt]
+\textbf{Part~VI}\newline (Repair)
+  & Repair program for ATS chain
+  & Effective-weight test \& Case taxonomy
+  & Proves all-place rigidity for product-formula weights; tests height chain
+  & Draft v0.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{For global-only mechanisms: a cautious outlook}
+\label{sec:b2outlook}
+
+The structural pattern of Theorem~6.10.1 --- ``no comparison place by place, pinned
+globally'' --- is not peculiar to this construction. Three carriers of that pattern
+appear in the material, two of them from Joshi's own text.
+
+The prototype is the product formula itself~\cite{ArtinWhaples1945}. The identity
+$\prod_v |x|_{K_v} = 1$ says nothing whatever about the individual $|x|_v$, and is
+nevertheless the load-bearing global constraint of the entire construction. The
+second carrier is Joshi's own second example within the same proof passage:
+``$A' = C \cdot A$. \emph{This is a global equation, which only appears after one
+sums over all primes}'' \anchor{ATS~IV}{834--836}. That two such statements sit
+next to each other in one argument suggests a recurring pattern rather than an
+idiosyncrasy of the middle equality. The third is the pattern examined in this
+paper, now available as a worked specimen: the hyperplane construction plus
+Remark~6.10.2 give an instance in which the global pinning and the local
+incomparability are both explicit and both sourced.
+
+A working hypothesis of the present program --- recorded in its own candidate
+register, and stated here with the caution it requires --- is that such statements
+live on the collated family rather than at the individual place, and that this
+gives them a structural silhouette in common with statements available only after
+summation over all places, Weil positivity among them. We state this as a
+hypothesis about the \emph{shape of arguments}. It is emphatically \emph{not} a
+mathematical connection, and \emph{not} a claim about the Riemann hypothesis or
+about any consequence of one. The corresponding work package carries an explicit
+abort clause: should the collected carriers turn out to share nothing beyond the
+observation itself, the analogy is to be recorded as a negative result and the
+register entry downgraded --- not quietly carried forward. A reverse-direction
+question in the vicinity of~\cite{GranvilleStark2000} is noted in the project's
+concept document and is expressly not taken up here.
+
+\subsection{Source corrections and open obligations}
+\label{sec:residues}
+
+\paragraph{Three corrected readings.}
+The source-PDF domain in ATS~IV v2, p.~13, is $\overline L^*$.
+ATS~II(1/2) Theorem~8.7.1 separately uses $L^*$; the two anchors
+are not interchangeable (Section~\ref{sec:fneu}).
+ATS~IV v2, p.~66, places absolute-value bars around both log-volume
+terms in E2. No common sign of the exact indexed evaluations is proved
+here, so the former unsigned equality is withdrawn.
+ATS~III v4, pp.~125--127, uses an algebraic hull; its generic equality
+with convex closure is refuted by the explicit example in
+Section~\ref{sec:measure}. This does not decide the special tensor-region
+claims. The earlier E1 sign discrepancy remains separately resolved as an
+extraction artefact: the source has absolute-value bars on both E1 sides.
+
+\paragraph{Open indexed equality and measure transfer.}
+Family stability is source-asserted. A map between the exact indexed
+ambient algebras, its integral structures, theta-set images, hull action,
+measures and weights has not been traced. The named transport is only
+a sufficient stronger route to E2; it is not a necessary condition derived
+from the source. Neither a norm power nor a generic hull identity supplies
+the absent measure argument. These obligations remain open in every branch.
+
+\paragraph{Selection and order questions.}
+The rule selecting $\lambda_y$ remains open. Lemma~\ref{lem:rigidity}
+constrains only multipliers of standard valuations satisfying the product
+formula; it supplies no place-selective rule or Haar-measure transport.
+D-1 remains conditional on (F1)--(F2). F-NEU-1 and the strong order
+question L-strong remain open. Separate follow-up audits are needed before
+positive E2 or measure statements from companion Parts~V and~VI can be
+imported as verified results.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+This subsection states what the paper does not do, in the terms in which the
+underlying working notes stated it.
+
+\begin{enumerate}
+\item \textbf{No proof was followed.} Neither Theorem~6.10.1 of ATS~IV, nor the
+  corollary of ATS~III on which its first inequality relies, nor Mochizuki's
+  Corollary~3.12~\cite{Mochizuki2021c} was verified line by line. No estimate was
+  recomputed and no bound was checked. What was classified is the \emph{terms and
+  the structure of justification}, not the correctness of the inequalities.
+\item \textbf{D-1 is our own derivation and is conditional}, not a theorem of the
+  source: elementary algebra plus a proportionality argument, assembled from
+  statements quoted verbatim. It holds under the assumptions (F1)--(F2) stated with
+  it --- the canonical-fiber assumption for the standard point, and the transfer of
+  the coordinate transformation to two finite places, which is read off the
+  quotation rather than computed there. The archimedean case is likewise unchecked
+  and, for D-1, not needed.
+\item \textbf{Element-scale verdicts are branch-conditional.}
+  Definitional identification and the vacuity of N3 apply under branch~(a);
+  branch~(b) leaves a global conversion scalar and branch~(c) its selection rule.
+  Cross-frame measure pinning is not proved under any branch and its former
+  positive classification is withdrawn. D-1 requires (F1)--(F2); E1 retains
+  its stated identification; family stability is source-asserted, not an
+  indexed hull or volume proof.
+\item \textbf{The trilemma is a definitional gap, not an error claim.} We did not
+  find a selection rule for $\lambda_y$ in the passages we read; we do not claim
+  that none exists, and we make no claim about the correctness of ATS~III
+  Corollary~4.2.2.4 or of anything resting on it.
+\item \textbf{Lemma~\ref{lem:rigidity} is stated with a deliberate reference
+  restriction.} The $\mathbb{Q}$-case is proved here in full; the general case
+  invokes Dirichlet's unit theorem and the finiteness of the class number as
+  classical results without a section number, because we verified none. In
+  particular we do not attribute the lemma to~\cite{ArtinWhaples1945}, whose full
+  text we could not obtain.
+\item \textbf{F-NEU-1 remains open.} The corrected ATS~IV domain
+  $\overline L^*$ and the separate ATS~II(1/2) statement on $L^*$ do not
+  adjudicate the entire height argument or establish an error in ATS.
+\item \textbf{The classification of E1 as definitional} holds modulo the reading
+  that $q_\ell$ in Theorem~6.10.1 is the
+  \S\,4.4 $q$-divisor. The definition given immediately before the theorem
+  supports that reading, but the identification is ours. The source PDF itself
+  displays absolute-value bars on both sides of E1.
+\item \textbf{The measure analysis classifies conventions, not estimates.} The
+  correctness of the volume estimate itself --- the product bound, the
+  $\ell^*$-factors, the translation to Mochizuki's formulation --- was not
+  examined.
+\item \textbf{The strong form of the question is undeveloped.} The order
+  compatibility question (L-strong) of Section~\ref{sec:equivariance} names a
+  structure but no candidate class. This is the largest substantive arrear.
+\item \textbf{The invariance catalogue is a starting inventory}, not a
+  completeness claim. Arakelov and adelic degrees in particular remain unfilled,
+  because the material examined says nothing usable about them and no reference
+  was guessed.
+\item \textbf{Textual basis and visual readback.} Quotations use
+  \texttt{pdftotext} extracts; line references are finding aids, not pagination.
+  The source-PDF pages for equation (5.3.3), Theorem~5.10.1(3)--(4),
+  Theorem~10.20.1(3), Definition~4.4.2/formula (4.4.5), and
+  Theorem~6.10.1 were visually checked. In particular, exponent direction and the
+  two pairs of E1 absolute-value bars are load-bearing. No blanket OCR-robustness
+  claim is made for other passages.
+\item \textbf{No claim upgrade.} Nothing in this paper is a statement about the
+  correctness of Joshi's $abc$ argument, about Mochizuki's theory~\cite{Mochizuki2021a,Mochizuki2021b,Mochizuki2021c,Mochizuki2021d}, about the
+  objections of~\cite{ScholzeStix2018}, or about the Riemann hypothesis. It is the
+  clarification of one definitional question and of its consequence for one
+  conjectured lemma.
+\end{enumerate}
+
+% =============================================================================
+% AI DISCLOSURE -- pipeline standard, included from the canonical template
+% (_templates/disclosure/ai_disclosure_STANDARD.tex, bilingual, carries its own
+% \section*). The template names computational scripts and runs; this paper has
+% none, so the restriction paragraph below adapts it downwards, which is what the
+% template's own instruction ("Abweichen nach unten") requires. Do not silently
+% drop the restriction: without it the disclosure would claim work not done.
+% =============================================================================
+\phantomsection
+\addcontentsline{toc}{section}{AI Disclosure}
+\input{ai_disclosure_STANDARD_en}
+
+\medskip
+
+\noindent
+\emph{Restriction for this paper:} this work involved no computational scripts and
+no computational runs; the corresponding items of the standard text (creation and
+checking of the computational scripts, execution and evaluation of the
+computational runs, versioned scripts with stored result files and checksums) do
+not apply here.
+
+% =============================================================================
+% BIBLIOGRAPHY
+% Every entry is provisional and must be checked against the original before any
+% upload or submission. No entry was included that is not used in the text or
+% expressly referenced by the working notes.
+% =============================================================================
+\begin{thebibliography}{99}
+\addcontentsline{toc}{section}{References}
+\small
+
+% verified 2026-08-13 — Quellencheck (WebSearch bzw. lokale Extrakte), Beleg: _sources/QUELLENCHECK_BIBITEMS_2026-08-13.md
+\bibitem{JoshiATSIIhalf}
+K.~Joshi.
+\newblock \emph{Construction of Arithmetic Teichmüller Spaces II(1/2):
+Deformations of Number Fields}.
+\newblock arXiv:2305.10398, version v12 (24 February 2025). Cited here as
+ATS~II(1/2); ``[Joshi, 2023a]'' in the author's own bibliographies.
+
+% verified 2026-08-13 — Quellencheck (WebSearch bzw. lokale Extrakte), Beleg: _sources/QUELLENCHECK_BIBITEMS_2026-08-13.md
+\bibitem{JoshiATSII}
+K.~Joshi.
+\newblock \emph{Construction of Arithmetic Teichmüller Spaces II: Proof of a
+local prototype of Mochizuki's Corollary~3.12}.
+\newblock arXiv:2303.01662, version v3 (24 February 2025). Cited here as ATS~II;
+``[Joshi, 2023b]'' in the author's own bibliographies.
+
+% verified 2026-08-13 against local extract header (arXiv:2401.13508v4)
+\bibitem{JoshiATSIII}
+K.~Joshi.
+\newblock \emph{Construction of Arithmetic Teichmüller Spaces III: A `Rosetta
+Stone' and a proof of Mochizuki's Corollary~3.12}.
+\newblock arXiv:2401.13508, version v4 (24 February 2025). Cited here as
+ATS~III; ``[Joshi, 2024c]'' in the author's own bibliographies.
+
+% verified 2026-08-13 against local extract header (arXiv:2403.10430v2)
+\bibitem{JoshiATSIV}
+K.~Joshi.
+\newblock \emph{Construction of Arithmetic Teichmüller Spaces IV: Proof of the
+abc-conjecture}. Preliminary version for comments.
+\newblock arXiv:2403.10430, version v2 (24 February 2025). Cited here as ATS~IV.
+
+% verified 2026-08-13 — Quellencheck (WebSearch bzw. lokale Extrakte), Beleg: _sources/QUELLENCHECK_BIBITEMS_2026-08-13.md
+\bibitem{Mochizuki2021a}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory I: Construction of Hodge
+Theaters}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 3--207.
+
+% verified 2026-08-13 — Quellencheck (WebSearch bzw. lokale Extrakte), Beleg: _sources/QUELLENCHECK_BIBITEMS_2026-08-13.md
+\bibitem{Mochizuki2021b}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory II: Hodge--Arakelov-theoretic
+Evaluation}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 209--401.
+
+% verified 2026-08-13 — Quellencheck (WebSearch bzw. lokale Extrakte), Beleg: _sources/QUELLENCHECK_BIBITEMS_2026-08-13.md
+\bibitem{Mochizuki2021c}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory III: Canonical Splittings of
+the Log-theta-lattice}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 403--626.
+\newblock Corollary~3.12 and Remark~3.1.1 are the passages referenced through
+Joshi's text.
+
+% verified 2026-08-13 — Quellencheck (WebSearch bzw. lokale Extrakte), Beleg: _sources/QUELLENCHECK_BIBITEMS_2026-08-13.md
+\bibitem{Mochizuki2021d}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory IV: Log-volume Computations
+and Set-theoretic Foundations}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 627--723.
+
+% verified 2026-08-13 — Quellencheck (WebSearch bzw. lokale Extrakte), Beleg: _sources/QUELLENCHECK_BIBITEMS_2026-08-13.md
+\bibitem{ScholzeStix2018}
+P.~Scholze and J.~Stix.
+\newblock \emph{Why abc is still a conjecture}.
+\newblock Manuscript, 2018. Available at
+\texttt{https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf}.
+
+% verified 2026-08-13 — Quellencheck (WebSearch bzw. lokale Extrakte), Beleg: _sources/QUELLENCHECK_BIBITEMS_2026-08-13.md
+\bibitem{ArtinWhaples1945}
+E.~Artin and G.~Whaples.
+\newblock \emph{Axiomatic characterization of fields by the product formula for
+valuations}.
+\newblock Bull. Amer. Math. Soc. \textbf{51} (1945), 469--492.
+
+% v1.1: single new entry, admitted because Lemma~1 and Section 3.3(i) need a
+% verifiable locator for the classical uniqueness statement. Fundstelle [V]:
+% PDF eingesehen, Prop. 7.8 auf S. 108 im Wortlaut geprueft (2026-08-13).
+% Milne's numbering is version-dependent -- version and page must stay quoted.
+\bibitem{Milne2020}
+J.~S.~Milne.
+\newblock \emph{Algebraic Number Theory}.
+\newblock Course notes, version 3.08 (19 July 2020). Available at
+\texttt{https://www.jmilne.org/math/CourseNotes/ANT.pdf}. Cited by version, item
+number and page, because the numbering differs between versions.
+
+% verified 2026-08-13 — Quellencheck (WebSearch bzw. lokale Extrakte), Beleg: _sources/QUELLENCHECK_BIBITEMS_2026-08-13.md
+\bibitem{FarguesFontaine2018}
+L.~Fargues and J.-M.~Fontaine.
+\newblock \emph{Courbes et fibr\'es vectoriels en th\'eorie de Hodge $p$-adique}.
+\newblock Ast\'erisque \textbf{406}, Soci\'et\'e Math\'ematique de France, 2018.
+Pr\'eface par Pierre Colmez, xiii+382~pp.
+
+% verified 2026-08-13 — Quellencheck (WebSearch bzw. lokale Extrakte), Beleg: _sources/QUELLENCHECK_BIBITEMS_2026-08-13.md
+\bibitem{BombieriGubler2006}
+E.~Bombieri and W.~Gubler.
+\newblock \emph{Heights in Diophantine Geometry}.
+\newblock New Mathematical Monographs 4, Cambridge University Press, 2006.
+
+% verified 2026-08-13 — Quellencheck (WebSearch bzw. lokale Extrakte), Beleg: _sources/QUELLENCHECK_BIBITEMS_2026-08-13.md
+\bibitem{GranvilleStark2000}
+A.~Granville and H.~M.~Stark.
+\newblock \emph{ABC implies no ``Siegel zeros'' for $L$-functions of characters
+with negative discriminant}.
+\newblock Invent. Math. \textbf{139} (2000), 509--523.
+
+\end{thebibliography}
+
+\end{document}

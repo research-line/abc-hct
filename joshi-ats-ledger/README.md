@@ -13,7 +13,8 @@ The mathematical and bilingual corrective delta received independent acceptance.
 - Matching TeX sources and local language-specific AI disclosures.
 - [File manifest](MANIFEST.json) identifies the checked sources and archived PDFs.
 
-Publication status at this artifact commit: **prepared, not yet published on Zenodo**.
+Publication status: **published and publicly verified**, [v0.3, DOI 10.5281/zenodo.23092802](https://doi.org/10.5281/zenodo.23092802).
+The immutable artifact commit records preparation before publication; the manuscripts and PDFs are unchanged.
 Preceding public version: [v0.2, DOI 10.5281/zenodo.21951156](https://doi.org/10.5281/zenodo.21951156).
 Version family: [concept DOI 10.5281/zenodo.21951155](https://doi.org/10.5281/zenodo.21951155).
 

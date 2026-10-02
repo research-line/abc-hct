@@ -13,7 +13,8 @@ Das mathematische und das zweisprachige Korrekturdelta erhielten unabhängige Ab
 - Passende TeX-Quellen und lokale sprachspezifische KI-Offenlegungen.
 - Das [Dateimanifest](MANIFEST.json) bezeichnet die geprüften Quellen und archivierten PDFs.
 
-Publikationsstand dieses Artefakt-Commits: **vorbereitet, noch nicht auf Zenodo veröffentlicht**.
+Publikationsstand: **veröffentlicht und öffentlich verifiziert**, [v0.3, DOI 10.5281/zenodo.23092802](https://doi.org/10.5281/zenodo.23092802).
+Der unveränderliche Artefakt-Commit dokumentiert die Vorbereitung vor der Publikation; Manuskripte und PDFs sind unverändert.
 Vorherige öffentliche Fassung: [v0.2, DOI 10.5281/zenodo.21951156](https://doi.org/10.5281/zenodo.21951156).
 Versionsfamilie: [Concept-DOI 10.5281/zenodo.21951155](https://doi.org/10.5281/zenodo.21951155).
 

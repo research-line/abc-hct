@@ -4,7 +4,7 @@
   "version": "0.3",
   "date": "2026-10-02",
   "license": "CC-BY-4.0",
-  "publication_status": "PREPARED_NOT_PUBLISHED",
+  "publication_status": "VERIFIED_PUBLISHED",
   "concept_doi": "10.5281/zenodo.21951155",
   "previous_record_doi": "10.5281/zenodo.21951156",
   "scope": "Corrective selected-rows manuscript delta; no mathematical proof certification or whole-ATS audit",
@@ -46,13 +46,13 @@
     },
     {
       "file": "README.md",
-      "sha256": "3e10e65188aae440b1e7fba5557e5bb8899b3275dbdde0183555f52e68954a9c",
-      "bytes": 2374
+      "sha256": "fc681e0cb7c435e82cbc9f3e8b9186dc0cf1cdae20168cfc933a5761b23b96bb",
+      "bytes": 2532
     },
     {
       "file": "README_de.md",
-      "sha256": "288f2188970ef63aca8a96df8c4f80f95e813439a4b0378b64fec149ba0f24ce",
-      "bytes": 2557
+      "sha256": "59f4c67c5d646a456089830bd5e90c39ce2db4f53bb10fdbc06a3f75b1c5101c",
+      "bytes": 2732
     }
   ],
   "checks": {
@@ -68,6 +68,9 @@
       0
     ],
     "final_warnings": 0,
-    "visual_pages_checked": 26
-  }
+    "visual_pages_checked": 26,
+    "independent_public_postflight": "ACCEPT"
+  },
+  "record_doi": "10.5281/zenodo.23092802",
+  "artifact_commit": "3ccd7d626b1884b2942ab53d7f8021efc246a755"
 }

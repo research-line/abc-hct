@@ -4,6 +4,9 @@ All notable changes to this repository will be documented in this file.
 
 ## [Unreleased]
 
+### Research manuscript corrections
+- Add the bilingual Part 6 ATS height-subchain v0.3 corrective paper package: R18 linear-class, full-place and arithmetic-domain fixes with unchanged core proofs and explicit open measure/extension gates. Package version 0.1.13 remains frozen.
+
 ### Added
 - **Bilingual Contributing Guidelines (`CONTRIBUTING.md`)**: Authored comprehensive English and German contribution guidelines detailing Plan D local development workflow, strict Version Freeze discipline (`0.1.13` per `T-20260920-167562623`), mandatory pre-commit quality gates (`pytest`, `ruff check .`, `compileall`, `git diff --check`), unprivileged `RunAsInvoker` user-mode execution, zero-copyleft subprocess isolation, zero-egress offline privacy, and responsible vulnerability disclosure per `SECURITY.md`.
 - **PEP 621 Contributing URL**: Registered canonical `Contributing` URL (`https://github.com/research-line/abc-hct/blob/main/CONTRIBUTING.md`) under `[project.urls]` in `pyproject.toml`.

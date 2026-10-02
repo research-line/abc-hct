@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "paper": "ATS height-subchain correction, Gap Series Part 6",
+  "version": "0.3",
+  "license": "CC-BY-4.0",
+  "status": "PREPARED_NOT_PUBLISHED",
+  "concept_doi": "10.5281/zenodo.21952486",
+  "prior_record": 21952487,
+  "whole_case_acceptance": false,
+  "machine_checked_proof": false,
+  "scope": "R18 corrective manuscript and source-bound quantity/domain distinctions",
+  "independent_reviews": {
+    "mathematical": "ACCEPT",
+    "bilingual": "ACCEPT",
+    "description": "ACCEPT"
+  },
+  "pdf_pages": {
+    "en": 12,
+    "de": 13
+  },
+  "pdf_visual_pages_checked": 25,
+  "open_scientific_gates": [
+    "Algebraic-extension and line-bundle transport bridges",
+    "Concrete measure representation and R-E2",
+    "H-PLACES / field-descent bridge where applicable",
+    "P5 and whole-chain acceptance"
+  ],
+  "artifacts": [
+    {
+      "file": "ai_disclosure_de.tex",
+      "sha256": "c857b9a7b385f5f35dcee2a84757bc13ea448563152f6ad8f4e2cbf942dfa227",
+      "bytes": 499
+    },
+    {
+      "file": "ai_disclosure_en.tex",
+      "sha256": "ea888cbe78195eed8546f74b9e8dccf9a08dee79bf9a7539821197033067cf37",
+      "bytes": 453
+    },
+    {
+      "file": "ATS_Repair_Rigidity_v0.3_de.pdf",
+      "sha256": "46496d625f2f465811345ca625fb62ed110b1ad5d9bad9fb38b945090dff7201",
+      "bytes": 383603
+    },
+    {
+      "file": "ATS_Repair_Rigidity_v0.3_de.tex",
+      "sha256": "5c2cdcbd1bbbfc8d605d4dc6398c42d9ec885bd798996b298a5f86ce42a060c0",
+      "bytes": 32657
+    },
+    {
+      "file": "ATS_Repair_Rigidity_v0.3_en.pdf",
+      "sha256": "5a3bc4214762837af3f54a533815d07bf06872e2f09474040a307fa7ad53218f",
+      "bytes": 375112
+    },
+    {
+      "file": "ATS_Repair_Rigidity_v0.3_en.tex",
+      "sha256": "8d3fd11a630287fd4ab01cef2750dbea3a67d2fea1e15c7e9231201beb48c505",
+      "bytes": 30522
+    },
+    {
+      "file": "README.md",
+      "sha256": "c34a81aa7568c689511aab7f0e86232d309c2642f7d3f978cf7da01372c54041",
+      "bytes": 1981
+    },
+    {
+      "file": "README_de.md",
+      "sha256": "a123741f29dbb5a1b36882035e2d8a832ac9731c8459440f418ed748d3960239",
+      "bytes": 2135
+    }
+  ]
+}

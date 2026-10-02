@@ -1,7 +1,7 @@
 {
-  "status": "PREPARED_REVIEW_PENDING",
+  "status": "PUBLISHED_VERIFIED",
   "version": "0.3",
-  "published_record": null,
+  "published_record": 23094093,
   "public_baseline": {
     "record": 21956399,
     "doi": "10.5281/zenodo.21956399",
@@ -16,7 +16,8 @@
     "base_commit": "e067e2183f92cacb357cc166a1c39e9d9edeb06f",
     "branch": "codex/ats-substance-inventurernte-v0.3",
     "artifact_commit_binding": "separate receipt records commit; manifest does not hash itself",
-    "initial_artifact_commit": "25c9b3f88cebda99bb55f74397e235a180e8b81a"
+    "initial_artifact_commit": "25c9b3f88cebda99bb55f74397e235a180e8b81a",
+    "publication_metadata_commit": "35b764786e8f97302e1762c54787c373e0f0653b"
   },
   "artifacts": {
     "ai_disclosure_de.tex": "656bd25e9a87fb7b41bbd24946a42c92fecee89ebae066f2947f7ede9ca2af9e",
@@ -25,7 +26,15 @@
     "ATS_Substance_Verification_v0.3_de.tex": "0643324bce10d6d7917184496d4f6eaebef17f84ead81aca32116e298a27d4ee",
     "ATS_Substance_Verification_v0.3_en.pdf": "0228c74db0d22f194ceb58a4d1b8e77584ddff87af44a45e789455ca74e54da1",
     "ATS_Substance_Verification_v0.3_en.tex": "4ee8eeb2839b4773aa12892ab15f3fad2bf3bf8bd16ae23cbd6b101d8befb8e3",
-    "README.md": "3ec5fd8c73423abe6d289a4a416d150db448200b79f237ab540c46d2789fa4fc",
-    "README_de.md": "ed2edd63b0d22d8fc86efc9e91c5d1b57f9c9d5f7e0dcc700c1e2d64bbc9f6c9"
-  }
+    "README.md": "77bb1dda3da203cece1c3a37e6cf113ba11f27c770345ffcb1ed229652acf9e6",
+    "README_de.md": "6442bb6037a655e2f499dadf453d65df5e63c4ea396c1e1eaa3e4f803227e493"
+  },
+  "doi": "10.5281/zenodo.23094093",
+  "concept": 21956398,
+  "postflight": {
+    "passed": 20,
+    "total": 20,
+    "whole_case_acceptance": false
+  },
+  "description_sha256": "8fdef16155decd350e8af02853e1ff1a1433c5705ddec3dded636f2827ac15b8"
 }

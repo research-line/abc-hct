@@ -1,6 +1,6 @@
-# ATS Substance Verification — v0.3 candidate
+# ATS Substance Verification — v0.3
 
-Status: PREPARED_REVIEW_PENDING. No v0.3 Zenodo upload or publication has occurred. The isolated Git review branch is pushed; its first artifact commit is 25c9b3f88cebda99bb55f74397e235a180e8b81a. The base is the unchanged local canonical main commit e067e2183f92cacb357cc166a1c39e9d9edeb06f; it is not asserted to be the latest remote main. The public baseline is v0.2, DOI 10.5281/zenodo.21956399; the later local R17 TeX baseline is separately hash-bound.
+Status: PUBLISHED_VERIFIED. Zenodo v0.3 is public as record 23094093, DOI https://doi.org/10.5281/zenodo.23094093 (concept 21956398). The actual public postflight passed 20/20 checks. The publication metadata pins Git commit 35b764786e8f97302e1762c54787c373e0f0653b; the first science artifact commit below remains separate provenance. The isolated Git review branch is pushed; its first artifact commit is 25c9b3f88cebda99bb55f74397e235a180e8b81a. The base is the unchanged local canonical main commit e067e2183f92cacb357cc166a1c39e9d9edeb06f; it is not asserted to be the latest remote main. The public baseline is v0.2, DOI 10.5281/zenodo.21956399; the later local R17 TeX baseline is separately hash-bound.
 
 This ongoing paper distinguishes coordinate and action obligations, same-field all-place rigidity and admissible global j² scaling, conditional maximal-order module hulls, the narrow printed-corollary sign inconsistency, and defined linear effective-weight families. ATS field, period and volume bridges remain open. It makes no whole-chain, abc or IUT verdict and introduces no new computation or machine-checked proof.
 

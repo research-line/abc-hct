@@ -1,0 +1,52 @@
+{
+  "version": "0.3",
+  "status": "PREPARED_NOT_PUBLISHED",
+  "conceptrecid": "21960476",
+  "previous_record": "21960477",
+  "canonical_local_base": "e067e2183f92cacb357cc166a1c39e9d9edeb06f",
+  "observed_remote_main": "d55a8b5777fae67e58ea1381d334c3485ddfafd7",
+  "artifact_commit": null,
+  "description_sent_lf_sha256": "509bb1a8573e37869229bbfbd78d4f608afe822e27851036431516a2fdef8119",
+  "description_file_bytes_sha256": "369a1d95a6880f22c5de100f89f0424ff68828b1a857fabe18ce107525917d28",
+  "description_crlf_count": 43,
+  "files": {
+    ".gitattributes": {
+      "sha256": "5f7ecfeaece848dd531bbc68918da1b655af96c8fd80a5aac7775ab579c0dae6",
+      "bytes": 45
+    },
+    "ai_disclosure_de.tex": {
+      "sha256": "cb20009a22f10430683ee8e04c59df51c8ce524913e386d07fe6453e5b0d22a7",
+      "bytes": 2062
+    },
+    "ai_disclosure_en.tex": {
+      "sha256": "74a1774a059d5016aca1fa434ec027c44a50c4e932bd41d7b46cd0e123a242bf",
+      "bytes": 1901
+    },
+    "Bridge_Contract_Criterion_v0.3_de.pdf": {
+      "sha256": "bf3d3463dfabb5b71f9934d8ac23e5d75c3239a8ba541c11639fb842e56e12a5",
+      "bytes": 724772
+    },
+    "Bridge_Contract_Criterion_v0.3_de.tex": {
+      "sha256": "56497edc2ee7e66a21d5b216bc7d590b26c5537aafa715ea8cfc10cd42afce30",
+      "bytes": 114885
+    },
+    "Bridge_Contract_Criterion_v0.3_en.pdf": {
+      "sha256": "9047e6bb9c6b40b2c7e546bd27363c79c8114cc8aeba9265e1b991c53a36fe65",
+      "bytes": 697656
+    },
+    "Bridge_Contract_Criterion_v0.3_en.tex": {
+      "sha256": "b49f13a59b764027fe5fb911ed8943d5e4c7fc5f44eaec5e3ead7d15bfa53426",
+      "bytes": 103277
+    },
+    "README.md": {
+      "sha256": "0dc9634d30dd4ba798c439fec33392d0d386ff5b86ab5f163b5d0d179ffacef2",
+      "bytes": 2007
+    },
+    "README_de.md": {
+      "sha256": "845fcf082bb764e4c4ea8d068eca8b804dd746486b80b97fba787118abc3ab8d",
+      "bytes": 2241
+    }
+  },
+  "scope": "bounded C7/G11 and current-consumer delta; no whole-method validation",
+  "whole_case_acceptance": false
+}

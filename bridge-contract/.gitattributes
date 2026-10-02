@@ -1,0 +1,2 @@
+*.tex -text whitespace=cr-at-eol
+*.pdf -text

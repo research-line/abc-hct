@@ -1,6 +1,6 @@
 # Bridge-Contract-Kriterium — v0.3
 
-Status: VORBEREITET; v0.3 wurde noch nicht hochgeladen oder veröffentlicht.
+Status: VERÖFFENTLICHT UND VERIFIZIERT. Version 0.3: https://doi.org/10.5281/zenodo.23095881. Öffentlicher Postflight: 20/20 PASS. Unveränderlicher öffentlicher Metadaten-Gitpin: 6fed4c46f11c9e30115366daf070c17611d7ee31.
 
 Dieses fortlaufende Forschungspapier schlägt einen siebenkomponentigen Bridge Contract und einen versionierten Ledger-Audit vor. Die aktuelle Fassung gleicht die C7-Abbildung an die unveränderte Definition H1–H5 an, trennt numerische Ableseordnung von Containerordnung in der G11-Diskussion, präzisiert die historische F-R6b-Lesart und ergänzt die aktuellen Teile 4–6 neben erhaltenen historischen Auditpins. Die retrospektive Zwei-Fall-Illustration und ausgewählte abc-Zeilen begründen weder eine allgemeine Methodenvalidierung noch einen IUT-/LANA-Beweis.
 

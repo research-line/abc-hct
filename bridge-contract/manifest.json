@@ -1,12 +1,11 @@
 {
   "version": "0.3",
-  "status": "PREPARED_NOT_PUBLISHED",
+  "status": "PUBLISHED_VERIFIED",
   "conceptrecid": "21960476",
   "previous_record": "21960477",
   "canonical_local_base": "e067e2183f92cacb357cc166a1c39e9d9edeb06f",
   "observed_remote_main": "d55a8b5777fae67e58ea1381d334c3485ddfafd7",
-  "artifact_commit": null,
-  "description_sent_lf_sha256": "509bb1a8573e37869229bbfbd78d4f608afe822e27851036431516a2fdef8119",
+  "artifact_commit": "6fed4c46f11c9e30115366daf070c17611d7ee31",
   "description_file_bytes_sha256": "369a1d95a6880f22c5de100f89f0424ff68828b1a857fabe18ce107525917d28",
   "description_crlf_count": 43,
   "files": {
@@ -39,14 +38,23 @@
       "bytes": 103277
     },
     "README.md": {
-      "sha256": "0dc9634d30dd4ba798c439fec33392d0d386ff5b86ab5f163b5d0d179ffacef2",
-      "bytes": 2007
+      "sha256": "a3e87ea1fac816770aa898c918ea7a3f42b347ac49c797365ff14a5f2b62185b",
+      "bytes": 2138
     },
     "README_de.md": {
-      "sha256": "845fcf082bb764e4c4ea8d068eca8b804dd746486b80b97fba787118abc3ab8d",
-      "bytes": 2241
+      "sha256": "323f52f1449b45cd6b63f6aa24d04ec6246c6240ccc426ea7aa28bbebf3082d9",
+      "bytes": 2389
     }
   },
   "scope": "bounded C7/G11 and current-consumer delta; no whole-method validation",
-  "whole_case_acceptance": false
+  "whole_case_acceptance": false,
+  "record": "23095881",
+  "doi": "10.5281/zenodo.23095881",
+  "public_metadata_git_pin": "6fed4c46f11c9e30115366daf070c17611d7ee31",
+  "public_postflight": {
+    "passed": 20,
+    "total": 20
+  },
+  "description_input_lf_sha256": "509bb1a8573e37869229bbfbd78d4f608afe822e27851036431516a2fdef8119",
+  "description_canonical_sent_and_public_sha256": "6b0b339fd803332c7c1c8efa6f45da7e4510ff76b9a2ffa02f6fa2abaf2ee670"
 }

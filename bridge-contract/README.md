@@ -1,6 +1,6 @@
 # Bridge Contract Criterion — v0.3
 
-Status: PREPARED; v0.3 has not been uploaded or published.
+Status: PUBLISHED_VERIFIED. Version 0.3: https://doi.org/10.5281/zenodo.23095881. Public postflight: 20/20 PASS. Immutable public metadata Git pin: 6fed4c46f11c9e30115366daf070c17611d7ee31.
 
 This ongoing research paper proposes a seven-component bridge contract and a versioned ledger audit. The current edition aligns the C7 illustration with its unchanged H1–H5 definition, distinguishes numerical readout order from container order in the G11 discussion, qualifies the historical F-R6b reading, and adds current Parts 4–6 alongside retained historical audit pins. The retrospective two-case illustration and selected abc rows establish no general method validation or IUT/LANA proof.
 

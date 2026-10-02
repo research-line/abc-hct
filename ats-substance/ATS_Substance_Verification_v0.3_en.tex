@@ -1,0 +1,1033 @@
+\input{glyphtounicode}
+\pdfgentounicode=1
+\documentclass[11pt,a4paper]{article}
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[american]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,unicode=true]{hyperref}
+\usepackage{xurl}
+
+\renewcommand*{\HyperDestNameFilter}[1]{en.#1}
+
+\hypersetup{
+  pdftitle={The Joshi ATS Series under the Bridge-Certificate Standard: A Targeted Substance Audit and an All-Place Rigidity Classification of Effective Normalization Weights},
+  pdfauthor={Lukas Geiger},
+  pdfsubject={Mathematics - Number Theory, Arithmetic Geometry},
+  pdfkeywords={Arithmetic Teichmuller Space, abc conjecture, Bridge Certificate, Substance Audit, Rigidity Classification, Normalization Weights},
+  pdfcreator={LaTeX with hyperref},
+  pdfproducer={pdfTeX},
+  bookmarksnumbered=true,
+  pdfpagemode=UseOutlines,
+  pdfstartview={FitH},
+  unicode=true
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{The Joshi ATS Series under the\\Bridge-Certificate Standard:\\[2pt]A Targeted Substance Audit and an\\All-Place Rigidity Classification of\\Effective Normalization Weights}
+\author{Lukas Geiger\\\small Independent Researcher, Bernau, Germany\\\small ORCID: 0009-0005-7296-1534}
+\date{October 2026 --- Version 0.3 (draft)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This ongoing targeted audit separates coordinate bookkeeping, normalization
+weights, and volume carriers in selected load-bearing steps of Joshi's ATS
+series. The period-map argument requires consistent raw and normalized
+logarithmic coordinates and a well-defined action on the period image.
+Same-field all-place product-formula rigidity forces final effective
+weights to be constant across places, but permits a global $j^2$ scaling;
+its application across $L'/L$ and to the source's freeze remains conditional.
+A local maximal-order hull inclusion is available under an actual module-hull
+contract, while the ATS logarithm, Haar-degree, tensor and target-volume
+bridges remain open. The printed ATS~III v4 corollary has absolute-value bars:
+under a finite nonempty Tate-place sum with $0<|q_w|<1$ and positive
+$\ell,\ell^*$, its left side is nonpositive and its right side positive.
+This narrow sign inconsistency is separated from ATS~IV applications and
+possible repairs. For global linear quantity families with defined reference
+sums, rigidity gives at most a $y$-dependent scalar; classical height and
+degree follow only with the stated normalization and domain identifications.
+Measure and log-volume class membership and nonmembership are not established.
+No conclusion about the truth of abc, the correctness of IUT, or the whole
+ATS chain is claimed.
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+%=====================================================================
+\section{Introduction}\label{sec:intro}
+
+\subsection{Mandate and place in the series}
+
+This series examines the published landscape around the abc conjecture
+through a fixed auditing instrument. Part~1~\cite{part1} localized the
+disputed step of Mochizuki's Corollary~3.12~\cite{mochizukiIUT,scholzestix};
+Parts~2--3 developed the instrument: Part~2 introduced the \emph{bridge
+contract} criterion~\cite{part2}, and Part~3 its certificate form~\cite{part3}
+(the v1-F standard), which fix in advance what a transport argument between
+two frameworks must deliver before its conclusion may be used;
+Part~4~\cite{part4}
+applied the certificate to Kirti Joshi's ATS series as a \emph{form audit}:
+a pre-specified four-row test (\mbox{F-1}--\mbox{F-4}) of whether the chain states its transport law,
+its compensation mechanism, its second mode, and its cross-container
+comparability explicitly enough to be audited at all. The outcome of Part~4
+was, deliberately, a statement about auditability, not about substance. A
+tool supplement analyses the normalization identification
+separately~\cite{gnc}, and a companion landscape paper situates the series
+among the routes of the wider program~\cite{landscapeA}.
+
+The present Part~5 is a \emph{targeted} substance audit of selected
+load-bearing internal steps --- not a complete verification of the chain.
+Its mandate, fixed before the work began, is the question left open by
+Part~4: do the selected load-bearing steps of the published chain carry ---
+that is, do the proofs written in the cited versions establish the
+statements the chain uses at those sites? IUT imports, the existence base,
+and steps outside the selected sites are outside the audit.
+
+\subsection{Method}
+
+The audit followed five phases recorded in a contemporaneous internal proof
+register before the synthesis stage. Phase~0 mapped the
+\emph{proof spine}: the minimal chain of results leading from the abc-type
+inequality back to the existence of the deformation space, with an import
+triage separating the chain's own results from statements quoted from the
+IUT corpus. Phases~1--3 then verified, line-anchored against the exact
+arXiv versions named in Section~\ref{sec:findings}, the sites the spine
+prioritizes as heavily load-bearing: the full text of the normalization
+mechanism, the base package (non-constancy theorem, renormalization
+corollary, adelic assembly theorem), and the lower-bound core together with
+its corollary translation. Phase~4 synthesized the findings into the typed
+findings reported here; the reading question it left open is addressed by
+the rigidity classification of Part~6, and Section~\ref{sec:case} reports
+that classification under its named hypotheses.
+
+Three disciplines from the earlier parts carry over unchanged. First,
+\emph{verbatim anchoring}: every finding cites the exact version and, where
+line-level extracts exist, the line range of the passage it concerns.
+Second, \emph{typing}: findings are classified as formal bookkeeping
+(verified or reconstructible), typed gaps (the text does not show what is
+used --- with the missing step named), or documented reconstructions of our
+own (marked as such, never silently supplied). Third, \emph{claim
+discipline}: missing-proof findings are not promoted to falsity; the separate printed
+sign test is stated only under its explicit hypotheses.
+
+\subsection{Claim boundaries}\label{sec:claims-intro}
+
+This paper reports the current state of an ongoing, targeted audit. The
+same-field rigidity result is mathematical and conditional on its complete
+place, field, and quantity-class hypotheses. Most source findings concern
+missing implications, not counterexamples to a full theorem. Separately,
+Section~\ref{sec:s7} identifies a narrow inconsistency in a printed sign
+inequality under explicit finite Tate-place and normalization assumptions.
+Neither kind of finding decides the truth of abc, IUT, or the whole ATS
+chain. No new computation, machine-checked proof, or independent full-chain
+validation is claimed. The audit's admissible claims may change when a
+source revision, repair, or counterargument supplies the missing contracts.
+
+The published v0.2 PDFs and the later, hash-bound bilingual source state are
+distinct baselines. Intermediate work added Part~2 citation, table labels
+and a response-route table, language-specific disclosure and revised layout.
+The present scientific changes use the inventoried coordinate, field,
+normalization, hull and sign corrections; the exact original v0.2 TeX was
+not recovered. These provenance limits do not turn the intermediate source
+into an independently verified copy of the published source.
+
+\section{The Proof Spine of the Series}\label{sec:spine}
+
+Phase~0 mapped the published chain backwards, from the abc-type conclusion to the
+statement that deformation spaces of the required kind exist, using plain-text
+extracts of the four versions listed at the beginning of
+Section~\ref{sec:findings}. The map is complete \emph{within} those extracts and
+truncated, not closed, wherever the chain calls on earlier papers of the
+construction series that were not available for audit --- most consequentially at
+the existence level, which rests on the first of them~\cite{joshiI}.
+
+\subsection{The chain}
+
+Table~\ref{tab:spine} lists the nodes lying immediately on the main chain, in the
+order the proof text traverses them. The labels $S1,\dots,S22$ are our own
+bookkeeping; the theorem numbers are the sources' own.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Load-bearing nodes, backwards from the abc-type conclusion. ``Proof''
+counts extract lines between the \texttt{Proof.} marker and the end of the
+argument: an indicator of checkability, not a measurement.}
+\label{tab:spine}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X r@{}}
+\toprule
+ & Result & Rests on & Proof \\
+\midrule
+S1  & IV, Thm.~7.2.1 --- abc and arithmetic Szpiro over $\mathbb{Q}$ & S2 & none \\
+S2  & IV, Thm.~7.1.1 --- Vojta inequality (declared main theorem) & S3, S9, S10 & 121 \\
+S3  & IV, Thm.~6.1.1 --- First Main Bound & S4 alone & 33 \\
+S4  & IV, Thm.~6.10.1 --- Second Main Bound (log-volume sandwich) & S5, S6, S7, S9 & $55{+}160$ \\
+S5  & the middle equality of S4 (no theorem number) & ``same global normalization'' & 2 \\
+S6  & IV, Prop.~6.10.9 / 6.10.10 / 6.10.12 --- upper bound & IUT~4, Thm.~1.10, steps (v)--(vii) & $2/1/2$ \\
+S7  & III, Cor.~9.11.1.1 --- lower bound, translated & S8, by notational translation & none \\
+S8  & III, Thm.~9.11.1 --- volume lower bound for $\widetilde{\Theta}$ & S15 and the hull and volume tools & 38 \\
+S9  & IV, Thm.~5.7.1 --- existence of initial theta data & standard literature & 196 \\
+S15 & III, Thm.~4.2.2.1 --- $\widetilde{\Sigma}_{L'}$ stable; $j^2$ scaling & ATS~II, ATS~II(1/2), Fargues--Fontaine & 15 \\
+S16 & III, Cor.~4.2.2.4 --- forced renormalization & S15 and the ``global constraint'' & 2 \\
+S17 & III, Thm.~4.6.1 --- global period map on $\widetilde{\Sigma}_{L'}$ & S18, S15, S16 & 3 \\
+S18 & II(1/2), Thm.~5.10.1 --- product formula as period map & properties of $Y_L$ and arithmeticoids & 5 \\
+S20 & II(1/2), Cor.~4.2.5 --- global Frobenius on $Y_L$ & S21 & 1 \\
+S22 & II(1/2), Thm.~5.5.2 --- existence of arithmeticoids & Scholze; Kedlaya--Temkin; [Joshi 2021a] & 36 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+In one sentence: S1 rests on the Vojta inequality S2, which rests on the First
+Main Bound S3, which rests entirely on the log-volume sandwich S4; the
+\emph{lower} half of that sandwich runs through S7 to S8, the \emph{upper} half is
+taken over unchanged from IUT~4 (S6), and the \emph{middle equality} S5 is what
+first joins the two halves into a single chain --- supported by the normalization
+apparatus S15 to S18, which sits on the Frobenius construction S20/S21 and the
+existence level S22. With the auxiliary nodes not shown, the map has 34 rows: 27
+numbered nodes and 7 side rows, of which 15 lie immediately on the main chain.
+
+\subsection{Import triage}
+
+Each node was tagged by provenance: standard published literature; results the
+series proves for itself; statements quoted from the IUT corpus; and purely
+definitional passages. Keeping the third tag apart from the first is the
+structurally important decision of the mapping, because the IUT corpus is not
+background literature here but the artifact the chain sets out to replace. The
+ledger of standard literature has 17 entries, 11 of them load-bearing in the sense
+that a proof of the chain rests on them directly. The ledger of IUT imports has 13
+entries, four of which are \emph{unexecuted full imports}, the entire proof
+consisting of a pointer: ``This is the last equation on [Mochizuki, 2021d, Step
+(v) on Page 658, Proof of Theorem~1.10] and its proof is all of step (v)''
+(IV:3361--3362), with the parallel formulations for steps (vi) and (vii) at
+IV:3372 and IV:3390--3391. These three propositions constitute the entire upper
+half of the sandwich S4.
+
+That fixes the boundary of this audit. Measured by load the IUT-quoted
+propositions rank first; measured by novelty they rank last, being the source's
+computation verbatim. A line-anchored audit there would be an audit of IUT~4, not
+of the chain under examination, and lies outside the mandate of
+Section~\ref{sec:claims-intro}. They are recorded and set aside, not verified.
+
+\subsection{Proof text at the load-bearing nodes}
+
+Of the 34 mapped rows, 21 proofs take one of three short forms: no proof block at
+all (3), a proof consisting of an external citation (6), and a proof consisting of
+one sentence of the form ``clear'', ``immediate'' or ``tautology'' (12). Twelve of
+the 21 sit at nodes lying immediately on the main chain: ``The middle equality is
+a tautology using the fact that the number fields provided by $y_0'$ and $y_0$ are
+identically normalized'' (S5, IV:3272--3273); ``This is clear from
+Theorem~4.2.2.1 and the global constraint placed by the requirement that the
+product formula holds'' (S16, III:1613--1614); ``The proof is clear'' (S20,
+II(1/2):1318).
+
+The finding is descriptive. A two-line proof can be entirely sound, and several of
+those listed are shown in Section~\ref{sec:findings} to carry exactly as written:
+brevity here indexes \emph{checkability}, which an audit can address, not
+correctness, which it cannot address in this form. The counts are counts of
+extract rows, where page numbers stand as free-standing lines and displays break
+across lines, so every length figure is an indicator and none carries an argument
+below.
+
+\subsection{What was selected for verification}
+
+Phase~0 qualitatively prioritized the nodes by load borne, novelty, and
+brevity of proof text, novelty being the discriminating factor for the
+reason just given.
+
+The ranking placed the middle equality S5 first: the only node joining the two
+halves into one chain of inequalities, carrying no theorem number, dispatched in
+the two lines quoted above, while the same paper states at three places that local
+comparisons between $y_0$ and $\varphi(y_0)$ are precisely not available
+(IV:3208--3211, IV:772--775, IV:816--819). Part~4 of this series treated S5 under
+the transport-law row of the bridge certificate and resolved its status there ---
+conditionally: the resolution holds on the bound and free readings of the
+weight family laid open in Section~\ref{sec:fneu1} and not on the
+place-selective reading, and Section~\ref{sec:case} reports how the
+readings are classified under named hypotheses. S5 is therefore not
+re-audited here.
+
+The five remaining ranked nodes follow, preceded by the full-text question Part~4
+had left open. \textbf{The normalization mechanism} --- what ``normalized
+arithmeticoid'' operatively means --- comes first, because the reading it fixes is
+presupposed by the three nodes after it. \textbf{S18} carries the entire
+product-formula apparatus on a five-line proof whose justifying sentence states
+that normalizations do \emph{not} carry over. \textbf{S16} asserts in two lines
+that the $j^2$ scaling \emph{forces} a renormalization elsewhere, the precondition
+for S17 and S18 being well defined at all. \textbf{S17} is marked by the author
+himself as ``vital to establishing [Mochizuki, 2021c, Corollary~3.12]'' and as the
+type of proposition ``claimed without proof'' in the works it competes with
+(III:1838--1840), then proved in three lines. \textbf{S8} is the only
+substantively independent lower bound in the chain, its decisive reduction
+declared clear from the construction. \textbf{S7} is the node ATS~IV actually
+cites: no proof block, presented as a notational translation of S8.
+
+%=====================================================================
+\section{Line-Anchored Findings}\label{sec:findings}
+
+All findings below are anchored to four extracts; all four versions are
+cited in their revisions of 24 February 2025. The line anchors refer to our
+internal plain-text extracts and are finding aids, not a public
+reproducibility standard; a provenance manifest (arXiv version, extraction
+tool, checksums, line-numbering rule) is planned as a series supplement,
+and until it exists the anchors should be read alongside the quoted
+wording, which is verbatim.
+\begin{itemize}
+\item \textbf{IV} = ATS~IV, arXiv:2403.10430v2~\cite{joshiIV};
+\item \textbf{III} = ATS~III, arXiv:2401.13508v4~\cite{joshiIII};
+\item \textbf{II(1/2)} = ATS~II(1/2), arXiv:2305.10398v12~\cite{joshiIIhalf};
+\item \textbf{II} = ATS~II (local prototype), arXiv:2303.01662v3~\cite{joshiII}.
+\end{itemize}
+An anchor of the form III:6840--6843 refers to lines of the plain-text extract,
+not to pages of the published document. The extracts are lossy in one respect that
+constrains what may be asserted: the II(1/2) extract loses Greek letters, so no
+finding rests on where a $\lambda$ stands in a formula of that paper, whereas the
+III and IV extracts preserve sub- and superscripts (control case III:1558) and the
+$\xi$/$\Xi$ distinction. The present S7 formula is checked directly against the archived PDF,
+whose absolute-value bars were lost by the extract; reconstructed formulas
+are explicitly distinguished from that printed statement. One boundary recurs in Sections~\ref{sec:s8} and~\ref{sec:s7} and
+is stated once here: Mochizuki's Corollary~3.12 is not part of the audited corpus,
+so the claim that a statement of the chain \emph{is} that corollary
+(III:6880--6881, IV:3197--3198) is not decidable here, and nothing below decides
+it.
+
+\subsection{The normalization mechanism}\label{sec:fneu1}
+
+The normalization coordinate of ATS~II($\tfrac12$) \S\,5.3 is the positive
+exponent converting the untilt absolute value to the fixed standard one.
+Under the pointwise identity (5.3.3), direct substitution gives the classical
+degree on $L^\times$ and height on $\mathbb P^n(L)$. This statement does not
+automatically extend to $\mathbb P^n(\overline L)$ or line-bundle heights.
+The compensation language in \S\,8 and ATS~III, Cor.~4.2.2.4, separately
+requires an identified selection rule and field/place convention.
+
+For a fixed number field $L$, all of its places, and real $x$-independent
+effective weights satisfying the standard product formula for every
+$x\in L^\times$, Part~6 gives $\beta_{y,v}=c_y$ across places. This leaves
+a global scalar, possibly dependent on $y$; a constant global $j^2$
+extension is admissible. What is excluded is unequal final weights under
+these hypotheses, not every change of raw local normalization coordinates.
+Tests on $L^\times$ at places of an extension $L'$ do not by themselves
+establish the corresponding all-place theorem on $L'^\times$.
+
+The source-bound question remains which rule and domain the operative
+quantity uses. A pointwise-normalized height on $\mathbb P^n(L)$, a free
+global scalar, a coordinate hyperplane, and a measure carrier are distinct
+objects. No conclusion about the entire deformation apparatus follows
+without the bridges in Sections~\ref{sec:s18}--\ref{sec:s8}.
+
+\subsection{The period map: ATS~II(1/2), Theorem~5.10.1}\label{sec:s18}
+
+The source asserts that $y\mapsto H_y$ is non-constant (ATS~II($\tfrac12$),
+Thm.~5.10.1; extract II($\tfrac12$):2161--2243). Its local variation input is
+available in ATS~II, Thm.~10.20.1(3), but the following coordinate and action
+identifications must be separated from that input.
+
+\paragraph{Coordinates and bookkeeping.}
+Write raw logarithms as $u_v=\log|x_v|$ and normalized coordinates as
+$z_v=\alpha_v u_v$. The source's degree is $\deg=\sum_v z_v$, whereas its
+displayed weighted hyperplane is $H=\ker(\sum_v\alpha_v z_v)$.
+Thus
+\[
+ \ker\Bigl(\sum_v z_v\Bigr)\ne
+ \ker\Bigl(\sum_v\alpha_v z_v\Bigr)
+ \quad\hbox{in general}.
+\]
+For $\alpha=(2,1)$ and $z=(1,-1)$ the first sum is $0$ and the second is $1$.
+This is a small counterexample to an unqualified kernel identification.
+It refutes neither the full theorem nor a consistently formulated
+raw-coordinate reading.
+A raw-log hyperplane $\ker(\sum_v\alpha_v u_v)$ is a separate consistent
+contract; it must not be silently identified with the twice-weighted one.
+The direct-sum support bookkeeping can be retained in its defined domain,
+but the former blanket assertion that parts (1)--(5) carry is withdrawn.
+
+\paragraph{Translations and the period image.}
+A linear subspace $H$ is invariant under translation by $t$ exactly when
+$t\in H$. Here this requires $\log_y(x)$ to lie in the actually chosen
+hyperplane. The product formula for $\sum z_v$ alone does not establish
+membership in $\ker(\sum\alpha_v z_v)$. An action on arithmeticoids descends
+through a period map $F$ only if
+\[
+ F(y)=F(y')\ \Longrightarrow\ F(gy)=F(gy')
+\]
+for the relevant action elements $g$. That well-definedness is a separate
+source obligation, not a consequence of local norm variation.
+
+\paragraph{Non-proportionality and the remaining reconstruction.}
+For a consistently defined weighted kernel, multiplying every coefficient
+by the same nonzero scalar leaves the hyperplane unchanged. Non-constancy
+of $\lambda_y$ therefore does not alone separate hyperplanes; a pair of
+non-proportional coefficient families is needed. Reconstruction R-1 remains
+conditional on H-REC: the varied non-archimedean local point can be inserted
+while the other coordinates are held fixed. ATS~II, Thm.~10.20.1(3), supplies
+the local variation input, not this recombination or the period-image action.
+The archimedean reach remains unverified. No unconditional S18 closure is
+claimed.
+
+\subsection{The forced renormalization: ATS~III, Corollary~4.2.2.4}\label{sec:s16}
+
+ATS~III, Cor.~4.2.2.4 (extract III:1600--1614), says that the $j^2$ scaling
+at $V^{\mathrm{odd,ss}}$ forces a suitable renormalization at the remaining
+places. This set concerns odd residue characteristic with bad semistable,
+split-multiplicative reduction (ATS~III \S\,3.2(6)), not supersingular
+reduction. Necessity, localization, existence, and uniqueness are separate
+claims.
+
+\paragraph{A baseline-relative necessity test (R-2).}
+Suppose $S$ is a nonempty finite set of non-archimedean places of $L'$,
+the tested global elements lie in $L^\times$, and the places restrict to
+the specified usual absolute values on $L$. Relative to the additional
+baseline of unchanged normalization coordinates away from $S$, the
+scaled product has factor
+\[
+ \Bigl(\prod_{w\in S}|x|_w^{\mathrm{std}}\Bigr)^{j^2-1}.
+\]
+Choose a rational prime $r$ under one $w_0\in S$, so $r\in\mathbb Q^\times
+\subset L^\times$. Then $\log|r|_w\le0$ on $S$ and is strictly negative at
+$w_0$. For $j\ge2$ the displayed factor differs from $1$. This is a global
+element in the correct test domain, not an arbitrary local uniformizer or
+a principal-ideal generator potentially lying only in $L'$. Nonemptiness
+of $S$ and the baseline are additional hypotheses; neither is inferred
+merely from $\ell\ge5$.
+
+\paragraph{Same-field rigidity and field descent (R-3).}
+Let $b_v$ be the standard modulus family on one number field $K$, with
+the canonical local degree factors included, so that
+$\sum_v\log b_v(x)=0$ for every $x\in K^\times$. If
+$\rho_{y,v}=b_v^{a_{y,v}}$ and $\lambda_{y,v}$ is the raw normalization
+coordinate, the effective coefficient is $\beta_{y,v}=a_{y,v}\lambda_{y,v}$.
+Rigidity constrains $\beta$, not $a$ and $\lambda$ separately.
+For this modulus convention it gives $\beta=c\mathbf1$. If one instead
+uses raw extended absolute values, the conclusion is proportionality to
+their canonical degree-weight vector, not unweighted constancy. It requires
+all places of $K$, including archimedean ones, real $x$-independent
+coefficients and the full standard weighted product formula for every
+$x\in K^\times$. Tests only on $L^\times$ across $w\in V_{L'}$ do not
+imply constancy of each individual $L'$-weight. An explicit $L'/L$
+descent/aggregation identity or the appropriate full $L'^\times$ formula
+is needed. The arithmetic transfer is open; the same-field theorem is
+not disputed.
+
+\paragraph{What a genuine common freeze would imply.}
+Under those same-field identifications and a nonempty freeze set, comparing
+two solutions at the same $j$ with identical $a_{j,w}$ and frozen
+$\lambda_{j,w}$ gives identical frozen $\beta_{j,w}$; constancy then gives
+uniqueness if a solution exists. Nonemptiness is a stated prerequisite,
+not a verified general assertion about the source. If, in addition, the
+common reference family really satisfies
+\[
+ \rho_{j,w}=\rho_{1,w}^{j^2},\qquad
+ a_{j,w}=j^2 a_{1,w},\qquad \lambda_{j,w}=\lambda_{1,w},
+\]
+at a frozen place, then algebraically
+\[
+ c_j=\beta_{j,w}=j^2\beta_{1,w}=j^2c_1.
+\]
+This admissible global extension does not violate rigidity. Its source
+application still requires the common field, norm, place, and freeze
+identifications; it yields no general verdict of projective emptiness.
+
+\paragraph{The raw-coordinate freeze comparison.}
+To avoid confusing two types of exponents, denote by $A_{j,v}$ the
+coefficient vector in the fixed raw-coordinate comparison, not the local
+absolute-value exponent $a_{j,v}$ above. In the inventoried comparison,
+for $\varnothing\ne S\ne V$ and $j\ge2$, it has entries $\lambda_{1,v}$
+on $S$ and $j^2\lambda_{1,v}$ outside $S$, and equals
+$j^2\lambda_{\mathrm{can},j,v}$ under that comparison's canonical contract.
+Consequently
+\[
+ H_{\mathrm{Freeze},j}=H_{\mathrm{can},j},
+ \qquad H_{\mathrm{can},j}\ \hbox{need not equal}\ H_1.
+\]
+This conditional comparison does not certify the source's missing field
+identification. Nor may a blanket projective-information conclusion be
+drawn by identifying raw and effective vectors across different fields.
+The literal finite-place convention of ATS~III and its possible
+archimedean completion remain distinct open source contracts.
+
+\subsection{The global period map: ATS~III, Theorem~4.6.1}\label{sec:s17}
+
+The theorem has seven parts (III:1746--1817) and transports the apparatus of
+Section~\ref{sec:s18} from a single arithmeticoid over $L$ to an $\ell^*$-tuple
+over $L'$ constrained to Mochizuki's ansatz $\widetilde{\Sigma}_{L'}$. Its
+complete proof: ``This is clear from [Joshi, 2023a, Theorem~5.10.1], and the
+properties of $\widetilde{\Sigma}_{L'}$ established so far and detailed in
+Theorem~4.2.2.1, Corollary~4.2.2.4'' (III:1819--1820).
+
+Parts (1)--(3) and (5) cite the componentwise supplier, with separately
+indexed target spaces (III:1749--1751). Their formal transport is conditional
+on the consistent coordinate and action contracts of Section~\ref{sec:s18};
+the former unqualified carry verdict is withdrawn. The tuple extension is
+asserted in a source remark (II(1/2):2267), rather than proved there.
+Part (4) explicitly invokes Corollary~4.2.2.4 (III:1791) and inherits the
+field and normalization obligations of Section~\ref{sec:s16}. Part (7)
+remains outside the passages examined.
+
+\paragraph{The missing restriction step (T17-6).} Part~(6) asserts that
+$z \mapsto (H_{y_1},\dots,H_{y_{\ell^*}})$ is non-constant \emph{on}
+$\widetilde{\Sigma}_{L'}$, whereas the supplier, Theorem 5.10.1(7), asserts
+non-constancy on all of $Y_L$ (II(1/2):2228--2233). But $\widetilde{\Sigma}_{L'}$
+is a proper subset of the corresponding product, cut out by the sharp conditions
+of Definition~4.2.2 (III:1460--1467), and non-constancy on a superset does not
+imply non-constancy on a subset. None of the three sources cited in the proof
+addresses that passage.
+
+\paragraph{Reconstruction R-4: a conditional route.}
+The source supplies stability of $\widetilde\Sigma_{L'}$ under global
+Frobenius (Thm.~4.2.2.1(2), III:1536--1539) and the local norm relation
+$|p|_{K_{y_{n-1}}}=|p|_{K_{y_n}}^{1/p}$ (ATS~II, Thm.~10.20.1(3)).
+Neither statement alone proves non-constancy of the period map.
+For the proposed route one must fix a common coordinate space and identify
+the actual hyperplane coefficient vector $B_y$ in those coordinates.
+One must then prove that a single admissible global move simultaneously
+realizes the proposed local changes $\lambda_v\mapsto p_v\lambda_v$, that
+these changes induce the claimed transformation of $B_y$ in the same
+fixed coordinates, and that $B_{\varphi y}$ and $B_y$ are actually
+non-proportional. Only for nonzero linear forms on that fixed space does
+this imply $\ker B_{\varphi y}\ne\ker B_y$. Together with preservation of
+$\widetilde\Sigma_{L'}$ and a well-defined period map, this would establish
+non-constancy on that set. These are H-FROB obligations, not consequences
+of varying residue characteristics or raw $\lambda$ coordinates alone.
+The standard-point and archimedean caveats remain; the required global,
+coordinate and coefficient identifications are not verified here.
+
+\paragraph{A convention question that decides vacuity.} ATS~III writes the
+logarithm and degree maps of parts (1) to (3) without the coefficients $\lambda_v$
+(III:1760, III:1772, III:1781), and its standing convention declares all
+arithmeticoids normalized. Read literally, the functional is the coordinate sum
+and $H_{y_j}$ is the same hyperplane for every $z$, which would leave part (6)
+without content rather than merely unproved; the statement becomes non-vacuous
+only under the ATS~II(1/2) formulation with the $\lambda$-coefficients
+(II(1/2):2212--2216), which ATS~III does not reproduce here. This is a text
+finding, not an artifact of extraction.
+
+\paragraph{Verdict.} \emph{Formal bookkeeping} for parts (1)--(3) and (5) remains conditional
+on the corrected S18 coordinate and action contracts. \emph{Typed gap} at part (6): the proof as written
+does not show non-constancy on $\widetilde{\Sigma}_{L'}$; the missing step is the
+restriction from $Y_L$ to that subset. A second, inherited typed gap sits at part
+(4); a third concerns the valuation convention, under whose literal reading part
+(6) would have no content, the audited passages not fixing which reading governs.
+\emph{Documented reconstruction}: R-4 is a conditional route: under H-FROB
+(Section~\ref{sec:hyplabels}) it establishes non-constancy on
+$\widetilde{\Sigma}_{L'}$, using sources the proof does not cite; without
+an explicit global-to-local compatibility statement, the restriction step
+remains open both in the source and in our reconstruction.
+
+\subsection{The core of the lower bound: ATS~III, Theorem~9.11.1}\label{sec:s8}
+
+ATS~III, Thm.~9.11.1 uses volume, whereas its template Thm.~9.9.1 uses a
+supremum. Its box obligation must be assessed on the actual carrier, not
+settled by observing that a single element has measure zero. In particular,
+the claim that point membership cannot yield a positive-measure hull is
+withdrawn.
+
+\paragraph{A conditional algebraic hull inclusion.}
+Suppose $A$ is a genuinely split finite local algebra, $\mathcal O_A^{\max}$
+its specified maximal order, and $\mathcal O_{\mathrm{tensor}}$ the tensor
+order with $\mathcal O_{\mathrm{tensor}}\subseteq\mathcal O_A^{\max}$.
+Assume that the actual $\operatorname{hull}(S)$ contains $S$ and is stable
+under multiplication by $\mathcal O_A^{\max}$, for example because it is
+the corresponding maximal-order module hull. Then
+\[
+ x\in S\ \Longrightarrow\
+ x\mathcal O_{\mathrm{tensor}}\subseteq
+ x\mathcal O_A^{\max}\subseteq\operatorname{hull}(S).
+\]
+The last inclusion uses that module-hull hypothesis. A split algebra and
+a maximal order alone do not establish it for a merely convex or
+$\mathbb Z_p$-module hull. A positive full-dimensional box additionally
+requires the componentwise nonvanishing and the actual local carrier.
+No silent identification with the ATS target hull or $\widetilde\Theta$
+is made.
+
+\paragraph{Measure normalization and the outstanding volume contract.}
+For a finite extension $E/\mathbb Q_p$, normalized additive Haar measure
+$\mu_E(\mathcal O_E)=1$, and the absolute value
+$|a|=|N_{E/\mathbb Q_p}(a)|_p^{c/[E:\mathbb Q_p]}$ with $c>0$ and
+$|p|=p^{-c}$, change of variables gives
+\[
+ \mu_E(a\mathcal O_E)=|a|^{[E:\mathbb Q_p]/c}\quad(a\in E^\times).
+\]
+It is not generally $|a|$ under an arbitrary absolute-value convention.
+The concrete logarithm image, ATS target hull, tensor and $\Gamma$ balance,
+degree weights, collation and index layer must still be identified.
+The abstract algebraic inclusion does not supply that volume theorem.
+
+The finite-sum exponent identity used in the old comparison,
+$\sum_{j=1}^{n}j^2/n^2\le n$ for $n\ge1$, remains an elementary
+arithmetical fact. Its application to a measure lower bound requires the
+specified Haar, degree, and carrier contracts; the former blanket
+``exponent arithmetic above the gap is sound'' volume verdict is withdrawn.
+The provenance and transport of the $\Xi$ objects through $\log_{BK}$
+also remain separate source obligations (ATS~III \S\S\,9.8--9.11).
+
+\subsection{The translated lower bound: ATS~III, Corollary~9.11.1.1}\label{sec:s7}
+
+\paragraph{The printed statement.}
+The archived ATS~III v4 PDF, printed p.~128, Cor.~9.11.1.1, actually has
+absolute-value bars. With its notation, the displayed formula is
+\[
+ -\frac{1}{\ell^*}
+ \left|\operatorname{LogVol}(\widetilde\Theta^{I}_{\mathrm{Mochizuki}})\right|
+ \ \ge\ -\!
+ \sum_{\substack{p,\ w\in V_p^{\mathrm{odd,ss}}\\
+                  V_p^{\mathrm{odd,ss}}\ne\varnothing}}
+ \log\left|q_w^{1/(2\ell)}\right|_{L'_w}.
+\]
+The summation is over the displayed prime blocks and their indicated
+places; there are no additional real weights in this printed formula.
+The old extraction lost the bars. The proposed atomic alternative
+reading, the claim that the corollary needs bars supplied, and the former
+exculpation through that alternative reading are explicitly withdrawn.
+
+\paragraph{A narrow sign inconsistency, with hypotheses.}
+Assume $\ell^*>0$, $\ell>0$, finite real log-volume, and a defined finite,
+nonempty Tate-place sum with the usual Tate absolute-value normalization
+$0<|q_w|_{L'_w}<1$. Each
+$\log|q_w^{1/(2\ell)}|_{L'_w}$ is strictly negative. The left-hand side is
+nonpositive and the right-hand side is strictly positive. Thus the printed
+inequality cannot hold under these explicit assumptions. This is a local
+sign inconsistency of that displayed assertion, not a verdict on the
+whole ATS chain, IUT, or abc. Empty sums, divergent expressions, or
+different norm conventions are not silently covered.
+
+\paragraph{What this does not establish.}
+A lower bound $\mathrm{Vol}\ge R$ with $0<R<1$ does not imply
+$\mathrm{Vol}\le1$ or $\operatorname{LogVol}\le0$; $\mathrm{Vol}=2$ is a
+counterexample to that implication. The source's separate local
+nonpositivity assertion must not be substituted for a proved volume
+contract. The criticism of the printed ATS~III form, its use in ATS~IV,
+and any corrected lower-bound statement require separate comparisons.
+A repaired sign convention alone would not close the hull/measure
+obligations of Section~\ref{sec:s8}. H-SIGN below records the actual
+printed bars and the sign-test assumptions, not an alternative reading.
+
+\section{Typed Gap Catalogue and Verdict Table}\label{sec:catalogue}
+
+\subsection{Verdict table}
+
+\begin{table}[htbp]\centering\small
+\caption{Verdict by operation; open bridges are not whole-chain verdicts.}
+\label{tab:verdict}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.32\textwidth} >{\raggedright\arraybackslash}X@{}}
+\toprule Operation & Current scope \\\midrule
+S18 coordinates/action & direct-sum bookkeeping only in its domain; weighted kernel and period-image action separate \\
+S18 non-proportionality & R-1 conditional on consistent coordinates and H-REC; archimedean reach open \\
+S16 normalization & same-field rigidity valid; $L'/L$, nonempty freeze and norm identifications open; global $j^2$ allowed \\
+S8 hull/volume & local inclusion conditional on actual module-hull stability; ATS Haar/tensor/target-volume contract open \\
+S7 printed corollary & absolute-value bars present; narrow sign inconsistency under H-SIGN; IV and repairs separate \\
+S17 restriction & source restriction step open; R-4 conditional on H-FROB \\
+\bottomrule\end{tabularx}\end{table}
+
+\subsection{Documented reconstructions}
+
+R-1 is the non-proportionality route under consistent coordinates and H-REC;
+R-2 is the baseline-relative necessity test with a global rational prime;
+R-3 is same-field rigidity, whose source application requires field descent;
+R-4 is the conditional global-period restriction route under H-FROB.
+The local hull inclusion is conditional on its actual maximal-order module
+contract. None closes the complete ATS volume or period chain.
+
+\subsection{A comparative observation}\label{sec:symmetry}
+
+Within the comparison corpus of Part~1~\cite{part1} and the present audit,
+both programs contain an unexpanded containment-type transition at a
+structurally load-bearing site: the program the chain seeks to replace
+asserts its decisive step with ``follows formally''
+(cf.~Part~1), the chain under audit asserts its box containment with
+``clear from the construction'' (Section~\ref{sec:s8}). We do not assert
+identity of the objects, equivalence of the missing implications, or a new
+audit of IUT here; the observation is a comparison of \emph{assertion form}
+at the respective critical sites, no more. The difference in form otherwise
+remains as Part~4 recorded it --- the chain under audit states a theorem
+with a written-out proof and nameable repair obligations. The elementary
+exponent identity is distinct from its still-open measure application. Neither program is refuted by this observation.
+
+%=====================================================================
+\section{The Rigidity Classification of the Normalization Weights}\label{sec:case}
+
+This section applies the rigidity results of Part~6~\cite{part6} to the
+normalization center isolated in Section~\ref{sec:fneu1}. The statements
+below are implications under explicitly named hypotheses, not pairwise
+disjoint readings of the source; the hypotheses are defined once here and
+used consistently.
+
+\subsection{Hypothesis labels}\label{sec:hyplabels}
+
+\begin{description}
+\item[H-PLACES.] One fixed number field $K$ and its full set of places,
+including archimedean ones, with an identified standard absolute-value family.
+An abbreviation is admissible only when the omitted factors are demonstrably
+retained. Tests on $L^\times$ at $L'$-places require a separate descent bridge.
+\item[H-PF.] Real, $x$-independent final effective weights satisfy the
+full standard product formula for every $x\in K^\times$, without suppressed
+place, fiber, or correction terms.
+\item[H-5.3.3.] The pointwise identity (5.3.3) applies at every specified
+place and identifies the effective coefficients with $\beta_{y,v}=1$.
+Its use on $L^\times$ and $\mathbb P^n(L)$ does not establish extension-field
+or line-bundle transports.
+\item[H-EFF.] The quantity has a global \emph{linear} representation
+\[
+ Q_y=\sum_v\beta_{y,v}q_v,\qquad Q_{\mathrm{ref}}=\sum_vq_v,
+\]
+where $q_v$ are $y$-independent and both sums are defined with compatible
+index/order conventions and sufficient convergence for the stated scalar
+factorization. Finite sums or absolutely convergent real sums suffice.
+No arbitrary nonlinear factorization is included. Identifying
+$Q_{\mathrm{ref}}$ with $Q_{\mathrm{cl}}$ is an additional classical bridge.
+\item[H-ID.] The operative height/degree is the specifically defined
+quantity on $\mathbb P^n(L)$ or $L^\times$, with no uncontrolled additional
+$y$-data. Algebraic extensions and line bundles require separate bridges.
+\item[H-REC.] The required varied local point can be recombined into an
+admissible arithmeticoid while the other specified coordinates stay fixed;
+consistent log/degree/hyperplane coordinates and any period-image action
+are separate obligations.
+\item[H-FROB.] The global Frobenius move of R-4 realizes the required
+local transformations simultaneously and stays in $\widetilde\Sigma_{L'}$.
+It identifies the actual nonzero hyperplane forms in a common fixed
+coordinate space, proves their stated transformation and actual
+non-proportionality there, and supplies the well-defined period-map
+contract. Raw normalization-coordinate variation alone does not suffice.
+\item[H-SIGN.] The literal printed absolute-value formula of
+Cor.~9.11.1.1, with $\ell,\ell^*>0$, finite real log-volume and a finite,
+nonempty usual Tate-place sum with $0<|q_w|_{L'_w}<1$, is subjected to the
+sign test in Section~\ref{sec:s7}. This is not an alternative convention.
+\end{description}
+H-5.3.3 implies H-PF with $\beta=1$ in the defined same-field standard
+contract. H-PF alone yields only $\beta=c_y\mathbf1$, not $y$-independence.
+H-EFF concerns a defined linear quantity family; it is not a field or place
+identification and does not classify measures automatically.
+
+\subsection{The readings of the weight family}
+
+The normalization analysis of Section~\ref{sec:fneu1} identified three
+readings of the weight family $(\lambda_{y,v})$ in the audited text, and
+found that the text does not select among them: a \emph{bound} reading, on
+which the normalization coordinate is determined by the Artin--Whaples
+standard normalizations~\cite{artinwhaples} (``\emph{the} normalization
+coordinate'' of \S\,5.3); a \emph{free} reading, on which the weights are any
+real family satisfying the weighted product formula; and a
+\emph{place-selective} reading, on which a rule assigns genuinely
+place-selective weights while the product formula continues to hold ---
+this last being what the chain's \emph{use} of the weights requires. These
+readings are not disjoint classes of solutions: the bound tuple is itself a
+product-formula solution, and a place-selective solution, if one existed,
+would be one too. They are alternatives for what the source \emph{means};
+which of them the source intends is a question of text interpretation that
+the mathematics below does not decide. What the mathematics decides is
+which of these readings are \emph{realizable} by exponent families under
+the named hypotheses.
+
+\subsection{Applicability gate: range of places}\label{sec:gate}
+
+The rigidity theorem of Part~6 applies to a full all-place product formula.
+Before it can be applied to the audited passages, the place-range conflict
+recorded in Section~\ref{sec:s16} must be confronted: ATS~II($\tfrac12$)
+introduces $V_L$ as all places, archimedean ones included, whereas ATS~III
+\S\,3.2(5), read literally, indexes only non-archimedean valuations and runs
+its product formula over that range. The audited text does not reconcile
+these conventions, and power-class equivalence of the local absolute values
+does not substitute for the missing places. Therefore: (i) if ATS~III
+suppresses but retains the archimedean factors, and the full same-field
+test domain and other H-PF hypotheses are supplied, the rigidity theorem
+applies to that completed effective-weight vector; (ii) if
+ATS~III's product formula is literally a non-archimedean-only constraint,
+the theorem does not apply as stated, and the status of that passage
+remains open pending a separate theorem or an explicit archimedean
+completion. In the special case where the finite-place compensation is
+combined with fixed standard archimedean weights, the combined all-place
+vector falls under H-PLACES and H-PF, and rigidity then forces the finite
+weights to a single global value; but this combined formulation must be
+stated by the source, not inferred from notation. Everything in the
+remainder of this section is asserted under H-PLACES.
+
+\subsection{The classification from Part~6}
+
+Part~6 v0.3~\cite{part6} supplies same-field rigidity and unchanged
+finite-fiber redistribution. Under H-PLACES and H-PF, $\beta_{y,v}=c_y$.
+Under H-EFF, with its actual convergence contract,
+\[
+ Q_y=c_y Q_{\mathrm{ref}}.
+\]
+Only with the additional identification $Q_{\mathrm{ref}}=Q_{\mathrm{cl}}$
+may this be written as $c_yQ_{\mathrm{cl}}$. Under H-5.3.3 the coefficients
+are $1$; direct substitution yields the classical degree on $L^\times$
+and height on $\mathbb P^n(L)$. Neither algebraic-closure points nor
+ATS~III line-bundle heights inherit this merely by notation.
+
+\begin{table}[htbp]\centering\small
+\caption{Rigidity consequences with explicit domains and quantity contracts.}
+\label{tab:rigidity-consequences}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.32\textwidth} >{\raggedright\arraybackslash}X@{}}
+\toprule Contract & Admissible conclusion \\\midrule
+H-PLACES, H-PF & constant final weights; global $j^2$ remains admissible \\
+H-EFF as well & $Q_y=c_yQ_{\mathrm{ref}}$; classical identification separate \\
+H-5.3.3 and H-ID & classical degree on $L^\times$, height on $\mathbb P^n(L)$ \\
+Measures, hulls, log-volume & membership and nonmembership in H-EFF unclassified; no rigidity conclusion \\
+\bottomrule\end{tabularx}\end{table}
+
+For a stabilized expression on a specified nonempty $L^\times$ family,
+H-5.3.3 gives the same classical value for every defined constituent only
+under the stated source normalization; its supremum then has that value.
+Different domains or added carrier data require separate bridges. A general
+supremum is not silently treated as a linear H-EFF quantity, nor is a
+scalar pulled through it without the necessary sign/domain assumptions.
+The coordinate variation of $H_y$ alone is no proof of metric variation.
+
+\subsection{Quantity-class bridge: what follows and what does not}\label{sec:bridge}
+
+The quantity-class bridge is a domain-sensitive obligation, not a
+generic transfer of coordinate variation. A degree on $L^\times$ or
+height on $\mathbb P^n(L)$ is classified only by its actual H-EFF/H-ID
+substitution. A stabilized expression requires its own domain and
+normalization contract. A hyperplane family alone gives no metric
+variation. Log-volume, hull, Haar measure and box inclusion have neither
+membership nor nonmembership in H-EFF established here.
+\begin{table}[htbp]\centering\small
+\caption{Quantity-class obligations from weights to operative carriers.}
+\label{tab:quantity-class-bridge}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.32\textwidth} >{\raggedright\arraybackslash}X@{}}
+\toprule Carrier & Required bridge \\\midrule
+$L^\times$ degree / $\mathbb P^n(L)$ height & defined linear substitution and classical reference identification \\
+Stabilized expression & specified nonempty domain, normalization and any supremum/scalar conditions \\
+$H_y$ & consistent coordinates and well-defined period action; no metric conclusion by itself \\
+Hull, measure, log-volume & actual carrier, Haar-degree, tensor/\,$\Gamma$ and volume contract; class status unclassified \\
+\bottomrule\end{tabularx}\end{table}
+Thus Part~6 excludes unequal final place weights under H-PLACES/H-PF;
+it does not decide the entire height, measure or log-volume chain without
+the identified quantity/domain bridges. No downstream-node failure is
+inferred from the classification alone.
+
+\section{Response-Verification Template and Conclusion}\label{sec:template}
+
+\subsection{The decision tree}
+
+The findings of this paper concern the published text state at the audit
+dates given. A future revision of the ATS series, or a reply by its author,
+is the expected and welcome next event; the following decision tree, fixed
+here in advance, records the \emph{alternative} routes by which such a
+document could change the findings. The routes are not cumulative
+requirements: each branch applies only if that route is chosen, and a
+legitimate refutation of this audit itself is a further admissible outcome
+on every branch.
+
+Table~\ref{tab:response-routes} states the route logic before the prose
+checklist.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Response routes and what each would need to establish.}
+\label{tab:response-routes}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth} >{\raggedright\arraybackslash}p{0.28\textwidth} >{\raggedright\arraybackslash}X@{}}
+\toprule
+Route & What would change & Minimum showing \\
+\midrule
+Misidentification & H-ID no longer attaches the classification to the
+load-bearing quantity & identify the operative quantity and its additional
+$y$-data \\
+Exponent-class repair & the source remains within H-EFF but repairs the
+missing all-place data & settle H-PLACES, give a selection rule, and track
+any global scalar $c_y$ \\
+Outside-H-EFF carrier & the rigidity theorem no longer obstructs the chosen
+carrier & define the measure or log-volume carrier and prove that it carries
+the needed variation \\
+Lower-bound route & normalization is no longer the decisive step & prove
+full box containment or supply an alternative lower-bound theorem \\
+Text/citation completion & documentary closures become reconstructible &
+write the R-1/R-4 closures with sources \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{enumerate}
+\item \textbf{Misidentification route.} Show that the operative
+  load-bearing height is not the height of Definition~8.2.1, or that it
+  contains additional $y$-data --- i.e.,\ refute H-ID for the audited
+  passages. The classification of Section~\ref{sec:case} then no longer
+  attaches to the load-bearing quantity.
+\item \textbf{Repair within the exponent class.} If this route is chosen:
+  settle the place range of Section~\ref{sec:gate} (H-PLACES), state an
+  explicit selection rule or a proof of choice-independence for the forced
+  renormalization (the well-definedness obligation of
+  Section~\ref{sec:s16}), verify the rule against the one-dimensional
+  solution space at $L = \mathbb{Q}$, and track the effect of a possible
+  global scalar $c_y$ through every used expression.
+\item \textbf{Carrier outside the effective-weight class.} If the
+  $y$-dependence is to be carried by a quantity outside H-EFF --- for
+  instance at the level of measures or log-volumes --- define that
+  quantity, give its address in the chain, and prove that it carries the
+  required variation; the rigidity theorem does not obstruct this route,
+  and nothing in this paper closes it.
+\item \textbf{Lower-bound route.} Independently of normalization: either
+  prove the full box containment used in Thm.~9.11.1
+  (Section~\ref{sec:s8}), or supply an alternative lower-bound theorem with
+  a complete derivation.
+\item \textbf{Text and citation completion.} After any of the above:
+  write the reconstructible closures of Sections~\ref{sec:s18}
+  and~\ref{sec:s17} into the text with their sources. This is a
+  documentation obligation, not a mathematical precondition of the other
+  routes.
+\end{enumerate}
+
+\subsection{Conclusion}
+
+The current targeted audit retains same-field product-formula rigidity
+and the distinction between non-constancy and non-proportionality. It
+separates raw and normalized coordinates, the period-image action,
+field/place descent and actual freeze identifications. Global $j^2$
+scalings are admissible; unequal final weights are excluded only under
+the complete same-field all-place hypotheses. A conditional algebraic
+module-hull inclusion is available, while the ATS logarithm, Haar-degree,
+tensor and target-volume contracts remain open. The actual printed
+absolute-value corollary has the narrow sign inconsistency stated in
+Section~\ref{sec:s7}; its use in IV and any repaired statement are separate.
+Linear quantity-class factorization requires defined reference sums and
+convergence, and classical heights require their stated domains.
+Measure membership and nonmembership remain unclassified.
+
+This is the ongoing research project's present scope, not an independent
+verification of the whole ATS chain or a proof/refutation of abc or IUT.
+The response routes above remain open to a source revision, explicit
+bridge, or a counterargument to this audit itself. No new computation or
+machine-checked proof is supplied.
+
+%=====================================================================
+\input{ai_disclosure_en}
+
+%=====================================================================
+\begin{thebibliography}{99}
+\raggedright
+
+\bibitem{artinwhaples}
+E.~Artin and G.~Whaples,
+\emph{Axiomatic characterization of fields by the product formula for
+valuations},
+Bull.\ Amer.\ Math.\ Soc.\ \textbf{51} (1945), no.~7, 469--492.
+DOI: 10.1090/S0002-9904-1945-08383-9
+
+\bibitem{joshiI}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller Spaces I},
+arXiv:2106.11452v4 [math.AG], 2021 (revised 24 February 2025).
+
+\bibitem{joshiII}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller spaces II: Proof of a local
+prototype of Mochizuki's Corollary~3.12},
+arXiv:2303.01662v3 [math.AG], 2023 (revised 24 February 2025).
+
+\bibitem{joshiIIhalf}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller Spaces II$\frac{1}{2}$:
+Deformations of Number Fields},
+arXiv:2305.10398v12 [math.AG], 2023 (revised 24 February 2025).
+
+\bibitem{joshiIII}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller Spaces III: A `Rosetta Stone'
+and a proof of Mochizuki's Corollary~3.12},
+arXiv:2401.13508v4 [math.AG], 2024 (revised 24 February 2025).
+
+\bibitem{joshiIV}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller Spaces IV: Proof of the
+abc-conjecture},
+arXiv:2403.10430v2 [math.AG], 2024 (revised 24 February 2025).
+
+\bibitem{mochizukiIUT}
+S.~Mochizuki,
+\emph{Inter-universal Teichm\"{u}ller Theory I: Construction of Hodge
+Theaters}, Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{57} (2021), no.~1/2,
+3--207;
+\emph{II: Hodge--Arakelov-Theoretic Evaluation}, \emph{ibid.}, 209--401;
+\emph{III: Canonical Splittings of the Log-Theta-Lattice}, \emph{ibid.}, 403--626;
+\emph{IV: Log-Volume Computations and Set-Theoretic Foundations},
+\emph{ibid.}, 627--723.
+
+\bibitem{scholzestix}
+P.~Scholze and J.~Stix,
+\emph{Why abc is still a conjecture},
+unpublished manuscript, version of 16 July 2018.
+Available at
+\url{https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf}
+
+\bibitem{part1}
+L.~Geiger,
+\emph{The Gap in IUTchIII, Corollary~3.12: From Attempted Repair to
+Structural Diagnosis},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.19960781
+(latest version v6.3, 12 August 2026, DOI: 10.5281/zenodo.21899747).
+
+\bibitem{part2}
+L.~Geiger,
+\emph{The Bridge-Contract Criterion: A Form Audit for Transport Arguments,
+with an Instantiation in the abc Literature},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21960476
+(version 0.2, 16 August 2026, DOI: 10.5281/zenodo.21960477).
+
+\bibitem{part3}
+L.~Geiger,
+\emph{The Bridge Certificate: A Line-Level Audit Instrument for
+Inter-Theoretic Transfer Arguments, with Four Applications to the abc
+Literature (DRAFT)},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21925803
+(version 0.2, 16 August 2026, DOI: 10.5281/zenodo.21960958).
+
+\bibitem{part4}
+L.~Geiger,
+\emph{The Bridge Certificate Applied to the Joshi ATS Series: A Ledger
+Audit},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21951155
+(version 0.2, 15 August 2026, DOI: 10.5281/zenodo.21951156).
+
+\bibitem{part6}
+L.~Geiger,
+\emph{What the Product Formula Allows: A Rigidity Theorem and an
+Effective-Weight Test for the ATS Height Subchain},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21952486
+(version 0.3, 2 October 2026, DOI: 10.5281/zenodo.23093243).
+
+\bibitem{gnc}
+L.~Geiger,
+\emph{Global Normalization in Joshi's Arithmetic Teichm\"{u}ller Theory: What
+the Identification Carries --- and What Carries the Theorem},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21924253
+(version 1.1, 13 August 2026, DOI: 10.5281/zenodo.21924254).
+
+\bibitem{landscapeA}
+L.~Geiger,
+\emph{The abc Landscape: Obstructions, Failed Routes, and HCT Diagnostics
+(DRAFT)},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21916900
+(latest version 1.1, 13 August 2026, DOI: 10.5281/zenodo.21924338).
+
+\end{thebibliography}
+
+\end{document}

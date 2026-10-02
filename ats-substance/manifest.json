@@ -1,0 +1,30 @@
+{
+  "status": "PREPARED_REVIEW_PENDING",
+  "version": "0.3",
+  "published_record": null,
+  "public_baseline": {
+    "record": 21956399,
+    "doi": "10.5281/zenodo.21956399",
+    "live_en_sha256": "76949e05587cde5b5989f1c559efc184525c265236ddeb15597fb8f09d76c76c",
+    "live_de_sha256": "22b89f7cd1839a61f149c396655d6d06a6c4a7da960f5e6150dcd0b97c58956a"
+  },
+  "local_source_baseline": {
+    "en_sha256": "fca13abf445aa8f9d6502d234d19f9c633fc365da32f0aff1649981292d9b6eb",
+    "de_sha256": "690e98706bf5b528c913b5964b84ddca0c44ef06567e3d630e75a7e2b71e3ef7"
+  },
+  "git": {
+    "base_commit": "e067e2183f92cacb357cc166a1c39e9d9edeb06f",
+    "branch": "codex/ats-substance-inventurernte-v0.3",
+    "artifact_commit_binding": "separate receipt records commit; manifest does not hash itself"
+  },
+  "artifacts": {
+    "ai_disclosure_de.tex": "656bd25e9a87fb7b41bbd24946a42c92fecee89ebae066f2947f7ede9ca2af9e",
+    "ai_disclosure_en.tex": "6e9727e0fd2ed7eb9dce5e6d99cf0c0cd31b404f3f4e2ba519be4143632074ad",
+    "ATS_Substance_Verification_v0.3_de.pdf": "60b5fce62e98caf1994300b3895ead959dae9027c320748e15f08149b6ced5cf",
+    "ATS_Substance_Verification_v0.3_de.tex": "0643324bce10d6d7917184496d4f6eaebef17f84ead81aca32116e298a27d4ee",
+    "ATS_Substance_Verification_v0.3_en.pdf": "0228c74db0d22f194ceb58a4d1b8e77584ddff87af44a45e789455ca74e54da1",
+    "ATS_Substance_Verification_v0.3_en.tex": "4ee8eeb2839b4773aa12892ab15f3fad2bf3bf8bd16ae23cbd6b101d8befb8e3",
+    "README.md": "1f0d93b756c3dfad0318b73a9404ed0aa3d6644cd0ce2e3750df276eeb7c3096",
+    "README_de.md": "405fa4ec1873ce80c185fe7210a9778f33ea3ee03cd5dd922427d2facf37dd25"
+  }
+}

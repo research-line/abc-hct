@@ -1,6 +1,6 @@
 # ATS Substance Verification — v0.3 candidate
 
-Status: PREPARED_REVIEW_PENDING. No v0.3 upload, publication or external push has occurred. The public baseline is v0.2, DOI 10.5281/zenodo.21956399; the later local R17 TeX baseline is separately hash-bound.
+Status: PREPARED_REVIEW_PENDING. No v0.3 Zenodo upload or publication has occurred. The isolated Git review branch is pushed; its first artifact commit is 25c9b3f88cebda99bb55f74397e235a180e8b81a. The base is the unchanged local canonical main commit e067e2183f92cacb357cc166a1c39e9d9edeb06f; it is not asserted to be the latest remote main. The public baseline is v0.2, DOI 10.5281/zenodo.21956399; the later local R17 TeX baseline is separately hash-bound.
 
 This ongoing paper distinguishes coordinate and action obligations, same-field all-place rigidity and admissible global j² scaling, conditional maximal-order module hulls, the narrow printed-corollary sign inconsistency, and defined linear effective-weight families. ATS field, period and volume bridges remain open. It makes no whole-chain, abc or IUT verdict and introduces no new computation or machine-checked proof.
 

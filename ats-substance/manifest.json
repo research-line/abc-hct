@@ -15,7 +15,8 @@
   "git": {
     "base_commit": "e067e2183f92cacb357cc166a1c39e9d9edeb06f",
     "branch": "codex/ats-substance-inventurernte-v0.3",
-    "artifact_commit_binding": "separate receipt records commit; manifest does not hash itself"
+    "artifact_commit_binding": "separate receipt records commit; manifest does not hash itself",
+    "initial_artifact_commit": "25c9b3f88cebda99bb55f74397e235a180e8b81a"
   },
   "artifacts": {
     "ai_disclosure_de.tex": "656bd25e9a87fb7b41bbd24946a42c92fecee89ebae066f2947f7ede9ca2af9e",
@@ -24,7 +25,7 @@
     "ATS_Substance_Verification_v0.3_de.tex": "0643324bce10d6d7917184496d4f6eaebef17f84ead81aca32116e298a27d4ee",
     "ATS_Substance_Verification_v0.3_en.pdf": "0228c74db0d22f194ceb58a4d1b8e77584ddff87af44a45e789455ca74e54da1",
     "ATS_Substance_Verification_v0.3_en.tex": "4ee8eeb2839b4773aa12892ab15f3fad2bf3bf8bd16ae23cbd6b101d8befb8e3",
-    "README.md": "1f0d93b756c3dfad0318b73a9404ed0aa3d6644cd0ce2e3750df276eeb7c3096",
-    "README_de.md": "405fa4ec1873ce80c185fe7210a9778f33ea3ee03cd5dd922427d2facf37dd25"
+    "README.md": "3ec5fd8c73423abe6d289a4a416d150db448200b79f237ab540c46d2789fa4fc",
+    "README_de.md": "ed2edd63b0d22d8fc86efc9e91c5d1b57f9c9d5f7e0dcc700c1e2d64bbc9f6c9"
   }
 }

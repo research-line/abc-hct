@@ -3,7 +3,7 @@
   "paper": "ATS height-subchain correction, Gap Series Part 6",
   "version": "0.3",
   "license": "CC-BY-4.0",
-  "status": "PREPARED_NOT_PUBLISHED",
+  "status": "PUBLISHED_VERIFIED",
   "concept_doi": "10.5281/zenodo.21952486",
   "prior_record": 21952487,
   "whole_case_acceptance": false,
@@ -58,13 +58,20 @@
     },
     {
       "file": "README.md",
-      "sha256": "c34a81aa7568c689511aab7f0e86232d309c2642f7d3f978cf7da01372c54041",
-      "bytes": 1981
+      "sha256": "e71e08fc17b67e983c0b0ed6bb29653cad49f1a163c51aba0e3c51d3773fd73c",
+      "bytes": 2172
     },
     {
       "file": "README_de.md",
-      "sha256": "a123741f29dbb5a1b36882035e2d8a832ac9731c8459440f418ed748d3960239",
-      "bytes": 2135
+      "sha256": "5c470f6b5ab001ac87da039f9553127a5136a8ed97313a76a070f0a34531dd3d",
+      "bytes": 2359
     }
-  ]
+  ],
+  "record_id": 23093243,
+  "doi": "10.5281/zenodo.23093243",
+  "postflight": {
+    "passed": 20,
+    "total": 20
+  },
+  "artifact_commit": "32398ada05647a253685f2a42450c6308d9b02b9"
 }

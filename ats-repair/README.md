@@ -8,7 +8,7 @@ Algebraic extensions, ATS III line-bundle heights, ATS IV log-volumes, and concr
 
 The two language manuscripts underwent independent mathematical and bilingual corrective review. Their core rigidity and finite-fibre redistribution proofs are unchanged. Three successful compiler passes per language produced the enclosed PDFs (EN 12 pages; DE 13 pages); all 25 pages were visually checked. Minor typesetting diagnostics remain documented locally; no clipped scientific content was found.
 
-Publication status: prepared corrective follow-up; the new Zenodo record has not yet been published. Prior version: [v0.2](https://doi.org/10.5281/zenodo.21952487). Concept: [10.5281/zenodo.21952486](https://doi.org/10.5281/zenodo.21952486).
+Publication status: published and publicly verified, [v0.3 / record 23093243](https://doi.org/10.5281/zenodo.23093243). All 20 postflight checks passed. The published scientific artifact binding remains commit `32398ada05647a253685f2a42450c6308d9b02b9`; this follow-up documents publication. Prior version: [v0.2](https://doi.org/10.5281/zenodo.21952487). Concept: [10.5281/zenodo.21952486](https://doi.org/10.5281/zenodo.21952486).
 
 Rebuild each language sequentially with three passes of `pdflatex -interaction=nonstopmode -halt-on-error ATS_Repair_Rigidity_v0.3_en.tex` or the corresponding `_de.tex`. Both AI disclosure inputs are included. No combined PDF or private proof/control files are part of this package.
 

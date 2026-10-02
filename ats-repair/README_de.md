@@ -8,7 +8,7 @@ Algebraische Erweiterungen, Geradenbündelhöhen aus ATS III, Log-Volumina aus A
 
 Beide Sprachfassungen wurden unabhängig mathematisch und zweisprachig hinsichtlich der Korrekturen geprüft. Die Kernbeweise von Starrheit und endlicher Faserumverteilung bleiben unverändert. Drei erfolgreiche Compilerläufe je Sprache erzeugten die enthaltenen PDFs (EN 12 Seiten; DE 13 Seiten); alle 25 Seiten wurden visuell geprüft. Kleine Satzdiagnosen sind lokal dokumentiert; abgeschnittene wissenschaftliche Inhalte wurden nicht gefunden.
 
-Publikationsstatus: vorbereitete Korrekturfolgeversion; der neue Zenodo-Record ist noch nicht veröffentlicht. Vorversion: [v0.2](https://doi.org/10.5281/zenodo.21952487). Concept: [10.5281/zenodo.21952486](https://doi.org/10.5281/zenodo.21952486).
+Publikationsstatus: veröffentlicht und öffentlich geprüft, [v0.3 / Record 23093243](https://doi.org/10.5281/zenodo.23093243). Alle 20 Postflight-Prüfungen bestanden. Die veröffentlichte wissenschaftliche Artefaktbindung bleibt Commit `32398ada05647a253685f2a42450c6308d9b02b9`; dieser Nachtrag dokumentiert die Veröffentlichung. Vorversion: [v0.2](https://doi.org/10.5281/zenodo.21952487). Concept: [10.5281/zenodo.21952486](https://doi.org/10.5281/zenodo.21952486).
 
 Jede Sprache wird nacheinander mit drei Läufen von `pdflatex -interaction=nonstopmode -halt-on-error ATS_Repair_Rigidity_v0.3_en.tex` bzw. der entsprechenden `_de.tex` erzeugt. Beide KI-Offenlegungsdateien sind enthalten. Kombi-PDF und private Beweis-/Steuerungsdateien gehören nicht zu diesem Paket.
 

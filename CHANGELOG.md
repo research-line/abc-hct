@@ -4,6 +4,9 @@ All notable changes to this repository will be documented in this file.
 
 ## [Unreleased]
 
+### Research manuscript corrections
+- Add the bilingual Part 6 ATS height-subchain v0.3 corrective paper package: R18 linear-class, full-place and arithmetic-domain fixes with unchanged core proofs and explicit open measure/extension gates. Package version 0.1.13 remains frozen.
+
 ### Added
 - **Pfad B Visual Architecture, Level 1 SBOM Re-Audit & Discoverability Hardening (2026-10-04)**: Executed Pfad B discoverability audit with Section 6 ASCII Four-View Architectural Topology projection review across EN/DE, Level 1 SBOM text companion re-audit (`THIRD_PARTY_LICENSES.txt` & `THIRD_PARTY_LICENSES.md` Stand 2026-10-04), 3 non-automated actionable discoverability recommendations in `MARKETING-LOG.txt` (REC-20261004-01..03), and contract test suite expansion to 61 tests in `tests/test_metadata.py`.
 - **Bilingual Contributing Guidelines (`CONTRIBUTING.md`)**: Authored comprehensive English and German contribution guidelines detailing Plan D local development workflow, strict Version Freeze discipline (`0.1.13` per `T-20260920-167562623`), mandatory pre-commit quality gates (`pytest`, `ruff check .`, `compileall`, `git diff --check`), unprivileged `RunAsInvoker` user-mode execution, zero-copyleft subprocess isolation, zero-egress offline privacy, and responsible vulnerability disclosure per `SECURITY.md`.

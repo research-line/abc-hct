@@ -1,0 +1,642 @@
+% ATS_Repair_Rigidity_v0.3_en.tex — Gap Series Part 6
+% Corrective R18 manuscript, 2 October 2026. Source-bound claim limits.
+\input{glyphtounicode}
+\pdfgentounicode=1
+\documentclass[11pt,a4paper]{article}
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[american]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\emergencystretch=3em
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl}
+
+\renewcommand*{\HyperDestNameFilter}[1]{en.#1}
+
+\hypersetup{
+  pdftitle={What the Product Formula Allows: A Rigidity Theorem and an Effective-Weight Test for the ATS Height Subchain},
+  pdfauthor={Lukas Geiger},
+  pdfsubject={Number Theory, Arithmetic Geometry, Teichmüller Theory, abc Conjecture},
+  pdfkeywords={ATS, Arithmetic Teichmüller Space, Product Formula, Rigidity, Projective Height, Effective Weights, Joshi},
+  pdfcreator={LaTeX with hyperref},
+  pdfproducer={pdfTeX},
+  bookmarksnumbered=true,
+  pdfpagemode=UseOutlines,
+  pdfstartview={FitH},
+  unicode=true
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\OL}{\mathcal{O}_L}
+\newcommand{\Geff}{\mathcal{G}_{\mathrm{eff}}}
+
+\title{What the Product Formula Allows:\\A Rigidity Theorem and an Effective-Weight Test\\for the ATS Height Subchain}
+\author{Lukas Geiger\\\small Independent Researcher, Bernau, Germany\\\small ORCID: 0009-0005-7296-1534}
+\date{2 October 2026 --- Version 0.3 (draft)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Part~5 of this series \cite{part5} reports a source-bound ATS substance audit;
+this corrective Part~6 states the exact scope of its effective-weight test.
+For a fixed number field $L$, its fixed standard absolute values, and the
+full product formula tested on every $x\in L^\times$, a family of real
+exponents $(\gamma_v)$ must be constant across all places, independently of
+the class number. Finite-fiber redistribution gives the same conclusion for
+effective weights. A prescribed $j^2$-weight on a nonempty place set admits
+the constant global extension; only unequal final place weights are excluded.
+For global quantity families with a proved linear effective-weight
+representation, the product formula leaves at most a $y$-dependent global
+scalar. Mere dependence on the weights is insufficient for class membership.
+Under ATS~II($\tfrac12$) (5.3.3), direct substitution identifies the weighted
+degree on $L^\times$ and the projective height on $\mathbb P^n(L)$ with their
+classical values; the source's stabilization on $L^\times$ is then constant
+term by term. The extension to $\mathbb P^n(\overline L)$, the ATS~III
+line-bundle height, and the ATS~IV volume apparatus require separate bridges.
+Log-volume and measure membership or nonmembership in the linear class is
+unclassified here. Coordinate hyperplanes and their pullbacks are distinct
+objects. No global closure of the ATS repair program, proof or refutation of
+abc/IUT, or mathematical certification of the whole ATS series is claimed.
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+%=====================================================================
+\section{Mandate, Scope, and Source Versions}\label{sec:mandate}
+
+This paper is Part~6 of the abc Gap Series. Part~1 \cite{part1} localized the
+quantitative gap in the transport step of Corollary~3.12 of IUTchIII
+\cite{mochizukiIUT}; Part~2 \cite{part2} supplied a form criterion;
+Part~3 \cite{part3} distilled a checkable admissibility
+standard; Part~4 \cite{part4} audited the ATS series
+\cite{joshiI,joshiII,joshiIIhalf,joshiIII,joshiIV} at ledger level (v1-F). The
+present paper reports the mathematical core of the repair program: a
+rigidity theorem, a factorization instrument, and their source-bound
+application to the \emph{height subchain} of the ATS texts.
+
+\emph{Scope discipline.} ``The audited passages'' means: ATS~II($\tfrac12$)
+\S\S5.3, 5.10, 8.2--8.7 and ATS~IV \S1.5, in the exact arXiv versions cited
+in the bibliography (II($\tfrac12$): v12; IV: v2; both revised 24 February
+2025); ATS~III v4, Remark~8.9.2(2), is a separately typed
+application target. These are publicly posted, versioned preprints, not peer-reviewed
+publications; ATS~IV carries the header ``Preliminary version for comments.''
+This paper does not audit the full ATS series, does not classify its volume
+and measure apparatus (see Case~C of Section~\ref{sec:consequences}), and
+makes no claim about structures outside the audited passages. Ground rules as
+in Parts~4--5: no authority argument, no truth verdict, verbatim anchors;
+findings about later program work appear only as dated external status
+notices (Section~\ref{sec:notices}), separate from the proofs of this paper.
+
+%=====================================================================
+\section{Types and Operational Glossary}\label{sec:types}
+
+Fix a number field $L$ and its full set $V_L$ of archimedean and finite
+places. The local inputs and global quantity families have different types:
+\begin{itemize}
+\item $b_v$ is the fixed standard absolute value: $|\sigma(x)|$ at a real
+place, $|\sigma(x)|^2$ at a complex place, and
+$N\mathfrak p^{-v_{\mathfrak p}(x)}$ at a finite place. Thus
+$\prod_v b_v(x)=1$ for every $x\in L^\times$.
+\item $\rho_{y,v}=b_v^{\,a_{y,v}}$, with $a_{y,v}>0$, is the equivalent
+source absolute value on $L_v$. We abbreviate the source datum by $y$.
+\item $\lambda_{y,v}$ is a normalization exponent. In our notation,
+ATS~II($\tfrac12$) (5.3.3) \cite{joshiIIhalf} says
+$b_v=\rho_{y,v}^{\,\lambda_{y,v}}$. This is a paraphrase with renamed
+symbols, not a verbatim quotation of the source's $\alpha/\xi$ notation.
+\item $\beta_{y,v}=a_{y,v}\lambda_{y,v}$ is the effective weight.
+The pointwise identity (5.3.3) implies $\beta_{y,v}=1$ for every $v$;
+it also implies $\lambda_{y,v}>0$.
+\end{itemize}
+The rigidity theorem constrains effective weights, not the two factors
+separately. Coordinate variation therefore need not change metric values.
+
+For a precise coordinate comparison use the common finite-support space
+$\mathbb R^{(V_L)}$ and
+\[
+H_y=\{t\in\mathbb R^{(V_L)}:\sum_v\lambda_{y,v}t_v=0\},
+\qquad \ell_y(x)=(\log\rho_{y,v}(x))_v.
+\]
+The vector $\ell_y(x)$ has finite support for $x\in L^\times$.
+The normalization identity gives $\ell_y^{-1}(H_y)=L^\times$.
+Nonproportional coefficient families define different kernels in this
+common space, while these pullbacks coincide. This conditional linear
+algebra observation neither proves nonproportionality for a particular
+source parameter pair nor verifies the entirety of Theorem~5.10.1.
+
+A family \emph{factors through effective weights} here only when it has the
+linear representation in Definition~\ref{def:geff}.
+A \emph{classical} value is one obtained from the fixed standard family
+on the stated arithmetic domain. A \emph{place-selective} weight family
+has unequal final weights, rather than a single global scalar.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Local inputs, coordinates, and global quantity families.}\label{tab:type_glossary}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+Object & Type and dependence & Relation to $\Geff$\\
+\midrule
+$b_v$ & Fixed local reference & Input, not a global family\\
+$\rho_{y,v}$ & Possibly varying local absolute value & Input\\
+$\lambda_{y,v}$ & Normalization coordinate & Parameter\\
+$\beta_{y,v}$ & Effective coefficient; identically $1$ under (5.3.3) & Coefficient\\
+$H_y$ & Coordinate kernel; variation conditional on coefficients & Coordinate object\\
+$h_y,\deg_y$ & Global values on $\mathbb P^n(L)$ and $L^\times$; invariant under (5.3.3) & Verified linear representations\\
+$\mathrm{vol}_y,\mu_y$ & Concrete measure objects and dependence require identification & Membership and nonmembership unclassified\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+%=====================================================================
+\section{The Rigidity Theorem}\label{sec:rigidity}
+
+\begin{theorem}[Rigidity of product-formula weights]\label{thm:rigidity}
+Let $L$ be a number field and $(\gamma_v)_{v \in V_L}$ a family of real
+exponents such that
+\[
+\prod_{v \in V_L} b_v(x)^{\gamma_v} = 1
+\qquad \text{for all } x \in L^\times .
+\]
+Then $\gamma_v$ is constant in $v$. (We write $\gamma$ for the generic
+exponent family of the theorem, reserving $\lambda$ for the source's
+normalization exponents of Section~\ref{sec:types}.)
+\end{theorem}
+
+\begin{proof}
+Set $\mu_v := \gamma_v - 1$. Subtracting the logarithm of the standard
+product formula from the logarithm of the hypothesis gives
+\[
+\sum_{v \in V_L} \mu_v \log b_v(x) = 0
+\qquad \text{for all } x \in L^\times,
+\]
+where for each fixed $x$ all but finitely many terms vanish.
+
+\emph{(i) Archimedean component.} For units $u \in \OL^\times$ all finite
+terms vanish, so $\sum_{\sigma\,\mathrm{arch}} \mu_\sigma \log b_\sigma(u) = 0$
+for all $u$. By Dirichlet's unit theorem \cite[Ch.~I, \S7]{neukirch},
+$\mathrm{Log}(\OL^\times)$ is a full lattice in the trace-zero hyperplane
+$H = \{ y \in \mathbb{R}^{r_1 + r_2} : \sum_\sigma y_\sigma = 0 \}$: it lies
+in $H$ because $\sum_\sigma \log b_\sigma(u) = \log|N(u)| = 0$, and its rank
+is $r_1 + r_2 - 1 = \dim H$. The vector $(\mu_\sigma)_\sigma$ annihilates a
+full lattice of $H$, hence all of $H$, and therefore lies in
+$H^\perp = \mathbb{R}\cdot(1,\dots,1)$:
+\[
+\mu_\sigma = c \quad \text{for all archimedean } \sigma,
+\text{ for some } c \in \mathbb{R}.
+\]
+
+\emph{(ii) Finite component.} Let $\mathfrak{p}$ be any prime ideal and $h$
+the order of its class in the finite class group
+\cite[Ch.~I, \S6]{neukirch}, so $\mathfrak{p}^h = (x_{\mathfrak{p}})$ is
+principal. Then $\log b_{\mathfrak{q}}(x_{\mathfrak{p}}) = 0$ for all finite
+$\mathfrak{q} \ne \mathfrak{p}$, while
+$\log b_{\mathfrak{p}}(x_{\mathfrak{p}}) = -h \log N\mathfrak{p}$ and
+\[
+\sum_{\sigma} \log b_\sigma(x_{\mathfrak{p}})
+= \log|N(x_{\mathfrak{p}})| = \log\bigl(N\mathfrak{p}^{\,h}\bigr)
+= h \log N\mathfrak{p} .
+\]
+Substituting into the annihilation identity and using (i):
+\[
+\mu_{\mathfrak{p}} \cdot (-h \log N\mathfrak{p})
++ c \cdot (h \log N\mathfrak{p}) = 0
+\quad\Longrightarrow\quad
+\mu_{\mathfrak{p}} = c .
+\]
+As $\mathfrak{p}$ was arbitrary, $\mu_v = c$ for all $v$, i.e.,\
+$\gamma_v = 1 + c$ is constant. Conversely, every constant family satisfies
+the hypothesis.
+\end{proof}
+
+\begin{remark}[Status]\label{rem:status}
+The theorem is elementary and lies in the orbit of the Artin--Whaples
+axiomatics \cite{artinwhaples}; we state and prove it in full because the
+series uses it as a typed test instrument, and because the consequence drawn
+in Sections~\ref{sec:application}--\ref{sec:consequences} depends on its
+exact hypotheses. No novelty claim is made for the theorem itself.
+\end{remark}
+
+\begin{corollary}[Unequal final place weights are excluded]\label{cor:noselect}
+Under Theorem~\ref{thm:rigidity}'s same-field, full-place hypothesis,
+only constant final exponent families satisfy the product formula.
+In particular, prescribing $\gamma_v=j^2$ on a nonempty set
+$S\subseteq V_L$ forces $\gamma_v=j^2$ at every place.
+The constant global extension is admissible; extending the prescribed
+values by unequal complementary weights is impossible.
+\end{corollary}
+
+\begin{lemma}[Finite-fiber redistribution]\label{lem:redistribution}
+Let $\tau : V_L \to V_L$ have finite fibers (in particular, let $\tau$ be a
+permutation), let $a_v > 0$, and suppose the family
+$\bigl(b_{\tau(v)}^{\,a_v \gamma_v}\bigr)_{v}$ satisfies the product formula
+for all $x \in L^\times$. Then the effective weights
+$\beta_u := \sum_{v :\, \tau(v) = u} a_v \gamma_v$ are constant in $u$.
+\end{lemma}
+
+\begin{proof}
+Reindexing the (for each fixed $x$ finite) sum,
+$\sum_v a_v\gamma_v \log b_{\tau(v)}(x) = \sum_u \beta_u \log b_u(x) = 0$ for
+all $x \in L^\times$ --- the hypothesis of Theorem~\ref{thm:rigidity} in the
+effective weights. Finiteness of the fibers makes each $\beta_u$ a finite sum
+and the reindexing legitimate.
+\end{proof}
+
+For infinite correspondences one would additionally need absolute
+summability per fiber and a justified rearrangement; no such generality is
+used in this paper, and none is needed for the audited passages, which move
+no places.
+
+%=====================================================================
+\section{The Effective-Weight Quantity Class and the Exhaustion
+Proposition}\label{sec:application}
+
+\begin{definition}[Effective-weight quantity class]\label{def:geff}
+Fix a domain $Z$. A family $Q=(Q_y:Z\to\mathbb R)_y$ lies in $\Geff$
+if there are $y$-independent local functionals $q_w:Z\to\mathbb R$,
+$w\in V_L$, such that
+\[
+Q_y(z)=\sum_{w\in V_L}\beta_{y,w}q_w(z),
+\qquad Q_{\mathrm{ref}}(z):=\sum_{w\in V_L}q_w(z).
+\]
+Both sums must be finite or absolutely convergent, the first for every
+$(y,z)$ and the reference sum for every $z$. The reference-sum requirement
+also covers parameters with $\beta_y=0$.
+\end{definition}
+
+Membership requires this \emph{linear} representation; mere dependence on
+$\beta_y$ is insufficient. For example, on a one-point domain take
+$\beta_{y,w}=c_y$ at every place, with $c_y$ taking values $1$ and $2$,
+and $Q_y=c_y^2$. A representation would give $Q_y=c_y S$, where
+$S=\sum_wq_w$ is independent of $y$, forcing both $S=1$ and $S=2$.
+This counterexample to the earlier membership gloss is part of the R18
+correction, not a new claim about a source height.
+The generic reference $Q_{\mathrm{ref}}$ need not be a classical
+arithmetic quantity; that name requires a separately identified height or
+degree and its domain.
+
+\begin{lemma}[Factorization]\label{lem:factorization}
+Assume the fixed-field, full-place weighted product formula
+\[
+\prod_v\rho_{y,v}(x)^{\lambda_{y,v}}=1
+\qquad\text{for every }x\in L^\times.
+\]
+Then $\beta_{y,w}=c_y$ for all $w$, and every $Q\in\Geff$ satisfies
+\[
+Q_y=c_yQ_{\mathrm{ref}}.
+\]
+The scalar may depend on $y$. If (5.3.3) holds pointwise, then
+$\beta_y=1$ and $Q_y=Q_{\mathrm{ref}}$.
+Abstract real weights can have $c_y=0$; for the source's positive
+$a_{y,v}$ and positive normalization exponents, $c_y>0$.
+\end{lemma}
+
+\begin{proof}
+For every $x\in L^\times$, the hypothesis becomes
+\[
+0=\sum_v\lambda_{y,v}\log\rho_{y,v}(x)
+=\sum_w\beta_{y,w}\log b_w(x).
+\]
+Theorem~\ref{thm:rigidity} yields $\beta_{y,w}=c_y$.
+Substitution into Definition~\ref{def:geff} gives the result; the specified
+convergence ensures the reference sum exists even when $c_y=0$.
+\end{proof}
+
+\begin{proposition}[Exhaustion on the stated arithmetic domains]\label{prop:exhaustion}
+For the projective height of ATS~II($\tfrac12$), Definition~8.2.1
+\cite{joshiIIhalf}, on $\mathbb P^n(L)$, and the weighted degree on
+$L^\times$, use the fixed full standard family and the normalization
+identity (5.3.3). Then
+\begin{align*}
+h_y([x_0:\dots:x_n])
+&=\sum_v\lambda_{y,v}\log\max_i\rho_{y,v}(x_i)\\
+&=h_{\mathrm{cl}}([x_0:\dots:x_n]),\\
+\deg_y(x)&=\sum_v\lambda_{y,v}\log\rho_{y,v}(x)
+=\deg_{\mathrm{cl}}(x).
+\end{align*}
+The degree equality has domain $x\in L^\times$.
+\end{proposition}
+
+\begin{proof}
+On a nonzero representative tuple $(x_0,\dots,x_n)\in L^{n+1}\setminus\{0\}$,
+positivity of $a_{y,v}$ and $\beta_{y,v}=1$ give
+\begin{align*}
+\sum_v\lambda_{y,v}\log\max_i\rho_{y,v}(x_i)
+&=\sum_v\lambda_{y,v}a_{y,v}\log\max_i b_v(x_i)\\
+&=\sum_v\log\max_i b_v(x_i).
+\end{align*}
+For each tuple, these sums have finite support. Changing the representative
+by $u\in L^\times$ changes the standard sum by
+$\sum_v\log b_v(u)=0$; the weighted sum has the same property by (5.3.4)
+and (5.3.3), as reflected in Lemma~8.2.3 of the source.
+Thus the equality descends to $\mathbb P^n(L)$.
+For the degree the calculation omits the maximum and is valid on
+$L^\times$.
+\end{proof}
+
+The local height functionals
+$q_v(x_0,\dots,x_n)=\log\max_i b_v(x_i)$ are functions of representative
+tuples, not individually well-defined projective functions.
+They give a linear representation on the tuple domain.
+For a representation on $\mathbb P^n(L)$, one may first fix a
+$y$-independent representative for each point; the \emph{summed} height
+is independent of that choice under the product formula.
+The degree uses $q_v(x)=\log b_v(x)$ on $L^\times$.
+
+\begin{remark}[Boundary and stabilization]\label{rem:boundary}
+This is a statement about these identified domains and the linear class,
+not every height or measure object in the ATS series.
+In ATS~II($\tfrac12$) \S\S8.6--8.7, the stabilized height is evaluated on
+$x\in L^\times$. Each summand $h_{\alpha\cdot y}(x)$ equals the same
+classical value under the normalization identity, so its supremum equals
+that value. No additional exchange of supremum and sum is needed for this
+constant family. A general supremum of unclassified quantities has no
+such conclusion. Log-volumes, hulls, Haar normalizations, and Jacobians
+have neither membership nor nonmembership proved here; their concrete
+representation is the open measure-pinning obligation R-E2.
+\end{remark}
+
+%=====================================================================
+\section{Source-Bound Application to the Height Subchain}\label{sec:sourcebound}
+
+Table~\ref{tab:substitution_audit} separates the direct substitution result
+from source objects requiring an additional bridge. Page anchors refer to
+the exact PDFs cited, not a claim to audit their entire contents.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Substitution results and unproved domain or object bridges.}\label{tab:substitution_audit}
+\begin{tabularx}{\textwidth}{@{}p{0.26\textwidth}XX@{}}
+\toprule
+Source site & Consequence within the stated contract & Limit\\
+\midrule
+II($\tfrac12$) (5.3.3)--(5.3.4), p.~32 & $\beta_y=1$; the weighted product formula reduces to the standard formula & Same $L$ and full $V_L$\\
+\addlinespace
+II($\tfrac12$) Def.~8.2.1 / Lem.~8.2.3, p.~51 & $h_y=h_{\mathrm{cl}}$ on $\mathbb P^n(L)$ & Representative tuples must descend\\
+\addlinespace
+II($\tfrac12$) Rem.~8.2.2 / Prop.~8.3.1, p.~51 & The source extends to $\mathbb P^n(\overline L)$ and asserts nontrivial dependence there & Extension, valuation and base-change bridge unproved here; not refuted by the $L$-domain identity alone\\
+\addlinespace
+II($\tfrac12$) \S\S8.6--8.7, pp.~54--55 & On $L^\times$, every normalized summand equals $h_{\mathrm{cl}}$, hence so does the supremum & No conclusion for other stabilized objects\\
+\addlinespace
+III Rem.~8.9.2(2), p.~90 & Comparison of heights of points in $X(\overline L)$ using an ample line bundle is a separate source object & Bridge to the audited projective height remains open\\
+\addlinespace
+IV \S1.5, p.~17 & The term-by-term restriction concerns lower and upper log-volume comparisons across $y_0$ and $\varphi(y_0)$ & Not a universal prohibition of all local comparisons; no $\Geff$ classification\\
+\addlinespace
+II($\tfrac12$) Thm.~5.10.1(7) & Coordinate kernels can differ for nonproportional coefficients while their $L^\times$ pullbacks coincide & Conditional interpretation, not verification of the whole source theorem\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\emph{Applicability gate H-PLACES.} The theorem uses one fixed number field,
+all its archimedean and finite places, and all nonzero elements of that
+field as tests. A source notation that ranges over nonarchimedean places
+(such as ATS~III \S3.2(5)) cannot automatically be identified with this
+$V_L$. Likewise, places of an extension $L'$ tested only on $L^\times$
+require an explicit field-descent and place bridge. Neither indexing
+identification is supplied by a coordinate analogy.
+
+The source itself supplies the pointwise normalization used in the
+$L$-domain substitution. This establishes the displayed height and degree
+identities, but does not identify every operative height, line-bundle
+quantity, or log-volume elsewhere in the series.
+
+%=====================================================================
+\section{Conditional Consequences (Three Typed Cases)}\label{sec:consequences}
+
+The cases concern a verified quantity representation and an explicitly
+matched domain, field, place family, and test set.
+\begin{description}
+\item[Case A (pointwise identity (5.3.3)).]\mbox{}\\
+Then $\beta_y=1$ and every proved member of $\Geff$ equals its reference.
+The identified height on $\mathbb P^n(L)$ and degree on $L^\times$
+are classical and $y$-independent. Application to another operative
+quantity requires identifying that object and its domain bridge.
+\item[Case B (full weighted product formula only).]\mbox{}\\
+Then $\beta_y=c_y\mathbf1$ and $Q_y=c_yQ_{\mathrm{ref}}$ for
+$Q\in\Geff$. The scalar can vary with $y$, but final weights cannot vary
+from place to place. For actual standard heights and degrees, this is
+a global rescaling on their respective domains.
+\item[Case C (membership unclassified).]\mbox{}\\
+For the concrete log-volumes, hulls, and measures no linear
+representation or obstruction to one is proved here.
+The theorem still constrains effective weights whenever its weighted
+product-formula hypothesis holds; it does not thereby classify these
+quantity families. R-E2 remains open.
+\end{description}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Typed consequence matrix.}\label{tab:case_verdicts}
+\begin{tabularx}{\textwidth}{@{}p{0.16\textwidth}XXX@{}}
+\toprule
+Case & Effective weights & Global quantities & Derivation burden\\
+\midrule
+A: pointwise identity & $\beta_y=1$ & $Q_y=Q_{\mathrm{ref}}$ for proved members & Identify operative object and domain bridge\\
+\addlinespace
+B: full weighted formula & $\beta_y=c_y\mathbf1$ & $Q_y=c_yQ_{\mathrm{ref}}$ for proved members & Check weighted-formula hypothesis, indexing and factorization if another variation is intended\\
+\addlinespace
+C: unclassified quantity & Constrained if the same theorem hypotheses hold & No classification of the quantity from weights alone & Settle the concrete representation and measure-pinning bridge\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\emph{Conditional consequence.} A place-selective metric variation cannot
+be carried by the verified linear $L$-domain families under the full
+weighted formula; the pointwise identity removes even their global
+rescaling. Prop.~8.3.1 on $\mathbb P^n(\overline L)$, the ATS~III
+line-bundle comparison, and ATS~IV's log-volume apparatus are separate
+targets. Their operative object and transport bridges must be checked
+before applying this conclusion. The standard product formula for the
+fixed $b$ is not something these cases call on a source to disprove.
+No global collapse, closure of the repair program, or exclusion of other
+routes follows.
+
+\emph{Falsification and revision criteria.}
+\begin{enumerate}
+\item A nonconstant effective-weight family satisfying exactly the same-field,
+full-place product formula for every $x\in L^\times$ would contradict
+Theorem~\ref{thm:rigidity}. A counterexample to factorization must also
+satisfy the linear representation and convergence contract.
+\item Evidence that an operative source height has another domain or
+definition defeats an unproved identification step, not the theorem.
+This is why the extension and line-bundle bridges remain separate.
+\item A future source revision may supply new objects or bridges.
+It would require a new audit of that version; it neither retroactively
+proves an absent bridge nor refutes a statement tied to the cited version.
+\end{enumerate}
+
+%=====================================================================
+\section[External Program Status (Not Part of Present Proofs)]{External Program Status\texorpdfstring{\\}{ }(Not Part of the Present Proofs)}\label{sec:notices}
+
+Part~5 is published \cite{part5}; its publication does not discharge the
+remaining mathematical bridges. R6-1 / REP-6-1 is a conditional algebraic
+box-transport reconstruction: actual Haar normalization, tensor/index
+compatibility and the operative volume comparison remain separate tasks.
+A defect in an intermediate weighted model is not by itself a
+counterexample to a Joshi theta-volume theorem.
+R6-2 / REP-6-2 assumes V1 and an explicit $L'\to L$ place bridge.
+R6-3 / REP-6-3 concerns uniqueness of the same-field normalized data,
+not equality of all global coordinate hyperplanes.
+These notices refer to the August program and its R18 corrections;
+none is used in the proofs above.
+
+The GNC source audit is cited in version 1.2 \cite{gnc}, and the
+Part~4 ledger audit in version 0.3 \cite{part4}.
+The certificate-form criterion is a separate instrument \cite{part2}.
+Part~6's R-E2 measure-pinning obligation is not GNC-E2.
+Likewise REP-6-1--3 are repair positions, not ledger F-R identifiers;
+publication version 0.3 is not a claim to a new v1-F ledger acceptance.
+The P5/Shadow Tomograph and full-chain obligations remain open.
+
+%=====================================================================
+\section{Claim Boundaries}\label{sec:claims}
+
+Theorem~\ref{thm:rigidity} and Lemma~\ref{lem:redistribution} concern the
+explicit fixed-field, full-place contract.
+Lemma~\ref{lem:factorization} additionally requires a proved linear
+representation; Proposition~\ref{prop:exhaustion} concerns
+$\mathbb P^n(L)$ and $L^\times$.
+Only these verified quantity/domain pairs support the negative statement
+about residual place-selective variation.
+The $\overline L$ extension, ATS~III line-bundle heights and ATS~IV
+log-volumes have not been identified with that contract here.
+No exhaustive absence of another metric carrier, proof of Case~C
+nonmembership, closure of the repair program, or whole-source error
+verdict is asserted. The coordinate-kernel interpretation is conditional
+and does not certify the full nonconstancy assertion of source
+Theorem~5.10.1(7). There is no proof or refutation of abc or IUT and no
+whole-series mathematical acceptance.
+
+The R18 inventory is the source of these corrections.
+Independent manuscript and source checks are review evidence, not a
+machine-checked Lean proof, a numerical experiment, or a new formal
+verification result.
+
+\input{ai_disclosure_en.tex}
+
+%=====================================================================
+\begin{thebibliography}{99}
+\raggedright
+
+\bibitem{artinwhaples}
+E.~Artin and G.~Whaples,
+\emph{Axiomatic characterization of fields by the product formula for
+valuations},
+Bull.\ Amer.\ Math.\ Soc.\ \textbf{51} (1945), no.~7, 469--492.
+DOI: \href{https://doi.org/10.1090/S0002-9904-1945-08383-9}{10.1090/S0002-9904-1945-08383-9}
+
+\bibitem{neukirch}
+J.~Neukirch,
+\emph{Algebraic Number Theory},
+Grundlehren der mathematischen Wissenschaften \textbf{322},
+Springer, Berlin--Heidelberg, 1999.
+ISBN 3-540-65399-6. DOI: \href{https://doi.org/10.1007/978-3-662-03983-0}{10.1007/978-3-662-03983-0}
+
+\bibitem{joshiI}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces I},
+arXiv:2106.11452v4 [math.AG], 2021 (revised 24 February 2025).
+
+\bibitem{joshiII}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces II: Proof of a local
+prototype of Mochizuki's Corollary 3.12},
+arXiv:2303.01662v3 [math.AG], 2023 (revised 24 February 2025).
+
+\bibitem{joshiIIhalf}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces II$\frac{1}{2}$:
+Deformations of Number Fields},
+arXiv:2305.10398v12 [math.AG], 2023 (revised 24 February 2025).
+
+\bibitem{joshiIII}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces III: A `Rosetta Stone'
+and a proof of Mochizuki's Corollary 3.12},
+arXiv:2401.13508v4 [math.AG], 2024 (revised 24 February 2025).
+
+\bibitem{joshiIV}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces IV: Proof of the
+abc-conjecture},
+arXiv:2403.10430v2 [math.AG], 2024 (revised 24 February 2025).
+
+\bibitem{mochizukiIUT}
+S.~Mochizuki,
+\emph{Inter-universal Teichmüller Theory I--IV},
+Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{57} (2021), no.~1/2, 3--723.
+
+\bibitem{part1}
+L.~Geiger,
+\emph{The Comparison in IUTchIII, Corollary 3.12: From Attempted Repair to Structural Diagnosis},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.19960781}{10.5281/zenodo.19960781}.
+Cited version v6.4, 2026-10-01.
+DOI: \href{https://doi.org/10.5281/zenodo.23081604}{10.5281/zenodo.23081604}.
+
+\bibitem{part3}
+L.~Geiger,
+\emph{The Bridge Certificate: A Line-Level Audit Instrument for Inter-Theoretic Transfer Arguments, with Four Applications to the abc Literature},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21925803}{10.5281/zenodo.21925803}.
+Cited version 0.3, 2026-10-01.
+DOI: \href{https://doi.org/10.5281/zenodo.23090371}{10.5281/zenodo.23090371}.
+
+\bibitem{part4}
+L.~Geiger,
+\emph{The Bridge Certificate Applied to the Joshi ATS Series: A Ledger Audit (DRAFT)},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21951155}{10.5281/zenodo.21951155}.
+Cited version 0.3, 2026-10-02.
+DOI: \href{https://doi.org/10.5281/zenodo.23092802}{10.5281/zenodo.23092802}.
+
+\bibitem{gnc}
+L.~Geiger,
+\emph{Global Normalization in Joshi's Arithmetic Teichmüller Theory: What the Identification Carries --- and What Carries the Theorem (DRAFT)},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21924253}{10.5281/zenodo.21924253}.
+Cited version 1.2, 2026-10-02.
+DOI: \href{https://doi.org/10.5281/zenodo.23092166}{10.5281/zenodo.23092166}.
+
+\bibitem{landscapeA}
+L.~Geiger,
+\emph{The abc Landscape: Obstructions, Failed Routes, and HCT Diagnostics (DRAFT)},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21916900}{10.5281/zenodo.21916900}.
+Cited version 1.1, 2026-08-13.
+DOI: \href{https://doi.org/10.5281/zenodo.21924338}{10.5281/zenodo.21924338}.
+
+\bibitem{part2}
+L.~Geiger,
+\emph{The Bridge-Contract Criterion: A Form Audit for Transport Arguments, with an Instantiation in the abc Literature},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21960476}{10.5281/zenodo.21960476}.
+Cited version 0.2, 2026-08-16.
+DOI: \href{https://doi.org/10.5281/zenodo.21960477}{10.5281/zenodo.21960477}.
+
+\bibitem{part5}
+L.~Geiger,
+\emph{The Joshi ATS Series under the Bridge-Certificate Standard: A Targeted Substance Audit and an All-Place Rigidity Classification of Effective Normalization Weights},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21956398}{10.5281/zenodo.21956398}.
+Cited version 0.2, 2026-08-15.
+DOI: \href{https://doi.org/10.5281/zenodo.21956399}{10.5281/zenodo.21956399}.
+
+\end{thebibliography}
+
+\end{document}

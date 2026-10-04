@@ -1,0 +1,612 @@
+% Gap Series Part 4; corrective working paper v0.3, 2026-10-02.
+% Historical source-bound form audit retained; R19 inventory delta only.
+% Original v0.2 files and their claim/source bindings remain protected.
+\documentclass[11pt,a4paper]{article}
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\renewcommand*{\HyperDestNameFilter}[1]{en.#1}
+\usepackage{xurl}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\hypersetup{
+  pdftitle={The Bridge Certificate Applied to the Joshi ATS Series: A Ledger Audit},
+  pdfauthor={Lukas Geiger},
+  pdfsubject={Pre-specified four-row ledger audit of Kirti Joshi's Arithmetic Teichmüller Space series},
+  pdfkeywords={abc conjecture, Inter-universal Teichmüller Theory, Arithmetic Teichmüller Spaces, Corollary 3.12, Bridge Certificate, Ledger Audit},
+  pdflang={en},
+  bookmarksnumbered=true,
+  pdfpagemode=UseOutlines
+}
+
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\frenchspacing
+
+\newtheorem{remark}{Remark}[section]
+
+\title{The Bridge Certificate Applied to the Joshi ATS Series:\\A Ledger Audit}
+\author{Lukas Geiger\\\small Independent Researcher, Bernau, Germany\\\small ORCID: 0009-0005-7296-1534}
+\date{2 October 2026 --- Version 0.3 (working paper)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We revisit the pre-specified form audit of Kirti Joshi's Arithmetic
+Teichmüller Space (ATS) series, with source versions and the historical
+selection of rows R2, R4, R6, R8 preserved. This is a selected-rows form
+audit, not a complete certificate or a proof-correctness audit. The source
+makes the $j^2$-scaling law, the assigned compensating site, and the
+asymmetric Frobenius shift visible. These historical findings have narrower
+predicates than the current seven-component contract: locating a load is
+not a quantified budget, and seeing a second mode is not a complete E8
+mode audit. The revised crosswalk assigns F-R2a to C4 (dependent on C6),
+F-R2b and F-R6a to C6, and F-R6b to C7; F-R8 belongs to the triggered
+extension E8 outside that crosswalk. A declared normalization convention
+is classified as partially delivering (I), rather than as a derivation of
+cross-container compatibility. We correct our previous generic assertion
+that a set's volume dominates the absolute value of each element: the cited
+ATS III argument concerns a tensor-product box under specific integral
+and weight hypotheses. A simple translated-ball example refutes only our
+generic paraphrase. ATS III box containment and ATS IV's normalization
+and measure bridge remain separate obligations. Later normalization and
+effective-weight classifications are cited within their stated hypotheses;
+they do not close indexed log-volume, hull, measure, or mode compatibility.
+No claim about the truth of abc, the correctness of IUT, or the correctness
+of the ATS series follows from this audit.
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+%=====================================================================
+\section{Mandate, Source Versions, and Scope}\label{sec:mandate}
+
+This paper is Part~4 of the abc Gap Series. Part~1~\cite{part1}
+analyzed the comparison in the transport step of Corollary~3.12
+of IUTchIII~\cite{mochizukiIUT}. Part~2~\cite{part2} defines the
+\emph{bridge contract}; Part~3~\cite{part3} supplies its line-level
+ledger instrument. Both are published working papers. The present
+paper applies selected historical predicates to the exact ATS
+versions~\cite{joshiI,joshiII,joshiIIhalf,joshiIII,joshiIV}.
+The correction dated 2~October 2026 processes the inventoried
+mapping, source-paraphrase, and status-import errors in our v0.2 text;
+it performs no new whole-series proof audit.
+
+\subsection{Ground rules}
+
+First, \textbf{no authority argument}: neither ``Joshi asserts it holds'' nor
+``Scholze--Stix~\cite{scholzestix} assert it does not'' counts as evidence;
+every verdict is anchored in the verbatim wording of the audited sources.
+Joshi's own status tables about the Scholze--Stix objections are treated as
+self-report, not as evidence. Second, \textbf{no truth verdict}: the audit
+judges whether the text serves pre-specified contract clauses, not whether
+abc is true, whether Joshi's proof is correct, or whether the critics are
+right. Third, \textbf{status discipline}: the audited texts are publicly
+posted, versioned arXiv preprints, not peer-reviewed publications; ATS~IV
+carries the header ``Preliminary version for comments'' and opens with
+``[This is still a work in progress!]''. We therefore write ``publicly posted
+text'' throughout, bind exact versions (Table~\ref{tab:manifest}), and treat
+the preprint status as a version-stability caveat recorded per finding.
+
+\subsection{Pre-specified scope: a four-row test}\label{sec:scope}
+
+The audit mandate --- fixed in the series' ledger instrument before this test
+was run --- restricts the test to four ledger rows. \textbf{This is a
+commissioned four-row test, not a complete F-R0--F-R7 core audit
+with triggered E8.} Rows R0, R1, R3, R5,
+R7 were not part of the mandate (R5 is touched only insofar as R4 forces it).
+Table~\ref{tab:audit-scope} fixes the included and excluded rows.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X l@{}}
+\toprule
+Row & Reason for pre-selection & Not covered \\
+\midrule
+R2 & numerical pilot transport; comparative discrimination case & no R0/R1 audit \\
+R4 & visible treatment of the $j^2$-load & R5 only via R4 \\
+R6 & contract components 6--7; the central bridge question & no proof-correctness audit \\
+F-R8 & visibility of the second mode & no completeness of all auxiliary modes \\
+\bottomrule
+\end{tabularx}
+\caption{Pre-specified four-row audit scope. The table documents the mandate
+boundary and prevents the row findings from being read as a complete
+certificate audit.}
+\label{tab:audit-scope}
+\end{table}
+
+\subsection{Operational verdict rules}\label{sec:rules}
+
+Each atomic claim receives one of three verdicts. \emph{Delivers} $=$ the
+pre-stated minimal predicate of the row is served by the quoted text.
+\emph{Partially delivers} $=$ at least one explicit sub-predicate remains
+unserved. \emph{Does not deliver} $=$ the minimal predicate is unserved.
+\textbf{A row-level pass is not a certificate pass}: it certifies only the
+row's minimal predicate, never the full seven-component contract. Confidence
+is reported in three separate dimensions: \textbf{Q} (source binding: is the
+verbatim anchor unambiguous?), \textbf{K} (criterion fit: does the wording
+serve the pre-stated predicate?), \textbf{S} (substance status: checked /
+not checked / externally marked open).
+
+Operational glossary (minimal pairs used below):
+\emph{transported} $=$ a numerical quantity together with an explicit
+transformation law; \emph{invariant} $=$ same output value after typed
+identification; \emph{addressed} $=$ load and its compensating site named;
+\emph{quantitatively booked} $=$ amount/rule balanced in a complete budget;
+\emph{visible mode} $=$ mode, role, and affected bound expressly named.
+
+\subsection{Mapping to the current contract}\label{sec:crosswalk}
+
+The historical mandate remains R2/R4/R6 plus R8. In the current
+namespace of Part~2~\cite{part2}, the atomic findings below use
+F-R2a, F-R2b, F-R4a, F-R4b, F-R6a, F-R6b, and F-R8.
+F-R2a belongs to C4 with a dependency on C6; F-R2b and F-R6a to C6;
+F-R4a and F-R4b to C5; F-R6b to C7. The typed evaluation identity
+$\nu_C\circ i_q=\nu_q$ is a C6/F-R6a obligation, not component~1
+and not certified merely by displaying a scaling law.
+F-R8 is the triggered E8 extension, outside the seven-component
+crosswalk. It is X (not included in a denominator) when no relevant
+multi-mode, sign, or ordering trigger occurs; the explicit Frobenius
+shift triggers it here.
+
+The historical address/visibility predicates are retained as such.
+A historical \emph{delivers} finding for F-R4a or F-R6b does not assert
+the current C5 budget or the current C7 hypothesis-by-hypothesis
+coverage. Likewise, F-R8 visibility does not establish complete
+E8 mode coverage. We therefore report no current full-certificate
+score and no ratio of successful rows. Under the current grammar,
+a documented convention is at most I (partially delivers), not
+E+ (delivers a compatibility equation). Joshi is a comparative
+discrimination case; it is not the accepted control of the
+separate historical v1-T illustration in Part~2.
+
+\subsection{Source manifest}\label{sec:manifest}
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X l@{}}
+\toprule
+ID & Source (exact version audited) & Role \\
+\midrule
+ATS~III & arXiv:2401.13508v4 (rev.\ 24~Feb 2025)~\cite{joshiIII} & Cor.~3.12 construction (R2, R4, R6) \\
+ATS~IV & arXiv:2403.10430v2 (rev.\ 24~Feb 2025)~\cite{joshiIV} & abc conclusion, bridge site (R2, R6, F-R8) \\
+ATS~II($\tfrac12$) & arXiv:2305.10398v12~\cite{joshiIIhalf} & normalization data (status notice A1) \\
+\bottomrule
+\end{tabularx}
+\caption{Audited sources. Line anchors ``extract ll.'' refer to the plain-text
+extracts of these exact PDF versions retained with the historical
+audit records. They are local finding aids, not independently published
+evidence; the exact-version section/theorem citations are the
+public primary-source anchors. Audit date: 12~August
+2026; status notices dated 13/15~August 2026 (Section~\ref{sec:notices}).}
+\label{tab:manifest}
+\end{table}
+
+\subsection{\texorpdfstring{Four ``tautology'' passages, disambiguated}{Four "tautology" passages, disambiguated}}\label{sec:tautology}
+
+The audited texts use the word ``tautology'' in four places with distinct
+scopes, and conflating them produces the false impression that Joshi calls his
+own arithmetic proof a tautology --- which he does not. (T-a) a
+measure-theoretic triviality used as a tool (ATS~III, Lemma~9.10.2.2(4));
+(T-b) a statement about the \emph{geometric} analog only (ATS~III, \S\,12.18);
+(T-c) a statement about Joshi's own variant $\tilde\Theta_{\mathrm{Joshi}}$,
+while the theorem in question is proven for
+$\tilde\Theta_{\mathrm{Mochizuki}}$ (ATS~IV, \S\,1.6(4e)); and (T-d) the
+load-bearing bridge equality in the proof of ATS~IV, Theorem~6.10.1.
+\textbf{Only T-d is load-bearing for this audit.}
+
+%=====================================================================
+\section{The Ledger Audit (Atomic Findings)}\label{sec:ledger}
+
+\subsection{F-R2a --- intra-link transport: delivers}\label{sec:r2a}
+
+\emph{Minimal predicate: the numerical $q$-readout is transported along the
+theta-link by an explicit numerical law, with the $j^2$-factor carried
+visibly.} ATS~III, Theorem~4.2.2.1(4) states the valuation scaling relation
+$|-|_{K'_{y_{w,j}}} = |-|^{j^2}_{K'_{y_{w,1}}}$ at the odd semistable places
+(``Then one has the following relationship between their valuations,''
+eq.~(4.2.2.2); extract ll.~1544--1560); \S\,9.9 carries the $q$-value through it
+explicitly (eqs.~(9.9.3)--(9.9.4); extract ll.~6458--6484); and \S\,9.10.2
+supplies the concrete log-volume scale (normalized by
+$\mathrm{LogVol}(O_{L'_w}) = 0$, $\mathrm{Vol}(\lambda O) = |\lambda|$;
+extract ll.~6562--6596). This is \emph{transport by an explicit numerical
+law}, not invariance of a value: what is certified is a covariant
+transformation rule with a concrete numerical target scale, serving the historical F-R2a/C4 transport-law predicate (dependent on C6). The full typed identity $\nu_C \circ i_q = \nu_q$ is not written
+out in the source and is not certified here.
+\textbf{Verdict: delivers (row predicate). Q high / K high / S not checked.}
+
+\subsection{F-R2b --- cross-container transport: set by convention}\label{sec:r2b}
+
+\emph{Minimal predicate: the equality of readouts across the global Frobenius
+shift $y_0 \leftrightarrow \varphi(y_0)$ is derived, not set.} Here the
+equality is \emph{set} by the choice of ``the same global normalization''
+(ATS~IV, Thm.~6.10.1 preamble; extract ll.~3186--3189), with a one-sentence
+proof (``The equality \dots is a consequence of the choice of the same global
+normalization \dots''; extract ll.~3262--3266), while the local constituents
+change under $\varphi$ and the source itself notes that this ``precludes
+direct comparison of various local quantities'' (ATS~IV, Rem.~6.10.2; extract
+ll.~3208--3211). Not a contradiction --- but a convention, not a derived
+compatibility. \textbf{Verdict: partially delivers (I): a convention is documented;
+derived compatibility is unserved. Q high / K high / S see
+Section~\ref{sec:notices}.} This is the current F-R2b/C6 classification,
+not an E+ compatibility finding.
+
+\subsection{F-R4a --- the \texorpdfstring{$j^2$}{j\texttwosuperior}-load: addressed and assigned}\label{sec:r4a}
+
+\emph{Minimal predicate: the load is addressed --- its origin, propagation,
+and compensating site are named; it does not vanish unbooked in one
+coordinate and return silently.} The load arises only at the odd semistable
+places (Thm.~4.2.2.1, eqs.~(4.2.2.2) vs.~(4.2.2.3); extract ll.~1544--1570);
+it survives into the numerical evaluation (the $\sum_j j^2/\ell^{*2}$ of
+\S\,9.9; extract ll.~6476--6498); and its return is assigned to a forced
+renormalization at the complementary places, with the product formula as the
+booking instrument (Cor.~4.2.2.4, extract ll.~1600--1614; Thm.~4.6.1(4),
+extract ll.~1786--1791). The feared scenario --- silent vanishing and
+unbooked return --- does not occur in the text.
+\textbf{Verdict: delivers (row predicate). Q high / K high / S not checked.}
+The historical address predicate does not quantify all loads, signs,
+residuals, and compensating budget entries required by current C5;
+no current C5/E+ finding follows. A recorded citation inconsistency: the source refers to the same relation
+alternately as Theorem~4.2.2.1(3) and~(4); the referent is unambiguous.
+
+\subsection{F-R4b --- quantitative balance: open}\label{sec:r4b}
+
+\emph{Minimal predicate: the compensation is quantitatively booked ---
+amount, uniqueness, and budget split shown.} The existence of the compensating
+renormalization is inferred from the product-formula constraint in a one-line
+proof (``This is clear from Theorem~4.2.2.1 and the global constraint placed
+by the requirement that the product formula holds''; extract ll.~1613--1614).
+The residual load is \emph{located but not quantified}; contract component~5
+(separated indeterminacy budget) is served qualitatively, not quantitatively.
+\textbf{Verdict: partially delivers. Q high / K high / S not checked.}
+
+\subsection{F-R6b --- order relation, form level: written-out proof with an
+addressable core step}\label{sec:r6f}
+
+\emph{Minimal predicate: the order relation is stated as a theorem with a
+written-out proof whose steps are addressable.} ATS~III, Theorem~9.11.1
+(extract ll.~6794--6806; in Mochizuki's notation Cor.~9.11.1.1, extract
+ll.~6882--6888) states the volume lower bound; the evaluation exists in the
+container as an adelic log-volume computed as the sum of local contributions
+(``one can compute log Vol (\dots) by taking the sum \dots of the local
+contributions at all primes''; ATS~IV, \S\,1.5, extract ll.~764--769); this is
+the contract component~6 evaluation audited in Section~\ref{sec:r6cc}, not
+part of the order-relation finding recorded here. The cited mechanism is source-specific: ATS~III,
+Lemma~9.10.7.1 (PDF p.~125) treats a superset $S'$ of a tensor-product
+box, with integral $\tau_i\in O_{E_i}$, constituents $s_i\in\tau_i O_{E_i}$,
+and weights $0<\gamma_i\le1$. Theorem~9.11.1 (PDF p.~127)
+uses the asserted inclusion of that box in the construction.
+Neither statement is the generic proposition that the volume of
+an arbitrary set bounds the absolute value of each element.
+Our v0.2 paraphrase of that kind was false: with normalized
+additive Haar measure $\mu(\mathbb Z_p)=1$, the translated ball
+\[
+ U=1+p\mathbb Z_p,\qquad 1\in U,\qquad
+ \mu(U)=p^{-1}<|1|_p=1
+\]
+is a counterexample. It refutes our unrestricted paraphrase,
+not Joshi's tensor-box lemma, Theorem~9.11.1, IUT, or abc.
+In particular, the centered-module hypothesis in ATS~III,
+Lemma~9.10.2.2 (PDF p.~123) cannot be silently dropped.
+
+The historical form finding is limited to a stated theorem and an
+addressable proof. Establishing that the actual constructed
+theta-set supplies the box, integral structure, and applicable
+weight hypotheses remains the separate A2 obligation. Named
+proof addresses alone do not discharge current C7: each
+load-bearing hypothesis, including the inclusion hypothesis,
+needs its own applicable anchor. The availability of adelic
+evaluation alone does not establish C6 compatibility.
+\textbf{Verdict: delivers the form predicate. Q high / K high / S externally
+marked open (A2).}
+
+\subsection{F-R6a --- cross-container compatibility: set, and global-only by
+the source's own restriction}\label{sec:r6cc}
+
+\emph{Minimal predicate (contract component~6, global form): the connecting
+compatibility between the two evaluation routes is derived; contract
+component~7 in turn uses it to conclude $\nu_q(\mathrm{Obj}_q) \in H_\Theta$
+under admissible linkage.} For the \emph{abc} conclusion the lower bound is computed
+with $\varphi(y_0)$, the upper with $y_0$; they are connected by the middle
+equality of ATS~IV, Theorem~6.10.1, whose complete proof reads: ``The middle
+equality is a tautology using the fact that the number fields provided by
+$y_0'$ and $y_0$ are identically normalized'' (T-d; extract ll.~3272--3273).
+Two clarifications keep the standard honest. First, the certificate's order
+clause is \emph{global}; the source's own restriction --- one ``cannot claim
+that $z_p \le z_p'$ holds for all primes $p$ without violating the middle
+equality'' (ATS~IV, \S\,1.5, extract ll.~816--819), and ``one cannot make local
+term by term comparisons at each prime'' (extract ll.~772--775) --- is a
+\emph{scope limit of the claim}, not a violated criterion. Second, what
+remains unserved at the form level is the \emph{derivation} of the
+cross-container compatibility: it is set by definitional normalization, and
+the remaining obligations include the indexed E2 logarithmic-volume
+comparison, ambient and integral structures, theta-set and hull
+compatibility, and measure/weight conventions
+(Section~\ref{sec:notices}, notice A1). The valuation-level normalization
+identification does not by itself carry those obligations.
+\textbf{Verdict: partially delivers (declared convention; derivation
+unserved). Q high / K high / S see notices.}
+
+\subsection{F-R8 --- the second mode: visible and declared}\label{sec:r8}
+
+\emph{Minimal predicate: the second mode used by the bridge is visible and
+its role declared (not: a complete inventory of all auxiliary modes).} The
+second mode is the global Frobenius/log shift, the pair
+$(y_0, y_0' = \varphi(y_0))$. It is named; its effect is directionally
+characterized (absolute values of Tate parameters rise under $\varphi$;
+ATS~IV, \S\,1.4(2), extract ll.~567--569); its asymmetric use is declared
+(``the lower bound will be computed using the arithmeticoid
+$y_0'=\varphi(y_0)$ while the upper bound will be computed using $y_0$ (the
+upper bound is not independent of this choice)''; \S\,1.5, extract
+ll.~733--743); it is geometrically interpreted (slope comparison of
+Frobenius-shifted bundles; Rem.~6.10.3, extract ll.~3213--3235); and it is
+flagged as a correction of the paper's own earlier release (``[The previous
+release of this paper had omitted this Frobenius-shifting.]''; extract
+l.~755). \textbf{Verdict: delivers (visibility predicate). Q high / K high /
+S not checked.}
+
+Mode inventory (visibility status only; completeness is \emph{not} claimed):
+the Frobenius/log shift (visible, used); the countably infinite choice of the
+base point $y_0$ (visible, unbooked; ATS~III, Rem.~4.4.2, extract
+ll.~1723--1731); the intended-but-unavailable average over arithmeticoids
+(visible, unavailable; ATS~IV, \S\,4.5(4)/(5): ``one is far from being able to
+do this'', extract ll.~2100--2121); the auxiliary per-place quantities
+$z_p, z_p'$ constrained only through their sums (visible, unbooked; ATS~IV
+eqs.~(1.5.4)/(1.5.5), extract ll.~798--819).
+
+%=====================================================================
+\section{External Status Notices and Their Corrected Scope}\label{sec:notices}
+
+The historical audit was run on 12~August 2026; notices A1--A3
+were recorded on 13/15~August. Their former terminal interpretations
+are corrected here as of 2~October 2026. These notices are source-reported
+follow-up assessments, not proofs established by this form audit.
+Parts~5 and~6 are now published working papers
+\cite{part5,part6}; public availability is not a mathematical
+acceptance or a promotion of their claims.
+
+\begin{table}[htbp]
+\centering\footnotesize
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Notice & Corrected scope & Effect on this audit \\
+\midrule
+A1 (13 Aug) & valuation-level normalization; indexed hull/measure/weight and E2 compatibility remain open & F-R2b and F-R6a remain partial \\
+A2 (13 Aug) & ATS III tensor-box inclusion and applicable hypotheses remain open & historical proof-address finding retained; no C7 substance certification \\
+A3 (15 Aug) & conditional effective-weight classification under fixed field/place and identity hypotheses & no unconditional F-R6a or global branch closure \\
+\bottomrule
+\end{tabularx}
+\caption{Corrected reading of the historical notices, 2~October 2026.
+Dates identify their origin; the current text limits their import.}
+\label{tab:status-notices}
+\end{table}
+
+A1 concerns the middle equality in ATS~IV, Theorem~6.10.1
+(PDF pp.~66--67), with the scope limits of \S\,1.5 and
+Remarks~6.10.2--3. The normalization supplement's corrective
+v1.2~\cite{gnc} distinguishes a valuation-level identification
+from the further choices needed to compare indexed E2
+logarithmic volumes. Declared normalization does not settle
+ambient/integral structure, theta-set, hull, measure, weight,
+or ordering compatibility. A suggested Frobenius mechanism
+for set stability remains source-reported; it is not an
+established E2 transport theorem. F-NEU-1 remains open.
+
+A2 concerns ATS~III, Lemma~9.10.7.1 and Theorem~9.11.1
+(PDF pp.~125 and~127). Its box-inclusion obligation is separate
+from A1's ATS~IV normalization/measure obligation. Correcting our
+generic volume paraphrase does not discharge A2 and does not
+refute the source-specific lemma. The currently cited
+Part~5 assessment~\cite{part5} is retained as a dated report,
+not independently certified in this paper.
+
+A3 is limited to quantities demonstrated to factor through
+effective product-formula weights. The reported classification
+requires a fixed number field and matched full set of places,
+real effective weights, and an identity for all nonzero elements
+under the stated absolute-value conventions; source-specific
+pointwise normalization identities impose further conditions.
+The full product formula alone leaves a common scalar; a
+pointwise normalization identity is a stronger hypothesis.
+Neither conclusion automatically applies to logarithmic volumes,
+measures, theta-sets, or hulls. The all-place hypothesis cannot
+silently be substituted for a non-archimedean-only place range.
+Parts~5 and~6~\cite{part5,part6} require their own source-bound
+review; no unconditional cross-container verdict, terminal
+closure of reading branch (c), or positive E2 theorem is
+imported here.
+
+%=====================================================================
+\section{Synthesis (Conservative)}\label{sec:synthesis}
+
+Table~\ref{tab:synthesis} follows the corrected notices and
+distinguishes historical address findings from current
+component obligations (Section~\ref{sec:crosswalk}).
+
+\begin{table}[htbp]
+\centering\footnotesize
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Finding & Observed form & Obligation not certified \\
+\midrule
+F-R2a / C4 & explicit $j^2$ transport law & C6 dependency; typed evaluation identity \\
+F-R2b / C6 & declared convention; I & derived cross-container compatibility (A1) \\
+F-R4a / C5 & load and site addressed (historical predicate) & complete quantified budget \\
+F-R4b / C5 & qualitative location; partial & amount, split, residual and sign accounting \\
+F-R6b / C7 & theorem and proof addresses (historical predicate) & applicable hypothesis anchors; actual box inclusion (A2) \\
+F-R6a / C6 & evaluation available; global scope stated; partial & typed evaluation identity; indexed E2 hull/measure/weight compatibility (A1) \\
+F-R8 / E8 & Frobenius mode visible (historical predicate) & complete coverage/exclusion of order-relevant modes \\
+\bottomrule
+\end{tabularx}
+\caption{Conservative selected-rows synthesis; no current full-certificate
+or proof-quality score. Q/K source/criterion confidence is distinct
+from unchecked or open mathematical substance.}
+\label{tab:synthesis}
+\end{table}
+
+The source supplies identifiable scaling, compensation-site, and
+mode statements. F-R2b and F-R6a remain partial; F-R4b remains a
+located but unquantified budget. Historical F-R4a, F-R6b and
+F-R8 findings concern narrower predicates than current C5, C7
+and E8. These observations permit inspection of the named
+obligations, not a retrospective full-contract pass.
+The translated-ball counterexample corrects this paper's own
+paraphrase only. The A1 and A2 obligations remain distinct;
+the conditional A3 classification does not close either.
+
+\begin{table}[htbp]
+\centering\footnotesize
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Level & Current scope & Remaining burden \\
+\midrule
+Normalization & valuation-level identification/convention & typed/indexed comparison not established \\
+Measure / E2 & no general positive-measure classification imported & ambient, hull, measure, weight and ordering compatibility \\
+Set stability & candidate Frobenius mechanism source-reported & no established indexed E2 set/hull transport \\
+Box / A2 & specific tensor-box hypotheses and inclusion & actual construction and applicable hypothesis anchors \\
+Effective weights / A3 & fixed-field/all-place conditional classification & applicability, place-range reconciliation; no measure consequence \\
+\bottomrule
+\end{tabularx}
+\caption{Current burden map, 2~October 2026. The former
+unconditional and terminal imports are withdrawn; open obligations
+are not new refutations of ATS.}
+\label{tab:burden}
+\end{table}
+
+%=====================================================================
+\clearpage
+\section{Claim Boundaries}\label{sec:claims}
+
+This audit makes no claim about the truth of the \emph{abc} conjecture, the
+correctness of IUT, the correctness of the ATS series, or the ultimate
+repairability of the transport step. It judges publicly posted preprint text
+against a pre-specified contract form, with verbatim anchors; an unserved row
+predicate localizes a burden, it does not refute a theorem. The audit is
+restricted to the four commissioned rows; no completeness of the mode
+inventory, no full-certificate pass, and no aggregation of the row verdicts
+into a proof-quality score is claimed. The substance-level analysis and repair classifications are the
+subjects of the published working papers Parts~5 and~6
+\cite{part5,part6}; this paper imports only explicitly limited,
+dated source reports, not a fresh acceptance of their mathematics.
+
+\input{ai_disclosure_en}
+
+%=====================================================================
+\begin{thebibliography}{99}
+\small
+\raggedright
+\sloppy
+\setlength{\itemsep}{2pt plus 0.5pt minus 0.5pt}
+
+\bibitem{joshiI}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces I},
+arXiv:2106.11452v4 [math.AG], 2021 (revised 24~February 2025).
+
+\bibitem{joshiII}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces II: Proof of a Local
+Prototype of Mochizuki's Corollary~3.12},
+arXiv:2303.01662v3 [math.AG], 2023 (revised 24~February 2025).
+
+\bibitem{joshiIIhalf}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces II$\frac{1}{2}$:
+Deformations of Number Fields},
+arXiv:2305.10398v12 [math.AG], 2023 (revised 24~February 2025).
+
+\bibitem{joshiIII}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces III: A ``Rosetta Stone''
+and a Proof of Mochizuki's Corollary~3.12},
+arXiv:2401.13508v4 [math.AG], 2024 (revised 24~February 2025).
+
+\bibitem{joshiIV}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces IV: Proof of the
+abc-Conjecture},
+arXiv:2403.10430v2 [math.AG], 2024 (revised 24~February 2025).
+
+\bibitem{mochizukiIUT}
+S.~Mochizuki,
+\emph{Inter-universal Teichmüller Theory I: Construction of Hodge
+Theaters}, Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{57} (2021), no.~1/2,
+3--207;
+\emph{II: Hodge--Arakelov-Theoretic Evaluation}, \textit{ibid.}, 209--401;
+\emph{III: Canonical Splittings of the Log-Theta-Lattice}, \textit{ibid.}, 403--626;
+\emph{IV: Log-Volume Computations and Set-Theoretic Foundations},
+\textit{ibid.}, 627--723.
+
+\bibitem{scholzestix}
+P.~Scholze and J.~Stix,
+\emph{Why abc is still a conjecture},
+unpublished manuscript, version of 16~July 2018.
+Available at
+\url{https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf}
+
+\bibitem{part1}
+L.~Geiger,
+\emph{The Comparison in IUTchIII, Corollary 3.12: From Attempted Repair
+to Structural Diagnosis},
+Zenodo, 2026, version v6.4.
+DOI: \nolinkurl{10.5281/zenodo.23081604}.
+
+\bibitem{part2}
+L.~Geiger,
+\emph{The Bridge-Contract Criterion: A Form Audit for Transport Arguments,
+with an Instantiation in the abc Literature},
+Zenodo, 2026, version 0.2.
+DOI: \nolinkurl{10.5281/zenodo.21960477}.
+
+\bibitem{part3}
+L.~Geiger,
+\emph{The Bridge Certificate: A Line-Level Audit Instrument for
+Inter-Theoretic Transfer Arguments, with Four Applications to the abc Literature},
+Zenodo, 2026, version 0.3.
+DOI: \nolinkurl{10.5281/zenodo.23090371}.
+
+\bibitem{part5}
+L.~Geiger,
+\emph{The Joshi ATS Series under the Bridge-Certificate Standard:
+A Targeted Substance Audit and an All-Place Rigidity Classification
+of Effective Normalization Weights},
+Zenodo, 2026, version 0.2.
+DOI: \nolinkurl{10.5281/zenodo.21956399}.
+
+\bibitem{part6}
+L.~Geiger,
+\emph{What the Product Formula Allows: A Rigidity Theorem and an
+Effective-Weight Test for the ATS Height Subchain},
+Zenodo, 2026, version 0.2.
+DOI: \nolinkurl{10.5281/zenodo.21952487}.
+
+\bibitem{gnc}
+L.~Geiger,
+\emph{Global Normalization in Joshi's Arithmetic Teichmüller Theory:
+What the Identification Carries --- and What Carries the Theorem (DRAFT)},
+Zenodo, 2026, version 1.2.
+DOI: \nolinkurl{10.5281/zenodo.23092166}.
+
+\bibitem{landscapeA}
+L.~Geiger,
+\emph{The abc Landscape: Obstructions, Failed Routes, and HCT Diagnostics
+(DRAFT)},
+Zenodo, 2026.
+Concept DOI: \nolinkurl{10.5281/zenodo.21916900}
+(cited version 1.1, 13~August 2026, DOI: \nolinkurl{10.5281/zenodo.21924338}).
+
+\end{thebibliography}
+
+\end{document}

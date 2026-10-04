@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "title": "The Bridge Certificate Applied to the Joshi ATS Series: A Ledger Audit",
+  "version": "0.3",
+  "date": "2026-10-02",
+  "license": "CC-BY-4.0",
+  "publication_status": "VERIFIED_PUBLISHED",
+  "concept_doi": "10.5281/zenodo.21951155",
+  "previous_record_doi": "10.5281/zenodo.21951156",
+  "scope": "Corrective selected-rows manuscript delta; no mathematical proof certification or whole-ATS audit",
+  "corrective_delta_count": 51,
+  "pdf_pages": {
+    "en": 13,
+    "de": 13
+  },
+  "files": [
+    {
+      "file": "Joshi_ATS_Ledger_Audit_v0.3_en.tex",
+      "sha256": "e4b4080abc6617be410e85c3a7f2ac673d867d0309aa4ee36225c8b4b1891597",
+      "bytes": 31153
+    },
+    {
+      "file": "Joshi_ATS_Ledger_Audit_v0.3_de.tex",
+      "sha256": "6c664a62086593bd8c98d5d11dd07b788d2e7f3247294589fd7d124ea8cdfc6e",
+      "bytes": 34125
+    },
+    {
+      "file": "ai_disclosure_en.tex",
+      "sha256": "e93b68c19deab23fcb20fc7620f5a6eadcebfae2d70f7070366aee6c6605e8d4",
+      "bytes": 778
+    },
+    {
+      "file": "ai_disclosure_de.tex",
+      "sha256": "31cec21d90136cc43ca6f4dffaa7d938063a7fef81ea07a05298648c09618f0c",
+      "bytes": 859
+    },
+    {
+      "file": "Joshi_ATS_Ledger_Audit_v0.3_en.pdf",
+      "sha256": "e395fc6be47ccc5bbc1d2079e30f521a60fb9ea7767a7cf2f8d4fb1b945d303b",
+      "bytes": 413411
+    },
+    {
+      "file": "Joshi_ATS_Ledger_Audit_v0.3_de.pdf",
+      "sha256": "14a32706c85f92c8501d93c0045e7ad6eec37ac72657ad0852e4419fa2135011",
+      "bytes": 425234
+    },
+    {
+      "file": "README.md",
+      "sha256": "fc681e0cb7c435e82cbc9f3e8b9186dc0cf1cdae20168cfc933a5761b23b96bb",
+      "bytes": 2532
+    },
+    {
+      "file": "README_de.md",
+      "sha256": "59f4c67c5d646a456089830bd5e90c39ce2db4f53bb10fdbc06a3f75b1c5101c",
+      "bytes": 2732
+    }
+  ],
+  "checks": {
+    "independent_mathematical_delta": "ACCEPT",
+    "independent_bilingual_delta": "ACCEPT",
+    "compiler_passes_per_language": 3,
+    "final_compiler_returncodes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "final_warnings": 0,
+    "visual_pages_checked": 26,
+    "independent_public_postflight": "ACCEPT"
+  },
+  "record_doi": "10.5281/zenodo.23092802",
+  "artifact_commit": "3ccd7d626b1884b2942ab53d7f8021efc246a755"
+}

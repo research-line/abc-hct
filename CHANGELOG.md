@@ -2,15 +2,15 @@
 
 All notable changes to this repository will be documented in this file.
 
-## ATS Substance v0.3 candidate - 2026-10-02
-
-- Added separate English and German source/PDF editions with local AI disclosures and a hash-bound manifest in `ats-substance/`.
-- Clarified coordinate and period-action contracts, same-field normalization rigidity, conditional module-hull and Haar assumptions, the printed ATS III corollary's narrow sign inconsistency, and the Part 6 linear quantity-class consumer.
-- The public v0.2 PDFs and later R17 sources remain distinct baselines. Scientific field, period and volume bridges remain open. This candidate is not yet uploaded or published on Zenodo.
 ## [Unreleased]
 
 ### Research manuscript corrections
 - Add the bilingual Part 6 ATS height-subchain v0.3 corrective paper package: R18 linear-class, full-place and arithmetic-domain fixes with unchanged core proofs and explicit open measure/extension gates. Package version 0.1.13 remains frozen.
+
+### ATS Substance v0.3 candidate - 2026-10-02
+- Added separate English and German source/PDF editions with local AI disclosures and a hash-bound manifest in `ats-substance/`.
+- Clarified coordinate and period-action contracts, same-field normalization rigidity, conditional module-hull and Haar assumptions, the printed ATS III corollary's narrow sign inconsistency, and the Part 6 linear quantity-class consumer.
+- The public v0.2 PDFs and later R17 sources remain distinct baselines. Scientific field, period and volume bridges remain open. This candidate is not yet uploaded or published on Zenodo.
 
 ### Added
 - **Joshi ATS ledger audit v0.3 / Joshi-ATS-Ledger-Audit v0.3**: Added the curated German and English corrective manuscript, two 13-page PDFs, local AI disclosures, bilingual build instructions, and a SHA-256 manifest under `joshi-ats-ledger/`. Clarifies certificate mappings and conditional claim boundaries and corrects our generic volume paraphrase; records independent manuscript reviews and page checks. The artifact package records preparation before its Zenodo follow-up; repository software remains at frozen version 0.1.13.

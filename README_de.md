@@ -5,9 +5,9 @@
 [![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
 [![Deutsch](https://img.shields.io/badge/Sprache-Deutsch-yellow.svg)](README_de.md)
 [![CI](https://github.com/research-line/abc-hct/actions/workflows/abc-hct-hygiene.yml/badge.svg)](https://github.com/research-line/abc-hct/actions/workflows/abc-hct-hygiene.yml)
-[![Geprüft](https://img.shields.io/badge/Geprüft-2026--10--01-blue.svg)](#)
+[![Geprüft](https://img.shields.io/badge/Geprüft-2026--10--04-blue.svg)](#)
 [![Mitwirken](https://img.shields.io/badge/Mitwirken-Willkommen-brightgreen.svg)](CONTRIBUTING.md)
-[![Tests](https://img.shields.io/badge/Tests-58%20Passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/Tests-61%20Passed-brightgreen.svg)](tests/)
 [![Version](https://img.shields.io/badge/Version-0.1.13-blue.svg)](pyproject.toml)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](pyproject.toml)
 [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](#)
@@ -16,7 +16,7 @@
 [![Security SLA](https://img.shields.io/badge/Security%20SLA-48h%20Response%20%7C%205d%20Triage-green.svg)](SECURITY.md)
 [![SageMath](https://img.shields.io/badge/SageMath-10.x-orange.svg)](https://www.sagemath.org/)
 [![PARI/GP](https://img.shields.io/badge/PARI%2FGP-2.15-green.svg)](https://pari.math.u-bordeaux.fr/)
-[![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--09--19-blue.svg)](llms.txt)
+[![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--10--04-blue.svg)](llms.txt)
 [![Level 1 SBOM](https://img.shields.io/badge/Level%201%20SBOM-Text%20Companion-blue.svg)](THIRD_PARTY_LICENSES.txt)
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)](https://github.com/research-line)
 [![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)](https://github.com/open-bricks)
@@ -26,7 +26,7 @@
 Kuratiertes Forschungs-Repository für die Forschungslinie **HCT/abc** innerhalb der Organisation **research-line** und des Dachverbunds **open-bricks**.
 
 > [!NOTE]
-> Maschinenlesbare Kontext-Richtlinien, kanonische Suchbegriffe und Sicherheitsgrenzen für KI-Assistenten sind in [`llms.txt`](llms.txt) hinterlegt. Auffindbarkeitsdossier in [`MARKETING-LOG.txt`](MARKETING-LOG.txt). Drittanbieter-Lizenzen inventarisiert in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) und Text-Inventar in [`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt). Sicherheitsgarantien und 48-Stunden-SLA sind in [`SECURITY.md`](SECURITY.md) definiert. Richtlinien zur Mitwirkung in [`CONTRIBUTING.md`](CONTRIBUTING.md). Letzte Prüfung: **2026-10-01**.
+> Maschinenlesbare Kontext-Richtlinien, kanonische Suchbegriffe und Sicherheitsgrenzen für KI-Assistenten sind in [`llms.txt`](llms.txt) hinterlegt. Auffindbarkeitsdossier in [`MARKETING-LOG.txt`](MARKETING-LOG.txt). Drittanbieter-Lizenzen inventarisiert in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) und Text-Inventar in [`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt). Sicherheitsgarantien und 48-Stunden-SLA sind in [`SECURITY.md`](SECURITY.md) definiert. Richtlinien zur Mitwirkung in [`CONTRIBUTING.md`](CONTRIBUTING.md). Letzte Prüfung: **2026-10-04**.
 
 ---
 
@@ -445,7 +445,7 @@ abc-hct/
 `abc-hct` pflegt eine umfassende automatisierte Testpipeline zur Verifikation von Dokumentationsverträgen, Syntaxhygiene und Sicherheitsrichtlinien:
 
 ```bash
-# Gesamte automatisierte Pytest-Suite ausführen (54 Tests)
+# Gesamte automatisierte Pytest-Suite ausführen (61 Tests)
 pytest -ra -v
 
 # Python-Bytecode-Kompilierung über alle Skripte und Tests prüfen

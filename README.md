@@ -5,7 +5,9 @@
 [![English](https://img.shields.io/badge/Language-English-blue.svg)](README.md)
 [![Deutsch](https://img.shields.io/badge/Sprache-Deutsch-yellow.svg)](README_de.md)
 [![CI](https://github.com/research-line/abc-hct/actions/workflows/abc-hct-hygiene.yml/badge.svg)](https://github.com/research-line/abc-hct/actions/workflows/abc-hct-hygiene.yml)
-[![Tests](https://img.shields.io/badge/Tests-42%20Passed-brightgreen.svg)](tests/)
+[![Verified](https://img.shields.io/badge/Verified-2026--10--04-blue.svg)](#)
+[![Contributing](https://img.shields.io/badge/Contributing-Welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Tests](https://img.shields.io/badge/Tests-61%20Passed-brightgreen.svg)](tests/)
 [![Version](https://img.shields.io/badge/Version-0.1.13-blue.svg)](pyproject.toml)
 [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](pyproject.toml)
 [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](#)
@@ -14,15 +16,17 @@
 [![Security SLA](https://img.shields.io/badge/Security%20SLA-48h%20Response%20%7C%205d%20Triage-green.svg)](SECURITY.md)
 [![SageMath](https://img.shields.io/badge/SageMath-10.x-orange.svg)](https://www.sagemath.org/)
 [![PARI/GP](https://img.shields.io/badge/PARI%2FGP-2.15-green.svg)](https://pari.math.u-bordeaux.fr/)
-[![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--09--19-blue.svg)](llms.txt)
+[![LLM-Ready](https://img.shields.io/badge/LLM--Ready-2026--10--04-blue.svg)](llms.txt)
+[![Level 1 SBOM](https://img.shields.io/badge/Level%201%20SBOM-Text%20Companion-blue.svg)](THIRD_PARTY_LICENSES.txt)
 [![Ecosystem](https://img.shields.io/badge/Ecosystem-research--line-blue.svg)](https://github.com/research-line)
 [![Umbrella](https://img.shields.io/badge/Umbrella-open--bricks-purple.svg)](https://github.com/open-bricks)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Attribution](https://img.shields.io/badge/Attribution-NOTICE-blue.svg)](NOTICE)
 
 Curated research repository for the **HCT/abc** research line within the **research-line** organization and **open-bricks** umbrella.
 
 > [!NOTE]
-> Machine-readable repository context guidelines, canonical search phrases, and safety boundaries are maintained in [`llms.txt`](llms.txt). Discoverability dossier in [`MARKETING-LOG.txt`](MARKETING-LOG.txt). Third-party open-science dependency inventory in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md). Security guarantees and 48-hour SLA are outlined in [`SECURITY.md`](SECURITY.md). Last checked: **2026-09-19**.
+> Machine-readable repository context guidelines, canonical search phrases, and safety boundaries are maintained in [`llms.txt`](llms.txt). Discoverability dossier in [`MARKETING-LOG.txt`](MARKETING-LOG.txt). Third-party open-science dependency inventory in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) and plain-text companion in [`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt). Security guarantees and 48-hour SLA are outlined in [`SECURITY.md`](SECURITY.md). Contribution guidelines in [`CONTRIBUTING.md`](CONTRIBUTING.md). Last checked: **2026-10-04**.
 
 ---
 
@@ -30,29 +34,30 @@ Curated research repository for the **HCT/abc** research line within the **resea
 <a id="schnellnavigation"></a>
 ## 🧭 Quick Navigation
 
-| # | Section | Description |
-|---|---|---|
-| 1 | [Quick Reference](#quick-reference) | Core metadata, runtime stack & operational guarantees |
-| 2 | [Key Scientific Findings](#key-scientific-findings) | Breakthrough computational results in Hecke curve arithmetic |
-| 3 | [Target Personas & Discoverability](#target-personas--discoverability) | Four scientific personas & high-intent search phrases |
-| 4 | [Comparative Matrix vs. Alternatives](#comparative-matrix-vs-alternatives) | Invariant-mapped benchmark against 4 computing approaches |
-| 5 | [Dual Mermaid Diagrams & Verification Flow](#dual-mermaid-diagrams) | Visual 5-tier architecture & sequence diagrams |
-| 6 | [System Architecture & Pipeline](#system-architecture--pipeline) | Modular computation and certifier architecture |
-| 7 | [Curated Verification Lifecycle](#curated-verification-lifecycle) | Deterministic proof-verification sequence flow |
-| 8 | [Core Capabilities & Research Invariants](#core-capabilities--research-invariants) | 10 architectural, privacy & governance guarantees |
-| 9 | [Evidence Mapping & Paper References](#evidence-mapping--paper-references) | Citation ledger backing Zenodo Paper A & Paper B |
-| 10 | [Computational Milestones & Batches](#computational-milestones--batches) | Chronological computation milestones & H3a certificates |
-| 11 | [Modular Symbol Pairing & Basket Elimination Artifacts](#basket-kill--modular-symbol-artifacts) | Deep dive into GF(3863) quotient elimination artifacts |
-| 12 | [Repository Policy & Staged Disclosure](#repository-policy--staged-disclosure) | Public release policy & proof-scratch isolation rules |
-| 13 | [Sibling Research & Ecosystem Matrix](#sibling-research--ecosystem-matrix) | 16 cross-organization research & software siblings |
-| 14 | [Discovery & LLM Context](#discovery--llm-context) | Machine-readable manifests & AI indexing specifications |
-| 15 | [Project Structure](#project-structure) | Repository layout and script taxonomy |
-| 16 | [Testing & Verification](#testing--verification) | Pytest, compile check, and verification reproduction commands |
-| 17 | [Third-Party Licenses](#third-party-licenses) | Open-source licenses for Python, SageMath, and PARI/GP |
-| 18 | [Security Policy & Statutory Notice](#security--license) | Vulnerability disclosure SLA, zero-egress policy & § 521 BGB disclaimer |
+| # | Section | Nav Anchor | Description |
+|---|---|---|---|
+| 01 | [Quick Reference](#quick-reference) | [`#sec-01`](#sec-01) | Core metadata, runtime stack & operational guarantees |
+| 02 | [Key Scientific Findings](#key-scientific-findings) | [`#sec-02`](#sec-02) | Breakthrough computational results in Hecke curve arithmetic |
+| 03 | [Target Personas & Discoverability](#target-personas--discoverability) | [`#sec-03`](#sec-03) | Four scientific personas & high-intent search phrases |
+| 04 | [Comparative Matrix vs. Alternatives](#comparative-matrix-vs-alternatives) | [`#sec-04`](#sec-04) | Invariant-mapped benchmark against 4 computing approaches |
+| 05 | [Dual Mermaid Diagrams & Verification Flow](#dual-mermaid-diagrams) | [`#sec-05`](#sec-05) | Visual 5-tier architecture & sequence diagrams |
+| 06 | [System Architecture & Pipeline](#system-architecture--pipeline) | [`#sec-06`](#sec-06) | Modular computation, certifier architecture & ASCII topology |
+| 07 | [Curated Verification Lifecycle](#curated-verification-lifecycle) | [`#sec-07`](#sec-07) | Deterministic proof-verification sequence flow |
+| 08 | [Core Capabilities & Research Invariants](#core-capabilities--research-invariants) | [`#sec-08`](#sec-08) | 10 architectural, privacy & governance guarantees |
+| 09 | [Evidence Mapping & Paper References](#evidence-mapping--paper-references) | [`#sec-09`](#sec-09) | Citation ledger backing Zenodo Paper A & Paper B |
+| 10 | [Computational Milestones & Batches](#computational-milestones--batches) | [`#sec-10`](#sec-10) | Chronological computation milestones & H3a certificates |
+| 11 | [Modular Symbol Pairing & Basket Elimination Artifacts](#basket-kill--modular-symbol-artifacts) | [`#sec-11`](#sec-11) | Deep dive into GF(3863) quotient elimination artifacts |
+| 12 | [Repository Policy & Staged Disclosure](#repository-policy--staged-disclosure) | [`#sec-12`](#sec-12) | Public release policy & proof-scratch isolation rules |
+| 13 | [Sibling Research & Ecosystem Matrix](#sibling-research--ecosystem-matrix) | [`#sec-13`](#sec-13) | 16 cross-organization research & software siblings |
+| 14 | [Discovery & LLM Context](#discovery--llm-context) | [`#sec-14`](#sec-14) | Machine-readable manifests & AI indexing specifications |
+| 15 | [Project Structure](#project-structure) | [`#sec-15`](#sec-15) | Repository layout and script taxonomy |
+| 16 | [Testing & Verification](#testing--verification) | [`#sec-16`](#sec-16) | Pytest, compile check, and verification reproduction commands |
+| 17 | [Third-Party Licenses](#third-party-licenses) | [`#sec-17`](#sec-17) | Open-source licenses for Python, SageMath, and PARI/GP |
+| 18 | [Security Policy & Statutory Notice](#security--license) | [`#sec-18`](#sec-18) | Vulnerability disclosure SLA, zero-egress policy & § 521 BGB disclaimer |
 
 ---
 
+<a id="sec-01"></a>
 <a id="quick-reference"></a>
 <a id="schnellreferenz"></a>
 ## ⚡ Quick Reference
@@ -71,6 +76,7 @@ Curated research repository for the **HCT/abc** research line within the **resea
 
 ---
 
+<a id="sec-02"></a>
 <a id="key-scientific-findings"></a>
 <a id="wissenschaftliche-ergebnisse"></a>
 ## 🔬 Key Scientific Findings
@@ -83,6 +89,7 @@ Curated research repository for the **HCT/abc** research line within the **resea
 
 ---
 
+<a id="sec-03"></a>
 <a id="target-personas--discoverability"></a>
 <a id="ziel-personas--auffindbarkeit"></a>
 ## 🎯 Target Personas & Discoverability
@@ -108,6 +115,7 @@ Curated research repository for the **HCT/abc** research line within the **resea
 
 ---
 
+<a id="sec-04"></a>
 <a id="comparative-matrix-vs-alternatives"></a>
 <a id="vergleichsmatrix-vs-alternativen"></a>
 ## 📊 Comparative Matrix vs. Alternatives
@@ -129,6 +137,7 @@ The following matrix benchmarks `abc-hct` against standard commercial, cloud, an
 
 ---
 
+<a id="sec-05"></a>
 <a id="dual-mermaid-diagrams"></a>
 <a id="duale-mermaid-diagramme"></a>
 ## 📊 Dual Mermaid Diagrams & Verification Flow
@@ -182,6 +191,7 @@ flowchart TD
 
 ---
 
+<a id="sec-06"></a>
 <a id="system-architecture--pipeline"></a>
 <a id="systemarchitektur--pipeline"></a>
 ## 📐 System Architecture & Pipeline
@@ -199,8 +209,49 @@ flowchart TD
     H["Compute Queue Harness (_compute_queue/)"] --> D
 ```
 
+### ASCII Architectural Topology Projection
+
+```text
+========================================================================================
+[VIEW 1: CLI DRIVERS & COMPUTATION HARNESSES]
+----------------------------------------------------------------------------------------
+ +---------------------------+  +---------------------------+  +-----------------------+
+ | SageMath CLI Drivers      |  | PARI/GP Driver Scripts    |  | Compute Queue Harness |
+ | (_scripts/mstar_*.py)     |  | (_scripts/frey_watkins*)  |  | (_compute_queue/)     |
+ +-------------+-------------+  +-------------+-------------+  +-----------+-----------+
+               |                              |                            |
+               +------------------------------+----------------------------+
+                                              | (bounded out-of-process CLI)
+                                              v
+========================================================================================
+[VIEW 2: NO-MAGMA ALGEBRAIC QUOTIENT ENGINE CORE]
+----------------------------------------------------------------------------------------
+ +------------------------------------------------------------------------------------+
+ | SageMath 10.x & Python Algebra Core (GF(3863) / Q_B)                                |
+ |                                                                                    |
+ |  [Manin Symbol Pairs] ──> [Hecke Operators T_p] ──> [Quotient Kernel Engine]       |
+ |   Cusp-fan evaluation      Annihilators (T_5, T_7)   Dimension & Rank Drops        |
+ |   Levels 60168..240672     Modular Jacobian J_0(N)   Basket Elimination            |
+ +-----------------------------+------------------------------------+-----------------+
+                               |                                    |
+                  (residual-line witness check)           (saturation evaluation)
+                               v                                    v
+========================================================================================
+[VIEW 3: PROOF & CERTIFICATE VERIFICATION]       [VIEW 4: OPEN-SCIENCE LEDGER & CITATION]
+-------------------------------------------------  -------------------------------------
+ Quality Assurance & Invariant Guards (tests/)     Immutable Proof Ledger (_results/)
+ +-----------------------------------------------+  +---------------------------------+
+ | pytest Contract Suite (100% Green, 0 Leaks)   |  | 120+ Curated JSON Certificates  |
+ | Ruff Code Hygiene & PEP 621 Standardisation   |  | Zenodo Paper A (10.5281/21916900)|
+ | Deterministic Non-Elevation (RunAsInvoker)    |  | Canonical Attribution (NOTICE)  |
+ | Zero-Copyleft Subprocess Boundary (GPL/MIT)   |  | Level 1 SBOM Text Companion     |
+ +-----------------------------------------------+  +---------------------------------+
+========================================================================================
+```
+
 ---
 
+<a id="sec-07"></a>
 <a id="curated-verification-lifecycle"></a>
 <a id="verifikations-lebenszyklus"></a>
 ## 🔄 Curated Verification Lifecycle
@@ -225,6 +276,7 @@ sequenceDiagram
 
 ---
 
+<a id="sec-08"></a>
 <a id="core-capabilities--research-invariants"></a>
 <a id="forschungsinvarianten"></a>
 ## 🛡️ Core Capabilities & Research Invariants
@@ -246,6 +298,7 @@ sequenceDiagram
 
 ---
 
+<a id="sec-09"></a>
 <a id="evidence-mapping--paper-references"></a>
 <a id="ergebnis-zuordnung--paper-referenzen"></a>
 ## 📊 Evidence Mapping & Paper References
@@ -271,6 +324,7 @@ Every result category below is cited in at least one of the papers that this rep
 
 ---
 
+<a id="sec-10"></a>
 <a id="computational-milestones--batches"></a>
 <a id="berechnungs-meilensteine--batches"></a>
 ## 📅 Computational Milestones & Batches
@@ -281,6 +335,7 @@ Every result category below is cited in at least one of the papers that this rep
 
 ---
 
+<a id="sec-11"></a>
 <a id="basket-kill--modular-symbol-artifacts"></a>
 <a id="modulare-symbol-paarung--basket-kill"></a>
 ## 🧩 Modular Symbol Pairing & Basket Elimination Artifacts
@@ -293,6 +348,7 @@ The core computational achievement of this repository is the complete open-sourc
 
 ---
 
+<a id="sec-12"></a>
 <a id="repository-policy--staged-disclosure"></a>
 <a id="repository-richtlinie--gestufte-freigabe"></a>
 ## 📜 Repository Policy & Staged Disclosure
@@ -307,6 +363,7 @@ The core computational achievement of this repository is the complete open-sourc
 
 ---
 
+<a id="sec-13"></a>
 <a id="sibling-research--ecosystem-matrix"></a>
 <a id="geschwister-forschung--oekosystem"></a>
 ## 🌐 Sibling Research & Ecosystem Matrix
@@ -334,6 +391,7 @@ The core computational achievement of this repository is the complete open-sourc
 
 ---
 
+<a id="sec-14"></a>
 <a id="discovery--llm-context"></a>
 <a id="auffindbarkeit--llm-kontext"></a>
 ## 🔍 Discovery & LLM Context
@@ -341,18 +399,21 @@ The core computational achievement of this repository is the complete open-sourc
 `abc-hct` provides structured, machine-readable specifications to ensure autonomous agents and scholars can ingest architecture and status without token overhead:
 
 - **[`llms.txt`](llms.txt)**: Fast-loading LLM index detailing module boundaries, invariants, testing gates, and research interfaces.
+- **[`CONTRIBUTING.md`](CONTRIBUTING.md)**: Bilingual guidelines for local Plan D development, pre-commit quality gates, and invariant compliance.
 - **[`MARKETING-LOG.txt`](MARKETING-LOG.txt)**: Discoverability dossier covering value propositions, research personas, search phrases, and strategic roadmaps.
 - **[`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md)**: Open-source licensing inventory covering engine runtimes, toolchains, and mathematical libraries.
+- **[`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt)**: Plain-text Level 1 SBOM companion inventory for offline tooling and non-elevation audits.
 
 ---
 
+<a id="sec-15"></a>
 <a id="project-structure"></a>
 <a id="projektstruktur"></a>
 ## 🛠️ Project Structure
 
 ```
 abc-hct/
-├── .github/workflows/          # GitHub Actions CI workflow (abc-hct-hygiene.yml, stale, welcome)
+├── .github/workflows/          # GitHub Actions CI workflow (abc-hct-hygiene.yml, stale, welcome, auto-assign, label-sync)
 ├── _compute_queue/             # Compute queue jobs, runner harnesses & local logs
 ├── _results/                   # 120+ Curated machine-readable result certificates
 ├── _scripts/                   # SageMath, PARI/GP & Python reproduction scripts
@@ -363,8 +424,11 @@ abc-hct/
 │   └── test_scripts_compilation.py # Python syntax compilation tests
 ├── pyproject.toml              # PEP 621 metadata, toolchain & pytest configuration
 ├── CHANGELOG.md                # Semantic version release changelog
+├── CONTRIBUTING.md            # Bilingual contribution & Plan D guidelines
 ├── MARKETING-LOG.txt           # Discoverability, SEO, & Persona audit
 ├── THIRD_PARTY_LICENSES.md     # Mathematical engine & toolchain license inventory
+├── THIRD_PARTY_LICENSES.txt    # Level 1 SBOM plain-text companion inventory
+├── NOTICE                      # Canonical attribution & copyright notice
 ├── SECURITY.md                 # Bilingual security policy & 48h SLA commitments
 ├── REPRODUCIBILITY_H3A_2026-05-17.md # H3a reproducibility overview
 ├── LICENSE                     # MIT License
@@ -373,6 +437,7 @@ abc-hct/
 
 ---
 
+<a id="sec-16"></a>
 <a id="testing--verification"></a>
 <a id="tests--statische-verifikation"></a>
 ## 🧪 Testing & Verification
@@ -380,7 +445,7 @@ abc-hct/
 `abc-hct` maintains a comprehensive automated testing pipeline verifying documentation contracts, syntax hygiene, and repository security policies:
 
 ```bash
-# Run full automated pytest suite (42 tests)
+# Run full automated pytest suite (61 contract tests)
 pytest -ra -v
 
 # Run Python bytecode compilation check across all scripts and tests
@@ -398,6 +463,7 @@ python _scripts/mstar_h3a_rc3c_witness_verify_rank.py
 
 ---
 
+<a id="sec-17"></a>
 <a id="third-party-licenses"></a>
 <a id="drittanbieter-lizenzen"></a>
 ## 📜 Third-Party Licenses
@@ -408,12 +474,14 @@ python _scripts/mstar_h3a_rc3c_witness_verify_rank.py
 - **PARI/GP**: GNU General Public License Version 2 or later (GPL-2.0+)
 - **pytest & Ruff**: MIT License / Apache License 2.0
 
-All third-party copyrights, license terms, and the Level 1 SBOM Invariant Cross-Reference Matrix are inventoried in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
+All third-party copyrights, license terms, and the Level 1 SBOM Invariant Cross-Reference Matrix are inventoried in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md). Plain-text inventory is documented in [`THIRD_PARTY_LICENSES.txt`](THIRD_PARTY_LICENSES.txt) and canonical attribution in [`NOTICE`](NOTICE).
 
 ---
 
+<a id="sec-18"></a>
 <a id="security--license"></a>
 <a id="sicherheit--lizenz"></a>
+<a id="statutory-notice--liability"></a>
 ## 🔒 Security Policy & Statutory Notice
 
 For security advisories, vulnerability disclosures, and safety invariants, see [`SECURITY.md`](SECURITY.md).
@@ -431,4 +499,4 @@ This mathematical open-science research repository and all verification scripts 
 
 Dieses mathematische Open-Science-Forschungsprojekt und sämtliche Berechnungs- und Verifikationsskripte werden unentgeltlich als Open-Source-Software zur Verfügung gestellt. Gemäß § 521 BGB (Haftung des Schenkers) ist die Haftung für etwaige Sach- und Rechtsmängel auf Vorsatz und grobe Fahrlässigkeit beschränkt. Berechnungen und wissenschaftliche Artefakte erfolgen nach bestem Wissen deterministisch, ersetzen jedoch keine formale mathematische Peer-Review-Begutachtung.
 
-This project is licensed under the **MIT License** — see the [`LICENSE`](LICENSE) file for details.
+This project is licensed under the **MIT License** — see the [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE) files for details.

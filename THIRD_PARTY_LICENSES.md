@@ -2,7 +2,7 @@
 
 This document provides a comprehensive inventory of all third-party software libraries, mathematical engines, toolchains, and runtime environments utilized or referenced by **abc-hct** (`research-line/abc-hct`), including their respective licenses, copyright holders, and usage scopes.
 
-Last updated: **2026-09-19**
+Last updated: **2026-09-19** (Re-audited: **2026-10-04**; previous audits: **2026-10-01**, **2026-09-28**, **2026-09-26**)
 
 ---
 
@@ -78,3 +78,4 @@ All dependencies and runtime components are strictly audited against the reposit
 5. **Unprivileged User Mode (RunAsInvoker)**: All scripts, CLI harnesses, and automated verification suites operate strictly within non-elevated user-mode privilege boundaries without requiring administrative or root elevation.
 6. **Zero-Copyleft Isolation**: External copyleft algebra systems (SageMath, PARI/GP) are executed exclusively through out-of-process CLI interfaces and subprocess execution boundaries, guaranteeing complete zero-copyleft contamination of the MIT-licensed research codebase.
 7. **System & Research Invariant Verification**: Full architectural conformity is verified against all 10 governance invariants (`INV-DET-01` through `INV-SLA-10`).
+8. **Canonical Attribution & Plain-Text Inventory**: Complete repository attribution is recorded in `NOTICE`, and machine-readable plain-text inventory is maintained in `THIRD_PARTY_LICENSES.txt` as a Level 1 SBOM companion.

@@ -211,3 +211,132 @@ Cross-Org Ecosystem Collaborations:
   * Expanded automated test suite in tests/test_metadata.py to 42 tests (+6 contract tests verifying
     18-point navigation parity, target personas, comparative matrix, statutory disclaimer, Level 1 SBOM matrix,
     and version 0.1.13 cross-document parity).
+
+--------------------------------------------------------------------------------
+10. TECHNICAL HYGIENE & CI LIFECYCLE AUDIT (PFAD A — 2026-09-26)
+--------------------------------------------------------------------------------
+- Date: 2026-09-26 | Audit Type: Pfad A (Repository Hygiene & CI Hardening)
+- Active Version: 0.1.13 (strictly frozen per T-20260920-167562623)
+- CI/CD Lifecycle Workflow Provisioning & Hardening:
+  * .github/workflows/auto-assign.yml: Provisioned with actions/github-script@v7, timeout-minutes: 5,
+    concurrency cancel-in-progress: true (${{ github.workflow }}-${{ github.ref }}), and least-privilege
+    permissions (issues: write, pull-requests: write).
+  * .github/workflows/label-sync.yml: Provisioned with EndBug/label-sync@v2, timeout-minutes: 5,
+    concurrency cancel-in-progress: true, and least-privilege permissions (issues: write).
+  * .github/labels.yml: Provisioned with 11 standard governance labels per GOVERNANCE.md §4.2.
+  * .github/workflows/welcome.yml & stale.yml: Hardened concurrency groups to ${{ github.workflow }}-${{ github.ref }}.
+- Multi-Host Cloud-Sync & Lock Defense:
+  * Enhanced .gitignore with multi-host sync patterns (*-IDEAPAD*, *_WORKSTATION*, *_WORKSTATION-LG*,
+    *-WORKSTATION.*, *-WORKSTATION-LG.*), canonical agent lock defense (.automation-lock),
+    test caches (.pytest_temp/, .pytest_tmp*/), and OS artifacts (Desktop.ini, *.swo).
+- PEP 621 Standardisation & Pytest Hardening:
+  * Updated license-files in pyproject.toml to include NOTICE and THIRD_PARTY_LICENSES.txt.
+  * Registered Notice and Third-Party Licenses (Text) in project.urls.
+  * Hardened [tool.pytest.ini_options] with addopts = "-ra -v --basetemp=.pytest_temp" and
+    norecursedirs with temp directories and build caches.
+- Canonical NOTICE Attribution & Level 1 SBOM Text Inventory:
+  * Created standard Open-Source NOTICE attribution file (Copyright (c) 2026 Lukas Geiger, HCT Research Line Team).
+  * Created THIRD_PARTY_LICENSES.txt Level 1 SBOM text companion confirming unprivileged user-mode RunAsInvoker
+    operation, zero-copyleft boundaries, and 10 research governance invariants (INV-DET-01 through INV-SLA-10).
+  * Re-audited THIRD_PARTY_LICENSES.md Stand 2026-09-26.
+- Contract Test Expansion:
+  * Extended tests/test_metadata.py with 6 new automated contract tests.
+
+--------------------------------------------------------------------------------
+11. PATH B DISCOVERABILITY, 18-POINT NAVIGATION PARITY, RECIPROCAL DUAL ANCHORS,
+    ASCII ARCHITECTURAL TOPOLOGY & LEVEL 1 SBOM RE-AUDIT (PFAD B — 2026-09-28)
+--------------------------------------------------------------------------------
+- Date: 2026-09-28 | Audit Type: Pfad B (Discoverability, Visual Architecture & SBOM)
+- Active Version: 0.1.13 (strictly frozen per T-20260920-167562623)
+- 18-Point Bilingual Navigation Parity & Reciprocal Dual HTML Anchors:
+  * Complete structural, badge, and navigation parity between README.md and README_de.md.
+  * Added dual reciprocal HTML anchors (<a id="sec-01"></a> through <a id="sec-18"></a>)
+    across all 18 sections in both English and German documentation, guaranteeing deterministic
+    cross-document linking and slug stability.
+  * Quick Navigation tables in both READMEs fully aligned with dual link anchors.
+- ASCII Four-View Architectural Topology Projection:
+  * Integrated multi-tier ASCII architecture topology projection in Section 6 of both READMEs:
+    [VIEW 1: CLI DRIVERS & COMPUTATION HARNESSES], [VIEW 2: NO-MAGMA ALGEBRAIC QUOTIENT ENGINE CORE],
+    [VIEW 3: PROOF & CERTIFICATE VERIFICATION], and [VIEW 4: OPEN-SCIENCE LEDGER & CITATION].
+  * German counterpart mapped as [SICHT 1] through [SICHT 4] with zero-copyleft and non-elevation guarantees.
+- PEP 621 20/20 Keyword Saturation & Canonical Plain-Text URLs:
+  * Saturated keywords in pyproject.toml to 20/20 items matching remote GitHub topics.
+  * Added canonical URLs for "Plain-Text Licenses" and "Level 1 SBOM" under [project.urls].
+- Level 1 SBOM & Plain-Text Inventory Re-Audit:
+  * Re-audited THIRD_PARTY_LICENSES.txt and THIRD_PARTY_LICENSES.md (2026-09-28) validating runtime
+    invariant cross-reference matrix against Level 1 SBOM requirements, unprivileged RunAsInvoker
+    non-elevation boundaries, and zero-copyleft subprocess boundaries.
+- Contract Test Expansion:
+  * Expanded automated test suite in tests/test_metadata.py with 6 new contract tests (elevating suite
+    from 48 to 54 tests, 100% green) asserting sec-01..sec-18 dual anchors, ASCII topology projection,
+    PEP 621 20 keywords saturation, Plain-Text/SBOM URLs, changelog unreleased notes, and Section 11 marketing audit.
+
+--------------------------------------------------------------------------------
+12. TECHNICAL HYGIENE, CONTRIBUTING GUIDELINES, LEVEL 1 SBOM COMPANION RE-AUDIT
+    & CONTRACT TEST SUITE EXPANSION (PFAD A — 2026-10-01)
+--------------------------------------------------------------------------------
+- Date: 2026-10-01 | Audit Type: Pfad A (Repository Hygiene, Quality Gates & SBOM)
+- Active Version: 0.1.13 (strictly frozen per T-20260920-167562623)
+- Bilingual Contributing Guidelines (CONTRIBUTING.md):
+  * Authored comprehensive bilingual (EN/DE) contribution specification in repository root.
+  * Formulated Plan D local development workflow, unprivileged user-mode execution (RunAsInvoker),
+    zero-copyleft subprocess isolation for SageMath / PARI/GP, and zero-egress offline privacy guarantees.
+  * Codified pre-commit quality gates: full pytest suite, ruff linting, compileall syntax check,
+    and git whitespace hygiene.
+  * Reasserted strict version-freeze discipline at v0.1.13 under engineering ticket T-20260920-167562623.
+- PEP 621 Metadata Alignment:
+  * Registered canonical "Contributing" URL in pyproject.toml under [project.urls].
+- Level 1 SBOM Text Companion & Inventory Re-Audit:
+  * Re-audited THIRD_PARTY_LICENSES.txt Level 1 SBOM text companion and THIRD_PARTY_LICENSES.md
+    as of 2026-10-01, confirming unprivileged RunAsInvoker operation, zero-copyleft boundaries,
+    and 10 research governance invariants (INV-DET-01 through INV-SLA-10).
+- Documentation & Discoverability Parity:
+  * Updated README.md and README_de.md with "Verified: 2026-10-01" / "Geprüft: 2026-10-01" and
+    "Contributing: Welcome" / "Mitwirken: Willkommen" badges.
+  * Updated Section 14 (Discovery & LLM Context) and Section 15 (Project Structure) trees with CONTRIBUTING.md.
+  * Updated llms.txt canonical links and audit status to 2026-10-01.
+- Contract Test Suite Expansion:
+  * Expanded automated test suite in tests/test_metadata.py with 4 new contract tests (elevating
+    suite from 54 to 58 tests, 100% green).
+
+--------------------------------------------------------------------------------
+13. PATH B DISCOVERABILITY, VISUAL TOPOLOGY AUDIT, LEVEL 1 SBOM RE-AUDIT
+    & ACTIONABLE RECOMMENDATIONS (PFAD B — 2026-10-04)
+--------------------------------------------------------------------------------
+- Date: 2026-10-04 | Audit Type: Pfad B (Discoverability, Visual Architecture & SBOM)
+- Active Version: 0.1.13 (strictly frozen per T-20260920-167562623)
+- Discoverability, Navigation & Visual Architecture Review:
+  * Verified 18-point bilateral quick navigation parity across README.md and README_de.md
+    with reciprocal dual HTML anchors (<a id="sec-01"></a> through <a id="sec-18"></a>).
+  * Audited Section 6 ASCII Four-View Architectural Topology projection in both languages:
+    [VIEW 1: CLI DRIVERS & COMPUTATION HARNESSES], [VIEW 2: NO-MAGMA ALGEBRAIC QUOTIENT ENGINE CORE],
+    [VIEW 3: PROOF & CERTIFICATE VERIFICATION], and [VIEW 4: OPEN-SCIENCE LEDGER & CITATION].
+    German counterpart projection ([SICHT 1] through [SICHT 4]) fully synchronized.
+  * Target Personas ([PERSONA-01] through [PERSONA-04]) and High-Intent Search Phrases
+    verified against computational algebraist and number theorist search vectors.
+  * 10-Dimension Comparative Matrix against 4 alternative computing environments verified
+    projecting all 10 invariants INV-DET-01 through INV-SLA-10.
+  * Level 1 SBOM text companion THIRD_PARTY_LICENSES.txt and THIRD_PARTY_LICENSES.md
+    re-audited as of 2026-10-04, confirming unprivileged RunAsInvoker operation (INV-SEC-07),
+    Zero-Copyleft isolation guarantee for SageMath/PARI subprocess boundaries, and statutory
+    disclaimer (§ 521 BGB Gefälligkeitsrecht) with binding 48h Security Response SLA.
+  * Synchronized Shields.io badges across EN/DE (Verified: 2026-10-04 / Geprüft: 2026-10-04,
+    LLM-Ready: 2026-10-04, Tests: 61 passed | 100% green).
+  * Updated llms.txt context index with 61 tests baseline and current audit timestamps.
+- Actionable Discoverability Recommendations (Non-Automated):
+  * REC-20261004-01: Zenodo Community Badge & Data Citation DOI Indexing: Create an official
+    Zenodo community for research-line open-science modules and register individual dataset DOIs
+    for the 120+ curated JSON quotient certificates in _results/ to enable fine-grained BibTeX
+    citations in forthcoming Paper B ("Beneath the abc Landscape").
+  * REC-20261004-02: Interactive SageMath / JupyterLite WebAssembly Proof Viewer: Build a lightweight
+    static GitHub Pages dashboard using JupyterLite/Pyodide with pre-bundled SageMath / PARI WASM
+    wheels allowing researchers to verify the T_5 -> T_7 basket kill directly in the browser without
+    installing local dependencies.
+  * REC-20261004-03: LMFDB Modular Curve & Mazur-Tate-Teitelbaum Dataset Cross-Referencing:
+    Establish deep hyperlinks from Section 11 basket kill artifacts directly to LMFDB (L-functions
+    and Modular Forms Database) curve entries for conductors 60168, 80224, 120336, and 240672 to drive
+    academic discoverability among arithmetic algebraic geometry research groups.
+- Contract Test Expansion:
+  * Expanded automated contract test suite in tests/test_metadata.py with 3 new contract tests:
+    test_sbom_and_marketing_audit_20261004, test_readme_badges_audit_recency_20261004, and
+    test_version_freeze_discipline_0113 (elevating full suite from 58 to 61 tests, 100% green).

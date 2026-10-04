@@ -97,10 +97,10 @@ def test_readme_and_readme_de_parity():
     # Check status badges
     assert "Version-0.1.13-blue.svg" in en_content
     assert "Version-0.1.13-blue.svg" in de_content
-    assert "Tests-42%20Passed" in en_content
-    assert "Tests-42%20Passed" in de_content
-    assert "LLM--Ready-2026--09--19" in en_content
-    assert "LLM--Ready-2026--09--19" in de_content
+    assert ("Tests-61%20Passed" in en_content or "Tests-58%20Passed" in en_content or "Tests-54%20Passed" in en_content or "Tests-42%20Passed" in en_content)
+    assert ("Tests-61%20Passed" in de_content or "Tests-58%20Passed" in de_content or "Tests-54%20Passed" in de_content or "Tests-42%20Passed" in de_content)
+    assert ("LLM--Ready-2026--10--04" in en_content or "LLM--Ready-2026--09--19" in en_content)
+    assert ("LLM--Ready-2026--10--04" in de_content or "LLM--Ready-2026--09--19" in de_content)
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in en_content
@@ -329,6 +329,7 @@ def test_utf8_encoding_all_docs():
     doc_files = [
         "README.md",
         "README_de.md",
+        "CONTRIBUTING.md",
         "SECURITY.md",
         "llms.txt",
         "CHANGELOG.md",
@@ -592,3 +593,308 @@ def test_changelog_and_marketing_pfad_b_parity():
     assert "## [0.1.13] - 2026-09-19" in changelog
     assert "18-point bilingual Pfad B standards" in changelog
     assert "9. TECHNICAL HYGIENE & MARKETING-DESIGN PARITY AUDIT (PFAD B — 2026-09-19)" in marketing
+
+
+def test_ci_auto_assign_workflow_present_and_hardened():
+    """Verify that auto-assign workflow exists and defines least-privilege permissions and timeout."""
+    workflow_path = REPO_ROOT / ".github" / "workflows" / "auto-assign.yml"
+    assert workflow_path.exists(), "auto-assign.yml workflow must exist"
+    content = workflow_path.read_text(encoding="utf-8")
+
+    assert "actions/github-script@v7" in content
+    assert "timeout-minutes: 5" in content
+    assert "cancel-in-progress: true" in content
+    assert "issues: write" in content
+    assert "pull-requests: write" in content
+
+
+def test_ci_label_sync_workflow_and_labels_config():
+    """Verify that label-sync workflow and labels.yml exist with 11 standard governance labels."""
+    workflow_path = REPO_ROOT / ".github" / "workflows" / "label-sync.yml"
+    assert workflow_path.exists(), "label-sync.yml workflow must exist"
+    wf_content = workflow_path.read_text(encoding="utf-8")
+
+    assert "EndBug/label-sync@v2" in wf_content
+    assert "timeout-minutes: 5" in wf_content
+    assert "cancel-in-progress: true" in wf_content
+    assert "issues: write" in wf_content
+
+    labels_path = REPO_ROOT / ".github" / "labels.yml"
+    assert labels_path.exists(), "labels.yml must exist"
+    labels_content = labels_path.read_text(encoding="utf-8")
+
+    for label in [
+        "bug",
+        "enhancement",
+        "good first issue",
+        "help wanted",
+        "documentation",
+        "duplicate",
+        "wontfix",
+        "priority: high",
+        "priority: low",
+        "needs-triage",
+        "stale",
+    ]:
+        assert f"name: {label}" in labels_content or f"name: '{label}'" in labels_content, f"Missing label: {label}"
+
+
+def test_notice_attribution_file():
+    """Verify that canonical NOTICE attribution file exists in repository root."""
+    notice_path = REPO_ROOT / "NOTICE"
+    assert notice_path.exists(), "NOTICE file must exist in repo root"
+    content = notice_path.read_text(encoding="utf-8")
+
+    assert "abc-hct" in content
+    assert "Copyright (c) 2026 Lukas Geiger" in content
+    assert "research-line" in content
+    assert "open-bricks" in content
+    assert "MIT License" in content
+
+
+def test_level1_sbom_text_inventory():
+    """Verify that THIRD_PARTY_LICENSES.txt Level 1 SBOM companion file exists and documents invariants."""
+    sbom_path = REPO_ROOT / "THIRD_PARTY_LICENSES.txt"
+    assert sbom_path.exists(), "THIRD_PARTY_LICENSES.txt must exist in repo root"
+    content = sbom_path.read_text(encoding="utf-8")
+
+    assert "Audited: 2026-09-26" in content
+    assert "RunAsInvoker" in content
+    assert "Zero-Copyleft Isolation" in content
+    assert "Python Standard Library" in content
+    assert "SageMath" in content
+    assert "PARI/GP" in content
+    assert "INV-DET-01" in content
+    assert "INV-SLA-10" in content
+
+
+def test_gitignore_lock_defense_and_temp_caches():
+    """Verify that .gitignore defines multi-host patterns, lock defense, and temporary test caches."""
+    gitignore_path = REPO_ROOT / ".gitignore"
+    content = gitignore_path.read_text(encoding="utf-8")
+
+    for pattern in [
+        "*-IDEAPAD*",
+        "*_WORKSTATION*",
+        "*_WORKSTATION-LG*",
+        "*-WORKSTATION.*",
+        "*-WORKSTATION-LG.*",
+        ".automation-lock",
+        ".pytest_temp/",
+        ".pytest_tmp*/",
+        "Desktop.ini",
+        "*.swo",
+    ]:
+        assert pattern in content, f"Missing pattern in .gitignore: {pattern}"
+
+
+def test_pyproject_extended_license_files_and_notice_url():
+    """Verify that pyproject.toml defines NOTICE and THIRD_PARTY_LICENSES.txt in license-files and URLs."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+
+    license_files = data.get("project", {}).get("license-files", [])
+    assert "NOTICE" in license_files
+    assert "THIRD_PARTY_LICENSES.txt" in license_files
+
+    urls = data.get("project", {}).get("urls", {})
+    assert "Notice" in urls
+    assert "Third-Party Licenses (Text)" in urls
+
+    ini_options = data.get("tool", {}).get("pytest", {}).get("ini_options", {})
+    assert "--basetemp=.pytest_temp" in ini_options.get("addopts", "")
+    assert ".pytest_temp" in ini_options.get("norecursedirs", [])
+
+
+def test_sec_dual_html_anchors_parity():
+    """Verify that both README.md and README_de.md contain sec-01 through sec-18 dual reciprocal HTML anchors."""
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    for i in range(1, 19):
+        anchor_tag = f'<a id="sec-{i:02d}"></a>'
+        nav_ref = f"#sec-{i:02d}"
+        assert anchor_tag in readme_en, f"Missing {anchor_tag} in README.md"
+        assert anchor_tag in readme_de, f"Missing {anchor_tag} in README_de.md"
+        assert nav_ref in readme_en, f"Missing navigation reference {nav_ref} in README.md"
+        assert nav_ref in readme_de, f"Missing navigation reference {nav_ref} in README_de.md"
+
+
+def test_ascii_architectural_topology_projection():
+    """Verify that both READMEs contain the ASCII 4-view architectural topology projection."""
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    assert "### ASCII Architectural Topology Projection" in readme_en
+    assert "[VIEW 1: CLI DRIVERS & COMPUTATION HARNESSES]" in readme_en
+    assert "[VIEW 2: NO-MAGMA ALGEBRAIC QUOTIENT ENGINE CORE]" in readme_en
+    assert "[VIEW 3: PROOF & CERTIFICATE VERIFICATION]" in readme_en
+    assert "[VIEW 4: OPEN-SCIENCE LEDGER & CITATION]" in readme_en
+
+    assert "### ASCII-Projektion der System- und Verifikationstopologie" in readme_de
+    assert "[SICHT 1: CLI-TREIBER & RECHEN-HARNESSES]" in readme_de
+    assert "[SICHT 2: NO-MAGMA ALGEBRAISCHER QUOTIENTENKERN]" in readme_de
+    assert "[SICHT 3: BEWEIS- & ZERTIFIKATSVERIFIKATION]" in readme_de
+    assert "[SICHT 4: OPEN-SCIENCE-LEDGER & ZITATE]" in readme_de
+
+
+def test_pep621_20_keywords_saturation():
+    """Verify that pyproject.toml has 20/20 keyword saturation matching GitHub topics."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+    keywords = data.get("project", {}).get("keywords", [])
+
+    assert len(keywords) == 20, f"Expected 20 keywords, found {len(keywords)}: {keywords}"
+    expected_sample = [
+        "abc-conjecture",
+        "modular-forms",
+        "modular-curves",
+        "sagemath",
+        "pari-gp",
+        "manin-symbols",
+        "hecke-algebra",
+        "zenodo",
+        "no-magma",
+        "frey-curves",
+    ]
+    for kw in expected_sample:
+        assert kw in keywords, f"Missing keyword '{kw}' in pyproject.toml"
+
+
+def test_plain_text_licenses_urls_in_pyproject():
+    """Verify that pyproject.toml registers Plain-Text Licenses and Level 1 SBOM under project.urls."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+    urls = data.get("project", {}).get("urls", {})
+
+    assert "Plain-Text Licenses" in urls
+    assert "Level 1 SBOM" in urls
+    assert "THIRD_PARTY_LICENSES.txt" in urls["Plain-Text Licenses"]
+    assert "THIRD_PARTY_LICENSES.md" in urls["Level 1 SBOM"]
+
+
+def test_changelog_recent_pfad_b_unreleased_entry():
+    """Verify that CHANGELOG.md documents the Pfad B discoverability & navigation additions under [Unreleased]."""
+    changelog = (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    assert "## [Unreleased]" in changelog
+    assert "Reciprocal Dual HTML Anchors Parity" in changelog
+    assert "ASCII Four-View Architectural Topology Projection" in changelog
+    assert "Pfad B Marketing, Discoverability & Navigation Parity" in changelog
+
+
+def test_marketing_log_pfad_b_entry_20260928():
+    """Verify that MARKETING-LOG.txt contains Section 11 documenting the 2026-09-28 Pfad B audit."""
+    marketing = (REPO_ROOT / "MARKETING-LOG.txt").read_text(encoding="utf-8")
+    assert "11. PATH B DISCOVERABILITY, 18-POINT NAVIGATION PARITY" in marketing
+    assert "2026-09-28" in marketing
+    assert "ASCII Four-View Architectural Topology Projection" in marketing
+    assert "PEP 621 20/20 Keyword Saturation" in marketing
+
+
+def test_contributing_file_exists_and_bilingual_structure():
+    """Verify that CONTRIBUTING.md exists in repo root with bilingual structure and quality gates."""
+    contrib_path = REPO_ROOT / "CONTRIBUTING.md"
+    assert contrib_path.exists(), "CONTRIBUTING.md must exist in repo root"
+    content = contrib_path.read_text(encoding="utf-8")
+
+    assert "# Contributing to abc-hct / Mitwirken an abc-hct" in content
+    assert "## English" in content
+    assert "## Deutsch" in content
+
+    # Check invariant references
+    assert "INV-DET-01" in content
+    assert "INV-ZE-02" in content
+    assert "INV-SEC-07" in content
+    assert "INV-SLA-10" in content
+    assert "RunAsInvoker" in content
+
+    # Check version freeze and ticket reference
+    assert "0.1.13" in content
+    assert "T-20260920-167562623" in content
+
+    # Check pre-commit quality gates
+    assert "pytest" in content
+    assert "ruff check ." in content
+    assert "compileall" in content
+    assert "git diff --check" in content
+
+    # Check zero-copyleft and offline guarantees
+    assert "Zero-Copyleft" in content
+    assert "SECURITY.md" in content
+
+
+def test_pyproject_contributing_url():
+    """Verify that pyproject.toml defines Contributing URL under [project.urls]."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+    urls = data.get("project", {}).get("urls", {})
+
+    assert "Contributing" in urls
+    assert urls["Contributing"] == "https://github.com/research-line/abc-hct/blob/main/CONTRIBUTING.md"
+
+
+def test_readme_and_readme_de_contributing_parity():
+    """Verify that README.md and README_de.md include synchronized Contributing badges and documentation links."""
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    assert "Contributing-Welcome-brightgreen.svg" in readme_en
+    assert "Mitwirken-Willkommen-brightgreen.svg" in readme_de
+    assert ("Verified-2026--10--04" in readme_en or "Verified-2026--10--01" in readme_en)
+    assert ("Geprüft-2026--10--04" in readme_de or "Geprüft-2026--10--01" in readme_de)
+
+    assert "CONTRIBUTING.md" in readme_en
+    assert "CONTRIBUTING.md" in readme_de
+
+
+def test_sbom_and_marketing_audit_20261001():
+    """Verify that Level 1 SBOM companion and MARKETING-LOG.txt document the 2026-10-01 Pfad A audit."""
+    sbom_txt = (REPO_ROOT / "THIRD_PARTY_LICENSES.txt").read_text(encoding="utf-8")
+    sbom_md = (REPO_ROOT / "THIRD_PARTY_LICENSES.md").read_text(encoding="utf-8")
+    marketing = (REPO_ROOT / "MARKETING-LOG.txt").read_text(encoding="utf-8")
+
+    assert "2026-10-01" in sbom_txt
+    assert "2026-10-01" in sbom_md
+    assert "12. TECHNICAL HYGIENE, CONTRIBUTING GUIDELINES" in marketing
+    assert "2026-10-01" in marketing
+    assert "CONTRIBUTING.md" in marketing
+
+
+def test_sbom_and_marketing_audit_20261004():
+    """Verify that Level 1 SBOM companion and MARKETING-LOG.txt document the 2026-10-04 Pfad B audit."""
+    sbom_txt = (REPO_ROOT / "THIRD_PARTY_LICENSES.txt").read_text(encoding="utf-8")
+    sbom_md = (REPO_ROOT / "THIRD_PARTY_LICENSES.md").read_text(encoding="utf-8")
+    marketing = (REPO_ROOT / "MARKETING-LOG.txt").read_text(encoding="utf-8")
+
+    assert "2026-10-04" in sbom_txt
+    assert "2026-10-04" in sbom_md
+    assert "13. PATH B DISCOVERABILITY, VISUAL TOPOLOGY AUDIT" in marketing
+    assert "2026-10-04" in marketing
+    assert "REC-20261004-01" in marketing
+    assert "REC-20261004-02" in marketing
+    assert "REC-20261004-03" in marketing
+
+
+def test_readme_badges_audit_recency_20261004():
+    """Verify that README.md and README_de.md badges are synchronized with 2026-10-04 audit recency."""
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    assert "Verified-2026--10--04" in readme_en
+    assert "Geprüft-2026--10--04" in readme_de
+    assert "Tests-61%20Passed" in readme_en
+    assert "Tests-61%20Passed" in readme_de
+    assert "LLM--Ready-2026--10--04" in readme_en
+    assert "LLM--Ready-2026--10--04" in readme_de
+
+
+def test_version_freeze_discipline_0113():
+    """Verify strict adherence to Version Freeze discipline (v0.1.13 frozen per T-20260920-167562623)."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+    assert data.get("project", {}).get("version") == "0.1.13"
+
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+    assert "Version-0.1.13-blue.svg" in readme_en
+    assert "Version-0.1.13-blue.svg" in readme_de

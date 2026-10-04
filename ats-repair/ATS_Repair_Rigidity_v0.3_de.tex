@@ -1,0 +1,659 @@
+% ATS_Repair_Rigidity_v0.3_de.tex — Gap-Serie Teil 6
+% R18-Korrekturfassung, 2. Oktober 2026. Quellengebundene Anspruchsgrenzen.
+\input{glyphtounicode}
+\pdfgentounicode=1
+\documentclass[11pt,a4paper]{article}
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\emergencystretch=3em
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl}
+
+\renewcommand*{\HyperDestNameFilter}[1]{ger.#1}
+
+\hypersetup{
+  pdftitle={Was die Produktformel zulässt: Ein Starrheitssatz und ein Effektivgewichts-Test für die ATS-Höhen-Teilkette},
+  pdfauthor={Lukas Geiger},
+  pdfsubject={Zahlentheorie, Arithmetische Geometrie, Teichmüller-Theorie, abc-Vermutung},
+  pdfkeywords={ATS, Arithmetischer Teichmüller-Raum, Produktformel, Starrheit, Projektive Höhe, Effektive Gewichte, Joshi},
+  pdfcreator={LaTeX with hyperref},
+  pdfproducer={pdfTeX},
+  bookmarksnumbered=true,
+  pdfpagemode=UseOutlines,
+  pdfstartview={FitH},
+  unicode=true
+}
+
+\newtheorem{theorem}{Satz}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Korollar}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Bemerkung}
+
+\newcommand{\OL}{\mathcal{O}_L}
+\newcommand{\Geff}{\mathcal{G}_{\mathrm{eff}}}
+
+\title{Was die Produktformel zulässt:\\Ein Starrheitssatz und ein Effektivgewichts-Test\\für die ATS-Höhen-Teilkette}
+\author{Lukas Geiger\\\small Unabhängiger Forscher, Bernau, Deutschland\\\small ORCID: 0009-0005-7296-1534}
+\date{2. Oktober 2026 --- Version 0.3 (Entwurf)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Teil~5 dieser Serie~\cite{part5} berichtet ein quellengebundenes ATS-Substanzaudit;
+die korrigierte Fassung von Teil~6 benennt die genaue Reichweite ihres
+Effektivgewichts-Tests. Für einen festen Zahlkörper $L$, seine festen
+Standard-Absolutbeträge und die volle Produktformel mit Tests an jedem
+$x\in L^\times$ muss eine Familie reeller Exponenten $(\gamma_v)$ über alle
+Stellen konstant sein, unabhängig von der Klassenzahl. Umverteilung mit
+endlichen Fasern liefert dieselbe Folgerung für effektive Gewichte. Eine
+vorgegebene $j^2$-Gewichtung auf einer nichtleeren Stellenmenge besitzt die
+konstante globale Fortsetzung; ausgeschlossen sind nur ungleiche endgültige
+Stellengewichte. Für globale Größenfamilien mit nachgewiesener linearer
+Effektivgewichts-Darstellung lässt die Produktformel höchstens einen
+$y$-abhängigen globalen Skalar zu. Bloße Abhängigkeit von den Gewichten genügt
+nicht für Klassenmitgliedschaft. Unter ATS~II($\tfrac12$) (5.3.3) identifiziert
+direktes Einsetzen den gewichteten Grad auf $L^\times$ und die projektive Höhe
+auf $\mathbb P^n(L)$ mit ihren klassischen Werten; die Stabilisierung der
+Quelle auf $L^\times$ ist dann summandenweise konstant. Die Erweiterung auf
+$\mathbb P^n(\overline L)$, die ATS-III-Linebundle-Höhe und der
+ATS-IV-Volumenapparat benötigen getrennte Brücken. Mitgliedschaft oder
+Nichtmitgliedschaft von Log-Volumina und Maßen in der linearen Klasse wird
+hier nicht klassifiziert. Koordinatenhyperebenen und ihre Rückbilder sind
+verschiedene Objekte. Weder ein globaler Abschluss des ATS-Reparaturprogramms
+noch ein Beweis oder eine Widerlegung von abc/IUT oder eine mathematische
+Zertifizierung der gesamten ATS-Serie wird behauptet.
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+%=====================================================================
+\section{Auftrag, Reichweite und Quellenversionen}\label{sec:mandate}
+
+Dieser Beitrag ist Teil~6 der abc-Gap-Serie. Teil~1~\cite{part1} lokalisierte
+die quantitative Lücke im Transportschritt von Korollar~3.12 aus IUTchIII~\cite{mochizukiIUT}; Teil~2~\cite{part2} lieferte ein Formkriterium; Teil~3~\cite{part3} destillierte einen prüfbaren
+Zulässigkeitsstandard; Teil~4~\cite{part4} auditierte die ATS-Serie~\cite{joshiI,joshiII,joshiIIhalf,joshiIII,joshiIV} auf Ledger-Ebene (v1-F). Der
+vorliegende Beitrag berichtet den mathematischen Kern des Reparaturprogramms:
+einen Starrheitssatz, ein Faktorisierungsinstrument und deren
+quellengebundene Anwendung auf die \emph{Höhen-Teilkette} der ATS-Texte.
+
+Reichweitendisziplin. \glqq Die auditierten Passagen\grqq{} bezeichnet: ATS~II($\tfrac12$) \S\S5.3, 5.10, 8.2--8.7 und ATS~IV \S1.5, in genau den in der
+Bibliographie zitierten arXiv-Versionen (II($\tfrac12$): v12; IV: v2; beide
+revidiert am 24. Februar 2025); ATS~III v4, Remark~8.9.2(2), ist ein
+gesondert typisiertes Anwendungsziel. Es handelt sich um öffentlich hinterlegte,
+versionierte Preprints, nicht um begutachtete Publikationen; ATS~IV trägt die
+Kopfzeile \glqq Preliminary version for comments\grqq{}. Dieser Beitrag auditiert nicht
+die vollständige ATS-Serie, klassifiziert deren Volumen- und Maßapparat nicht
+(siehe Fall C in Abschnitt~\ref{sec:consequences}) und erhebt keinen Anspruch
+über Strukturen außerhalb der auditierten Passagen. Grundregeln wie in den
+Teilen~4--5: kein Autoritätsargument, kein Wahrheitsverdikt, wörtliche Anker;
+Befunde zu späterer Programmarbeit erscheinen nur als datierte externe
+Statushinweise (Abschnitt~\ref{sec:notices}), getrennt von den Beweisen dieses
+Beitrags.
+
+%=====================================================================
+\section{Typen und operatives Glossar}\label{sec:types}
+
+Fixiert seien ein Zahlkörper $L$ und seine volle Menge $V_L$ archimedischer
+und endlicher Stellen. Lokale Eingaben und globale Größenfamilien haben
+verschiedene Typen:
+\begin{itemize}
+\item $b_v$ ist der feste Standard-Absolutbetrag: $|\sigma(x)|$ an einer
+reellen Stelle, $|\sigma(x)|^2$ an einer komplexen Stelle und
+$N\mathfrak p^{-v_{\mathfrak p}(x)}$ an einer endlichen Stelle. Daher gilt
+$\prod_v b_v(x)=1$ für jedes $x\in L^\times$.
+\item $\rho_{y,v}=b_v^{\,a_{y,v}}$ mit $a_{y,v}>0$ ist der äquivalente
+Quellen-Absolutbetrag auf $L_v$. Das Quellendatum wird mit $y$ abgekürzt.
+\item $\lambda_{y,v}$ ist ein Normalisierungsexponent. In unserer Notation
+besagt ATS~II($\tfrac12$) (5.3.3) \cite{joshiIIhalf}
+$b_v=\rho_{y,v}^{\,\lambda_{y,v}}$. Dies ist eine Paraphrase mit umbenannten
+Symbolen, kein wörtliches Zitat der $\alpha/\xi$-Notation der Quelle.
+\item $\beta_{y,v}=a_{y,v}\lambda_{y,v}$ ist das effektive Gewicht.
+Die punktweise Identität (5.3.3) impliziert $\beta_{y,v}=1$ für jedes $v$
+und außerdem $\lambda_{y,v}>0$.
+\end{itemize}
+Der Starrheitssatz beschränkt effektive Gewichte, nicht die beiden Faktoren
+getrennt. Koordinatenvariation muss daher metrische Werte nicht verändern.
+
+Für einen präzisen Koordinatenvergleich verwenden wir den gemeinsamen Raum
+$\mathbb R^{(V_L)}$ endlich getragener Vektoren und
+\[
+H_y=\{t\in\mathbb R^{(V_L)}:\sum_v\lambda_{y,v}t_v=0\},
+\qquad \ell_y(x)=(\log\rho_{y,v}(x))_v.
+\]
+Für $x\in L^\times$ hat $\ell_y(x)$ endlichen Träger.
+Die Normalisierungsidentität liefert $\ell_y^{-1}(H_y)=L^\times$.
+Nichtproportionale Koeffizientenfamilien definieren verschiedene Kerne in
+diesem gemeinsamen Raum, während diese Rückzüge übereinstimmen.
+Diese bedingte linear-algebraische Beobachtung beweist weder
+Nichtproportionalität für ein konkretes Quellenparameterpaar noch bestätigt
+sie Theorem~5.10.1 insgesamt.
+
+Eine Familie \emph{faktorisiert über effektive Gewichte} hier nur mit der
+linearen Darstellung aus Definition~\ref{def:geff}.
+Ein \emph{klassischer} Wert wird aus der festen Standardfamilie auf dem
+angegebenen arithmetischen Bereich berechnet. Eine
+\emph{stellenselektive} Gewichtsfamilie hat ungleiche Endgewichte statt
+eines einzigen globalen Skalars.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Lokale Eingaben, Koordinaten und globale Größenfamilien.}\label{tab:type_glossary}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+Objekt & Typ und Abhängigkeit & Bezug zu $\Geff$\\
+\midrule
+$b_v$ & Feste lokale Referenz & Eingabe, keine globale Familie\\
+$\rho_{y,v}$ & Möglicherweise variierender lokaler Absolutbetrag & Eingabe\\
+$\lambda_{y,v}$ & Normalisierungskoordinate & Parameter\\
+$\beta_{y,v}$ & Effektiver Koeffizient; unter (5.3.3) identisch $1$ & Koeffizient\\
+$H_y$ & Koordinatenkern; Variation bedingt durch Koeffizienten & Koordinatenobjekt\\
+$h_y,\deg_y$ & Globale Werte auf $\mathbb P^n(L)$ und $L^\times$; unter (5.3.3) invariant & Geprüfte lineare Darstellungen\\
+$\mathrm{vol}_y,\mu_y$ & Konkrete Maßobjekte und Abhängigkeit erfordern Identifikation & Zugehörigkeit und Nichtzugehörigkeit unklassifiziert\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+%=====================================================================
+\section{Der Starrheitssatz}\label{sec:rigidity}
+
+\begin{theorem}[Starrheit von Produktformel-Gewichten]\label{thm:rigidity}
+Sei $L$ ein Zahlkörper und $(\gamma_v)_{v \in V_L}$ eine Familie reeller
+Exponenten mit
+\[
+\prod_{v \in V_L} b_v(x)^{\gamma_v} = 1
+\qquad \text{für alle } x \in L^\times .
+\]
+Dann ist $\gamma_v$ konstant in $v$. (Wir schreiben $\gamma$ für die
+generische Exponentenfamilie des Satzes und reservieren $\lambda$ für die
+Normalisierungsexponenten der Quelle aus Abschnitt~\ref{sec:types}.)
+\end{theorem}
+
+\begin{proof}[Beweis]
+Setze $\mu_v := \gamma_v - 1$. Subtrahiert man den Logarithmus der
+Standard-Produktformel vom Logarithmus der Voraussetzung, so ergibt sich
+\[
+\sum_{v \in V_L} \mu_v \log b_v(x) = 0
+\qquad \text{für alle } x \in L^\times,
+\]
+wobei für jedes feste $x$ alle bis auf endlich viele Terme verschwinden.
+
+\emph{(i) Archimedische Komponente.} Für Einheiten $u \in \OL^\times$
+verschwinden alle endlichen Terme, also gilt
+$\sum_{\sigma\,\mathrm{arch}} \mu_\sigma \log b_\sigma(u) = 0$ für alle $u$.
+Nach dem Dirichletschen Einheitensatz~\cite[Ch.~I, \S7]{neukirch} ist
+$\mathrm{Log}(\OL^\times)$ ein volles Gitter in der Spur-Null-Hyperebene
+$H = \{ y \in \mathbb{R}^{r_1 + r_2} : \sum_\sigma y_\sigma = 0 \}$: Es liegt
+in $H$, weil $\sum_\sigma \log b_\sigma(u) = \log|N(u)| = 0$, und sein Rang
+ist $r_1 + r_2 - 1 = \dim H$. Der Vektor $(\mu_\sigma)_\sigma$ annulliert ein
+volles Gitter von $H$, mithin ganz $H$, und liegt daher in
+$H^\perp = \mathbb{R}\cdot(1,\dots,1)$:
+\[
+\mu_\sigma = c \quad \text{für alle archimedischen } \sigma,
+\text{ für ein } c \in \mathbb{R}.
+\]
+
+\emph{(ii) Endliche Komponente.} Sei $\mathfrak{p}$ ein beliebiges Primideal
+und $h$ die Ordnung seiner Klasse in der endlichen Klassengruppe~\cite[Ch.~I, \S6]{neukirch}, sodass $\mathfrak{p}^h = (x_{\mathfrak{p}})$ ein
+Hauptideal ist. Dann ist $\log b_{\mathfrak{q}}(x_{\mathfrak{p}}) = 0$ für
+alle endlichen $\mathfrak{q} \ne \mathfrak{p}$, während
+$\log b_{\mathfrak{p}}(x_{\mathfrak{p}}) = -h \log N\mathfrak{p}$ und
+\[
+\sum_{\sigma} \log b_\sigma(x_{\mathfrak{p}})
+= \log|N(x_{\mathfrak{p}})| = \log\bigl(N\mathfrak{p}^{\,h}\bigr)
+= h \log N\mathfrak{p} .
+\]
+Einsetzen in die Annullierungsidentität und Verwendung von (i) liefert:
+\[
+\mu_{\mathfrak{p}} \cdot (-h \log N\mathfrak{p})
++ c \cdot (h \log N\mathfrak{p}) = 0
+\quad\Longrightarrow\quad
+\mu_{\mathfrak{p}} = c .
+\]
+Da $\mathfrak{p}$ beliebig war, gilt $\mu_v = c$ für alle $v$, d.\,h.\
+$\gamma_v = 1 + c$ ist konstant. Umgekehrt erfüllt jede konstante Familie die
+Voraussetzung.
+\end{proof}
+
+\begin{remark}[Status]\label{rem:status}
+Der Satz ist elementar und liegt im Umfeld der Artin--Whaples-Axiomatik~\cite{artinwhaples}; wir formulieren und beweisen ihn vollständig, weil die
+Serie ihn als typisiertes Prüfinstrument verwendet und weil die in den
+Abschnitten~\ref{sec:application}--\ref{sec:consequences} gezogene Konsequenz
+von seinen genauen Voraussetzungen abhängt. Für den Satz selbst wird kein
+Neuheitsanspruch erhoben.
+\end{remark}
+
+\begin{corollary}[Ungleiche Endgewichte sind ausgeschlossen]\label{cor:noselect}
+Unter der Voraussetzung von Satz~\ref{thm:rigidity} für denselben Körper
+und alle Stellen erfüllen nur konstante Exponentenfamilien die Produktformel.
+Insbesondere erzwingt die Vorgabe $\gamma_v=j^2$ auf einer nichtleeren Menge
+$S\subseteq V_L$ den Wert $\gamma_v=j^2$ an jeder Stelle.
+Die konstante globale Fortsetzung ist zulässig; eine Fortsetzung durch
+ungleiche komplementäre Gewichte ist unmöglich.
+\end{corollary}
+
+\begin{lemma}[Umverteilung mit endlichen Fasern]\label{lem:redistribution}
+Sei $\tau : V_L \to V_L$ eine Abbildung mit endlichen Fasern (insbesondere sei
+$\tau$ eine Permutation), sei $a_v > 0$, und die Familie
+$\bigl(b_{\tau(v)}^{\,a_v \gamma_v}\bigr)_{v}$ erfülle die Produktformel für
+alle $x \in L^\times$. Dann sind die effektiven Gewichte
+$\beta_u := \sum_{v :\, \tau(v) = u} a_v \gamma_v$ konstant in $u$.
+\end{lemma}
+
+\begin{proof}[Beweis]
+Umindizierung der (für jedes feste $x$ endlichen) Summe liefert
+$\sum_v a_v\gamma_v \log b_{\tau(v)}(x) = \sum_u \beta_u \log b_u(x) = 0$ für
+alle $x \in L^\times$ --- das ist die Voraussetzung von
+Satz~\ref{thm:rigidity} in den effektiven Gewichten. Die Endlichkeit der
+Fasern macht jedes $\beta_u$ zu einer endlichen Summe und die Umindizierung
+zulässig.
+\end{proof}
+
+Für unendliche Korrespondenzen bräuchte man zusätzlich absolute
+Summierbarkeit je Faser und eine gerechtfertigte Umordnung; diese
+Allgemeinheit wird in diesem Beitrag nicht verwendet, und für die auditierten
+Passagen, die keine Stellen bewegen, wird sie auch nicht benötigt.
+
+%=====================================================================
+\section{Die Effektivgewichts-Größenklasse und die
+Aufzehrungsproposition}\label{sec:application}
+
+\begin{definition}[Effektivgewichts-Größenklasse]\label{def:geff}
+Fixiert sei ein Bereich $Z$. Eine Familie $Q=(Q_y:Z\to\mathbb R)_y$
+liegt in $\Geff$, wenn es $y$-unabhängige lokale Funktionale
+$q_w:Z\to\mathbb R$, $w\in V_L$, gibt mit
+\[
+Q_y(z)=\sum_{w\in V_L}\beta_{y,w}q_w(z),
+\qquad Q_{\mathrm{ref}}(z):=\sum_{w\in V_L}q_w(z).
+\]
+Beide Summen müssen endlich oder absolut konvergent sein, die erste für
+jedes $(y,z)$ und die Referenzsumme für jedes $z$.
+Die Anforderung an die Referenzsumme erfasst auch Parameter mit $\beta_y=0$.
+\end{definition}
+
+Zugehörigkeit erfordert diese \emph{lineare} Darstellung; bloße Abhängigkeit
+von $\beta_y$ reicht nicht. Auf einem einpunktigen Bereich setze man etwa
+$\beta_{y,w}=c_y$ an jeder Stelle, wobei $c_y$ die Werte $1$ und $2$
+annimmt, und $Q_y=c_y^2$. Eine Darstellung ergäbe $Q_y=c_y S$ mit
+$y$-unabhängigem $S=\sum_wq_w$ und erzwänge sowohl $S=1$ als auch $S=2$.
+Dieses Gegenbeispiel zur früheren Zugehörigkeitsbeschreibung gehört zur
+R18-Korrektur und ist kein neuer Befund über eine Quellenhöhe.
+Die generische Referenz $Q_{\mathrm{ref}}$ muss keine klassische
+arithmetische Größe sein; diese Bezeichnung verlangt eine gesondert
+identifizierte Höhe oder einen Grad samt Bereich.
+
+\begin{lemma}[Faktorisierung]\label{lem:factorization}
+Es gelte für den festen Körper und alle Stellen die gewichtete Produktformel
+\[
+\prod_v\rho_{y,v}(x)^{\lambda_{y,v}}=1
+\qquad\text{für jedes }x\in L^\times.
+\]
+Dann ist $\beta_{y,w}=c_y$ für alle $w$, und jedes $Q\in\Geff$ erfüllt
+\[
+Q_y=c_yQ_{\mathrm{ref}}.
+\]
+Der Skalar darf von $y$ abhängen. Gilt (5.3.3) punktweise, so ist
+$\beta_y=1$ und $Q_y=Q_{\mathrm{ref}}$.
+Abstrakte reelle Gewichte erlauben $c_y=0$; für die positiven
+$a_{y,v}$ und positiven Normalisierungsexponenten der Quelle gilt $c_y>0$.
+\end{lemma}
+
+\begin{proof}[Beweis]
+Für jedes $x\in L^\times$ wird die Voraussetzung zu
+\[
+0=\sum_v\lambda_{y,v}\log\rho_{y,v}(x)
+=\sum_w\beta_{y,w}\log b_w(x).
+\]
+Satz~\ref{thm:rigidity} liefert $\beta_{y,w}=c_y$.
+Einsetzen in Definition~\ref{def:geff} ergibt die Behauptung; die festgelegte
+Konvergenz gewährleistet die Existenz der Referenzsumme auch für $c_y=0$.
+\end{proof}
+
+\begin{proposition}[Aufzehrung auf den angegebenen arithmetischen Bereichen]\label{prop:exhaustion}
+Für die projektive Höhe aus ATS~II($\tfrac12$), Definition~8.2.1
+\cite{joshiIIhalf}, auf $\mathbb P^n(L)$ und den gewichteten Grad auf
+$L^\times$ verwenden wir die feste volle Standardfamilie und die
+Normalisierungsidentität (5.3.3). Dann gilt
+\begin{align*}
+h_y([x_0:\dots:x_n])
+&=\sum_v\lambda_{y,v}\log\max_i\rho_{y,v}(x_i)\\
+&=h_{\mathrm{cl}}([x_0:\dots:x_n]),\\
+\deg_y(x)&=\sum_v\lambda_{y,v}\log\rho_{y,v}(x)
+=\deg_{\mathrm{cl}}(x).
+\end{align*}
+Die Gradgleichheit hat den Bereich $x\in L^\times$.
+\end{proposition}
+
+\begin{proof}[Beweis]
+Auf einem von null verschiedenen Repräsentantentupel
+$(x_0,\dots,x_n)\in L^{n+1}\setminus\{0\}$ liefern die Positivität von
+$a_{y,v}$ und $\beta_{y,v}=1$
+\begin{align*}
+\sum_v\lambda_{y,v}\log\max_i\rho_{y,v}(x_i)
+&=\sum_v\lambda_{y,v}a_{y,v}\log\max_i b_v(x_i)\\
+&=\sum_v\log\max_i b_v(x_i).
+\end{align*}
+Für jedes Tupel haben diese Summen endlichen Träger. Ein Wechsel des
+Repräsentanten um $u\in L^\times$ ändert die Standardsumme um
+$\sum_v\log b_v(u)=0$; die gewichtete Summe hat dieselbe Eigenschaft durch
+(5.3.4) und (5.3.3), entsprechend Lemma~8.2.3 der Quelle.
+Damit steigt die Gleichheit zu $\mathbb P^n(L)$ ab.
+Für den Grad entfällt das Maximum; die Rechnung gilt auf $L^\times$.
+\end{proof}
+
+Die lokalen Höhenfunktionale
+$q_v(x_0,\dots,x_n)=\log\max_i b_v(x_i)$ sind Funktionen auf
+Repräsentantentupeln, nicht einzeln wohldefinierte projektive Funktionen.
+Sie liefern eine lineare Darstellung auf dem Tupelbereich.
+Für eine Darstellung auf $\mathbb P^n(L)$ kann man zunächst für jeden Punkt
+einen $y$-unabhängigen Repräsentanten fixieren; die \emph{summierte} Höhe
+ist unter der Produktformel von dieser Wahl unabhängig.
+Für den Grad gilt $q_v(x)=\log b_v(x)$ auf $L^\times$.
+
+\begin{remark}[Grenze und Stabilisierung]\label{rem:boundary}
+Dies betrifft die identifizierten Bereiche und die lineare Klasse, nicht
+jedes Höhen- oder Maßobjekt der ATS-Serie.
+In ATS~II($\tfrac12$) \S\S8.6--8.7 wird die stabilisierte Höhe auf
+$x\in L^\times$ ausgewertet. Jeder Summand $h_{\alpha\cdot y}(x)$ ist
+unter der Normalisierungsidentität gleich demselben klassischen Wert;
+sein Supremum ist daher ebenfalls dieser Wert. Für diese konstante Familie
+ist kein zusätzlicher Tausch von Supremum und Summe nötig.
+Für ein allgemeines Supremum unklassifizierter Größen folgt dies nicht.
+Für Log-Volumina, Hüllen, Haar-Normalisierungen und Jacobi-Determinanten
+ist hier weder Zugehörigkeit noch Nichtzugehörigkeit bewiesen; ihre
+konkrete Darstellung ist die offene Maßpinnungs-Obligation R-E2.
+\end{remark}
+
+%=====================================================================
+\section{Quellengebundene Anwendung auf die Höhen-Teilkette}\label{sec:sourcebound}
+
+Tabelle~\ref{tab:substitution_audit} trennt das direkte Einsetzergebnis von
+Quellenobjekten, die eine zusätzliche Brücke benötigen.
+Die Seitenanker beziehen sich auf die zitierten exakten PDFs und behaupten
+keine Prüfung ihres gesamten Inhalts.
+
+\begin{table}[htbp]
+\centering\small
+\caption{Einsetzergebnisse und unbewiesene Bereichs- oder Objektbrücken.}\label{tab:substitution_audit}
+\begin{tabularx}{\textwidth}{@{}p{0.26\textwidth}XX@{}}
+\toprule
+Quellenstelle & Konsequenz im angegebenen Vertrag & Grenze\\
+\midrule
+II($\tfrac12$) (5.3.3)--(5.3.4), S.~32 & $\beta_y=1$; die gewichtete Produktformel reduziert sich auf die Standardformel & Derselbe Körper $L$ und volles $V_L$\\
+\addlinespace
+II($\tfrac12$) Def.~8.2.1 / Lem.~8.2.3, S.~51 & $h_y=h_{\mathrm{cl}}$ auf $\mathbb P^n(L)$ & Repräsentantentupel müssen absteigen\\
+\addlinespace
+II($\tfrac12$) Rem.~8.2.2 / Prop.~8.3.1, S.~51 & Die Quelle erweitert auf $\mathbb P^n(\overline L)$ und behauptet dort nichttriviale Abhängigkeit & Erweiterungs-, Bewertungs- und Basiswechselbrücke hier unbewiesen; durch die $L$-Bereichsidentität allein nicht widerlegt\\
+\addlinespace
+II($\tfrac12$) \S\S8.6--8.7, S.~54--55 & Auf $L^\times$ ist jeder normalisierte Summand gleich $h_{\mathrm{cl}}$, daher auch das Supremum & Keine Folgerung für andere stabilisierte Objekte\\
+\addlinespace
+III Rem.~8.9.2(2), S.~90 & Der Höhenvergleich von Punkten in $X(\overline L)$ mittels eines amplen Geradenbündels ist ein gesondertes Quellenobjekt & Brücke zur auditierten projektiven Höhe bleibt offen\\
+\addlinespace
+IV \S1.5, S.~17 & Die Termvergleichsbeschränkung betrifft untere und obere Log-Volumenvergleiche zwischen $y_0$ und $\varphi(y_0)$ & Kein universelles Verbot aller lokalen Vergleiche; keine $\Geff$-Klassifikation\\
+\addlinespace
+II($\tfrac12$) Thm.~5.10.1(7) & Koordinatenkerne können bei nichtproportionalen Koeffizienten verschieden sein, während ihre $L^\times$-Rückzüge übereinstimmen & Bedingte Deutung, keine Bestätigung des gesamten Quellensatzes\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\emph{Anwendbarkeitsgate H-PLACES.} Der Satz verwendet einen festen
+Zahlkörper, alle seine archimedischen und endlichen Stellen und alle
+von null verschiedenen Elemente dieses Körpers als Tests.
+Eine Quellennotation über nichtarchimedische Stellen
+(wie ATS~III \S3.2(5)) darf nicht automatisch mit diesem $V_L$
+identifiziert werden. Ebenso verlangen Stellen einer Erweiterung $L'$,
+die nur auf $L^\times$ getestet werden, eine explizite Körperabstiegs-
+und Stellenbrücke. Keine der beiden Indexidentifikationen folgt aus
+einer Koordinatenanalogie.
+
+Die Quelle selbst liefert die punktweise Normalisierung für das Einsetzen
+auf dem $L$-Bereich. Damit sind die angegebenen Höhen- und Gradidentitäten
+begründet; nicht jedes operative Höhen-, Geradenbündel- oder
+Log-Volumenobjekt an anderer Stelle der Serie ist damit identifiziert.
+
+%=====================================================================
+\section{Bedingte Konsequenzen (drei typisierte Fälle)}\label{sec:consequences}
+
+Die Fälle betreffen eine geprüfte Größendarstellung und einen ausdrücklich
+abgeglichenen Bereich, Körper, eine Stellenfamilie und eine Testmenge.
+\begin{description}
+\item[Fall A (punktweise Identität (5.3.3)).]\mbox{}\\
+Dann ist $\beta_y=1$, und jedes bewiesene Mitglied von $\Geff$ ist gleich
+seiner Referenz. Die identifizierte Höhe auf $\mathbb P^n(L)$ und der Grad
+auf $L^\times$ sind klassisch und $y$-unabhängig.
+Die Anwendung auf eine andere operative Größe verlangt deren
+Identifikation und Bereichsbrücke.
+\item[Fall B (nur volle gewichtete Produktformel).]\mbox{}\\
+Dann ist $\beta_y=c_y\mathbf1$, und für $Q\in\Geff$ gilt
+$Q_y=c_yQ_{\mathrm{ref}}$. Der Skalar kann mit $y$ variieren,
+die Endgewichte jedoch nicht von Stelle zu Stelle.
+Für tatsächliche Standardhöhen und Grade ist dies eine globale
+Skalierung auf ihren jeweiligen Bereichen.
+\item[Fall C (Zugehörigkeit unklassifiziert).]\mbox{}\\
+Für die konkreten Log-Volumina, Hüllen und Maße ist hier weder eine lineare
+Darstellung noch ein Hindernis für eine solche bewiesen.
+Der Satz beschränkt weiterhin effektive Gewichte, sobald seine
+gewichtete Produktformel-Voraussetzung gilt; diese Größenfamilien
+klassifiziert er dadurch nicht. R-E2 bleibt offen.
+\end{description}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Typisierte Konsequenzmatrix.}\label{tab:case_verdicts}
+\begin{tabularx}{\textwidth}{@{}p{0.16\textwidth}XXX@{}}
+\toprule
+Fall & Effektive Gewichte & Globale Größen & Herleitungsobligation\\
+\midrule
+A: punktweise Identität & $\beta_y=1$ & $Q_y=Q_{\mathrm{ref}}$ für bewiesene Mitglieder & Operatives Objekt und Bereichsbrücke identifizieren\\
+\addlinespace
+B: volle gewichtete Formel & $\beta_y=c_y\mathbf1$ & $Q_y=c_yQ_{\mathrm{ref}}$ für bewiesene Mitglieder & Gewichtete Formel, Indizierung und Faktorisierung prüfen, falls andere Variation gemeint ist\\
+\addlinespace
+C: unklassifizierte Größe & Bei denselben Satzvoraussetzungen beschränkt & Keine Klassifikation der Größe aus Gewichten allein & Konkrete Darstellung und Maßpinnungsbrücke klären\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\emph{Bedingte Konsequenz.} Eine stellenselektive metrische Variation kann
+unter der vollen gewichteten Formel nicht von den geprüften linearen
+Familien auf dem $L$-Bereich getragen werden; die punktweise Identität
+beseitigt sogar ihre globale Skalierung.
+Prop.~8.3.1 auf $\mathbb P^n(\overline L)$, der Geradenbündelvergleich
+aus ATS~III und der Log-Volumenapparat aus ATS~IV sind gesonderte Ziele.
+Ihre operativen Objekte und Transportbrücken müssen geprüft werden,
+bevor diese Konsequenz angewandt wird. Die Standard-Produktformel des
+festen $b$ ist nichts, dessen Widerlegung diese Fälle von einer Quelle
+verlangen. Es folgen weder globaler Kollaps noch Abschluss des
+Reparaturprogramms noch Ausschluss anderer Wege.
+
+\emph{Falsifikations- und Revisionskriterien.}
+\begin{enumerate}
+\item Eine nichtkonstante Effektivgewichtsfamilie, die genau die Produktformel
+für denselben Körper und alle Stellen auf jedem $x\in L^\times$ erfüllt,
+würde Satz~\ref{thm:rigidity} widersprechen.
+Ein Gegenbeispiel zur Faktorisierung muss außerdem den linearen
+Darstellungs- und Konvergenzvertrag erfüllen.
+\item Der Nachweis eines anderen Bereichs oder einer anderen Definition einer
+operativen Quellenhöhe widerlegt einen unbewiesenen Identifikationsschritt,
+nicht den Satz. Deshalb bleiben Erweiterungs- und Geradenbündelbrücken
+gesondert.
+\item Eine künftige Quellenrevision kann neue Objekte oder Brücken liefern.
+Sie verlangt eine neue Prüfung dieser Version; sie beweist weder
+rückwirkend eine fehlende Brücke noch widerlegt sie eine an die zitierte
+Version gebundene Aussage.
+\end{enumerate}
+
+%=====================================================================
+\section[Externer Programmstatus (nicht Teil der vorliegenden Beweise)]{Externer Programmstatus\texorpdfstring{\\}{ }(nicht Teil der vorliegenden Beweise)}\label{sec:notices}
+
+Teil~5 ist veröffentlicht \cite{part5}; seine Veröffentlichung erfüllt
+die verbleibenden mathematischen Brücken nicht.
+R6-1 / REP-6-1 ist eine bedingte algebraische
+Boxtransport-Rekonstruktion: tatsächliche Haar-Normalisierung,
+Tensor-/Indexkompatibilität und der operative Volumenvergleich bleiben
+gesonderte Aufgaben. Ein Defekt in einem gewichteten Zwischenmodell
+ist für sich kein Gegenbeispiel zu einem Joshi-Theta-Volumensatz.
+R6-2 / REP-6-2 setzt V1 und eine explizite $L'\to L$-Stellenbrücke voraus.
+R6-3 / REP-6-3 betrifft die Eindeutigkeit normalisierter Daten über
+demselben Körper, nicht die Gleichheit aller globalen Koordinatenhyperebenen.
+Diese Hinweise beziehen sich auf das Augustprogramm und seine
+R18-Korrekturen; keiner wird in den obigen Beweisen verwendet.
+
+Das GNC-Quellenaudit wird in Version 1.2 \cite{gnc}, das
+Ledger-Audit aus Teil~4 in Version 0.3 \cite{part4} zitiert.
+Das Zertifikatsform-Kriterium ist ein gesondertes Instrument \cite{part2}.
+Die Maßpinnungs-Obligation R-E2 aus Teil~6 ist nicht GNC-E2.
+Ebenso sind REP-6-1--3 Reparaturpositionen, keine Ledger-F-R-Kennungen;
+Publikationsversion 0.3 behauptet keine neue v1-F-Ledger-Abnahme.
+Die P5-/Schattentomograph- und Gesamtkettengates bleiben offen.
+
+%=====================================================================
+\section{Anspruchsgrenzen}\label{sec:claims}
+
+Satz~\ref{thm:rigidity} und Lemma~\ref{lem:redistribution} betreffen den
+expliziten Vertrag für einen festen Körper und alle Stellen.
+Lemma~\ref{lem:factorization} verlangt zusätzlich eine geprüfte lineare
+Darstellung; Proposition~\ref{prop:exhaustion} betrifft
+$\mathbb P^n(L)$ und $L^\times$.
+Nur diese geprüften Größen-/Bereichspaare tragen die negative Aussage
+über verbleibende stellenselektive Variation.
+Die $\overline L$-Erweiterung, Geradenbündelhöhen aus ATS~III und
+Log-Volumina aus ATS~IV sind hier nicht mit diesem Vertrag identifiziert.
+Behauptet werden weder erschöpfende Abwesenheit eines anderen metrischen
+Trägers noch Nichtzugehörigkeit in Fall C, Abschluss des Reparaturprogramms
+oder ein Gesamtfehlerverdikt über die Quellen.
+Die Koordinatenkerndeutung ist bedingt und bestätigt nicht die vollständige
+Nichtkonstanzbehauptung aus Theorem~5.10.1(7) der Quelle.
+Es gibt weder Beweis noch Widerlegung von abc oder IUT und keine
+mathematische Gesamtabnahme der Serie.
+
+Die R18-Inventur ist die Quelle dieser Korrekturen.
+Unabhängige Manuskript- und Quellenprüfungen sind Reviewbelege, kein
+maschinengeprüfter Lean-Beweis, kein numerisches Experiment und kein
+neues formales Verifikationsergebnis.
+
+\input{ai_disclosure_de.tex}
+
+%=====================================================================
+\begin{thebibliography}{99}
+\raggedright
+
+\bibitem{artinwhaples}
+E.~Artin and G.~Whaples,
+\emph{Axiomatic characterization of fields by the product formula for
+valuations},
+Bull.\ Amer.\ Math.\ Soc.\ \textbf{51} (1945), no.~7, 469--492.
+DOI: \href{https://doi.org/10.1090/S0002-9904-1945-08383-9}{10.1090/S0002-9904-1945-08383-9}
+
+\bibitem{neukirch}
+J.~Neukirch,
+\emph{Algebraic Number Theory},
+Grundlehren der mathematischen Wissenschaften \textbf{322},
+Springer, Berlin--Heidelberg, 1999.
+ISBN 3-540-65399-6. DOI: \href{https://doi.org/10.1007/978-3-662-03983-0}{10.1007/978-3-662-03983-0}
+
+\bibitem{joshiI}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces I},
+arXiv:2106.11452v4 [math.AG], 2021 (revised 24 February 2025).
+
+\bibitem{joshiII}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller spaces II: Proof of a local
+prototype of Mochizuki's Corollary 3.12},
+arXiv:2303.01662v3 [math.AG], 2023 (revised 24 February 2025).
+
+\bibitem{joshiIIhalf}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces II$\frac{1}{2}$:
+Deformations of Number Fields},
+arXiv:2305.10398v12 [math.AG], 2023 (revised 24 February 2025).
+
+\bibitem{joshiIII}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces III: A `Rosetta Stone'
+and a proof of Mochizuki's Corollary 3.12},
+arXiv:2401.13508v4 [math.AG], 2024 (revised 24 February 2025).
+
+\bibitem{joshiIV}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmüller Spaces IV: Proof of the
+abc-conjecture},
+arXiv:2403.10430v2 [math.AG], 2024 (revised 24 February 2025).
+
+\bibitem{mochizukiIUT}
+S.~Mochizuki,
+\emph{Inter-universal Teichmüller Theory I--IV},
+Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{57} (2021), no.~1/2, 3--723.
+
+\bibitem{part1}
+L.~Geiger,
+\emph{The Comparison in IUTchIII, Corollary 3.12: From Attempted Repair to Structural Diagnosis},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.19960781}{10.5281/zenodo.19960781}.
+Zitierte Fassung v6.4, 2026-10-01.
+DOI: \href{https://doi.org/10.5281/zenodo.23081604}{10.5281/zenodo.23081604}.
+
+\bibitem{part3}
+L.~Geiger,
+\emph{The Bridge Certificate: A Line-Level Audit Instrument for Inter-Theoretic Transfer Arguments, with Four Applications to the abc Literature},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21925803}{10.5281/zenodo.21925803}.
+Zitierte Fassung 0.3, 2026-10-01.
+DOI: \href{https://doi.org/10.5281/zenodo.23090371}{10.5281/zenodo.23090371}.
+
+\bibitem{part4}
+L.~Geiger,
+\emph{The Bridge Certificate Applied to the Joshi ATS Series: A Ledger Audit (DRAFT)},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21951155}{10.5281/zenodo.21951155}.
+Zitierte Fassung 0.3, 2026-10-02.
+DOI: \href{https://doi.org/10.5281/zenodo.23092802}{10.5281/zenodo.23092802}.
+
+\bibitem{gnc}
+L.~Geiger,
+\emph{Global Normalization in Joshi's Arithmetic Teichmüller Theory: What the Identification Carries --- and What Carries the Theorem (DRAFT)},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21924253}{10.5281/zenodo.21924253}.
+Zitierte Fassung 1.2, 2026-10-02.
+DOI: \href{https://doi.org/10.5281/zenodo.23092166}{10.5281/zenodo.23092166}.
+
+\bibitem{landscapeA}
+L.~Geiger,
+\emph{The abc Landscape: Obstructions, Failed Routes, and HCT Diagnostics (DRAFT)},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21916900}{10.5281/zenodo.21916900}.
+Zitierte Fassung 1.1, 2026-08-13.
+DOI: \href{https://doi.org/10.5281/zenodo.21924338}{10.5281/zenodo.21924338}.
+
+\bibitem{part2}
+L.~Geiger,
+\emph{The Bridge-Contract Criterion: A Form Audit for Transport Arguments, with an Instantiation in the abc Literature},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21960476}{10.5281/zenodo.21960476}.
+Zitierte Fassung 0.2, 2026-08-16.
+DOI: \href{https://doi.org/10.5281/zenodo.21960477}{10.5281/zenodo.21960477}.
+
+\bibitem{part5}
+L.~Geiger,
+\emph{The Joshi ATS Series under the Bridge-Certificate Standard: A Targeted Substance Audit and an All-Place Rigidity Classification of Effective Normalization Weights},
+Zenodo, 2026.
+Concept DOI: \href{https://doi.org/10.5281/zenodo.21956398}{10.5281/zenodo.21956398}.
+Zitierte Fassung 0.2, 2026-08-15.
+DOI: \href{https://doi.org/10.5281/zenodo.21956399}{10.5281/zenodo.21956399}.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,9 @@
+abc-hct (Curated calculation scripts, reproduction harnesses and machine-readable result certificates for Hecke curves and Manin-Hecke quotients)
+Copyright (c) 2026 Lukas Geiger, HCT Research Line Team
+
+This product includes software developed by Lukas Geiger and the HCT Research Line Team
+as part of the research-line open-science initiative (https://github.com/research-line)
+under the open-bricks open-source ecosystem (https://github.com/open-bricks).
+
+Licensed under the MIT License.
+See LICENSE, THIRD_PARTY_LICENSES.md, and THIRD_PARTY_LICENSES.txt for details.

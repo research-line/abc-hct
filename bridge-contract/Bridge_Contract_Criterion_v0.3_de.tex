@@ -1,0 +1,2059 @@
+% v0.3 (2026-10-02): bounded C7 diagram alignment and current series scope; historical definitions and raw audit codes retained.
+% Bridge_Contract_Criterion_v0_de.tex — Gap-Serie Teil 2 (DE)
+% Status: v0.2 MAJOR REVISION (2026-08-16) — strikt nach dem Heiler-Bauplan
+% der 3-Agenten-Review-Runde 1
+% (_results/3agenten_review/Teil2_BridgeContract_HEILER_2026-08-16.md, §§3–9)
+% gebaut, wie von _results/3agenten_review/Teil2_BridgeContract_RICHTER_2026-08-16.md
+% entschieden.
+% Deutsche Fassung von Bridge_Contract_Criterion_v0_en.tex (1:1-Strukturparität).
+% v0.2-Änderungen: Instrumentversionierung v1-F / v1-T mit T-/F-Namensraum;
+% Component 6 und 7 gehärtet (verbindliche Kompatibilitätsidentitäten;
+% adressiertes Ordnungslemma mit H1–H5; expliziter Auditor-Grenze); Ledger
+% ersetzt durch den normativen Crosswalk (F-R6a/F-R6b-Aufspaltung,
+% F-R4a/F-R4b -> C5, F-R8 als E8 mit Default X); Kalibrierung umbenannt zu einer
+% protokoll-eingefrorenen retrospektiven Zwei-Fall-Illustration von v1-T mit der
+% vollständigen Dissensmatrix; abc-Befunde neu gewichtet (F-R2a = X, kein
+% künstliches C6-Bestehen, mehrere gewichtete Befunde); Joshi = vergleichender
+% Diskriminierungsfall, Prasad die einzige akzeptierte Kontrolle; LANA =
+% externer Vergleichspunkt; Geltungsbereich reduziert auf EINE
+% abc-Instanziierung plus RH/global-only-Ausblick; KI-Offenlegung eingebunden;
+% Operator-Blöcke verschoben nach
+% _claude-work/T2_REMOVED_COMMENTS_2026-08-16.md.
+% v0.1-Herkunft: Strukturfreigabe D-005=A [U 2026-08-15]; P0-Gates G1–G5
+% erledigt; sec:related aus t2-s3 (Crosswalk), sec:abc aus t2-s4;
+% sec:calibration aus dem protokoll-eingefrorenen Zwei-Fall-Audit
+% (BCM_AUDIT_SYNTHESE_V1). T2-BIB integriert 2026-08-16 (36 verifizierte
+% Einträge, 0 undefinierte Zitationen; prasad-Seiten am Primärdokument auf
+% 91–114 korrigiert). Offen vor Upload: Retest-Widerleger, DE-Übersetzung,
+% Dry-Run, Supplement der Zeilen-Ankertabellen (P1-5). Kein Kombi
+% (Konvention 2026-08-15).
+\documentclass[11pt,a4paper]{article}
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc}
+% DE-Satzanpassung: Der deutsche Text ist laenger als der englische, wodurch das
+% v1-F-Ledger von Abschnitt 2.3 ueber eine Seite hinauswaechst. ltablex macht
+% tabularx seitenumbruchfaehig (Inhalt identisch, nur Umbruch erlaubt);
+% emergencystretch faengt die langen deutschen Komposita in Ueberschriften ab.
+\usepackage{ltablex}
+\keepXColumns
+\setlength{\emergencystretch}{2em}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl}
+\hypersetup{
+  pdfencoding=unicode,
+  psdextra,
+  breaklinks=true,
+  pdftitle={Das Bridge-Contract-Kriterium: Ein Form-Audit für Transportargumente, mit einer Instanziierung in der abc-Literatur},
+  pdfauthor={Lukas Geiger},
+  pdfsubject={Beweisauditierung, Bridge Contract, Transportargumente, abc-Vermutung},
+  pdfkeywords={abc-Vermutung, Beweisauditierung, Transportargumente, Bridge Contract, Ledger-Audit, Mochizuki, Joshi}
+}
+\renewcommand*{\HyperDestNameFilter}[1]{de.#1}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{remark}{Bemerkung}[section]
+
+\title{Das Bridge-Contract-Kriterium:\\Ein Form-Audit für Transportargumente,\\mit einer Instanziierung in der abc-Literatur}
+\author{Lukas Geiger\\\small Unabhängiger Forscher, Bernau, Deutschland\\\small ORCID: 0009-0005-7296-1534}
+\date{Oktober 2026 --- Version 0.3}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Manche Beweisbehauptungen widersetzen sich einer zeilenweisen Prüfung nicht
+deshalb, weil einzelne Schritte undurchsichtig wären, sondern weil ihr
+tragender Kern ein \emph{Transport} ist: Eine Größe wandert zwischen
+theoretischen Rahmenwerken, und der numerische Gehalt der Behauptung ruht auf
+der Zulässigkeit dieser Wanderung. Eine verwandte Klasse ruht auf
+\emph{global-only}-Aussagen: Behauptungen, die erst nach Summation über alle
+Stellen verfügbar sind, ohne stellenweisen Zugriff. Wir schlagen einen
+siebenkomponentigen \emph{Bridge Contract} (Brückenvertrag) und einen
+versionierten Ledger-Audit vor. Wir berichten eine retrospektive
+Zwei-Fall-Machbarkeitsillustration des eingefrorenen
+v1-T-Transport-Ledgers und eine substanzielle
+\emph{selected-rows}-Instanziierung des Kriteriums in der abc-Literatur (die
+dort bespielten v1-F-Zeilen werden benannt; die Vollmatrix-Kodierung aller
+Zeilen ist zurückgestellt). Die Arbeit enthält kein RH-seitiges Verdikt;
+RH-Uniformitäts- und global-only-Positivitätsbehauptungen bleiben als
+ausdrücklich ungetesteter Ausblick stehen. Das Kriterium beurteilt
+\emph{Vertragsform}, nicht mathematische Wahrheit: Ein bedientes Ledger ist
+notwendig, nicht hinreichend, und der Auditor prüft das Vorhandensein und die
+Adressierbarkeit einer Pflicht, niemals deren mathematische Gültigkeit. Sein
+Wert liegt darin, dass sich Fehlschläge lokalisieren lassen -- der Audit benennt die
+fehlende Klausel an einer angegebenen Zeile statt eines diffusen Zweifels.
+Der aktuelle Forschungsstand gleicht die bedingte C7-Illustration an alle
+fünf Hypothesen der unveränderten Vertragsdefinition an, nach einem
+Gegenmodell zum früheren unvollständigen Diagramm. Spätere Entwicklungen
+in Teilen 4--6 bleiben von den historischen Auditbindungen getrennt:
+Gleichfeldrige Starrheit erlaubt globale Skalierung, während Koordinaten-,
+Feld-, Perioden- und Volumenbrücken offen bleiben. Die Zwei-Fall-Rohmatrix
+bleibt eine versionsgebundene Illustration, keine Reliabilitätsschätzung.
+\end{abstract}
+
+\clearpage
+% sloppy nur fuer das Inhaltsverzeichnis: die langen deutschen Kapiteltitel
+% ragen sonst in den rechten Rand.
+\begingroup\sloppy
+\tableofcontents
+\endgroup
+\clearpage
+
+%=====================================================================
+\section{Einleitung}\label{sec:intro}
+
+Zwei Klassen von Beweisbehauptungen widersetzen sich der klassischen
+zeilenweisen Prüfung auf charakteristische Weise. Die erste sind
+\emph{Transportbehauptungen}: Eine Größe wird in einem Rahmenwerk konstruiert,
+und von ihrer numerischen Ablesung wird behauptet, sie lande in einer
+Zielregion, die in einem anderen Rahmenwerk festgelegt ist, wobei der Gehalt
+der Behauptung auf der Zulässigkeit der Wanderung ruht und nicht auf
+irgendeinem einzelnen Rechenschritt. Der dokumentierte Präzedenzfall ist der
+umstrittene Transportschritt von Mochizukis Korollar 3.12, dessen
+zehnjährige Kontroverse nach unserer Lesart nicht aus Uneinigkeit über
+einzelne Zeilen besteht, sondern aus Uneinigkeit darüber, was der Transport
+\emph{schuldet}~\cite{part1}. Die zweite sind
+\emph{global-only-Behauptungen}: Aussagen, die erst nach Summation über alle
+Stellen verfügbar sind, ohne stellenweisen Zugriff -- eine Gestalt, die
+sowohl in der abc-Literatur als auch in Positivitätszugängen zur
+Riemannschen Vermutung auftritt.
+
+Diese Arbeit schlägt ein prüfbares Formkriterium für beide Klassen vor: den
+\emph{Bridge Contract}, eine Liste von sieben Vertragskomponenten, die ein
+Transport bedienen muss, bevor seine numerische Schlussfolgerung gezogen
+werden darf, zusammen mit einem Ledger-artigen Auditprotokoll mit fester
+Verdikt-Grammatik. Das Kriterium erwuchs aus den Audits dieser Serie -- der
+Lückenlokalisierung von Teil 1~\cite{part1} und dem Zertifikatsinstrument
+von Teil 3~\cite{part3} -- und ist seither, in den späteren Teilen, auf das
+wichtigste publizierte Reparaturprogramm angewandt
+worden~\cite{part4,part5,part6}. Hier stellen wir das Kriterium selbst als
+übertragbare Methode vor: seine Definition
+(Abschnitt~\ref{sec:criterion}), seine Stellung unter bestehenden
+Auditierungsstrukturen (Abschnitt~\ref{sec:related}), eine
+protokoll-eingefrorene retrospektive Zwei-Fall-Illustration des
+eingefrorenen Transport-Ledgers (Abschnitt~\ref{sec:calibration}) und eine
+\emph{selected-rows}-Instanziierung des Kriteriums am
+abc-Transportschritt (Abschnitt~\ref{sec:abc}). Das begleitende
+Landschaftspapier des Programms verzeichnet, wie sich das Kriterium unter
+die von ihm auditierten Wege einordnet~\cite{landscapeA}.
+
+Zwei Grenzen des Geltungsbereichs werden hier ausgesprochen statt der
+Folgerung überlassen. Erstens ist das Instrument \emph{versioniert}: Das
+volle Ledger von Abschnitt~\ref{sec:ledger} und das sechszeilige
+Transport-Ledger der retrospektiven Illustration sind zwei verschiedene
+Instrumente mit einem publizierten Crosswalk, und identische numerische
+Zeilensuffixe bedeuten nicht identische Semantik. Zweitens berichtet diese
+Arbeit genau eine Instanziierung, in der abc-Literatur, und diese
+Instanziierung ist eine \emph{selected-rows}-Instanziierung: Die bespielten
+Zeilen werden in Abschnitt~\ref{sec:abc} benannt, und eine Kodierung der
+vollständigen v1-F-Matrix für diese Fälle ist auf eine spätere Version
+zurückgestellt. Unter einer \emph{Instanziierung} verstehen wir durchgehend
+die Anwendung des Kriteriums auf einen \emph{dispute complex}
+(Streitkomplex) -- hier den abc-Transportstreit, der das ursprüngliche
+Argument und sein Reparaturprogramm als einen einzigen Komplex mit zwei
+auditierten Profilen umfasst. Uniformitätsbehauptungen in Richtung der
+Riemannschen Vermutung und global-only-Positivitätsbehauptungen erscheinen
+als ausdrücklich ungetesteter Ausblick (Abschnitte~\ref{sec:rh}
+und~\ref{sec:global}); nirgends unten wird ein RH-seitiges Verdikt gezogen.
+
+Damit die Zählung eindeutig bleibt, werden die in dieser Arbeit behandelten
+Fälle durchgehend nach Art und nicht nach Ordnungszahl benannt: ein
+\emph{retrospektiver Bekannte-Lücke-Fall} und eine \emph{akzeptierte
+Kontrolle} (Abschnitt~\ref{sec:calibration}), die \emph{abc-Instanziierung}
+mit einem \emph{vergleichenden Diskriminierungsfall} und einem
+\emph{nachgelagerten Vererbungsbeispiel} (Abschnitt~\ref{sec:abc}), ein
+\emph{externer Vergleich} (Abschnitt~\ref{sec:abc-external}) und der
+\emph{RH-/global-only-Ausblick} (Abschnitte~\ref{sec:rh}
+und~\ref{sec:global}).
+
+Durchgehend wird eine Grenze ausnahmslos eingehalten: Das Kriterium
+beurteilt \emph{Vertragsform}, nicht mathematische Wahrheit. Ein vollständig
+bedientes Ledger ist notwendig für die Zulässigkeit einer Transportlesart,
+niemals hinreichend für die zugrunde liegende Behauptung; eine unbediente
+Zeile lokalisiert eine Pflicht, sie widerlegt kein Theorem. Der Auditor
+prüft, ob eine Pflicht in einer benannten Version eines Textes vorhanden und
+adressierbar ist, niemals, ob die Mathematik, die sie benennt, korrekt ist.
+Der Wert, den wir für die Methode beanspruchen, ist genau diese
+Lokalisierung: Audits, die in einer benannten fehlenden Klausel enden statt
+in einem diffusen Zweifel.
+
+%=====================================================================
+\section{Das Kriterium}\label{sec:criterion}
+
+\subsection{Der Bridge Contract}\label{sec:contract}
+
+Die Situation, die wir axiomatisieren, ist die folgende. Ein Beweis behauptet
+eine numerische Schlussfolgerung der Form \glqq die Ablesung eines im Rahmenwerk
+$A$ konstruierten Objekts landet in einer im Rahmenwerk $B$ festgelegten
+Zielregion\grqq{}, wobei die beiden Rahmenwerke konstruktionsbedingt keine
+gemeinsame Auswertung teilen. Die Behauptung wird durch einen
+\emph{Transport} vermittelt: Etiketten, Container oder Funktoren, die die
+beiden Seiten in Beziehung setzen. Das Kriterium fragt, was der Transport
+\emph{vertraglich} bereitstellen muss, bevor die numerische
+Schlussfolgerung gezogen werden darf.
+
+\begin{definition}[Bridge Contract]\label{def:bridge}
+Eine Behauptung setze ein Quellobjekt zu einer numerischen Zielregion in
+Beziehung. Ein \emph{Bridge Contract} $\mathrm{Br}$ für diese Behauptung
+besteht aus den folgenden sieben Komponenten (im Folgenden
+\emph{Komponente~1} bis \emph{Komponente~7}).
+\begin{enumerate}
+  \item \textbf{Quellobjekt mit Ablesung} ($X_q$, $\nu_q$, $i_q$): der
+    quellseitige Bereich $X_q$, ein konkretes numerisches Ablesefunktional
+    $\nu_q\colon X_q \to V$ in den geordneten Werteraum von Komponente~2 und
+    die typisierte Abbildung $i_q\colon X_q \to C$ in den Container von
+    Komponente~3 (im motivierenden Fall: eine log-volumetrische Ablesung des
+    $q$-Piloten).
+  \item \textbf{Zielobjekt mit Ziel-Ablesung und festgelegter Zielregion}
+    ($X_\Theta$, $\nu_\Theta$, $(V,\preceq)$, $H_\Theta$): der zielseitige
+    Bereich $X_\Theta$, eine Ziel-Ablesung $\nu_\Theta\colon X_\Theta \to V$,
+    ein von beiden Ablesungen geteilter geordneter Werteraum $(V,\preceq)$
+    und eine \emph{im Voraus} festgelegte Zielregion $H_\Theta \subseteq V$
+    -- eine Abwärtsmenge $H_\Theta = \{v \in V : v \preceq \tau_\Theta\}$
+    oder die entsprechende Aufwärtsmenge, mit der Schwelle
+    $\tau_\Theta \in V$, die benannt wird, bevor der Quellwert inspiziert
+    wird. Die typisierte Abbildung $i_\Theta\colon X_\Theta \to C$ gehört zu
+    Komponente~3. Im motivierenden Fall ist $V = \mathbb{R}$ mit seiner
+    üblichen Ordnung und $H_\Theta = \mathbb{R}_{\le -|\log\Theta|}$.
+  \item \textbf{Typisierter gemeinsamer Container} ($C$, $\preceq_C$,
+    $i_q\colon X_q \to C$, $i_\Theta\colon X_\Theta \to C$): ein gemeinsames
+    Gefäß, ausgestattet mit der von der Behauptung verwendeten
+    Ordnungsrelation $\preceq_C$ (eine Halbordnung oder die Präordnung, die
+    die Quelle selbst angibt, mit ihrem Träger angegeben), zusammen mit
+    \emph{explizit typisierten} Abbildungen von beiden Seiten, jede mit
+    Definitions- und Zielbereich angegeben. Ein Container, in dem beide
+    Objekte lediglich nebeneinander liegen, trägt für sich genommen keine
+    Skala, und ein Container ohne angegebene Ordnung trägt keine
+    Ordnungsbehauptung.
+  \item \textbf{Zulässige Verknüpfung} ($L$): Etiketten- oder
+    Verknüpfungsdaten, die eine \emph{erlaubte Identifikation} angeben, nicht
+    bloße Homonymie. Einen Namen über Rahmenwerke hinweg zu teilen ist keine
+    mathematische Relation.
+  \item \textbf{Getrenntes Unbestimmtheitsbudget} ($I$): ein explizites
+    Budget, das absorbierbare Renormierung, Verschmierung und
+    \emph{nicht absorbierte Restlast} unterscheidet. Eine Unbestimmtheit, die
+    aufgerufen wird, um eine Obstruktion zu absorbieren, muss gegen dieses
+    Budget gebucht werden, nicht gegen den Container.
+  \item \textbf{Kompatible gemeinsame Auswertung} ($\nu_C$). Eine typisierte
+    Abbildung $\nu_C\colon C\to(V,\preceq)$ wird zusammen mit den von der
+    Behauptung verlangten Kompatibilitätsidentitäten bereitgestellt,
+    insbesondere $\nu_C\circ i_q=\nu_q$ auf dem angegebenen Quellbereich und,
+    wo das Ziel durch eine Ziel-Ablesung $\nu_\Theta$ repräsentiert wird,
+    $\nu_C\circ i_\Theta=\nu_\Theta$ auf dem angegebenen Zielbereich. Diese
+    Kompatibilitätsklauseln sind verbindlich; die bloße Existenz einer
+    numerischen Abbildung auf $C$ löst diese Komponente niemals ein.
+  \item \textbf{Adressiertes Ordnungslemma.} Ein benanntes Lemma gibt die
+    Hypothesen an, unter denen die zulässige Verknüpfung eine
+    Ordnungsrelation in $C$ liefert, gibt die Monotonie- und
+    Zielregionshypothesen an und leitet die verlangte Zielzugehörigkeit her.
+    Für eine untere Zielmenge $H_\Theta=\{v\in V:v\preceq\tau_\Theta\}$
+    lautet eine typische Form: Wenn (H1) $L(x,y)$ zulässig ist, (H2)
+    $i_q(x)\preceq_C i_\Theta(y)$ gilt, (H3) $\nu_C$ auf solchen verknüpften
+    Paaren monoton ist, (H4) die Kompatibilitätsklauseln von Komponente~6
+    gelten und (H5) $\nu_C(i_\Theta(y))\preceq\tau_\Theta$, dann ist
+    $\nu_q(x)\in H_\Theta$. Hypothese (H2) ist niemals eine freie Annahme:
+    Der Vertrag verlangt vom Text, sie entweder in einem adressierten
+    Teillemma aus den Verknüpfungsdaten von Komponente~4 \emph{herzuleiten}
+    oder sie gesondert zu beweisen -- in beiden Fällen mit eigener
+    Beweisadresse. Dieselbe Verankerungsforderung gilt für jede tragende
+    Hypothese des Lemmas.
+\end{enumerate}
+\end{definition}
+
+Ein Vertrags-Audit verzeichnet diese Komponente nur dann als textlich
+bedient, wenn das Lemma, seine Hypothesen, seine behauptete Anwendbarkeit am
+auditierten Schritt und eine Beweisadresse in der benannten Version vorhanden
+und einsehbar sind. Der Auditor prüft Vorhandensein und Adressierbarkeit,
+nicht mathematische Gültigkeit. Eine bediente Zeile zertifiziert daher nicht,
+dass das Lemma oder sein Beweis korrekt ist.
+
+Komponente~6 und Komponente~7 sind die tragenden Klauseln: Ohne sie liefert das
+gemeinsame Nebeneinander in einem Container zusammen mit geteilten Etiketten
+nur qualitative Nähe. In den unten auditierten Präzedenzfällen fallen dort
+auch die schwersten Befunde an -- aber es sind nicht die einzigen Zeilen,
+die Befunde tragen, und das Ledger berichtet das volle Profil statt einer
+einzelnen übrig bleibenden Zeile.
+
+Abbildung~\ref{fig:bridge_contract_architecture} illustriert die konzeptionelle Architektur eines Bridge Contracts und bildet das Zusammenspiel der sieben kanonischen Komponenten zwischen den disjunkten Quell- und Ziel-Frameworks ab. Tabelle~\ref{tab:vertrags_komponenten} fasst die sieben kanonischen Komponenten, ihre mathematischen Signaturen, die geforderten Verifikationspflichten und die charakteristischen Fehlermodi synoptisch zusammen.
+
+\begin{figure}[p]
+\centering
+\resizebox{0.88\textwidth}{!}{%
+\begin{tikzpicture}[
+  >=Stealth,
+  box/.style={draw=black!70, rounded corners=3pt, line width=0.8pt, align=center, inner sep=4pt},
+  srcbox/.style={box, fill=blue!6, draw=blue!70!black},
+  tgtbox/.style={box, fill=orange!8, draw=orange!80!black},
+  ctrbox/.style={box, fill=teal!8, draw=teal!80!black},
+  valbox/.style={box, fill=purple!6, draw=purple!70!black},
+  gatebox/.style={box, fill=gray!8, draw=black!60, dashed},
+  arrow/.style={->, line width=0.9pt, draw=black!80},
+  annot/.style={font=\scriptsize, text=black!70, align=left}
+]
+
+  % Top layer: Source, Container, Target
+  \node[srcbox, text width=3.2cm] (src) at (0, 7.0) {
+    \textbf{Framework $\mathcal{F}_A$ (Quellseite)}\\[2pt]
+    \footnotesize Quellbereich $X_q$\\[1pt]
+    \scriptsize Ablesung $\nu_q\colon X_q \to V$\\
+    \textit{(Komponente~1)}
+  };
+
+  \node[ctrbox, text width=4.4cm] (ctr) at (4.7, 7.0) {
+    \textbf{Gemeinsamer Behälter $(C, \preceq_C)$}\\[2pt]
+    \footnotesize Typisiertes Gefäß mit Ordnung $\preceq_C$\\[1pt]
+    \scriptsize Abbildungen $i_q\colon X_q \to C$, $i_\Theta\colon X_\Theta \to C$\\
+    \textit{(Komponente~3)}
+  };
+
+  \node[tgtbox, text width=3.2cm] (tgt) at (9.4, 7.0) {
+    \textbf{Framework $\mathcal{F}_B$ (Zielseite)}\\[2pt]
+    \footnotesize Zielbereich $X_\Theta$\\[1pt]
+    \scriptsize Ziel-Ablesung $\nu_\Theta\colon X_\Theta \to V$\\
+    \textit{(Komponente~2)}
+  };
+
+  % Intermediate layer: Linkage and Budget
+  \node[gatebox, text width=3.3cm] (link) at (2.2, 3.8) {
+    \textbf{Zulässige Verknüpfung $L$}\\[1pt]
+    \scriptsize Erlaubte Identifikation (keine Homonymie)\\\textit{(Komponente~4)}
+  };
+
+  \node[gatebox, text width=3.4cm] (bdg) at (7.2, 3.8) {
+    \textbf{Unbestimmtheits-}\\\textbf{budget $I$}\\[1pt]
+    \scriptsize Absorbierte vs.\ verbleibende Last\\\textit{(Komponente~5)}
+  };
+
+  % Value Space
+  \node[valbox, text width=7.2cm] (val) at (4.7, -1.0) {
+    \textbf{Geordneter Werteraum $(V,\preceq)$}\\[2pt]
+    \footnotesize Vorab fixierter Zielbereich $H_\Theta = \{v \in V : v \preceq \tau_\Theta\}$\\[1pt]
+    \scriptsize Feste Schranke $\tau_\Theta \in V$ vorab benannt
+  };
+
+  % Embeddings
+  \draw[arrow] (src.east) -- (ctr.west) node[midway, above, font=\scriptsize] {$i_q$};
+  \draw[arrow] (tgt.west) -- (ctr.east) node[midway, above, font=\scriptsize] {$i_\Theta$};
+
+  % Downward evaluation
+  \draw[arrow, line width=1.1pt, draw=teal!80!black] (ctr.south) -- (val.north)
+    node[pos=0.85, left, font=\scriptsize] {$\nu_C\colon C \to (V,\preceq)$};
+
+  \node[annot, text width=3.8cm, align=center] at (7.2, 1.3) {
+    \textbf{Komponente~6}:\\
+    $\nu_C \circ i_q = \nu_q$\\
+    $\nu_C \circ i_\Theta = \nu_\Theta$
+  };
+
+  % Direct readouts to value space
+  \draw[arrow, dashed, draw=blue!70!black] (src.south) to[out=-90,in=165]
+    node[left, font=\scriptsize] {$\nu_q$} (val.north west);
+  \draw[arrow, dashed, draw=orange!80!black] (tgt.south) to[out=-90,in=15]
+    node[right, font=\scriptsize] {$\nu_\Theta$} (val.north east);
+
+  % C7: north anchor below the value node; extra hypotheses grow down.
+  \node[draw=black!70, rounded corners=4pt, line width=0.8pt, fill=yellow!8,
+    text width=11.2cm, align=center, inner sep=5pt, anchor=north]
+    (lem) at ($(val.south)+(0,-0.55)$) {
+    \textbf{Komponente~7: Bedingtes adressiertes Ordnungslemma}\\[2pt]
+    \scriptsize (H1) $L(x,y)$ zulässig\\
+    \scriptsize (H2) $i_q(x)\preceq_C i_\Theta(y)$\\
+    \scriptsize (H3) $\nu_C$ auf dem verknüpften Paar monoton\\
+    \scriptsize (H4) $\nu_C\circ i_q=\nu_q$, $\nu_C\circ i_\Theta=\nu_\Theta$ auf den angegebenen Bereichen\\
+    \scriptsize (H5) $\nu_C(i_\Theta(y))\preceq\tau_\Theta$\\[2pt]
+    \scriptsize $(\mathrm{H1})\land\cdots\land(\mathrm{H5})\ \Longrightarrow\ \nu_q(x)\in H_\Theta$
+  };
+
+  \draw[arrow, draw=black!60, line width=0.7pt] (val.south) -- (lem.north);
+
+\end{tikzpicture}%
+}
+\caption{Bedingte Bridge-Contract-Illustration für die untere Zielmenge.
+Alle fünf Hypothesen werden benötigt; (H2) und jede tragende Pflicht
+verlangen eigene Beweisadressen. Das Diagramm illustriert den Vertrag
+und zertifiziert nicht die Korrektheit eines Quellenbeweises.}
+\label{fig:bridge_contract_architecture}
+\end{figure}
+
+\paragraph{Entwicklung der C7-Illustration.}
+Das frühere Diagramm ließ die Zielschranke (H5) weg und ersetzte
+Kompatibilität (H4) durch eine beschränkte Restlast. Seine Implikation
+scheitert im Identitätsmodell: Alle Bereiche und Träger seien $\mathbb R$,
+alle dargestellten Abbildungen Identitäten, mit üblicher Ordnung,
+$x=y=1$, zulässigem $L(x,y)$, Restlast $0$, $\tau_\Theta=0$ und
+$H_\Theta=(-\infty,0]$. Die früher dargestellten Prämissen gelten,
+einschließlich Kompatibilität, aber $\nu_q(x)=1\notin H_\Theta$.
+Dies widerlegt die unvollständige Bildimplikation, nicht
+Definition~\ref{def:bridge} mit (H1)--(H5).
+Abbildung~\ref{fig:bridge_contract_architecture} stellt diese fünf
+Bedingungen nun getrennt dar; die Illustration zertifiziert keinen
+Quellenbeweis und begründet keine experimentelle Validierung der Methode.
+
+
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{0.95}
+\caption{Die sieben kanonischen Komponenten eines Bridge Contracts $\mathrm{Br}$ und ihre Verifikationspflichten.}
+\label{tab:vertrags_komponenten}\label{tab:contract_components}
+\begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash}p{0.18\textwidth} >{\raggedright\arraybackslash}p{0.22\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Komponente & Mathematische Signatur & Verifikationspflicht & Fehlermodus / Lückentypologie \\
+\midrule
+C1: Quell-Ablesung & $(X_q, \nu_q, i_q)$ & Expliziter Definitions-, Zielbereich und Auswertungsfunktional $\nu_q\colon X_q \to V$ & Untypisierte Quelle, implizite Ablesung \\
+\addlinespace[3pt]
+C2: Zielregion & $(X_\Theta, \nu_\Theta, (V,\preceq), H_\Theta)$ & Werteraum $(V,\preceq)$ und Zielregion $H_\Theta$ \emph{im Voraus} fixiert & Verschobene Schwelle, nachträgliche Zielmenge \\
+\addlinespace[3pt]
+C3: Typisierter Container & $(C, \preceq_C, i_q, i_\Theta)$ & Träger $C$ mit Halbordnung/Präordnung $\preceq_C$ und typisierten Abbildungen & Skalenloses Nebeneinander, ungeordneter Träger \\
+\addlinespace[3pt]
+C4: Zulässige Verknüpfung & $L(x,y)$ & Erlaubte Identifikationsregel durch Satz/Hypothese spezifiziert & Nominale Identität, bloße Homonymie \\
+\addlinespace[3pt]
+C5: Unbestimmtheitsbudget & $(I, \mathrm{Renorm},\allowbreak \mathrm{Blur},\allowbreak \mathrm{Res})$ & Getrennte Verbuchung herausgeteilter Gruppenoperationen vs.\ Restlast & Rest dem Container angelastet, ungebuchter Drift \\
+\addlinespace[3pt]
+C6: Kompatible Auswertung & $\nu_C\colon C \to V$ & Kom\-mu\-ta\-ti\-vi\-täts\-iden\-ti\-tä\-ten $\nu_C\circ i_q=\nu_q$ und $\nu_C\circ i_\Theta=\nu_\Theta$ bewiesen & Koinzidenz unterstellt, fehlende Kommutation \\
+\addlinespace[3pt]
+C7: Adressiertes Ordnungslemma & Lemma $\mathrm{Ord}(\dots)$, (H1)--(H5) & Monotonie von $\nu_C$, Herleitung von (H2) $i_q(x)\preceq_C i_\Theta(y)$ & \glqq Follows formally\grqq{}, unadressierter Ordnungssprung \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Zur Lesart der Bereichsausdrücke}\label{sec:glossary}
+
+Vier Ausdrücke in Definition~\ref{def:bridge} sind generisch gemeint und
+werden hier fixiert, damit der Vertrag auch außerhalb des motivierenden Falls
+instanziiert werden kann. Eine Identifikation ist \emph{erlaubt}, wenn sie
+durch eine benannte Hypothese oder eine benannte Klasse von Theoremen
+zugelassen wird -- geteilte Notation ist keine Lizenz. Eine Unbestimmtheit
+ist \emph{absorbierbar}, wenn sie durch eine explizit angegebene Äquivalenz-
+oder Invarianzrelation herausgeteilt werden kann. Die \emph{Restlast} ist der
+Term, der übrig bleibt, nachdem jeder erlaubte Quotient gebildet wurde; sie
+wird gegen das Budget von Komponente~5 gebucht und niemals gegen den
+Container. Ein \emph{zweiter Modus} ist ein alternativer Zweig, eine
+alternative Normierung oder Vorzeichenkonvention, die den Zielwert oder die
+Ordnungsrelation ändern kann und deren Vorhandensein die entsprechende
+Ledger-Zeile auslöst. Das inter-universelle Teichmüller-Vokabular des
+motivierenden Falls liefert Beispiele für diese Ausdrücke, nicht ihre
+Definitionen.
+
+\subsection{Ledger-Form und Verdikt-Grammatik}\label{sec:ledger}
+
+\noindent\textbf{Instrumentversionen.} Wir unterscheiden zwei
+versionsskopierte Instrumente. \textbf{BCM-Ledger v1-F} ist das volle Ledger,
+mit dem das allgemeine siebenkomponentige Kriterium in dieser Arbeit
+operationalisiert wird. \textbf{BCM-Ledger v1-T} ist das sechszeilige
+Transportinstrument, das am 15.~August 2026 vor den beiden historischen
+Quellenkodierungsdurchgängen eingefroren wurde. Die retrospektive
+Zwei-Fall-Illustration in Abschnitt~\ref{sec:calibration} betrifft
+ausschließlich v1-T. Zeilenbezeichner sind durch das Versionspräfix
+skopiert; identische numerische Suffixe bedeuten nicht identische Semantik.
+Die Zuordnungstabelle unten ist ein Crosswalk, keine Behauptung, dass die
+beiden Instrumente austauschbar wären.
+
+\medskip
+
+Der Vertrag wird durch ein festes Ledger von Testzeilen auditiert. Jede Zeile
+erhält eines von drei Verdikten -- \emph{liefert} / \emph{liefert nicht} /
+\emph{liefert teilweise} -- zusammen mit einem Konfidenzqualifikator und
+einem Quellenanker (Seiten- bzw.\ Abschnittsangabe des auditierten Textes).
+Mehrere Zeilen sind aufgespalten, eine aus den Audits selbst gelernte
+Lektion: Ohne die Aufspaltung fallen zwei verschiedene Befunde in ein Wort
+zusammen. Tabelle~\ref{tab:bcm_ledger_v1f} ist normativ für v1-F. \glqq Primärkomponente\grqq{}
+benennt die lokalisierte Vertragspflicht; Abhängigkeiten werden transparent
+gelistet.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{0.70}
+\setlength{\tabcolsep}{3.5pt}
+\caption{Das vollständige BCM-Ledger v1-F: Kern-Prüfzeilen, primäre Vertragskomponenten und beobachtbare Prüfkriterien.}
+\label{tab:bcm_ledger_v1f}
+\begin{tabularx}{\textwidth}{@{}l l >{\raggedright\arraybackslash}X@{}}
+\toprule
+v1-F-Zeile & Primär & Beobachtbarer Test der Bedienung \\
+\midrule
+F-R0 & C1 (abh.\ C2)
+  & Quelle, Ziel, Ablesungen, Werteraum und Zielregion sind getrennt mit
+    Definitions- und Zielbereich typisiert. \\
+F-R1 & C3
+  & Ein gemeinsamer Container und beide typisierten Einbettungen oder
+    Abbildungen sind benannt. \\
+F-R2a & C4 (abh.\ C6)
+  & Für jeden Schritt innerhalb des Links ist das Transportgesetz mit einer
+    Adresse und einer sichtbaren Wirkung auf die Ablesung angegeben;
+    \glqq keine Operation\grqq{} ergibt \texttt{X}, nicht automatisch \texttt{E+}. \\
+F-R2b & C6 (abh.\ C3)
+  & Der containerübergreifende Schritt trägt einen sichtbaren
+    Umrechnungsfaktor oder eine Kompatibilitätsgleichung; bloße Konvention
+    oder Koinzidenz ist höchstens \texttt{I}. \\
+F-R3 & C2
+  & $H_\Theta$ bzw.\ $\tau_\Theta$ wird festgelegt, bevor der Quellwert
+    inspiziert wird; kein nachträgliches Verschieben. \\
+F-R4a & C5
+  & Jede nicht neutrale Last oder Kompensation ist quantifiziert und einer
+    Budgetkategorie zugeordnet. \\
+F-R4b & C5
+  & Die Last wird am Brückenschritt selbst gebucht, mit Träger, Vorzeichen
+    und Restterm; nachgelagert zu einer vorausgesetzten Schlussfolgerung
+    genügt nicht. \\
+F-R5 & C5
+  & Absorbierbare Renormierung, Verschmierung und nicht absorbierter Rest
+    werden auseinandergehalten; der Rest wird nicht dem Container
+    angelastet. \\
+F-R6a & C6
+  & Die gemeinsame Auswertung und alle von der Behauptung benötigten
+    Kompatibilitätsidentitäten sind im Text vorhanden und adressiert. \\
+F-R6b & C7
+  & Das benannte Ordnungslemma listet seine Hypothesen auf, behauptet ihre
+    Anwendbarkeit am Schritt und trägt eine konkrete Beweisadresse;
+    zusätzlich trägt jede tragende Hypothese -- insbesondere (H2) --
+    ihren eigenen Anker (Herleitung aus den Verknüpfungsdaten oder
+    gesonderter Beweis). Der Auditor prüft Vorhandensein und
+    Adressierbarkeit dieser Anker, niemals ihre Gültigkeit. \\
+F-R7 & C7 (abh.\ C2)
+  & Die tatsächlich hergeleitete Aussage ist die Zugehörigkeit zu
+    $H_\Theta$; Approximation, Nähe oder asymptotische Annäherung wird nicht
+    zu Zugehörigkeit umetikettiert. \\
+\midrule
+F-R8 & \emph{Erweiterungszeile} E8
+  & \textbf{E8 (Definition).} E8 ist eine Bereichserweiterung außerhalb des
+    siebenkomponentigen Crosswalks: Sie bildet auf keine Vertragskomponente
+    ab und ist nur als ausgelöste Diagnostik Teil von v1-F.
+    \emph{Auslöser:} Im Bereichsmodell der Behauptung sind mehrere Modi,
+    Zweige, Normierungen oder ein vorzeichen- bzw.\ ordnungsrelevanter
+    Alternativmodus vorhanden. Dann müssen alle Modi sichtbar und entweder
+    vom Ordnungslemma abgedeckt oder mit Gründen ausgeschlossen sein (hier
+    berührt E8 C5 und C7, ohne zu ihnen zu gehören). Ohne den Auslöser ist
+    die Zeile notwendig \texttt{X}. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Jede aktive \emph{Kernzeile} (F-R0 bis F-R7) hat genau eine primäre
+Vertragskomponente. Unterstützende Abhängigkeiten dürfen gelistet werden,
+aber ein negatives Verdikt wird an der im Crosswalk benannten
+Primärkomponente berichtet. Die Erweiterungszeile F-R8 ist die einzige
+Ausnahme: Ihrer E8-Definition nach bildet sie auf keine Komponente ab, und
+ein ausgelöster F-R8-Befund wird am Erweiterungsetikett E8 selbst berichtet,
+niemals an einer Vertragskomponente. F-R8 ist keine universelle Kernzeile;
+sie wird nur durch den angegebenen Mehrmoden-Auslöser aktiviert und ist
+andernfalls als X kodiert.
+
+Die Kodierung verwendet fünf Rohcodes: explizit eingelöst (\texttt{E+}),
+explizit nicht einlösbar (\texttt{E-}), nur über eine dokumentierte
+Rekonstruktion einlösbar (\texttt{I}), nicht adressiert (\texttt{N}) und
+außerhalb des Geltungsbereichs (\texttt{X}), letzterer nur mit expliziter
+Geltungsbereichs- oder Auslöserbegründung zulässig. \texttt{I} und \texttt{N}
+sind Formbefunde, keine Fehlerbefunde. Rohcodes werden von der öffentlichen
+Verdikt-Grammatik niemals gelöscht: E+ bildet auf \emph{liefert} ab; I bildet
+auf \emph{liefert teilweise durch dokumentierte Rekonstruktion} ab; E$-$ und
+N bilden auf \emph{liefert nicht} ab, wobei die Unterscheidung zwischen
+expliziter Offenheit und Nichtadressierung erhalten bleibt; X ist außerhalb
+des Geltungsbereichs. Kodiererpaare werden weiterhin als Paare berichtet.
+Eine mit \texttt{X} kodierte Zeile trägt kein Verdikt und wird nicht im
+Nenner gezählt. Wo eine Zeile zweifach kodiert wird, ist die in der
+retrospektiven Illustration verwendete Doppelkodierungsregel in
+Abschnitt~\ref{sec:calibration} angegeben; sie ist eine Regel jener
+Instrumentversion und nicht Teil von v1-F.
+
+\subsection{Crosswalk zwischen den beiden Instrumentversionen}\label{sec:crosswalk}
+
+Das eingefrorene Transport-Ledger v1-T steht Teilen von v1-F funktional nahe,
+ist mit ihnen aber nicht identisch. Die Zuordnung wird publiziert, damit die
+retrospektive Illustration von Abschnitt~\ref{sec:calibration} gegen das
+volle Instrument gelesen werden kann, ohne dass eines durch das andere
+ersetzt wird.
+
+\begin{table}[htbp]
+\centering
+\caption{Crosswalk zwischen dem eingefrorenen Transportinstrument (BCM-Ledger v1-T) und dem Vollinstrument (BCM-Ledger v1-F).}
+\label{tab:crosswalk_v1t_v1f}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X l@{}}
+\toprule
+v1-T-Zeile & Eingefrorene Semantik & Nächstes in v1-F \\
+\midrule
+T-R2a & Transportgesetz explizit & F-R2a / C4 \\
+T-R2b & sichtbarer Umrechnungsfaktor & F-R2b und F-R6a / C6 \\
+T-R4a & Kompensationsmechanismus benannt und lokalisiert & F-R4a / C5 \\
+T-R4b & Existenz und Wohldefiniertheit bewiesen & \emph{kein direktes
+  Äquivalent}$^{\dagger}$ \\
+T-R6 & zweite Modi und Fälle sichtbar und symmetrisch & F-R8 / ausgelöstes
+  E8 \\
+T-R8 & kettenschließende Kompatibilität hergeleitet, lokal oder global
+  & F-R6a, F-R6b / C6--C7 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\noindent {\small $^{\dagger}$\,T-R4b hat kein direktes v1-F-Äquivalent: Der
+nächste Nachbar ist F-R4b (Buchung der Last am Brückenschritt), aber die
+eingefrorene Existenz- und Wohldefiniertheitssemantik von T-R4b wird selbst
+von keiner v1-F-Kernzeile getragen. Der Crosswalk verzeichnet Nähe, nicht
+Identität.}
+
+\noindent
+Tabelle~\ref{tab:crosswalk_v1t_v1f} zeigt funktionale Nähe, nicht Identität. Zu beachten ist
+insbesondere, dass sich die numerischen Suffixe kreuzen: Die
+Zweiter-Modus-Zeile von v1-T ist T-R6, während die Zweiter-Modus-Zeile von
+v1-F F-R8 ist. Das ist der Grund, weshalb in dieser Arbeit an jedem
+Zeilenbezeichner das Versionspräfix mitgeführt wird.
+
+\subsection{Geltungsbereich des Kriteriums}\label{sec:scope}
+
+Das Kriterium beurteilt \emph{Vertragsform}, nicht Wahrheit. Was ein
+vollständig bedientes Ledger feststellt, ist textliche Vertragsvollständigkeit
+für die Transportlesart eines ausgewählten Schrittes; es ist kein Beweis der
+zugrunde liegenden Behauptung, und es zertifiziert nicht die Mathematik, die
+die bedienten Zeilen benennen. Umgekehrt widerlegt eine unbediente Zeile die
+Behauptung nicht -- sie lokalisiert die Last: Die Zeile benennt die Klausel,
+die ein vollständiges Argument bedienen muss. Diese Asymmetrie ist der Zweck
+des Kriteriums. Die Auditeinheit ist entsprechend eng: Das Ledger zerlegt
+einen ausgewählten Transportstreit in benannte Pflichten; es reduziert nicht
+die historische Kontroverse als Ganzes. Was ein Audit liefert, ist ein Profil
+benannter Pflichten an einem ausgewählten umstrittenen Transportschritt, mit
+Gewichten -- und dort kann dann mathematische Arbeit statt Exegese
+investiert werden.
+
+%=====================================================================
+\section{Verwandte Auditierungsstrukturen}\label{sec:related}
+
+Fünf Arbeitsfelder berühren das Kriterium von Abschnitt~\ref{sec:criterion}:
+normative Darstellungen dazu, wann eine Auslassung in einem mathematischen
+Beweis akzeptabel ist; maschinelle Formalisierung tiefer Mathematik;
+Zertifikatsschnittstellen in der Informatik; strukturierte
+Assurance-Argumentation in der Sicherheitstechnik; und die Methodologie
+dokumentierter mathematischer Uneinigkeit. Zwei Beobachtungen ordnen das
+Folgende. Erstens ist das nächste heuristische Analogon unter den hier
+verglichenen Strukturen die Tradition der zertifizierenden
+Algorithmen~\cite{McConnell2011}, von der sich das Kriterium in der Richtung
+des Zertifikats und darin unterscheidet, was die Prüfung garantiert
+(Abschnitt~\ref{sec:related-certificates}). Zweitens ist uns innerhalb des
+hier gesichteten Korpus keine unabhängige, begutachtete Fallanalyse der
+abc/IUT-Kontroverse bekannt -- eine Lücke, die fortbesteht und die die
+vorliegende Arbeit nicht schließt, da ihr Beitrag auf der Ebene der
+Vertragsform liegt (Abschnitte~\ref{sec:related-controversy}
+und~\ref{sec:scope}).
+
+\subsection{Beweisauditierung und Peer-Review-Methodologie}\label{sec:related-audit}
+
+Andersen~\cite{Andersen2020} fragt, wann eine Lücke in einem publizierten
+Beweis als akzeptabel behandelt werden darf, und gibt normative Kriterien für
+die Substanz des Ausgelassenen. Der Bridge Contract beantwortet eine andere
+Frage: ob die Vertragskomponenten von Abschnitt~\ref{sec:contract} in der
+Darstellung überhaupt bedient werden. Die beiden Beurteilungen sind
+unabhängig -- ein vollständig bedientes Ledger ist eine Aussage über Form,
+nicht über die Wahrheit der transportierten Behauptung.
+De~Millo--Lipton--Perlis~\cite{DeMillo1979} beschreiben Beweisakzeptanz als
+sozialen Prozess, getragen von gemeinschaftlicher Lektüre. Das Ledger ist
+unabhängig von der Aufnahme durch eine Gemeinschaft und von einem bestimmten
+institutionellen Begutachtungsverfahren; auditorunabhängig ist es nicht, wie
+der berichtete Kodierungsdissens zeigt
+(Abschnitt~\ref{sec:calibration}). Andersen~\cite{Andersen2017} dokumentiert,
+was Gutachter in der Mathematik tatsächlich prüfen -- eine deskriptive
+Darstellung eines bestehenden Prozesses; das Kriterium ist ein Instrument,
+das außerhalb jedes solchen Prozesses angewandt werden kann.
+Avigad~\cite{Avigad2021} behandelt die Verlässlichkeit informeller
+mathematischer Schlussfolgerungen im Allgemeinen; das Kriterium adressiert
+einen Spezialfall innerhalb dieser Spannweite: einen Transportschritt, dessen
+Schlussfolgerung eine numerische Zugehörigkeitsbehauptung ist.
+
+\subsection{Formale Verifikation und Lean}\label{sec:related-formal}
+
+Scholzes Liquid Tensor Experiment~\cite{Scholze2022LTE} unterwarf bewusst ein
+umstrittenes eigenes Resultat einem maschinenprüfbaren Vertrag. Es beantwortet
+die Wahrheitsfrage durch vollständige Formalisierung, zu hohen Kosten und
+unter Beteiligung des Autors; das Ledger beantwortet die Formfrage am
+publizierten Text und ohne Mitwirkung des Autors. Die mathematische Bibliothek
+\emph{mathlib}~\cite{Mathlib2020} ist die Infrastruktur, in der solche
+formalen Verträge formuliert und wiederverwendet werden; das Kriterium
+arbeitet eine Ebene früher, an natürlichsprachlichen Argumenten, die nicht
+formalisiert worden sind.
+Buzzard--Commelin--Massot~\cite{Buzzard2020} dokumentieren, was die
+Formalisierung moderner arithmetischer Geometrie in der Praxis kostet; dieser
+Aufwand ist der Grund, weshalb ein leichtgewichtiges Formkriterium neben der
+vollständigen Formalisierung einen Platz hat statt in Konkurrenz zu ihr.
+Hales et al.~\cite{Hales2017} verifizierten die Keplersche Vermutung
+maschinell, nachdem die konventionelle Begutachtung an ihre Grenze gestoßen
+war; das Kriterium ist darauf angelegt, \emph{vor} dem Abschluss der
+Begutachtung anwendbar zu sein, sodass die umstrittene Stelle zu dem
+Zeitpunkt benennbar ist, zu dem der Streit entsteht.
+
+\subsection{Zertifikatsschnittstellen in der Informatik}\label{sec:related-certificates}
+
+Dieses Feld enthält das nächste heuristische Analogon unter den hier
+verglichenen Strukturen.
+Ein zertifizierender Algorithmus im Sinne von McConnell et
+al.~\cite{McConnell2011} liefert zusammen mit seiner Ausgabe einen Zeugen,
+den ein einfacher und unabhängig prüfbarer Verifizierer akzeptiert; die
+Korrektheit des einzelnen Laufs wird dadurch festgestellt, ohne der
+Implementierung zu vertrauen. Der Bridge Contract hat eine heuristische
+Schnittstellenanalogie zu zertifizierenden Algorithmen: Beide stellen ein
+einsehbares Artefakt neben eine Behauptung. Die Analogie endet vor der
+Korrektheitszertifizierung. Die Unterschiede sind systematisch und nicht
+zufällig; sie sind in Tabelle~\ref{tab:certifying_vs_bcm} zusammengefasst:
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Struktureller Vergleich zwischen zertifizierenden Algorithmen und Bridge-Contract-Audits.}
+\label{tab:certifying_vs_bcm}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+Merkmal & Zertifizierender Algorithmus & Bridge-Contract-Audit \\
+\midrule
+Erzeuger des Artefakts & der Algorithmus oder Erzeuger & eine dritte Partei,
+  im Nachhinein \\
+Zeitpunkt der Ausstellung & mit der Ausgabe & nach Publikation des Textes \\
+Prüfer & formal und einfach & fachlich und hermeneutisch \\
+Entscheidbarkeit & typischerweise algorithmisch & nicht garantiert \\
+Garantie & Korrektheit des Laufs oder der Ausgabe relativ zum Prüfer
+  & nur textliche Vertragsvollständigkeit \\
+Dissens & kein notwendiger Bestandteil & ausdrücklich möglich und zu
+  berichten \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\noindent
+Neculas Proof-Carrying Code~\cite{Necula1997} setzt eine im Voraus
+vereinbarte Policy voraus, gegen die der Erzeuger einen maschinenprüfbaren
+Nachweis der Einhaltung liefert. Der in Abschnitt~\ref{sec:abc} behandelte
+Präzedenzfall ist genau einer, in dem eine solche Policy nie vereinbart
+wurde: Das Ledger rekonstruiert die fehlende Vereinbarung im Nachhinein und
+benennt die Zeile, an der sie nie geschlossen wurde.
+Blum--Kannan~\cite{Blum1995} prüfen Resultate zur Laufzeit, wiederholt und
+billig, über einen Strom von Instanzen; das Kriterium wird einmal angewandt,
+auf eine einzelne argumentative Stelle in einem Text.
+
+\subsection{Assurance Cases und Goal Structuring Notation}\label{sec:related-assurance}
+
+Rushby~\cite{Rushby2015} fragt, wann ein strukturiertes Argument trägt, und
+liefert das Vokabular für die hier maßgeblichen Fehlermodi -- Defeater (Entkräftungsfaktoren) und
+Bestätigungsfehler bei der Partei, die das Argument konstruiert --, wobei er
+Überzeugungskraft in abgestuften, holistischen Begriffen beurteilt. Die
+Verdikt-Grammatik von Abschnitt~\ref{sec:ledger} ist bewusst gröber und
+lokaler: Jede Zeile erhält eines von drei Verdikten über eine
+Vertragsklausel, wobei der Konfidenzqualifikator getrennt vom Verdikt selbst
+festgehalten wird. Die Goal Structuring Notation (GSN)~\cite{GSN2021}
+standardisiert, wie Behauptung, Argument und Evidenz auseinandergehalten
+werden, und ist von der Anlage her domänenneutral; die sieben
+Vertragskomponenten von Abschnitt~\ref{sec:contract} sind die komplementäre
+Wahl, inhaltlich für eine wiederkehrende Situation bestimmt und daher nicht
+ohne Anpassung übertragbar. Bloomfield--Rushby~\cite{Bloomfield2021} machen
+die explizite Behandlung von Defeatern verbindlich, und zwar für einen
+Zertifizierungskontext, in dem ein Argument den Einsatz autorisiert. Das
+Kriterium trägt keine Zulassungsautorität dieser Art: Es ist ein
+Leseinstrument, und seine Verdikte richten sich an Leser eines Beweises und
+nicht an eine Aufsichtsbehörde.
+
+\subsection{Fehleranalysen und Kontroversen-Methodologie}\label{sec:related-controversy}
+
+Aberdein~\cite{Aberdein2023} erklärt, weshalb tiefe Uneinigkeiten in der
+Mathematik selbst unter kompetenten Parteien fortbestehen, und arbeitet auf
+der Ebene der Uneinigkeit selbst. Das Kriterium arbeitet eine Ebene darunter:
+Es lokalisiert die einzelne strittige transportierte Zeile und bezieht zu ihr
+keine Position. Das Paar Scholze--Stix~\cite{ScholzeStix2018} und
+Mochizuki~\cite{Mochizuki2019} ist der Referenzfall des Feldes und ist nur
+als Paar aufschlussreich -- ein stellengenauer Fehlerbericht und seine
+Erwiderung, in denen die beiden Seiten mangels eines geteilten Formrasters
+aneinander vorbeireden. Das Ledger von Abschnitt~\ref{sec:ledger} ist die
+verallgemeinerte und übertragbare Fassung eines solchen Rasters.
+Castelvecchi~\cite{Castelvecchi2020} dokumentiert die institutionellen Folgen
+dieser Pattsituation, wie sie außerhalb des Feldes sichtbar wurden.
+Joshi~\cite{Joshi2025Report} berichtet über die Kontroverse aus der Position
+einer an ihr beteiligten Partei; die Arbeit wird hier als Parteiäußerung
+zitiert und nicht als unabhängige Bestätigung irgendeiner Lesart,
+einschließlich unserer eigenen.
+
+Darüber hinaus haben wir in dem für diese Arbeit verwendeten begrenzten,
+nicht systematischen Korpus keine unabhängige begutachtete Detailanalyse der
+abc/IUT-Kontroverse identifiziert; dies ist kein Befund einer systematischen
+Übersichtsarbeit. Was dieser Korpus enthält, ist Primärliteratur der
+Parteien, journalistische Berichterstattung~\cite{Castelvecchi2020} und
+allgemeine Theorie tiefer Uneinigkeit~\cite{Aberdein2023}. Wir verzeichnen
+die Abwesenheit als fortbestehende Lücke und nicht als eine, die die
+vorliegende Arbeit schließt, und wir beanspruchen nicht, erschöpfend gesucht
+zu haben. Was das Kriterium beiträgt, steht dazu orthogonal: ein Formverdikt
+über einen einzelnen Transportschritt, keine historische Darstellung der
+Debatte (Abschnitt~\ref{sec:limits}).
+
+\subsection{Stellung des Kriteriums}\label{sec:related-position}
+
+Das Kriterium sitzt im Schnittpunkt dieser fünf Felder und nicht in der
+Nachfolge eines einzelnen von ihnen. Es entlehnt die Schnittstelle des
+einsehbaren Artefakts der Tradition zertifizierender Algorithmen ohne deren
+Korrektheitsgarantie, die explizite Trennung von Behauptung, Argument und
+Evidenz der Assurance-Case-Praxis, die Frage nach der zulässigen Auslassung
+der Beweisauditierungsliteratur und die Lektüre eines umstrittenen
+Transportschrittes der dokumentierten Kontroverse -- und wendet sie auf eine
+Klasse von Argumenten an, für die vollständige Formalisierung im Prinzip
+verfügbar ist, bei gegenwärtigen Kosten aber selten in der Praxis. Seine
+Verdikte bleiben durchgehend von einer Art: Ein bedientes Ledger ist notwendig
+und nicht hinreichend, und eine unbediente Zeile lokalisiert eine Last, statt
+eine Behauptung zu widerlegen.
+
+
+%=====================================================================
+\section{Zwei komplementäre Gate-Typen}\label{sec:gates}
+
+Der Vertrags-Audit von Abschnitt~\ref{sec:criterion} ist ein
+\emph{logisches} Gate: Er prüft einen festen Text gegen eine feste Liste von
+Pflichten, und seine Verdikte sind Aussagen über diesen Text. In dem
+Programm, aus dem diese Serie erwuchs, wird er durch ein \emph{empirisches}
+Gate ergänzt: ein wegübergreifendes Konsistenzregister (eine \glqq shadow
+registry\grqq{} bzw.\ ein Schattenregister), das für jeden untersuchten Weg festhält, welche Aussagen
+tatsächlich behauptet werden und wo zwei Wege einander widersprechen würden,
+wenn man beide für bare Münze nähme, mit Zulassungsprüfung gegen zertifizierte
+Sichten auf einer abgestuften Evidenzskala. Die Instrumentseite dieses
+Registers ist im Zookeeper-Papier beschrieben~\cite{zookeeper}; hier ist sie
+als komplementäres Gate von Belang und wegen ihrer Grenze, der
+\emph{Konsistenzfalle}: Die Übereinstimmung vieler Diagnostiken ist Evidenz
+für Kohärenz, niemals für Wahrheit -- ein Register kann konsistent falsch
+sein. Die beiden Gates versagen unterschiedlich, und darin liegt ihr
+gemeinsamer Wert: Das logische Gate fängt unbediente Pflichten in einem
+einzelnen Text; das empirische Gate fängt Widersprüche \emph{zwischen} Texten
+und Läufen. Keines ersetzt einen Beweis. Die beiden Gates sind komplementär,
+nicht komponierbar: Sie halten getrennte Ausgaben, es gibt keinen gemeinsamen
+Entscheidungsalgorithmus, der sie kombiniert, und aus ihnen wird kein
+aggregiertes Wahrheitsverdikt und kein Gesamtbestehen gebildet. Eine
+Behauptung, die von beiden geprüft wurde, ist auf zwei verschiedene Weisen
+geprüft worden und schuldet ihre Mathematik weiterhin.
+
+Abbildung~\ref{fig:dual_gate_architecture} stellt die komplementären Pipelines des logischen und des empirischen Tors gegenüber und veranschaulicht ihre Prüf-Engines, charakteristischen Fehlermodi und die Demarkation gegen eine unzulässige Komposition. Tabelle~\ref{tab:tor_taxonomie} stellt eine synoptische Taxonomie bereit, die das logische Tor ($\mathrm{Br}_\xi$), das empirische Schattenregister, interaktive Theorembeweiser und zertifizierende Algorithmen gegenüberstellt.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{0.88\textwidth}{!}{%
+\begin{tikzpicture}[
+  >=Stealth,
+  node distance=0.6cm and 0.8cm,
+  header/.style={draw=black!80, rounded corners=3pt, line width=0.9pt, align=center, font=\small\bfseries, inner sep=5pt},
+  logcol/.style={header, fill=blue!10, draw=blue!70!black, text width=5.6cm},
+  empcol/.style={header, fill=teal!10, draw=teal!70!black, text width=5.6cm},
+  stepbox/.style={draw=black!60, rounded corners=2pt, line width=0.6pt, align=left, font=\scriptsize, inner sep=4pt, text width=5.6cm},
+  alertbox/.style={draw=red!70!black, rounded corners=2pt, line width=0.7pt, fill=red!6, align=left, font=\scriptsize, inner sep=4pt, text width=5.6cm},
+  barrier/.style={draw=black!70, rounded corners=3pt, line width=0.8pt, fill=gray!10, align=center, font=\small, inner sep=6pt, text width=12.2cm},
+  arrow/.style={->, line width=0.8pt, draw=black!70}
+]
+
+  % Headers
+  \node[logcol] (h1) at (0, 6.0) {Logisches Tor ($\mathrm{Br}_\xi$)\\[1pt]\footnotesize Einzeltext-Form-Audit};
+  \node[empcol] (h2) at (6.8, 6.0) {Empirisches Tor (Schattenregister)\\[1pt]\footnotesize Routenübergreifende Konsistenz};
+
+  % Steps Gate 1
+  \node[stepbox, fill=blue!3] (s1_1) [below=0.35cm of h1] {
+    \textbf{Gegenstand \& Geltung:}\\[1pt]
+    Isolierter Manuskript-Einzeltext $T$
+  };
+  \node[stepbox, fill=blue!3] (s1_2) [below=0.35cm of s1_1] {
+    \textbf{Audit-Instrument:}\\[1pt]
+    7 Vertragskomponenten ($C_1$--$C_7$)\\
+    BCM-Ledger (v1-T Transport, v1-F Vollinstrument)
+  };
+  \node[stepbox, fill=blue!3] (s1_3) [below=0.35cm of s1_2] {
+    \textbf{Prüf-Engine \& Verdikt-Grammatik:}\\[1pt]
+    Hermeneutisches Text-Audit mit 5-Code-Grammatik:\\[1pt]
+    $\mathtt{E+}$ (bedient), $\mathtt{E-}$ (unbedient), $\mathtt{I}$ (intern),\\
+    $\mathtt{N}$ (extern), $\mathtt{X}$ (nicht-transpositional)
+  };
+  \node[alertbox] (a1) [below=0.35cm of s1_3] {
+    \textbf{Charakteristischer Fehlermodus:}\\[1pt]
+    Erkennt keine routenübergreifenden Widersprüche, wenn Einzeltext in sich geschlossen ist.
+  };
+
+  % Steps Gate 2
+  \node[stepbox, fill=teal!3] (s2_1) [below=0.35cm of h2] {
+    \textbf{Gegenstand \& Geltung:}\\[1pt]
+    Routenübergreifendes Text- und Rechenkorpus ($A > B > M > C$)
+  };
+  \node[stepbox, fill=teal!3] (s2_2) [below=0.35cm of s2_1] {
+    \textbf{Audit-Instrument:}\\[1pt]
+    Wegübergreifendes Konsistenzregister\\
+    Automatisierte Behauptungs- und Kollisionsprüfung
+  };
+  \node[stepbox, fill=teal!3] (s2_3) [below=0.35cm of s2_2] {
+    \textbf{Prüf-Engine \& Verdikt-Grammatik:}\\[1pt]
+    Empirische Kollisionserkennung:\\[1pt]
+    Schattenmatrix, Mehrwege-Kohärenz,\\
+    Zulässigkeitsrang auf Evidenzskala
+  };
+  \node[alertbox] (a2) [below=0.35cm of s2_3] {
+    \textbf{Charakteristischer Fehlermodus (Konsistenzfalle):}\\[1pt]
+    Gegenseitige Übereinstimmung vieler Wege ist Evidenz für Kohärenz, \textbf{niemals} für Wahrheit.
+  };
+
+  % Connectors
+  \draw[arrow] (h1) -- (s1_1);
+  \draw[arrow] (s1_1) -- (s1_2);
+  \draw[arrow] (s1_2) -- (s1_3);
+  \draw[arrow] (s1_3) -- (a1);
+
+  \draw[arrow] (h2) -- (s2_1);
+  \draw[arrow] (s2_1) -- (s2_2);
+  \draw[arrow] (s2_2) -- (s2_3);
+  \draw[arrow] (s2_3) -- (a2);
+
+  % Bottom Barrier
+  \node[fit=(a1)(a2), inner sep=0pt] (failurepair) {};
+  \node[barrier, anchor=north] (bar) at ($(failurepair.south)+(0,-0.45)$) {
+    \textbf{Strikte Nicht-Komponierbarkeit \& Demarkation}\\[2pt]
+    \footnotesize Die beiden Tore versagen orthogonal $\implies$ getrennter diagnostischer Wert ohne gemeinsamen Entscheidungsalgorithmus.\\[1pt]
+    \scriptsize Keines der Tore ersetzt einen mathematischen Beweis; eine von beiden geprüfte Behauptung schuldet weiterhin ihre Herleitung.
+  };
+
+  \draw[arrow] (a1.south) -- (a1.south |- bar.north);
+  \draw[arrow] (a2.south) -- (a2.south |- bar.north);
+
+\end{tikzpicture}%
+}
+\caption{Duale Beweisabsicherungs-Architektur: Logisches Tor ($\mathrm{Br}_\xi$) vs.\ Empirisches Tor (Schattenregister).}
+\label{fig:dual_gate_architecture}
+\end{figure}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{0.92}
+\setlength{\tabcolsep}{3pt}
+\caption{Taxonomie von Beweisabsicherungs- und Audit-Toren in der höheren Mathematik.}
+\label{tab:tor_taxonomie}\label{tab:gate_taxonomy}
+\begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash}p{0.17\textwidth} >{\raggedright\arraybackslash}p{0.19\textwidth} >{\raggedright\arraybackslash}p{0.19\textwidth} >{\raggedright\arraybackslash}p{0.15\textwidth} >{\raggedright\arraybackslash}X@{}}
+\toprule
+Tor / Paradigma & Audit-Geltung & Prüfer / Trust Base & Ausgabe & Diagnostische Stärke / Grenze \\
+\midrule
+Logisches Tor ($\mathrm{Br}_\xi$ / BCM) & Einzelner Transportschritt im Text & Hermeneutisch / Fachexperte & 5-Code-Ledger (\texttt{E+}, \texttt{E-}, \texttt{I}, \texttt{N}, \texttt{X}) & Lokalisiert exakte offene Klausel; beurteilt Form, nicht Wahrheit. \\
+\addlinespace[4pt]
+Empirisches Tor (Schattenregister) & Routen-\allowbreak übergreifende Konsistenz im Korpus & Au\-to\-ma\-ti\-sier\-tes Register ($A>B>M>C$) & Konsistenz- / Kollisionsmatrix & Erkennt Widersprüche zwischen Texten; Konsistenz-Falle. \\
+\addlinespace[4pt]
+Maschinelle Formalisierung (Lean / Coq) & Deduktiver Kernel über gesamten Beweis & Mechanisierter Proof Assistant & Binäres Gültigkeits-\allowbreak zertifikat & Absolute deduktive Sicherheit; hohe Formalisierungskosten. \\
+\addlinespace[4pt]
+Zertifizierende Algorithmen (PCC / Laufzeit) & Algorithmisches Eingabe-Ausgabe-Paar & Al\-go\-rith\-mi\-scher Zeugenprüfer & Rechen-\allowbreak technisches Zertifikat & Entscheidbare Instanzprüfung; setzt vorab vereinbarte Policy voraus. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+%=====================================================================
+\section[Eine protokoll-eingefrorene\texorpdfstring{\newline}{ }retrospektive Zwei-Fall-Illustration (v1-T)]{Eine protokoll-ein\-ge\-fro\-rene re\-tro\-spek\-ti\-ve Zwei-Fall-Il\-lus\-tra\-ti\-on (v1-T)}\label{sec:calibration}
+
+Wir illustrieren das eingefrorene v1-T-Instrument retrospektiv an zwei
+historisch entschiedenen Fällen: einem \emph{retrospektiven
+Bekannte-Lücke-Fall}, einem Beweisversuch, dessen Lücke später von seinem
+Autor bestätigt wurde, und einer \emph{akzeptierten Kontrolle}, einem
+akzeptierten Beweis mit einem strukturell vergleichbaren Transportschritt.
+Das Protokoll -- Zeilensatz, Fünf-Code-Handbuch, Konfidenzschema,
+unabhängige Zweitkodierung mit expliziter Dissensregel,
+Rückschaufehler-Kontrollen sowie die Erfolgs- und Falsifikationskriterien --
+wurde niedergeschrieben und eingefroren, bevor irgendeine Quelle gelesen
+wurde; die Audits haben nichts davon verändert.
+
+Diese zeitliche Priorität ist intern dokumentiert, nicht extern. Das
+Protokoll wurde vor der Kodierung nicht öffentlich registriert; seine
+zeitliche Priorität ist durch den datierten internen Projektnachweis und die
+Auditnotizen dokumentiert. Wir verwenden daher \glqq protocol-frozen\grqq{}
+(protokoll-eingefroren) und nicht \glqq extern präregistriert\grqq{}. Wo diese Arbeit
+sagt, eine Wahl sei im Voraus festgelegt worden, bedeutet das: prospektiv im
+Projektnachweis eingefroren vor den beiden Quellenkodierungsdurchgängen. Eine
+heute berechnete Prüfsumme würde die Identität der heute publizierten Datei
+feststellen, nicht das Datum, an dem sie eingefroren wurde.
+
+\subsection{Design und Instrumentversion}
+
+Die beiden historischen Fälle wurden mit \textbf{BCM-Ledger v1-T} kodiert,
+dem sechszeiligen Transportinstrument, das am 15.~August 2026 vor der
+Quellenkodierung eingefroren wurde. Seine versionsspezifischen Zeilen sind
+T-R2a, T-R2b, T-R4a, T-R4b, T-R6 und T-R8, mit der in der Tabelle unten
+wiedergegebenen fallneutralen Semantik. Dies ist nicht das volle
+v1-F-Ledger von Abschnitt~\ref{sec:ledger}; die beiden Versionen sind
+ausschließlich durch den publizierten Crosswalk
+(Abschnitt~\ref{sec:crosswalk}) miteinander verbunden.
+
+\clearpage
+\begin{table}[htbp]
+\centering
+\small
+\caption{Das eingefrorene Sechs-Zeilen-Transportinstrument (BCM-Ledger v1-T) und fallneutrale Prüffragen.}
+\label{tab:frozen_instrument_v1t}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+\toprule
+v1-T-Zeile & Fallneutrale Frage des eingefrorenen Instruments \\
+\midrule
+T-R2a & Ist das Transport- oder Übertragungsgesetz explizit ausgeschrieben,
+        als Formel oder Aussage mit einer Adresse? \\
+\addlinespace[3pt]
+T-R2b & Werden die transportierten Größen mit einem sichtbaren
+        Umrechnungsfaktor mitgeführt? \\
+\addlinespace[3pt]
+T-R4a & Ist der Kompensations- oder Normierungsmechanismus benannt und
+        lokalisiert? \\
+\addlinespace[3pt]
+T-R4b & Sind seine Existenz und Wohldefiniertheit im Text bewiesen und nicht
+        bloß behauptet? \\
+\addlinespace[3pt]
+T-R6 & Werden zweite Modi oder Fallunterscheidungen dargestellt und
+       symmetrisch behandelt? \\
+\addlinespace[3pt]
+T-R8 & Wird die kettenschließende Kompatibilität hergeleitet statt gesetzt,
+       und auf welcher Ebene (lokal oder global summiert)? \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Die auditierte Einheit ist in jedem Fall der zentrale Transportschritt,
+instanziiert über diese sechs Zeilen. Jede Zeile erhält genau einen der fünf
+Codes von Abschnitt~\ref{sec:ledger}. Jeder Fall wurde zweimal kodiert: ein
+Erstaudit und eine unabhängige Zweitkodierung, deren Auditor nur das
+eingefrorene Protokoll und die Quelle erhielt, nicht die Erstkodierung. Der
+Erfolg war im Voraus festgelegt: Im Bekannte-Lücke-Fall muss mindestens eine
+Zeile auslösen ($E{-}$/$N$) \emph{und} ihre Adresse muss mit der historisch
+dokumentierten Lücke übereinstimmen; in der Kontrolle darf keine Zeile
+auslösen (ein $I$ ist unkritisch). Die Fehlschlagsmodi waren symmetrisch
+festgelegt: kein Auslösen, Auslösen an der falschen Adresse oder ein Auslösen
+in der Kontrolle.
+
+\subsection[Der retrospektive Bekannte-Lücke-Fall:\texorpdfstring{\newline}{ }die Fermat-Ankündigung von 1993]{Der re\-tro\-spek\-ti\-ve Be\-kann\-te-Lü\-cke-Fall: die Fer\-mat-An\-kün\-di\-gung von 1993}
+
+Der erste Fall ist Wiles' Beweisankündigung von 1993, auditiert über den
+zeitgenössischen technischen Bericht von Rubin und
+Silverberg~\cite{rubinsilverberg}; der Audit betrifft daher den Stand des
+Arguments von 1993 \emph{wie berichtet}, eine Geltungsbereichsgrenze, die
+ausdrücklich mitgeführt wird. Beide Kodierer erzeugten unabhängig voneinander
+dasselbe Bild: Das Transportgesetz und seine Umrechnungsgrößen sind explizit
+($\text{T-R2a}, \text{T-R2b} = E{+}$), der kompensierende Mechanismus -- das
+Euler-System -- ist benannt und lokalisiert ($\text{T-R4a} = E{+}$), die
+Fallunterscheidungen sind dargestellt ($\text{T-R6} = E{+}$), und genau eine
+Zeile löst konkordant aus: \emph{die Existenz des benannten Mechanismus}
+($\text{T-R4b} = E{-}$), an der Passage, an der der Bericht feststellt, die
+Konstruktion eines geeigneten Euler-Systems sei \glqq not yet complete\grqq{}. Die
+kettenschließende Zeile T-R8 wurde vom ersten Kodierer mit $E{-}$ kodiert
+(als Folge von T-R4b) und vom zweiten mit $I$; nach der Doppelkodierungsregel
+unten ist der Dissens verdikt-neutral, da das Erfolgskriterium bereits durch
+T-R4b allein erfüllt war.
+
+Die Adresse der auslösenden Zeile ist die Passage, die der Bericht selbst als
+unvollständig markiert, und sie ist die Pflicht, die die anschließende
+Reparatur des Arguments einlösen musste; die umgebende Kette stand dort nicht
+in Frage. Der diagnostische Gehalt liegt ebenso sehr in den vier Zeilen, die
+\emph{nicht} ausgelöst haben: Die lokalisierte Lücke ist eng, nicht diffus.
+% TODO(operator, P2-7): the sentence above is deliberately anchored only to
+% rubinsilverberg, which reports the 1993 state and the announced
+% incompleteness but cannot document the 1994--95 repair. If a stronger claim
+% about that repair is wanted in the version of record, add a primary or
+% contemporaneous anchor for it (candidate to verify: Taylor--Wiles and Wiles,
+% Ann. of Math. 141 (1995)) and cite it here. Do NOT strengthen the sentence
+% without such an anchor.
+
+\subsection{Die akzeptierte Kontrolle: ein akzeptierter Transportschritt}
+
+Der zweite Fall ist Prasads Volumenformel~\cite{prasad}, deren
+Lokal-zu-global-Normierungsschritt eine akzeptierte Instanz derselben
+Transportgestalt ist. Beide Kodierer fanden keine auslösende Zeile: fünf
+Zeilen in beiden Kodierungen explizit eingelöst; eine Zeile (T-R6) spaltete
+sich zwischen $I$ (erster Kodierer, wegen der vom Autor erklärten
+Funktionenkörper-Asymmetrie: Die einschlägige Konvergenzaussage wird über
+Zahlkörpern durch eine externe Referenz bewiesen, während der Text für globale
+Funktionenkörper nur festhält, dass \glqq a similar proof applies\grqq{}
+(\cite{prasad}, \S3.2)) und $E{+}$
+(zweiter Kodierer), was verdikt-neutral ist, weil $I$ nach dem eingefrorenen
+Protokoll unkritisch ist. Der vom Protokoll zugelassene
+Geltungsbereichsvorbehalt -- ein Audit eines Transportschrittes innerhalb
+eines akzeptierten Beweises statt der ganzen Arbeit -- musste nicht als $X$
+aufgerufen werden. Die Kontrolle liefert außerdem ein positives Bild dessen,
+was die Zeilen messen: Die Normierungskonstante wird als sichtbarer Faktor
+mitgeführt statt stillschweigend gleich eins gesetzt, und die Kette schließt
+über eine adressierte Gleichungskette statt über eine Behauptung, sie
+\glqq follows formally\grqq{}.
+Dies ist die einzige akzeptierte Kontrolle in dieser Arbeit.
+
+\subsection{Die vollständige Kodematrix}\label{sec:matrix}
+
+Beide Kodierungen beider Fälle werden in Tabelle~\ref{tab:code_matrix_retrospective} vollständig berichtet. Die Spalten F1
+und F2 sind das Erstaudit und die unabhängige Zweitkodierung des
+Bekannte-Lücke-Falls (Wiles 1993, wie berichtet); die Spalten P1 und P2 sind
+das Erstaudit und die unabhängige Zweitkodierung der akzeptierten Kontrolle
+(Prasad). Keine Zelle unten ist ein Konsenswert.
+
+\begin{table}[htbp]
+\centering
+\setlength{\tabcolsep}{4.5pt}
+\caption{Vollständige doppelkodierte Auditmatrix der retrospektiven Testfälle (Wiles 1993 vs.\ Prasad 1989).}
+\label{tab:code_matrix_retrospective}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+v1-T-Zeile & F1 (Wiles 1.) & F2 (Wiles 2.) & P1 (Prasad 1.) & P2 (Prasad 2.) \\
+\midrule
+T-R2a & $E{+}$ & $E{+}$ & $E{+}$ & $E{+}$ \\
+\addlinespace[3pt]
+T-R2b & $E{+}$ & $E{+}$ & $E{+}$ & $E{+}$ \\
+\addlinespace[3pt]
+T-R4a & $E{+}$ & $E{+}$ & $E{+}$ & $E{+}$ \\
+\addlinespace[3pt]
+T-R4b & $E{-}$ & $E{-}$ & $E{+}$ & $E{+}$ \\
+\addlinespace[3pt]
+T-R6 & $E{+}$ & $E{+}$ & $I$ & $E{+}$ \\
+\addlinespace[3pt]
+T-R8 & $E{-}$ & $I$ & $E{+}$ & $E{+}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent
+Die Übereinstimmung zwischen den Kodierern betrug 10 von 12
+Fall-Zeilen-Vergleichen. Die beiden Dissense sind F/T-R8 und P/T-R6; keiner
+wurde harmonisiert. Die Regel, unter der diese Kodierungen gelesen wurden,
+lautet wie folgt.
+
+\begin{quote}
+Ein kritisches Auslösen im Bekannte-Lücke-Fall zählt nur dann für das vorab
+festgelegte Erfolgskriterium, wenn beide Kodierer derselben Zeile $E{-}$/$N$
+zuweisen. Ein Kontrollfehlschlag wird verzeichnet, wenn einer der beiden
+Kodierer $E{-}$/$N$ zuweist. Diskordante Codepaare bleiben sichtbar und
+werden niemals durch einen synthetischen Konsenscode ersetzt.
+\end{quote}
+
+\noindent
+Unter dieser Regel zählt im Bekannte-Lücke-Fall genau eine Zeile als
+konkordantes kritisches Auslösen, nämlich T-R4b; in der Kontrolle enthält
+überhaupt keine Kodierung $E{-}$ oder $N$. Die Regel ausdrücklich anzugeben
+ist eine Offenlegung der bereits angewandten Regel, keine nachträgliche
+Änderung der Kodierungen.
+
+\subsection{Verankerung und Verfügbarkeit}\label{sec:anchors}
+
+Jede Kodierung in beiden Audits trägt ein wörtliches Zitat mit einem Seiten-
+oder Abschnittsanker aus der benannten Ausgabe, zusammen mit der vom
+eingefrorenen Protokoll vorgeschriebenen dreiachsigen Konfidenzangabe:
+Quellenbindung, Kriterienpassung und Substanzstatus, jeweils auf einer
+dreistufigen Skala. Diese Zeilen-Ankertabellen liegen im datierten
+Projektnachweis -- dem eingefrorenen Protokoll, vier Auditnotizen (ein
+Erstaudit und eine unabhängige Zweitkodierung je Fall) und der
+Operator-Synthese, die den Verdikt-Wortlaut trägt. Dieser Entwurf gibt die
+vollständige Kodematrix wieder, nicht aber die Zeilenanker.
+% TODO(operator, P1-5): before upload, release the per-row anchor tables (row,
+% version/edition, page or section, short quotation, both raw codes, three-axis
+% confidence) as a citable supplement and reference it here. Internal file names
+% without accessible content do not satisfy this obligation for a public
+% version. Note the pipeline rule that _proof-notes/ is private by default: the
+% staged release of individual closed notes needs an explicit operator decision.
+
+\subsection{Was die Illustration zeigt -- und was nicht}
+
+Unter den vorab festgelegten Kriterien wurden die beiden vorab festgelegten
+Fallkriterien in dieser Illustration erfüllt: Die bestätigte Lücke des
+Arguments von 1993 ist an einer einzelnen konkordant auslösenden Zeile
+lokalisiert, deren Adresse mit der historisch dokumentierten Lücke
+übereinstimmt, und keine Kodierung wies in diesem einen Kontrollfall $E{-}$
+oder $N$ zu. Wir formulieren das Ergebnis in der im Protokoll festgelegten
+Formulierung: Die beiden Fälle sind \emph{consistent with the certificate's
+design intent} (mit der Konstruktionsabsicht des Zertifikats vereinbar). Es
+handelt sich um einen retrospektiven Bekannte-Lücke-Fall und eine akzeptierte
+Kontrolle -- eine Illustration, keine Validierungsstatistik und keine
+Messung irgendeiner Rate. Die Übung ist eine Retrodiktion, keine Vorhersage:
+Das historische Ergebnis war beiden Kodierern bekannt, und ihr Wert beruht
+vollständig darauf, dass die Zeilenzuordnung vor der Lektüre schriftlich
+festgelegt wurde, wobei die falsifizierbaren Alternativen (falsche Adresse,
+diffuses Auslösen, ein Auslösen in der Kontrolle) im Voraus angegeben und
+nicht eingetreten sind.
+
+Zwei weitere Grenzen gehören hierher. Die Illustration betrifft
+ausschließlich v1-T; sie bespielt nicht das volle v1-F-Ledger von
+Abschnitt~\ref{sec:ledger}, und nichts weiter unten erbt Stützung von ihr.
+Und bei zwei Fällen und zwei Kodierern beschreibt die berichtete
+Übereinstimmung dieses Auditpaar; sie ist keine Schätzung der
+Zuverlässigkeit des Instruments.
+
+%=====================================================================
+\section{Die abc-Instanziierung}\label{sec:abc}
+
+\subsection{Der Gate-Fall}\label{sec:abc-gate}
+
+Dieser Abschnitt berichtet die eine in dieser Arbeit enthaltene
+Instanziierung. Es ist eine \emph{selected-rows}-Instanziierung, durchgeführt
+mit Zeilen von \textbf{BCM-Ledger v1-F} (Abschnitt~\ref{sec:ledger}): Die
+unten bespielten Zeilen sind F-R2a, F-R2b, F-R4a, F-R4b, F-R6a, F-R6b und,
+wo ihr Auslöser greift, F-R8; die übrigen Zeilen (F-R0, F-R1, F-R3, F-R5,
+F-R7) werden hier nicht kodiert, und eine Kodierung der vollständigen Matrix
+für diese Fälle ist auf eine spätere Version zurückgestellt. Die
+Zeilenbezeichner unten tragen das Präfix \texttt{F-}, und keiner von ihnen
+ist die gleichnummerige Zeile des in Abschnitt~\ref{sec:calibration}
+verwendeten eingefrorenen Transport-Ledgers v1-T.
+
+Der strittige Schritt ist ein Teilschritt im Beweis von Korollar~3.12 im
+dritten Band der inter-universellen
+Teichmüller-Theorie~\cite{Mochizuki2021c}. Seine Schlussfolgerung hat die in
+Definition~\ref{def:bridge} axiomatisierte Form: Von einer
+log-volumetrischen Ablesung $\nu_q(x)$ des $q$-Pilotobjekts $x \in X_q$ wird
+behauptet, sie liege in einer auf der $\Theta$-Seite festgelegten Zielregion
+$H_\Theta = \mathbb{R}_{\le -|\log\Theta|}$, wobei die beiden Seiten
+konstruktionsbedingt keine gemeinsame Auswertung teilen. Der mit
+(xi-e)$\to$(xi-f) bezeichnete Schritt ist die Stelle, an der diese
+Zugehörigkeit gezogen wird.
+
+Dass dieser Schritt die Last trägt, ist das Resultat von
+Teil~1~\cite{part1} und wird als gegeben genommen. Das Kriterium stellt an
+dieselbe Passage eine andere Frage: nicht, wo das Argument dünn ist, sondern
+welche Vertragskomponenten die Darstellung bedient. Alles Folgende ist im
+Register von Abschnitt~\ref{sec:scope} zu lesen -- eine Zeile, die nicht
+liefert, benennt eine Klausel, die ein vollständiges Argument bereitstellen
+muss, und sagt nichts darüber, ob sie bereitgestellt werden kann.
+
+\subsection{Der auditierte Teilschritt des ursprünglichen Arguments}\label{sec:abc-original}
+
+Der Audit deckt die am Teilschritt selbst aktivierten Zeilen ab: F-R2a,
+F-R2b, F-R4a, F-R4b, F-R6a, F-R6b und, über den Mehrmoden-Auslöser, F-R8.
+Die übrigen Zeilen des Ledgers tragen hier kein Verdikt. Die Tabelle unten
+sammelt die Verdikte; was folgt, sind die Gründe.
+
+Am auditierten Teilschritt wird keine Transportoperation innerhalb des Links
+ausgeführt; F-R2a ist an diesem Teilschritt daher X, nicht E+. Die von der
+Schlussfolgerung benötigte rahmenwerkübergreifende numerische
+Identifikation wird gesondert unter F-R2b und F-R6a beurteilt. Eine
+gemeinsame Auswertung in C löst Komponente~6 nicht ein, solange nicht die
+verlangten Kompatibilitätsidentitäten vorhanden und adressiert sind. Was die
+erste dieser Aussagen stützt, ist, dass der Paralleltransport-Mechanismus
+als einer beschrieben wird, der \glqq does not consist of a simple instance of
+transport of some set-theoretic region\grqq{}, und dass die Ablesung auf der
+$q$-Seite als \glqq coric\grqq{}/\glqq fixed\grqq{} erklärt und ausdrücklich nicht den
+Unbestimmtheiten unterworfen wird, die die $\Theta$-Seite trägt: Die Ablesung
+behält ihre Identität durch Festsetzung und durch das Fehlen eines
+Transportschrittes, nicht durch eine bewiesene Relation.
+
+F-R2b liefert teilweise, und nicht mehr als das. Bei (xi-d) werden die
+beiden Seiten in eine Auswertung gebracht, wodurch erst entsteht, was der
+Text \glqq completely comparable objects\grqq{} nennt, und globale arithmetische Grade
+werden auf beiden Seiten als Log-Volumina gelesen. Das ist eine
+Identifikation, die von einer geteilten Lesekonvention getragen wird und
+nicht von einem sichtbaren Umrechnungsfaktor oder einer
+Kompatibilitätsgleichung, und der Crosswalk deckelt eine Zeile dieser Gestalt
+bei \texttt{I}. Die Zeile erreicht diese Obergrenze und fällt nicht darunter,
+weil die Identifikation an einem benannten Teilschritt selbst ausgewiesen ist
+und am Text abgelesen werden kann: Was der dokumentierten Rekonstruktion
+fehlt, ist eine Herleitung der Identifikation, nicht die Identifikation. An
+diesem Schritt ist die Zeile überdies nicht von F-R6a trennbar, da die
+Identifikation der beiden Auswertungscontainer Teil des Brückenschrittes
+selbst ist.
+
+F-R6a liefert nicht. Eine numerische Auswertung $\nu_C$ auf dem Container
+wird ausgewiesen; was die gehärtete Komponente~6 zusätzlich verlangt -- die
+von der Behauptung benötigten Kompatibilitätsidentitäten, insbesondere
+$\nu_C \circ i_q = \nu_q$ auf dem angegebenen Quellbereich --, wird am
+auditierten Schritt nicht hergeleitet. Die quellseitige Ablesung wird durch
+Festsetzung fixiert gehalten -- die oben unter F-R2a zitierte Passage, die
+die Ablesung als \glqq coric\grqq{}/\glqq fixed\grqq{} und als von den Unbestimmtheiten der
+$\Theta$-Seite ausgenommen erklärt --, und eine festgesetzte Invarianz ist
+nicht die Identität, nach der Komponente~6 verlangt. Die Zeile würde nur dann
+teilweise liefern, wenn eine dokumentierte Rekonstruktion dieser Identität
+bereitgestellt würde; dieser Audit stellt keine bereit. Die frühere Lesart
+dieser Passage, die Komponente~6 als bedient verzeichnete, beruhte auf der
+schwächeren Entweder-oder-Formulierung, die Definition~\ref{def:bridge} nicht
+mehr enthält.
+
+F-R6b liefert nicht, und sie ist die wichtigste kettenschließende Pflicht.
+Die Zugehörigkeit wird nicht aus der zulässigen Verknüpfung hergeleitet,
+sondern aus einer den zulässigen Operationen auferlegten Bedingung gewonnen:
+Die Inklusion \glqq then follows formally\grqq{} aus der Forderung, dass die
+Konstruktion der Ausgabemöglichkeiten insbesondere eine Konstruktion der
+Eingabe-Ablesung darstellt, und eine Zusammenfassung desselben Arguments
+spricht von \glqq two tautologically equivalent ways\grqq{}, ein Log-Volumen zu
+berechnen. Wo das benannte Ordnungslemma von Komponente~7 stehen würde -- mit
+seinen Hypothesen, einer Behauptung der Anwendbarkeit an diesem Schritt und
+einer Beweisadresse --, steht stattdessen ein Paar erklärter Eigenschaften
+der Algorithmusausgabe. Die Zeile verzeichnet das Fehlen eines solchen
+adressierten Lemmas. Sie verzeichnet kein Urteil darüber, ob eines bewiesen
+werden könnte.
+
+Zwei Fairness-Aussagen gehören zu diesem Verdikt und nicht daneben. Die
+Konfidenz ist gerade deshalb hoch, weil die tragenden Passagen diese Wörter
+selbst verwenden; und \glqq tautological\grqq{} wird dort affirmativ gebraucht, wobei
+der Text an anderer Stelle seine Schlussfolgerungen als nichttrivial, wenn
+auch im Wesentlichen tautologisch bezeichnet. Für diesen Autor ist die
+Tautologizität der Punkt, kein Eingeständnis, und sie als Selbstwiderlegung
+zu lesen wäre ein umgekehrtes Autoritätsargument.
+
+Die Lastzeilen verlangen die zweite Aufspaltung. Im auditierten Band ist die
+von den Theta-Werten $q^{j^2}$ getragene Last benannt, aber nicht
+quantifiziert -- was an der identifizierten Stelle gebucht wird, sind
+Etiketten und nicht Größenordnung --, und am Brückenschritt wird die interne
+Struktur bewusst beiseitegelassen. Die Quantifizierung wird nicht
+ausgelassen, sondern angekündigt, ihre Adresse ist als die explizite
+Log-Volumen-Rechnung in \S1 des vierten Bandes~\cite{Mochizuki2021d}
+angegeben, und diese Adresse zahlt sich aus: Die Last wird durch jene
+Rechnung bis zur geschlossenen Form $(\ell+1)/24$ getragen und steht in der
+finalen Schranke als
+$-\tfrac{1}{6}\bigl(1-12/\ell^{2}\bigr)\log q$. F-R4a liefert daher für den
+Verbund der beiden Bände; F-R4b nicht, da jener Abschnitt die
+Schlussfolgerung des Korollars als Eingabe nimmt und nachgelagert zur Brücke
+quantifiziert. Beide Zeilen werden an Komponente~5 berichtet, wo der Crosswalk
+das Lastbudget lokalisiert. Eine frühe Sorge, festgehalten in der
+Ledger-Notiz vom Mai 2026, die $j^2$-Faktoren könnten in einer Koordinate
+verschwinden und ungebucht zurückkehren, hält für den Verbund nicht stand und
+wird zurückgezogen: anderswo wie angekündigt gebucht ist nicht derselbe
+Befund wie ungebucht.
+
+F-R8 wird hier ausgelöst, da das Bereichsmodell der Behauptung einen
+Alternativmodus enthält, der die Ordnungsrelation betrifft. Sie liefert
+teilweise: Der zweite Modus ist benannt, der Vertikalverschiebungskonflikt
+angegeben und sein Preis erklärt, aber er wird vorab in eine einseitige
+Ungleichung überführt und am Schritt selbst suspendiert.
+
+Die auditierten Zeilen reduzieren sich daher nicht auf eine einzelne übrig
+bleibende Pflicht. F-R2a ist am Teilschritt außerhalb des Geltungsbereichs,
+F-R2b liefert teilweise, und F-R4a liefert für den Verbund der beiden Bände.
+Gegen dieses Profil werden die verbleibenden Pflichten wie folgt gewichtet.
+Der Audit unterscheidet eine wichtigste kettenschließende Pflicht von drei
+weiteren Befunden: F-R6b ist die wichtigste Ordnungslemma-Pflicht; F-R6a
+verzeichnet die fehlende Kompatibilitätsidentität der gemeinsamen
+Auswertung; F-R4b verzeichnet ein gesondertes Defizit der Buchung an der
+Brücke; und das ausgelöste F-R8 verzeichnet eine teilweise Behandlung des
+zweiten Modus. Das Ledger lokalisiert daher unterschiedlich gewichtete
+Befunde statt einer einzelnen übrig bleibenden Zeile.
+
+\subsection{Ein vergleichender Diskriminierungsfall: Joshis
+ATS-Programm}\label{sec:abc-control}
+
+Ein Kriterium, das überall dasselbe Verdikt zurückgibt, ist eine Schablone,
+kein Instrument. Wir wenden daher dieselben ausgewählten v1-F-Zeilen, mit
+unveränderter Zeilensemantik, auf ein zweites Programm desselben
+\emph{dispute complex} an, das dieselbe Ungleichung auf anderem Wege
+erreicht: Joshis arithmetische
+Teichmüller-Räume~\cite{JoshiATSIII,JoshiATSIV}. Dieser Fall ist keine
+Positivkontrolle und liefert keine unabhängige Bestätigung der Ungleichung.
+Er ist ein methodisch andersartiger, vorläufiger Vergleich, mit dem gefragt
+wird, ob dieselben ausgewählten Zeilen ein anderes Muster bedienter,
+rekonstruierter und unbedienter Pflichten erzeugen. Die einzige akzeptierte
+Kontrolle in dieser Arbeit ist die in
+Abschnitt~\ref{sec:calibration}. Sie tun es: Das Profil unterscheidet sich,
+und die verbleibende Pflicht hat eine andere Adresse und eine andere Gestalt.
+
+F-R2a ruht auf einer bewiesenen Relation statt auf einer Festsetzung: Die
+Skalierungsrelation zwischen den Bewertungen entlang des programmeigenen
+Links ist dort ein Satz, und der $j^2$-Faktor wird sichtbar in eine explizit
+definierte log-volumetrische Skala getragen. Hier trennt die Aufspaltung
+sauber, weshalb dieser Audit sie hervorgebracht hat. F-R2b hingegen ruht auf
+der Wahl derselben globalen Normierung auf beiden Seiten -- einer
+Konvention, nicht einem ausgewiesenen Umrechnungsfaktor -- und liefert daher
+höchstens teilweise, genau so, wie der Crosswalk eine Zeile dieser Gestalt
+deckelt. Sie erreicht diese Obergrenze, weil die Normierung ausdrücklich
+gewählt und angegeben ist, sodass die Rekonstruktion dokumentiert ist; was
+fehlt, ist ein sichtbar durch den Schritt getragener Umrechnungsfaktor.
+
+Die Lastpflicht wurde auditiert, bevor die Aufspaltung eingeführt wurde, und
+wird daher als ein einziges Verdikt berichtet, bei F-R4a. Die Last wird gegen
+eine globale Nebenbedingung gebucht, die Produktformel, mit hoher Konfidenz
+für die Adresse und mittlerer für die Vollständigkeit, wobei die
+kompensierende Renormierung erschlossen und nicht konstruiert ist. Die
+Adresse ist bedient und die Vollständigkeit ist nicht etabliert, sodass die
+Zeile für die Adresse liefert und für die Vollständigkeit nur teilweise --
+nicht uneingeschränkt. Ein Audit an der Aufspaltung müsste die bediente
+Adresse von der erschlossenen Existenz trennen; dieser hat das nicht getan,
+und F-R4b trägt daher in diesem Fall keinen gesonderten Befund.
+
+F-R8 ist so geliefert, wie die Zeile es verlangt: Eine globale
+Frobenius-Verschiebung ist benannt, für die beiden Schranken asymmetrisch
+eingesetzt und vom Autor als Korrektur seiner eigenen früheren Version
+gekennzeichnet -- und weil sie sichtbar ist, hat die verbleibende Pflicht
+überhaupt eine Adresse.
+
+F-R6a liefert teilweise, und die Gestalt des Rests ist der Ertrag dieses
+Falls. Die Ordnungsrelation, die die Schlussfolgerung trägt, gilt zwischen
+Summen über alle Stellen; stellenweise wird sie ausdrücklich zurückgewiesen,
+wobei der Autor angibt, dass lokale termweise Vergleiche an jeder Primstelle
+nicht angestellt werden können, ohne die gleichzeitig geltenden Normierungen
+zu verletzen, und die Bemerkung des Satzes selbst festhält, dass diese Wahl
+\glqq precludes direct comparison of various local quantities\grqq{}. Die
+Identifikation der beiden Auswertungen ruht auf identischer globaler
+Normierung und wird an dieser Stelle eine Tautologie genannt. Dieses Wort
+muss in seinem Geltungsbereich präzisiert werden: Es kommt an mehreren Stellen des Programms mit
+unterschiedlicher Reichweite vor, nur seine Verwendung für die mittlere
+Gleichheit des tragenden Satzes ist hier tragend, und es ist nicht so, dass
+der Autor seinen eigenen arithmetischen Beweis des Korollars eine Tautologie
+nennt.
+
+Bei F-R6b unterscheidet sich dieser Fall der Form nach am schärfsten vom
+ursprünglichen Argument, und hier ist die Grenze des Auditors am
+sorgfältigsten einzuhalten. Was die Zeile prüft, ist vorhanden: ein benannter
+Satz mit angegebenen Hypothesen, eine Behauptung seiner Anwendbarkeit am
+Schritt und ein ausgeschriebener Beweis mit einer Adresse. Das ist alles, was
+ein bedientes F-R6b zertifiziert. Dem steht ein Substanzbefund gegenüber,
+hier bei F-R6b berichtet, weil die Pflicht, die er betrifft, dort lokalisiert
+ist: Der Substanz-Audit von Teil~5~\cite{part5} typisierte den Kernschritt
+jenes Beweises gegen die von ihm zitierte Konstruktion als offen, sodass der
+Kern der Pflicht offen bleibt. Dieser Befund ist kein Formverdikt, und der
+Auditor entscheidet ihn nicht.
+
+Zwei Korrekturen revidierten die historische Lesart dieses Falls in
+entgegengesetzte Richtungen. Innerhalb des bestimmten Normierungsrahmens,
+der im auditierten Teil~4~\cite{part4} benannt ist, wurde die Identifikation
+als definitorisch statt als verdeckte Wahl gelesen; dies ist keine
+unbedingte Identifikation über ATS-Felder, Stellenbereiche oder
+Volumenkonstruktionen hinweg. Mengenstabilität und die Festlegung des
+Maßes bleiben gesonderte Pflichten. Der Teil-5-Substanzbefund~\cite{part5}
+ist von dieser Formlesart getrennt. Das im historischen Zusammenhang
+zitierte Starrheitsresultat~\cite{part6} gilt unter seinen angegebenen
+Feld-, Allstellen- und Normierungshypothesen; es beseitigt keine dieser
+Hypothesen und liefert keinen unbedingten ATS- oder Volumenschluss.
+Tabelle~\ref{tab:abc_ats_comparison} erhält die historischen vergleichenden
+Auditergebnisse, begrenzt auf die auditierten Versionen. Der Band, der die
+abc-Schlussfolgerung trägt, bezeichnet sich als vorläufige Version für
+Kommentare.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Vergleichendes Auditprofil für den abc-Transportschritt (ursprüngliche IUT-Darstellung vs.\ ATS-Programm).}
+\label{tab:abc_ats_comparison}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+v1-F-Zeile & Ursprüngliches Argument & Vergleichsfall (ATS-Programm) \\
+\midrule
+F-R2a & außerhalb des Geltungsbereichs (X): keine Transportoperation
+     innerhalb des Links am Teilschritt
+   & liefert (hoch): eine bewiesene Skalierungsrelation entlang des
+     programmeigenen Links \\
+F-R2b & liefert teilweise: Identifikation durch eine geteilte
+     Lesekonvention; hier nicht von F-R6a trennbar
+   & liefert teilweise: dieselbe globale Normierung, durch Konvention
+     gesetzt \\
+F-R4a & liefert (hoch) für den Verbund der beiden Bände
+   & unaufgespalten auditiert, hier berichtet: liefert für die Adresse,
+     teilweise für die Vollständigkeit -- die kompensierende Renormierung
+     ist erschlossen und nicht konstruiert \\
+F-R4b & liefert nicht (hoch): nachgelagert zur Brücke quantifiziert
+   & kein gesonderter Befund: nicht an der Aufspaltung auditiert (siehe
+     F-R4a) \\
+F-R6a & liefert nicht: keine Kompatibilitätsidentität am Schritt hergeleitet
+   & liefert teilweise (hoch): Ordnung nach Summation, stellenweise
+     zurückgewiesen \\
+F-R6b & liefert nicht (hoch): Zugehörigkeit \glqq follows formally\grqq{}
+   & textlich bedient: benannter Satz, Hypothesen, Beweisadresse;
+     Kernschritt von einem Substanz-Audit als offen typisiert \\
+F-R8 & liefert teilweise (hoch): benannt und bepreist, am Schritt suspendiert
+   & liefert (hoch): benannt, asymmetrisch, erklärt \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\noindent
+Die auditierte Einheit waren in beiden Fällen diese Zeilen am identifizierten
+Schritt; die übrigen Zeilen von Abschnitt~\ref{sec:ledger} tragen hier kein
+Verdikt, und eine mit X kodierte Zeile wird keiner der beiden Darstellungen
+angelastet. Was der Vergleich lokalisiert, ist ein Unterschied in der
+\emph{Form} der verbleibenden Pflicht: ein Paar erklärter Eigenschaften,
+verteilt über eine Bemerkung und mehrere Teilschritte, gegen eine einzelne
+benannte Gleichheit mit ausgeschriebenem Beweis. Ob dieser Beweis korrekt
+ist, ist keine Frage, die dieses Instrument beantwortet.
+
+\subsection{Vererbung: was mit einer Zitation mitreist}\label{sec:abc-inheritance}
+
+Ein nachgelagertes Vererbungsbeispiel führt die Frage über den auditierten
+Schritt hinaus. Zwei Anwendungsarbeiten von
+Zhou~\cite{ZhouI,ZhouII} leiten diophantische Konsequenzen her, die auf der
+Ungleichung von Korollar~3.12 ruhen, und der Audit stellte eine Frage: wie
+die Brücke übernommen wird. In der ersten erscheint sie als Proposition,
+deren gesamter Beweis ein Satz ist -- \glqq The proposition follows from the
+$\mu_6$-version of [37], Corollary~3.12\grqq{}, wobei sich die Referenz auf den
+dritten Band in der Nummerierung jener Arbeit bezieht -- und wird genau
+einmal verwendet, wonach die nachgelagerte Kette weiterläuft. In der zweiten
+wird das Korollar in der auditierten Version überhaupt nicht benannt: Die
+Brücke wird über die erste Arbeit vererbt und auf eine neue Klasse von
+Anfangsdaten ausgedehnt, indem eine einzelne Hypothese durch die zitierten
+Bände verfolgt wird, ohne dass der Brückenschritt berührt würde. Was beide
+Arbeiten an Eigenem beitragen, liegt jenseits der Brücke.
+
+Nichts davon ist ungewöhnlich: Ein etabliertes Resultat zu zitieren, statt es
+neu herzuleiten, ist genau der Zweck der Zitation. Was den strukturellen
+Punkt sichtbar macht, ist, dass beide Arbeiten klar angeben, wo sie einen
+eigenen Schritt auslassen. Diese Vorbehalte haften an ihren eigenen
+Auslassungen, und keiner haftet am importierten Schritt -- nicht, weil die
+Autoren es abgelehnt hätten, einen zu machen, sondern weil an einer Zitation
+nichts einen Vertragszustand trägt. Eine bediente Zeile und eine unbediente
+Zeile reisen identisch durch eine Bibliographie.
+
+Das ist das praktische Argument für ein Vertragszertifikat als
+\emph{Zitationsschnittstelle}. Ein auditiertes Ledger ist ein zitierbares
+Artefakt: Es gibt Zeile für Zeile an, was das zitierte Resultat als bedient
+und was es als offen gelassen befunden wurde, sodass eine importierende
+Arbeit einen bekannten statt eines unbekannten Vertragszustands erbt. Unter
+einer solchen Disziplin -- in Teil~3~\cite{part3} als Import-Ledger
+formuliert -- würde sich an der Mathematik keiner der beiden Arbeiten etwas
+ändern; jede trüge eine weitere Zeile, die die Zeile benennt, die ihr Import
+unbedient lässt. Beide Befunde sind im Geltungsbereich auf die auditierten Versionen beschränkt,
+wobei die zweite Arbeit sich selbst als ältere, zu aktualisierende Version
+bezeichnet, und eine Frage, die der Audit offen ließ -- ob ein
+Normierungsfaktor in der Aussage der ersten Arbeit dieselbe Größe
+renormiert, die das Korollar trägt --, bleibt auch hier offen.
+
+\subsection{Ein externer Vergleichspunkt}\label{sec:abc-external}
+
+Der letzte Punkt dieses Abschnitts stammt nicht von uns. Ein Zwischenbericht
+eines Formalisierungsprojekts, publiziert im Juli 2026~\cite{LANA2026},
+isoliert an derselben Passage ein Kompatibilitätsproblem -- und isoliert es
+in der Gestalt eines Vertrags. Seine dort mit (9-1) nummerierte Bedingung
+verlangt die Existenz einer geeigneten Wahl der ganzzahligen Struktur, unter
+der zwei Auswertungsisomorphismen mit gemeinsamem Ziel übereinstimmen: der
+eine entstehend aus dem $q$-Piloten in seiner nativen Struktur, der andere
+anabelsch und kummertheoretisch gewonnen und Unbestimmtheiten unterworfen.
+Der Bericht stellt fest, dass das Projekt \glqq has not yet reconstructed a proof
+of the required compatibility\grqq{}, und dass der Beweis der finalen numerischen
+Ungleichung \glqq hinges on the compatibility (9-1) which is not manifestly
+false. However, we, the LANA project, do not have a proof of (9-1) at this
+time.\grqq{}
+
+Gegen Definition~\ref{def:bridge} gelesen ist die vorgeschlagene Zuordnung
+objektweise, kein verifizierter Transfer: Ein gemeinsamer Zielquotient,
+typisierte Abbildungen, Ablesungen, Ganzheitsstrukturen und Unbestimmtheiten
+müssten mit ihren tatsächlichen Objekten, Domänen, Quantoren und ihrer
+Implikationsrichtung identifiziert werden. Die Existenz eines Quotienten oder
+eines geteilten Ziels allein bedient nicht die Kompatibilitätsidentitäten
+von Komponente~6. Ist eine Ablesegleichheit im identifizierten
+gemeinsamen Werteraum $V$ bewiesen, liefert Reflexivität den numerischen
+Vergleich in $V$; nicht umgekehrt. Dies liefert für sich nicht die
+Containerordnung (H2): $\nu_C$ muss Ordnung nicht reflektieren. Gleichheit
+der identifizierten Bilder in $C$ liefert (H2) durch Reflexivität in $C$;
+numerischer Vergleich allein verlangt Ordnungsreflexion oder einen gesondert
+adressierten Beweis von (H2). Zugehörigkeit zu
+$H_\Theta$ verlangt zusätzlich die anwendbaren (H1)--(H5), einschließlich
+der Zielschranke (H5). Dieser Vergleich beweist keine solche IUT-zu-C7-Brücke.
+
+Die Ledger-Notiz, die das Kriterium im Mai 2026 fixierte, hielt eine bedingte
+Erwartung fest: Sollte eine Formalisierungsanstrengung diese Passage tragen,
+müsste der Vertrag in ihr als Lemma auftreten. Der Bericht hat diese Gestalt.
+In diesem einzelnen Zwischenbericht, an dieser einzelnen Passage, besetzt
+eine unabhängig formulierte Kompatibilitätsbedingung eine zu F-R6b analoge
+Position. Wir verzeichnen eine nachträglich festgestellte strukturelle
+Ähnlichkeit, keine Konvergenz auf das allgemeine Kriterium und keine
+Bestätigung unseres Fallverdikts. Ein Prioritätsanspruch wird ebenfalls nicht
+erhoben; die Analyse ist die jenes Projekts und in seinen eigenen Begriffen.
+Die Grenzen sind ebenso deutlich: Das Dokument ist ein Zwischenbericht ohne
+abschließendes Verdikt und hält internen Dissens fest, und unsere Zuordnung
+ist objektweise, kein Beweis, dass (9-1) und Komponente~7 äquivalent sind. Die
+eigene Position des Berichts -- verlangt, unbewiesen, nicht offensichtlich
+falsch -- ist genau das, wofür die Verdikt-Grammatik von
+Abschnitt~\ref{sec:ledger} existiert: Eine Zeile, die nicht liefert,
+lokalisiert eine Last und widerlegt nichts.
+
+%=====================================================================
+\section{Ausblick: RH-Uniformitätsbehauptungen}\label{sec:rh}
+
+Das Kriterium ist nicht spezifisch für die abc-Literatur.
+Positivitätszugänge zur Riemannschen Vermutung enthalten dieselben zwei
+Gestalten -- Transportschritte (Resultate endlicher Modelle, zu einem
+Grenzobjekt getragen) und global-only-Behauptungen (Positivität erst nach
+Summation verfügbar) --, und die entsprechenden Ledger-Zeilen könnten dort
+instanziiert werden: Uniformitätspflichten für Schranken endlicher
+Abschnitte, Quotientenpflichten dort, wo Majorisierungsargumente
+ausgeschlossen sind, und eine explizite Zahlungspflicht für archimedische
+Masse. Wir stellen jede solche Instanziierung auf eine eigene Behandlung
+zurück, synchronisiert mit dem Selbstanwendungsteil dieser Serie, weil dort
+unser eigenes Programm zu den auditierten Objekten gehört und die
+Protokoll-Einfrierungsdisziplin von Abschnitt~\ref{sec:calibration} verlangt,
+dass die operationalisierten Zeilen, Primärquellen und Behauptungsgrenzen
+festgelegt sind, bevor der Abschnitt geschrieben wird. Dieser Abschnitt ist
+ein Ausblick und keine Instanziierung: Die vorliegende Arbeit enthält bewusst
+keine RH-seitigen Verdikte.
+
+\section[Eine verwandte Struktur: Global-only-Behauptungen]{Eine verwandte Struktur:\texorpdfstring{\\}{ }Global-only-Behauptungen}\label{sec:global}
+
+Eine wiederkehrende Gestalt in beiden Instanziierungsbereichen ist die
+\emph{global-only}-Behauptung: eine Aussage, von der behauptet wird, sie
+gelte erst nach Summation über alle Stellen, wobei lokaler, stellenweiser
+Zugriff ausdrücklich nicht verfügbar ist. In Weil-Positivitätszugängen zur RH
+ist die Positivität einer quadratischen Form eine globale Summe, deren
+einzelne Terme kein Vorzeichen tragen; in der abc-Literatur beschränkt die
+Quelle des wichtigsten Reparaturprogramms ihre Vergleiche mit ausdrücklichen
+Worten auf die summierte Ebene (\glqq one cannot make local term by term
+comparisons at each prime\grqq{}~\cite{JoshiATSIII,JoshiATSIV}), und ihr
+Normierungsmechanismus ist eine Produktformel-Nebenbedingung -- wiederum
+eine Aussage über ein Produkt über alle Stellen, nicht über irgendeinen
+einzelnen Faktor. Die Auditspur für beide Lesarten findet sich in den
+Teilen 4 und 5 dieser Serie~\cite{part4,part5}.
+% TODO(operator, P2-7): the quotation above is now anchored to the primary ATS
+% source rather than to our own audit parts, but it still lacks a precise
+% locator. Add the volume, section or page of ATS III/IV for this sentence
+% before upload; the same locator is also wanted at the parallel passage in
+% Section \ref{sec:abc-control}.
+
+Für das Kriterium löst diese Gestalt eine spezifische Pflicht aus. Wo eine
+Behauptung nur auf der summierten Ebene lebt, können die
+Vertragskomponenten 6--7 nicht stellenweise bedient werden; was dann
+bereitgestellt werden muss, ist ein \emph{Vertragslemma}. Wir geben an, was
+ein solches Lemma enthalten muss.
+
+\begin{definition}[Global-only-Vertragslemma]\label{def:globallemma}
+Es sei $(x_v)_{v\in\Sigma}$ eine zulässige Familie, $G((x_v)_v)=e$ eine
+angegebene globale Nebenbedingung und $S((x_v)_v)$ das von der Behauptung
+verwendete Aggregat. Ein Global-only-Vertragslemma ist eine benannte,
+adressierte Aussage, die (G1) die zulässige Klasse und die Konvergenz- bzw.\
+Bereichsbedingungen, (G2) die exakte globale Nebenbedingung, (G3) die für die
+Behauptung benötigte Aggregatgleichheit oder Ordnungsimplikation und (G4) die
+lokalen Freiheitsgrade angibt, die nach Auferlegung der Nebenbedingung
+verbleiben. Es löst F-R6b nur auf globaler Ebene ein. Eine stellenweise
+Starrheitsschlussfolgerung verlangt eine zusätzliche benannte Injektivitäts-,
+Striktheits- oder Eindeutigkeitshypothese und darf nicht aus der Globalität
+allein erschlossen werden.
+\end{definition}
+
+In dieser Arbeit ist die Definition eine Ausblicksschnittstelle, keine zweite
+Instanziierung; es wird kein global-only-Ledger-Verdikt berichtet. Das
+Werkzeug-Supplement dieser Serie~\cite{gnc} führt eine Konstruktion dieser
+Art für die globale Normierung des abc-Reparaturprogramms aus, und der
+Starrheitssatz von Teil 6~\cite{part6} weist einen Fall auf, in dem eine
+globale multiplikative Nebenbedingung über alle Stellen zusammen mit den dort
+angegebenen Hypothesen sehr wohl stellenweise Starrheit erzwingt -- was eine
+Instanz von unter benannten Zusatzhypothesen eingelöstem (G4) ist und keine
+allgemeine Lizenz, Starrheit an der Globalität abzulesen. Innerhalb von v1-F
+wird die ausgelöste Zeile F-R8 auf globaler Ebene nur dann aktiviert, wenn
+mehrere globale Modi oder Zweige die Ordnung des Aggregats beeinflussen
+können. Die Lehre für die Auditierung ist symmetrisch: global-only ist kein
+Mangel, aber es verwandelt lokale Pflichten in eine einzelne benannte
+globale -- und der Audit muss prüfen, dass diese eingelöst und nicht in
+Notation aufgelöst wird.
+
+\subsection{Aktuelle Entwicklungen in Teilen 4--6}\label{sec:current-series}
+
+Die späteren v0.3-Papers sind zusätzliche versionsspezifische
+Forschungsreferenzen, keine Ersatzfassungen der v0.2-Bindungen des
+vorstehenden retrospektiven Audits. Teil~4~\cite{part4current} erhält eine
+teilweise dokumentierte Normierungskonvention und trennt die typisierten
+Logbild-, Hüllen- und Logvolumenverträge. Teil~5~\cite{part5current}
+unterscheidet rohe und normierte Koordinaten und verlangt für seine
+Frobeniusroute die tatsächlichen gemeinsamen fixierten Koordinaten,
+Koeffiziententransformation und Periodenbildaktion. Er dokumentiert auch
+die tatsächlich gedruckten Betragsstriche im eng geprüften ATS-III-Korollar;
+die frühere atomare Vorzeichenentlastung wird unter den dort ausdrücklich
+genannten Tate-Stellen- und Endlichkeitsannahmen zurückgenommen. Diese
+späteren Befunde kodieren die historischen Zeilen nicht um und entscheiden
+nicht die gesamte ATS-, abc- oder IUT-Kette.
+
+In der Standardmodul-Normierung von Teil~6~\cite{part6current} sind die
+lokalen Gradfaktoren enthalten, sodass
+\[
+ \sum_{v\in M_L}\log b_v(x)=0\qquad(x\in L^\times).
+\]
+Für ein festes Zahlfeld $L$, alle seine Stellen einschließlich der
+archimedischen, reelle von $x$ unabhängige Gewichte und jedes
+$x\in L^\times$, mit lokaler Normrealisierung $\rho_v=b_v^{a_v}$,
+betrifft die gewichtete Produktformel die endgültigen
+Effektivgewichte
+\[
+ \beta_v=a_v\lambda_v,\qquad
+ \sum_{v\in M_L}\beta_v\log b_v(x)=0\quad\text{für alle }x\in L^\times.
+\]
+Unter diesen Hypothesen liefert Starrheit $\beta_v=c$; sie identifiziert
+die rohen $\lambda_v$ nicht mit $c$, wenn Gradfaktoren getrennt stehen.
+Ein konstanter globaler Faktor, einschließlich $j^2$, ist zulässig.
+Auf $L^\times$ beschränkte Tests an Stellen einer Erweiterung $L'$
+bestimmen nicht die einzelnen $L'$-Gewichte. Gemeinsame Feld-, Norm- und
+Freeze-Identifikationen bleiben Voraussetzungen eines Zweigvergleichs.
+
+Für einen Größenverbraucher wird eine lineare Familie verlangt:
+\[
+ Q_y=\sum_v\beta_{y,v}q_v,\qquad Q_{\rm ref}=\sum_v q_v,
+ \qquad Q_y=c_yQ_{\rm ref},
+\]
+mit von $y$ unabhängigen $q_v$ und endlichen Summen oder gerechtfertigter
+absoluter Konvergenz. Die letzte Gleichheit gilt bedingt unter denselben
+Effektivgewichtshypothesen; $Q_{\rm ref}=Q_{\rm cl}$ ist eine zusätzliche
+klassische Referenzbrücke. Punktweise Normierung (5.3.3) liefert unter ihrer
+angegebenen Identifikation den klassischen Grad auf $L^\times$ und die
+Höhe auf $\mathbb P^n(L)$, ohne automatische Übertragung auf algebraische
+Erweiterungen oder Geradenbündelhöhen. Mitgliedschaft und Nichtmitgliedschaft
+von Maßen und Logvolumina in dieser Klasse bleiben unbekannt; eine beliebige
+ATS-Hülle wird nicht stillschweigend mit einer Maximalordnungs-Modulhülle
+identifiziert. Dies sind aktuelle Geltungsbereichspräzisierungen, keine
+neuen F-R6-Verdiktscodes.
+
+%=====================================================================
+\section{Grenzen und Fairness}\label{sec:limits}
+
+Vier Grenzen umschließen alles Vorstehende. \emph{Erstens} beurteilt das
+Kriterium Form. Kein Verdikt in dieser Arbeit oder in der Serie ist ein
+Wahrheitsverdikt: nicht über abc, nicht über IUT, nicht über irgendein
+auditiertes Programm. Eine unbediente Ledger-Zeile ist eine Pflicht mit einer
+Adresse; Theoreme werden durch Mathematik widerlegt, nicht durch Audits. Was
+der Auditor zertifiziert, ist noch enger: dass eine Pflicht in einer benannten
+Version vorhanden, typisiert und adressierbar ist, niemals, dass die
+Mathematik, die sie benennt, tragfähig ist. \emph{Zweitens} ist der
+Auditrahmen in der zugrunde liegenden Kontroverse neutral. Dieselben Zeilen
+werden auf jeden auditierten Text angewandt -- das ursprüngliche Programm,
+die Lesart seiner Kritiker und das Reparaturprogramm --, und die
+retrospektive Illustration von Abschnitt~\ref{sec:calibration} wurde gerade
+deshalb mit einem symmetrischen Falsifikationskriterium entworfen, damit das
+Instrument hätte scheitern können. \emph{Drittens} ist die Evidenzbasis
+konstruktionsbedingt klein und versionsspezifisch abgegrenzt: ein retrospektiver
+Bekannte-Lücke-Fall und eine akzeptierte Kontrolle unter v1-T, eine
+abc-Instanziierung mit einem vergleichenden Diskriminierungsfall unter v1-F,
+dazu ein nachgelagertes Vererbungsbeispiel und ein externer Vergleich. Nichts
+in der v1-F-Instanziierung erbt Stützung von der v1-T-Illustration. Wir
+verwenden die im Protokoll festgelegte Formulierung \glqq consistent with design
+intent\grqq{} (mit der Konstruktionsabsicht vereinbar) und vermeiden durchgehend
+das Wort \glqq validiert\grqq{}. \emph{Viertens} regelt ein Fairness-Protokoll die
+Praxis: Ein Verdikt, das vom eigenen Wortlaut des auditierten Autors abhängt,
+führt diesen Wortlaut als wörtliches Zitat mit einer Adresse aus einer
+benannten Version mit; jedes andere im Fließtext begründete Verdikt wird
+durch eine Paraphrase der Passage oder des Merkmals getragen, auf das in der
+benannten Version zurückgegriffen wird, oder durch eine Zitation in den
+publizierten Serienteil, der es dokumentiert; die Zeilencode-Matrizen sind
+Zusammenfassungen archivierter Auditnachweise, deren Zeilen-Ankertabellen
+noch nicht publiziert sind -- bis das geplante Supplement erscheint, sind
+die Matrizen als Zusammenfassungen jener Nachweise zu lesen und nicht als
+unabhängig prüfbare Behauptungen (Abschnitt~\ref{sec:anchors}); die Konfidenz
+wird in einem festen dreiachsigen Schema angegeben; Befunde der Form \glqq der
+Text zeigt nicht\grqq{} werden niemals zu \glqq dies ist falsch\grqq{} aufgewertet; und die
+eigenen Geltungsbereichsaussagen auditierter Autoren werden zitiert, nicht
+paraphrasiert, wo immer ein Verdikt von ihnen abhängt.
+
+Die zwei retrospektiven Fälle verwenden zudem unterschiedliche
+Quellengattungen und auditierte Versionen: Der Wiles-Fall wird über den
+zeitgenössischen Bericht von Rubin--Silverberg erschlossen, der Prasad-Fall
+über das Primärpaper. Ihre rohen v1-T-Paare bleiben sichtbar: Das
+Wiles-T-R8-Paar ist $(E-,I)$, das Prasad-T-R6-Paar $(I,E+)$.
+Diese Quellenasymmetrie und die Übereinstimmung $10/12$ schätzen weder
+Reliabilität noch Trennschärfe oder Fehlalarmrate; keines der Paare wird
+stillschweigend in einen v1-F-F-R8-Code umgewandelt. Der LANA-Vergleich
+verlangt weiterhin seine eigene Objekt-, Domänen-, Quantoren- und
+Implikationsrichtungsbrücke; aus struktureller Ähnlichkeit folgt weder
+Äquivalenz noch Bestätigung.
+
+%=====================================================================
+\section{Fazit}\label{sec:conclusion}
+
+Die aktuelle Illustration erhält nun den vollständigen bedingten
+C7-Vertrag; das unvollständige frühere Diagramm wurde korrigiert, ohne
+Definition oder retrospektive Rohcodes zu ändern. Die aktuellen Teile 4--6
+präzisieren die verbleibenden Normierungs- und Größenverbraucherpflichten,
+ohne eine allgemeine Methodenvalidierung zu liefern oder Feld-, Perioden-,
+Volumen- oder LANA-Transferbrücken zu schließen.
+
+
+
+Wir haben ein prüfbares Formkriterium für Transportargumente angegeben:
+sieben Vertragskomponenten, ein versioniertes Ledger mit einer
+Drei-Verdikt-Grammatik über fünf Rohcodes und eine Auditpraxis mit wörtlicher
+Verankerung und vor der Kodierung festgelegten Bewertungskriterien. Seine
+Stellung unter bestehenden Strukturen ist spezifisch -- das nächste
+heuristische Analogon ist die Tradition zertifizierender Algorithmen, aber
+das Artefakt wird hier von einem dritten Auditor rekonstruiert statt vom
+Beweisenden ausgestellt, und was eine Prüfung feststellt, ist textliche
+Vertragsvollständigkeit und nicht Korrektheit --, und innerhalb des hier
+gesichteten begrenzten Korpus fanden wir keine Arbeit, die in der Literatur
+zu mathematischen Kontroversen denselben Platz einnimmt.
+
+Der hier erbrachte Beitrag ist eine abc-Instanziierung eines
+Form-Audit-Kriteriums. Die beiden historischen Fälle illustrieren v1-T
+retrospektiv; sie validieren nicht das volle v1-F-Instrument. RH- und
+global-only-Anwendungen bleiben künftige Arbeit. In der
+protokoll-eingefrorenen Zwei-Fall-Illustration wurden die vorab festgelegten
+Kriterien erfüllt. Angewandt auf den ausgewählten abc-Transportschritt
+ersetzt das Ledger eine diffuse Uneinigkeit über diesen Schritt durch ein
+Profil benannter Pflichten, gewichtet und jeweils mit einer Zitation; es
+entscheidet nicht die Kontroverse, die ihn umgibt. Was das Kriterium nicht
+kann, ist irgendetwas beweisen, und eine bediente Zeile zertifiziert keine
+Mathematik. Sein Anspruch ist kleiner und, wie wir glauben, nützlich: dass
+Uneinigkeiten über Transportbehauptungen als Uneinigkeiten über benannte
+Vertragsklauseln geführt werden können -- prüfbar, zitierbar und
+revidierbar, wenn sich der Text ändert.
+
+%=====================================================================
+% AI disclosure. The path is relative to the BUILD WORKING DIRECTORY, not to
+% this file. Verified 2026-08-16 by compiling with cwd = paper/ , where it
+% resolves to .RESEARCH/_templates/disclosure/ai_disclosure_STANDARD_de.tex and
+% the disclosure is visible in the PDF. Compiling from any other directory
+% requires adapting the path (or passing -include-directory).
+\input{ai_disclosure_de}
+
+%=====================================================================
+\begin{thebibliography}{99}
+\sloppy
+\emergencystretch=3em
+
+
+\bibitem{Aberdein2023}
+A.~Aberdein,
+\emph{Deep Disagreement in Mathematics},
+Global Philosophy \textbf{33} (2023), no.~1, article~17.
+DOI: 10.1007/s10516-023-09653-7 (arXiv:2210.16488).
+
+\bibitem{Andersen2017}
+L.~E.~Andersen,
+\emph{On the Nature and Role of Peer Review in Mathematics},
+Accountability in Research \textbf{24} (2017), no.~3, 177--192.
+DOI: 10.1080/08989621.2016.1274885.
+
+\bibitem{Andersen2020}
+L.~E.~Andersen,
+\emph{Acceptable gaps in mathematical proofs},
+Synthese \textbf{197} (2020), no.~1, 233--247.
+DOI: 10.1007/s11229-018-1778-8.
+
+\bibitem{GSN2021}
+Assurance Case Working Group (ACWG),
+\emph{Goal Structuring Notation Community Standard (Version 3)},
+Safety-Critical Systems Club (SCSC), 4 May 2021.
+Available at \url{https://scsc.uk/r1386.pdf}.
+
+\bibitem{Avigad2021}
+J.~Avigad,
+\emph{Reliability of mathematical inference},
+Synthese \textbf{198} (2021), no.~8, 7377--7399.
+DOI: 10.1007/s11229-019-02524-y.
+
+\bibitem{Bloomfield2021}
+R.~Bloomfield and J.~Rushby, \emph{Assurance 2.0: A Manifesto},
+arXiv:2004.10474v3 [cs.SE], 2020 (revised 14~January 2021).
+DOI: 10.48550/arXiv.2004.10474.
+
+\bibitem{Blum1995}
+M.~Blum and S.~Kannan,
+\emph{Designing programs that check their work},
+Journal of the ACM \textbf{42} (1995), no.~1, 269--291.
+DOI: 10.1145/200836.200880.
+
+\bibitem{Buzzard2020}
+K.~Buzzard, J.~Commelin and P.~Massot,
+\emph{Formalising perfectoid spaces},
+in: Proceedings of the 9th ACM SIGPLAN International Conference on
+Certified Programs and Proofs (CPP 2020), ACM, 2020, 299--312.
+DOI: 10.1145/3372885.3373830.
+
+\bibitem{Castelvecchi2020}
+D.~Castelvecchi,
+\emph{Mathematical proof that rocked number theory will be published},
+Nature \textbf{580} (2020), no.~7802, 177.
+DOI: 10.1038/d41586-020-00998-2.
+
+\bibitem{DeMillo1979}
+R.~A.~De~Millo, R.~J.~Lipton and A.~J.~Perlis,
+\emph{Social processes and proofs of theorems and programs},
+Communications of the ACM \textbf{22} (1979), no.~5, 271--280.
+DOI: 10.1145/359104.359106.
+
+\bibitem{part1}
+L.~Geiger,
+\emph{The Gap in IUTchIII, Corollary 3.12: From Attempted Repair to
+Structural Diagnosis},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.19960781
+(latest version v6.3, DOI: 10.5281/zenodo.21899747).
+
+\bibitem{part3}
+L.~Geiger,
+\emph{The Bridge Certificate: A Line-Level Audit Instrument for
+Inter-Theoretic Transfer Arguments, with Four Applications to the abc
+Literature (DRAFT)},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21925803
+(version 0.1, DOI: 10.5281/zenodo.21925804).
+
+\bibitem{part4}
+L.~Geiger,
+\emph{The Bridge Certificate Applied to the Joshi ATS Series:
+A Ledger Audit (DRAFT)},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21951155
+(version 0.2, DOI: 10.5281/zenodo.21951156).
+
+\bibitem{part5}
+L.~Geiger,
+\emph{The Joshi ATS Series under the Bridge-Certificate Standard:
+A Targeted Substance Audit and an All-Place Rigidity Classification of
+Effective Normalization Weights (DRAFT)},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21956398
+(version 0.2, DOI: 10.5281/zenodo.21956399).
+
+\bibitem{part6}
+L.~Geiger,
+\emph{Repairing the ATS Chain? A Rigidity Theorem for Product-Formula
+Weights and an Effective-Weight Test for the Height Subchain (DRAFT)},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21952486
+(version 0.2, DOI: 10.5281/zenodo.21952487).
+
+\bibitem{part4current}
+L.~Geiger,
+\emph{The Bridge Certificate Applied to the Joshi ATS Series: A Ledger Audit},
+Zenodo, version 0.3, 2026. DOI: 10.5281/zenodo.23092802.
+
+\bibitem{part5current}
+L.~Geiger,
+\emph{The Joshi ATS Series under the Bridge-Certificate Standard:
+A Targeted Substance Audit and an All-Place Rigidity Classification
+of Effective Normalization Weights},
+Zenodo, version 0.3, 2026. DOI: 10.5281/zenodo.23094093.
+
+\bibitem{part6current}
+L.~Geiger,
+\emph{What the Product Formula Allows: A Rigidity Theorem and
+an Effective-Weight Test for the ATS Height Subchain},
+Zenodo, version 0.3, 2026. DOI: 10.5281/zenodo.23093243.
+
+\bibitem{gnc}
+L.~Geiger,
+\emph{Global Normalization in Joshi's Arithmetic Teichmuller Theory:
+What the Identification Carries --- and What Carries the Theorem
+(DRAFT)},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21924253
+(version 1.1, DOI: 10.5281/zenodo.21924254).
+
+\bibitem{landscapeA}
+L.~Geiger,
+\emph{The abc Landscape: Obstructions, Failed Routes, and HCT
+Diagnostics (DRAFT)},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21916900
+(latest version 1.1, DOI: 10.5281/zenodo.21924338).
+
+\bibitem{zookeeper}
+L.~Geiger,
+\emph{The Spectral Zookeeper: A Conditional Reduction toward the
+Riemann Hypothesis via Spectral Microcluster Closure in the
+Connes--Consani--Moscovici Framework},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.19673126
+(latest version 1.6, DOI: 10.5281/zenodo.21953305).
+
+\bibitem{Hales2017}
+T.~Hales et al.,
+\emph{A formal proof of the Kepler conjecture},
+Forum of Mathematics, Pi \textbf{5} (2017), e2.
+DOI: 10.1017/fmp.2017.1.
+
+\bibitem{JoshiATSIII}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller Spaces III: A `Rosetta
+Stone' and a proof of Mochizuki's Corollary 3.12},
+arXiv:2401.13508v4 [math.AG], 2024 (revised 24 February 2025).
+DOI: 10.48550/arXiv.2401.13508.
+
+\bibitem{JoshiATSIV}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller Spaces IV: Proof of the
+abc-conjecture},
+arXiv:2403.10430v2 [math.AG], 2024 (revised 24 February 2025).
+The title page designates the text a \emph{preliminary version for
+comments}.
+DOI: 10.48550/arXiv.2403.10430.
+
+\bibitem{Joshi2025Report}
+K.~Joshi,
+\emph{Final Report on the Mochizuki--Scholze--Stix Controversy},
+arXiv:2505.10568v1 [math.AG], 2025 (submitted 29 April 2025), 8~pp.
+DOI: 10.48550/arXiv.2505.10568.
+
+\bibitem{LANA2026}
+LANA Project,
+\emph{Project LANA Interim Report on IUT Theory},
+16 July 2026, 50~pp.
+Available at
+\url{https://ncatlab.org/nlab/files/LANAProject-Report-July2026.pdf}.
+
+\bibitem{Mathlib2020}
+The mathlib Community,
+\emph{The Lean Mathematical Library},
+in: Proceedings of the 9th ACM SIGPLAN International Conference on
+Certified Programs and Proofs (CPP 2020), ACM, 2020, 367--381.
+DOI: 10.1145/3372885.3373824.
+
+\bibitem{McConnell2011}
+R.~M.~McConnell, K.~Mehlhorn, S.~Näher and P.~Schweitzer,
+\emph{Certifying algorithms},
+Computer Science Review \textbf{5} (2011), no.~2, 119--161.
+DOI: 10.1016/j.cosrev.2010.09.009.
+
+\bibitem{Mochizuki2019}
+S.~Mochizuki,
+\emph{Report on Discussions, Held during the Period March 15--20, 2018,
+Concerning Inter-universal Teichmüller Theory (IUTch)},
+February 2019.
+Available at
+\url{https://www.kurims.kyoto-u.ac.jp/~motizuki/Rpt2018.pdf}.
+
+\bibitem{Mochizuki2021c}
+S.~Mochizuki,
+\emph{Inter-universal Teichmüller Theory III: Canonical Splittings
+of the Log-Theta-Lattice},
+Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{57} (2021), no.~1/2, 403--626.
+DOI: 10.4171/PRIMS/57-1-3.
+
+\bibitem{Mochizuki2021d}
+S.~Mochizuki,
+\emph{Inter-universal Teichmüller Theory IV: Log-Volume
+Computations and Set-Theoretic Foundations},
+Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{57} (2021), no.~1/2, 627--723.
+DOI: 10.4171/PRIMS/57-1-4.
+
+\bibitem{Necula1997}
+G.~C.~Necula,
+\emph{Proof-carrying code},
+in: Proceedings of the 24th ACM SIGPLAN-SIGACT Symposium on Principles
+of Programming Languages (POPL '97), ACM, 1997, 106--119.
+DOI: 10.1145/263699.263712.
+
+\bibitem{prasad}
+G.~Prasad,
+\emph{Volumes of S-arithmetic quotients of semi-simple groups},
+Publications Math\'{e}matiques de l'IH\'{E}S \textbf{69} (1989),
+91--114.
+DOI: 10.1007/BF02698841.
+Available at \url{http://www.numdam.org/item/PMIHES_1989__69__91_0/}.
+
+\bibitem{rubinsilverberg}
+K.~Rubin and A.~Silverberg,
+\emph{A report on Wiles' Cambridge lectures},
+Bull.\ Amer.\ Math.\ Soc.\ (N.S.) \textbf{31} (1994), no.~1, 15--38.
+DOI: 10.1090/S0273-0979-1994-00512-9 (arXiv:math/9407220).
+
+\bibitem{Rushby2015}
+J.~Rushby,
+\emph{The Interpretation and Evaluation of Assurance Cases},
+Technical Report SRI-CSL-15-01, Computer Science Laboratory,
+SRI International, Menlo Park, CA, July 2015.
+Available at
+\url{https://www.csl.sri.com/users/rushby/papers/sri-csl-15-1-assurance-cases.pdf}.
+
+\bibitem{Scholze2022LTE}
+P.~Scholze,
+\emph{Liquid Tensor Experiment},
+Experimental Mathematics \textbf{31} (2022), no.~2, 349--354.
+DOI: 10.1080/10586458.2021.1926016.
+
+\bibitem{ScholzeStix2018}
+P.~Scholze and J.~Stix,
+\emph{Why abc is still a conjecture},
+unpublished manuscript, 2018; the circulated file was produced on
+16 July 2018.
+Available at
+\url{https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf}.
+
+\bibitem{ZhouI}
+Z.-P.~Zhou,
+\emph{The inter-universal Teichmüller theory and new Diophantine
+results over the rational numbers. I},
+arXiv:2503.14510v1 [math.NT], 2025.
+DOI: 10.48550/arXiv.2503.14510.
+
+\bibitem{ZhouII}
+Z.-P.~Zhou,
+\emph{The inter-universal Teichmüller theory and new Diophantine
+results over rational numbers. II},
+arXiv:2510.05448v1 [math.NT], 2025.
+The posting designates itself an older version awaiting update.
+DOI: 10.48550/arXiv.2510.05448.
+
+\end{thebibliography}
+
+\end{document}

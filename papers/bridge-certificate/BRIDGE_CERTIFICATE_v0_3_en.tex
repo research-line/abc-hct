@@ -1,0 +1,2301 @@
+% =============================================================================
+% The Bridge Certificate -- a line-level audit instrument for inter-theoretic
+% transfer arguments, with four applications to the abc literature.
+% Draft v0.2 (English) -- leading language version.
+% Project: abc_forensik/paper_bridge_certificate  (.RESEARCH/.LAB/.HCT)
+% Part 3 of the abc Gap Series (numbering per the series register, decision E2=a
+% of 2026-08-13). This is NOT a proof paper and NOT an error claim.
+% See the scope box after the abstract.
+%
+% v0.2 (2026-08-16): adopts the hardened sixth contract component of the now
+% published methods paper (Part 2, v0.2.4). Two verdicts of v0.1 are recoded --
+% Case A obligation 6 (discharged -> does not deliver) and Case C obligation 6
+% (discharged -> partly) -- and the recoding is declared openly in the
+% unnumbered section "Changes in version 0.2" after the table of contents.
+% Further: R6a/R6b split, version label and row-namespace note for the
+% instrument, R8 clarified as a triggered extension (E8), Case C relabelled
+% "comparative discrimination case", LANA mapping booked primarily at
+% obligation 6, Part 2 cited as published. v0.1 remains unchanged on Zenodo.
+% =============================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}   % scalable fonts -- required for microtype font expansion
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[a4paper,margin=2.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\hyphenation{Teich-mueller inter-uni-ver-sal in-de-ter-mi-na-cy
+  in-de-ter-mi-na-cies multi-ra-di-al pro-ces-sion nor-mal-i-za-tion
+  arith-me-ti-coid arith-me-ti-coids}
+
+\emergencystretch=1.5em
+
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\hypersetup{
+  pdfencoding=unicode,
+  psdextra,
+  pdftitle={The Bridge Certificate},
+  pdfauthor={Lukas Geiger},
+  pdfsubject={A line-level audit instrument for inter-theoretic transfer arguments},
+  }
+
+% Language-specific destination prefix, so that the bilingual combined PDF keeps
+% the anchors of the two language versions apart.
+\makeatletter
+\renewcommand*{\HyperDestNameFilter}[1]{bc-en-#1}
+\makeatother
+
+% --- environments -------------------------------------------------------------
+\theoremstyle{definition}
+\newtheorem{obligation}{Obligation}
+\newtheorem*{workinglemma}{Working lemma (bridge contract)}
+\newtheorem*{recipe}{Application recipe}
+
+% --- notation -----------------------------------------------------------------
+\newcommand{\Brxi}{\mathrm{Br}_{\xi}}
+\newcommand{\LogVol}{\operatorname{LogVol}}
+\newcommand{\Vol}{\operatorname{Vol}}
+\newcommand{\ordd}{\operatorname{ord}}
+\newcommand{\Thet}{\widetilde{\Theta}}
+
+% Every source citation is anchored to a named extract, because the extracts
+% used here carry independent line numbering; a bare line number would be
+% ambiguous.
+\newcommand{\anchor}[2]{(#1, extract l.~#2)}
+
+\title{The Bridge Certificate:\\
+A Line-Level Audit Instrument for Inter-Theoretic\\
+Transfer Arguments, with Four Applications\\
+to the $abc$ Literature}
+\author{Lukas Geiger\\[2pt]
+\small Independent Researcher, Bernau, Germany\\
+\small ORCID: 0009-0005-7296-1534}
+\date{October 2026 --- Version 0.3 (corrective draft)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+A recurring shape of argument in arithmetic geometry moves a numerical readout
+out of one construction into a container it shares with another, and then reads
+an inequality off the result. Disputes about such steps have proved unusually resistant to the ordinary
+instruments of mathematical review: the parties agree on almost every formula and
+disagree about whether a particular passage \emph{is} an argument. This paper
+proposes an instrument for exactly that situation, and reports what it returned
+in four applications. The instrument --- a \emph{bridge certificate} --- fixes
+seven obligations of the proposed certificate for passages from a qualitative
+linkage to a numerical membership statement, arranges them as a nine-row ledger
+to be filled line by line against the wording of a primary text, and constrains
+how findings may be recorded: verdicts are about certificate form, never about
+mathematical truth; every finding carries a verbatim quotation with a line anchor;
+gaps are typed rather than graded; every appeal to standard literature is entered
+in an import ledger; and every claim of the form ``this is not in the text'' is
+reported together with the search terms used. Four applications are given, and
+they do four different things. Against the proof of one corollary of
+inter-universal Teichmüller theory the ledger \emph{locates} an unmet
+obligation: the decisive membership is stated to follow ``formally'' from a pair
+of declared properties rather than being derived. Against the follow-up paper
+that the same text names as its quantification site, the ledger \emph{closes off}
+that site: the computation there is explicit and, at every node it names,
+self-contained --- this paper did not recompute it --- but it consumes the disputed
+inequality as an input rather than producing it. Against an independent
+alternative program in a different theory the ledger serves as a
+\emph{comparative discrimination case} and returns a differently shaped gap at a
+different address. Against two
+downstream applications it records \emph{inheritance}: the disputed step is
+imported in a single sentence and never discussed. In the same period an
+international formalization project, which does not cite this work, isolated a
+compatibility statement at the same passage; we map its
+objects onto the certificate's obligations by their proposed roles. This is
+not a proved implication from the report's compatibility equation to the
+certificate's typed order condition. Nothing in this paper is a claim that any
+argument examined is wrong, and nothing in it is a statement about the $abc$
+conjecture.
+\end{abstract}
+
+% -----------------------------------------------------------------------------
+% SCOPE AND CLAIM BOUNDARY
+% -----------------------------------------------------------------------------
+\begin{center}
+\fbox{%
+\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}{%
+\medskip
+\textbf{Scope and claim boundary.}\par\medskip
+\begin{itemize}\setlength{\itemsep}{2pt}
+\item This paper proves \emph{nothing} about the $abc$ conjecture. It contains no
+  proof and no disproof of it, and no statement about whether it is provable by
+  the methods discussed.
+\item It contains \emph{no error claim}. A ledger row returned as ``not
+  delivered'' records that a stated obligation is not discharged \emph{in the
+  wording examined}. That is a statement about the form of a certificate, not
+  about the truth of a theorem. ``Not delivered'' is not ``refuted''.
+\item It \emph{verifies no bound}. No proof line was followed step by step, no
+  estimate was recomputed, no constant was checked. Where a computation is
+  reported as carried out in a source, that is a finding \emph{that} it is
+  carried out and \emph{where}, not a confirmation that it is correct.
+\item It takes no side in any existing dispute about the arguments examined. The
+  known objections enter this paper only as the definition of a negative control,
+  never as evidence.
+\item \textbf{No authority argument.} Neither an author's own assertion that a
+  step is sufficient, nor a critic's assertion that it is not, counts as evidence
+  here. Self-assessments found in the examined texts are objects of examination,
+  not support.
+\item \textbf{Textual basis} are \texttt{pdftotext} extracts of the source PDFs.
+  All line references (``extract l.~NNNN'') are finding aids into those extracts
+  and are \emph{not} pagination of the published documents. Unlike in a purely
+  prose-level audit, one verdict of Section~\ref{sec:caseA} does depend on
+  symbols lost in extraction; the reconstruction is disclosed in
+  Section~\ref{sec:reconstruction-A} and the rule governing such cases is part of
+  the instrument (Section~\ref{sec:reconstruction}).
+\item Bibliographic entries are provisional and carry their provenance; three of
+  them are deliberately reduced to what could be verified. See
+  Section~\ref{sec:limitations}, item~\ref{lim:biblio}.
+\end{itemize}
+\medskip
+}}
+\end{center}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+% =============================================================================
+% CHANGES IN VERSION 0.2 -- unnumbered on purpose: it must not shift the
+% section numbering of the published version 0.1.
+% =============================================================================
+\phantomsection
+\section*{Changes in version 0.3}
+\addcontentsline{toc}{section}{Changes in version 0.3}
+\label{sec:changes03}
+
+This corrective version distinguishes the prospective recipe from the partial
+historical applications, corrects the Case-C synopsis reference to ATS IV v2
+\S\,6.10/Theorem~6.10.1, and restores the LANA equation's notation
+$\eta^q=\eta_S^{\mathrm{anab}}$ (9-1).
+The LANA crosswalk is a proposed role correspondence: neither a volume quotient
+nor equality of abstract maps by itself proves the certificate's typed
+half-line condition. The required object, evaluation and bound remain open.
+The seven obligations define the proposed form contract; their universal
+necessity for every possible mathematical proof is not established.
+Case D concerns the Zhou downstream imports, not a completed C7 positive
+control or a demonstrated dependency cycle. Case C does not prove a
+mathematical contradiction in ATS.
+The previously prepared numbered table captions and two synopsis tables
+are retained. English and German texts incorporate the same corrections.
+No new mathematical result or independent method validation is claimed.
+
+\medskip
+
+\section*{Changes in version 0.2}
+\addcontentsline{toc}{section}{Changes in version 0.2}
+\label{sec:changes02}
+
+Version 0.1 of this paper appeared before the methods paper of the
+series~\cite{GeigerBCM2026} was finished. That paper hardened the sixth contract
+component: a common numerical evaluation in the container no longer discharges
+it by itself; the compatibility identities the claim needs --- in particular
+$\nu_C \circ i_q = \nu_q$ on the stated source domain --- are mandatory, and a
+stipulated invariance is not a proof of one. Version 0.2 adopts that reading,
+and adopting it changes two verdicts that version 0.1 recorded. A published
+coding should not be revised silently, so both are named here.
+
+\begin{itemize}
+\item \textbf{Case~A, obligation~6: discharged $\rightarrow$ does not deliver.}
+  Version 0.1 recorded obligation~6 as met ``via its first alternative'',
+  because a numerical evaluation exists in the container, and stated that ``the
+  gap sits at obligation~7, not at obligation~6''. Under the compatibility
+  reading the same evidence yields the opposite coding, and the evidence is the
+  paper's own: the ``searched, not found'' block of
+  Section~\ref{sec:caseA} already recorded that the identity
+  $\nu_C \circ i_q = \nu_q$ across the container identification is not in the
+  text, and that the one compatibility lemma which does exist lies on another
+  axis. No source was re-examined for this change and no new evidence was
+  gathered; what changed is the rule the existing evidence is read against.
+\item \textbf{Case~C, obligation~6: discharged $\rightarrow$ partly.} Version
+  0.1 recorded obligation~6 as met, again via the first alternative. The
+  evaluation there is genuinely numerical, but the compatibility holds only
+  between the sums and is place-wise disclaimed by the source itself --- in a
+  passage version 0.1 already quoted, one paragraph further on.
+\end{itemize}
+
+Three consequences are carried through the text rather than confined to this
+note: obligation~6 receives a ledger row of its own (the R6a\,/\,R6b split of
+Section~\ref{sec:splits}); the application recipe of Section~\ref{sec:recipe} is
+corrected at step~4, so that a re-use of it does not reproduce the superseded
+reading; and the summary statements which flanked the Case~A finding with a
+discharged obligation~6 --- in the results table, in the role table of
+Section~\ref{sec:convergence} and in the conclusion --- are brought into line.
+
+\paragraph{What did not change.} The central finding is untouched: obligation~7
+is not discharged at the substep examined, and the membership is stated to
+follow ``formally'' from a property pair. The abstract of version 0.1 did not
+carry the obligation-6 claim and is unchanged in substance. Cases~B and~D keep
+their verdicts, and no case was re-audited.
+
+\paragraph{The remaining changes are terminological}, and align this paper with
+the finished methods paper. The instrument is given a version label and its
+unprefixed row labels are scoped (Section~\ref{sec:ledger}). Row R8 is
+identified as a triggered extension rather than a core row, which corrects the
+denominator without changing its coding. And Case~C is renamed from ``comparison
+control'' to \emph{comparative discrimination case}, the term Part~2 uses --- a
+change of label only, since this paper already recorded that a genuine positive
+control was not among the cases examined.
+
+\clearpage
+
+% =============================================================================
+\section{Introduction}
+\label{sec:intro}
+% =============================================================================
+
+\subsection{A disagreement that ordinary review does not resolve}
+
+There is a class of mathematical disagreement in which the usual repair mechanism
+fails. It is not that one side has made an arithmetic slip and the other has
+found it. It is not that a lemma is false and a counterexample settles the
+matter. It is that a passage of text is read by its author as an argument and by
+a reader as a restatement, and that both readings survive contact with the
+formulas, because the formulas are not in dispute.
+
+The passage at the center of this paper has that character. In the third volume
+of inter-universal Teichmüller theory, the proof of a corollary reaches a point
+at which two quantities --- a numerical readout attached to one object, and a
+half-line of real numbers determined by another --- are brought into a single
+evaluation, and an inclusion of the first in the second is then asserted. Around
+that inclusion an entire arithmetic consequence is organized. Whether the passage
+establishes the inclusion or presupposes it has been argued about for years
+without convergence.
+
+Ordinary review prose is a poor instrument here, for a structural reason. Prose
+review answers the question ``is this correct?''. When the disagreement is about
+whether a given sequence of sentences constitutes a derivation at all, that
+question has no stable meaning: each side answers it about a different object.
+Worse, prose review permits --- indeed invites --- a move that makes the
+disagreement unresolvable in principle, namely the appeal to authority. ``The
+author says the construction suffices'' and ``the critics say it does not'' are
+both statements about people. Once they enter, the text has stopped being the
+subject.
+
+\subsection{What an audit instrument does instead}
+
+The alternative pursued here is to stop asking whether the argument is correct
+and start asking a question that a text can answer on its own: \emph{which
+obligations does a passage of this kind have to discharge, and which of them does
+this particular wording discharge?}
+
+That reformulation buys four things.
+
+\begin{enumerate}
+\item \textbf{It is decidable from the text.} Whether a document contains a lemma
+  asserting a given implication is a question about the document. Two careful
+  readers can disagree about whether a proof is convincing; they will rarely
+  disagree about whether a sentence is present.
+\item \textbf{It localizes.} A verdict is attached to a numbered obligation and,
+  through it, to a line range of a specific text. ``The argument has a gap''
+  becomes ``obligation~7 is not discharged at this passage, and here is the
+  sentence that stands in its place''.
+\item \textbf{It is symmetric.} The same instrument, unchanged, is applied to a
+  proposal and to its competitor. A method that returns ``fails'' for one text
+  and has no procedure for returning anything about another is not an instrument
+  but a verdict looking for a subject.
+\item \textbf{It bounds its own claims.} Because the question is about form, the
+  answer cannot silently grow into a claim about truth. An unmet obligation is a
+  missing certificate component, not a refutation --- and the instrument is
+  built so that the distinction cannot be lost in the reporting.
+\end{enumerate}
+
+The price is equally clear and is stated here once, because everything in this
+paper inherits it: an instrument of this kind can never establish that an
+argument is sound. Every obligation may be discharged and the argument may still
+be wrong for a reason the instrument does not look for. It can only establish
+that a specific, named requirement is or is not met by a specific, quoted
+wording.
+
+\subsection{The instrument, in one paragraph}
+
+A \emph{bridge certificate}, written $\Brxi$, is a list of seven obligations
+attached to an argumentative step of a particular shape: a step that carries a
+numerical readout out of one construction, into a container shared with a second
+construction, and then reads an order relation off the result. The obligations
+demand, in outline, that both sides carry explicit numerical readouts, that the
+shared container come with typed embeddings, that the identification between the
+sides be a permitted identification rather than a coincidence of names, that the
+indeterminacy budget be split into absorbed and unabsorbed parts, that a numerical
+evaluation exist in the container, and --- the last and decisive one --- that the
+order relation be \emph{derived} from the permitted identification rather than
+asserted alongside it. The obligations are operationalized as a ledger of nine
+rows, each a question with a recorded expectation and a recorded risk, to be
+filled against a primary text. Around the ledger sit five disciplines that make
+its findings auditable: a verdict vocabulary that separates form from truth, a
+typology that classifies gaps instead of grading them, an import ledger for every
+appeal to standard literature, a rule for reporting what was searched for and not
+found, and a rule for disclosing reconstructions where the textual basis is
+imperfect. Section~\ref{sec:instrument} states all of this in full.
+
+\subsection{Sources, labels and the anchor convention}
+\label{sec:sources}
+
+Seven documents are used, in the form of text extracts of their PDFs: six carry the
+four applications, and the seventh is the interim report examined in
+Section~\ref{sec:convergence}. The short labels of the left column are used
+throughout; every source citation in this paper carries one, because the extracts
+have independent line numbering and a bare line number would be ambiguous (see Table~\ref{tab:primary_sources}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Label & Source & Role in this paper \\
+\midrule
+IUT-III & \cite{Mochizuki2021c} & Case A: the corollary and its proof \\
+IUT-IV & \cite{Mochizuki2021d} & Case B: the declared quantification site \\
+ATS-III & \cite{JoshiATSIII} & Case C: construction and volume theory \\
+ATS-IV & \cite{JoshiATSIV} & Case C: the $abc$ conclusion and its bridge \\
+Zhou-I & \cite{ZhouI} & Case D: first downstream application \\
+Zhou-II & \cite{ZhouII} & Case D: second downstream application \\
+LANA & \cite{LANA2026} & Section~\ref{sec:convergence}: independent formalization \\
+\bottomrule
+\end{tabular}
+\caption{Primary source corpus and analytical roles in the four case audits.}
+\label{tab:primary_sources}
+\end{table}
+
+Quotations are verbatim from the extracts; mathematical symbols have been
+typeset, ellipses are marked, and every reconstruction of a symbol lost in
+extraction is disclosed where it occurs. Emphasis inside quotations is ours
+unless stated otherwise.
+
+\paragraph{Language of quotations.} A German version of this paper exists, and it
+keeps every quotation in the English original. That is not an omission of the
+translation but a consequence of the subject matter: here the wording \emph{is}
+the evidence. Whether a text writes ``follows formally'' or proves a theorem is
+precisely the question at issue, and translating such a passage would replace the
+finding by its rendering. Only the surrounding assessment is translated.
+
+\subsection{What follows}
+
+Section~\ref{sec:instrument} states the instrument in full --- all seven
+obligations and all nine rows --- and Section~\ref{sec:recipe} gives the
+application recipe, so that it can be executed against a transfer argument other
+than the four examined here.
+Sections~\ref{sec:caseA}--\ref{sec:caseD} report the four applications.
+Section~\ref{sec:convergence} states what they jointly show --- and, at equal
+length, what they do not. Section~\ref{sec:limitations} lists the limitations,
+Section~\ref{sec:conclusion} concludes.
+
+\paragraph{Place in the series.} This is Part~3 of the \emph{abc} Gap Series.
+Part~1 is the published forensic study of the same passage~\cite{GeigerGap2026},
+on which Section~\ref{sec:caseA} builds and from which it is delimited there. The
+certificate stated here is one instance of a broader gate methodology --- the
+instance for numerical membership --- and that broader methodology has since
+appeared as Part~2 of the series~\cite{GeigerBCM2026}. Version 0.1 of this paper
+assumed nothing from it, because it did not yet exist. This version takes one
+thing from it and says where: the hardened reading of obligation~6
+(Section~\ref{sec:obligations}), which is why two verdicts of the first version
+are recoded here --- see ``Changes in version 0.2'' above. What this paper
+contributes is the instance and the four applications reported below,
+and those applications fill the ledger only in part: Case~A reports four of its
+nine rows, as Sections~\ref{sec:caseA} and~\ref{sec:convergence} state.
+
+% =============================================================================
+\section{The bridge certificate}
+\label{sec:instrument}
+% =============================================================================
+
+\subsection{The question}
+
+The instrument addresses steps of the following shape. Two constructions produce
+two objects. The first carries a numerical readout $\nu_q$ --- in the cases below,
+a normalized logarithmic volume. The second determines a target set, in the cases
+below a closed real half-line $H_\Theta$. The two objects are then exhibited
+inside a common container, related by data that is variously described as a
+linkage, an identification, a transport or a correspondence, and an assertion of
+the form
+\[
+  \nu_q(\text{first object}) \in H_\Theta
+\]
+is made. From that membership an inequality follows immediately, and the
+inequality is the point of the whole construction.
+
+The question the certificate asks is:
+
+\begin{quote}
+When may a qualitative package --- two objects, shared labels, an algorithmic
+transport, a common container --- be read as a numerical membership statement in
+a concrete real half-line?
+\end{quote}
+
+This is deliberately narrower than ``is the argument correct?'' and deliberately
+wider than ``is this formula right?''. It is the question that the disagreement is
+actually about.
+
+\subsection{The seven obligations}
+\label{sec:obligations}
+
+In the proposed specification, an admissible certificate $\Brxi$ contains at
+least the following. These are obligations of this chosen form contract, not
+proved necessary conditions for every possible mathematical proof.
+
+\begin{obligation}[$q$-side object with readout]
+An object $\mathrm{Obj}_q$ together with a concrete log-volumetric readout
+$\nu_q$.
+\end{obligation}
+
+\begin{obligation}[$\Theta$-side object with target]
+An object $\mathrm{Obj}_\Theta$ together with the target half-line
+$H_\Theta = \mathbb{R}_{\le -|\log(\Theta)|}$.
+\end{obligation}
+
+\begin{obligation}[Common container with typed embeddings]
+A container $C$ together with explicitly typed embeddings $i_q$, $i_\Theta$.
+\end{obligation}
+
+\begin{obligation}[Linkage data]
+Label and linkage data $L$ which state not merely that the two sides carry the
+same names, but that a specific identification is \emph{permitted}.
+\end{obligation}
+
+\begin{obligation}[Split indeterminacy budget]
+An indeterminacy budget $I$, separated into absorbable renormalization, blurring,
+and unabsorbed residual load.
+\end{obligation}
+
+\begin{obligation}[Compatible evaluation in the container]
+\label{obl:six}
+A numerical evaluation $\nu_C$ in the container, \emph{together with} the
+compatibility identities the claim needs --- in particular
+$\nu_C \circ i_q = \nu_q$ on the stated source domain. These compatibility
+clauses are mandatory: the mere existence of a numerical map on $C$ never
+discharges this obligation, and a stipulated invariance does not count as a
+proof of a compatibility.
+\end{obligation}
+
+\begin{obligation}[Order compatibility]
+\label{obl:seven}
+The implication itself: from the permitted linkage it \emph{follows} that
+$\nu_q(\mathrm{Obj}_q) \in H_\Theta$.
+\end{obligation}
+
+The load of the certificate sits almost entirely in the last two, and the
+distinction between them is the single most useful thing the instrument supplies.
+Obligation~6 asks whether the two sides are put on one scale by a stated
+compatibility --- not merely housed in one container. Obligation~7 asks whether
+the order relation between the two evaluations is derived. The two can fail
+separately and for different reasons, and holding them apart is what turns a
+diffuse suspicion into two nameable missing statements. Without obligations~6
+and~7, cohabitation in a common container is qualitative proximity, not the
+numerical statement that the argument needs.
+
+\paragraph{Provenance of the sixth obligation's wording.} Version 0.1 of this
+paper stated obligation~6 disjunctively: a numerical evaluation in the container
+\emph{or} a provable compatibility. The conjunctive form above is taken from the
+methods paper of the series~\cite{GeigerBCM2026}, where the corresponding
+contract component was hardened after this paper first appeared. The change is
+not cosmetic --- it is the reason two verdicts of version 0.1 are recoded here
+(``Changes in version 0.2'') --- and it resolves a tension this paper carried
+from the start: the working lemma below already demanded a
+``label-compatible, scale-preserving'' evaluation contract, which is more than
+the disjunctive form of obligation~6 required.
+
+\paragraph{When an obligation counts as discharged.} Because the obligations differ
+in kind, the evidence that discharges them differs too, and saying so in advance is
+what keeps the coding symmetric rather than convenient. Obligations~1--5 may be
+discharged by an explicit stipulation: a definition, a declared property, a fixed
+convention. Obligation~6 requires more than a shared symbol and more than a
+shared container: an inspectable assignment of both sides to one evaluation
+\emph{and} the compatibility identities that tie that evaluation to the readouts
+it is supposed to represent. That both sides are real numbers is not one of them,
+and neither is a stipulated invariance. Obligation~7 is recorded as discharged
+only where the text
+contains a separately identifiable derivation, a named lemma, or an explicitly
+delegated result that yields the order relation from the permitted identification.
+
+The negative form of that last rule is the one that constrains this paper most, and
+it is deliberately weak: failure to locate such an item, under the source range and
+the search terms reported with the finding, is a \emph{documentary non-finding}. It
+is not a demonstration that no derivation exists, and it is not a judgment that the
+declared properties would be insufficient if the derivation were written out. That
+second question is mathematical, and Section~\ref{sec:cannot} states that the
+instrument does not decide it. Table~\ref{tab:obligations_taxonomy} provides a synoptic taxonomy of the seven formal obligations and the triggered extension, including their mathematical objects, operational requirements, corresponding ledger rows, and primary failure modes.
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}lP{0.22\textwidth}P{0.25\textwidth}lP{0.22\textwidth}@{}}
+\toprule
+Obligation & Mathematical Object & Operational Requirement & Row & Primary Failure Risk \\
+\midrule
+1 ($q$-readout) & $(\mathrm{Obj}_q, \nu_q)$ & Explicit log-volumetric readout & R0, R2 & Scale loss / implicit typing \\
+2 ($\Theta$-target) & $(\mathrm{Obj}_\Theta, H_\Theta)$ & Closed target half-line $H_\Theta \subset \mathbb{R}$ & R0, R3 & Moving target / post-hoc shift \\
+3 (Container) & $(C, i_q, i_\Theta)$ & Shared container with typed embeddings & R1 & Missing cohabitation \\
+4 (Linkage) & $L \subset \mathrm{Obj}_q \times \mathrm{Obj}_\Theta$ & Permitted identification (protocol) & R4 & Unpermitted label confusion \\
+5 (Budget) & $I = (I_{\mathrm{abs}}, I_{\mathrm{res}})$ & Split into absorbed and unabsorbed load & R5 & Hidden second mode \\
+6 (Evaluation) & $(\nu_C, \nu_C \circ i_q = \nu_q)$ & Container metric with mandatory compatibility & R6a & Unscaled container / missing identity \\
+7 (Order) & $\nu_q(\mathrm{Obj}_q) \in H_\Theta$ & Derived inequality implication & R6b & Asserted membership / non-derivation \\
+\midrule
+Ext.~E8 & Mode branch $M_2$ & Triggered secondary evaluation channel & E8 & Undisclosed branch selection \\
+\bottomrule
+\end{tabular}
+\caption{Taxonomy of the seven bridge certificate obligations, formal signatures, and audit criteria.}
+\label{tab:obligations_taxonomy}
+\end{table}
+
+\subsection{The ledger}
+\label{sec:ledger}
+
+The obligations are operationalized as nine rows (Table~\ref{tab:bc_ledger_rows}). Each row is a question to be
+answered against the wording of a primary text; each carries a recorded
+expectation, fixed \emph{before} any text was examined, and a recorded risk --- the
+failure mode that the row exists to catch. Recording the expectation in advance is
+not decoration: it is what allows a later reader to see which findings confirmed a
+prior belief and which contradicted one. The dating is part of the claim and is
+therefore stated: the obligations, the rows and their expectations were written down
+in May~2026; the four applications reported below were carried out in August~2026.
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.40\textwidth}P{0.17\textwidth}P{0.28\textwidth}@{}}
+\toprule
+Row & Test & Prior expectation & Risk the row catches \\
+\midrule
+R0 & Are the two lines separately typed? & yes & apparent equality of distinct things \\
+R1 & Is a common container present? & yes & a container does not supply a scale \\
+R2 & Is the numerical readout preserved on the $q$-side? & open & the readout loses its object identity \\
+R3 & Is the target half-line fixed on the $\Theta$-side? & yes & the half-line is moved after the fact \\
+R4 & Is the $j^2$-load addressed? & open & unrecorded $O(\ell^2)$ residual load \\
+R5 & Is the indeterminacy budget separated? & partly & blurring hides a second mode \\
+R6 & Is order preservation proved? & open & qualitative linkage is not enough \\
+R7 & Is approximation weaker than membership? & probably not, for a closed half-line & an apparent escape route \\
+R8 & Is a second mode visible or excluded? & open & the core of the question \\
+\bottomrule
+\end{tabular}
+\caption{BC-Ledger v0: Nine audit rows with operational questions, prior expectations, and targeted failure risks.}
+\label{tab:bc_ledger_rows}
+\end{table}
+
+Three remarks on how to read this table. First, ``open'' in the expectation
+column means that no expectation was fixed, not that the answer was expected to
+be negative. Second, the rows are not of equal weight. As written, R6 names only
+the order question, but it in fact carries obligations~6 and~7 at once --- a
+conflation which the split of Section~\ref{sec:splits} undoes, and which is worth
+naming, because while a row exists for the order question and none for the
+compatibility question, the second is assessed in running prose rather than at
+the ledger. R6 is the row on which the instrument was designed to be informative;
+R0, R1 and R3 are hygiene rows whose main function is to make a negative finding
+in R6 interpretable rather than generic.
+
+Third, the last row is not a core row, and reading it as one distorts the
+denominator. R8 asks after a second evaluation mode, which is a feature of the
+domain model rather than of the contract: it maps to no obligation; it is active
+only where the claim's domain actually offers several modes, branches or
+normalizations; and where that trigger is absent it is out of scope rather than
+negative. The successor instrument therefore carries it outside the obligation
+crosswalk, as the triggered extension~E8, and reports a finding at that label and
+never at a contract component~\cite{GeigerBCM2026}. Nothing about the coding
+recorded for it below changes; what changes is its status, and that the eight
+core rows R0--R7 are the rows a completeness statement is about.
+
+\paragraph{Version label and row namespace.} The ledger stated here is the
+certificate ledger fixed in May~2026. Its rows are unprefixed, which was harmless
+while it was the only ledger of the series and is not harmless now: the successor
+instrument~\cite{GeigerBCM2026} scopes its rows by a version prefix (v1-T for the
+transport ledger, v1-F for the full one), and identical numeric suffixes across
+instruments do \emph{not} imply identical semantics --- this paper's R8 is the
+second-mode row, whereas the row carrying that number in the transport instrument
+asks a different question. Every unprefixed row label in what follows is a label
+of the ledger of this paper, and the correspondence with the successor rows is a
+crosswalk, not an identity. Where a version label is needed, this version assigns
+the ledger the name \textbf{BC-Ledger~v0}; the label is introduced here and is
+not taken from the series register, which does not yet carry one for it.
+
+\subsection{Refinements produced by use}
+\label{sec:splits}
+
+Three of the rows turned out to conflate distinct questions, and the instrument
+was sharpened accordingly. The first two refinements are \emph{results of the
+applications} and were not part of the certificate as fixed; the third follows
+from the hardened reading of obligation~6 stated above. None of the three is a
+mere recommendation any longer: in the successor instrument all three are
+normative~\cite{GeigerBCM2026}. The case reports in
+Sections~\ref{sec:caseA}--\ref{sec:caseD} stay with the original rows wherever
+the split makes no difference to the finding, and as a rule report at the split
+where it does --- Case~B at R4a and R4b, and Case~A at R6a and R6b. Case~C's findings
+likewise separate at the two halves; its report retains the merged row of
+version 0.1, with the separation carried in the running text of
+Section~\ref{sec:caseC}.
+
+\paragraph{R2a / R2b.} Row R2 mixes two transports. \emph{R2a} asks whether the
+readout survives transport \emph{within} one container --- along the link that the
+construction itself provides. \emph{R2b} asks whether it survives the passage
+\emph{between} containers. Only R2b is the bridge question proper. The distinction
+was forced by the comparative discrimination case of
+Section~\ref{sec:caseC}, where the two
+transports are visibly different in kind, and confirmed by
+Section~\ref{sec:caseA}, where R2b collapses into R6 because the identification of
+the containers \emph{is} the bridge step.
+
+\paragraph{R4a / R4b.} Row R4 mixes the place where a load is quantified with the
+place where it is booked against the bridge. \emph{R4a} asks whether the load is
+quantified in the evaluation of the $\Theta$-side at all. \emph{R4b} asks whether
+it is booked at the bridge itself. The distinction was forced by
+Section~\ref{sec:caseB}: the answer to R4a is yes and the answer to R4b is no, and
+a single word for both hides two different findings.
+
+\paragraph{R6a / R6b.} Row R6 mixes the two load-bearing obligations under a
+question that names only one of them. \emph{R6a} asks after obligation~6: is the
+common evaluation accompanied by the compatibility identities that tie it to the
+two readouts? \emph{R6b} asks after obligation~7: is the order relation derived
+from the permitted identification? This split was not produced by the
+applications but by the hardened reading of obligation~6
+(Section~\ref{sec:obligations}). Once a common evaluation no longer discharges
+the sixth obligation by itself, a single row cannot carry both verdicts ---
+Section~\ref{sec:caseC} returns different answers at the two halves, and
+Section~\ref{sec:caseA} returns the same answer for two different reasons;
+in either configuration a single merged row would have hidden the structure.
+
+A further refinement is recorded as an open item rather than adopted: obligation~3
+(container typing) currently enters the ledger only through R1, which asks whether
+a container is \emph{present}. Both Sections~\ref{sec:caseA} and~\ref{sec:caseC}
+suggest that the interesting question is whether the typing is \emph{sustained
+through the conclusion}, which is a different question and deserves its own row.
+
+\subsection{Verdicts and confidence}
+
+A row receives one of three verdicts, and the vocabulary is fixed because loose
+verdict language is how form-level findings turn into truth-level claims (see Table~\ref{tab:verdict_taxonomy}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.72\textwidth}@{}}
+\toprule
+Verdict & Meaning \\
+\midrule
+\textsc{delivers} & The obligation is discharged by the wording examined. \\
+\textsc{partly} & Part of the obligation is discharged and a named part is not. The
+  split must be stated, not averaged. \\
+\textsc{does not deliver} & The obligation is not discharged by the wording
+  examined. This is \emph{not} a claim that the statement is false, nor that it
+  cannot be discharged elsewhere. \\
+\bottomrule
+\end{tabular}
+\caption{Verdict vocabulary for certificate evaluations.}
+\label{tab:verdict_taxonomy}
+\end{table}
+
+Each verdict carries a confidence, and the confidence is about the \emph{textual}
+finding, not about the mathematics: high confidence means that the quotations are
+unambiguous and that no verdict rests on a doubtful reading. A verdict may be
+high-confidence and narrow in reach at the same time; where that occurs, the reach
+restriction is stated next to the verdict rather than inside it.
+
+These labels are author-assessed judgments about the textual evidence --- the
+clarity of the quotation, the specificity of the anchor, the coverage of the
+search, and the reconstruction burden carried. They are not calibrated
+probabilities, and no independent second coding was carried out, so no inter-rater
+agreement is reported. Read them as a statement of how firmly the wording supports
+the entry, not as a measured reliability.
+
+\subsection{Gap typology}
+\label{sec:typology}
+
+Gaps are typed, not graded. Grading (``serious'', ``minor'') smuggles in an
+assessment the instrument is not entitled to make; typing states what kind of
+thing is missing, which is both more useful and more defensible (Table~\ref{tab:gap_taxonomy}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.76\textwidth}@{}}
+\toprule
+Type & Description \\
+\midrule
+G & A missing or non-reconstructible proof step. \\
+Z & A citation that does not carry the statement it is invoked for --- an
+  \emph{import} failure. \\
+D & Definition drift: a term is used differently from the way it was defined. \\
+N & Not an error, but a proof-relevant imprecision at the level of convention or
+  notation. \\
+\bottomrule
+\end{tabular}
+\caption{Typology of identified gaps and textual deficits.}
+\label{tab:gap_taxonomy}
+\end{table}
+
+Types combine. A step whose repair would require both a missing argument and a
+resolution of a definitional ambiguity is recorded as G+D, and both parts must be
+named.
+
+\subsection{Import-ledger discipline}
+\label{sec:importledger}
+
+Every appeal to standard literature is registered as an \emph{import}, with the
+exact locus in the published source. The rule attached to it is deliberately
+asymmetric:
+
+\begin{quote}
+Imports from peer-reviewed literature are treated as trustworthy. What is
+examined is their \emph{fit} --- whether the cited statement is the statement the
+argument needs --- not their proof.
+\end{quote}
+
+This is the operational content of the Z type. It keeps the audit finite: without
+it, every audit degenerates into an audit of the whole of arithmetic geometry. It
+also keeps the audit honest in the other direction, because an import whose fit
+was not checked must be recorded as unchecked rather than passed over.
+
+\subsection{Rules of evidence}
+\label{sec:evidence}
+
+Four rules govern what may be written into a ledger row.
+
+\paragraph{No authority argument.} Neither the examined author's assertion that a
+step suffices nor a critic's assertion that it does not is evidence. This applies
+in both directions and is not a courtesy: an author's self-assessment is an object
+of examination, and a critic's verdict is, for the purposes of the ledger, only
+the definition of what a negative control would look like.
+
+\paragraph{Verbatim quotation with anchor.} Every finding is carried by a quoted
+sentence with a line anchor into a named extract. A finding that cannot be
+quoted is not a finding.
+
+\paragraph{``Searched, not found''.} A claim that something is absent from a text
+is reported together with the search terms used and the range searched. This is
+the rule that makes negative findings falsifiable: a reader who suspects the
+search was too narrow can see exactly how narrow it was and repeat it. Every case
+report that rests on an absence claim carries such a block: Cases~A, B and~D below
+do. Case~C makes no absence claim --- its findings rest on quoted passages that are
+present --- and therefore carries none.
+
+\paragraph{Reconstruction discipline.}
+\label{sec:reconstruction}
+Text extracted from PDF loses relation symbols, Greek letters, exponents and
+indices. Where a load-bearing sentence is affected, three things are required:
+the reconstruction must be stated explicitly, its derivation must be given from
+other passages of the same document, and a cross-check must be exhibited at an
+independent place. Where the naive reading of a damaged line would invert the
+meaning, that line must be flagged separately. This rule is part of the
+instrument, not an apology for it --- and it matters here, because in one of the
+four applications a verdict does depend on such a reconstruction
+(Section~\ref{sec:reconstruction-A}).
+
+\subsection{The working lemma}
+
+The whole instrument is condensed in one statement, which is a task description
+and not a theorem.
+
+\begin{workinglemma}
+For the forensic reading of a step of the shape described in
+Section~\ref{sec:instrument}, it does not suffice to exhibit a qualitative
+relation between the two objects inside a common container. What is required is
+an explicit, label-compatible, scale-preserving and order-compatible numerical
+evaluation contract $\Brxi$. Any candidate for a second mode $T_2$ must either be
+visible inside that contract or be booked as an inadmissible hidden auxiliary
+scale.
+\end{workinglemma}
+
+Throughout, $T_2$ denotes \emph{the second evaluation mode} --- a second scale,
+shift or intertwining alongside the one the argument advertises --- and nothing
+else. Row R8 is the ledger row that asks after it.
+
+The status of this statement is: working lemma, not proved. It is to be treated
+as a precise task for primary-text examination and for positive and negative
+controls --- which is what the remainder of this paper does with it.
+
+\subsection{What the instrument cannot decide}
+\label{sec:cannot}
+
+Stated positively, so that it is not mistaken for modesty.
+
+\begin{enumerate}
+\item \textbf{It cannot certify soundness.} All nine rows may deliver and the
+  argument may still fail for a reason no row asks about.
+\item \textbf{It cannot decide mathematical questions of substance.} Whether a
+  pair of declared properties would suffice as a contract lemma if it were
+  proved, or whether an identical global normalization of two isomorphic copies
+  of one number field counts as a provable compatibility --- these are
+  mathematical questions. The ledger records only that the text supplies a
+  property pair, or a convention, where it would need a lemma.
+\item \textbf{It cannot see outside the documents examined.} A row returned as
+  not delivered is a statement about a wording. The obligation may be discharged
+  in material not examined; where that possibility is concrete, the case reports
+  name it.
+\item \textbf{It cannot distinguish an unmet obligation from an unmeetable one.}
+  Nothing in the instrument licenses the step from ``not derived here'' to ``not
+  derivable''.
+\end{enumerate}
+
+\subsection{Applying the certificate to a new argument}
+\label{sec:recipe}
+
+The instrument is not tied to the four cases below. The following recipe is a
+prospective protocol distilled from those applications. It was not completely
+executed in every reported case: in particular, Case A leaves hygiene rows open,
+and the hygiene-before-R6 rule was formulated after the applications. The recipe
+is offered for a new transfer argument; the historical partial applications do
+not retrospectively satisfy all its steps.
+
+\begin{recipe}
+\begin{enumerate}
+\item \textbf{Locate the step.} Identify the sentence at which a qualitative
+  relation becomes a numerical assertion. This is usually not where the
+  document's own summary says it is; verify the structure against the text and
+  record the correction, because the next reader should not have to redo it.
+\item \textbf{Name the two sides and the container.} Fill obligations 1--3.
+  Record the typing of the embeddings, and record whether the typing is dropped
+  anywhere before the conclusion.
+\item \textbf{Fill the hygiene rows} R0, R1, R3. If one of them fails, a later
+  finding at R6 may be an artifact of the failure rather than an independent
+  result.
+\item \textbf{Separate obligation~6 from obligation~7.} Ask first whether the
+  container carries a numerical evaluation \emph{and} the compatibility
+  identities that tie it to the two readouts --- in particular
+  $\nu_C \circ i_q = \nu_q$ on the stated source domain. A common evaluation
+  alone never discharges obligation~6, and a stipulated invariance is not a
+  proof of a compatibility. Only then ask whether the order relation is derived
+  from the permitted identification. Conflating the two questions is the most
+  common way to produce a finding that is both unfair and uninformative;
+  collapsing the first into the bare existence of a common scale is the most
+  common way to produce one that is too generous.
+\item \textbf{Search for the contract lemma explicitly}, with recorded search
+  terms, over the whole document and over the proof range separately. Record the
+  result either way.
+\item \textbf{Type any gap found} (Section~\ref{sec:typology}) and enter every
+  appeal to external literature into the import ledger
+  (Section~\ref{sec:importledger}).
+\item \textbf{Write the ``searched, not found'' block} before writing the
+  verdict, not after. Its function is to constrain the verdict, which it cannot
+  do if it is composed to fit one.
+\item \textbf{State the reach separately from the verdict.} ``Does not deliver,
+  high confidence, restricted to document $X$'' is a complete finding;
+  ``does not deliver'' alone is not.
+\end{enumerate}
+\end{recipe}
+
+% =============================================================================
+\section{Case A: the corollary and its proof}
+\label{sec:caseA}
+% =============================================================================
+
+The first application is to the passage the instrument was built for: the proof
+of Corollary 3.12 in the third volume of inter-universal Teichmüller theory~\cite{Mochizuki2021c}. Rows R2, R4, R6 and R8 were filled --- R6 at both halves
+of the split introduced in Section~\ref{sec:splits}, and R8 as the triggered
+extension row it is rather than as a core row; R0, R1, R3, R5 and R7
+were not part of this application and remain open
+(Section~\ref{sec:convergence}).
+
+\paragraph{Relation to Part~1 of the series.} This passage has already been located
+in print. An earlier, repair-oriented study of the same program~\cite{GeigerGap2026}
+places the gap at the transition between the same substeps and reports the same
+wording --- that the required inequality is said to ``follow formally''. The present
+application neither repeats nor strengthens that diagnosis, and it claims no
+priority over it. What it does is narrower: it recodes the documentary question as
+one obligation of a stated certificate, so that the same site can be compared with
+three further texts under one unchanged instrument. That two routes of a different
+kind arrive at the same address is recorded here as a finding about the address, not
+as a second detection.
+
+This is therefore a \emph{partial} ledger application, and it is reported as one.
+The recipe of Section~\ref{sec:recipe}, which asks for the hygiene rows R0, R1
+and~R3 to be filled before R6 is weighed, was written afterwards, out of the
+experience of these applications --- as were the row splits of
+Section~\ref{sec:splits}, and for the same reason the case reports are not
+retrofitted to it. The consequence is stated rather than absorbed: what follows is
+a finding about four rows. The confidence recorded with each of them is confidence
+in that row, and no full-certificate verdict on this passage is claimed here.
+
+\subsection{Locating the passage}
+
+The substeps in which the transition occurs stand \emph{inside the proof} of the
+corollary, not in the remark that recapitulates it. The structure, recorded here
+so that it need not be re-derived (Table~\ref{tab:case_a_text_blocks}):
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.30\textwidth}@{}}
+\toprule
+Block & Extract lines \\
+\midrule
+Proposition 3.9 (log-volume for packets and processions) & 6365\,ff. \\
+Theorem 3.11 (multiradial algorithms), proof & 8666\,ff., proof 9032 \\
+Remark 3.11.1 with the declared properties & 9036--9300 \\
+Corollary 3.12, statement & 9851--9884 \\
+Corollary 3.12, proof & 9886\,ff. \\
+Step (x) (indeterminacy balance) & 10237--10283 \\
+\textbf{Substeps (xi-a)--(xi-h)} & \textbf{10285--10496} \\
+Remark 3.12.2 including the toy model & 10573\,ff., toy model 10733--10813 \\
+\bottomrule
+\end{tabular}
+\caption{Structural blocks and line anchors of the IUT-III Corollary 3.12 proof extract.}
+\label{tab:case_a_text_blocks}
+\end{table}
+
+Four properties declared in Remark 3.11.1 recur throughout and are abbreviated as
+in the source: the input prime-strip link (IPL), the strip-holomorphic
+expressibility condition (SHE), algorithmic parallel transport (APT), and hidden
+internal structures (HIS).
+
+\subsection{Reconstruction disclosure}
+\label{sec:reconstruction-A}
+
+The extract of this document loses relation symbols, exponents, indices and Greek
+letters. Unlike in the other three applications, one verdict here \emph{does}
+depend on a reconstruction, so the derivation is given in full, per
+Section~\ref{sec:reconstruction}.
+
+\begin{enumerate}
+\item The target set is defined at l.~10385: the extract reads
+  \texttt{R-|log()| d=ef \{ R | -|log()|\} R}, to be read as
+  $\mathbb{R}_{\le -|\log(\Theta)|} := \{\lambda \in \mathbb{R} \mid
+  \lambda \le -|\log(\Theta)|\} \subset \mathbb{R}$.
+\item The corollary's own statement resolves the direction of the relation at
+  l.~9882/9884: ``\dots\ i.e., $C_\Theta \ge -1$ for any real number
+  $C_\Theta \in \mathbb{R}$ such that
+  $-|\log(\Theta)| \le C_\Theta \cdot |\log(q)|$'', hence
+  $-|\log(\Theta)| \ge -|\log(q)|$.
+\item Together these make l.~10446/10448 unambiguous:
+  $-|\log(q)| \in \mathbb{R}_{\le -|\log(\Theta)|}$, ``hence also the
+  inequality'' $-|\log(q)| \le -|\log(\Theta)| \in \mathbb{R}$.
+\end{enumerate}
+
+The disputed membership therefore stands as an \emph{explicit statement} at
+l.~10446 --- with the relation symbols restored as set out above --- and is not an
+interpretive inference of ours.
+
+\paragraph{Verification against the page images.} Because a verdict of this section
+depends on the restoration, the two affected lines were checked against the
+published pages themselves rather than against the extract alone. Both restorations
+are confirmed. On p.~184 the page carries the membership
+$-|\log(q)| \in \mathbb{R}_{\le -|\log(\Theta)|}$ and, displayed beneath it,
+$-|\log(q)| \le -|\log(\Theta)| \in \mathbb{R}$, followed by ``then follows
+formally''; on p.~174 the corollary's statement carries
+$-|\log(\Theta)| \ge -|\log(q)|$ together with the sentence quoted above. The
+symbols the extract dropped are therefore present in the source, and in the form
+the reconstruction assumed. This also corrected one detail of our own transcription:
+the source writes $C_\Theta$ throughout, not a bare $C$, and the quotations here now
+follow it.
+
+One further line is flagged because the naive reading inverts its sense. At
+l.~10750 the extract reads \texttt{in the sense that R -h = -2h R}; the intended
+reading is $\mathbb{R} \ni -h \neq -2h \in \mathbb{R}$, the ``$\neq$'' having been
+lost. The surrounding sentence secures this: the two assignments are ``mutually
+incompatible and cannot be considered simultaneously''
+\anchor{IUT-III}{10748--10749}. A reader who restores ``$=$'' here would conclude
+the opposite of what the passage says --- and the page image settles it: p.~190
+carries ``[in the sense that $\mathbb{R} \ni -h \neq -2h \in \mathbb{R}$]''.
+
+\subsection{R2 --- is the \texorpdfstring{$q$}{q}-side readout preserved?}
+
+\textsc{Delivers}, with high confidence --- and the reason is structurally
+interesting: at the decisive step no transport takes place at all.
+
+The $q$-side is declared indeterminacy-free in the statement of the corollary
+itself:
+
+\begin{quote}\small
+``for the procession-normalized mono-analytic log-volume of the image of a
+$q$-pilot object \dots\ in the multiradial representation of Theorem 3.11, (i),
+\emph{which we do not regard as subject to the indeterminacies} (Ind1), (Ind2),
+(Ind3) described in Theorem 3.11, (i), (ii).''
+\hfill\anchor{IUT-III}{9869--9873}
+\end{quote}
+
+The immediately preceding paragraph attributes exactly the opposite to the
+$\Theta$-side \anchor{IUT-III}{9862--9864}. The asymmetry is thus \emph{declared},
+not accidental. The $q$-pilot is moreover the fixed reference point of the
+construction --- property (IPL) calls it ``the `coric'/`fixed' $q$-pilot
+$\mathcal{F}^{\Vdash\times}$-prime-strip'' \anchor{IUT-III}{9117--9122} --- and
+property (APT) states that there is no set-theoretic transport to speak of:
+
+\begin{quote}\small
+``This parallel transport mechanism \emph{does not consist of a simple instance of
+transport of some set-theoretic region} \dots\ \emph{via some set-theoretic
+function}. Rather, it consists of a construction algorithm that is simultaneously
+valid/executable/well-defined with respect to the arithmetic holomorphic
+structures in the domain and codomain of the $\Theta$-link''
+\hfill\anchor{IUT-III}{9212--9219}
+\end{quote}
+
+The readout is concrete: $-|\log(q)|$ is ``the log-volume of the region that
+arises from the representation of the $q$-pilot object''
+\anchor{IUT-III}{10387--10390}, on a scale anchored by the statement that
+``global arithmetic degrees of objects of global realified Frobenioids may be
+interpreted as log-volumes'' \anchor{IUT-III}{10391--10393}.
+
+Obligation~1 is therefore discharged, and obligation~4 is discharged on the
+$q$-side --- but \emph{stipulatively}: the identity of the pilot is protected by
+the declarations ``coric''/``fixed'' and ``do not regard as subject to'' rather
+than produced by a proved relation.
+
+\subsection{R4 --- is the \texorpdfstring{$j^2$}{j\texttwosuperior}-load addressed?}
+
+\textsc{Partly}, with high confidence. The place of the booking is named; the load
+itself is not quantified there, and its quantification is explicitly delegated to
+the fourth volume.
+
+The load exists and is named: the relevant monoids are generated by the theta
+values $\{q^{j^2}\}_{j=1,\dots,\ell^*}$ \anchor{IUT-III}{654--656}. The booking
+site is the procession normalization, and what it books is \emph{labels}:
+
+\begin{quote}\small
+``the procession-normalized mono-analytic log-volumes [i.e., where the average is
+taken over $j \in \mathbb{F}_\ell^*$] \dots\ are \emph{invariant with respect to
+the indeterminacies} (Ind1), (Ind2), and have the effect of \emph{converting the
+indeterminacy} (Ind3) \emph{into an inequality [from above]}.''
+\hfill\anchor{IUT-III}{10261--10268}
+\end{quote}
+
+with the averaging attributed to ``the $\mathbb{F}_\ell^*$-symmetry acting on the
+labels of the theta values'' \anchor{IUT-III}{10273--10276}. That is a booking of
+symmetry, not of magnitude.
+
+For the corollary the load is then explicitly set aside, and the delegation is
+declared openly. Property (HIS) names this very application:
+
+\begin{quote}\small
+``if one takes the point of view --- \emph{as will be done in Corollary 3.12
+below!} --- that one is only interested in considering the \emph{qualitative
+logical aspects/consequences} \dots\ then \dots\ one may \dots\ \emph{forget that
+this construction algorithm \dots\ has anything to do with theta functions \dots\
+or theta values} $[\text{i.e., the } q^{j^2}]_{j=1,\dots,\ell^*}$!''
+\hfill\anchor{IUT-III}{9225--9244}
+\end{quote}
+
+and, immediately afterwards:
+
+\begin{quote}\small
+``unlike Corollary 3.12 below, which only concerns qualitative logical
+aspects/consequences \dots, \emph{the explicit computation to be performed in}
+[IUT-IV], \S\,1, \emph{of the log-volumes that occur in the statement of Corollary
+3.12 makes essential use of the way in which theta values occur} in the
+construction algorithm of Theorem 3.11.'' \hfill\anchor{IUT-III}{9263--9267}
+\end{quote}
+
+A search of the whole proof range for the theta values, the procession
+normalization and the averaging returns hits \emph{only} in Step (x); in the
+substeps themselves the load does not reappear.
+
+One point of fairness belongs to the verdict rather than beside it. The failure
+mode this row exists to catch --- a load that vanishes in one coordinate and
+returns without being booked --- \emph{does not occur here}. What occurs is a
+declared division of labour between a qualitative volume and a quantitative one.
+For the certificate the finding remains that within the document examined the
+load is not booked at the disputed place; the distinction between ``booked
+elsewhere, by declaration'' and ``concealed'' is recorded in the source's favor.
+
+\subsection{R6 --- is order preservation proved?}
+
+\textsc{Does not deliver} at both halves of the row, with high confidence. This
+is the core finding of the application, and it must be stated in two parts,
+because the two obligations fail for different reasons and the row as originally
+worded names only the second of them.
+
+\paragraph{R6a --- obligation~6 is not discharged: a common evaluation, no
+compatibility identity.} In substep (xi-d) the two sides are
+explicitly brought into one evaluation:
+
+\begin{quote}\small
+``it is only by forming [a suitable positive tensor power of] the determinant of
+the localizations of arithmetic vector bundles \dots\ and then applying the
+[suitably normalized \dots] log-volume to various regions \dots\ that we are able
+to obtain \emph{completely comparable objects}, namely,
+$\mathbb{R}_{\le -|\log(\Theta)|} := \{\lambda \in \mathbb{R} \mid \lambda \le
+-|\log(\Theta)|\} \subset \mathbb{R}$; $-|\log(q)| \in \mathbb{R}$''
+\hfill\anchor{IUT-III}{10376--10385}
+\end{quote}
+
+Together with the log-volume interpretation of arithmetic degrees quoted above,
+a numerical evaluation $\nu_C$ exists in the container, and it is stated
+explicitly rather than left to be inferred. That much is recorded in the
+source's favor. It is not, however, what obligation~6 asks for. The obligation
+asks for the compatibility identity $\nu_C \circ i_q = \nu_q$ across the
+identification of the two containers, and that identity is not in the text: the
+``searched, not found'' block below records the search, and records that the one
+compatibility lemma which does exist --- the log-link compatibility of the
+log-volumes --- secures compatibility \emph{within} a vertical column rather than
+across the identification. Since a common evaluation never discharges
+obligation~6 by itself (Section~\ref{sec:obligations}), R6a does not deliver.
+
+\medskip\noindent
+Version 0.1 of this paper coded this half the other way, on the disjunctive
+wording of obligation~6 then in force, and stated that ``the gap sits at
+obligation~7, not at obligation~6''. The quotations are unchanged and no source
+was re-examined; the coding follows the hardened wording. See ``Changes in
+version 0.2''.
+
+\paragraph{R6b --- obligation~7 is set as a condition, not derived.} Substep (xi-e)
+renders (SHE) operationally as a side condition on the admissible operations:
+
+\begin{quote}\small
+```expressibility relative to the arithmetic holomorphic structure in the
+1-column' [cf.\ (SHE)] amounts precisely to `\emph{expressibility via operations
+that are valid/executable/well-defined even when subject to the condition that
+the pilot-object log-volume associated to the input data prime-strip \dots\ be
+equal to the fixed value} $-|\log(q)| \in \mathbb{R}$'.''
+\hfill\anchor{IUT-III}{10412--10420}
+\end{quote}
+
+and substep (xi-f) draws the membership from it:
+
+\begin{quote}\small
+``the construction of the subset $\mathbb{R}_{\le -|\log(\Theta)|} \subset
+\mathbb{R}$ of possible pilot-object log-volumes of output data \emph{is subject
+to the condition} that this construction of output data possibilities
+\emph{constitutes, in particular, a construction} [perhaps only up to some sort of
+`approximation', as a result of various indeterminacies] \emph{of the
+pilot-object log-volume of the input data prime-strip}, namely,
+$-|\log(q)| \in \mathbb{R}$. The inclusion
+$-|\log(q)| \in \mathbb{R}_{\le -|\log(\Theta)|}$, hence also the inequality
+$-|\log(q)| \le -|\log(\Theta)| \in \mathbb{R}$ \dots\ \emph{then follows
+formally}.'' \hfill\anchor{IUT-III}{10437--10451}
+\end{quote}
+
+Substep (xi-g) names the result as ``two \emph{tautologically equivalent} ways to
+compute the log-volume of the $q$-pilot object'' \anchor{IUT-III}{10453--10458},
+and the author's own recapitulation repeats the pattern: the $q$-intertwining
+``may be thought of as a special case of the $\Theta$-intertwining \dots\
+Corollary 3.12 then follows, essentially formally''
+\anchor{IUT-III}{10723--10731}.
+
+\paragraph{The toy model writes the carrying assumption out as an assumption.}
+Without labels the two assignments contradict one another
+\anchor{IUT-III}{10747--10750}; the decisive step is then introduced as a
+supposition:
+
+\begin{quote}\small
+``\emph{Now suppose that one verifies that one may construct} the `assignment with
+indeterminacies' \dots\ as a mathematical structure that is intrinsically
+associated to the underlying structure of the assignment $\Xi_q$ \dots\
+\emph{even if one forgets the labels} `$q$', `$\Theta$' \dots, i.e., \emph{even if
+one identifies} $q\mathbb{R}$, $\Theta\mathbb{R}$, in the usual way, with
+$\mathbb{R}$ [cf.\ the properties (IPL), (SHE)]''
+\hfill\anchor{IUT-III}{10778--10784}
+\end{quote}
+
+from which ``one then concludes formally'' the desired bound
+\anchor{IUT-III}{10806--10813}.
+
+\paragraph{The finding, in certificate language.} In the real case the supposition
+is met by the conjunction (IPL)\,$\wedge$\,(SHE) --- that is, by \emph{properties
+attributed to the output of an algorithm}, not by a compatibility lemma
+$\nu_C \circ i_q = \nu_q$. At the same place the container typing required by
+obligation~3 is deliberately released: the identification of $q\mathbb{R}$ with
+$\Theta\mathbb{R}$ is a premise of the inference, not its result. The absent item
+is thus one and the same at both halves of the row, and it is absent twice over:
+the identity is what obligation~6 requires in order to put the two readouts on
+one scale by proof rather than by cohabitation, and it is what obligation~7 would
+need in order to carry the order relation across that scale.
+
+\paragraph{Fairness: ``tautologically'' is meant affirmatively.} The source uses
+this word approvingly, not as a concession: it speaks of concluding ``nontrivial,
+albeit essentially tautological, consequences \dots\ such as the inequality of
+Corollary 3.12'' \anchor{IUT-III}{8122--8125}. For its author the tautologous
+character is the achievement, not the defect. Reading the word as a
+self-refutation would be an authority argument in reverse, and is not done here.
+The ledger asks only whether the compatibility identity is stated and whether the
+order relation is \emph{derived}; by the wording, neither is.
+
+\subsection{R8 --- is a second mode visible or excluded?}
+
+\textsc{Partly}, with high confidence. Named and qualitatively priced, but not
+carried through the bridge as a second scale; not excluded either.
+
+The double structure is stated explicitly: a prime-strip ``\emph{simultaneously
+equipped with two intertwinings}, namely, the $\Theta$-intertwining, \emph{up to
+indeterminacies}, and the $q$-intertwining'' \anchor{IUT-III}{8114--8125}. The
+price of the construction is declared as well:
+
+\begin{quote}\small
+``this `solution' may be implemented \emph{only at the cost of admitting the
+`indeterminacy' constituted by the upper semi-compatibility of} (Ind3).''
+\hfill\anchor{IUT-III}{10019--10031}
+\end{quote}
+
+and the content of that notion is given by the text itself: ``upper
+semi-compatibility, i.e., in a word, \emph{one-sided inclusions, as opposed to
+precise equalities}'' \anchor{IUT-III}{8489--8490}.
+
+What does not happen is that the second mode is carried through the disputed
+step. Before the bridge it is resolved into a direction --- (Ind3) is converted
+``into an inequality [from above]'' --- and at the bridge the internal structure
+is, by (HIS), expressly forgotten. Visible before the step, suspended within it.
+
+A near-miss is recorded rather than suppressed: a remark whose title
+(``The log-shifted nature of the localization homomorphism'') suggests a visibly
+carried second scale concerns only the localization homomorphism of an earlier
+proposition \anchor{IUT-III}{5551--5553} and does not support the row.
+
+\subsection{Result of Case A}
+
+The resulting findings across the audited rows are summarized in Table~\ref{tab:case_a_findings}.
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.62\textwidth}l@{}}
+\toprule
+Row & Finding & Confidence \\
+\midrule
+R2 & \textsc{delivers} --- readout definitionally fixed and indeterminacy-free;
+  no transport step & high \\
+R4 & \textsc{partly} --- site named, load not quantified, quantification
+  delegated & high \\
+R6a & \textsc{does not deliver} --- common evaluation present and explicit;
+  compatibility identity $\nu_C \circ i_q = \nu_q$ absent & high \\
+R6b & \textsc{does not deliver} --- membership set via a property pair; follows
+  ``formally'' & high \\
+R8 & \textsc{partly} --- named and priced, suspended at the bridge & high \\
+\bottomrule
+\end{tabular}
+\caption{Case A: Summary of findings across audited BC-Ledger rows.}
+\label{tab:case_a_findings}
+\end{table}
+
+The address of the two unmet obligations is a single substep. There, the
+membership ``then follows formally'' from the condition that the construction of
+the output possibilities \emph{also} constitutes a construction of the input
+readout \anchor{IUT-III}{10437--10451}. What is absent is a compatibility
+identity $\nu_C \circ i_q = \nu_q$ across the container identification, which
+obligation~6 requires in its own right, and, on top of it, a contract lemma that
+\emph{derives} the order relation from the permitted linkage, which obligation~7
+requires. In their place stands the property pair, whose discharge the toy model
+writes out as a supposition. What the text does deliver at this substep is the
+common evaluation itself, explicitly --- and that is not nothing; but a common
+evaluation without the identity is exactly the cohabitation the certificate was
+built to keep apart from a numerical statement.
+
+\paragraph{Searched, not found.} Over the whole extract and, separately, over the
+proof range: a compatibility lemma of the form $\nu_C \circ i_q = \nu_q$ across
+the container identification (search terms: \texttt{compatib}, \texttt{log-volume},
+\texttt{equal}, \texttt{identif}); a numerical value for the approximation term
+(\texttt{approximation}, \texttt{epsilon}, \texttt{bound}, \texttt{estimate},
+\texttt{Ind3}); an explicit booking of the $O(\ell^2)$ load at the bridge
+(\texttt{theta value}, \texttt{procession-normalized}, \texttt{average}); a
+visibly carried second evaluation scale at the bridge (\texttt{log-shift},
+\texttt{vertical shift}, \texttt{two intertwinings}). One important qualification,
+recorded so that the negative finding is not read as carelessness: a genuine
+compatibility lemma \emph{does} exist --- the log-link compatibility of the
+log-volumes \anchor{IUT-III}{10268--10272} --- but it lies on the wrong axis. It
+secures compatibility \emph{within} a vertical column, not across the
+identification of the two evaluation containers --- which is what obligation~6
+asks for, and what obligation~7 would then have to build on.
+
+\paragraph{Reach.} High confidence attaches to the textual findings, row by row, in
+the author-assessed sense fixed in Section~\ref{sec:instrument}. The reach is
+restricted twice over: only the third volume was examined here, and only four of
+the nine rows were filled, so what is reported is a finding at four rows and not a
+verdict of the whole certificate. The quantitative continuation named by the source
+itself is the subject of Case B.
+
+% =============================================================================
+\section{Case B: the declared quantification site}
+\label{sec:caseB}
+% =============================================================================
+
+Case A left one concrete possibility open: the load that is not booked at the
+bridge might be booked at the site to which the text explicitly delegates it. The
+second application opens that site~\cite{Mochizuki2021d} and asks two strictly
+separated questions.
+
+\begin{description}
+\item[F1] Is the $j^2$/procession load actually quantified there?
+\item[F2] Does that section \emph{derive} the disputed membership, or does it
+  \emph{presuppose} the corollary?
+\end{description}
+
+Keeping them apart is essential, because a positive answer to F1 is easily
+mistaken for progress on F2, and it is not.
+
+\subsection{F1: quantified}
+
+\textsc{Quantified}, with high confidence. The chain is written out in the source
+and is here only exhibited, not recomputed.
+
+The theta value enters as the input quantity of the computation: ``$\lambda$'' is
+set to be ``$\ordd(-)$'' of the element $q_{v_j}^{j^2}$ at the bad places
+\anchor{IUT-IV}{1594--1597}. The local term carries $j^2$ visibly, as
+$j^2/(2\ell(j+1))$ \anchor{IUT-IV}{1656--1657}; after weighting, $j^2/(2\ell)$
+remains \anchor{IUT-IV}{1669--1670}. The procession averaging then evaluates the
+sum of squares explicitly:
+
+\begin{quote}\small
+``it remains to compute the average over $j \in \mathbb{F}_\ell^\star$.
+\emph{By averaging over} $j \in \{1,\dots,\ell^\star = (\ell-1)/2\}$ \emph{and
+applying} (E1), (E2), we obtain the `procession-normalized upper bound'
+\dots\ $= \frac{\ell+5}{4}\log(d_K) - \frac{\ell+1}{24}\log(q) + \dots$''
+\hfill\anchor{IUT-IV}{1675--1684}
+\end{quote}
+
+the identity applied being $\frac{1}{n}\sum_{m=1}^{n} m^2 =
+\frac{1}{6}(2n+1)(n+1)$ \anchor{IUT-IV}{1379--1380}. After the local estimate the
+coefficient survives into the final bound, where it appears as
+$-\frac{1}{6}\bigl(1 - \frac{12}{\ell^2}\bigr)\log(q)$
+\anchor{IUT-IV}{1775--1776}, and in the statement of the theorem itself
+\anchor{IUT-IV}{1352--1353}. The residual $\ell$-dependence is named and discussed
+as ``an inevitable consequence of the fundamental role played \dots\ by the
+$\ell$-torsion points'' \anchor{IUT-IV}{1909--1912}.
+
+The chain as displayed leaves no term unaccounted for: the load arises only at the
+bad
+places, the good non-distinguished places contribute zero, the archimedean step is
+computed separately, and the final step sums them.
+
+\subsection{F2: presupposes}
+
+\textsc{Presupposes}, with high confidence, and the strongest evidence is
+negative. Three complete searches over the whole document return: zero hits for
+the $q$-pilot; zero hits for each of the four declared properties on which the
+bridge rests in Case A; zero hits for the intertwinings. All occurrences of
+``pilot'' in this document are $\Theta$-pilots. A document that, under the terms
+searched, never names the $q$-pilot and never mentions the properties carrying the
+bridge supplies no derivation of the bridge. The unmet obligation of Case A lies
+outside this section's subject matter, as far as those terms reach.
+
+The framing says the same thing positively. The section is introduced as producing
+``\emph{more explicit versions} \dots\ \emph{of the log-volume estimates for
+$\Theta$-pilot objects obtained in} [IUT-III], Corollary 3.12''
+\anchor{IUT-IV}{456--458}, and its main theorem opens with ``\emph{Suppose that we
+are in the situation of} [IUT-III], Corollary 3.12''
+\anchor{IUT-IV}{1281}.
+
+So does the proof logic. The section supplies the upper side --- ``we thus obtain
+the following \emph{upper bound}'' \anchor{IUT-IV}{1773}, ``substituting back
+\dots\ we obtain the following \emph{upper bound for} `$C$'''
+\anchor{IUT-IV}{1821} --- and imports the lower side:
+
+\begin{quote}\small
+``and hence, \emph{by applying the inequality} `$C_\Theta \ge -1$' \emph{of} [IUT-III],
+Corollary 3.12, conclude that \dots'' \hfill\anchor{IUT-IV}{1355--1356}
+\end{quote}
+
+That imported inequality \emph{is} the disputed membership in constant form: the
+corollary's conclusion states $-|\log(\Theta)| \ge -|\log(q)|$, ``i.e., $C_\Theta \ge -1$
+for any real number $C_\Theta$ such that
+$-|\log(\Theta)| \le C_\Theta \cdot |\log(q)|$''
+\anchor{IUT-III}{9878--9884}. The architecture the text writes down for itself is
+therefore: this section bounds $C$ from above, the corollary bounds it from below,
+and only both together say anything about $\log(q)$. An upper bound on $C$ alone
+says nothing.
+
+Finally, the section does not even handle the third indeterminacy itself. At all
+three places where it arises, the treatment is delegated backwards: it ``is taken
+into account by the fact that we are considering upper bounds [cf.\ the discussion
+of Step (x) of the proof of \dots\ Corollary 3.12]'' \anchor{IUT-IV}{1609--1611}.
+
+\subsection{Consequence for the ledger}
+
+Three consequences, and only the first is a change to a verdict.
+
+\begin{enumerate}
+\item \textbf{Row R4 splits.} The load is quantified in the evaluation of the
+  $\Theta$-side (R4a: yes, in the combined reading of the two volumes) and is not
+  booked at the bridge (R4b: no in the third volume, out of scope in the fourth).
+  Without the split, one word hides two findings.
+\item \textbf{The delegation is verified.} The concern that motivated the row ---
+  a load that disappears in one coordinate and returns unbooked --- does not apply
+  to the two volumes read together: the theta value disappears in the third and
+  \emph{returns named and computed} in the fourth, at exactly the place the third
+  had specified. This is recorded in the source's favor.
+\item \textbf{The R6 verdict is unchanged at both halves, and its reach is
+  extended.} Case A had stated its verdict under the reservation that only one
+  volume was examined. For the site named by that volume, the reservation is now
+  discharged: there is neither a compatibility identity nor a contract lemma
+  there, and no candidate for either. The site is not contradictory but
+  thematically uninvolved.
+\end{enumerate}
+
+One further observation belongs here, as an observation about architecture rather
+than a judgment: by taking $C_\Theta \ge -1$ as an input, the fourth volume makes
+visible how much hangs on the membership. Its entire explicit computation produces
+an upper bound which, without the lower bound supplied by the corollary, yields no
+statement about $\log(q)$ at all.
+
+\paragraph{Searched, not found.} A derivation of the membership anywhere in this
+volume (search terms: \texttt{q-pilot}, \texttt{pilot}, \texttt{holomorphic hull},
+\texttt{inclusion}, \texttt{follows formally}, \texttt{tautolog},
+\texttt{Step (xi)}): not found; the one hit for the substep lies in a later
+section and refers back to the third volume. A contract lemma or any discussion of
+the property pair: not found, zero hits. A numerical value for the toy model's
+approximation term: not found --- and the tempting identification of that term
+with the bound computed here is \emph{our} association, not a finding of the text,
+which nowhere makes it.
+
+\paragraph{Import ledger.} The verdict of F2 turns on a single appeal to outside
+material, and the discipline of Section~\ref{sec:importledger} requires that it be
+entered rather than passed over (Table~\ref{tab:case_b_import_ledger}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}P{0.24\textwidth}P{0.66\textwidth}@{}}
+\toprule
+Field & Entry \\
+\midrule
+Importing passage & IUT-IV, \S\,1, in the proof of its main estimate
+  \anchor{IUT-IV}{1355--1356} \\
+Statement imported & the inequality ``$C_\Theta \ge -1$'' of IUT-III, Corollary 3.12 \\
+Statement needed & the same inequality: this section produces an upper
+  bound for $C$ and needs a lower bound it does not derive \\
+Fit & exact --- imported statement and required statement coincide \\
+What was checked & the fit, not the proof, per the asymmetric rule of
+  Section~\ref{sec:importledger} \\
+\bottomrule
+\end{tabular}
+\caption{Case B: Import ledger entry for the IUT-IV main estimate.}
+\label{tab:case_b_import_ledger}
+\end{table}
+
+\noindent
+No type~Z failure is recorded here: the import carries exactly the statement it is
+invoked for. That is precisely why the entry matters. The statement imported is the
+one whose derivation obligation~7 asks after, so the appeal is sound and the site
+still cannot discharge the obligation.
+
+% =============================================================================
+\section{Case C: a comparative discrimination case in a different theory}
+\label{sec:caseC}
+% =============================================================================
+
+The third application is not a second test of the same text. It applies the
+unchanged instrument to an independent alternative program~\cite{JoshiATSIII,
+JoshiATSIV} which reaches the same inequality by different means. Its function is
+to answer a question that a single application cannot: does the certificate return
+the same finding everywhere --- in which case it is a template, not an instrument
+--- or does it discriminate?
+
+The label matters and is fixed here in the terms of the methods
+paper~\cite{GeigerBCM2026}: this is a \emph{comparative discrimination case}, not
+a control. Version 0.1 called it a comparison control, which claimed more than
+the case can carry --- a control would have to be a transfer argument whose
+seventh obligation \emph{is} discharged, and Section~\ref{sec:convergence}
+already recorded that no such case was among those examined. The function
+described below is unchanged; only the name is corrected.
+
+It discriminates. Three of the four rows deliver, the fourth delivers only in a
+restricted sense, and the unmet obligation sits at a different address and has a
+different shape. \emph{Where} that unmet obligation sits was itself revised by two
+later corrections (Section~\ref{sec:caseC-nachtraege}); the comparison at the end
+of this section states the revised reading rather than the first coding, and the
+revision is reported as part of the case.
+
+\subsection{R2: delivered, by a proved relation}
+
+The transport along the construction's own link preserves the readout, and the
+$j^2$ factor is carried visibly: the scaling relation between the valuations is
+stated as part of a theorem, $|-|_{K'_{y_{w,j}}} = |-|^{j^2}_{K'_{y_{w,1}}}$ for
+$j = 1,\dots,\ell^*$ \anchor{ATS-III}{1544--1560}, and is used in the explicit
+computation of the theta values' Bloch--Kato classes
+\anchor{ATS-III}{6458--6484}. The evaluation scale is concrete: a log-volume with
+a stated normalization \anchor{ATS-III}{6562--6596}. Obligation~1 is discharged;
+obligation~4 is discharged here by a \emph{proved valuation relation}, not by a
+stipulation.
+
+This is the contrast that forced the R2a/R2b split. A second transport also
+occurs, between two copies of the ambient data related by a global Frobenius, and
+there the identification is \emph{set by a normalization choice}: ``Choose the
+same global normalization \dots\ With this choice \dots\ one has''
+--- this in the \emph{statement} of Theorem 6.10.1 of ATS-IV
+\anchor{ATS-IV}{3186--3189} --- the proof of the resulting equality being, in that
+theorem's proof, the single sentence that it ``is a consequence of the choice of
+the same global normalization'' \anchor{ATS-IV}{3262--3266}. Same row, two
+different kinds of answer.
+
+\subsection{R4: delivered, by a global constraint}
+
+The load arises only at the semistable places, survives into the numerical
+evaluation, and its compensation is booked --- the booking instrument being the
+product formula:
+
+\begin{quote}\small
+``the non-trivial scaling relationship \dots\ at primes $w \in
+V^{\mathrm{odd},ss}$ \emph{forces that suitable (re)normalization of valuations
+must be introduced} at primes $w \in V_{L'} - V^{\mathrm{odd},ss}$ so that the
+product formula \dots\ hold[s] for each normalized arithmeticoid''
+\hfill\anchor{ATS-III}{1600--1609}
+\end{quote}
+
+Honesty requires the limitation alongside: the proof of that statement is one
+sentence, so the \emph{existence} of a consistent compensating renormalization is
+inferred from the constraint rather than constructed. The load is located, not
+quantified. The failure mode the row exists to catch does not occur.
+
+\subsection{R6: partly --- proved as an inequality, conventional as a bridge}
+
+The inequality itself is a theorem with a proof --- Theorem 9.11.1 of ATS-III, in
+its \S\,9.11 \anchor{ATS-III}{6794--6806} --- and
+the evaluation in the container is genuinely numerical, computed as a sum of local
+contributions \anchor{ATS-IV}{764--769}. Obligation~6 is \emph{partly}
+discharged: the evaluation is numerical, but the compatibility holds only between
+the sums and is place-wise disclaimed by the source itself --- as the passages
+quoted in the next paragraph state in the source's own words. Version 0.1 coded
+this half as discharged ``via its first alternative''; under the hardened
+wording of obligation~6 the same quotations yield the partial code, and the
+reasoning was already in the text (``Changes in version 0.2'').
+
+The bridge that carries the final conclusion is a different matter. Two
+evaluations, in two copies related by the global Frobenius, are joined by a middle
+equality whose proof, in the proof of Theorem 6.10.1, reads in full:
+
+\begin{quote}\small
+``The middle equality is a tautology using the fact that the number fields
+provided by $y_0'$ and $y_0$ are identically normalized.''
+\hfill\anchor{ATS-IV}{3272--3273}
+\end{quote}
+
+while the same text expressly forbids the place-by-place comparison a reader might
+use to check it: ``one cannot claim that $z_p \le z_p'$ holds for all primes $p$
+without violating the middle equality'' \anchor{ATS-IV}{816--819}, and the
+difference by Frobenius at each prime ``\emph{precludes direct comparison of
+various local quantities}'' \anchor{ATS-IV}{3208--3211}. Order compatibility thus
+exists only between the sums, never place by place.
+
+\subsection{R8: delivered --- and this is why the rest is legible}
+
+The second mode here is the global Frobenius shift, and it is not merely present
+but declared, used asymmetrically, interpreted, and flagged as a correction of the
+author's own earlier version: the lower bound is computed in one copy and the
+upper bound in the other, ``the upper bound is not independent of this choice''
+\anchor{ATS-IV}{733--743}, and a bracketed note records that ``[t]he previous
+release of this paper had omitted this Frobenius-shifting''
+\anchor{ATS-IV}{755}.
+
+This is the strongest positive result of the comparison, and it has an analytic
+payoff rather than a rhetorical one: \emph{because} the second mode is disclosed
+rather than absorbed into a normalization, the gap at R6 has an address at all.
+
+\subsection{Two later corrections, pulling in opposite directions}
+\label{sec:caseC-nachtraege}
+
+Both must be reported, or the case is misrepresented.
+
+\paragraph{Strengthening.} A source examination of the two earlier volumes of the
+same series, published separately as a tool supplement of this
+series~\cite{GeigerGNC2026}, settled the definitional question left open above: the
+normalized object is unique per point, so ``the same global normalization'' is
+\emph{definitional}. On that reading the identification is not load-bearing, and
+the middle equality rests instead on the by-construction Frobenius stability of
+the collated adelic set --- that is, on precisely the mechanism this application
+classified as delivered under R8 --- together with a definitional pinning of the
+scale. What remains is not a missing contract lemma but a narrower question about
+a measure convention.
+
+\paragraph{Weakening.} A substance examination of the theorem carrying R6 ---
+companion work of this series, published as Part~5~\cite{GeigerSubstance2026} --- found that
+its core step, a containment declared ``clear from the construction'', is not
+carried by the construction cited for it. That is a G+D gap: a missing
+argument (a supremum statement is used where a measure statement is needed)
+together with a structural ambiguity about where one algebraic structure becomes
+another. The repair duty is named; the finding is not an error claim.
+
+The two together are best summarized in the words those two examinations used:
+the difference in \emph{form} remains, and the advantage in \emph{substance}
+shrinks.
+
+\paragraph{The revised coding.} Taken together, the two corrections do not make
+this case better or worse than the first coding recorded; they \emph{move} the
+deficit. Rows R2, R4 and R8 are untouched by either correction and continue to
+deliver. What changes is the split inside the \textsc{partly} of row R6. Before the
+corrections, the delivered part was the inequality as a proved theorem and the
+missing part was a bridge joined by a conventional identity. After them, the
+identity is definitional and therefore not the missing part, while the missing part
+sits inside the theorem itself, at its containment step. The verdict stays
+\textsc{partly} because the rule is that a split verdict must state its split
+rather than average it --- and it is the split that has changed, not the verdict.
+
+That a later and deeper reading revised the study's own first coding is reported
+here rather than smoothed away. An entry that a subsequent examination of the same
+sources can correct is an entry that can be checked; that is a property worth
+having. It is not a claim that the instrument has been validated.
+
+\subsection{What the comparison shows}
+
+Both arguments fail obligation~7 in the strict sense of the ledger, and they fail
+it differently --- which is the whole point of a comparative discrimination case (Table~\ref{tab:case_a_c_comparison}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.40\textwidth}P{0.40\textwidth}@{}}
+\toprule
+Row & Case A & Case C \\
+\midrule
+R2 & delivers --- no transport occurs (declared) & delivers --- proved valuation
+  relation; second transport conventional \\
+R4 & partly --- site named, quantification delegated & delivers --- booked via the
+  product-formula constraint \\
+R6 & does not deliver at both halves --- no compatibility identity, and
+  membership ``follows formally'' & partly, revised --- compatibility only
+  between the sums, place-wise disclaimed; inequality carried by a theorem,
+  deficit inside that theorem's containment step \\
+R8 & partly --- named, then suspended & delivers --- disclosed and used
+  asymmetrically \\
+\bottomrule
+\end{tabular}
+\caption{Comparative discrimination matrix: BC-Ledger findings in Case A (IUT-III) versus Case C (ATS-IV).}
+\label{tab:case_a_c_comparison}
+\end{table}
+
+The difference that matters is the \emph{shape} of the unmet obligation, and the
+corrections above have changed where that shape sits in Case C without changing
+that it is one identifiable step. In Case C the deficit is localized: after the
+corrections it sits at a single containment step inside the theorem that carries
+the inequality, where before it was read as sitting at the conventional identity
+joining the two evaluations. In Case A it is areal: a conjunction of two declared
+properties, distributed over a remark and four substeps, discharged by an inference
+the text itself calls formal. The contrast is between a deficit at one identifiable
+step and a deficit distributed over several. It is not a statement about which is
+more serious --- the typology of Section~\ref{sec:typology} types gaps and
+deliberately does not grade them.
+
+% =============================================================================
+\section{Case D: downstream applications}
+\label{sec:caseD}
+% =============================================================================
+
+The fourth application asks a different question of two papers that \emph{use} the
+disputed inequality~\cite{ZhouI, ZhouII}: do they presuppose the certificate,
+circumvent it, or introduce an alternative scale? A finding here cannot detect the
+gap --- it can only show how the gap propagates.
+
+\paragraph{A note on the label.} These papers are filed in the underlying material
+under a name that does not appear in them; the curves they use are
+Frey--Hellegouarch curves, and the author is a single author. The label is an
+archival artifact and is not used here.
+
+\subsection{Where the bound enters}
+
+In the first paper the disputed inequality appears as Proposition 1.9, its
+formula~(1.7), whose entire proof is one sentence: it ``follows from the
+$\mu_6$-version of'' the corollary of Case A \anchor{Zhou-I}{728--732}. The formula
+number is used exactly once afterwards, in the proof of the next proposition
+\anchor{Zhou-I}{753--757}, and Proposition 1.9 is never revisited.
+There is no derivation, no intermediate lemma, and no contract lemma of the kind
+obligation~7 requires.
+
+Everything the paper contributes of its own lies downstream, on the $\Theta$-side:
+a sharper hull bound \anchor{Zhou-I}{482--496}, its own readout of the
+$\Theta$-pilot \anchor{Zhou-I}{677--725}, and its own constants in the target
+inequality \anchor{Zhou-I}{742--751}, which the paper itself presents as an
+improvement over an earlier explicit estimate \anchor{Zhou-I}{1931--1934}.
+
+The second paper never names the corollary at all. It inherits the bridge through
+the first paper, at exactly the bridging proposition
+\anchor{Zhou-II}{291--292}, and it goes further: a remark tracks where one
+hypothesis is used in the four cited volumes and concludes from that tracking that
+their results ``still hold for'' a different class of initial data
+\anchor{Zhou-II}{267--280}. The disputed substep is never touched.
+
+\subsection{Silence, and a revealing contrast}
+
+Searches over both documents return zero hits for the known critique, for the
+indeterminacies, for the multiradial construction, for the pilots, and for every
+term of dispute or correctness we searched for. The positioning is implicit
+instead, through the word ``unconditionally'' applied to the consequences
+\anchor{Zhou-I}{29--30}.
+
+What makes this more than an absence is the contrast. Both papers do practice
+explicit reservations about rigour --- the second states plainly that it omits a
+step and ``claim[s] that we can always do the similar things presented above''
+\anchor{Zhou-II}{153--156} --- but they apply such reservations only to their own
+omissions, never to the imported step.
+
+\subsection{No alternative scale}
+
+The log-volume normalization is quoted from the fourth volume of the source theory
+rather than replaced \anchor{Zhou-I}{474--480}. The sharper bounds, the separate
+readout and the new constants all sit on the sides of the bridge, not in it. One
+question is expressly left undecided: whether an explicit factor appearing in the
+imported inequality is a renormalization of the same quantity that the corollary
+folds into its notation, or a different quantity, could not be decided within the
+sources of that application, and is recorded as a follow-up rather than answered.
+
+\subsection{Result of Case D}
+
+Both papers \emph{presuppose} the certificate. Neither circumvents it and neither
+introduces an alternative scale for it. The first contributes one element of
+obligation~6 --- its own explicit numerical readout on the $\Theta$-side --- but
+supplies no compatibility identity, and it takes obligation~7 over wholesale. The unmet obligation is thus not closed downstream
+but inherited unexamined, and in the second paper extended to a class of data the
+cited volumes do not treat.
+
+\paragraph{Searched, not found.} Both extracts were searched case-insensitively;
+the counts are given as first paper\,/\,second paper. \texttt{Scholze} 0/0;
+\texttt{Stix} 0/0; \texttt{indetermin} 0/0; \texttt{multiradial} 0/0;
+\texttt{Theta-pilot}, \texttt{q-pilot}, \texttt{theta pilot} 0/0;
+\texttt{Frobenioid} 0/0; \texttt{controvers}, \texttt{criticis}, \texttt{criticiz},
+\texttt{dispute}, \texttt{debate} 0/0; \texttt{gap in}, \texttt{not verif},
+\texttt{unverif}, \texttt{validity}, \texttt{correctness} 0/0. Two search terms do
+return hits, and neither is a discussion: the masked \texttt{3.12} returns 1/0, the
+single hit being the citation at \anchor{Zhou-I}{732}, and
+\texttt{log-theta-lattice} returns 1/1, in both cases the title of a bibliography
+entry \anchor{Zhou-I}{2583--2584}, \anchor{Zhou-II}{2254--2255}. The reach of this
+block is the reach of that word list: a discussion conducted under other
+terminology would not have been caught by it.
+
+\paragraph{Version caveat.} The second paper describes itself, in the first line of
+its abstract, as an older version to be updated \anchor{Zhou-II}{10}. Every
+finding about it is a finding about that version; a later version could in
+particular argue the inheritance step differently.
+
+% =============================================================================
+\section{What the four applications jointly show}
+\label{sec:convergence}
+% =============================================================================
+
+\subsection{Four different roles, not four detections}
+
+It would be convenient, and wrong, to say that the finding has been confirmed four
+times. The four applications do four different things, and stating them separately
+is both more accurate and more informative (Table~\ref{tab:applications_roles}).
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}lP{0.20\textwidth}P{0.50\textwidth}@{}}
+\toprule
+Case & Role & What it establishes \\
+\midrule
+A & \textbf{Detection} & Obligations~6 and~7 are not discharged at a named
+  substep: the compatibility identity is not stated, and the order relation is
+  not derived. \\
+B & \textbf{Closing off a site} & The site to which quantification is delegated
+  is explicit and self-contained at the nodes it names, and cannot discharge
+  obligation~7, because it consumes
+  the disputed inequality as an input. \\
+C & \textbf{Comparative discrimination} & The instrument discriminates: three rows
+  deliver, and the unmet obligation sits at a different address, in a different
+  theory, with a different shape --- an address revised, in the course of this
+  study, by a closer reading of the same sources. \\
+D & \textbf{Propagation} & Downstream work inherits the unmet obligation without
+  examining it, and in one case extends what is inherited. \\
+\bottomrule
+\end{tabular}
+\caption{Systematic roles and distinct methodological functions of the four case applications.}
+\label{tab:applications_roles}
+\end{table}
+
+Only A is a detection. B is the opposite of a second detection: it establishes
+that a specific candidate site is \emph{not} where the obligation is discharged,
+which narrows the search rather than repeating it. C is a discrimination case
+whose value lies in returning a \emph{different} answer. D says nothing about
+whether the
+obligation can be discharged; it says that neither of the two versions examined
+does so.
+
+Case B carries a second function worth naming, because it is the only internal
+evidence here that the instrument can return something other than a deficit. Under
+the same criteria that record an unmet obligation in Case A, the text examined in
+Case B supplies an explicit quantified chain and an exactly fitting import at the
+nodes that carry it: on those questions the answer comes back positive. That is a
+\emph{positive documentary comparison}, not a validation --- Case B is not a site
+at which obligation~7 could be discharged, so it cannot test the row on which the
+certificate is most exposed to the charge of being built for its answer.
+
+\subsection{The address is stable across independent texts}
+
+To provide a complete comparative overview of the empirical findings, Table~\ref{tab:synoptic_cross_case_matrix} synthesizes all four applications across their primary sources, theoretical domains, primary BC-Ledger findings, identified gap types, and methodological functions in the argumentative chain.
+
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}lP{0.17\textwidth}P{0.22\textwidth}P{0.21\textwidth}lP{0.12\textwidth}@{}}
+\toprule
+Case & Primary Source & Theoretical Context & BC-Ledger Finding & Deficit & Role \\
+\midrule
+A & IUT-III, Cor.~3.12 & Inter-universal Teichmüller theory & R6a/R6b \textsc{does not deliver} & G (step xi-e) & Detection \\
+B & IUT-IV, \S\,1 & Explicit log-volume quantification & R4 \textsc{partly} / Import exact & Z-free & Site closure \\
+C & ATS-IV v2, \S\,6.10, Thm.~6.10.1 & Arithmetic Teichmüller spaces & R6 \textsc{partly} (revised) & G (sum-level) & Discrim. \\
+D & Zhou-I/II & Downstream Diophantine apps & R6 \textsc{inherited} & G (imported) & Inheritance \\
+\bottomrule
+\end{tabular}
+\caption{Synoptic cross-case matrix of all four applications: scope, primary findings, identified gap types, and epistemic roles.}
+\label{tab:synoptic_cross_case_matrix}
+\end{table}
+
+What the four do jointly establish is narrower and, we think, more durable than a
+count of confirmations. \emph{Two} textually independent bodies of work --- the
+theory of Cases~A and~B and the program of Case~C --- examined with one unchanged
+instrument, place the load of the argument at the same passage: the step from a
+common container to a derived order relation. Neither completes that step, and
+neither completes the obligation immediately before it either --- though they
+fail there differently, which is what makes the comparison informative. A third
+body, Case~D, places nothing: it imports the step from the first, as its own text
+says, and can therefore corroborate nothing --- what it adds is the observation
+that the obligation travels unexamined. Obligation~6 is unmet in Case~A, where
+the compatibility identity is absent outright; partly met in Case~C, where the
+compatibility holds between the sums and is place-wise disclaimed; and in Case~D
+contributed to on one side only. Obligation~7 is met in none of them in the
+strict sense of the ledger.
+
+That the instrument nevertheless separates the cases sharply --- ``does not
+deliver'' versus ``partly'' versus ``inherited'' --- tells against reading the
+common finding as a mere artifact of the certificate's design. It does not settle
+the question. A genuine positive control --- a transfer argument of the same shape
+whose seventh obligation \emph{is} discharged --- was not among the cases examined,
+and naming that gap is part of the finding rather than an aside to it.
+
+\subsection{An independent formalization project reaches the same site}
+
+During the same period an international formalization project published an interim
+report~\cite{LANA2026} which isolates a compatibility problem at the same passage.
+Its own words:
+
+\begin{quote}\small
+``we isolate a specific compatibility problem at the final stage of the argument:
+the relation between the construction arising directly from the $q$-pilot in its
+native arithmetic holomorphic structure and the construction obtained by anabelian
+and Kummer-theoretic methods through the multiradial procedure. \dots\
+\emph{Project LANA has not yet reconstructed a proof of the required
+compatibility}.'' \hfill\anchor{LANA}{11--16}
+\end{quote}
+
+and, on the status of that statement:
+
+\begin{quote}\small
+``the proof of the final numerical inequality \emph{hinges on the compatibility}
+(9-1) \emph{which is not manifestly false. However, we \dots\ do not have a proof
+of} (9-1) \emph{at this time}.'' \hfill\anchor{LANA}{2988--2990}
+\end{quote}
+
+The required statement is an existence claim: two isomorphisms of pointed real
+vector spaces with a common target are constructed --- one from the $q$-pilot
+``together with the native arithmetic holomorphic structure''
+\anchor{LANA}{2807--2812}, the other anabelian and dependent on a choice of
+integral structure and ``subject to indeterminacies'' \anchor{LANA}{2783--2803}
+--- and what is wished for is ``that \emph{there exists some suitable} $S$
+\emph{such that} $\eta^q = \eta_S^{\mathrm{anab}}$'' \anchor{LANA}{2815--2819}.
+
+The report's $R^{\mathrm{ss}}$ quotient identifies adelic measurable sets
+when their volumes are equal; this definition does not prove equality of
+the two concrete pilot classes or of the maps in (9-1). The equation remains
+an open target in the cited report (PDF pp.~46, 48--49). A proposed
+object-wise role crosswalk follows (Table~\ref{tab:lana_mapping}); it does
+not supply the missing typed implication to obligation~7.
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{@{}P{0.27\textwidth}P{0.37\textwidth}P{0.23\textwidth}@{}}
+\toprule
+Obligation & Object in the report & Anchor \\
+\midrule
+3 --- container, typed embeddings & the common target with its two typed maps &
+  2790--2812 \\
+4 --- permitted identification & stipulated source identifications plus the choice
+  of $S$ & 2937--2939 \\
+5 --- split budget & two indeterminacies on the anabelian side, the third as
+  ambiguity in the choice of $S$ & 2786, 2973--2974 \\
+\textbf{6 --- compatible evaluation} & the common target is by construction the
+  volume evaluation quotient, but \textbf{the required equality of the two
+  evaluation isomorphisms --- a compatibility identity in the sense of this
+  obligation --- is demanded and unproved} & 2790--2794, 2815--2819,
+  2988--2990 \\
+7 --- order compatibility & no typed implication established here; object,
+  normalized evaluation and half-line bound remain to be connected & 2815--2819 \\
+\bottomrule
+\end{tabular}
+\caption{Crosswalk between independent formalization report (Project LANA) objects and certificate obligations.}
+\label{tab:lana_mapping}
+\end{table}
+
+Three statements about this convergence, and deliberately no fourth.
+
+\begin{enumerate}
+\item \textbf{A proposed role correspondence, not validation.} The maps and
+  their requested compatibility can motivate a question at obligation~6.
+  This is not a formal identification with the certificate contract.
+\item \textbf{The typed bridge remains missing.} An implication from (9-1)
+  to obligation~7 would require the chosen $S$, the relevant object and
+  quotient representatives, a common normalized log-evaluation, and the
+  orientation and upper bound of the target half-line to be justified.
+  Equality of two abstract maps alone does not supply these premises.
+\item \textbf{No order conclusion is derived here.} If those premises and
+  an appropriate comparison bound were proved, a compatible evaluation
+  could support an order argument. Neither this paper nor the cited interim
+  report supplies that complete chain. The correspondence is therefore
+  a research task, not a proved one-way implication or a refutation.
+\end{enumerate}
+
+The report's own position is also worth recording precisely, because it matches
+the verdict vocabulary of Section~\ref{sec:instrument} rather than either
+partisan position: the compatibility is ``not manifestly false'', and there is no
+proof of it. That is the same distinction the ledger insists on. \emph{Does not
+deliver is not refuted} --- and the convergence, such as it is, is a convergence
+on where the question sits, not on an answer to it.
+
+\paragraph{What ``independent'' means here, and what it does not.} The word is used
+in a strictly documented sense. The certificate and its nine rows were fixed in
+May~2026, before any of the four applications reported here were carried out; those
+were carried out in August~2026; the interim report appeared in July~2026 and does
+not cite this work. That is the whole of the evidence, and it supports exactly one
+limited chronological observation --- that the initial ledger predates the
+report. This does not rule out influence on later applications or revisions,
+and it does not establish the absence of contact or influence in either direction, which is a
+claim about people that no reading of the documents could settle, and which is
+therefore not made.
+
+Two further limitations belong immediately here. The report is an interim report,
+its authors record internal disagreement, and our mapping is an object-wise
+assignment, not a proof of equivalence. The mapping also presupposes rather than
+exhibits obligations~1 and~2: the two objects and the target half-line are taken as
+already typed, and only obligations~3 to~7 are matched in the table above.
+
+\subsection{What is not shown}
+
+\begin{enumerate}
+\item \textbf{Five of nine rows are unfilled.} Rows R0, R1, R3, R5 and R7 were not
+  part of any of the four applications and are open in all of them. R5 was touched
+  only where R4 forced it. A ledger with four rows filled is a partial ledger, and
+  the summary tables above should be read as such. The four are also not of one
+  status, and the denominator should not obscure it: three of them --- R2, R4 and
+  R6, the last reported at both halves of its split --- are core rows, while R8 is
+  the triggered extension of Section~\ref{sec:ledger}, which maps to no obligation
+  and is out of scope where its trigger is absent. A completeness statement about
+  the certificate is a statement about the eight core rows R0--R7, of which three
+  were filled.
+\item \textbf{No claim about correctness.} Not one proof line was followed in any
+  of the four cases, and no estimate was recomputed. In particular Case B
+  establishes \emph{that} a computation is carried out and where, not that it is
+  right.
+\item \textbf{No claim about repairability.} Nothing here says the unmet
+  obligation cannot be discharged; one concrete candidate route --- whether some
+  text states a theorem deriving the order relation from the declared property
+  pair, rather than inferring it formally --- was named as the remaining lever and
+  was not pursued.
+\item \textbf{No claim about the conjecture.} The word ``gap'' in this paper means
+  ``an obligation of a stated certificate that a quoted wording does not
+  discharge''. It does not mean that the $abc$ conjecture is open or closed, and
+  it does not mean that any theory examined here is wrong.
+\end{enumerate}
+
+% =============================================================================
+\section{Limitations}
+\label{sec:limitations}
+% =============================================================================
+
+This section states what the paper does not do, in the terms of the underlying
+examinations.
+
+\begin{enumerate}
+\item \textbf{No proof was followed.} No theorem of any examined source was
+  verified line by line, no estimate recomputed, no constant checked. What was
+  classified is the structure of justification.
+\item \textbf{Four rows of nine, three of them core rows.} See
+  Section~\ref{sec:convergence}. The row splits of Section~\ref{sec:splits} were
+  not part of the certificate as fixed --- two arose from use, the third from the
+  hardened reading of obligation~6 --- and they are normative only in the
+  successor instrument~\cite{GeigerBCM2026}. The case reports therefore stay with
+  the original rows wherever the split makes no difference to the finding, so
+  that no application is credited with filling a row that did not yet exist when
+  it was carried out. Where the split does make a difference they use it and say
+  so: Case~B reports at R4a and R4b, and Case~A at R6a and R6b (Case~C's
+  separation is carried in its running text against the merged row). Version 0.1
+  stated without qualification that the case reports report against the original
+  rows; that described this paper's own practice too widely, since Case~B already
+  drew its single change of verdict from the R4 split.
+\item \textbf{One verdict rests on a reconstruction.} In Case A the load-bearing
+  line lost a relation symbol in extraction. The reconstruction and its
+  cross-checks are disclosed in Section~\ref{sec:reconstruction-A}; the general
+  formula ``no conclusion depends on the placement of a symbol'' would be false
+  for this paper and is deliberately not used.
+\item \textbf{Case C carries two later corrections in opposite directions}
+  (Section~\ref{sec:caseC-nachtraege}), and the case must be read with both. The
+  substance examination underlying the second of them is itself a
+  form-and-substance examination, not a refutation; it has appeared as
+  Part~5~\cite{GeigerSubstance2026}, as has the source examination underlying
+  the first~\cite{GeigerGNC2026}.
+\item \textbf{Case D describes one version of one document.} The second paper
+  declares itself superseded \anchor{Zhou-II}{10}. Its findings are version-bound.
+\item \textbf{The convergence of Section~\ref{sec:convergence} is object-wise},
+  not formal. No equivalence between the certificate's seventh obligation and the
+  report's compatibility statement is claimed or proved, and the implication we do
+  state runs in one direction only.
+\item \textbf{Mathematical questions of substance are left open by design}, not by
+  oversight --- see Section~\ref{sec:cannot}, item~2.
+\item \textbf{The instrument is not validated beyond these applications.} Four
+  applications in two theories are a small sample. Whether the certificate
+  discriminates usefully in other fields is untested; the recipe of
+  Section~\ref{sec:recipe} is offered so that it can be tested.
+\item \label{lim:biblio} \textbf{Bibliographic discipline.} Every entry was
+  checked against its original source before this version (verification pass of
+  August 13, 2026). The titles of~\cite{ZhouI} and~\cite{ZhouII} were initially
+  omitted --- the material underlying this paper recorded their identifiers,
+  author and affiliation but did not quote their titles, and inventing a
+  plausible title would be worse than omitting it --- and were subsequently
+  added from the arXiv records themselves. The formalization note of April 2026
+  that is sometimes mentioned alongside~\cite{LANA2026} is deliberately
+  \emph{not} cited: it was secured but not read, and an unread source has no
+  place in a bibliography.
+\item \textbf{Textual basis are extracts.} All quotations come from
+  \texttt{pdftotext} extracts; line references are finding aids, not pagination.
+\end{enumerate}
+
+% =============================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% =============================================================================
+
+The disagreement this paper begins from is not, in the first instance, about
+mathematics. It is about what a particular sequence of sentences \emph{is}. For
+that kind of disagreement the ordinary instruments are badly suited, because they
+ask a question --- is this correct? --- that the two sides answer about different
+objects, and because they leave a door open to arguments from authority that
+cannot be closed from inside a prose review.
+
+The bridge certificate replaces that question with one a text can answer about
+itself: which of seven named obligations does this wording discharge? Around that
+question sit disciplines that make the answers auditable rather than merely
+confident --- typed rather than graded gaps, an import ledger, recorded search
+terms for every negative finding, disclosed reconstructions, and a verdict
+vocabulary in which ``not discharged'' cannot quietly become ``refuted''.
+
+Applied four times, the instrument did four different things, and that is the
+result worth keeping. It detected two unmet obligations at a named substep and
+separated them --- a compatibility identity that is not stated, and an order
+relation that is not derived from it --- a distinction that matters, because it
+converts a diffuse suspicion into two specific missing statements instead of one
+general complaint. It closed off the one site to which the source itself delegates
+its quantification, by showing that the computation there is explicit, closed at
+the nodes it names, and downstream of the disputed step. It discriminated when
+applied to an independent alternative program, returning three delivered rows and
+a differently shaped gap at a different address --- and, when a closer reading of the same sources required it,
+it revised its own first coding of that case rather than leaving it standing. And
+it recorded that two downstream applications inherit the unmet obligation in a
+single sentence without examining it.
+
+What would change this picture is a single, statable object: a theorem that
+derives the order relation from the permitted identification, rather than
+inferring it formally from properties attributed to a construction. That such a
+theorem was not found in the material examined is a statement about that material.
+Whether it exists elsewhere, or can be proved, is a mathematical question --- and
+it is the question this instrument exists to hand over in a form precise enough to
+work on.
+
+% =============================================================================
+% AI DISCLOSURE -- pipeline standard, included from the canonical template
+% (bilingual, carries its own \section*). The template names computational
+% scripts and runs; this paper has none, so the restriction paragraph below
+% adapts it downwards, which is what the template's own instruction requires.
+% Do not drop the restriction: without it the disclosure would claim work not
+% done.
+% =============================================================================
+\phantomsection
+\addcontentsline{toc}{section}{AI Disclosure / KI-Offenlegung}
+\input{ai_disclosure_STANDARD}
+
+\medskip
+
+\noindent
+\emph{Einschränkung für diese Arbeit:} Zu dieser Arbeit gehören keine
+Rechenskripte und keine Berechnungsläufe; die entsprechenden Punkte des
+Standardtextes (Erstellung und Prüfung der Rechenskripte, Ausführung und
+Auswertung der Berechnungsläufe, versionierte Skripte mit Ergebnisdateien und
+Prüfsummen) treffen hier nicht zu. Die Arbeit besteht aus Textbefunden an
+lokalen PDF-Extrakten.
+
+\medskip
+
+\noindent
+\emph{Restriction for this paper:} this work involved no computational scripts and
+no computational runs; the corresponding items of the standard text (creation and
+checking of computational scripts, execution and evaluation of computational runs,
+versioned scripts with stored result files and checksums) do not apply here. The
+work consists of textual findings against local PDF extracts.
+
+% =============================================================================
+% BIBLIOGRAPHY
+% Provenance of the metadata is stated per entry, in three grades: (i) quoted
+% verbatim inside the material underlying this paper; (ii) identifier and
+% version verified against the local extract header; (iii) taken from the
+% source-checked bibliography of a companion paper of the same program. No
+% entry was admitted whose metadata has none of these.
+% Mandatory source check completed 2026-08-13 (WebFetch/WebSearch against
+% arXiv, Project Euclid/EMS Press, and the cited manuscripts themselves) for
+% all 11 entries; see _results/QUELLENCHECK_BIBITEMS_2026-08-13.md. The three
+% entries formerly marked provisional (ZhouI, ZhouII, MFHMP) are completed
+% below; all other entries were confirmed unchanged.
+% =============================================================================
+\begin{thebibliography}{99}
+\addcontentsline{toc}{section}{References}
+\small
+
+% Provenance (i): full bibliographic data quoted verbatim in the underlying
+% material, from the bibliography of Zhou I (extract l. 2583-2584).
+\bibitem{Mochizuki2021c}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory III: Canonical Splittings of
+the Log-theta-lattice}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 403--626.
+\newblock Cited here as IUT-III; the extract used is of the 2020 institute
+version.
+
+% Provenance (ii)+(iii): identifier and role verified in the underlying material;
+% journal data from the source-checked bibliography of the companion paper on
+% global normalization in the same program.
+\bibitem{Mochizuki2021d}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory IV: Log-volume Computations
+and Set-theoretic Foundations}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 627--723.
+\newblock Cited here as IUT-IV; the extract used is of the 2020 institute version.
+
+% Provenance (iii). Volumes I and II are cited only as the context on which the
+% examined constructions rest; no finding of this paper rests on them.
+\bibitem{Mochizuki2021a}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory I: Construction of Hodge
+Theaters}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 3--207.
+
+\bibitem{Mochizuki2021b}
+S.~Mochizuki.
+\newblock \emph{Inter-universal Teichmüller Theory II:
+Hodge--Arakelov-theoretic Evaluation}.
+\newblock Publ. Res. Inst. Math. Sci. \textbf{57} (2021), no.~1/2, 209--401.
+
+% Provenance (ii) for identifier/version (verified against the local extract
+% header), (iii) for the title.
+\bibitem{JoshiATSIII}
+K.~Joshi.
+\newblock \emph{Construction of Arithmetic Teichmuller Spaces III: A `Rosetta
+Stone' and a proof of Mochizuki's Corollary 3.12}.
+\newblock arXiv:2401.13508, version v4 (2025). Cited here as ATS-III.
+
+\bibitem{JoshiATSIV}
+K.~Joshi.
+\newblock \emph{Construction of Arithmetic Teichmuller Spaces IV: Proof of the
+abc-conjecture}. Preliminary version for comments.
+\newblock arXiv:2403.10430, version v2 (2025). Cited here as ATS-IV.
+
+% Provenance (i) for identifier, version, author and affiliation, all quoted in
+% the underlying material; titles are NOT quoted there. Titles verified
+% 2026-08-13 via WebFetch of the arXiv abstract pages (arxiv.org/abs/2503.14510
+% and arxiv.org/abs/2510.05448).
+\bibitem{ZhouI}
+Z.-P.~Zhou.
+\newblock \emph{The inter-universal Teichmüller theory and new Diophantine
+results over the rational numbers. I}.
+\newblock Institute for Theoretical Sciences, Westlake University.
+\newblock arXiv:2503.14510, version v1 (2025). Cited here as Zhou-I.
+
+\bibitem{ZhouII}
+Z.-P.~Zhou.
+\newblock \emph{The inter-universal Teichmüller theory and new Diophantine
+results over rational numbers. II}.
+\newblock Institute for Theoretical Sciences, Westlake University.
+\newblock arXiv:2510.05448, version v1 (2025). Cited here as Zhou-II. The
+document describes itself as an older version to be updated.
+
+% Provenance (i): title and mirror recorded in the underlying material. Date
+% corrected 2026-08-13 from "17 July 2026" to "16 July 2026" to match the
+% document's own footer, verified via direct WebFetch of the PDF
+% (ncatlab.org/nlab/files/LANAProject-Report-July2026.pdf); see
+% _results/QUELLENCHECK_BIBITEMS_2026-08-13.md for the discrepancy with
+% secondary reports that cite 17 July.
+\bibitem{LANA2026}
+Project LANA.
+\newblock \emph{Interim Report}.
+\newblock 16 July 2026 (document date; some secondary reports of the release
+cite 17 July 2026). Cited here as LANA.
+
+% Provenance (iii). Cited only as the definition of the negative control; no
+% finding of this paper uses it as evidence. Canonical source and date verified
+% 2026-08-13 via WebFetch of the manuscript PDF.
+\bibitem{ScholzeStix2018}
+P.~Scholze and J.~Stix.
+\newblock \emph{Why abc is still a conjecture}.
+\newblock Manuscript, 16 July 2018. Available at
+\url{https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf}.
+
+% Provenance (i): title and authors quoted verbatim in the underlying material,
+% from the bibliography of Zhou I (extract l. 2589-2591). Publication data
+% verified 2026-08-13 via WebFetch of the Project Euclid article page
+% (Kodai Mathematical Journal).
+\bibitem{MFHMP}
+S.~Mochizuki, I.~Fesenko, Y.~Hoshi, A.~Minamide and W.~Porowski.
+\newblock \emph{Explicit estimates in inter-universal Teichmüller theory}.
+\newblock Kodai Math. J. \textbf{45} (2022), no.~2, 175--236.
+\newblock Referred to in Case D as the comparison work for the downstream
+constants.
+
+% Own prior work of the same series. Metadata taken from the live Zenodo records
+% (checked 2026-08-13); these are the two parts of the series that have appeared.
+\bibitem{GeigerGap2026}
+L.~Geiger.
+\newblock \emph{The Gap in IUTchIII, Corollary 3.12: From Attempted Repair to
+Structural Diagnosis}.
+\newblock Preprint, version 6.3, Zenodo (2026).
+\newblock \url{https://doi.org/10.5281/zenodo.21899747}.
+\newblock Part~1 of the \emph{abc} Gap Series; the published forensic study of the
+passage examined in Case~A.
+
+% Part 2 of the same series, the methods paper. Published 2026-08-16 while this
+% version was being prepared; its hardened sixth contract component is the
+% reason for the two recodings declared in "Changes in version 0.2".
+\bibitem{GeigerBCM2026}
+L.~Geiger.
+\newblock \emph{The Bridge-Contract Criterion: A Form Audit for Transport
+Arguments, with an Instantiation in the $abc$ Literature}.
+\newblock Preprint, version 0.2, Zenodo (2026).
+\newblock \url{https://doi.org/10.5281/zenodo.21960477}.
+\newblock Concept DOI \url{https://doi.org/10.5281/zenodo.21960476}.
+\newblock Part~2 of the \emph{abc} Gap Series; the methods paper, whose hardened
+sixth contract component is adopted in Section~\ref{sec:obligations} of this
+version.
+
+\bibitem{GeigerSubstance2026}
+L.~Geiger.
+\newblock \emph{The Joshi ATS Series under the Bridge-Certificate Standard: A
+Targeted Substance Audit and an All-Place Rigidity Classification of Effective
+Normalization Weights}.
+\newblock Preprint, version 0.2, Zenodo (2026).
+\newblock \url{https://doi.org/10.5281/zenodo.21956399}.
+\newblock Concept DOI \url{https://doi.org/10.5281/zenodo.21956398}.
+\newblock Part~5 of the same series; the substance examination cited in
+Section~\ref{sec:caseC-nachtraege}.
+
+\bibitem{GeigerGNC2026}
+L.~Geiger.
+\newblock \emph{Global Normalization in Joshi's Arithmetic Teichmüller Theory:
+What the Identification Carries --- and What Carries the Theorem}.
+\newblock Preprint, version 1.1, Zenodo (2026).
+\newblock \url{https://doi.org/10.5281/zenodo.21924254}.
+\newblock Tool supplement of the same series; the source examination underlying the
+first of the two corrections in Section~\ref{sec:caseC-nachtraege}.
+
+\end{thebibliography}
+
+\end{document}

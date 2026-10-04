@@ -1,0 +1,73 @@
+{
+  "version": "0.3",
+  "doi": "10.5281/zenodo.23090371",
+  "record_id": 23090371,
+  "conceptrecid": "21925803",
+  "license": "CC-BY-4.0",
+  "scope": "Corrective bilingual form-audit revision; no mathematical refutation or method validation.",
+  "sources": [
+    {
+      "file": "BRIDGE_CERTIFICATE_v0_3_en.tex",
+      "sha256": "2423bf0a80f9592f5e68d90db4dfdfa2e8ceedd686c3342a7d8f3b641583f096"
+    },
+    {
+      "file": "BRIDGE_CERTIFICATE_v0_3_ger.tex",
+      "sha256": "fbb1923ad0b364bdd42cfa52f8fea068e74d42ad3d97d5eb35bca5b3c2a0fcc3"
+    },
+    {
+      "file": "ai_disclosure_STANDARD.tex",
+      "sha256": "2ad6fec62e89e0201065b336ed71573f110ec8f8b312c6dd43b603a3ce8a5c51"
+    }
+  ],
+  "pdfs": [
+    {
+      "key": "BRIDGE_CERTIFICATE_3_ger.pdf",
+      "bytes": 634727,
+      "sha256": "b3a779f4d78efb513eacf8dfe91fbaf5b2cf8d8f8d18f725594eb4043a47c2bd",
+      "md5": "ae1e091a40e33c43bf1e1386d703b3a1",
+      "published_checksum": "md5:ae1e091a40e33c43bf1e1386d703b3a1",
+      "matches_local": true,
+      "file": "BRIDGE_CERTIFICATE_v0_3_ger.pdf",
+      "pages": 37
+    },
+    {
+      "key": "BRIDGE_CERTIFICATE_3_en.pdf",
+      "bytes": 614493,
+      "sha256": "5674a5775d9697be31562f6384d8259208d2a4056dd2f9187614630038604877",
+      "md5": "aa6424b658f6581d222d8975e4007f86",
+      "published_checksum": "md5:aa6424b658f6581d222d8975e4007f86",
+      "matches_local": true,
+      "file": "BRIDGE_CERTIFICATE_v0_3_en.pdf",
+      "pages": 35
+    }
+  ],
+  "validation": {
+    "compiler_runs": 6,
+    "compiler_exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "visually_checked_pages": 72,
+    "shared_labels": 38,
+    "shared_citations": 11,
+    "shared_bibliography_keys": 15,
+    "independent_delta_reviews": [
+      "ACCEPT scientific changes",
+      "ACCEPT final technical changes"
+    ],
+    "download_matches_local": true
+  },
+  "open_gates": [
+    "Typed LANA object/evaluation/order implication",
+    "Complete source/formula/claim review",
+    "C7 positive control",
+    "Independent method validation",
+    "Journal readiness"
+  ],
+  "whole_case_acceptance": false,
+  "new_proved_claims": 0
+}

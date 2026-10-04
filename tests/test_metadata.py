@@ -97,10 +97,10 @@ def test_readme_and_readme_de_parity():
     # Check status badges
     assert "Version-0.1.13-blue.svg" in en_content
     assert "Version-0.1.13-blue.svg" in de_content
-    assert ("Tests-58%20Passed" in en_content or "Tests-54%20Passed" in en_content or "Tests-42%20Passed" in en_content)
-    assert ("Tests-58%20Passed" in de_content or "Tests-54%20Passed" in de_content or "Tests-42%20Passed" in de_content)
-    assert "LLM--Ready-2026--09--19" in en_content
-    assert "LLM--Ready-2026--09--19" in de_content
+    assert ("Tests-61%20Passed" in en_content or "Tests-58%20Passed" in en_content or "Tests-54%20Passed" in en_content or "Tests-42%20Passed" in en_content)
+    assert ("Tests-61%20Passed" in de_content or "Tests-58%20Passed" in de_content or "Tests-54%20Passed" in de_content or "Tests-42%20Passed" in de_content)
+    assert ("LLM--Ready-2026--10--04" in en_content or "LLM--Ready-2026--09--19" in en_content)
+    assert ("LLM--Ready-2026--10--04" in de_content or "LLM--Ready-2026--09--19" in de_content)
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in en_content
@@ -840,8 +840,8 @@ def test_readme_and_readme_de_contributing_parity():
 
     assert "Contributing-Welcome-brightgreen.svg" in readme_en
     assert "Mitwirken-Willkommen-brightgreen.svg" in readme_de
-    assert "Verified-2026--10--01" in readme_en
-    assert "Geprüft-2026--10--01" in readme_de
+    assert ("Verified-2026--10--04" in readme_en or "Verified-2026--10--01" in readme_en)
+    assert ("Geprüft-2026--10--04" in readme_de or "Geprüft-2026--10--01" in readme_de)
 
     assert "CONTRIBUTING.md" in readme_en
     assert "CONTRIBUTING.md" in readme_de
@@ -858,3 +858,43 @@ def test_sbom_and_marketing_audit_20261001():
     assert "12. TECHNICAL HYGIENE, CONTRIBUTING GUIDELINES" in marketing
     assert "2026-10-01" in marketing
     assert "CONTRIBUTING.md" in marketing
+
+
+def test_sbom_and_marketing_audit_20261004():
+    """Verify that Level 1 SBOM companion and MARKETING-LOG.txt document the 2026-10-04 Pfad B audit."""
+    sbom_txt = (REPO_ROOT / "THIRD_PARTY_LICENSES.txt").read_text(encoding="utf-8")
+    sbom_md = (REPO_ROOT / "THIRD_PARTY_LICENSES.md").read_text(encoding="utf-8")
+    marketing = (REPO_ROOT / "MARKETING-LOG.txt").read_text(encoding="utf-8")
+
+    assert "2026-10-04" in sbom_txt
+    assert "2026-10-04" in sbom_md
+    assert "13. PATH B DISCOVERABILITY, VISUAL TOPOLOGY AUDIT" in marketing
+    assert "2026-10-04" in marketing
+    assert "REC-20261004-01" in marketing
+    assert "REC-20261004-02" in marketing
+    assert "REC-20261004-03" in marketing
+
+
+def test_readme_badges_audit_recency_20261004():
+    """Verify that README.md and README_de.md badges are synchronized with 2026-10-04 audit recency."""
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+
+    assert "Verified-2026--10--04" in readme_en
+    assert "Geprüft-2026--10--04" in readme_de
+    assert "Tests-61%20Passed" in readme_en
+    assert "Tests-61%20Passed" in readme_de
+    assert "LLM--Ready-2026--10--04" in readme_en
+    assert "LLM--Ready-2026--10--04" in readme_de
+
+
+def test_version_freeze_discipline_0113():
+    """Verify strict adherence to Version Freeze discipline (v0.1.13 frozen per T-20260920-167562623)."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+    assert data.get("project", {}).get("version") == "0.1.13"
+
+    readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
+    assert "Version-0.1.13-blue.svg" in readme_en
+    assert "Version-0.1.13-blue.svg" in readme_de

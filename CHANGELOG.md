@@ -4,8 +4,12 @@ All notable changes to this repository will be documented in this file.
 
 ## [Unreleased]
 
+### Research manuscript corrections
+- Add the bilingual Part 6 ATS height-subchain v0.3 corrective paper package: R18 linear-class, full-place and arithmetic-domain fixes with unchanged core proofs and explicit open measure/extension gates. Package version 0.1.13 remains frozen.
+
 ### Added
 - **Joshi ATS ledger audit v0.3 / Joshi-ATS-Ledger-Audit v0.3**: Added the curated German and English corrective manuscript, two 13-page PDFs, local AI disclosures, bilingual build instructions, and a SHA-256 manifest under `joshi-ats-ledger/`. Clarifies certificate mappings and conditional claim boundaries and corrects our generic volume paraphrase; records independent manuscript reviews and page checks. The artifact package records preparation before its Zenodo follow-up; repository software remains at frozen version 0.1.13.
+- **Pfad B Visual Architecture, Level 1 SBOM Re-Audit & Discoverability Hardening (2026-10-04)**: Executed Pfad B discoverability audit with Section 6 ASCII Four-View Architectural Topology projection review across EN/DE, Level 1 SBOM text companion re-audit (`THIRD_PARTY_LICENSES.txt` & `THIRD_PARTY_LICENSES.md` Stand 2026-10-04), 3 non-automated actionable discoverability recommendations in `MARKETING-LOG.txt` (REC-20261004-01..03), and contract test suite expansion to 61 tests in `tests/test_metadata.py`.
 - **Bilingual Contributing Guidelines (`CONTRIBUTING.md`)**: Authored comprehensive English and German contribution guidelines detailing Plan D local development workflow, strict Version Freeze discipline (`0.1.13` per `T-20260920-167562623`), mandatory pre-commit quality gates (`pytest`, `ruff check .`, `compileall`, `git diff --check`), unprivileged `RunAsInvoker` user-mode execution, zero-copyleft subprocess isolation, zero-egress offline privacy, and responsible vulnerability disclosure per `SECURITY.md`.
 - **PEP 621 Contributing URL**: Registered canonical `Contributing` URL (`https://github.com/research-line/abc-hct/blob/main/CONTRIBUTING.md`) under `[project.urls]` in `pyproject.toml`.
 - **Level 1 SBOM Companion Re-Audit (2026-10-01)**: Re-audited `THIRD_PARTY_LICENSES.txt` and `THIRD_PARTY_LICENSES.md` validating runtime invariant cross-reference matrix, unprivileged non-elevation boundaries, and mathematical engine licenses.
@@ -20,6 +24,7 @@ All notable changes to this repository will be documented in this file.
 - **Level 1 SBOM Text Inventory**: Added `THIRD_PARTY_LICENSES.txt` companion file documenting direct build and offline algebra engine dependencies with unprivileged `RunAsInvoker` non-elevation, zero-copyleft guarantees, and 10 research governance invariants (`INV-DET-01` through `INV-SLA-10`).
 
 ### Changed
+- **Pfad B Marketing, Discoverability & Navigation Parity (2026-10-04)**: Routine Pfad B audit (Version 0.1.13 frozen per T-20260920-167562623). Synchronized Shields.io badges (`Verified-2026--10--04`, `Geprüft-2026--10--04`, `Tests-61%20Passed`, `LLM--Ready-2026--10--04`) across `README.md` and `README_de.md`. Updated `llms.txt` interface test count to 61 and re-audit timestamp to 2026-10-04.
 - **Technical Repository Hygiene (Pfad A — 2026-10-01)**: Routine Pfad A maintenance run (Version 0.1.13 frozen per T-20260920-167562623). Synchronized Shields.io badges (`Verified-2026--10--01`, `Geprüft-2026--10--01`, `Contributing-Welcome`, `Tests-58%20Passed`) across `README.md` and `README_de.md`. Updated `llms.txt` and `MARKETING-LOG.txt`.
 - **Pfad B Marketing, Discoverability & Navigation Parity**: Routine Pfad B audit (2026-09-28, Version 0.1.13 frozen per T-20260920-167562623). Verified 18-point dual anchor parity, ASCII topology projection, Shields.io badges (`Verified-2026--09--28`, `Level 1 SBOM`, `54 Passed`), and updated `llms.txt`.
 - **Technical Repository Hygiene**: Pfad A CI lifecycle hardening, lock defense, PEP 621 standardization, and contract test expansion (2026-09-26, Version 0.1.13 frozen per T-20260920-167562623).

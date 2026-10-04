@@ -2,6 +2,11 @@
 
 All notable changes to this repository will be documented in this file.
 
+## ATS Substance v0.3 candidate - 2026-10-02
+
+- Added separate English and German source/PDF editions with local AI disclosures and a hash-bound manifest in `ats-substance/`.
+- Clarified coordinate and period-action contracts, same-field normalization rigidity, conditional module-hull and Haar assumptions, the printed ATS III corollary's narrow sign inconsistency, and the Part 6 linear quantity-class consumer.
+- The public v0.2 PDFs and later R17 sources remain distinct baselines. Scientific field, period and volume bridges remain open. This candidate is not yet uploaded or published on Zenodo.
 ## [Unreleased]
 
 ### Research manuscript corrections

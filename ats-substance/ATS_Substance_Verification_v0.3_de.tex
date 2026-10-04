@@ -1,0 +1,1099 @@
+\input{glyphtounicode}
+\pdfgentounicode=1
+\documentclass[11pt,a4paper]{article}
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,unicode=true]{hyperref}
+\usepackage{xurl}
+
+\renewcommand*{\HyperDestNameFilter}[1]{ger.#1}
+
+\hypersetup{
+  pdftitle={Die Joshi-ATS-Serie unter dem Brückenzertifikat-Standard: Ein gezielter Substanz-Audit und eine Allstellen-Starrheitsklassifikation der effektiven Normierungsgewichte},
+  pdfauthor={Lukas Geiger},
+  pdfsubject={Mathematik - Zahlentheorie, Arithmetische Geometrie},
+  pdfkeywords={Arithmetischer Teichmüllerraum, abc-Vermutung, Brückenzertifikat, Substanz-Audit, Starrheitsklassifikation, Normierungsgewichte},
+  pdfcreator={LaTeX with hyperref},
+  pdfproducer={pdfTeX},
+  bookmarksnumbered=true,
+  pdfpagemode=UseOutlines,
+  pdfstartview={FitH},
+  unicode=true
+}
+
+\newtheorem{theorem}{Satz}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Korollar}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Bemerkung}
+
+\title{Die Joshi-ATS-Serie unter dem Brückenzertifikat-Standard:\\Ein gezielter Substanz-Audit und eine Allstellen-\\Starrheitsklassifikation der effektiven Normierungsgewichte}
+\author{Lukas Geiger\\\small Unabhängiger Forscher, Bernau, Deutschland\\\small ORCID: 0009-0005-7296-1534}
+\date{Oktober 2026 --- Version 0.3 (Entwurf)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Dieser fortlaufende gezielte Audit trennt Koordinatenbuchführung,
+Normierungsgewichte und Volumenträger an ausgewählten tragenden Schritten
+der Joshi-ATS-Serie. Das Periodenargument verlangt konsistente rohe und
+normierte Log-Koordinaten sowie eine wohldefinierte Aktion auf dem
+Periodenbild. Gleichfeldrige Allstellen-Produktformel-Starrheit erzwingt
+über die Stellen konstante Effektiv\-gewichte, erlaubt aber eine globale
+$j^2$-Skalierung; ihre Anwendung über $L'/L$ und auf das Einfrieren der
+Quelle bleibt bedingt. Eine lokale Maximalordnungs-Hülleninklusion gilt
+unter einem tatsächlichen Modulhüllenvertrag; ATS-Logarithmus-, Haargrad-,
+Tensor- und Zielvolumenbrücken bleiben offen. Das gedruckte ATS-III-v4-Korollar
+besitzt Betragsstriche: Bei endlicher nichtleerer Tate-Stellensumme mit
+$0<|q_w|<1$ und positiven $\ell,\ell^*$ ist links der Ausdruck
+nichtpositiv, rechts positiv. Diese enge Vorzeicheninkonsistenz wird von
+ATS-IV-Anwendungen und möglichen Reparaturen getrennt. Für globale lineare
+Größenfamilien mit definierten Referenzsummen liefert Starrheit höchstens
+einen $y$-abhängigen Skalar; klassische Höhe und klassischer Grad folgen
+nur mit den angegebenen Normierungs- und Domänenidentifikationen.
+Klassenmitgliedschaft und Nichtmitgliedschaft von Maßen und Log-Volumina
+sind nicht etabliert. Keine Aussage über die Wahrheit von abc, die
+Korrektheit von IUT oder die gesamte ATS-Kette wird behauptet.
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+%=====================================================================
+\section{Einleitung}\label{sec:intro}
+
+\subsection{Mandat und Ort in der Serie}
+
+Diese Serie untersucht die publizierte Landschaft um die abc-Vermutung mit
+einem festen Auditierungsinstrument. Teil 1~\cite{part1} lokalisierte den
+umstrittenen Schritt von Mochizukis Korollar
+3.12~\cite{mochizukiIUT,scholzestix}; die Teile 2--3 entwickelten das
+Instrument: Teil 2 führte das \emph{Brückenvertrag}-Kriterium
+ein~\cite{part2}, und Teil 3 dessen Zertifikatsform~\cite{part3} (den
+v1-F-Standard), die im Voraus festlegen, was ein Transportargument zwischen
+zwei Rahmenwerken liefern muss, bevor seine Schlussfolgerung verwendet werden
+darf; Teil 4~\cite{part4} wandte das Zertifikat auf Kirti Joshis
+ATS-Serie als \emph{Form-Audit} an: ein vorab festgelegter vierzeiliger
+Test, ob die Kette ihr Transportgesetz, ihren Kompensationsmechanismus,
+ihren zweiten Modus und ihre container-übergreifende Vergleichbarkeit
+explizit genug angibt, um überhaupt auditierbar zu sein. Das Ergebnis von
+Teil 4 war, bewusst, eine Aussage über Auditierbarkeit, nicht über Substanz.
+Ein Werkzeug-Supplement analysiert die Normierungsidentifikation
+gesondert~\cite{gnc}, und ein begleitendes Landschaftspapier verortet die
+Serie unter den Wegen des weiteren Programms~\cite{landscapeA}.
+
+Der vorliegende Teil 5 ist ein \emph{gezielter} Substanz-Audit ausgewählter
+tragender interner Schritte --- keine vollständige Verifikation der Kette.
+Sein vor Arbeitsbeginn festgelegtes Mandat ist die von Teil 4 offen
+gelassene Frage: Tragen die ausgewählten tragenden Schritte der publizierten
+Kette --- das heißt, etablieren die in den zitierten Versionen
+geschriebenen Beweise die Aussagen, die die Kette an diesen Stellen
+verwendet? IUT-Importe, die Existenzbasis und Schritte außerhalb der
+ausgewählten Stellen liegen außerhalb des Audits.
+
+\subsection{Methode}
+
+Der Audit folgte fünf Phasen, die vor der Syntheseetappe in einem
+zeitgleich geführten internen Beweisregister festgehalten wurden. Phase 0
+kartierte den \emph{Beweis-Spine}: die minimale Kette von Resultaten, die
+von der abc-artigen Ungleichung zurück zur Existenz des Deformationsraums
+führt, mit einer Import-Triage, die die eigenen Resultate der Kette von den
+aus dem IUT-Korpus zitierten Aussagen trennt. Die Phasen 1--3 verifizierten
+dann, zeilenverankert gegen die in Abschnitt~\ref{sec:findings} genannten
+exakten arXiv-Versionen, die vom Spine als stark tragend priorisierten
+Stellen: den Volltext des Normierungsmechanismus, das Basispaket
+(Nichtkonstanz-Satz, Renormierungs-Korollar, adelischer
+Zusammensetzungssatz) und den Kern der unteren Schranke samt seiner
+Korollar-Übersetzung. Phase 4 synthetisierte die Befunde zu den hier
+berichteten typisierten Befunden; die von ihr offen gelassene Lesartenfrage
+wird durch die Starrheitsklassifikation von Teil 6 adressiert, und
+Abschnitt~\ref{sec:case} berichtet diese Klassifikation unter ihren
+benannten Hypothesen.
+
+Drei Disziplinen aus den früheren Teilen gelten unverändert weiter. Erstens
+\emph{wörtliche Verankerung}: Jeder Befund zitiert die exakte Version und,
+wo Extrakte auf Zeilenebene vorliegen, den Zeilenbereich der Passage, die er
+betrifft. Zweitens \emph{Typisierung}: Befunde werden klassifiziert als
+formale Buchführung (verifiziert oder rekonstruierbar), typisierte Lücken
+(der Text zeigt nicht, was verwendet wird --- mit Benennung des fehlenden
+Schritts) oder dokumentierte eigene Rekonstruktionen (als solche markiert,
+niemals stillschweigend ergänzt). Drittens \emph{Claim-Disziplin}: \glqq Der
+Beweis, wie er geschrieben ist, zeigt dies nicht\grqq{} wird niemals zu \glqq Dies
+ist falsch\grqq{} aufgewertet.
+
+\subsection{Claim-Grenzen}\label{sec:claims-intro}
+
+Diese Arbeit stellt den aktuellen Stand eines fortlaufenden gezielten
+Audits dar. Das gleichfeldrige Starrheitsresultat ist mathematisch und an
+seine vollständigen Stellen-, Feld- und Größenklassen-Hypothesen gebunden.
+Die meisten Quellenbefunde betreffen fehlende Implikationen, keine
+Gegenbeispiele zu einem vollständigen Satz. Gesondert identifiziert
+Abschnitt~\ref{sec:s7} eine enge Inkonsistenz einer gedruckten
+Vorzeichenungleichung unter expliziten endlichen Tate-Stellen- und
+Normierungsannahmen. Keine dieser Befundarten entscheidet die Wahrheit von
+abc, IUT oder der gesamten ATS-Kette. Keine neue Berechnung, kein
+maschinengeprüfter Beweis und keine unabhängige Gesamtkettengültigkeit
+werden behauptet. Quellenrevision, Reparatur oder Gegenargument können
+die zulässigen Aussagen ändern, wenn sie die fehlenden Verträge liefern.
+
+Die veröffentlichten v0.2-PDFs und der spätere hashgebundene zweisprachige
+Quellenstand sind verschiedene Baselines. Zwischenarbeiten ergänzten
+Teil-2-Zitation, Tabellenetiketten und eine Antwort-Routentabelle,
+sprachreine Offenlegung und neues Layout. Die vorliegenden wissenschaftlichen
+Änderungen verwenden die inventarisierten Koordinaten-, Feld-,
+Normierungs-, Hüllen- und Vorzeichenkorrekturen; die exakte ursprüngliche
+v0.2-TeX-Datei wurde nicht wiedergefunden. Diese Provenienzgrenzen machen
+die Zwischenfassung nicht zu einer unabhängig verifizierten Kopie der
+veröffentlichten Quelle.
+
+\section{Der Beweis-Spine der Serie}\label{sec:spine}
+
+Phase 0 kartierte die publizierte Kette rückwärts, von der abc-artigen
+Schlussfolgerung bis zur Aussage, dass Deformationsräume der verlangten Art
+existieren, anhand von Klartext-Extrakten der vier zu Beginn von
+Abschnitt~\ref{sec:findings} aufgeführten Versionen. Die Karte ist
+\emph{innerhalb} dieser Extrakte vollständig und abgeschnitten, nicht
+geschlossen, überall dort, wo die Kette frühere Arbeiten der
+Konstruktionsserie aufruft, die für den Audit nicht verfügbar waren --- am
+folgenreichsten auf der Existenzebene, die auf der ersten von
+ihnen~\cite{joshiI} ruht.
+
+\subsection{Die Kette}
+
+Tabelle~\ref{tab:spine} listet die Knoten auf, die unmittelbar auf der
+Hauptkette liegen, in der Reihenfolge, in der der Beweistext sie durchläuft.
+Die Bezeichnungen $S1,\dots,S22$ sind unsere eigene Buchführung; die
+Satznummern sind die der Quellen.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Tragende Knoten, rückwärts von der abc-artigen Schlussfolgerung.
+\glqq Beweis\grqq{} zählt Extraktzeilen zwischen dem \texttt{Proof.}-Marker und dem
+Ende des Arguments: ein Indikator für Prüfbarkeit, keine Messung.}
+\label{tab:spine}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X r@{}}
+\toprule
+ & Resultat & Stützt sich auf & Beweis \\
+\midrule
+S1  & IV, Satz 7.2.1 --- abc und arithmetisches Szpiro über $\mathbb{Q}$ & S2 & keiner \\
+S2  & IV, Satz 7.1.1 --- Vojta-Ungleichung (deklarierter Hauptsatz) & S3, S9, S10 & 121 \\
+S3  & IV, Satz 6.1.1 --- First Main Bound & S4 allein & 33 \\
+S4  & IV, Satz 6.10.1 --- Second Main Bound (Log-Volumen-Sandwich) & S5, S6, S7, S9 & $55{+}160$ \\
+S5  & die mittlere Gleichheit von S4 (ohne Satznummer) & \glqq same global normalization\grqq{} & 2 \\
+S6  & IV, Prop.\ 6.10.9 / 6.10.10 / 6.10.12 --- obere Schranke & IUT 4, Thm.\ 1.10, Schritte (v)--(vii) & $2/1/2$ \\
+S7  & III, Kor.\ 9.11.1.1 --- untere Schranke, übersetzt & S8, durch notationelle Übersetzung & keiner \\
+S8  & III, Satz 9.11.1 --- Volumen-Untergrenze für $\widetilde{\Theta}$ & S15 sowie Hüllen- und Volumenwerkzeuge & 38 \\
+S9  & IV, Satz 5.7.1 --- Existenz initialer Theta-Daten & Standardliteratur & 196 \\
+S15 & III, Satz 4.2.2.1 --- $\widetilde{\Sigma}_{L'}$ stabil; $j^2$-Skalierung & ATS II, ATS II(1/2), Fargues--Fontaine & 15 \\
+S16 & III, Kor.\ 4.2.2.4 --- erzwungene Renormierung & S15 und die \glqq global constraint\grqq{} & 2 \\
+S17 & III, Satz 4.6.1 --- globale Periodenabbildung auf $\widetilde{\Sigma}_{L'}$ & S18, S15, S16 & 3 \\
+S18 & II(1/2), Satz 5.10.1 --- Produktformel als Periodenabbildung & Eigenschaften von $Y_L$ und Arithmetikoiden & 5 \\
+S20 & II(1/2), Kor.\ 4.2.5 --- globaler Frobenius auf $Y_L$ & S21 & 1 \\
+S22 & II(1/2), Satz 5.5.2 --- Existenz von Arithmetikoiden & Scholze; Kedlaya--Temkin; [Joshi 2021a] & 36 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+In einem Satz: S1 ruht auf der Vojta-Ungleichung S2, die auf der First Main
+Bound S3 ruht, die vollständig auf dem Log-Volumen-Sandwich S4 ruht; die
+\emph{untere} Hälfte dieses Sandwichs läuft über S7 zu S8, die \emph{obere}
+Hälfte wird unverändert aus IUT 4 übernommen (S6), und die \emph{mittlere
+Gleichheit} S5 ist es, die die beiden Hälften erstmals zu einer einzigen
+Kette verbindet --- gestützt durch den Normierungsapparat S15 bis S18, der
+auf der Frobenius-Konstruktion S20/S21 und der Existenzebene S22 sitzt. Mit
+den nicht gezeigten Hilfsknoten hat die Karte 34 Zeilen: 27 nummerierte
+Knoten und 7 Nebenzeilen, von denen 15 unmittelbar auf der Hauptkette
+liegen.
+
+\subsection{Import-Triage}
+
+Jeder Knoten wurde nach Provenienz markiert: publizierte Standardliteratur;
+Resultate, die die Serie selbst beweist; aus dem IUT-Korpus zitierte
+Aussagen; und rein definitorische Passagen. Die dritte Markierung von der
+ersten getrennt zu halten ist die strukturell wichtige Entscheidung der
+Kartierung, denn der IUT-Korpus ist hier nicht Hintergrundliteratur, sondern
+das Artefakt, das die Kette zu ersetzen antritt. Das Ledger der
+Standardliteratur hat 17 Einträge, 11 davon tragend in dem Sinne, dass ein
+Beweis der Kette unmittelbar auf ihnen ruht. Das Ledger der IUT-Importe hat
+13 Einträge, vier davon \emph{unausgeführte Vollimporte}, bei denen der
+gesamte Beweis aus einem Verweis besteht: \glqq This is the last equation on
+[Mochizuki, 2021d, Step (v) on Page 658, Proof of Theorem 1.10] and its
+proof is all of step (v)\grqq{} (IV:3361--3362), mit den parallelen
+Formulierungen für die Schritte (vi) und (vii) bei IV:3372 und
+IV:3390--3391. Diese drei Propositionen bilden die gesamte obere Hälfte des
+Sandwichs S4.
+
+Damit ist die Grenze dieses Audits festgelegt. Gemessen an der Last rangieren
+die IUT-zitierten Propositionen an erster Stelle; gemessen an der Neuheit
+rangieren sie an letzter, da sie die Rechnung der Quelle wörtlich sind. Ein
+zeilenverankerter Audit dort wäre ein Audit von IUT 4, nicht der
+untersuchten Kette, und liegt außerhalb des Mandats von
+Abschnitt~\ref{sec:claims-intro}. Sie werden verzeichnet und beiseite
+gelegt, nicht verifiziert.
+
+\subsection{Beweistext an den tragenden Knoten}
+
+Von den 34 kartierten Zeilen nehmen 21 Beweise eine von drei kurzen Formen
+an: gar kein Beweisblock (3), ein Beweis, der aus einem externen Zitat
+besteht (6), und ein Beweis, der aus einem Satz der Form \glqq clear\grqq{},
+\glqq immediate\grqq{} oder \glqq tautology\grqq{} besteht (12). Zwölf der 21 sitzen an
+Knoten, die unmittelbar auf der Hauptkette liegen: \glqq The middle equality is
+a tautology using the fact that the number fields provided by $y_0'$ and
+$y_0$ are identically normalized\grqq{} (S5, IV:3272--3273); \glqq This is clear from
+Theorem 4.2.2.1 and the global constraint placed by the requirement that the
+product formula holds\grqq{} (S16, III:1613--1614); \glqq The proof is clear\grqq{} (S20,
+II(1/2):1318).
+
+Der Befund ist deskriptiv. Ein zweizeiliger Beweis kann völlig stichhaltig
+sein, und von mehreren der aufgeführten wird in
+Abschnitt~\ref{sec:findings} gezeigt, dass sie genau so tragen, wie sie
+geschrieben sind: Kürze indiziert hier \emph{Prüfbarkeit}, die ein Audit
+adressieren kann, nicht Korrektheit, die er in dieser Form nicht adressieren
+kann. Die Zählungen sind Zählungen von Extraktzeilen, in denen Seitenzahlen
+als freistehende Zeilen stehen und Displays über Zeilen umbrechen, sodass
+jede Längenangabe ein Indikator ist und keine unten ein Argument trägt.
+
+\subsection{Was zur Verifikation ausgewählt wurde}
+
+Phase 0 priorisierte die Knoten qualitativ nach getragener Last, Neuheit und
+Kürze des Beweistextes, wobei die Neuheit aus dem soeben genannten Grund der
+unterscheidende Faktor ist.
+
+Die Rangfolge setzte die mittlere Gleichheit S5 an die erste Stelle: der
+einzige Knoten, der die beiden Hälften zu einer Ungleichungskette verbindet,
+ohne Satznummer, in den zwei oben zitierten Zeilen abgehandelt, während
+dieselbe Arbeit an drei Stellen feststellt, dass lokale Vergleiche zwischen
+$y_0$ und $\varphi(y_0)$ gerade nicht verfügbar sind (IV:3208--3211,
+IV:772--775, IV:816--819). Teil 4 dieser Serie behandelte S5 unter der
+Transportgesetz-Zeile des Brückenzertifikats und klärte seinen Status dort
+--- konditional: Die Klärung gilt auf der gebundenen und der freien Lesart
+der in Abschnitt~\ref{sec:fneu1} offengelegten Gewichtsfamilie und nicht auf
+der stellenselektiven Lesart, und Abschnitt~\ref{sec:case} berichtet, wie
+die Lesarten unter benannten Hypothesen klassifiziert werden. S5 wird daher
+hier nicht erneut auditiert.
+
+Die fünf verbleibenden gerankten Knoten folgen, eingeleitet von der
+Volltextfrage, die Teil 4 offen gelassen hatte. \textbf{Der
+Normierungsmechanismus} --- was \glqq normalisiertes Arithmetikoid\grqq{} operativ
+bedeutet --- kommt zuerst, weil die von ihm festgelegte Lesart von den drei
+nachfolgenden Knoten vorausgesetzt wird. \textbf{S18} trägt den gesamten
+Produktformel-Apparat auf einem fünfzeiligen Beweis, dessen begründender
+Satz besagt, dass Normierungen \emph{nicht} übertragen werden.
+\textbf{S16} behauptet in zwei Zeilen, dass die $j^2$-Skalierung anderswo
+eine Renormierung \emph{erzwingt} --- die Voraussetzung dafür, dass S17 und
+S18 überhaupt wohldefiniert sind. \textbf{S17} wird vom Autor selbst als
+\glqq vital to establishing [Mochizuki, 2021c, Corollary 3.12]\grqq{} und als der Typ
+von Proposition markiert, der in den konkurrierenden Arbeiten \glqq claimed
+without proof\grqq{} sei (III:1838--1840), und dann in drei Zeilen bewiesen.
+\textbf{S8} ist die einzige substanziell unabhängige untere Schranke der
+Kette, deren entscheidende Reduktion als klar aus der Konstruktion erklärt
+wird. \textbf{S7} ist der Knoten, den ATS IV tatsächlich zitiert: kein
+Beweisblock, präsentiert als notationelle Übersetzung von S8.
+
+%=====================================================================
+\section{Zeilenverankerte Befunde}\label{sec:findings}
+
+Alle nachstehenden Befunde sind an vier Extrakte verankert; alle vier
+Versionen werden in ihren Revisionen vom 24. Februar 2025 zitiert. Die
+Zeilenanker beziehen sich auf unsere internen Klartext-Extrakte und sind
+Findmittel, kein öffentlicher Reproduzierbarkeitsstandard; ein
+Provenienz-Manifest (arXiv-Version, Extraktionswerkzeug, Prüfsummen,
+Zeilennummerierungsregel) ist als Supplement der Serie geplant, und bis es
+existiert, sollten die Anker zusammen mit dem zitierten Wortlaut gelesen
+werden, der wörtlich ist.
+\begin{itemize}
+\item \textbf{IV} = ATS IV, arXiv:2403.10430v2~\cite{joshiIV};
+\item \textbf{III} = ATS III, arXiv:2401.13508v4~\cite{joshiIII};
+\item \textbf{II(1/2)} = ATS II(1/2), arXiv:2305.10398v12~\cite{joshiIIhalf};
+\item \textbf{II} = ATS II (lokaler Prototyp), arXiv:2303.01662v3~\cite{joshiII}.
+\end{itemize}
+Ein Anker der Form III:6840--6843 verweist auf Zeilen des
+Klartext-Extrakts, nicht auf Seiten des publizierten Dokuments. Die Extrakte
+sind in einer Hinsicht verlustbehaftet, die einschränkt, was behauptet
+werden darf: Der II(1/2)-Extrakt verliert griechische Buchstaben, sodass
+kein Befund darauf ruht, wo ein $\lambda$ in einer Formel jener Arbeit
+steht, während die III- und IV-Extrakte Tief- und Hochstellungen
+(Kontrollfall III:1558) sowie die Unterscheidung $\xi$/$\Xi$ erhalten. Die vorliegende S7-Formel wurde direkt am archivierten PDF
+geprüft, dessen Betragsstriche der Extrakt verlor; rekonstruierte Formeln
+werden von dieser gedruckten Aussage ausdrücklich unterschieden. Eine
+Grenze kehrt in den Abschnitten~\ref{sec:s8} und~\ref{sec:s7} wieder und
+wird hier einmal ausgesprochen: Mochizukis Korollar 3.12 ist nicht Teil des
+auditierten Korpus, sodass die Behauptung, eine Aussage der Kette
+\emph{sei} jenes Korollar (III:6880--6881, IV:3197--3198), hier nicht
+entscheidbar ist und nichts im Folgenden sie entscheidet.
+
+\subsection{Der Normierungsmechanismus}\label{sec:fneu1}
+
+Die Normierungskoordinate aus ATS II($\tfrac12$) \S\,5.3 ist der positive
+Exponent, der den Untilt-Betrag in den festen Standardbetrag überführt.
+Unter der punktweisen Identität (5.3.3) liefert direkte Substitution den
+klassischen Grad auf $L^\times$ und die Höhe auf $\mathbb P^n(L)$. Dies
+überträgt sich nicht automatisch auf $\mathbb P^n(\overline L)$ oder
+Geradenbündelhöhen. Die Kompensationssprache in \S\,8 und ATS III,
+Kor.~4.2.2.4, verlangt gesondert eine identifizierte Auswahlregel sowie
+einen Feld- und Stellenvertrag.
+
+Für einen festen Zahlkörper $L$, sämtliche Stellen und reelle,
+$x$-unabhängige Effektiv\-gewichte, die die volle Standard-Produktformel für
+jedes $x\in L^\times$ erfüllen, liefert Teil 6 über die Stellen hinweg
+$\beta_{y,v}=c_y$. Ein möglicherweise von $y$ abhängiger globaler Skalar
+bleibt; eine konstante globale Skalierung mit $j^2$ ist zulässig. Ausgeschlossen
+sind ungleiche Endgewichte unter diesen Hypothesen, nicht jede Änderung
+roher lokaler Normierungskoordinaten. Tests auf $L^\times$ an Stellen einer
+Erweiterung $L'$ etablieren nicht allein den Allstellen-Satz auf $L'^\times$.
+
+Offen bleibt, welche Regel und Domäne die operative Größe benutzt. Eine
+punktweise normierte Höhe auf $\mathbb P^n(L)$, ein freier globaler Skalar,
+eine Koordinatenhyperebene und ein Maßträger sind verschiedene Objekte.
+Ohne die Brücken der Abschnitte~\ref{sec:s18}--\ref{sec:s8} folgt kein
+Schluss über den gesamten Deformationsapparat.
+
+\subsection{Die Periodenabbildung: ATS II(1/2), Satz 5.10.1}\label{sec:s18}
+
+Die Quelle behauptet die Nichtkonstanz von $y\mapsto H_y$ (ATS II($\tfrac12$),
+Satz~5.10.1; Extrakt II($\tfrac12$):2161--2243). Die lokale
+Variationsprämisse liegt in ATS II, Satz~10.20.1(3), vor; davon sind die
+folgenden Koordinaten- und Aktionsidentifikationen zu trennen.
+
+\paragraph{Koordinaten und Buchführung.}
+Rohe Logarithmen seien $u_v=\log|x_v|$, normierte Koordinaten
+$z_v=\alpha_v u_v$. Der Grad der Quelle ist $\deg=\sum_v z_v$, ihre
+angegebene gewichtete Hyperebene dagegen $H=\ker(\sum_v\alpha_v z_v)$.
+Somit gilt im Allgemeinen
+\[
+ \ker\Bigl(\sum_v z_v\Bigr)\ne
+ \ker\Bigl(\sum_v\alpha_v z_v\Bigr).
+\]
+Für $\alpha=(2,1)$ und $z=(1,-1)$ ist die erste Summe $0$, die zweite $1$.
+Dies ist ein kleines Gegenbeispiel zur uneingeschränkten Kernidentifikation.
+Es widerlegt weder den vollständigen Satz noch eine konsistent
+formulierte Lesart in Rohkoordinaten.
+Eine Rohlog-Hyperebene $\ker(\sum_v\alpha_v u_v)$ ist ein gesonderter
+konsistenter Vertrag; sie darf nicht stillschweigend mit der doppelt
+gewichteten identifiziert werden. Die Trägerbuchführung der direkten Summe
+bleibt in ihrer definierten Domäne erhalten; die frühere pauschale Aussage,
+dass Teile (1)--(5) tragen, wird zurückgenommen.
+
+\paragraph{Translationen und Periodenbild.}
+Ein linearer Unterraum $H$ ist genau dann unter Translation um $t$
+invariant, wenn $t\in H$. Hier muss $\log_y(x)$ in der tatsächlich gewählten
+Hyperebene liegen. Die Produktformel für $\sum z_v$ allein etabliert nicht
+die Zugehörigkeit zu $\ker(\sum\alpha_v z_v)$. Eine Aktion auf
+Arithmetikoiden steigt durch eine Periodenabbildung $F$ nur ab, wenn
+\[
+ F(y)=F(y')\ \Longrightarrow\ F(gy)=F(gy')
+\]
+für die betreffenden Aktionselemente $g$ gilt. Diese Wohldefiniertheit ist
+eine gesonderte Quellenpflicht, keine Folge lokaler Normwertvariation.
+
+\paragraph{Nichtproportionalität und verbleibende Rekonstruktion.}
+Bei einem konsistent definierten gewichteten Kern lässt die Multiplikation
+aller Koeffizienten mit demselben von null verschiedenen Skalar die
+Hyperebene unverändert. Die Nichtkonstanz von $\lambda_y$ allein trennt
+daher keine Hyperebenen; benötigt wird ein Paar nichtproportionaler
+Koeffizientenfamilien. Rekonstruktion R-1 bleibt an H-REC gebunden: Der
+variierte nicht-archimedische Lokalpunkt lässt sich bei festgehaltenen
+übrigen Koordinaten einsetzen. ATS II, Satz~10.20.1(3), liefert die lokale
+Variationsprämisse, nicht diese Rekombination oder die Periodenbildaktion.
+Die archimedische Reichweite bleibt ungeprüft. Kein unbedingter
+S18-Abschluss wird behauptet.
+
+\subsection{Die erzwungene Renormierung: ATS III, Korollar 4.2.2.4}\label{sec:s16}
+
+ATS III, Kor.~4.2.2.4 (Extrakt III:1600--1614), behauptet, dass die
+$j^2$-Skalierung an $V^{\mathrm{odd,ss}}$ eine geeignete Renormierung an
+den übrigen Stellen erzwingt. Die Menge betrifft ungerade Restcharakteristik
+mit schlechter halbstabiler, split-multiplikativer Reduktion (ATS III
+\S\,3.2(6)), nicht supersinguläre Reduktion. Notwendigkeit, Lokalisierung,
+Existenz und Eindeutigkeit sind getrennte Aussagen.
+
+\paragraph{Ein baseline\-relativer Notwendigkeitstest (R-2).}
+Sei $S$ eine nichtleere endliche Menge nicht-archimedischer Stellen von
+$L'$, seien die getesteten globalen Elemente in $L^\times$ und die
+Stellen auf die angegebenen üblichen Beträge auf $L$ eingeschränkt.
+Relativ zur zusätzlichen Basislinie unveränderter Normierungskoordinaten
+außerhalb $S$ hat das skalierte Produkt den Faktor
+\[
+ \Bigl(\prod_{w\in S}|x|_w^{\mathrm{std}}\Bigr)^{j^2-1}.
+\]
+Man wähle eine rationale Primzahl $r$ unter einem $w_0\in S$, also
+$r\in\mathbb Q^\times\subset L^\times$. Dann ist $\log|r|_w\le0$ auf
+$S$ und an $w_0$ strikt negativ. Für $j\ge2$ ist der angegebene Faktor
+von $1$ verschieden. Dies ist ein globales Element der richtigen
+Testdomäne, kein beliebiger lokaler Uniformisierer und kein möglicherweise
+nur in $L'$ liegender Hauptidealerzeuger. Nichtleere von $S$ und Basislinie
+sind zusätzliche Hypothesen; keine folgt allein aus $\ell\ge5$.
+
+\paragraph{Gleichfeldrige Starrheit und Feldabstieg (R-3).}
+Sei $b_v$ die Standardmodulfamilie auf einem Zahlkörper $K$, mit
+enthaltenen kanonischen lokalen Gradfaktoren, sodass
+$\sum_v\log b_v(x)=0$ für jedes $x\in K^\times$. Sind
+$\rho_{y,v}=b_v^{a_{y,v}}$ und $\lambda_{y,v}$ die rohe
+Normierungskoordinate, so ist der Effektivkoeffizient
+$\beta_{y,v}=a_{y,v}\lambda_{y,v}$. Starrheit beschränkt $\beta$, nicht
+$a$ und $\lambda$ getrennt. Unter dieser Modulkonvention folgt
+$\beta=c\mathbf1$. Bei rohen verlängerten Absolutbeträgen folgt
+stattdessen Proportionalität zum kanonischen Gradgewichtsvektor, keine
+ungewichtete Konstanz. Erforderlich sind sämtliche Stellen von $K$
+einschließlich der archimedischen, reelle $x$-unabhängige Koeffizienten und
+die volle gewichtete Standard-Produktformel für jedes $x\in K^\times$.
+Tests nur auf $L^\times$ über $w\in V_{L'}$ implizieren nicht die
+Konstanz jedes einzelnen $L'$-Gewichts. Benötigt wird eine explizite
+$L'/L$-Abstiegs-/Aggregationsidentität oder die passende volle
+$L'^\times$-Formel. Der arithmetische Transfer ist offen; der gleichfeldrige
+Satz wird nicht bestritten.
+
+\paragraph{Was ein tatsächlich gemeinsames Einfrieren impliziert.}
+Unter diesen Gleichfeld-Identifi\-kationen und einer nichtleeren Einfrier\-menge
+liefern zwei Lösungen bei demselben $j$, identischen $a_{j,w}$ und
+eingefrorenen $\lambda_{j,w}$ identische eingefrorene $\beta_{j,w}$;
+Konstanz liefert dann Eindeutigkeit bei Existenz. Nichtleere ist eine
+angegebene Voraussetzung, keine allgemein geprüfte Quellenbehauptung.
+Erfüllt die gemeinsame Referenzfamilie zusätzlich an einer eingefrorenen Stelle
+\[
+ \rho_{j,w}=\rho_{1,w}^{j^2},\qquad
+ a_{j,w}=j^2 a_{1,w},\qquad \lambda_{j,w}=\lambda_{1,w},
+\]
+so folgt algebraisch
+\[
+ c_j=\beta_{j,w}=j^2\beta_{1,w}=j^2c_1.
+\]
+Diese zulässige globale Skalierung verletzt die Starrheit nicht. Ihre
+Quellenanwendung verlangt weiterhin die gemeinsamen Feld-, Norm-,
+Stellen- und Freeze-Identifikationen; sie liefert kein allgemeines Verdikt
+projektiver Gehaltlosigkeit.
+
+\paragraph{Der Rohkoordinaten-Freeze-Vergleich.}
+Um zwei Exponententypen nicht zu vermischen, bezeichne $A_{j,v}$ den
+Koeffizientenvektor im Vergleich mit festen Rohkoordinaten, nicht den
+lokalen Betrags-Exponenten $a_{j,v}$ oben. Im inventarisierten Vergleich
+hat er für $\varnothing\ne S\ne V$ und $j\ge2$ auf $S$ die Einträge
+$\lambda_{1,v}$ und außerhalb $S$ die Einträge $j^2\lambda_{1,v}$;
+unter dem zugehörigen kanonischen Vertrag ist er
+$j^2\lambda_{\mathrm{can},j,v}$. Folglich
+\[
+ H_{\mathrm{Freeze},j}=H_{\mathrm{can},j},
+ \qquad H_{\mathrm{can},j}\ \hbox{muss nicht gleich}\ H_1\ \hbox{sein}.
+\]
+Dieser bedingte Vergleich zertifiziert nicht die fehlende Feldidentifikation
+der Quelle. Aus ungeprüften feldübergreifenden Identifikationen roher und
+effektiver Vektoren folgt kein pauschaler Schluss über projektive
+Information. Die wörtliche Endlichstellen-Konvention von ATS III und ihre
+mögliche archimedische Vervollständigung bleiben verschiedene offene
+Quellenverträge.
+
+\subsection{Die globale Periodenabbildung: ATS III, Satz 4.6.1}\label{sec:s17}
+
+Der Satz hat sieben Teile (III:1746--1817) und transportiert den Apparat von
+Abschnitt~\ref{sec:s18} von einem einzelnen Arithmetikoid über $L$ zu einem
+$\ell^*$-Tupel über $L'$, das auf Mochizukis Ansatz
+$\widetilde{\Sigma}_{L'}$ eingeschränkt ist. Sein vollständiger Beweis:
+\glqq This is clear from [Joshi, 2023a, Theorem 5.10.1], and the properties of
+$\widetilde{\Sigma}_{L'}$ established so far and detailed in
+Theorem 4.2.2.1, Corollary 4.2.2.4\grqq{} (III:1819--1820).
+
+Die Teile (1)--(3) und (5) zitieren den komponentenweisen Lieferanten
+mit separat indizierten Zielräumen (III:1749--1751). Ihr formaler Transport
+steht unter den konsistenten Koordinaten- und Aktionsverträgen aus
+Abschnitt~\ref{sec:s18}; das frühere unbedingte Tragen-Verdikt wird
+zurückgenommen. Die Tupelerweiterung wird in einer Quellenbemerkung
+(II(1/2):2267) behauptet, dort nicht bewiesen. Teil (4) beruft sich
+ausdrücklich auf Korollar 4.2.2.4 (III:1791) und erbt die Feld- und
+Normierungspflichten aus Abschnitt~\ref{sec:s16}. Teil (7) bleibt außerhalb
+der untersuchten Passagen.
+
+\paragraph{Der fehlende Restriktionsschritt (T17-6).} Teil (6) behauptet,
+dass $z \mapsto (H_{y_1},\dots,H_{y_{\ell^*}})$ \emph{auf}
+$\widetilde{\Sigma}_{L'}$ nicht konstant ist, während der Lieferant, Satz
+5.10.1(7), Nichtkonstanz auf ganz $Y_L$ behauptet (II(1/2):2228--2233). Aber
+$\widetilde{\Sigma}_{L'}$ ist eine echte Teilmenge des entsprechenden
+Produkts, ausgeschnitten durch die scharfen Bedingungen von Definition 4.2.2
+(III:1460--1467), und Nichtkonstanz auf einer Obermenge impliziert nicht
+Nichtkonstanz auf einer Teilmenge. Keine der drei im Beweis zitierten
+Quellen adressiert jene Passage.
+
+\paragraph{Rekonstruktion R-4: ein bedingter Weg.}
+Die Quelle liefert Stabilität von $\widetilde\Sigma_{L'}$ unter globalem
+Frobenius (Satz~4.2.2.1(2), III:1536--1539) und die lokale Normrelation
+$|p|_{K_{y_{n-1}}}=|p|_{K_{y_n}}^{1/p}$ (ATS~II, Satz~10.20.1(3)).
+Keine dieser Aussagen beweist allein Nichtkonstanz der Periodenabbildung.
+Für den vorgeschlagenen Weg ist ein gemeinsamer Koordinatenraum zu
+fixieren und der tatsächliche Hyperebenen-Koeffizientenvektor $B_y$
+darin zu identifizieren. Zu beweisen ist dann, dass ein einzelner
+zulässiger globaler Schritt die vorgeschlagenen lokalen Änderungen
+$\lambda_v\mapsto p_v\lambda_v$ gleichzeitig realisiert, dass diese die
+behauptete Transformation von $B_y$ in denselben fixierten Koordinaten
+induzieren und dass $B_{\varphi y}$ und $B_y$ dort tatsächlich
+nichtproportional sind. Nur für nichtverschwindende Linearformen auf
+diesem fixierten Raum folgt daraus $\ker B_{\varphi y}\ne\ker B_y$.
+Zusammen mit Stabilität von $\widetilde\Sigma_{L'}$ und einer
+wohldefinierten Periodenabbildung würde dies Nichtkonstanz auf dieser
+Menge etablieren. Dies sind H-FROB-Pflichten, keine Folgen variierender
+Restcharakteristiken oder roher $\lambda$-Koordinaten allein. Vorbehalte
+zu Standardpunkten und archimedischen Stellen bleiben; die nötigen
+globalen, Koordinaten- und Koeffizientenidentifikationen werden hier
+nicht verifiziert.
+
+\paragraph{Eine Konventionsfrage, die über Gehaltlosigkeit entscheidet.} ATS
+III schreibt die Logarithmus- und Gradabbildungen der Teile (1) bis (3) ohne
+die Koeffizienten $\lambda_v$ (III:1760, III:1772, III:1781), und seine
+stehende Konvention erklärt alle Arithmetikoide für normalisiert. Wörtlich
+gelesen ist das Funktional die Koordinatensumme und $H_{y_j}$ für jedes $z$
+dieselbe Hyperebene, was Teil (6) eher ohne Inhalt als bloß unbewiesen
+zurückließe; die Aussage wird erst unter der ATS-II(1/2)-Formulierung mit
+den $\lambda$-Koeffizienten (II(1/2):2212--2216), die ATS III hier nicht
+reproduziert, nicht gehaltlos. Dies ist ein Textbefund, kein Artefakt der
+Extraktion.
+
+\paragraph{Verdikt.} \emph{Formale Buchführung} für die Teile (1)--(3) und (5) bleibt
+an die korrigierten S18-Koordinaten- und Aktionsverträge gebunden. \emph{Typisierte Lücke} bei Teil (6):
+Der Beweis, wie er geschrieben ist, zeigt keine Nichtkonstanz auf
+$\widetilde{\Sigma}_{L'}$; der fehlende Schritt ist die Restriktion von
+$Y_L$ auf diese Teilmenge. Eine zweite, geerbte typisierte Lücke sitzt bei
+Teil (4); eine dritte betrifft die Bewertungskonvention, unter deren
+wörtlicher Lesart Teil (6) keinen Inhalt hätte, wobei die auditierten
+Passagen nicht festlegen, welche Lesart gilt. \emph{Dokumentierte
+Rekonstruktion}: R-4 ist ein konditionaler Weg: Unter H-FROB
+(Abschnitt~\ref{sec:hyplabels}) etabliert es Nichtkonstanz auf
+$\widetilde{\Sigma}_{L'}$, unter Verwendung von Quellen, die der Beweis
+nicht zitiert; ohne eine explizite global-lokale
+Verträglichkeitsaussage bleibt der Restriktionsschritt sowohl in der Quelle
+als auch in unserer Rekonstruktion offen.
+
+\subsection{Der Kern der unteren Schranke: ATS III, Satz 9.11.1}\label{sec:s8}
+
+ATS III, Satz~9.11.1, verwendet Volumen, sein Vorbild Satz~9.9.1 dagegen
+ein Supremum. Die Boxpflicht ist am tatsächlichen Träger zu prüfen;
+Punktmaß null entscheidet sie nicht. Die Behauptung, Punktzugehörigkeit
+könne keine Hülle positiven Maßes liefern, wird zurückgenommen.
+
+\paragraph{Eine bedingte algebraische Hülleninklusion.}
+Sei $A$ eine tatsächlich zerlegte endliche lokale Algebra,
+$\mathcal O_A^{\max}$ ihre angegebene Maximalordnung und
+$\mathcal O_{\mathrm{tensor}}$ die Tensorordnung mit
+$\mathcal O_{\mathrm{tensor}}\subseteq\mathcal O_A^{\max}$. Es sei
+vorausgesetzt, dass die tatsächliche $\operatorname{hull}(S)$ die Menge
+$S$ enthält und unter Multiplikation mit $\mathcal O_A^{\max}$ stabil ist,
+etwa als entsprechende Maximalordnungs-Modulhülle. Dann gilt
+\[
+ x\in S\ \Longrightarrow\
+ x\mathcal O_{\mathrm{tensor}}\subseteq
+ x\mathcal O_A^{\max}\subseteq\operatorname{hull}(S).
+\]
+Die letzte Inklusion verwendet diese Modulhüllen-Hypothese. Zerlegte Algebra
+und Maximalordnung allein etablieren sie nicht für eine bloß konvexe oder
+$\mathbb Z_p$-Modulhülle. Eine positive volldimensionale Box verlangt
+zusätzlich komponentenweise Nichtverschwinden und den tatsächlichen
+lokalen Träger. Keine stillschweigende Identifikation mit der ATS-Zielhülle
+oder $\widetilde\Theta$ wird vorgenommen.
+
+\paragraph{Maßnormierung und offener Volumenvertrag.}
+Für eine endliche Erweiterung $E/\mathbb Q_p$, normiertes additives
+Haarmaß $\mu_E(\mathcal O_E)=1$ und den Betrag
+$|a|=|N_{E/\mathbb Q_p}(a)|_p^{c/[E:\mathbb Q_p]}$ mit $c>0$ und
+$|p|=p^{-c}$ liefert der Variablenwechsel
+\[
+ \mu_E(a\mathcal O_E)=|a|^{[E:\mathbb Q_p]/c}\quad(a\in E^\times).
+\]
+Unter beliebiger Betragskonvention ist dies nicht allgemein $|a|$.
+Das konkrete Logarithmusbild, die ATS-Zielhülle, Tensor- und
+$\Gamma$-Balance, Gradgewichte, Kollation und Indexschicht sind weiterhin
+zu identifizieren. Die abstrakte algebraische Inklusion liefert diesen
+Volumensatz nicht.
+
+Die im alten Vergleich verwendete endliche Exponentenidentität
+$\sum_{j=1}^{n}j^2/n^2\le n$ für $n\ge1$ bleibt eine elementare
+arithmetische Tatsache. Ihre Anwendung auf eine Maß-Untergrenze verlangt
+die angegebenen Haar-, Grad- und Trägerverträge; das frühere pauschale
+Volumenverdikt einer sauberen Exponentenarithmetik über der Lücke wird
+zurückgenommen. Herkunft und Transport der $\Xi$-Objekte durch
+$\log_{BK}$ bleiben ebenfalls gesonderte Quellenpflichten
+(ATS III \S\S\,9.8--9.11).
+
+\subsection{Die übersetzte untere Schranke: ATS III, Korollar 9.11.1.1}\label{sec:s7}
+
+\paragraph{Die gedruckte Aussage.}
+Das archivierte ATS-III-v4-PDF, gedruckte S.~128, Kor.~9.11.1.1, besitzt
+tatsächlich Betragsstriche. In seiner Notation lautet die angegebene Formel
+\[
+ -\frac{1}{\ell^*}
+ \left|\operatorname{LogVol}(\widetilde\Theta^{I}_{\mathrm{Mochizuki}})\right|
+ \ \ge\ -\!
+ \sum_{\substack{p,\ w\in V_p^{\mathrm{odd,ss}}\\
+                  V_p^{\mathrm{odd,ss}}\ne\varnothing}}
+ \log\left|q_w^{1/(2\ell)}\right|_{L'_w}.
+\]
+Die Summe läuft über die gedruckten Primzahlblöcke und ihre angegebenen
+Stellen; zusätzliche reelle Gewichte stehen in dieser Formel nicht.
+Der alte Extrakt verlor die Striche. Die vorgeschlagene atomare
+Alternativlesart, die Behauptung erst zu ergänzender Betragsstriche und
+die frühere Entlastung durch jene Alternativlesart werden ausdrücklich
+zurückgenommen.
+
+\paragraph{Enge Vorzeicheninkonsistenz mit Hypothesen.}
+Es seien $\ell^*>0$, $\ell>0$, endliches reelles Log-Volumen und eine
+definierte endliche, nichtleere Tate-Stellensumme mit üblicher
+Tate-Betragsnormierung $0<|q_w|_{L'_w}<1$ vorausgesetzt. Jeder Summand
+$\log|q_w^{1/(2\ell)}|_{L'_w}$ ist strikt negativ. Links ist der Ausdruck
+nichtpositiv, rechts strikt positiv. Unter diesen expliziten Voraussetzungen
+kann die gedruckte Ungleichung also nicht gelten. Dies ist eine lokale
+Vorzeicheninkonsistenz dieser angegebenen Aussage, kein Verdikt über die
+gesamte ATS-Kette, IUT oder abc. Leere Summen, divergente Ausdrücke oder
+andere Normkonventionen werden nicht stillschweigend erfasst.
+
+\paragraph{Was daraus nicht folgt.}
+Aus einer unteren Schranke $\mathrm{Vol}\ge R$ mit $0<R<1$ folgt weder
+$\mathrm{Vol}\le1$ noch $\operatorname{LogVol}\le0$; $\mathrm{Vol}=2$
+ist ein Gegenbeispiel zu dieser Schlussregel. Die gesonderte lokale
+Nichtpositivitätsbehauptung der Quelle darf keinen bewiesenen Volumenvertrag
+ersetzen. Die Kritik an der gedruckten ATS-III-Form, ihre Verwendung in
+ATS IV und eine korrigierte Untergrenzen-Aussage verlangen getrennte
+Vergleiche. Eine reparierte Vorzeichenkonvention allein schließt die
+Hüllen-/Maßpflichten von Abschnitt~\ref{sec:s8} nicht. H-SIGN unten hält
+die tatsächlichen Betragsstriche und Voraussetzungen des Vorzeichentests
+fest, keine alternative Lesart.
+
+\section{Katalog typisierter Lücken und Verdikt-Tabelle}\label{sec:catalogue}
+
+\subsection{Verdikt-Tabelle}
+
+\begin{table}[htbp]\centering\small
+\caption{Verdikt nach Operation; offene Brücken sind keine Gesamtkettengültigkeit.}
+\label{tab:verdict}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.32\textwidth} >{\raggedright\arraybackslash}X@{}}
+\toprule Operation & Aktuelle Reichweite \\\midrule
+S18 Koordinaten/Aktion & direkte-Summen-Buchführung nur in ihrer Domäne; gewichteter Kern und Periodenbildaktion gesondert \\
+S18 Nichtproportionalität & R-1 bedingt auf konsistente Koordinaten und H-REC; archimedische Reichweite offen \\
+S16 Normierung & gleichfeldrige Starrheit gültig; $L'/L$, nichtleere Einfrier\-menge und Normidentifikation offen; globale $j^2$ erlaubt \\
+S8 Hülle/Volumen & lokale Inklusion bedingt auf tatsächliche Modulhüllenstabilität; ATS-Haar-/Tensor-/Zielvolumenvertrag offen \\
+S7 gedrucktes Korollar & Betragsstriche vorhanden; enge Vorzeicheninkonsistenz unter H-SIGN; IV und Reparaturen gesondert \\
+S17 Restriktion & Restriktionsschritt der Quelle offen; R-4 bedingt auf H-FROB \\
+\bottomrule\end{tabularx}\end{table}
+
+\subsection{Dokumentierte Rekonstruktionen}
+
+R-1 ist der Nicht\-pro\-por\-tio\-na\-li\-täts\-weg unter konsistenten Koordinaten und
+H-REC; R-2 der baseline\-relative Notwendigkeitstest mit globaler rationaler
+Primzahl; R-3 die gleichfeldrige Starrheit, deren Quellenanwendung
+Feldabstieg verlangt; R-4 der bedingte globale Perioden-Restriktionsweg
+unter dem vollständigen fixierten Koordinaten- und Koeffizientenvertrag
+H-FROB. Die lokale Hülleninklusion ist an ihren tatsächlichen
+Maximal\-ordnungs-Modul\-vertrag gebunden. Keine schließt die vollständige
+ATS-Volumen- oder Periodenkette.
+
+\subsection{Eine vergleichende Beobachtung}\label{sec:symmetry}
+
+Innerhalb des Vergleichskorpus von Teil 1~\cite{part1} und des vorliegenden
+Audits enthalten beide Programme einen unausgeführten Übergang vom
+Enthaltenseins-Typ an einer strukturell tragenden Stelle: Das Programm, das
+die Kette zu ersetzen sucht, behauptet seinen entscheidenden Schritt mit
+\glqq follows formally\grqq{} (vgl.\ Teil 1), die auditierte Kette behauptet ihr
+Box-Enthaltensein mit \glqq clear from the construction\grqq{}
+(Abschnitt~\ref{sec:s8}). Wir behaupten hier weder Identität der Objekte
+noch Äquivalenz der fehlenden Implikationen noch einen neuen Audit von IUT;
+die Beobachtung ist ein Vergleich der \emph{Behauptungsform} an den
+jeweiligen kritischen Stellen, nicht mehr. Der Unterschied in der Form
+bleibt im Übrigen so, wie Teil 4 ihn verzeichnet hat --- die auditierte
+Kette stellt einen Satz mit ausgeschriebenem Beweis und benennbaren
+Reparaturpflichten auf. Die elementare Exponentenidentität ist von ihrer
+weiterhin offenen Maßanwendung getrennt.
+Keines der beiden Programme wird durch diese Beobachtung widerlegt.
+
+%=====================================================================
+\section{Die Starrheitsklassifikation der Normierungsgewichte}\label{sec:case}
+
+Dieser Abschnitt wendet die Starrheitsresultate von Teil 6~\cite{part6} auf
+das in Abschnitt~\ref{sec:fneu1} isolierte Normierungszentrum an. Die
+nachstehenden Aussagen sind Implikationen unter explizit benannten
+Hypothesen, keine paarweise disjunkten Lesarten der Quelle; die Hypothesen
+werden hier einmal definiert und konsistent verwendet.
+
+\subsection{Hypothesenetiketten}\label{sec:hyplabels}
+
+\begin{description}
+\item[H-PLACES.] Ein fester Zahlkörper $K$ und seine vollständige
+Stellenmenge einschließlich der archimedischen mit identifizierter
+Standardbetragsfamilie. Eine Abkürzung ist nur zulässig, wenn die
+ausgelassenen Faktoren nachweislich erhalten bleiben. Tests auf $L^\times$
+an $L'$-Stellen verlangen eine gesonderte Abstiegsbrücke.
+\item[H-PF.] Reelle $x$-unabhängige endgültige Effektiv\-gewichte erfüllen
+die volle Standard-Produktformel für jedes $x\in K^\times$ ohne
+unterdrückte Stellen-, Faser- oder Korrekturterme.
+\item[H-5.3.3.] Die punktweise Identität (5.3.3) gilt an jeder angegebenen
+Stelle und identifiziert die Effektivkoeffizienten mit $\beta_{y,v}=1$.
+Ihre Verwendung auf $L^\times$ und $\mathbb P^n(L)$ etabliert keine
+Erweiterungsfeld- oder Geradenbündeltransporte.
+\item[H-EFF.] Die Größe besitzt eine globale \emph{lineare} Darstellung
+\[
+ Q_y=\sum_v\beta_{y,v}q_v,\qquad Q_{\mathrm{ref}}=\sum_vq_v,
+\]
+mit $y$-unabhängigen $q_v$; beide Summen sind bei kompatiblen Index- und
+Ordnungsverträgen sowie hinreichender Konvergenz für die behauptete
+Skalarfaktorisierung definiert. Endliche oder absolut konvergente reelle
+Summen genügen. Beliebige nichtlineare Faktorisierungen sind nicht
+erfasst. Die Identifikation von $Q_{\mathrm{ref}}$ mit $Q_{\mathrm{cl}}$
+ist eine zusätzliche klassische Brücke.
+\item[H-ID.] Operative Höhe oder Grad ist die konkret definierte Größe
+auf $\mathbb P^n(L)$ oder $L^\times$ ohne unkontrollierte zusätzliche
+$y$-Daten. Algebraische Erweiterungen und Geradenbündel verlangen eigene Brücken.
+\item[H-REC.] Der benötigte variierte Lokalpunkt lässt sich bei
+festgehaltenen übrigen angegebenen Koordinaten zu einem zulässigen
+Arithmetikoid rekombinieren; konsistente Log-/Grad-/Hyperebenen-Koordinaten
+und eine Periodenbildaktion sind gesonderte Pflichten.
+\item[H-FROB.] Der globale Frobenius-Schritt aus R-4 realisiert die
+nötigen lokalen Transformationen gleichzeitig und bleibt in
+$\widetilde\Sigma_{L'}$. Er identifiziert die tatsächlichen
+nichtverschwindenden Hyperebenenformen in einem gemeinsamen fixierten
+Koordinatenraum, beweist dort ihre angegebene Transformation und
+tatsächliche Nichtproportionalität und liefert den wohldefinierten
+Periodenabbildungsvertrag. Variation roher Normierungskoordinaten allein
+genügt nicht.
+\item[H-SIGN.] Die wörtlich gedruckte Betragsformel von
+Kor.~9.11.1.1 wird bei $\ell,\ell^*>0$, endlichem reellem Log-Volumen
+und endlicher nichtleerer üblicher Tate-Stellensumme mit
+$0<|q_w|_{L'_w}<1$ dem Vorzeichentest aus Abschnitt~\ref{sec:s7}
+unterzogen. Dies ist keine alternative Konvention.
+\end{description}
+H-5.3.3 impliziert H-PF mit $\beta=1$ im definierten gleichfeldrigen
+Standardvertrag. H-PF allein liefert nur $\beta=c_y\mathbf1$, keine
+$y$-Unabhängigkeit. H-EFF betrifft eine definierte lineare Größenfamilie,
+keine Feld- oder Stellenidentifikation; Maße werden nicht automatisch
+klassifiziert.
+
+\subsection{Die Lesarten der Gewichtsfamilie}
+
+Die Normierungsanalyse von Abschnitt~\ref{sec:fneu1} identifizierte drei
+Lesarten der Gewichtsfamilie $(\lambda_{y,v})$ im auditierten Text und fand,
+dass der Text zwischen ihnen nicht auswählt: eine \emph{gebundene} Lesart,
+auf der die Normierungskoordinate durch die
+Artin--Whaples-Standardnormierungen~\cite{artinwhaples} bestimmt ist
+(\glqq \emph{die} Normierungskoordinate\grqq{} aus \S\,5.3); eine \emph{freie} Lesart,
+auf der die Gewichte irgendeine reelle Familie sind, die die gewichtete
+Produktformel erfüllt; und eine \emph{stellenselektive} Lesart, auf der eine
+Regel echt stellenselektive Gewichte zuweist, während die Produktformel
+weiterhin gilt --- wobei Letzteres das ist, was die \emph{Verwendung} der
+Gewichte in der Kette verlangt. Diese Lesarten sind keine disjunkten
+Lösungsklassen: Das gebundene Tupel ist selbst eine Produktformel-Lösung,
+und eine stellenselektive Lösung wäre, falls es sie gäbe, ebenfalls eine.
+Sie sind Alternativen dafür, was die Quelle \emph{meint}; welche von ihnen
+die Quelle beabsichtigt, ist eine Frage der Textinterpretation, die die
+nachstehende Mathematik nicht entscheidet. Was die Mathematik entscheidet,
+ist, welche dieser Lesarten unter den benannten Hypothesen durch
+Exponentenfamilien \emph{realisierbar} sind.
+
+\subsection{Anwendbarkeits-Gate: Stellenbereich}\label{sec:gate}
+
+Der Starrheitssatz von Teil 6 gilt für eine volle Allstellen-Produktformel.
+Bevor er auf die auditierten Passagen angewandt werden kann, muss der in
+Abschnitt~\ref{sec:s16} verzeichnete Stellenbereichs-Konflikt ausgetragen
+werden: ATS II($\tfrac12$) führt $V_L$ als alle Stellen ein, archimedische
+eingeschlossen, während ATS III \S\,3.2(5), wörtlich gelesen, nur
+nicht-archimedische Bewertungen indiziert und seine Produktformel über
+diesen Bereich laufen lässt. Der auditierte Text gleicht diese Konventionen
+nicht ab, und die Potenzklassen-Äquivalenz der lokalen Beträge ersetzt die
+fehlenden Stellen nicht. Daher gilt: (i) Unterdrückt ATS III die
+archimedischen Faktoren, behält sie aber bei und liefert den vollen
+gleichfeldrigen Testbereich sowie die übrigen H-PF-Voraussetzungen, so
+greift der Starrheitssatz auf den vervollständigten Effektivgewichts-Vektor;
+(ii) ist die Produktformel von ATS III wörtlich eine rein
+nicht-archimedische Bedingung, so greift der Satz nicht wie ausgesprochen,
+und der Status jener Passage bleibt offen, bis ein gesonderter Satz oder
+eine explizite archimedische Vervollständigung vorliegt. Im Spezialfall, in
+dem die Kompensation an den endlichen Stellen mit festen archimedischen
+Standardgewichten kombiniert wird, fällt der kombinierte Allstellen-Vektor
+unter H-PLACES und H-PF, und die Starrheit zwingt die endlichen Gewichte
+dann auf einen einzigen globalen Wert; diese kombinierte Formulierung muss
+jedoch von der Quelle ausgesprochen und nicht aus der Notation erschlossen
+werden. Alles Weitere in diesem Abschnitt wird unter H-PLACES behauptet.
+
+\subsection{Die Klassifikation aus Teil 6}
+
+Teil 6 v0.3~\cite{part6} liefert gleichfeldrige Starrheit und
+unveränderte endliche Faserumverteilung. Unter H-PLACES und H-PF gilt
+$\beta_{y,v}=c_y$. Unter H-EFF mit seinem tatsächlichen Konvergenzvertrag
+folgt
+\[
+ Q_y=c_y Q_{\mathrm{ref}}.
+\]
+Erst mit der zusätzlichen Identifikation $Q_{\mathrm{ref}}=Q_{\mathrm{cl}}$
+darf dies als $c_yQ_{\mathrm{cl}}$ geschrieben werden. Unter H-5.3.3 sind
+die Koeffizienten $1$; direkte Substitution liefert den klassischen Grad
+auf $L^\times$ und die Höhe auf $\mathbb P^n(L)$. Punkte über dem
+algebraischen Abschluss und ATS-III-Geradenbündelhöhen erben dies nicht
+allein durch Notation.
+
+\begin{table}[htbp]\centering\small
+\caption{Starrheitsfolgen mit expliziten Domänen und Größenverträgen.}
+\label{tab:rigidity-consequences}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.32\textwidth} >{\raggedright\arraybackslash}X@{}}
+\toprule Vertrag & Zulässige Schlussfolgerung \\\midrule
+H-PLACES, H-PF & konstante Endgewichte; globale Skalierung mit $j^2$ zulässig \\
+zusätzlich H-EFF & $Q_y=c_yQ_{\mathrm{ref}}$; klassische Identifikation gesondert \\
+H-5.3.3 und H-ID & klassischer Grad auf $L^\times$, Höhe auf $\mathbb P^n(L)$ \\
+Maße, Hüllen, Log-Volumen & Mitgliedschaft und Nichtmitgliedschaft in H-EFF unklassifiziert; kein Starrheitsschluss \\
+\bottomrule\end{tabularx}\end{table}
+
+Für einen stabilisierten Ausdruck auf einer angegebenen nichtleeren
+$L^\times$-Familie liefert H-5.3.3 denselben klassischen Wert jedes
+definierten Bestandteils nur unter der angegebenen Quellennormierung;
+sein Supremum hat dann diesen Wert. Andere Domänen oder zusätzliche
+Trägerdaten verlangen eigene Brücken. Ein allgemeines Supremum wird
+nicht stillschweigend als lineare H-EFF-Größe behandelt; ebenso wird
+kein Skalar ohne nötige Vorzeichen- und Domänenannahmen herausgezogen.
+Die Koordinatenvariation von $H_y$ allein beweist keine metrische Variation.
+
+\subsection{Größenklassen-Brücke: was folgt und was nicht}\label{sec:bridge}
+
+Die Größenklassen-Brücke ist eine domänensensitive Pflicht, kein
+generischer Transfer von Koordinatenvariation. Ein Grad auf $L^\times$
+oder eine Höhe auf $\mathbb P^n(L)$ wird nur durch die tatsächliche
+H-EFF-/H-ID-Substitution klassifiziert. Ein stabilisierter Ausdruck
+verlangt seinen eigenen Domänen- und Normierungsvertrag. Eine
+Hyperebenenfamilie allein liefert keine metrische Variation. Für
+Log-Volumen, Hülle, Haarmaß und Box-Inklusion sind weder Mitgliedschaft
+noch Nichtmitgliedschaft in H-EFF hier etabliert.
+\begin{table}[htbp]\centering\small
+\caption{Größenklassen-Pflichten von Gewichten zu operativen Trägern.}
+\label{tab:quantity-class-bridge}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.32\textwidth} >{\raggedright\arraybackslash}X@{}}
+\toprule Träger & Benötigte Brücke \\\midrule
+$L^\times$-Grad / $\mathbb P^n(L)$-Höhe & definierte lineare Substitution und klassische Referenzidentifikation \\
+Stabilisierter Ausdruck & angegebene nichtleere Domäne, Normierung und nötige Supremums-/Skalarbedingungen \\
+$H_y$ & konsistente Koordinaten und wohldefinierte Periodenaktion; allein kein metrischer Schluss \\
+Hülle, Maß, Log-Volumen & tatsächlicher Träger, Haargrad, Tensor-/\,$\Gamma$- und Volumenvertrag; Klassenstatus unklassifiziert \\
+\bottomrule\end{tabularx}\end{table}
+Teil 6 schließt somit ungleiche Endgewichte unter H-PLACES/H-PF aus;
+ohne identifizierte Größen- und Domänenbrücken entscheidet dies nicht die
+gesamte Höhen-, Maß- oder Log-Volumen-Kette. Kein Scheitern nachgelagerter
+Knoten wird allein aus der Klassifikation gefolgert.
+
+\section{Antwort-Verifikationsvorlage und Fazit}\label{sec:template}
+
+\subsection{Der Entscheidungsbaum}
+
+Die Befunde dieser Arbeit betreffen den publizierten Textzustand zu den
+angegebenen Auditdaten. Eine künftige Revision der ATS-Serie oder eine
+Erwiderung ihres Autors ist das erwartete und willkommene nächste Ereignis;
+der folgende, hier im Voraus festgelegte Entscheidungsbaum verzeichnet die
+\emph{alternativen} Wege, auf denen ein solches Dokument die Befunde ändern
+könnte. Die Wege sind keine kumulativen Anforderungen: Jeder Zweig gilt nur,
+wenn dieser Weg gewählt wird, und eine legitime Widerlegung dieses Audits
+selbst ist auf jedem Zweig ein weiteres zulässiges Ergebnis.
+
+Tabelle~\ref{tab:response-routes} stellt die Routenlogik vor der
+ausformulierten Prüfliste dar.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Antwort-Routen und was jede Route etablieren müsste.}
+\label{tab:response-routes}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth} >{\raggedright\arraybackslash}p{0.28\textwidth} >{\raggedright\arraybackslash}X@{}}
+\toprule
+Route & Was sich ändern würde & Mindestnachweis \\
+\midrule
+Fehlidentifikation & H-ID heftet die Klassifikation nicht mehr an die
+tragende Größe & operative Größe und zusätzliche $y$-Daten identifizieren \\
+Reparatur in der Exponentenklasse & die Quelle bleibt in H-EFF, repariert
+aber die fehlenden Allstellen-Daten & H-PLACES klären, Auswahlregel angeben
+und jeden globalen Skalar $c_y$ verfolgen \\
+Träger außerhalb von H-EFF & der Starrheitssatz versperrt den gewählten
+Träger nicht & Maß- oder Log-Volumen-Träger definieren und die nötige
+Variation beweisen \\
+Untere-Schranken-Route & Normierung ist nicht mehr der entscheidende
+Schritt & volles Box-Enthaltensein beweisen oder alternativen
+Untere-Schranken-Satz liefern \\
+Text- und Zitationsvervollständigung & dokumentarische Abschlüsse werden
+rekonstruierbar & R-1/R-4-Abschlüsse mit Quellen ausschreiben \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{enumerate}
+\item \textbf{Fehlidentifikations-Route.} Zeigen, dass die operative
+  tragende Höhe nicht die Höhe von Definition~8.2.1 ist oder dass sie
+  zusätzliche $y$-Daten enthält --- also H-ID für die auditierten Passagen
+  widerlegen. Die Klassifikation von Abschnitt~\ref{sec:case} heftet sich
+  dann nicht mehr an die tragende Größe.
+\item \textbf{Reparatur innerhalb der Exponentenklasse.} Wird dieser Weg
+  gewählt: den Stellenbereich von Abschnitt~\ref{sec:gate} klären
+  (H-PLACES), eine explizite Auswahlregel oder einen Beweis der
+  Wahlunabhängigkeit für die erzwungene Renormierung angeben (die
+  Wohldefiniertheitspflicht von Abschnitt~\ref{sec:s16}), die Regel gegen
+  den eindimensionalen Lösungsraum bei $L = \mathbb{Q}$ prüfen und die
+  Wirkung eines möglichen globalen Skalars $c_y$ durch jeden verwendeten
+  Ausdruck verfolgen.
+\item \textbf{Träger außer\-halb der Effektiv\-gewichts-Klasse.} Soll die
+  $y$-Ab\-hän\-gig\-keit von einer Größe außerhalb von H-EFF getragen werden ---
+  etwa auf der Ebene der Maße oder Log-Volumina ---, so ist diese Größe zu
+  definieren, ihre Adresse in der Kette anzugeben und zu beweisen, dass sie
+  die erforderliche Variation trägt; der Starrheitssatz versperrt diesen
+  Weg nicht, und nichts in dieser Arbeit schließt ihn.
+\item \textbf{Untere-Schranken-Route.} Unabhängig von der Normierung:
+  entweder das in Satz~9.11.1 verwendete volle Box-Enthaltensein beweisen
+  (Abschnitt~\ref{sec:s8}) oder einen alternativen Satz über die untere
+  Schranke mit vollständiger Herleitung liefern.
+\item \textbf{Text- und Zitationsvervollständigung.} Nach einem der
+  vorstehenden Schritte: die rekonstruierbaren Abschlüsse der
+  Abschnitte~\ref{sec:s18} und~\ref{sec:s17} mitsamt ihren Quellen in den
+  Text schreiben. Dies ist eine Dokumentationspflicht, keine mathematische
+  Vorbedingung der anderen Wege.
+\end{enumerate}
+
+\subsection{Fazit}
+
+Der aktuelle gezielte Audit erhält die gleichfeldrige Produktformel-
+Starrheit und die Trennung von Nichtkonstanz und Nichtproportionalität.
+Rohe und normierte Koordinaten, Periodenbildaktion, Feld-/Stellenabstieg
+und tatsächliche Freeze-Identifikationen werden getrennt. Globale
+Skalierungen mit $j^2$ sind zulässig; ungleiche Endgewichte werden nur unter
+vollständigen gleichfeldrigen Allstellen-Hypothesen ausgeschlossen. Eine
+bedingte algebraische Modulhülleninklusion ist verfügbar; ATS-Logarithmus-,
+Haargrad-, Tensor- und Zielvolumenverträge bleiben offen. Das tatsächlich
+gedruckte Betragskorollar besitzt die enge Vorzeicheninkonsistenz aus
+Abschnitt~\ref{sec:s7}; seine Verwendung in IV und eine reparierte Aussage
+sind gesondert. Lineare Größenklassen-Faktorisierung verlangt definierte
+Referenzsummen und Konvergenz, klassische Höhen ihre angegebenen Domänen.
+Mitgliedschaft und Nichtmitgliedschaft von Maßen bleiben unklassifiziert.
+
+Dies ist die aktuelle Reichweite des fortlaufenden Forschungsprojekts,
+keine unabhängige Verifikation der gesamten ATS-Kette und kein Beweis oder
+Gegenbeweis zu abc oder IUT. Die Antwortwege bleiben für Quellenrevision,
+explizite Brücke oder Gegenargument gegen diesen Audit selbst offen.
+Keine neue Berechnung und kein maschinengeprüfter Beweis werden geliefert.
+
+%=====================================================================
+\input{ai_disclosure_de}
+
+%=====================================================================
+\begin{thebibliography}{99}
+\raggedright
+
+\bibitem{artinwhaples}
+E.~Artin and G.~Whaples,
+\emph{Axiomatic characterization of fields by the product formula for
+valuations},
+Bull.\ Amer.\ Math.\ Soc.\ \textbf{51} (1945), no.~7, 469--492.
+DOI: 10.1090/S0002-9904-1945-08383-9
+
+\bibitem{joshiI}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller Spaces I},
+arXiv:2106.11452v4 [math.AG], 2021 (revised 24 February 2025).
+
+\bibitem{joshiII}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller spaces II: Proof of a local
+prototype of Mochizuki's Corollary 3.12},
+arXiv:2303.01662v3 [math.AG], 2023 (revised 24 February 2025).
+
+\bibitem{joshiIIhalf}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller Spaces II$\frac{1}{2}$:
+Deformations of Number Fields},
+arXiv:2305.10398v12 [math.AG], 2023 (revised 24 February 2025).
+
+\bibitem{joshiIII}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller Spaces III: A `Rosetta Stone'
+and a proof of Mochizuki's Corollary 3.12},
+arXiv:2401.13508v4 [math.AG], 2024 (revised 24 February 2025).
+
+\bibitem{joshiIV}
+K.~Joshi,
+\emph{Construction of Arithmetic Teichmuller Spaces IV: Proof of the
+abc-conjecture},
+arXiv:2403.10430v2 [math.AG], 2024 (revised 24 February 2025).
+
+\bibitem{mochizukiIUT}
+S.~Mochizuki,
+\emph{Inter-universal Teichm\"{u}ller Theory I: Construction of Hodge
+Theaters}, Publ.\ Res.\ Inst.\ Math.\ Sci.\ \textbf{57} (2021), no.~1/2,
+3--207;
+\emph{II: Hodge--Arakelov-Theoretic Evaluation}, \emph{ibid.}, 209--401;
+\emph{III: Canonical Splittings of the Log-Theta-Lattice}, \emph{ibid.}, 403--626;
+\emph{IV: Log-Volume Computations and Set-Theoretic Foundations},
+\emph{ibid.}, 627--723.
+
+\bibitem{scholzestix}
+P.~Scholze and J.~Stix,
+\emph{Why abc is still a conjecture},
+unpublished manuscript, version of 16 July 2018.
+Available at
+\url{https://www.math.uni-bonn.de/people/scholze/WhyABCisStillaConjecture.pdf}
+
+\bibitem{part1}
+L.~Geiger,
+\emph{The Gap in IUTchIII, Corollary 3.12: From Attempted Repair to
+Structural Diagnosis},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.19960781
+(latest version v6.3, 12 August 2026, DOI: 10.5281/zenodo.21899747).
+
+\bibitem{part2}
+L.~Geiger,
+\emph{The Bridge-Contract Criterion: A Form Audit for Transport Arguments,
+with an Instantiation in the abc Literature},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21960476
+(version 0.2, 16 August 2026, DOI: 10.5281/zenodo.21960477).
+
+\bibitem{part3}
+L.~Geiger,
+\emph{The Bridge Certificate: A Line-Level Audit Instrument for
+Inter-Theoretic Transfer Arguments, with Four Applications to the abc
+Literature (DRAFT)},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21925803
+(version 0.2, 16 August 2026, DOI: 10.5281/zenodo.21960958).
+
+\bibitem{part4}
+L.~Geiger,
+\emph{The Bridge Certificate Applied to the Joshi ATS Series: A Ledger
+Audit},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21951155
+(version 0.2, 15 August 2026, DOI: 10.5281/zenodo.21951156).
+
+\bibitem{part6}
+L.~Geiger,
+\emph{What the Product Formula Allows: A Rigidity Theorem and an
+Effective-Weight Test for the ATS Height Subchain},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21952486
+(version 0.3, 2 October 2026, DOI: 10.5281/zenodo.23093243).
+
+\bibitem{gnc}
+L.~Geiger,
+\emph{Global Normalization in Joshi's Arithmetic Teichm\"{u}ller Theory: What
+the Identification Carries --- and What Carries the Theorem},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21924253
+(version 1.1, 13 August 2026, DOI: 10.5281/zenodo.21924254).
+
+\bibitem{landscapeA}
+L.~Geiger,
+\emph{The abc Landscape: Obstructions, Failed Routes, and HCT Diagnostics
+(DRAFT)},
+Zenodo, 2026.
+Concept DOI: 10.5281/zenodo.21916900
+(latest version 1.1, 13 August 2026, DOI: 10.5281/zenodo.21924338).
+
+\end{thebibliography}
+
+\end{document}

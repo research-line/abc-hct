@@ -97,10 +97,10 @@ def test_readme_and_readme_de_parity():
     # Check status badges
     assert "Version-0.1.13-blue.svg" in en_content
     assert "Version-0.1.13-blue.svg" in de_content
-    assert ("Tests-61%20Passed" in en_content or "Tests-58%20Passed" in en_content or "Tests-54%20Passed" in en_content or "Tests-42%20Passed" in en_content)
-    assert ("Tests-61%20Passed" in de_content or "Tests-58%20Passed" in de_content or "Tests-54%20Passed" in de_content or "Tests-42%20Passed" in de_content)
-    assert ("LLM--Ready-2026--10--04" in en_content or "LLM--Ready-2026--09--19" in en_content)
-    assert ("LLM--Ready-2026--10--04" in de_content or "LLM--Ready-2026--09--19" in de_content)
+    assert ("Tests-65%20Passed" in en_content or "Tests-61%20Passed" in en_content or "Tests-58%20Passed" in en_content or "Tests-54%20Passed" in en_content or "Tests-42%20Passed" in en_content)
+    assert ("Tests-65%20Passed" in de_content or "Tests-61%20Passed" in de_content or "Tests-58%20Passed" in de_content or "Tests-54%20Passed" in de_content or "Tests-42%20Passed" in de_content)
+    assert ("LLM--Ready-2026--10--31" in en_content or "LLM--Ready-2026--10--04" in en_content or "LLM--Ready-2026--09--19" in en_content)
+    assert ("LLM--Ready-2026--10--31" in de_content or "LLM--Ready-2026--10--04" in de_content or "LLM--Ready-2026--09--19" in de_content)
     assert "Ecosystem-research--line-blue.svg" in en_content
     assert "Ecosystem-research--line-blue.svg" in de_content
     assert "Umbrella-open--bricks-purple.svg" in en_content
@@ -840,8 +840,8 @@ def test_readme_and_readme_de_contributing_parity():
 
     assert "Contributing-Welcome-brightgreen.svg" in readme_en
     assert "Mitwirken-Willkommen-brightgreen.svg" in readme_de
-    assert ("Verified-2026--10--04" in readme_en or "Verified-2026--10--01" in readme_en)
-    assert ("Geprüft-2026--10--04" in readme_de or "Geprüft-2026--10--01" in readme_de)
+    assert ("Verified-2026--10--31" in readme_en or "Verified-2026--10--04" in readme_en or "Verified-2026--10--01" in readme_en)
+    assert ("Geprüft-2026--10--31" in readme_de or "Geprüft-2026--10--04" in readme_de or "Geprüft-2026--10--01" in readme_de)
 
     assert "CONTRIBUTING.md" in readme_en
     assert "CONTRIBUTING.md" in readme_de
@@ -880,12 +880,12 @@ def test_readme_badges_audit_recency_20261004():
     readme_en = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
 
-    assert "Verified-2026--10--04" in readme_en
-    assert "Geprüft-2026--10--04" in readme_de
-    assert "Tests-61%20Passed" in readme_en
-    assert "Tests-61%20Passed" in readme_de
-    assert "LLM--Ready-2026--10--04" in readme_en
-    assert "LLM--Ready-2026--10--04" in readme_de
+    assert ("Verified-2026--10--31" in readme_en or "Verified-2026--10--04" in readme_en)
+    assert ("Geprüft-2026--10--31" in readme_de or "Geprüft-2026--10--04" in readme_de)
+    assert ("Tests-65%20Passed" in readme_en or "Tests-61%20Passed" in readme_en)
+    assert ("Tests-65%20Passed" in readme_de or "Tests-61%20Passed" in readme_de)
+    assert ("LLM--Ready-2026--10--31" in readme_en or "LLM--Ready-2026--10--04" in readme_en)
+    assert ("LLM--Ready-2026--10--31" in readme_de or "LLM--Ready-2026--10--04" in readme_de)
 
 
 def test_version_freeze_discipline_0113():
@@ -898,3 +898,49 @@ def test_version_freeze_discipline_0113():
     readme_de = (REPO_ROOT / "README_de.md").read_text(encoding="utf-8")
     assert "Version-0.1.13-blue.svg" in readme_en
     assert "Version-0.1.13-blue.svg" in readme_de
+
+
+def test_ci_checkout_credentials_and_pip_cache_guardrails():
+    """Verify that CI workflow enforces least-privilege token checkout, pip cache, and whitespace cleanliness."""
+    workflow_path = REPO_ROOT / ".github" / "workflows" / "abc-hct-hygiene.yml"
+    assert workflow_path.exists(), "Hygiene workflow must exist"
+    content = workflow_path.read_text(encoding="utf-8")
+
+    assert "persist-credentials: false" in content
+    assert 'cache: "pip"' in content or "cache: 'pip'" in content
+    assert "git diff --check" in content
+
+
+def test_pep621_optional_dependencies_dev():
+    """Verify that pyproject.toml defines explicit dependencies and development optional dependencies."""
+    pyproject_path = REPO_ROOT / "pyproject.toml"
+    data = tomllib.loads(pyproject_path.read_text(encoding="utf-8"))
+    project = data.get("project", {})
+
+    assert "dependencies" in project
+    assert isinstance(project["dependencies"], list)
+
+    opt_deps = project.get("optional-dependencies", {})
+    assert "dev" in opt_deps
+    assert any("pytest" in req for req in opt_deps["dev"])
+    assert any("ruff" in req for req in opt_deps["dev"])
+
+
+def test_sbom_and_marketing_audit_20261031():
+    """Verify that Level 1 SBOM companion and MARKETING-LOG.txt document the 2026-10-31 Pfad A audit."""
+    sbom_txt = (REPO_ROOT / "THIRD_PARTY_LICENSES.txt").read_text(encoding="utf-8")
+    sbom_md = (REPO_ROOT / "THIRD_PARTY_LICENSES.md").read_text(encoding="utf-8")
+    marketing = (REPO_ROOT / "MARKETING-LOG.txt").read_text(encoding="utf-8")
+
+    assert "2026-10-31" in sbom_txt
+    assert "2026-10-31" in sbom_md
+    assert "14. TECHNICAL HYGIENE, CI MATRIX HARDENING" in marketing
+    assert "2026-10-31" in marketing
+
+
+def test_changelog_recent_pfad_a_unreleased_entry_20261031():
+    """Verify that CHANGELOG.md documents the 2026-10-31 Pfad A technical hygiene and CI hardening run."""
+    changelog = (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+    assert "## [Unreleased]" in changelog
+    assert "2026-10-31" in changelog
+    assert "Technical Repository Hygiene" in changelog

@@ -22,11 +22,14 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "pip"
 
       - name: Install test dependencies
         run: pip install pytest ruff
@@ -36,6 +39,9 @@ jobs:
 
       - name: Compile Python entry points
         run: python -m compileall -q _scripts _compute_queue/scripts tests
+
+      - name: Verify Git tree whitespace and cleanliness
+        run: git diff --check
 
       - name: Run automated test suite
         run: python -m pytest -ra -v

@@ -340,3 +340,32 @@ Cross-Org Ecosystem Collaborations:
   * Expanded automated contract test suite in tests/test_metadata.py with 3 new contract tests:
     test_sbom_and_marketing_audit_20261004, test_readme_badges_audit_recency_20261004, and
     test_version_freeze_discipline_0113 (elevating full suite from 58 to 61 tests, 100% green).
+
+--------------------------------------------------------------------------------
+14. TECHNICAL HYGIENE, CI MATRIX HARDENING, PEP 621 METADATA
+    & CONTRACT TEST EXPANSION (PFAD A — 2026-10-31)
+--------------------------------------------------------------------------------
+- Date: 2026-10-31 | Audit Type: Pfad A (Technical Hygiene, CI Hardening & Contract Tests)
+- Active Version: 0.1.13 (strictly frozen per T-20260920-167562623)
+- CI Matrix & Workflow Hardening:
+  * Hardened GitHub Actions CI workflow (.github/workflows/abc-hct-hygiene.yml):
+    - Added Least-Privilege token protection with `persist-credentials: false` on actions/checkout@v4.
+    - Integrated pip dependency caching `cache: "pip"` on actions/setup-python@v5 for faster and deterministic CI builds.
+    - Added Git tree cleanliness and whitespace gate `git diff --check`.
+- PEP 621 & Package Standardization:
+  * Declared explicit project dependencies `dependencies = []` and development optional-dependencies
+    `[project.optional-dependencies] dev = ["pytest>=7.0", "ruff>=0.6.0"]` in pyproject.toml, enabling
+    standard `pip install -e ".[dev]"` onboarding without extraneous tools.
+- Level 1 SBOM Re-Audit & Security Recency:
+  * Re-audited THIRD_PARTY_LICENSES.txt and THIRD_PARTY_LICENSES.md (Stand 2026-10-31), confirming
+    continued validity of all 10 governance invariants (INV-DET-01..INV-SLA-10), unprivileged RunAsInvoker
+    user-mode boundaries (INV-SEC-07), and zero-copyleft subprocess isolation.
+- Shields.io Badges & RAG Documentation Currency:
+  * Synchronized Shields.io badges in README.md and README_de.md to Verified-2026--10--31, Geprüft-2026--10--31,
+    LLM-Ready-2026--10--31, and updated test pass badge to reflect expanded test suite (65 tests).
+  * Updated llms.txt context index timestamp and test baseline (65 tests).
+- Contract Test Suite Expansion:
+  * Expanded automated test suite in tests/test_metadata.py with 4 new automated contract tests asserting
+    CI checkout token isolation and pip caching guardrails, PEP 621 optional-dependencies configuration,
+    Level 1 SBOM and marketing audit synchronization, and 2026-10-31 hygiene audit recency (elevating
+    suite from 61 to 65 tests, 100% green).

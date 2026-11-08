@@ -1,0 +1,1000 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[unicode,pdfencoding=auto,psdextra]{hyperref}
+
+\hypersetup{
+  pdftitle={No Positive Margin from Pencils: Xiao's Lemma, a Rank-r Margin Identity, and the Nef Barrier in Parshin-Moret-Bailly Height Arguments},
+  pdfauthor={Lukas Geiger},
+  pdfsubject={Pencil arguments for upper bounds on arithmetic self-intersections},
+  pdfkeywords={Parshin-Moret-Bailly, arithmetic surfaces, Xiao's lemma, Harder-Narasimhan filtration, Bogomolov inequality, Kodaira fibration},
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  pdflang={en-US},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=black
+}
+
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\emergencystretch=1.5em
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{theoremA}{Theorem A}
+\newtheorem*{theoremB}{Theorem B}
+\newtheorem*{theoremC}{Theorem C}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{problem}[theorem]{Open problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\ob}{\overline{\omega}}
+\newcommand{\Lb}{\overline{L}}
+\newcommand{\degh}{\widehat{\deg}}
+\newcommand{\bpf}{\textup{(BPF)}}
+
+\title{No Positive Margin from Pencils:\\ Xiao's Lemma, a Rank-$r$ Margin Identity,\\ and the Nef Barrier in Parshin--Moret-Bailly Height Arguments}
+\author{Lukas Geiger\\
+Independent researcher, Bernau im Schwarzwald, Germany\\
+ORCID: \href{https://orcid.org/0009-0005-7296-1534}{0009-0005-7296-1534}}
+\date{Draft v0.1, 7 November 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Parshin--Moret-Bailly height arguments seek an upper bound for the arithmetic
+self-intersection $\ob_P^{\,2}$ of the relative dualizing sheaf on the fibers
+of a fibration $\phi\colon X\to Y$ over a curve. A recent implementation of this
+strategy (Soul\'e, arXiv:2611.05217, version~1) obtains its key estimate from a
+pencil: two sections of an auxiliary line bundle $L$ without common zero,
+Minkowski's theorem on successive minima, and a transfer from classical to
+arithmetic degrees. The leading coefficient of the resulting inequality is the
+geometric margin $M=(-L^2+m\deg\phi_*L)/\omega^2$, where $m$ is the fiber degree
+of $L$, and an upper bound for $\ob_P^{\,2}$ requires $M>0$. We show that this
+never happens. In rank two, the Koszul resolution of the evaluation map gives the
+exact identity $-L^2+m\deg\phi_*L=-\ell(Z)-2m\deg V\le 0$ (Xiao's lemma for
+pencils), where $Z$ and $V$ are the finite and vertical parts of the base
+locus. In rank $r$, we prove a margin identity in terms of the Bogomolov
+discriminant of the syzygy kernel together with a nef lemma in the spirit of
+Xiao, which gives $M_r\le 0$ whenever $\phi_*L$ is semistable and strict or
+partial negativity in the Harder--Narasimhan-unstable case; the arithmetic side
+of the unstable case for $r\ge 3$ is left open. As an application, we show that
+Proposition~9\,vi) of arXiv:2611.05217v1 is false: in the Kodaira fibration used
+there one has $k=4$, at most two of the four square roots over each exceptional
+point are effective, and $\deg\phi_*L=-7k+4k_{\mathrm{eff}}\le -20<-3k$. The step
+that fails uses the converse of the implication proved in Proposition~5\,ii) of
+that preprint. We add brief remarks on cross terms, on single sections and jets
+along curves, and on source bundles not pulled back from the base. No statement
+about the $abc$ conjecture is made.
+\end{abstract}
+
+\section{Introduction}\label{sec:intro}
+
+Parshin~\cite{Pa88} proposed an arithmetic analogue of the
+Bogomolov--Miyaoka--Yau inequality for complex surfaces (for the inequalities of
+Bogomolov and Miyaoka see~\cite{Bo78,Mi77}): an upper bound for the arithmetic
+self-intersection of the relative dualizing sheaf of an arithmetic surface in
+terms of the discriminant of the base. Parshin and
+Moret-Bailly~\cite{Pa88,MB90} showed that such a bound, applied to the fibers of
+a suitable fibration, has strong Diophantine consequences, including effective
+Mordell-type statements and forms of the $abc$ conjecture
+(see also~\cite{So05}). We call arguments
+of this kind \emph{Parshin--Moret-Bailly (PMB) height arguments}.
+
+In a recent preprint~\cite{So26} (arXiv:2611.05217, version~1, submitted on
+3~November 2026), Soul\'e implements this strategy for a Kodaira fibration
+$\phi\colon X\to Y$ with fibers of genus~$6$ over an \'etale cover of a curve of
+genus~$2$~\cite{Ko67,MD85}. The upper bound for $\ob_P^{\,2}$ on the fiber $X_P$
+comes from a \emph{pencil}: an auxiliary line bundle $L$ on $X$, two sections of
+$L_P$ without common zero~\cite[Prop.~3]{So26}, Minkowski's theorem on successive
+minima, and a transfer from classical to arithmetic degrees~\cite[Cor.~1]{So26}.
+The leading coefficient of the resulting inequality is a purely geometric number,
+which we call the \emph{margin},
+\begin{equation}\label{eq:margin-intro}
+M(L)=\frac{-L^2+m\deg\phi_*L}{\omega^2},
+\end{equation}
+where $m$ is the degree of $L$ on a fiber and $\omega=\omega_{X/Y}$. The argument
+bounds $\ob_P^{\,2}$ from above if and only if $M(L)>0$ (Section~\ref{sec:setting}).
+In~\cite{So26} the positivity of $M(L)$ rests on the lower bound
+$\deg\phi_*L\ge -3k$ of~\cite[Prop.~9\,vi)]{So26}.\footnote{We cite~\cite{So26}
+by the numbers printed in version~1. In the \TeX{} source of version~1, the
+statements printed as Propositions~3, 4, 5, 8, and~9 carry the labels
+\texttt{prop12}, \texttt{prop3}, \texttt{prop13}, \texttt{prop5}, and
+\texttt{prop6}, while Lemma~3 carries the label \texttt{lm15}. Equation numbers
+such as (24) and (28)--(36) are set by hand in the source and agree with the
+printed ones.}
+
+This note shows that the margin of a pencil is never positive and draws the
+resulting consequence for~\cite{So26}.
+
+\begin{theoremA}[Theorem~\ref{thm:rank2}]
+Let $\phi\colon X\to Y$ be a fibration of a smooth projective surface over a
+smooth projective curve with integral fibers, and let $L$ be a line bundle with
+$h^0(L_\eta)=2$ whose linear system on the generic fiber is base-point-free. Let
+$L(-V)\otimes\cI_Z$ be the image of $\phi^*\phi_*L\to L$. Then
+\[
+-L^2+m\deg\phi_*L=-\ell(Z)-2m\deg V\le 0 .
+\]
+Hence $M(L)\le 0$, with equality only if the evaluation map is surjective.
+\end{theoremA}
+
+This is Xiao's lemma for pencils~\cite{Xi87} in exact form; no stability
+hypothesis is needed.
+
+\begin{theoremB}[Theorem~\ref{thm:rankr}, Corollary~\ref{cor:ss}, Proposition~\ref{prop:unstable}]
+For $r=\rk\phi_*L\ge 2$ the relevant margin is
+$M_r(L)=(-L^2+\tfrac{2m}{r}\deg\phi_*L)/\omega^2$, and
+\[
+M_r(L)=-\frac{\Delta(K)+2rm\deg V+2(r-1)\ell(Z)}{r\,\omega^2},
+\]
+where $\Delta(K)$ is the Bogomolov discriminant of the syzygy kernel $K$. If
+$\phi_*L$ is semistable, then $M_r(L)\le 0$. If $\phi_*L$ is unstable, then
+$M_r(L)<0$ when the maximal destabilizing subsheaf has no horizontal base divisor,
+and in general every coefficient built from two Harder--Narasimhan slopes as in
+Proposition~\ref{prop:unstable}\,(b) is nonpositive.
+\end{theoremB}
+
+The semistable case rests on a nef lemma in the spirit of Xiao's method: the
+$\mathbb{Q}$-divisors $L-B_j-V_j-\mu_jF$ attached to the Harder--Narasimhan
+filtration of $\phi_*L$ are nef (Lemma~\ref{lem:nef}). The arithmetic counterpart
+of the unstable case for $r\ge 3$ is left open (Open problem~\ref{prob:anomaly}).
+
+\begin{theoremC}[Theorems~\ref{thm:soule-count} and~\ref{thm:soule-structural}]
+In the Kodaira fibration of~\cite{So26} one has $k=4$, at most two of the four
+square roots of the hyperelliptic class over each exceptional point are
+effective, and
+\[
+\deg\phi_*L=-7k+4k_{\mathrm{eff}}\le -20<-12=-3k ,
+\]
+where $4k_{\mathrm{eff}}\le 8$ is the number of points of $Y$ over which the
+relevant square root is effective. Hence~\cite[Prop.~9\,vi)]{So26} is false, and
+the leading coefficient of~\cite[(36)]{So26} is at most $-5/6$. A second route
+gives the same conclusion: the generic linear system is base-point-free for every
+choice of the component $Y$ and of the square root $\cL$, and Theorem~A yields
+$\deg\phi_*L\le -10k/3<-3k$; base-point-freeness is the property used
+in~\cite[(28)]{So26} to apply~\cite[Prop.~3]{So26}.
+\end{theoremC}
+
+The step that fails in the proof of~\cite[Prop.~9]{So26} is inequality~(24) of
+that paper. It uses the implication ``$P_1$ exceptional $\Rightarrow
+h^0(\lambda)=1$'', whereas~\cite[Prop.~5\,ii)]{So26} proves the converse
+(Remark~\ref{rem:gap}). Section~\ref{sec:scope} records briefly why the same sign
+appears for cross terms, for single sections and jets evaluated along curves, and
+why a positive term can only come from a bundle that is not pulled back from the
+base.
+
+\paragraph{Claim Boundary.}
+This note makes no statement about the $abc$ conjecture, about Parshin's
+conjecture, or about the truth of Theorems~1, A or~B of~\cite{So26} as statements.
+It shows that the pencil step of a PMB argument cannot produce a positive margin
+under the hypotheses stated below, and that the proof of~\cite[Theorem~1]{So26}
+given in version~1 is incomplete at Proposition~9\,vi). All references
+to~\cite{So26} concern version~1; a later version may differ. The intersection
+numbers of~\cite[Prop.~8 and Prop.~9\,ii), iii)]{So26} that we use agree with our
+own computation.
+
+\section{Setting and the Margin of a Pencil}\label{sec:setting}
+
+\subsection{Conventions}
+In Sections~\ref{sec:setting}--\ref{sec:nef} we work over an algebraically closed
+field of characteristic~$0$. Let $\phi\colon X\to Y$ be a surjective morphism
+from a smooth projective surface onto a smooth projective curve whose fibers are
+all integral. Let $F$ be the class of a fiber, $\eta$ the generic point of~$Y$,
+and $\omega=\omega_{X/Y}$, and assume $\omega^2>0$. Smooth fibrations, in
+particular Kodaira fibrations, satisfy these hypotheses. A divisor is
+\emph{vertical} if its components lie in fibers and \emph{horizontal} if no
+component does. Because the fibers are integral, every effective vertical divisor
+is of the form $V=\sum_y n_yX_y$ with $n_y\ge 0$; we set $\deg V=\sum_y n_y$, so
+that $V\equiv(\deg V)F$, $V^2=0$, and $V\cdot F=0$.
+
+For a line bundle $L$ on $X$, set $m=L\cdot F\ge 1$ and $E=\phi_*L$. As a
+torsion-free sheaf on the smooth curve $Y$, $E$ is locally free of rank
+$r=h^0(X_\eta,L_\eta)$; we write $\mu(E)=\deg E/r$. Note that $L\cdot V=m\deg V$.
+We will often assume:
+\begin{itemize}[leftmargin=3.5em]
+\item[\bpf] The linear system $|L_\eta|$ on the generic fiber has no base point.
+\end{itemize}
+
+\begin{lemma}\label{lem:image}
+Let $0\ne E'\subseteq E$ be a subsheaf. The image of the composite
+$\phi^*E'\to\phi^*E\to L$ is $L(-B'-V')\otimes\cI_{Z'}$ with $B'\ge 0$
+horizontal, $V'\ge 0$ vertical, and $Z'$ a subscheme of finite length. The
+restriction of $L(-B')$ to $X_\eta$ has a nonzero section. Under~\bpf{} one has
+$B'=0$ for $E'=E$.
+\end{lemma}
+
+\begin{proof}
+On a smooth surface, every nonzero subsheaf of a line bundle $L$ is of the form
+$L(-D)\otimes\cI_{Z'}$ with $D\ge 0$ and $Z'$ of finite length; decompose
+$D=B'+V'$ into its horizontal and vertical parts. Over $\eta$ the map is the
+evaluation of the sections in $E'_\eta\subseteq E_\eta=H^0(X_\eta,L_\eta)$, so
+its image is the subsheaf generated by these sections; its divisorial base locus
+is $B'|_{X_\eta}$, and any nonzero section in $E'_\eta$ defines a section of
+$L(-B')|_{X_\eta}$. For $E'=E$ this base locus is empty under~\bpf.
+\end{proof}
+
+\begin{definition}\label{def:margin}
+Set $r_1=-L^2/\omega^2$ and $q=-\deg E/\omega^2$. The \emph{margin} of $L$ is
+\[
+M_r(L)=r_1-\frac{2m}{r}\,q=\frac{-L^2+\frac{2m}{r}\deg E}{\omega^2}.
+\]
+For $r=2$ we write $M(L)=M_2(L)=r_1-mq$, in accordance with~\eqref{eq:margin-intro}.
+\end{definition}
+
+\begin{lemma}\label{lem:square}
+One has $M_r(L)=-(L-\mu(E)F)^2/\omega^2$ and $M_r(L+dF)=M_r(L)$ for every
+integer $d$.
+\end{lemma}
+
+\begin{proof}
+We have $(L-\mu F)^2=L^2-2m\mu=L^2-\frac{2m}{r}\deg E$. Twisting by $dF$ changes
+$L^2$ by $2md$ and, by the projection formula, $\deg E$ by $rd$.
+\end{proof}
+
+\subsection{The Pencil Chain}\label{subsec:chain}
+Now let $\phi\colon X\to Y$ be defined over a number field~$K$ with geometrically
+integral fibers; the conventions above apply to $X_{\overline K}\to
+Y_{\overline K}$, which leaves intersection numbers and degrees unchanged. For a
+finite extension $F/K$ of degree $d$ and a point $P\in Y(F)$, let $X_P$ be the
+fiber, equip $\omega$ and $L$ with adelic metrics as in~\cite[\S1.3]{So26}, and
+let $H_P=H^0(X_P,L_P)$ carry the sup-norms. For $r=2$, the proof
+of~\cite[Theorem~1]{So26} in~\cite[\S6.3]{So26} combines three steps:
+\begin{enumerate}[label=(\roman*)]
+\item \emph{Pencil inequality}~\cite[Prop.~3, (28), (29)]{So26}: if $s_1,s_2\in
+H_P$ have no common zero, then $-\Lb_P^{\,2}\le m\,(h(s_1)+h(s_2))+O(d)$.
+\item \emph{Minkowski}~\cite[(2), (30)]{So26}: there are linearly independent
+$s_1,s_2\in H_P$ with $h(s_1)+h(s_2)\le-\degh(H_P)+\delta(F)+O(d)$.
+\item \emph{Transfer}~\cite[(32), Cor.~1, (33), (35)]{So26}: for $P$ outside a
+finite set and every $\varepsilon>0$,
+$\degh(H_P)=-q\,\ob_P^{\,2}+O(\varepsilon\,\ob_P^{\,2})+O_\varepsilon(d)$ and
+$\Lb_P^{\,2}=-r_1\,\ob_P^{\,2}+O(\varepsilon\,\ob_P^{\,2})+O_\varepsilon(d)$.
+\end{enumerate}
+Together they give
+\begin{equation}\label{eq:chain}
+\bigl(M(L)-O(\varepsilon)\bigr)\,\ob_P^{\,2}\le m\,\delta(F)+O_\varepsilon(d).
+\end{equation}
+For general $r$, two sections realizing the first two successive minima of $H_P$
+satisfy $\lambda_1+\lambda_2\le\frac{2}{r}(\lambda_1+\dots+\lambda_r)$, and
+Minkowski's second theorem bounds the sum by $-\degh(H_P)$ up to a multiple of
+$\delta(F)$ and $O(d)$. If these two sections have no common zero, the same steps
+yield~\eqref{eq:chain} with $M_r(L)$ in place of $M(L)$ and a modified constant
+in front of $\delta(F)$.
+
+\begin{remark}\label{rem:chain}
+Inequality~\eqref{eq:chain} bounds $\ob_P^{\,2}$ from above if and only if
+$M_r(L)>0$; for $M_r(L)\le 0$ it is vacuous. In~\cite{So26} one has $r=2$, $m=6$,
+$L^2=-20k$, and $\omega^2=12k$, so $r_1=5/3$; Proposition~9\,vi) gives $q\le 1/4$,
+hence $M(L)\ge 1/6$ and the constant $36=6/(1/6)$ of~\cite[Theorem~1]{So26}. The
+$\varepsilon$- and $O(d)$-terms do not affect the sign. All results below are
+statements about the classical invariants $L^2$, $\deg\phi_*L$, and $\omega^2$;
+in this sense they are independent of the arithmetic details of the chain.
+\end{remark}
+
+\section{Rank Two: Xiao's Lemma for Pencils}\label{sec:rank2}
+
+\begin{theorem}\label{thm:rank2}
+In the setting of Section~\ref{sec:setting}, assume $r=2$ and~\bpf, and let
+$L(-V)\otimes\cI_Z$ be the image of the evaluation map
+$\phi^*E\to L$ (Lemma~\ref{lem:image}). Then
+\begin{equation}\label{eq:rank2}
+-L^2+m\deg E=-\ell(Z)-2m\deg V\le 0 .
+\end{equation}
+In particular, $\deg\phi_*L\le L^2/m$, with equality if and only if
+$\phi^*\phi_*L\to L$ is surjective.
+\end{theorem}
+
+\begin{proof}
+Set $A=L(-V)$, so that the evaluation map induces a surjection $\phi^*E\to
+A\otimes\cI_Z$, and let $K$ be its kernel.
+
+\emph{Step 1: $K$ is a line bundle.} At every point, the ideal $\cI_Z$ is a
+torsion-free module over a two-dimensional regular local ring, hence of depth at
+least one and, by the Auslander--Buchsbaum formula, of projective dimension at
+most one. The kernel of a surjection from a locally free sheaf onto a sheaf of
+projective dimension at most one is locally free; thus $K$ has rank one.
+
+\emph{Step 2: Chern classes of the outer terms.} Since $\phi^*E$ is pulled back
+from the curve $Y$, we have $c_1(\phi^*E)\equiv(\deg E)F$ and
+$c_2(\phi^*E)=\phi^*c_2(E)=0$. From $0\to\cI_Z\to\OO_X\to\OO_Z\to 0$ and
+$\ch(\OO_Z)=\ell(Z)[\mathrm{pt}]$ one obtains $c_1(\cI_Z)=0$ and
+$c_2(\cI_Z)=\ell(Z)$; tensoring the rank-one sheaf $\cI_Z$ by $A$ gives
+$c_1(A\otimes\cI_Z)=A$ and $c_2(A\otimes\cI_Z)=\ell(Z)$.
+
+\emph{Step 3: Whitney formula.} We have $c_1(K)\equiv(\deg E)F-A$, and
+\[
+0=c_2(\phi^*E)=c_1(K)\cdot A+\ell(Z)=m\deg E-A^2+\ell(Z),
+\]
+using $F\cdot A=m$ (since $F\cdot V=0$).
+
+\emph{Step 4.} We have $A^2=(L-V)^2=L^2-2m\deg V$, since $V^2=0$ and $L\cdot V=m\deg
+V$. Substituting gives~\eqref{eq:rank2}. Equality $\deg E=L^2/m$ holds if and
+only if $Z=\emptyset$ and $V=0$, that is, if and only if the evaluation map is
+surjective.
+\end{proof}
+
+\begin{corollary}\label{cor:rank2}
+Under the hypotheses of Theorem~\ref{thm:rank2},
+\[
+M(L)=-\frac{\ell(Z)+2m\deg V}{\omega^2}=-\frac{(L-\mu(E)F)^2}{\omega^2}\le 0 .
+\]
+The pencil chain~\eqref{eq:chain} is therefore vacuous for every line bundle of
+rank two with base-point-free generic linear system on every fibration with
+integral fibers.
+\end{corollary}
+
+\begin{remark}\label{rem:rank2}
+(a) Theorem~\ref{thm:rank2} requires no stability hypothesis on $\phi_*L$; it is
+the exact rank-two form of Xiao's method~\cite{Xi87}. Equivalently,
+$(L-\mu(E)F)^2=\ell(Z)+2m\deg V\ge 0$.
+
+(b) For $r=2$, no cleverer choice of the two sections helps. Minkowski's second
+theorem determines $\lambda_1+\lambda_2$ up to terms of order $\delta(F)+d$, so
+together with step~(iii) every pair of linearly independent sections satisfies
+$h(s_1)+h(s_2)\ge q\,\ob_P^{\,2}-O(\varepsilon\,\ob_P^{\,2}+\delta(F)+d)$. The
+best coefficient the chain can achieve is $r_1-mq=M(L)\le 0$.
+
+(c) Twisting by vertical divisors does not help either: $M(L+dF)=M(L)$ by
+Lemma~\ref{lem:square}.
+\end{remark}
+
+\section{Rank \texorpdfstring{$r$}{r}: A Margin Identity}\label{sec:rankr}
+
+For a locally free sheaf $G$ of rank $n$ on $X$, let
+$\Delta(G)=2n\,c_2(G)-(n-1)\,c_1(G)^2=c_1(G)^2-2n\ch_2(G)$ denote its Bogomolov
+discriminant; $\Delta(G)=0$ for line bundles.
+
+\begin{theorem}\label{thm:rankr}
+In the setting of Section~\ref{sec:setting}, assume~\bpf{} and $r\ge 2$. Let
+$L(-V)\otimes\cI_Z$ be the image of $\phi^*E\to L$ and $K$ its kernel. Then $K$ is
+locally free of rank $r-1$, and
+\begin{equation}\label{eq:rankr}
+\Delta(K)=r\,L^2-2m\deg E-2rm\deg V-2(r-1)\ell(Z),
+\end{equation}
+or equivalently
+\[
+M_r(L)=-\frac{\Delta(K)+2rm\deg V+2(r-1)\ell(Z)}{r\,\omega^2}.
+\]
+\end{theorem}
+
+\begin{proof}
+Local freeness follows as in Step~1 of Theorem~\ref{thm:rank2}. Set $A=L(-V)$.
+From $c(\phi^*E)=c(K)\,c(A\otimes\cI_Z)$ and Step~2 above, we have
+$c_1(K)\equiv(\deg E)F-A$ and $0=c_2(K)+c_1(K)\cdot A+\ell(Z)$, whence
+\[
+c_1(K)^2=A^2-2m\deg E,\qquad c_2(K)=A^2-m\deg E-\ell(Z).
+\]
+Therefore
+$\Delta(K)=2(r-1)c_2(K)-(r-2)c_1(K)^2=r\,A^2-2m\deg E-2(r-1)\ell(Z)$, and
+substituting $A^2=L^2-2m\deg V$ gives~\eqref{eq:rankr}. Dividing by $-r\,\omega^2$
+yields the expression for $M_r(L)$. For $r=2$ the kernel is a line bundle,
+$\Delta(K)=0$, and~\eqref{eq:rankr} reduces to~\eqref{eq:rank2}.
+\end{proof}
+
+\begin{corollary}\label{cor:bogomolov}
+If, in addition, $K$ is $\mu$-semistable with respect to some ample class on $X$,
+then Bogomolov's inequality $\Delta(K)\ge 0$~\cite{Bo78} (see
+also~\cite[\S3.4]{HL10}) gives $M_r(L)\le 0$.
+\end{corollary}
+
+\begin{remark}\label{rem:rankr}
+Semistability of the syzygy kernel is not automatic, and for $r\ge 3$ the
+estimate $L^2\ge\frac{2m}{r}\deg\phi_*L$ is a slope inequality that is derived in
+the literature under stability hypotheses (compare~\cite{Xi87,CH88}).
+Section~\ref{sec:nef} replaces the hypothesis on $K$ by semistability of
+$\phi_*L$ on the base curve and also treats the unstable case.
+\end{remark}
+
+\section{The Nef Lemma and the Harder--Narasimhan Dichotomy}\label{sec:nef}
+
+Let $0=E_0\subsetneq E_1\subsetneq\dots\subsetneq E_n=E$ be the
+Harder--Narasimhan filtration of $E=\phi_*L$~\cite{HN75}, with slopes
+$\mu_j=\mu(E_j/E_{j-1})$, so that $\mu_1>\dots>\mu_n$ and $\mu_j$ is the minimal
+slope of $E_j$. By Lemma~\ref{lem:image}, the image of $\phi^*E_j\to L$ is
+$L(-B_j-V_j)\otimes\cI_{Z_j}$; if~\bpf{} holds, then $B_n=0$, $V_n=V$, and
+$Z_n=Z$. Set
+\[
+N_j=L-B_j-V_j-\mu_jF\in\Pic(X)\otimes\mathbb{Q}.
+\]
+
+\begin{lemma}[nef lemma]\label{lem:nef}
+For every $j$, the $\mathbb{Q}$-divisor $N_j$ is nef. Hypothesis~\bpf{} is not
+needed.
+\end{lemma}
+
+\begin{proof}
+Let $C\subset X$ be an irreducible curve. If $C$ is vertical, then $C$ is a fiber
+and $N_j\cdot C=(L-B_j)\cdot F\ge 0$, because $L(-B_j)|_{X_\eta}$ has a nonzero
+section (Lemma~\ref{lem:image}). Now let $C$ be horizontal, $\nu\colon\widetilde C\to
+C$ its normalization, and $f=\phi\circ\nu\colon\widetilde C\to Y$, which is a
+finite morphism of degree $d_C=C\cdot F\ge 1$. The map $\phi^*E_j\to
+L(-B_j-V_j)\otimes\cI_{Z_j}$ is surjective onto $L(-B_j-V_j)$ outside the finite
+set $Z_j$, in particular at the generic point of $C$. Pulling back to
+$\widetilde C$ gives a nonzero homomorphism $f^*E_j\to\nu^*L(-B_j-V_j)$ whose
+image $Q$ is an invertible quotient of $f^*E_j$ contained in $\nu^*L(-B_j-V_j)$.
+Hence
+\[
+(L-B_j-V_j)\cdot C=\deg\nu^*L(-B_j-V_j)\ge\deg Q\ge\mu_{\min}(f^*E_j)=d_C\,\mu_j .
+\]
+The last equality holds because in characteristic~$0$ the pullback of the
+Harder--Narasimhan filtration under a finite morphism of smooth curves coincides
+with the Harder--Narasimhan filtration of the pullback, with slopes multiplied by
+the degree (see~\cite[\S3.2]{HL10}). Since $F\cdot C=d_C$, this gives
+$N_j\cdot C\ge 0$.
+\end{proof}
+
+\begin{corollary}[semistable case]\label{cor:ss}
+Assume~\bpf{} and that $E=\phi_*L$ is semistable. Then $N=L-V-\mu(E)F$ is nef, and
+\[
+M_r(L)=-\frac{N^2+2m\deg V}{\omega^2}\le 0 .
+\]
+No hypothesis on the stability of the fibers, of their linear systems, or of the
+syzygy kernel is needed.
+\end{corollary}
+
+\begin{proof}
+Here $n=1$, $E_1=E$, $B_1=0$, $V_1=V$, and $\mu_1=\mu(E)$, so $N=N_1$ is nef by
+Lemma~\ref{lem:nef} and hence $N^2\ge 0$. Since $L-\mu(E)F=N+V$,
+$N\cdot V=m\deg V$, and $V^2=0$, we obtain $(L-\mu(E)F)^2=N^2+2m\deg V$; the
+claim follows from Lemma~\ref{lem:square}.
+\end{proof}
+
+\begin{proposition}[unstable case]\label{prop:unstable}
+Assume~\bpf{} and that $E=\phi_*L$ is unstable, $n\ge 2$.
+\begin{enumerate}[label=(\alph*)]
+\item If $B_1=0$, then
+$M_r(L)\le-2m\bigl(\mu_1-\mu(E)+\deg V_1\bigr)/\omega^2<0$.
+\item For all indices $a,b$ with $B_b=0$,
+\[
+L^2\ge m(\mu_a+\mu_b)+m\deg V_b ,\qquad\text{that is}\qquad
+\frac{-L^2+m(\mu_a+\mu_b)}{\omega^2}\le-\frac{m\deg V_b}{\omega^2}\le 0 .
+\]
+Such an index $b$ always exists, since $B_n=0$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) We have $L-\mu(E)F=N_1+V_1+(\mu_1-\mu(E))F$. Expanding with
+$N_1\cdot V_1=m\deg V_1$, $N_1\cdot F=m$ (as $B_1=0$), and
+$V_1^2=V_1\cdot F=F^2=0$ gives
+$(L-\mu(E)F)^2=N_1^2+2m\deg V_1+2m(\mu_1-\mu(E))$. Since $N_1^2\ge 0$ and
+$\mu_1>\mu(E)$ for unstable $E$, the claim follows from Lemma~\ref{lem:square}.
+
+(b) The divisors $N_b$ and $N_a$ are nef and $B_a$, $V_a$ are effective, so
+$N_b\cdot(N_a+B_a+V_a)\ge 0$. Here $N_a+B_a+V_a=L-\mu_aF$ and $N_b=L-V_b-\mu_bF$,
+and the intersection product equals $L^2-m\mu_a-m\mu_b-m\deg V_b$.
+\end{proof}
+
+\begin{remark}\label{rem:unstable}
+In case (a), the margin that the chain of Section~\ref{subsec:chain} produces with
+Minkowski's theorem on the full lattice is strictly negative. The coefficients in
+(b) are those that the chain would produce if the heights of the two sections were
+governed by the slopes $\mu_a$ and $\mu_b$; for instance, Corollary~1
+of~\cite{So26}, applied to the sublattice coming from $E_1$, gives a section $s_1$
+with
+$h(s_1)\le(-\mu_1/\omega^2+\varepsilon)\,\ob_P^{\,2}+c\,\delta(F)+O_\varepsilon(d)$
+for a constant $c$. Thus every coefficient that the chain can obtain from
+geometric subbundles in this way is nonpositive. The condition $B_b=0$ in (b)
+reflects the pencil step: every section coming from $E_j$ vanishes along
+$B_j\cap X_P$, so two sections taken from the same step $E_a$ with $B_a\ne 0$
+always have a common zero on $X_P$. If $B_a$ and $B_b$ merely have no common
+component, their restrictions to $X_P$ are disjoint for all but finitely many $P$,
+and the same nonpositivity follows from Proposition~\ref{prop:cross} with
+$L_1=L_2=L$.
+\end{remark}
+
+\begin{problem}[arithmetic anomaly, $r\ge 3$]\label{prob:anomaly}
+Let $r\ge 3$ and assume that $\phi_*L$ is unstable. We do not know whether, for
+points $P$ of large height, an upper bound for $h(s_1)+h(s_2)$ over pairs of
+sections without common zero can be obtained that lies below what the geometric
+slopes $\mu_a$ predict. Excluding this would require a comparison between the
+arithmetic Harder--Narasimhan polygon of the adelic lattice $H_P$ and the
+geometric Harder--Narasimhan polygon of $\phi_*L$, scaled by
+$\ob_P^{\,2}/\omega^2$. We leave this question open. For $r=2$ it does not arise
+(Remark~\ref{rem:rank2}\,(b)), and for semistable $\phi_*L$ it is answered by
+Corollary~\ref{cor:ss}.
+\end{problem}
+
+\section{Application to Soul\'e, arXiv:2611.05217v1}\label{sec:soule}
+
+\subsection{The Construction}
+We recall the Kodaira fibration of~\cite[\S\S3, 5]{So26}, which
+follows~\cite{Ko67,MD85}. Let $Y_0$ be a curve of genus~$2$ and $\chi\colon
+Y_1\to Y_0$ a nontrivial \'etale double cover with covering involution $\nu$;
+$Y_1$ has genus~$3$ and is hyperelliptic~\cite[Prop.~4\,i)]{So26}. Let $\iota$ be
+its hyperelliptic involution and $H$ the hyperelliptic class; then
+$\omega_{Y_1}\cong\OO(2H)\cong\OO(4W)$ for a Weierstrass point $W$. Restricting
+the relation $\OO(\Gamma-2\Delta_1)=(1\times\psi_1)^*\mathcal{P}+\pi_2^*L$
+of~\cite[\S5.1]{So26} to $Y_1\times\{x\}$ shows that $\psi_1\colon Y_1\to J_1$ is
+given by $x\mapsto[\nu x-x]$. The curve $Y$ is a connected component of the fiber
+product $Z$ of $\psi_1$ with multiplication by $2$ on $J_1$, and
+$\psi\colon Y\to Y_1$ is finite \'etale of degree~$k$.
+
+On $S=Y_1\times Y$ with projections $\mathrm{pr}_1$ and $p\colon S\to Y$, let
+$D_1$ and $D_2$ be the graphs of $\psi$ and $\nu\circ\psi$; they are disjoint
+because $\nu$ has no fixed point. Let $\cL\in\Pic(S)$ with
+$2\cL=\OO_S(D_1+D_2)$~\cite{MD85}, let $\rho\colon X\to S$ be the double cover
+branched along $D_1+D_2$, and set $\phi=p\circ\rho$; this morphism is smooth with
+fibers of genus~$6$. Let $E_i=\rho^{-1}(D_i)_{\mathrm{red}}$, so that
+$\rho^*D_i=2E_i$, and set $B_i=\OO_X(E_i)$. For $y\in Y$ set $P_1=\psi(y)$,
+$P_2=\nu P_1$, and $\lambda_y=\cL|_{Y_1\times\{y\}}$, a square root of
+$\OO(P_1+P_2)$. The point $P_1$ is \emph{exceptional} if $h^0(P_1+P_2)=2$;
+equivalently, $P_2=\iota P_1$~\cite[Prop.~5\,iii)]{So26}. There are four
+exceptional points, and $\Psi=\psi^{-1}(\text{exceptional points})$ has $4k$
+elements.
+
+Let $G=\phi_1^*\OO(W)$ with $\phi_1=\mathrm{pr}_1\circ\rho$. The lattice spanned
+by $G,B_1,B_2,F$ has the intersection numbers in Table~\ref{tab:lattice}; they
+are those of~\cite[Prop.~8]{So26} together with $B_i\cdot F=1$ ($E_i$ is a
+section) and $G\cdot F=2$ ($\phi_1$ has degree two on fibers). The
+Riemann--Hurwitz formula gives $\omega=4G+B_1+B_2$ and $\omega^2=12k$. Soul\'e's
+auxiliary bundle is
+\[
+L=\omega-2B_1-2B_2=4G-B_1-B_2,\qquad m=6,\qquad L^2=-20k,
+\]
+and $h^0(L_y)=2$ for general $y$~\cite[Prop.~9\,ii), iii), v)]{So26}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+ & $G$ & $B_1$ & $B_2$ & $F$\\
+\midrule
+$G$ & $0$ & $k$ & $k$ & $2$\\
+$B_1$ & $k$ & $-2k$ & $0$ & $1$\\
+$B_2$ & $k$ & $0$ & $-2k$ & $1$\\
+$F$ & $2$ & $1$ & $1$ & $0$\\
+\bottomrule
+\end{tabular}
+\caption{Intersection numbers on the Kodaira fibration of~\cite{So26}.}
+\label{tab:lattice}
+\end{table}
+
+\subsection{The Count}
+
+\begin{lemma}[$k=4$]\label{lem:k4}
+Let $G_2\subseteq J_1[2]$ be the monodromy group of the $J_1[2]$-torsor $Z\to Y_1$.
+Then $G_2=(\nu_*-1)\,J_1[2]$ and $|G_2|=4$. Consequently, $k=4$ for every choice
+of $Y_0$, of $\chi$, and of the component $Y$.
+\end{lemma}
+
+\begin{proof}
+The torsor is the pullback of $[2]\colon J_1\to J_1$ along $\psi_1$, so its
+monodromy is $\pi_1(Y_1)\to H_1(Y_1,\mathbb{Z})\xrightarrow{(\psi_1)_*}
+H_1(J_1,\mathbb{Z})\to J_1[2]$ with $(\psi_1)_*=\nu_*-1$, and every connected
+component has degree $|G_2|$ over $Y_1$. The order can be computed over
+$\mathbb{C}$. Since the mapping class group acts transitively on the nonzero
+classes in $H^1(Y_0,\mathbb{Z}/2)$, we may take
+$\pi_1(Y_0)=\langle a_1,b_1,a_2,b_2\mid[a_1,b_1][a_2,b_2]\rangle$ and assume that
+$\chi$ is given by the character with $a_1\mapsto 1$ and $b_1,a_2,b_2\mapsto 0$.
+With the Schreier transversal $\{1,a_1\}$, the subgroup $\pi_1(Y_1)$ is generated
+by $s=a_1^2$, $b_1$, $a_2$, $b_2$ and their conjugates $b_1'$, $a_2'$, $b_2'$ by
+$a_1$. The defining relator and its conjugate both map to $b_1'=b_1$ in the
+abelianization, so $H_1(Y_1,\mathbb{Z})$ is free on $s,b_1,a_2,b_2,a_2',b_2'$.
+The involution $\nu$ corresponds to conjugation by $a_1$; on homology it fixes
+$s$ and $b_1$ and exchanges $a_2\leftrightarrow a_2'$ and
+$b_2\leftrightarrow b_2'$. The image of $\nu_*-1$ is spanned by $a_2'-a_2$ and
+$b_2'-b_2$, which extend to a basis, so its reduction modulo~$2$ has order~$4$.
+\end{proof}
+
+\begin{lemma}[effective square roots]\label{lem:keff}
+Let $P_1$ be exceptional. The classes $\lambda_y$, $y\in\psi^{-1}(P_1)$, form a
+coset of $G_2$ in the set of square roots of $H$. Every coset of $G_2$ in this set
+contains at most two effective classes.
+\end{lemma}
+
+\begin{proof}
+For $(x,z)\in Z$, the class $x+z\in\Pic^1(Y_1)$ is a square root of $x+\nu x$,
+since $2(x+z)=2x+\nu x-x$. The map $y\mapsto\lambda_y-(\psi(y)+\psi_2(y))$, with
+$\psi_2\colon Y\to J_1$ denoting the second projection, takes values in $J_1[2]$
+and is therefore constant on the connected curve $Y$. Over $P_1$ the points of $Y$
+form a $G_2$-orbit in the fiber of $Z$, so the classes $\lambda_y$ form a coset of
+$G_2$. An effective square root of $H$ has the form $\OO(Q)$ with $2Q\in|H|$, and
+thus corresponds to a Weierstrass point. Let $W\ne W'$ be effective in the same
+coset. Then $W'-W=(\nu-1)g$ for some $g\in J_1[2]$, hence
+$(1+\nu)(W'-W)=(\nu^2-1)g=0$ and $W'+\nu W'\sim W+\nu W$. If these divisors were
+distinct, $W+\nu W$ would move in a pencil and hence lie in $|H|$, giving
+$\nu W=\iota W=W$, which is impossible because $\nu$ is fixed-point-free. Hence
+$W'=\nu W$, and a coset contains at most the two effective roots $W,\nu W$.
+\end{proof}
+
+\begin{lemma}[torsion of length one]\label{lem:length}
+The torsion of $R^1p_*\cL$ is supported precisely at the points $y$ with
+$h^0(\lambda_y)\ne 0$, and has length one at each of them.
+\end{lemma}
+
+\begin{proof}
+Generically $h^0(\lambda_y)=0$~\cite[Prop.~5\,ii)]{So26}, so $p_*\cL=0$. Let $\pi$
+be a uniformizer at $y$. The exact sequence $0\to\cL\xrightarrow{\pi}\cL\to\lambda_y\to
+0$ gives $R^1p_*\cL[\pi]\cong H^0(\lambda_y)$, so the torsion $T_y$ is nonzero
+precisely when $h^0(\lambda_y)\ne 0$, and it is cyclic because
+$h^0(\lambda_y)\le 1$. Likewise, $R^1p_*\cL[\pi^2]$ is isomorphic to the space of
+sections of $\cL$ over $Y_1\times\operatorname{Spec}\OO_{Y,y}/\pi^2$, so
+$\ell(T_y)\ge 2$ if and only if the section $s_W$ of $\lambda_y=\OO(W)$ extends to
+first order. This holds if and only if $v\cup s_W=0$ in $H^1(\OO(W))$, where
+$v\in H^1(\OO_{Y_1})$ is the tangent vector of $y\mapsto\lambda_y$; that is, if
+and only if $v$ lies on the line $d\mathrm{AJ}_W(T_WY_1)$. Under $H^1(\OO_{Y_1})
+\cong H^0(\omega_{Y_1})^\vee$, this line is spanned by the evaluation at $W$.
+Since $2\lambda_y=\OO(\psi(y)+\nu\psi(y))$ and $\psi$ is \'etale, $2v$ is the
+functional $\alpha\mapsto\alpha_{P_1}(t)+\alpha_{P_2}(d\nu\,t)$ for a nonzero
+tangent vector $t$ at $P_1$. At an exceptional point $P_2=\iota P_1$, since
+$\iota$ commutes with $\nu$, the involution $\nu\iota$ fixes $P_2$ and has
+derivative $-1$ there, so $d\nu=-d\iota$ at $P_1$; as $\iota^*\alpha=-\alpha$ for
+all $\alpha\in
+H^0(\omega_{Y_1})$, we obtain $2v=2\,\mathrm{ev}_{P_1,t}\ne 0$. The evaluations at
+$P_1$ and $W$ are proportional only if the canonical map identifies $P_1$ and $W$,
+that is, if $P_1\in\{W,\iota W\}=\{W\}$. However, $P_1=W$ would give $W\sim P_2$
+and hence $P_2=P_1$, a contradiction. Thus $\ell(T_y)=1$.
+\end{proof}
+
+\begin{proposition}[degree formula]\label{prop:degree}
+Let $T$ be the number of points $y\in Y$ with $h^0(\lambda_y)\ne 0$; all of them
+lie in $\Psi$. Then
+\[
+\deg\phi_*L=-7k+T .
+\]
+\end{proposition}
+
+\begin{proof}
+Set $K_1=\mathrm{pr}_1^*\omega_{Y_1}=\omega_{S/Y}$. The canonical bundle formula
+for double covers~\cite[I.17]{BHPV04} gives $\omega_{X/Y}=\rho^*(K_1+\cL)$, and
+$B=2B_1+2B_2=\rho^*(D_1+D_2)=\rho^*(2\cL)$. Hence $L=\rho^*(K_1-\cL)$, and by
+$\rho_*\OO_X=\OO_S\oplus\cL^{-1}$~\cite[(13)]{So26} we have
+\[
+\phi_*L=p_*(K_1-\cL)\oplus p_*(K_1-2\cL).
+\]
+\emph{Second summand.} Since $x+\iota x\in|H|$ for every $x$, the seesaw principle
+gives $\OO_S(D_i+\iota D_i)\cong\mathrm{pr}_1^*\OO(H)\otimes p^*M_i$ with
+$M_i\in\Pic(Y)$, where $\iota D_i=(\iota\times 1)(D_i)$. Intersecting with
+$\{x\}\times Y$, which meets each of $D_i$ and $\iota D_i$ transversally in $k$
+points and on which $\mathrm{pr}_1^*\OO(H)$ is trivial, gives $\deg M_i=2k$. As
+$K_1=\mathrm{pr}_1^*\OO(2H)$, we have
+\[
+K_1-2\cL=K_1-D_1-D_2\cong\OO_S(\iota D_1+\iota D_2)\otimes p^*(-M_1-M_2).
+\]
+The automorphism $\iota\times 1$ of $S$ over $Y$ and~\cite[(20)]{So26} give
+$p_*\OO_S(\iota D_1+\iota D_2)\cong p_*\OO_S(D_1+D_2)\cong\OO_Y$, hence
+$\deg p_*(K_1-2\cL)=-4k$.
+
+\emph{First summand.} Relative duality gives
+$p_*(K_1-\cL)\cong\mathcal{H}om(R^1p_*\cL,\OO_Y)$, so
+$\deg p_*(K_1-\cL)=-(\deg R^1p_*\cL-T)$ by Lemma~\ref{lem:length}. Since
+$p_*\cL=0$, Grothendieck--Riemann--Roch for $p$ gives
+$\deg R^1p_*\cL=-\bigl(\tfrac12\cL^2-\tfrac12K_1\cdot\cL\bigr)$, and
+$4\cL^2=(D_1+D_2)^2=-8k$ together with $2K_1\cdot\cL=K_1\cdot(D_1+D_2)=8k$ yields
+$\deg
+R^1p_*\cL=3k$. Hence $\deg p_*(K_1-\cL)=T-3k$.
+
+Adding the two degrees gives $\deg\phi_*L=T-3k-4k$. By~\cite[Prop.~5\,ii)]{So26},
+$h^0(\lambda_y)\ne 0$ forces $P_1$ to be exceptional, so the points counted by $T$
+lie in $\Psi$.
+\end{proof}
+
+\begin{theorem}\label{thm:soule-count}
+In the Kodaira fibration of~\cite{So26}, with $L=\omega-2B_1-2B_2$,
+\[
+\deg\phi_*L=-7k+4k_{\mathrm{eff}},\qquad k=4,\qquad 0\le k_{\mathrm{eff}}\le 2,
+\]
+where $4k_{\mathrm{eff}}=T$. In particular, $\deg\phi_*L\le-20<-12=-3k$, so
+Proposition~9\,vi) of arXiv:2611.05217v1 is false. Moreover,
+$q=-\deg\phi_*L/\omega^2\ge 5/12$, and the leading coefficient $5/3-6q$
+of~\cite[(36)]{So26} satisfies $5/3-6q\le-5/6$.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:degree} gives $\deg\phi_*L=-7k+T$. Lemma~\ref{lem:k4} gives
+$k=4$, and Lemma~\ref{lem:keff} shows that each of the four fibers of $\psi$ over
+an exceptional point contributes at most two points to $T$, so $T\le 8$. Hence
+$\deg\phi_*L\le-28+8=-20$ and $q\ge 20/48=5/12$.
+\end{proof}
+
+\begin{theorem}[structural form]\label{thm:soule-structural}
+In the setting of~\cite{So26}, the linear system $|L_\eta|$ is base-point-free for
+every choice of the component $Y$ and of $\cL$. Consequently,
+$\deg\phi_*L\le L^2/6=-10k/3<-3k$ and $M(L)\le 0$; in particular, no choice of the
+component $Y$ or of $\cL$ satisfies Proposition~9\,vi).
+\end{theorem}
+
+\begin{proof}
+\emph{Step 1: fibers outside $\Psi$.} Let $y\notin\Psi$, so that $P_2\ne\iota P_1$.
+Then $h^0(\lambda_y)=0$ by~\cite[Prop.~5\,ii)]{So26}, and Riemann--Roch gives
+$h^0(\omega_{Y_1}-\lambda_y)=1$ and $h^0(\omega_{Y_1}-2\lambda_y)=h^0(P_1+P_2)=1$.
+As $\omega_{Y_1}\cong\OO(2H)$ and $P_i+\iota P_i\in|H|$, the unique effective
+divisor in $|\omega_{Y_1}-2\lambda_y|$ is $\iota P_1+\iota P_2$. By the
+decomposition of $\phi_*L$ in the proof of Proposition~\ref{prop:degree},
+$H^0(X_y,L_y)$ is spanned by $\rho^*\sigma_y$ and $t_y\,\rho^*\tau_y$, where
+$\sigma_y$ spans $H^0(\omega_{Y_1}-\lambda_y)$, $\tau_y$ has divisor
+$\iota P_1+\iota P_2$, and $t_y$ is the section of $\rho^*\lambda_y$ that vanishes
+at the two ramification points. Hence $|L_y|$ has a base point if and only if
+$\sigma_y$ vanishes at one of $P_1$, $P_2$, $\iota P_1$, $\iota P_2$, and by
+Riemann--Roch $\sigma_y$ vanishes at a point $Q$ if and only if
+$h^0(\lambda_y+Q)\ne 0$.
+
+\emph{Step 2: specialization.} On the open subset $Y^\circ\subseteq Y$ where
+$h^0(\lambda_y)=0$, one has $h^0(\omega_{Y_1}-\lambda_y)=1$, so $p_*(K_1-\cL)$ is
+a line bundle on $Y^\circ$ whose formation commutes with base change. Hence, for
+each of the four maps $Q=\psi,\nu\psi,\iota\psi,\iota\nu\psi$ from $Y$ to $Y_1$,
+the set of $y\in
+Y^\circ$ with $\sigma_y(Q(y))=0$ is closed in $Y^\circ$. None of these sets is all
+of $Y^\circ$: indeed, let $x_0$ be exceptional; by Lemmas~\ref{lem:k4}
+and~\ref{lem:keff} there exists $y_0\in\psi^{-1}(x_0)$ with $h^0(\lambda_0)=0$,
+where $\lambda_0=\lambda_{y_0}$. Since $\nu x_0=\iota x_0\ne x_0$, the four points
+$Q(y_0)$ lie in $\{x_0,\iota
+x_0\}$, neither of them is a Weierstrass point, and $2\lambda_0\sim x_0+\iota
+x_0\sim H$. If $\lambda_0+q\sim a+b$ with $q\in\{x_0,\iota x_0\}$, then
+$2a+2b\in|H+2q|$. As $q$ is not a Weierstrass point, $h^0(H+2q)=2$ and
+$|H+2q|=|H|+2q$, so $2a+2b=c+\iota c+2q$ for some point $c$. All multiplicities on
+the left-hand side are even, whereas for $c\ne\iota c$ either $c$ or $q$ has odd
+multiplicity on the right-hand side. Hence $c=\iota c$ and $a+b=c+q$, so
+$\lambda_0\sim c$ is effective, a contradiction. Thus $\sigma_{y_0}$ vanishes at
+none of the points $Q(y_0)$, the four closed subsets are finite, and by Step~1 the
+linear system $|L_y|$ is base-point-free for all but finitely many
+$y\in Y\setminus\Psi$.
+
+\emph{Step 3: the generic fiber.} For $y\in Y\setminus\Psi$ one has $h^0(L_y)=2$,
+so $\phi_*L\otimes k(y)\to H^0(X_y,L_y)$ is bijective. The closure of a base point
+of $|L_\eta|$ is a horizontal curve along which $\phi^*\phi_*L\to L$ is not
+surjective; it meets every fiber $X_y$, and for $y\in Y\setminus\Psi$ it meets $X_y$
+in a base point of $|L_y|$, contrary to Step~2. Hence $|L_\eta|$ is
+base-point-free, and Theorem~\ref{thm:rank2} with $m=6$ and $L^2=-20k$ gives the
+claimed bound.
+
+\emph{Step 4: relation to~\cite{So26}.} In~\cite[\S6.3.3]{So26} the square root
+$\cL'$ is chosen depending on the point $\bar y'\notin\Phi'$, and~\cite[Lemma~3]{So26}
+shows that $L'_{P'}$ has no base point. Since $h^0(L'_{P'})=2$ equals the rank of
+$\phi'_*L'$, the argument of Step~3 shows that this already forces $|L'_\eta|$ to be
+base-point-free; thus every bundle to which~\cite[(28)]{So26} is applied falls under
+Theorem~\ref{thm:rank2}. Steps~1--3 apply verbatim after the base change $a\colon
+Y'\to Y$ of~\cite[\S6.3.1]{So26}, with $\psi\circ a$ in place of $\psi$. Let $J'$ be
+the Jacobian of $Y'$. Since $\operatorname{Hom}(J_1,J')$ is torsion-free,
+$\Pic(Y_1\times Y')[2]=\mathrm{pr}_1^*J_1[2]\oplus\mathrm{pr}_2^*J'[2]$, so on fibers
+$\cL'$ restricts to the classes $\lambda_{a(y')}+\varepsilon$ for a fixed
+$\varepsilon\in J_1[2]$. Over an exceptional point $x_0$, the classes
+$\lambda_y+\varepsilon$, $y\in\psi^{-1}(x_0)$, form a coset of $G_2$, so by
+Lemma~\ref{lem:keff} some $y_0\in\psi^{-1}(x_0)$ satisfies
+$h^0(\lambda_{y_0}+\varepsilon)=0$; as $a$ is surjective, $y_0$ lifts to a point of
+$(\psi\circ a)^{-1}(x_0)$, which is all that Step~2 requires. Lemma~\ref{lem:k4} is
+used only for $\psi$, with $k=4$. Base-point-freeness therefore does not depend on
+the pointwise choice.
+\end{proof}
+
+\begin{remark}[where the proof of Proposition~9 breaks down]\label{rem:gap}
+Inequality~(24) of~\cite{So26} asserts that
+$\deg(R^1\phi_*B)_{\mathrm{tor}}\ge 8k$. It rests on~\cite[Prop.~9\,iv)]{So26},
+which states that $h^0(B_{\bar y})=3$ whenever $P_1$ is exceptional.
+Its proof uses the sentence ``when $P_1$ is exceptional $h^0(\lambda)=1$'', with
+a reference to parts ii) and iii) of~\cite[Prop.~5]{So26}. Proposition~5\,ii),
+however, states that $h^0(\lambda)=0$ unless $\lambda$ is a Weierstrass point, in
+which case $h^0(\lambda)=1$ and $h^0(P_1+P_2)=2$; it thus proves ``$\lambda$
+effective $\Rightarrow$ $P_1$ exceptional'', the converse of the implication
+needed. By Lemma~\ref{lem:keff}, the implication used fails at no fewer than
+$4k-8=8$ of the $16$ points of $\Psi$; there $h^0(B_{\bar y})=2$ and
+$h^0(L_{\bar y})=3$, so Proposition~9\,iv) and~v) fail at these points. Combined
+with~\cite[(16), (18), (22)]{So26}, Proposition~\ref{prop:degree} gives
+$\deg(R^1\phi_*B)_{\mathrm{tor}}=4k+T\le 24$ instead of $\ge 32$. Since a global
+modification of $\cL$ by an element of $J_1[2]$ translates all cosets
+simultaneously, no choice of $\cL$ alters the bound of Lemma~\ref{lem:keff}.
+Theorem~1 of~\cite{So26} remains open as a statement; what fails is its proof via
+Proposition~9\,vi), and by Corollary~\ref{cor:rank2} together with Step~4 of the
+proof of Theorem~\ref{thm:soule-structural} the pencil step cannot be salvaged by
+another rank-two auxiliary bundle $L'$ with base-point-free $|L'_\eta|$. If
+$|L'_\eta|$ has a base point, then $\phi_*L'\otimes k(P)\to H^0(X_P,L'_P)$ is
+bijective for $P$ outside a finite set, so by the argument of Step~3 of that proof
+any two sections of $L'_P$ have a common zero for all such $P$, and the pencil
+hypothesis of~\cite[(28)]{So26} cannot be satisfied.
+\end{remark}
+
+\section{Scope: Cross Terms, Single Sections, Source Bundles}\label{sec:scope}
+
+This section records three further consequences of the nef lemma and of the
+identity underlying Theorem~\ref{thm:rankr}. The formal statements are geometric
+and proved in full; the remarks on their arithmetic meaning are interpretive.
+
+\subsection{Cross Terms}
+Proposition~3 of~\cite{So26} is stated for two line bundles $L_1,L_2$ of fiber
+degrees $d_1,d_2$: $-\Lb_1\cdot\Lb_2\le d_2h(s_1)+d_1h(s_2)$. If $s_1$ comes from
+the Harder--Narasimhan step $a$ of $\phi_*L_1$ and $s_2$ from step $b$ of
+$\phi_*L_2$, with heights governed by the slopes $\mu_{1,a}$ and $\mu_{2,b}$, the
+leading coefficient becomes
+\[
+M(L_1,L_2)=\frac{-L_1\cdot L_2+d_2\mu_{1,a}+d_1\mu_{2,b}}{\omega^2}
+=-\frac{(L_1-\mu_{1,a}F)\cdot(L_2-\mu_{2,b}F)}{\omega^2}.
+\]
+
+\begin{proposition}\label{prop:cross}
+If the horizontal base divisors $B_{1,a}$ and $B_{2,b}$ have no common component,
+then $(L_1-\mu_{1,a}F)\cdot(L_2-\mu_{2,b}F)\ge 0$, and hence $M(L_1,L_2)\le 0$.
+\end{proposition}
+
+\begin{proof}
+Write $L_1-\mu_{1,a}F=N_{1,a}+B_{1,a}+V_{1,a}$ and similarly for $L_2$, with
+$N_{1,a},N_{2,b}$ nef by Lemma~\ref{lem:nef}. In the expansion, every term is
+nonnegative: the intersection of two nef divisors, of a nef and an effective
+divisor, $B_{1,a}\cdot B_{2,b}\ge 0$ (since they share no common component), of a
+horizontal and a vertical divisor, and $V_{1,a}\cdot V_{2,b}=0$.
+\end{proof}
+
+\subsection{Single Sections and Jets along Curves}
+For a single section $s$ and an irreducible horizontal curve $C$ not contained in
+the divisor of $s$, comparing pointwise norms with sup-norms gives a bound of the
+form $-\Lb\cdot\overline C\le(C\cdot F)\,h(s)$, whose geometric coefficient is
+$-(L-\mu_jF)\cdot C/\omega^2$ for $s$ from $E_j$. Normal jets of order $b$ along a
+curve $C$ appearing in $B_j$ with multiplicity $b$ are sections of $(L-bC)|_C$.
+
+\begin{proposition}\label{prop:curves}
+Let $C$ be an irreducible horizontal curve. (a) If $C\not\subseteq B_j$, then
+$(L-\mu_jF)\cdot C\ge 0$. (b) If $C$ occurs in $B_j$ with multiplicity $b$, then
+$(L-bC-\mu_jF)\cdot C\ge 0$.
+\end{proposition}
+
+\begin{proof}
+(a) We have $L-\mu_jF=N_j+B_j+V_j$ with $N_j\cdot C\ge 0$, $B_j\cdot C\ge 0$, and
+$V_j\cdot C\ge 0$. (b) Similarly, $L-bC-\mu_jF=N_j+(B_j-bC)+V_j$, and $C$ is not a
+component of $B_j-bC$.
+\end{proof}
+
+\subsection{Source Bundles Not Pulled Back from the Base}
+The identity of Theorem~\ref{thm:rankr} admits a generalization to an arbitrary
+source bundle.
+
+\begin{proposition}\label{prop:universal}
+Let $\cF$ be locally free of rank $r\ge 2$ on $X$ and $\cF\to L$ a morphism with
+image $A\otimes\cI_Z$, where $A$ is a line bundle and $Z$ has finite length. Then
+the kernel $K$ is locally free of rank $r-1$, and
+\[
+\Bigl(A-\frac{c_1(\cF)}{r}\Bigr)^2=\frac{\Delta(K)+2(r-1)\ell(Z)}{r}-\frac{r-1}{r^2}\,\Delta(\cF).
+\]
+\end{proposition}
+
+\begin{proof}
+We have $c_1(K)=c_1(\cF)-A$ and $\ch_2(K)=\ch_2(\cF)-\frac12A^2+\ell(Z)$.
+Inserting these into $\Delta(K)=c_1(K)^2-2(r-1)\ch_2(K)$, using
+$\ch_2(\cF)=(c_1(\cF)^2-\Delta(\cF))/(2r)$, and collecting terms gives the
+identity.
+\end{proof}
+
+For $\cF=\phi^*E$ one has $\Delta(\cF)=0$ and $c_1(\cF)\equiv(\deg E)F$, and the
+proposition reduces to Theorem~\ref{thm:rankr}. When $\Delta(K)\ge 0$, the only
+term that can make the left-hand side negative is $\Delta(\cF)>0$, which requires
+a bundle that is not pulled back from the base. In the arithmetic setting, this
+points back to Parshin's program of an arithmetic Bogomolov--Miyaoka--Yau
+inequality~\cite{Pa88,MB90} and to arithmetic inequalities of Bogomolov--Gieseker
+type~\cite{Mo94}. Soul\'e~\cite{So05} followed Miyaoka's approach through rank-two
+extensions; he notes that the arithmetic second Chern number ``contains an
+archimedean summand -- an integral over the set of complex points of $X$ -- which
+is not easy to bound from above'', and he obtains lower bounds for some successive
+minima rather than an upper bound for $\ob^{\,2}$. We draw no further conclusion
+from this.
+
+\section{Concluding Remarks}\label{sec:conclusion}
+
+Within the class of arguments considered here, all available positivity is of one
+kind: the intersection product of a nef divisor with an effective divisor is
+nonnegative. In every case treated above, this positivity enters the leading
+coefficient with the sign that makes the margin nonpositive, whereas a PMB
+argument requires a positive margin. For pencils, this is established by
+Theorem~\ref{thm:rank2} in rank two and by Corollary~\ref{cor:ss} for semistable
+$\phi_*L$ in any rank. What remains open in this direction is the arithmetic
+anomaly question for unstable $\phi_*L$ of rank $r\ge 3$ (Open
+problem~\ref{prob:anomaly}). For~\cite{So26}, version~1, the consequence is
+limited and concrete: Proposition~9\,vi) is false, inequality~(36) has a
+negative leading coefficient, and the proof of Theorem~1 given there is
+incomplete.
+
+\phantomsection
+\addcontentsline{toc}{section}{AI Disclosure}
+\begingroup
+\sloppy\emergencystretch=2em
+\input{ai_disclosure_STANDARD_en}
+\endgroup
+
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{99}
+\small
+\frenchspacing
+
+\bibitem{BHPV04}
+W.~P. Barth, K.~Hulek, C.~A.~M. Peters, A.~Van de Ven,
+\emph{Compact Complex Surfaces}, 2nd enlarged ed.,
+Ergebnisse der Mathematik und ihrer Grenzgebiete (3) 4, Springer, Berlin, 2004.
+
+\bibitem{Bo78}
+F.~A. Bogomolov,
+Holomorphic tensors and vector bundles on projective varieties,
+\emph{Izv. Akad. Nauk SSSR Ser. Mat.} 42 (1978), 1227--1287;
+English transl.\ \emph{Math. USSR-Izv.} 13 (1979), 499--555.
+
+\bibitem{CH88}
+M.~Cornalba, J.~Harris,
+Divisor classes associated to families of stable varieties, with applications
+to the moduli space of curves,
+\emph{Ann. Sci. \'Ec. Norm. Sup\'er.} (4) 21 (1988), 455--475.
+
+\bibitem{HN75}
+G.~Harder, M.~S. Narasimhan,
+On the cohomology groups of moduli spaces of vector bundles on curves,
+\emph{Math. Ann.} 212 (1975), 215--248.
+
+\bibitem{HL10}
+D.~Huybrechts, M.~Lehn,
+\emph{The Geometry of Moduli Spaces of Sheaves}, 2nd ed.,
+Cambridge Mathematical Library, Cambridge University Press, Cambridge, 2010.
+
+\bibitem{Ko67}
+K.~Kodaira,
+A certain type of irregular algebraic surfaces,
+\emph{J. Analyse Math.} 19 (1967), 207--215.
+
+\bibitem{MD85}
+M.~Martin-Deschamps,
+La construction de Kodaira--Parshin,
+in: \emph{S\'eminaire sur les pinceaux arithm\'etiques: la conjecture de Mordell},
+Ast\'erisque 127 (1985), 261--273.
+
+\bibitem{Mi77}
+Y.~Miyaoka,
+On the Chern numbers of surfaces of general type,
+\emph{Invent. Math.} 42 (1977), 225--237.
+
+\bibitem{MB90}
+L.~Moret-Bailly,
+Hauteurs et classes de Chern sur les surfaces arithm\'etiques,
+in: \emph{S\'eminaire sur les pinceaux de courbes elliptiques (\`a la recherche
+de \guillemotleft Mordell effectif\guillemotright)}, Ast\'erisque 183 (1990), 37--58.
+
+\bibitem{Mo94}
+A.~Moriwaki,
+Inequality of Bogomolov--Gieseker type on arithmetic surfaces,
+\emph{Duke Math. J.} 74 (1994), 713--761.
+
+\bibitem{Pa88}
+A.~N. Parshin,
+The Bogomolov--Miyaoka--Yau inequality for the arithmetical surfaces and its
+applications,
+in: \emph{S\'eminaire de Th\'eorie des Nombres, Paris 1986--87},
+Progr. Math. 75, Birkh\"auser, Boston, 1988, 299--312.
+
+\bibitem{So05}
+C.~Soul\'e,
+Semi-stable extensions on arithmetic surfaces,
+arXiv:math/0505079 (2005); in: \emph{Moduli Spaces and Arithmetic Geometry
+(Kyoto, 2004)}, Adv. Stud. Pure Math. 45 (2006), 283--295.
+
+\bibitem{So26}
+C.~Soul\'e,
+On the $abc$ conjecture,
+arXiv:2611.05217, version~1 (3 November 2026).
+
+\bibitem{Xi87}
+G.~Xiao,
+Fibered algebraic surfaces with low slope,
+\emph{Math. Ann.} 276 (1987), 449--466.
+
+\end{thebibliography}
+
+\end{document}

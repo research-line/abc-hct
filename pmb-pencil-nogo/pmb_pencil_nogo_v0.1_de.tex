@@ -1,0 +1,1058 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[unicode,pdfencoding=auto,psdextra]{hyperref}
+
+\hypersetup{
+  pdftitle={Kein positiver Spielraum aus Büschelargumenten: Xiaos Lemma, eine Spielraumidentität in Rang r und die Nef-Barriere in Höhenargumenten nach Parshin und Moret-Bailly},
+  pdfauthor={Lukas Geiger},
+  pdfsubject={Büschelargumente für obere Schranken arithmetischer Selbstschnittzahlen},
+  pdfkeywords={Parshin-Moret-Bailly, arithmetische Flächen, Xiaos Lemma, Harder-Narasimhan-Filtrierung, Bogomolov-Ungleichung, Kodaira-Faserung},
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  pdflang={de-DE},
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  citecolor=black
+}
+
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\emergencystretch=1.5em
+
+\newtheorem{theorem}{Satz}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Korollar}
+\newtheorem*{theoremA}{Satz A}
+\newtheorem*{theoremB}{Satz B}
+\newtheorem*{theoremC}{Satz C}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{problem}[theorem]{Offenes Problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Bemerkung}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\ch}{ch}
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\ob}{\overline{\omega}}
+\newcommand{\Lb}{\overline{L}}
+\newcommand{\degh}{\widehat{\deg}}
+\newcommand{\bpf}{\textup{(BPF)}}
+
+\title{Kein positiver Spielraum aus Büschelargumenten:\\ Xiaos Lemma, eine Spielraumidentität in Rang~$r$\\ und die Nef-Barriere in Höhenargumenten nach Parshin und Moret-Bailly}
+\author{Lukas Geiger\\
+Unabhängiger Forscher, Bernau im Schwarzwald, Deutschland\\
+ORCID: \href{https://orcid.org/0009-0005-7296-1534}{0009-0005-7296-1534}}
+\date{Entwurf v0.1, 7.~November 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Höhenargumente nach Parshin und Moret-Bailly zielen auf eine obere Schranke für
+die arithmetische Selbstschnittzahl $\ob_P^{\,2}$ der relativ dualisierenden Garbe
+auf den Fasern einer Faserung $\phi\colon X\to Y$ über einer Kurve. Ein neuer
+Ansatz dieser Art (Soul\'e, arXiv:2611.05217, Version~1) gewinnt die
+entscheidende Abschätzung aus einem Büschel, nämlich aus zwei Schnitten eines
+Hilfsgeradenbündels $L$ ohne gemeinsame Nullstelle, dem Satz von Minkowski über
+sukzessive Minima und einem Übergang von klassischen zu arithmetischen Graden. Der
+führende Koeffizient der resultierenden Ungleichung ist der geometrische
+Spielraum $M=(-L^2+m\deg\phi_*L)/\omega^2$, wobei $m$ den Fasergrad von $L$
+bezeichnet; eine obere Schranke für $\ob_P^{\,2}$ erfordert $M>0$. Wir zeigen,
+dass dieser Fall nie eintritt. In Rang zwei liefert die Koszul-Auflösung der
+Auswertungsabbildung die exakte Identität
+$-L^2+m\deg\phi_*L=-\ell(Z)-2m\deg V\le 0$ (Xiaos Lemma für Büschel), wobei $Z$
+und $V$ den endlichen bzw.\ den vertikalen Anteil des Basisortes bezeichnen. In
+Rang $r$ beweisen wir eine Spielraumidentität mittels der
+Bogomolov-Diskriminante des Syzygienkerns sowie ein Nef-Lemma im Sinne Xiaos;
+dieses liefert $M_r\le 0$, sobald $\phi_*L$ semistabil ist, und strikte oder
+partielle Negativität im Harder--Narasimhan-instabilen Fall. Die arithmetische
+Seite des instabilen Falls bleibt für $r\ge 3$ offen. Als Anwendung zeigen wir,
+dass Proposition~9\,vi) in arXiv:2611.05217v1 falsch ist: Für die dort verwendete
+Kodaira-Faserung gilt $k=4$, über jedem exzeptionellen Punkt sind höchstens zwei
+der vier Quadratwurzeln effektiv, und es folgt $\deg\phi_*L=-7k+4k_{\mathrm{eff}}\le
+-20<-3k$. Der fehlerhafte Beweisschritt verwendet die Umkehrung der in
+Proposition~5\,ii) jenes Preprints bewiesenen Implikation. Abschließend gehen wir
+kurz auf Kreuzterme, einzelne Schnitte und Jets längs Kurven sowie auf Quellbündel
+ein, die nicht von der Basis zurückgezogen sind. Über die $abc$-Vermutung wird
+nichts ausgesagt.
+\end{abstract}
+
+\section{Einleitung}\label{sec:intro}
+
+Parshin~\cite{Pa88} schlug ein arithmetisches Analogon der
+Bogomolov--Miyaoka--Yau-Ungleichung für komplexe Flächen vor (zu den
+Ungleichungen von Bogomolov und Miyaoka siehe~\cite{Bo78,Mi77}): eine obere
+Schranke für die arithmetische Selbstschnittzahl der relativ dualisierenden Garbe
+einer arithmetischen Fläche in Abhängigkeit von der Diskriminante der Basis.
+Parshin und Moret-Bailly~\cite{Pa88,MB90} zeigten, dass eine solche Schranke,
+angewandt auf die Fasern einer geeigneten Faserung, weitreichende diophantische
+Konsequenzen hat, darunter effektive Aussagen vom Mordell-Typ und Formen der
+$abc$-Vermutung (siehe auch~\cite{So05}). Argumente dieser Art nennen wir
+\emph{Höhenargumente nach Parshin und Moret-Bailly (PMB-Argumente)}.
+
+In einem neuen Preprint~\cite{So26} (arXiv:2611.05217, Version~1, eingereicht am
+3.~November 2026) setzt Soul\'e diese Strategie für eine Kodaira-Faserung
+$\phi\colon X\to Y$ mit Fasern vom Geschlecht~$6$ über einer étalen Überlagerung
+einer Kurve vom Geschlecht~$2$ um~\cite{Ko67,MD85}. Die obere Schranke für
+$\ob_P^{\,2}$ auf der Faser $X_P$ beruht auf einem \emph{Büschel}: einem
+Hilfsgeradenbündel $L$ auf $X$, zwei Schnitten von $L_P$ ohne gemeinsame
+Nullstelle~\cite[Prop.~3]{So26}, dem Satz von Minkowski über sukzessive Minima
+und einem Übergang von klassischen zu arithmetischen Graden~\cite[Cor.~1]{So26}.
+Der führende Koeffizient der resultierenden Ungleichung ist eine rein geometrische
+Größe, die wir den \emph{Spielraum} nennen:
+\begin{equation}\label{eq:margin-intro}
+M(L)=\frac{-L^2+m\deg\phi_*L}{\omega^2},
+\end{equation}
+wobei $m$ den Grad von $L$ auf einer Faser bezeichnet und $\omega=\omega_{X/Y}$
+gesetzt ist. Das Argument beschränkt $\ob_P^{\,2}$ genau dann nach oben, wenn
+$M(L)>0$ gilt (Abschnitt~\ref{sec:setting}). In~\cite{So26} stützt sich die
+Positivität von $M(L)$ auf die untere Schranke $\deg\phi_*L\ge -3k$
+aus~\cite[Prop.~9\,vi)]{So26}.\footnote{Wir zitieren~\cite{So26} nach der
+Nummerierung der Druckfassung von Version~1. In der \TeX-Quelle von Version~1
+tragen die als Propositionen~3, 4, 5, 8 und~9 gedruckten Aussagen die Labels
+\texttt{prop12}, \texttt{prop3}, \texttt{prop13}, \texttt{prop5} und
+\texttt{prop6}, während Lemma~3 das Label \texttt{lm15} trägt. Gleichungsnummern
+wie (24) und (28)--(36) sind in der Quelle manuell vergeben und stimmen mit der
+Druckfassung überein.}
+
+In dieser Note zeigen wir, dass der Spielraum eines Büschels nie positiv ist, und
+ziehen daraus die Folgerung für~\cite{So26}.
+
+\begin{theoremA}[Satz~\ref{thm:rank2}]
+Es sei $\phi\colon X\to Y$ eine Faserung einer glatten projektiven Fläche über
+einer glatten projektiven Kurve mit integren Fasern und $L$ ein Geradenbündel mit
+$h^0(L_\eta)=2$, dessen Linearsystem auf der generischen Faser basispunktfrei
+ist. Bezeichnet $L(-V)\otimes\cI_Z$ das Bild von $\phi^*\phi_*L\to L$, so gilt
+\[
+-L^2+m\deg\phi_*L=-\ell(Z)-2m\deg V\le 0 .
+\]
+Folglich ist $M(L)\le 0$, mit Gleichheit nur bei surjektiver Auswertungsabbildung.
+\end{theoremA}
+
+Dies ist Xiaos Lemma für Büschel~\cite{Xi87} in exakter Form; eine
+Stabilitätsvoraussetzung ist hierfür nicht erforderlich.
+
+\begin{theoremB}[Satz~\ref{thm:rankr}, Korollar~\ref{cor:ss}, Proposition~\ref{prop:unstable}]
+Für $r=\rk\phi_*L\ge 2$ lautet der maßgebliche Spielraum
+$M_r(L)=(-L^2+\tfrac{2m}{r}\deg\phi_*L)/\omega^2$, und es gilt
+\[
+M_r(L)=-\frac{\Delta(K)+2rm\deg V+2(r-1)\ell(Z)}{r\,\omega^2},
+\]
+wobei $\Delta(K)$ die Bogomolov-Diskriminante des Syzygienkerns $K$ bezeichnet.
+Ist $\phi_*L$ semistabil, so gilt $M_r(L)\le 0$. Ist $\phi_*L$ instabil, so gilt
+$M_r(L)<0$, sofern die maximal destabilisierende Untergarbe keinen horizontalen
+Basisdivisor besitzt; allgemein ist jeder wie in
+Proposition~\ref{prop:unstable}\,(b) aus zwei Harder--Narasimhan-Steigungen
+gebildete Koeffizient nichtpositiv.
+\end{theoremB}
+
+Der semistabile Fall stützt sich auf ein Nef-Lemma im Sinne der Methode von Xiao:
+Die der Harder--Narasimhan-Filtrierung von $\phi_*L$ zugeordneten
+$\mathbb{Q}$-Divisoren $L-B_j-V_j-\mu_jF$ sind nef (Lemma~\ref{lem:nef}). Das
+arithmetische Gegenstück des instabilen Falls bleibt für $r\ge 3$ offen (Offenes
+Problem~\ref{prob:anomaly}).
+
+\begin{theoremC}[Sätze~\ref{thm:soule-count} und~\ref{thm:soule-structural}]
+Für die Kodaira-Faserung aus~\cite{So26} gilt $k=4$; über jedem exzeptionellen
+Punkt sind höchstens zwei der vier Quadratwurzeln der hyperelliptischen Klasse
+effektiv, und es gilt
+\[
+\deg\phi_*L=-7k+4k_{\mathrm{eff}}\le -20<-12=-3k ,
+\]
+wobei $4k_{\mathrm{eff}}\le 8$ die Anzahl der Punkte von $Y$ bezeichnet, über
+denen die jeweilige Quadratwurzel effektiv ist. Somit ist~\cite[Prop.~9\,vi)]{So26}
+falsch, und der führende Koeffizient in~\cite[(36)]{So26} beträgt höchstens
+$-5/6$. Ein zweiter Zugang liefert dasselbe Ergebnis: Das generische Linearsystem
+ist für jede Wahl der Komponente $Y$ und der Quadratwurzel $\cL$ basispunktfrei,
+sodass Satz~A die Schranke $\deg\phi_*L\le -10k/3<-3k$ ergibt;
+Basispunktfreiheit ist genau jene Eigenschaft, die in~\cite[(28)]{So26} benutzt
+wird, um~\cite[Prop.~3]{So26} anzuwenden.
+\end{theoremC}
+
+Der fehlerhafte Schritt im Beweis von~\cite[Prop.~9]{So26} liegt in
+Ungleichung~(24) jener Arbeit: Dort wird die Implikation „$P_1$ exzeptionell
+$\Rightarrow
+h^0(\lambda)=1$“ verwendet, während~\cite[Prop.~5\,ii)]{So26} die Umkehrung
+beweist (Bemerkung~\ref{rem:gap}). Abschnitt~\ref{sec:scope} legt kurz dar,
+weshalb dasselbe Vorzeichen auch bei Kreuztermen sowie bei einzelnen Schnitten und
+Jets längs Kurven auftritt und weshalb ein positiver Beitrag nur von einem Bündel
+herrühren kann, das nicht von der Basis zurückgezogen ist.
+
+\paragraph{Geltungsgrenze.}
+Diese Note trifft keine Aussage über die $abc$-Vermutung, über Parshins Vermutung
+oder über die Gültigkeit der Sätze~1, A oder~B aus~\cite{So26} als Aussagen. Sie
+zeigt, dass der Büschelschritt eines PMB-Arguments unter den unten genannten
+Voraussetzungen keinen positiven Spielraum liefern kann und dass der in Version~1
+gegebene Beweis von~\cite[Theorem~1]{So26} bei Proposition~9\,vi) unvollständig
+ist. Alle Verweise auf~\cite{So26} betreffen Version~1; eine spätere Version kann
+abweichen. Die von uns herangezogenen Schnittzahlen
+aus~\cite[Prop.~8 und Prop.~9\,ii), iii)]{So26} stimmen mit unserer eigenen
+Rechnung überein.
+
+\section{Rahmen und Spielraum eines Büschels}\label{sec:setting}
+
+\subsection{Konventionen}
+In den Abschnitten~\ref{sec:setting}--\ref{sec:nef} arbeiten wir über einem
+algebraisch abgeschlossenen Körper der Charakteristik~$0$. Es sei $\phi\colon X\to
+Y$ ein surjektiver Morphismus einer glatten projektiven Fläche auf eine glatte
+projektive Kurve, dessen Fasern sämtlich integer sind. Ferner bezeichne $F$ die
+Klasse einer Faser, $\eta$ den generischen Punkt von~$Y$ und
+$\omega=\omega_{X/Y}$, wobei $\omega^2>0$ gelte. Glatte Faserungen, insbesondere
+Kodaira-Faserungen, erfüllen diese Voraussetzungen. Ein Divisor heißt
+\emph{vertikal}, wenn seine Komponenten in Fasern liegen, und \emph{horizontal},
+wenn keine Komponente in einer Faser liegt. Da die Fasern integer sind, hat jeder
+effektive vertikale Divisor die Gestalt $V=\sum_y n_yX_y$ mit $n_y\ge 0$; wir
+setzen $\deg V=\sum_y n_y$, sodass $V\equiv(\deg V)F$, $V^2=0$ und $V\cdot F=0$
+gelten.
+
+Für ein Geradenbündel $L$ auf $X$ sei $m=L\cdot F\ge 1$ und $E=\phi_*L$. Als
+torsionsfreie Garbe auf der glatten Kurve $Y$ ist $E$ lokal frei vom Rang
+$r=h^0(X_\eta,L_\eta)$; wir schreiben $\mu(E)=\deg E/r$. Es gilt $L\cdot V=m\deg
+V$. Häufig setzen wir voraus:
+\begin{itemize}[leftmargin=3.5em]
+\item[\bpf] Das Linearsystem $|L_\eta|$ auf der generischen Faser hat keinen
+Basispunkt.
+\end{itemize}
+
+\begin{lemma}\label{lem:image}
+Sei $0\ne E'\subseteq E$ eine Untergarbe. Das Bild der Komposition
+$\phi^*E'\to\phi^*E\to L$ hat die Gestalt $L(-B'-V')\otimes\cI_{Z'}$ mit einem
+horizontalen Divisor $B'\ge 0$, einem vertikalen Divisor $V'\ge 0$ und einem
+Unterschema $Z'$ endlicher Länge. Die Einschränkung von $L(-B')$ auf $X_\eta$
+besitzt einen von null verschiedenen Schnitt. Unter~\bpf{} gilt $B'=0$ für
+$E'=E$.
+\end{lemma}
+
+\begin{proof}
+Auf einer glatten Fläche hat jede von null verschiedene Untergarbe eines
+Geradenbündels $L$ die Gestalt $L(-D)\otimes\cI_{Z'}$ mit einem effektiven
+Divisor $D\ge 0$ und einem Unterschema $Z'$ endlicher Länge; wir zerlegen
+$D=B'+V'$ in seinen horizontalen und seinen vertikalen Anteil. Über $\eta$ fällt
+die Abbildung mit der Auswertung der Schnitte in
+$E'_\eta\subseteq E_\eta=H^0(X_\eta,L_\eta)$ zusammen; ihr Bild ist die von diesen
+Schnitten erzeugte Untergarbe mit divisoriellem Basisort $B'|_{X_\eta}$, und jeder
+von null verschiedene Schnitt aus $E'_\eta$ liefert einen Schnitt von
+$L(-B')|_{X_\eta}$. Für $E'=E$ ist dieser Basisort unter~\bpf{} leer.
+\end{proof}
+
+\begin{definition}\label{def:margin}
+Es sei $r_1=-L^2/\omega^2$ und $q=-\deg E/\omega^2$. Der \emph{Spielraum} von
+$L$ ist definiert durch
+\[
+M_r(L)=r_1-\frac{2m}{r}\,q=\frac{-L^2+\frac{2m}{r}\deg E}{\omega^2}.
+\]
+Für $r=2$ schreiben wir $M(L)=M_2(L)=r_1-mq$, in Übereinstimmung
+mit~\eqref{eq:margin-intro}.
+\end{definition}
+
+\begin{lemma}\label{lem:square}
+Es gilt $M_r(L)=-(L-\mu(E)F)^2/\omega^2$ sowie $M_r(L+dF)=M_r(L)$ für jede ganze
+Zahl $d$.
+\end{lemma}
+
+\begin{proof}
+Es gilt $(L-\mu F)^2=L^2-2m\mu=L^2-\frac{2m}{r}\deg E$. Ein Twisten mit $dF$
+ändert $L^2$ um $2md$ und $\deg E$ nach der Projektionsformel um $rd$.
+\end{proof}
+
+\subsection{Die Büschelkette}\label{subsec:chain}
+Es sei nun $\phi\colon X\to Y$ über einem Zahlkörper~$K$ definiert und habe
+geometrisch integre Fasern; die obigen Konventionen wenden wir auf
+$X_{\overline K}\to Y_{\overline K}$ an, wodurch sich Schnittzahlen und Grade
+nicht ändern. Für eine endliche Erweiterung $F/K$ vom Grad $d$ und einen Punkt
+$P\in Y(F)$ bezeichne $X_P$ die Faser; wir versehen $\omega$ und $L$ wie
+in~\cite[\S1.3]{So26} mit adelischen Metriken und $H_P=H^0(X_P,L_P)$ mit den
+Supremumsnormen. Für $r=2$ verbindet der Beweis von~\cite[Theorem~1]{So26}
+in~\cite[\S6.3]{So26} drei Schritte:
+\begin{enumerate}[label=(\roman*)]
+\item \emph{Büschelungleichung}~\cite[Prop.~3, (28), (29)]{So26}: Haben
+$s_1,s_2\in H_P$ keine gemeinsame Nullstelle, so gilt
+$-\Lb_P^{\,2}\le m\,(h(s_1)+h(s_2))+O(d)$.
+\item \emph{Minkowski}~\cite[(2), (30)]{So26}: Es gibt linear unabhängige
+$s_1,s_2\in H_P$ mit $h(s_1)+h(s_2)\le-\degh(H_P)+\delta(F)+O(d)$.
+\item \emph{Übertragung}~\cite[(32), Cor.~1, (33), (35)]{So26}: Für $P$
+außerhalb einer endlichen Menge und jedes $\varepsilon>0$ gilt
+$\degh(H_P)=-q\,\ob_P^{\,2}+O(\varepsilon\,\ob_P^{\,2})+O_\varepsilon(d)$ und
+$\Lb_P^{\,2}=-r_1\,\ob_P^{\,2}+O(\varepsilon\,\ob_P^{\,2})+O_\varepsilon(d)$.
+\end{enumerate}
+Zusammen ergibt sich
+\begin{equation}\label{eq:chain}
+\bigl(M(L)-O(\varepsilon)\bigr)\,\ob_P^{\,2}\le m\,\delta(F)+O_\varepsilon(d).
+\end{equation}
+Für allgemeines $r$ erfüllen zwei Schnitte, welche die ersten beiden sukzessiven
+Minima von $H_P$ realisieren, die Ungleichung
+$\lambda_1+\lambda_2\le\frac{2}{r}(\lambda_1+\dots+\lambda_r)$, und der zweite
+Satz von Minkowski beschränkt die Summe bis auf ein Vielfaches von $\delta(F)$
+und $O(d)$ durch $-\degh(H_P)$. Haben diese beiden Schnitte keine gemeinsame
+Nullstelle, so liefern dieselben Schritte~\eqref{eq:chain} mit $M_r(L)$ anstelle
+von $M(L)$ und einer angepassten Konstante vor $\delta(F)$.
+
+\begin{remark}\label{rem:chain}
+Ungleichung~\eqref{eq:chain} beschränkt $\ob_P^{\,2}$ genau dann nach oben, wenn
+$M_r(L)>0$ gilt; für $M_r(L)\le 0$ ist sie inhaltsleer. In~\cite{So26} gilt $r=2$,
+$m=6$, $L^2=-20k$ und $\omega^2=12k$, also $r_1=5/3$; Proposition~9\,vi) liefert
+$q\le 1/4$, damit $M(L)\ge 1/6$ und die Konstante $36=6/(1/6)$
+aus~\cite[Theorem~1]{So26}. Die $\varepsilon$- und $O(d)$-Terme ändern das
+Vorzeichen nicht. Alle nachfolgenden Ergebnisse sind Aussagen über die
+klassischen Invarianten $L^2$, $\deg\phi_*L$ und $\omega^2$ und in diesem Sinne
+unabhängig von den arithmetischen Einzelheiten der Kette.
+\end{remark}
+
+\section{Rang zwei: Xiaos Lemma für Büschel}\label{sec:rank2}
+
+\begin{theorem}\label{thm:rank2}
+Unter den Voraussetzungen von Abschnitt~\ref{sec:setting} gelte $r=2$ und~\bpf,
+und es sei $L(-V)\otimes\cI_Z$ das Bild der Auswertungsabbildung $\phi^*E\to L$
+(Lemma~\ref{lem:image}). Dann gilt
+\begin{equation}\label{eq:rank2}
+-L^2+m\deg E=-\ell(Z)-2m\deg V\le 0 .
+\end{equation}
+Insbesondere ist $\deg\phi_*L\le L^2/m$, mit Gleichheit genau dann, wenn
+$\phi^*\phi_*L\to L$ surjektiv ist.
+\end{theorem}
+
+\begin{proof}
+Es sei $A=L(-V)$; die Auswertungsabbildung induziert dann eine Surjektion $\phi^*E\to
+A\otimes\cI_Z$, deren Kern wir mit $K$ bezeichnen.
+
+\emph{Schritt 1: $K$ ist ein Geradenbündel.} In jedem Punkt ist das Ideal
+$\cI_Z$ ein torsionsfreier Modul über einem zweidimensionalen regulären lokalen
+Ring; es besitzt daher mindestens die Tiefe eins und nach dem Satz von
+Auslander--Buchsbaum höchstens die projektive Dimension eins. Der Kern einer
+Surjektion einer lokal freien Garbe auf eine Garbe der projektiven Dimension
+höchstens eins ist lokal frei; somit hat $K$ den Rang eins.
+
+\emph{Schritt 2: Chern-Klassen der äußeren Terme.} Da $\phi^*E$ von der Kurve
+$Y$ zurückgezogen ist, gelten $c_1(\phi^*E)\equiv(\deg E)F$ und
+$c_2(\phi^*E)=\phi^*c_2(E)=0$. Aus der exakten Sequenz
+$0\to\cI_Z\to\OO_X\to\OO_Z\to 0$ und $\ch(\OO_Z)=\ell(Z)[\mathrm{pt}]$ folgen
+$c_1(\cI_Z)=0$ und $c_2(\cI_Z)=\ell(Z)$; Tensorieren der Rang-eins-Garbe $\cI_Z$
+mit $A$ liefert $c_1(A\otimes\cI_Z)=A$ und $c_2(A\otimes\cI_Z)=\ell(Z)$.
+
+\emph{Schritt 3: Whitney-Formel.} Es gilt $c_1(K)\equiv(\deg E)F-A$ sowie
+\[
+0=c_2(\phi^*E)=c_1(K)\cdot A+\ell(Z)=m\deg E-A^2+\ell(Z),
+\]
+wobei $F\cdot A=m$ (wegen $F\cdot V=0$) eingeht.
+
+\emph{Schritt 4.} Wegen $V^2=0$ und $L\cdot V=m\deg V$ gilt
+$A^2=(L-V)^2=L^2-2m\deg V$. Einsetzen liefert~\eqref{eq:rank2}. Gleichheit
+$\deg E=L^2/m$ tritt genau dann ein, wenn $Z=\emptyset$ und $V=0$ gilt, wenn also
+die Auswertungsabbildung surjektiv ist.
+\end{proof}
+
+\begin{corollary}\label{cor:rank2}
+Unter den Voraussetzungen von Satz~\ref{thm:rank2} gilt
+\[
+M(L)=-\frac{\ell(Z)+2m\deg V}{\omega^2}=-\frac{(L-\mu(E)F)^2}{\omega^2}\le 0 .
+\]
+Die Büschelkette~\eqref{eq:chain} ist daher für jedes Geradenbündel vom Rang zwei
+mit basispunktfreiem generischem Linearsystem auf jeder Faserung mit integren
+Fasern inhaltsleer.
+\end{corollary}
+
+\begin{remark}\label{rem:rank2}
+(a) Satz~\ref{thm:rank2} kommt ohne Stabilitätsvoraussetzung an $\phi_*L$ aus; er
+stellt die exakte Rang-zwei-Fassung von Xiaos Methode~\cite{Xi87} dar. Äquivalent
+dazu ist $(L-\mu(E)F)^2=\ell(Z)+2m\deg V\ge 0$.
+
+(b) Für $r=2$ hilft auch keine geschicktere Wahl der beiden Schnitte weiter. Der
+zweite Satz von Minkowski legt $\lambda_1+\lambda_2$ bis auf Terme der Ordnung
+$\delta(F)+d$ fest; zusammen mit Schritt~(iii) erfüllt daher jedes Paar linear
+unabhängiger Schnitte die Abschätzung
+$h(s_1)+h(s_2)\ge q\,\ob_P^{\,2}-O(\varepsilon\,\ob_P^{\,2}+\delta(F)+d)$. Der
+bestmögliche Koeffizient, den die Kette erreichen kann, ist somit
+$r_1-mq=M(L)\le 0$.
+
+(c) Auch ein Twisten mit vertikalen Divisoren ändert daran nichts: Nach
+Lemma~\ref{lem:square} gilt $M(L+dF)=M(L)$.
+\end{remark}
+
+\section{Rang \texorpdfstring{$r$}{r}: eine Spielraumidentität}\label{sec:rankr}
+
+Für eine lokal freie Garbe $G$ vom Rang $n$ auf $X$ bezeichne
+$\Delta(G)=2n\,c_2(G)-(n-1)\,c_1(G)^2=c_1(G)^2-2n\ch_2(G)$ ihre
+Bogomolov-Diskriminante; für Geradenbündel gilt $\Delta(G)=0$.
+
+\begin{theorem}\label{thm:rankr}
+Unter den Voraussetzungen von Abschnitt~\ref{sec:setting} gelte~\bpf{} und
+$r\ge 2$. Es sei $L(-V)\otimes\cI_Z$ das Bild von $\phi^*E\to L$ und $K$ der
+zugehörige Kern. Dann ist $K$ lokal frei vom Rang $r-1$, und es gilt
+\begin{equation}\label{eq:rankr}
+\Delta(K)=r\,L^2-2m\deg E-2rm\deg V-2(r-1)\ell(Z),
+\end{equation}
+oder äquivalent
+\[
+M_r(L)=-\frac{\Delta(K)+2rm\deg V+2(r-1)\ell(Z)}{r\,\omega^2}.
+\]
+\end{theorem}
+
+\begin{proof}
+Die lokale Freiheit ergibt sich wie in Schritt~1 des Beweises von
+Satz~\ref{thm:rank2}. Sei $A=L(-V)$. Aus $c(\phi^*E)=c(K)\,c(A\otimes\cI_Z)$ und
+Schritt~2 folgen $c_1(K)\equiv(\deg E)F-A$ sowie
+$0=c_2(K)+c_1(K)\cdot A+\ell(Z)$, also
+\[
+c_1(K)^2=A^2-2m\deg E,\qquad c_2(K)=A^2-m\deg E-\ell(Z).
+\]
+Damit ist
+$\Delta(K)=2(r-1)c_2(K)-(r-2)c_1(K)^2=r\,A^2-2m\deg E-2(r-1)\ell(Z)$, und Einsetzen
+von $A^2=L^2-2m\deg V$ ergibt~\eqref{eq:rankr}. Division durch $-r\,\omega^2$
+liefert die Darstellung von $M_r(L)$. Für $r=2$ ist der Kern ein Geradenbündel,
+es gilt $\Delta(K)=0$, und~\eqref{eq:rankr} reduziert sich auf~\eqref{eq:rank2}.
+\end{proof}
+
+\begin{corollary}\label{cor:bogomolov}
+Ist $K$ zusätzlich $\mu$-semistabil bezüglich einer amplen Klasse auf $X$, so
+liefert die Bogomolov-Ungleichung $\Delta(K)\ge 0$~\cite{Bo78} (siehe
+auch~\cite[\S3.4]{HL10}) die Abschätzung $M_r(L)\le 0$.
+\end{corollary}
+
+\begin{remark}\label{rem:rankr}
+Die Semistabilität des Syzygienkerns ist nicht automatisch gegeben, und für
+$r\ge 3$ ist die Abschätzung $L^2\ge\frac{2m}{r}\deg\phi_*L$ eine
+Steigungsungleichung, die in der Literatur unter Stabilitätsvoraussetzungen
+hergeleitet wird (vgl.~\cite{Xi87,CH88}). Abschnitt~\ref{sec:nef} ersetzt die
+Voraussetzung an $K$ durch die Semistabilität von $\phi_*L$ auf der Basiskurve und
+behandelt darüber hinaus den instabilen Fall.
+\end{remark}
+
+\section{Das Nef-Lemma und die Harder--Narasimhan-Dichotomie}\label{sec:nef}
+
+Es sei $0=E_0\subsetneq E_1\subsetneq\dots\subsetneq E_n=E$ die
+Harder--Narasimhan-Filtrierung von $E=\phi_*L$~\cite{HN75} mit den Steigungen
+$\mu_j=\mu(E_j/E_{j-1})$; es gilt also $\mu_1>\dots>\mu_n$, und $\mu_j$ ist die
+minimale Steigung von $E_j$. Nach Lemma~\ref{lem:image} hat das Bild von
+$\phi^*E_j\to L$ die Gestalt $L(-B_j-V_j)\otimes\cI_{Z_j}$; unter~\bpf{} gilt
+$B_n=0$, $V_n=V$ und $Z_n=Z$. Wir setzen
+\[
+N_j=L-B_j-V_j-\mu_jF\in\Pic(X)\otimes\mathbb{Q}.
+\]
+
+\begin{lemma}[Nef-Lemma]\label{lem:nef}
+Für jedes $j$ ist der $\mathbb{Q}$-Divisor $N_j$ nef. Die
+Voraussetzung~\bpf{} wird hierfür nicht benötigt.
+\end{lemma}
+
+\begin{proof}
+Sei $C\subset X$ eine irreduzible Kurve. Ist $C$ vertikal, so ist $C$ eine Faser
+und es gilt $N_j\cdot C=(L-B_j)\cdot F\ge 0$, da $L(-B_j)|_{X_\eta}$ nach
+Lemma~\ref{lem:image} einen von null verschiedenen Schnitt besitzt. Sei nun $C$
+horizontal, $\nu\colon\widetilde C\to C$ die Normalisierung und
+$f=\phi\circ\nu\colon\widetilde C\to Y$; dies ist ein endlicher Morphismus vom
+Grad $d_C=C\cdot F\ge 1$. Die Abbildung
+$\phi^*E_j\to L(-B_j-V_j)\otimes\cI_{Z_j}$ ist außerhalb der endlichen Menge
+$Z_j$ surjektiv auf $L(-B_j-V_j)$, insbesondere also im generischen Punkt von
+$C$. Rückzug auf $\widetilde C$ liefert einen von null verschiedenen
+Homomorphismus $f^*E_j\to\nu^*L(-B_j-V_j)$, dessen Bild $Q$ ein in
+$\nu^*L(-B_j-V_j)$ enthaltener invertierbarer Quotient von $f^*E_j$ ist. Damit
+folgt
+\[
+(L-B_j-V_j)\cdot C=\deg\nu^*L(-B_j-V_j)\ge\deg Q\ge\mu_{\min}(f^*E_j)=d_C\,\mu_j .
+\]
+Die letzte Gleichheit beruht darauf, dass in Charakteristik~$0$ der Rückzug der
+Harder--Narasimhan-Filtrierung unter einem endlichen Morphismus glatter Kurven
+mit der Harder--Narasimhan-Filtrierung des Rückzugs übereinstimmt, wobei sich die
+Steigungen mit dem Abbildungsgrad multiplizieren (siehe~\cite[\S3.2]{HL10}). Wegen
+$F\cdot C=d_C$ ist dies äquivalent zu $N_j\cdot C\ge 0$.
+\end{proof}
+
+\begin{corollary}[semistabiler Fall]\label{cor:ss}
+Es gelte~\bpf, und $E=\phi_*L$ sei semistabil. Dann ist $N=L-V-\mu(E)F$ nef, und
+es gilt
+\[
+M_r(L)=-\frac{N^2+2m\deg V}{\omega^2}\le 0 .
+\]
+Eine Voraussetzung an die Stabilität der Fasern, ihrer Linearsysteme oder des
+Syzygienkerns ist nicht erforderlich.
+\end{corollary}
+
+\begin{proof}
+Hier ist $n=1$, $E_1=E$, $B_1=0$, $V_1=V$ und $\mu_1=\mu(E)$; nach
+Lemma~\ref{lem:nef} ist $N=N_1$ daher nef, also gilt $N^2\ge 0$. Wegen
+$L-\mu(E)F=N+V$, $N\cdot V=m\deg V$ und $V^2=0$ folgt
+$(L-\mu(E)F)^2=N^2+2m\deg V$; die Behauptung ergibt sich nun aus
+Lemma~\ref{lem:square}.
+\end{proof}
+
+\begin{proposition}[instabiler Fall]\label{prop:unstable}
+Es gelte~\bpf, und $E=\phi_*L$ sei instabil, $n\ge 2$.
+\begin{enumerate}[label=(\alph*)]
+\item Ist $B_1=0$, so gilt
+$M_r(L)\le-2m\bigl(\mu_1-\mu(E)+\deg V_1\bigr)/\omega^2<0$.
+\item Für alle Indizes $a,b$ mit $B_b=0$ gilt
+\[
+L^2\ge m(\mu_a+\mu_b)+m\deg V_b ,\qquad\text{d.\,h.}\qquad
+\frac{-L^2+m(\mu_a+\mu_b)}{\omega^2}\le-\frac{m\deg V_b}{\omega^2}\le 0 .
+\]
+Ein solcher Index $b$ existiert stets, da $B_n=0$ gilt.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) Es gilt $L-\mu(E)F=N_1+V_1+(\mu_1-\mu(E))F$. Ausmultiplizieren unter
+Verwendung von $N_1\cdot V_1=m\deg V_1$, $N_1\cdot F=m$ (wegen $B_1=0$) und
+$V_1^2=V_1\cdot F=F^2=0$ ergibt
+$(L-\mu(E)F)^2=N_1^2+2m\deg V_1+2m(\mu_1-\mu(E))$. Da $N_1^2\ge 0$ und für
+instabiles $E$ zudem $\mu_1>\mu(E)$ gilt, folgt die Behauptung mit
+Lemma~\ref{lem:square}.
+
+(b) Die Divisoren $N_b$ und $N_a$ sind nef, $B_a$ und $V_a$ effektiv, also gilt
+$N_b\cdot(N_a+B_a+V_a)\ge 0$. Nun ist $N_a+B_a+V_a=L-\mu_aF$ und
+$N_b=L-V_b-\mu_bF$, und das Schnittprodukt lautet $L^2-m\mu_a-m\mu_b-m\deg V_b$.
+\end{proof}
+
+\begin{remark}\label{rem:unstable}
+Im Fall (a) ist der Spielraum, den die Kette aus Abschnitt~\ref{subsec:chain} mit
+dem Satz von Minkowski auf dem vollen Gitter liefert, strikt negativ. Die
+Koeffizienten in (b) sind genau jene, welche die Kette lieferte, wenn die Höhen
+der beiden Schnitte durch die Steigungen $\mu_a$ und $\mu_b$ bestimmt wären;
+beispielsweise ergibt Corollary~1 aus~\cite{So26}, angewandt auf das von $E_1$
+herrührende Untergitter, einen Schnitt $s_1$ mit
+$h(s_1)\le(-\mu_1/\omega^2+\varepsilon)\,\ob_P^{\,2}+c\,\delta(F)+O_\varepsilon(d)$
+für eine Konstante $c$. Jeder Koeffizient, den die Kette auf diesem Weg aus
+geometrischen Unterbündeln gewinnen kann, ist somit nichtpositiv. Die Bedingung
+$B_b=0$ in (b) gibt den Büschelschritt wieder: Jeder von $E_j$ herrührende Schnitt
+verschwindet längs $B_j\cap X_P$; daher besitzen zwei Schnitte aus derselben Stufe
+$E_a$ mit $B_a\ne 0$ stets eine gemeinsame Nullstelle auf $X_P$. Haben $B_a$ und
+$B_b$ lediglich keine gemeinsame Komponente, so sind ihre Einschränkungen auf
+$X_P$ für alle bis auf endlich viele $P$ disjunkt, und dieselbe Nichtpositivität
+folgt aus Proposition~\ref{prop:cross} mit $L_1=L_2=L$.
+\end{remark}
+
+\begin{problem}[arithmetische Anomalie, $r\ge 3$]\label{prob:anomaly}
+Es sei $r\ge 3$ und $\phi_*L$ instabil. Es ist offen, ob sich für Punkte $P$
+großer Höhe über Paare von Schnitten ohne gemeinsame Nullstelle eine obere
+Schranke für $h(s_1)+h(s_2)$ gewinnen lässt, die kleiner ausfällt als der durch
+die geometrischen Steigungen $\mu_a$ nahegelegte Wert. Um dies auszuschließen,
+müsste man das arithmetische Harder--Narasimhan-Polygon des adelischen Gitters
+$H_P$ mit dem um den Faktor $\ob_P^{\,2}/\omega^2$ skalierten geometrischen
+Harder--Narasimhan-Polygon von $\phi_*L$ vergleichen. Wir lassen diese Frage
+offen. Für $r=2$ tritt sie nicht auf (Bemerkung~\ref{rem:rank2}\,(b)), und für
+semistabiles $\phi_*L$ wird sie durch Korollar~\ref{cor:ss} beantwortet.
+\end{problem}
+
+\section{Anwendung auf Soul\'e, arXiv:2611.05217v1}\label{sec:soule}
+
+\subsection{Die Konstruktion}
+Wir erinnern zunächst an die auf~\cite{Ko67,MD85} zurückgehende Kodaira-Faserung
+aus~\cite[\S\S3, 5]{So26}. Es sei $Y_0$ eine Kurve vom Geschlecht~$2$ und
+$\chi\colon Y_1\to Y_0$ eine nichttriviale étale Doppelüberlagerung mit
+Deckinvolution $\nu$; die Kurve $Y_1$ hat das Geschlecht~$3$ und ist
+hyperelliptisch~\cite[Prop.~4\,i)]{So26}. Bezeichnet $\iota$ ihre
+hyperelliptische Involution und $H$ die hyperelliptische Klasse, so gilt
+$\omega_{Y_1}\cong\OO(2H)\cong\OO(4W)$ für einen Weierstraß-Punkt $W$. Schränkt
+man die Relation $\OO(\Gamma-2\Delta_1)=(1\times\psi_1)^*\mathcal{P}+\pi_2^*L$
+aus~\cite[\S5.1]{So26} auf $Y_1\times\{x\}$ ein, so erkennt man, dass
+$\psi_1\colon Y_1\to J_1$ durch $x\mapsto[\nu x-x]$ gegeben ist. Die Kurve $Y$
+ist eine Zusammenhangskomponente des Faserprodukts $Z$ von $\psi_1$ mit der
+Multiplikation mit $2$ auf $J_1$, und $\psi\colon Y\to Y_1$ ist endlich étale vom
+Grad~$k$.
+
+Auf $S=Y_1\times Y$ mit den Projektionen $\mathrm{pr}_1$ und $p\colon S\to Y$
+seien $D_1$ und $D_2$ die Graphen von $\psi$ bzw.\ $\nu\circ\psi$; sie sind
+disjunkt, da $\nu$ keinen Fixpunkt besitzt. Es sei $\cL\in\Pic(S)$ mit
+$2\cL=\OO_S(D_1+D_2)$~\cite{MD85}, $\rho\colon X\to S$ die längs $D_1+D_2$
+verzweigte Doppelüberlagerung und $\phi=p\circ\rho$; dieser Morphismus ist glatt
+mit Fasern vom Geschlecht~$6$. Ferner sei $E_i=\rho^{-1}(D_i)_{\mathrm{red}}$,
+sodass $\rho^*D_i=2E_i$ gilt, und $B_i=\OO_X(E_i)$. Für $y\in Y$ setzen wir
+$P_1=\psi(y)$, $P_2=\nu P_1$ sowie $\lambda_y=\cL|_{Y_1\times\{y\}}$, eine
+Quadratwurzel von $\OO(P_1+P_2)$. Der Punkt $P_1$ heißt \emph{exzeptionell}, wenn
+$h^0(P_1+P_2)=2$ gilt; äquivalent dazu ist
+$P_2=\iota P_1$~\cite[Prop.~5\,iii)]{So26}. Es gibt vier exzeptionelle Punkte,
+und $\Psi=\psi^{-1}(\text{exzeptionelle Punkte})$ besitzt $4k$ Elemente.
+
+Sei $G=\phi_1^*\OO(W)$ mit $\phi_1=\mathrm{pr}_1\circ\rho$. Das von
+$G,B_1,B_2,F$ aufgespannte Gitter besitzt die in Tabelle~\ref{tab:lattice}
+angegebenen Schnittzahlen; dies sind die Werte aus~\cite[Prop.~8]{So26}, ergänzt
+um $B_i\cdot F=1$ ($E_i$ ist ein Schnitt) und $G\cdot F=2$ ($\phi_1$ hat auf den
+Fasern den Grad zwei). Die Formel von Riemann--Hurwitz liefert
+$\omega=4G+B_1+B_2$ und $\omega^2=12k$. Soul\'es Hilfsbündel lautet
+\[
+L=\omega-2B_1-2B_2=4G-B_1-B_2,\qquad m=6,\qquad L^2=-20k,
+\]
+und für allgemeines $y$ gilt
+$h^0(L_y)=2$~\cite[Prop.~9\,ii), iii), v)]{So26}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+ & $G$ & $B_1$ & $B_2$ & $F$\\
+\midrule
+$G$ & $0$ & $k$ & $k$ & $2$\\
+$B_1$ & $k$ & $-2k$ & $0$ & $1$\\
+$B_2$ & $k$ & $0$ & $-2k$ & $1$\\
+$F$ & $2$ & $1$ & $1$ & $0$\\
+\bottomrule
+\end{tabular}
+\caption{Schnittzahlen auf der Kodaira-Faserung aus~\cite{So26}.}
+\label{tab:lattice}
+\end{table}
+
+\subsection{Die Zählung}
+
+\begin{lemma}[$k=4$]\label{lem:k4}
+Sei $G_2\subseteq J_1[2]$ die Monodromiegruppe des $J_1[2]$-Torsors $Z\to Y_1$.
+Dann gilt $G_2=(\nu_*-1)\,J_1[2]$ und $|G_2|=4$. Folglich ist $k=4$ für jede
+Wahl von $Y_0$, von $\chi$ und der Komponente $Y$.
+\end{lemma}
+
+\begin{proof}
+Der Torsor entsteht durch Rückzug von $[2]\colon J_1\to J_1$ längs $\psi_1$;
+seine Monodromie ist daher durch
+$\pi_1(Y_1)\to H_1(Y_1,\mathbb{Z})\xrightarrow{(\psi_1)_*}
+H_1(J_1,\mathbb{Z})\to J_1[2]$ mit $(\psi_1)_*=\nu_*-1$ gegeben, und jede
+Zusammenhangskomponente hat über $Y_1$ den Grad $|G_2|$. Die Ordnung lässt sich
+über $\mathbb{C}$ bestimmen. Da die Abbildungsklassengruppe transitiv auf den von
+null verschiedenen Klassen in $H^1(Y_0,\mathbb{Z}/2)$ operiert, können wir
+$\pi_1(Y_0)=\langle a_1,b_1,a_2,b_2\mid[a_1,b_1][a_2,b_2]\rangle$ wählen und
+annehmen, dass $\chi$ durch den Charakter mit $a_1\mapsto 1$ und
+$b_1,a_2,b_2\mapsto 0$ gegeben ist. Mit dem Schreier-Repräsentantensystem
+$\{1,a_1\}$ wird die Untergruppe $\pi_1(Y_1)$ von $s=a_1^2$, $b_1$, $a_2$, $b_2$
+sowie ihren Konjugierten $b_1'$, $a_2'$, $b_2'$ unter $a_1$ erzeugt. Die
+definierende Relation und ihre Konjugierte liefern in der Abelschenisierung beide
+$b_1'=b_1$, sodass $H_1(Y_1,\mathbb{Z})$ frei mit der Basis
+$s,b_1,a_2,b_2,a_2',b_2'$ ist. Die Involution $\nu$ entspricht der Konjugation
+mit $a_1$; auf der Homologie lässt sie $s$ und $b_1$ fest und vertauscht
+$a_2\leftrightarrow a_2'$ sowie $b_2\leftrightarrow b_2'$. Das Bild von $\nu_*-1$
+wird von $a_2'-a_2$ und $b_2'-b_2$ aufgespannt, die sich zu einer Basis ergänzen
+lassen; seine Reduktion modulo~$2$ besitzt daher die Ordnung~$4$.
+\end{proof}
+
+\begin{lemma}[effektive Quadratwurzeln]\label{lem:keff}
+Sei $P_1$ exzeptionell. Die Klassen $\lambda_y$, $y\in\psi^{-1}(P_1)$, bilden
+eine Nebenklasse von $G_2$ in der Menge der Quadratwurzeln von $H$. Jede
+Nebenklasse von $G_2$ in dieser Menge enthält höchstens zwei effektive Klassen.
+\end{lemma}
+
+\begin{proof}
+Für $(x,z)\in Z$ ist die Klasse $x+z\in\Pic^1(Y_1)$ wegen $2(x+z)=2x+\nu x-x$
+eine Quadratwurzel von $x+\nu x$. Die Abbildung
+$y\mapsto\lambda_y-(\psi(y)+\psi_2(y))$ mit der zweiten Projektion
+$\psi_2\colon Y\to J_1$ nimmt Werte in $J_1[2]$ an und ist daher auf der
+zusammenhängenden Kurve $Y$ konstant. Über $P_1$ bilden die Punkte von $Y$ eine
+$G_2$-Bahn in der Faser von $Z$; folglich bilden die $\lambda_y$ eine Nebenklasse
+von $G_2$. Eine effektive Quadratwurzel von $H$ hat die Gestalt $\OO(Q)$ mit
+$2Q\in|H|$, gehört also zu einem Weierstraß-Punkt. Seien $W\ne W'$ effektiv in
+derselben Nebenklasse. Dann gilt $W'-W=(\nu-1)g$ für ein $g\in J_1[2]$, also
+$(1+\nu)(W'-W)=(\nu^2-1)g=0$ und damit $W'+\nu W'\sim W+\nu W$. Wären diese
+Divisoren verschieden, so würde sich $W+\nu W$ in einem Büschel bewegen und läge
+folglich in $|H|$; daraus ergäbe sich $\nu W=\iota W=W$, im Widerspruch zur
+Fixpunktfreiheit von $\nu$. Also gilt $W'=\nu W$, und eine Nebenklasse enthält
+höchstens die beiden effektiven Wurzeln $W,\nu W$.
+\end{proof}
+
+\begin{lemma}[Torsion der Länge eins]\label{lem:length}
+Der Träger der Torsion von $R^1p_*\cL$ besteht genau aus den Punkten $y$ mit
+$h^0(\lambda_y)\ne 0$, und in jedem dieser Punkte hat die Torsion die Länge eins.
+\end{lemma}
+
+\begin{proof}
+Generisch gilt $h^0(\lambda_y)=0$~\cite[Prop.~5\,ii)]{So26}, also $p_*\cL=0$.
+Es sei $\pi$ eine Uniformisierende in $y$. Die exakte Sequenz
+$0\to\cL\xrightarrow{\pi}\cL\to\lambda_y\to 0$ liefert
+$R^1p_*\cL[\pi]\cong H^0(\lambda_y)$; die Torsion $T_y$ ist somit genau dann von
+null verschieden, wenn $h^0(\lambda_y)\ne 0$ gilt, und wegen
+$h^0(\lambda_y)\le 1$ ist sie zyklisch. Ebenso ist $R^1p_*\cL[\pi^2]$ isomorph
+zum Raum der Schnitte von $\cL$ über $Y_1\times\operatorname{Spec}\OO_{Y,y}/\pi^2$;
+daher gilt $\ell(T_y)\ge 2$ genau dann, wenn sich der Schnitt $s_W$ von
+$\lambda_y=\OO(W)$ in erster Ordnung fortsetzen lässt. Dies ist genau dann der
+Fall, wenn $v\cup s_W=0$ in $H^1(\OO(W))$ gilt, wobei $v\in H^1(\OO_{Y_1})$ den
+Tangentialvektor der Abbildung $y\mapsto\lambda_y$ bezeichnet, wenn also $v$ auf
+der Geraden $d\mathrm{AJ}_W(T_WY_1)$ liegt. Unter der Dualität $H^1(\OO_{Y_1})\cong
+H^0(\omega_{Y_1})^\vee$ wird diese Gerade von der Auswertung in $W$ aufgespannt.
+Da $2\lambda_y=\OO(\psi(y)+\nu\psi(y))$ gilt und $\psi$ étale ist, ist $2v$ das
+Funktional $\alpha\mapsto\alpha_{P_1}(t)+\alpha_{P_2}(d\nu\,t)$ für einen von
+null verschiedenen Tangentialvektor $t$ in $P_1$. Für einen exzeptionellen Punkt
+gilt $P_2=\iota P_1$; da $\iota$ mit $\nu$ kommutiert, hat die Involution
+$\nu\iota$ den Fixpunkt $P_2$ mit Ableitung $-1$, sodass $d\nu=-d\iota$ in $P_1$
+folgt. Wegen $\iota^*\alpha=-\alpha$ für alle $\alpha\in H^0(\omega_{Y_1})$
+ergibt sich $2v=2\,\mathrm{ev}_{P_1,t}\ne 0$. Die Auswertungen in $P_1$ und $W$
+sind nur dann proportional, wenn die kanonische Abbildung $P_1$ und $W$
+identifiziert, wenn also $P_1\in\{W,\iota W\}=\{W\}$ gilt. Aus $P_1=W$ folgte
+jedoch $W\sim P_2$ und damit $P_2=P_1$, ein Widerspruch. Somit ist $\ell(T_y)=1$.
+\end{proof}
+
+\begin{proposition}[Gradformel]\label{prop:degree}
+Es sei $T$ die Anzahl der Punkte $y\in Y$ mit $h^0(\lambda_y)\ne 0$; sie liegen
+sämtlich in $\Psi$. Dann gilt
+\[
+\deg\phi_*L=-7k+T .
+\]
+\end{proposition}
+
+\begin{proof}
+Es sei $K_1=\mathrm{pr}_1^*\omega_{Y_1}=\omega_{S/Y}$. Die Formel für das
+kanonische Bündel einer Doppelüberlagerung~\cite[I.17]{BHPV04} liefert
+$\omega_{X/Y}=\rho^*(K_1+\cL)$, und es gilt
+$B=2B_1+2B_2=\rho^*(D_1+D_2)=\rho^*(2\cL)$. Also ist $L=\rho^*(K_1-\cL)$, und
+mit $\rho_*\OO_X=\OO_S\oplus\cL^{-1}$~\cite[(13)]{So26} folgt
+\[
+\phi_*L=p_*(K_1-\cL)\oplus p_*(K_1-2\cL).
+\]
+\emph{Zweiter Summand.} Da $x+\iota x\in|H|$ für jedes $x$ gilt, liefert das
+Seesaw-Prinzip $\OO_S(D_i+\iota D_i)\cong\mathrm{pr}_1^*\OO(H)\otimes p^*M_i$ mit
+$M_i\in\Pic(Y)$, wobei $\iota D_i=(\iota\times 1)(D_i)$ gesetzt ist. Schneiden
+mit $\{x\}\times Y$, das jeden der Divisoren $D_i$ und $\iota D_i$ transversal in
+$k$ Punkten trifft und auf dem $\mathrm{pr}_1^*\OO(H)$ trivial ist, ergibt
+$\deg M_i=2k$. Wegen $K_1=\mathrm{pr}_1^*\OO(2H)$ gilt
+\[
+K_1-2\cL=K_1-D_1-D_2\cong\OO_S(\iota D_1+\iota D_2)\otimes p^*(-M_1-M_2).
+\]
+Der Automorphismus $\iota\times 1$ von $S$ über $Y$ und~\cite[(20)]{So26} liefern
+$p_*\OO_S(\iota D_1+\iota D_2)\cong p_*\OO_S(D_1+D_2)\cong\OO_Y$, also
+$\deg p_*(K_1-2\cL)=-4k$.
+
+\emph{Erster Summand.} Relative Dualität ergibt
+$p_*(K_1-\cL)\cong\mathcal{H}om(R^1p_*\cL,\OO_Y)$, nach Lemma~\ref{lem:length}
+also $\deg p_*(K_1-\cL)=-(\deg R^1p_*\cL-T)$. Wegen $p_*\cL=0$ liefert der Satz
+von Grothendieck--Riemann--Roch für $p$ die Gleichung
+$\deg R^1p_*\cL=-\bigl(\tfrac12\cL^2-\tfrac12K_1\cdot\cL\bigr)$, und aus
+$4\cL^2=(D_1+D_2)^2=-8k$ sowie $2K_1\cdot\cL=K_1\cdot(D_1+D_2)=8k$ folgt
+$\deg R^1p_*\cL=3k$. Damit ist $\deg p_*(K_1-\cL)=T-3k$.
+
+Addition der beiden Grade ergibt $\deg\phi_*L=T-3k-4k$.
+Nach~\cite[Prop.~5\,ii)]{So26} erzwingt $h^0(\lambda_y)\ne 0$, dass $P_1$
+exzeptionell ist; die in $T$ gezählten Punkte liegen daher in $\Psi$.
+\end{proof}
+
+\begin{theorem}\label{thm:soule-count}
+Für die Kodaira-Faserung aus~\cite{So26} mit $L=\omega-2B_1-2B_2$ gilt
+\[
+\deg\phi_*L=-7k+4k_{\mathrm{eff}},\qquad k=4,\qquad 0\le k_{\mathrm{eff}}\le 2,
+\]
+wobei $4k_{\mathrm{eff}}=T$ gesetzt ist. Insbesondere gilt
+$\deg\phi_*L\le-20<-12=-3k$; somit ist Proposition~9\,vi) in arXiv:2611.05217v1
+falsch. Ferner ist $q=-\deg\phi_*L/\omega^2\ge 5/12$, und der führende
+Koeffizient $5/3-6q$ in~\cite[(36)]{So26} erfüllt $5/3-6q\le-5/6$.
+\end{theorem}
+
+\begin{proof}
+Proposition~\ref{prop:degree} liefert $\deg\phi_*L=-7k+T$. Nach
+Lemma~\ref{lem:k4} ist $k=4$, und Lemma~\ref{lem:keff} zeigt, dass jede der vier
+Fasern von $\psi$ über einem exzeptionellen Punkt höchstens zwei Punkte zu $T$
+beiträgt, also $T\le 8$. Damit folgt $\deg\phi_*L\le-28+8=-20$ sowie
+$q\ge 20/48=5/12$.
+\end{proof}
+
+\begin{theorem}[strukturelle Fassung]\label{thm:soule-structural}
+Unter den Voraussetzungen von~\cite{So26} ist das Linearsystem $|L_\eta|$ für
+jede Wahl der Komponente $Y$ und von $\cL$ basispunktfrei. Folglich gilt
+$\deg\phi_*L\le L^2/6=-10k/3<-3k$ und $M(L)\le 0$; insbesondere erfüllt keine
+Wahl der Komponente $Y$ oder von $\cL$ die Aussage von Proposition~9\,vi).
+\end{theorem}
+
+\begin{proof}
+\emph{Schritt 1: Fasern außerhalb von $\Psi$.} Sei $y\notin\Psi$, also
+$P_2\ne\iota P_1$. Nach~\cite[Prop.~5\,ii)]{So26} ist dann $h^0(\lambda_y)=0$,
+und der Satz von Riemann--Roch liefert $h^0(\omega_{Y_1}-\lambda_y)=1$ sowie
+$h^0(\omega_{Y_1}-2\lambda_y)=h^0(P_1+P_2)=1$. Wegen $\omega_{Y_1}\cong\OO(2H)$
+und $P_i+\iota P_i\in|H|$ ist $\iota P_1+\iota P_2$ der einzige effektive Divisor
+in $|\omega_{Y_1}-2\lambda_y|$. Nach der im Beweis von
+Proposition~\ref{prop:degree} hergeleiteten Zerlegung von $\phi_*L$ wird
+$H^0(X_y,L_y)$ von $\rho^*\sigma_y$ und $t_y\,\rho^*\tau_y$ aufgespannt; dabei
+erzeugt $\sigma_y$ den Raum $H^0(\omega_{Y_1}-\lambda_y)$, $\tau_y$ besitzt den
+Divisor $\iota P_1+\iota P_2$, und $t_y$ ist der in den beiden
+Verzweigungspunkten verschwindende Schnitt von $\rho^*\lambda_y$. Folglich hat
+$|L_y|$ genau dann einen Basispunkt, wenn $\sigma_y$ in einem der Punkte $P_1$,
+$P_2$, $\iota P_1$, $\iota P_2$ verschwindet, und nach Riemann--Roch verschwindet
+$\sigma_y$ in einem Punkt $Q$ genau dann, wenn $h^0(\lambda_y+Q)\ne 0$ gilt.
+
+\emph{Schritt 2: Spezialisierung.} Auf der offenen Teilmenge $Y^\circ\subseteq Y$
+der Punkte mit $h^0(\lambda_y)=0$ gilt $h^0(\omega_{Y_1}-\lambda_y)=1$; dort ist
+$p_*(K_1-\cL)$ also ein Geradenbündel, dessen Bildung mit Basiswechsel
+vertauscht. Für jede der vier Abbildungen $Q=\psi,\nu\psi,\iota\psi,\iota\nu\psi$
+von $Y$ nach $Y_1$ ist daher die Menge der $y\in Y^\circ$ mit
+$\sigma_y(Q(y))=0$ abgeschlossen in $Y^\circ$. Keine dieser Mengen stimmt mit
+ganz $Y^\circ$ überein: Sei nämlich $x_0$ exzeptionell; nach den
+Lemmata~\ref{lem:k4} und~\ref{lem:keff} existiert ein $y_0\in\psi^{-1}(x_0)$ mit
+$h^0(\lambda_0)=0$, wobei $\lambda_0=\lambda_{y_0}$ gesetzt sei. Wegen $\nu x_0=\iota x_0\ne
+x_0$ liegen die vier Punkte $Q(y_0)$ in $\{x_0,\iota x_0\}$, keiner von ihnen ist
+ein Weierstraß-Punkt, und es gilt $2\lambda_0\sim x_0+\iota x_0\sim H$. Gilt
+$\lambda_0+q\sim a+b$ mit $q\in\{x_0,\iota x_0\}$, so folgt $2a+2b\in|H+2q|$. Da
+$q$ kein Weierstraß-Punkt ist, gilt $h^0(H+2q)=2$ und $|H+2q|=|H|+2q$, also
+$2a+2b=c+\iota c+2q$ für einen Punkt $c$. Auf der linken Seite sind sämtliche Vielfachheiten gerade,
+während für $c\ne\iota c$ auf der rechten Seite der Punkt $c$ oder der Punkt $q$
+mit ungerader Vielfachheit auftritt. Also folgt $c=\iota c$ und $a+b=c+q$, womit
+$\lambda_0\sim c$ effektiv wäre, ein Widerspruch. Daher verschwindet
+$\sigma_{y_0}$ in keinem der Punkte $Q(y_0)$; die vier abgeschlossenen Teilmengen
+sind somit endlich, und nach Schritt~1 ist $|L_y|$ für alle bis auf endlich viele
+$y\in Y\setminus\Psi$ basispunktfrei.
+
+\emph{Schritt 3: Die generische Faser.} Für $y\in Y\setminus\Psi$ gilt
+$h^0(L_y)=2$, sodass $\phi_*L\otimes k(y)\to H^0(X_y,L_y)$ bijektiv ist. Der
+Abschluss eines Basispunkts von $|L_\eta|$ bildet eine horizontale Kurve, längs
+der $\phi^*\phi_*L\to L$ nicht surjektiv ist; sie schneidet jede Faser $X_y$, und
+für $y\in Y\setminus\Psi$ trifft sie $X_y$ in einem Basispunkt von $|L_y|$, im
+Widerspruch zu Schritt~2. Also ist $|L_\eta|$ basispunktfrei, und
+Satz~\ref{thm:rank2} liefert mit $m=6$ und $L^2=-20k$ die behauptete Schranke.
+
+\emph{Schritt 4: Bezug zu~\cite{So26}.} In~\cite[\S6.3.3]{So26} wird die
+Quadratwurzel $\cL'$ in Abhängigkeit vom Punkt $\bar y'\notin\Phi'$ gewählt,
+und~\cite[Lemma~3]{So26} zeigt, dass $L'_{P'}$ keinen Basispunkt besitzt. Da
+$h^0(L'_{P'})=2$ mit dem Rang von $\phi'_*L'$ übereinstimmt, erzwingt dies nach
+dem Argument aus Schritt~3 bereits die Basispunktfreiheit von $|L'_\eta|$; jedes
+Bündel, auf das~\cite[(28)]{So26} angewandt wird, fällt somit unter
+Satz~\ref{thm:rank2}. Die Schritte~1--3 übertragen sich wörtlich nach dem
+Basiswechsel $a\colon Y'\to Y$ aus~\cite[\S6.3.1]{So26}, wenn man $\psi$ durch
+$\psi\circ a$ ersetzt. Es sei $J'$ die Jacobische von $Y'$. Da
+$\operatorname{Hom}(J_1,J')$ torsionsfrei ist, gilt
+$\Pic(Y_1\times Y')[2]=\mathrm{pr}_1^*J_1[2]\oplus\mathrm{pr}_2^*J'[2]$; auf den
+Fasern schränkt sich $\cL'$ daher auf die Klassen $\lambda_{a(y')}+\varepsilon$ für
+ein festes $\varepsilon\in J_1[2]$ ein. Über einem exzeptionellen Punkt $x_0$ bilden
+die Klassen $\lambda_y+\varepsilon$, $y\in\psi^{-1}(x_0)$, eine Nebenklasse von
+$G_2$; nach Lemma~\ref{lem:keff} gibt es folglich ein $y_0\in\psi^{-1}(x_0)$ mit
+$h^0(\lambda_{y_0}+\varepsilon)=0$, und wegen der Surjektivität von $a$ lässt sich
+$y_0$ zu einem Punkt in $(\psi\circ a)^{-1}(x_0)$ liften; mehr wird in Schritt~2
+nicht benötigt. Lemma~\ref{lem:k4} geht nur für $\psi$ mit $k=4$ ein. Die
+Basispunktfreiheit ist daher unabhängig von der punktweisen Wahl.
+\end{proof}
+
+\begin{remark}[Stelle, an der der Beweis von Proposition~9 scheitert]\label{rem:gap}
+Ungleichung~(24) aus~\cite{So26} besagt
+$\deg(R^1\phi_*B)_{\mathrm{tor}}\ge 8k$. Sie stützt sich
+auf~\cite[Prop.~9\,iv)]{So26}, wonach $h^0(B_{\bar y})=3$ gilt, sobald $P_1$
+exzeptionell ist. Der dortige Beweis verwendet den Satz „when $P_1$ is
+exceptional $h^0(\lambda)=1$“ unter Berufung auf die Teile ii) und iii)
+von~\cite[Prop.~5]{So26}. Proposition~5\,ii) besagt jedoch, dass $h^0(\lambda)=0$
+gilt, sofern $\lambda$ kein Weierstraß-Punkt ist, und dass in diesem Ausnahmefall
+$h^0(\lambda)=1$ sowie $h^0(P_1+P_2)=2$ folgen. Bewiesen wird dort also die
+Implikation „$\lambda$ effektiv $\Rightarrow$ $P_1$ exzeptionell“, d.\,h.\ die
+Umkehrung der benötigten Aussage. Nach Lemma~\ref{lem:keff} versagt die benutzte
+Implikation in mindestens $4k-8=8$ der $16$ Punkte von $\Psi$; dort gilt
+$h^0(B_{\bar y})=2$ und $h^0(L_{\bar y})=3$, sodass Proposition~9\,iv) und~v) in
+diesen Punkten nicht zutreffen. Zusammen mit~\cite[(16), (18), (22)]{So26}
+liefert Proposition~\ref{prop:degree} daher
+$\deg(R^1\phi_*B)_{\mathrm{tor}}=4k+T\le 24$ anstelle von $\ge 32$. Da eine
+globale Abänderung von $\cL$ um ein Element aus $J_1[2]$ sämtliche Nebenklassen
+gleichzeitig verschiebt, ändert keine Wahl von $\cL$ die Schranke aus
+Lemma~\ref{lem:keff}. Theorem~1 aus~\cite{So26} bleibt als Aussage offen;
+hinfällig ist der Beweis über Proposition~9\,vi), und nach
+Korollar~\ref{cor:rank2} in Verbindung mit Schritt~4 des Beweises von
+Satz~\ref{thm:soule-structural} lässt sich der Büschelschritt auch nicht durch
+ein anderes Hilfsbündel $L'$ vom Rang zwei mit basispunktfreiem $|L'_\eta|$
+retten. Besitzt $|L'_\eta|$ hingegen einen Basispunkt, so ist
+$\phi_*L'\otimes k(P)\to H^0(X_P,L'_P)$ für alle $P$ außerhalb einer endlichen
+Ausnahmemenge bijektiv; nach dem Argument aus Schritt~3 jenes Beweises haben dann
+für alle derartigen $P$ je zwei Schnitte von $L'_P$ eine gemeinsame Nullstelle,
+sodass die Büschelvoraussetzung in~\cite[(28)]{So26} unerfüllbar ist.
+\end{remark}
+
+\section{Reichweite: Kreuzterme, einzelne Schnitte, Quellbündel}\label{sec:scope}
+
+Dieser Abschnitt stellt drei weitere Folgerungen aus dem Nef-Lemma und aus der
+Identität hinter Satz~\ref{thm:rankr} zusammen. Die formalen Aussagen sind
+geometrischer Natur und vollständig bewiesen; die Bemerkungen zu ihrer
+arithmetischen Bedeutung dienen der Einordnung.
+
+\subsection{Kreuzterme}
+Proposition~3 aus~\cite{So26} ist für zwei Geradenbündel $L_1,L_2$ mit Fasergraden
+$d_1,d_2$ formuliert: $-\Lb_1\cdot\Lb_2\le d_2h(s_1)+d_1h(s_2)$. Stammt $s_1$ aus
+der Harder--Narasimhan-Stufe $a$ von $\phi_*L_1$ und $s_2$ aus der Stufe $b$ von
+$\phi_*L_2$, wobei die Höhen durch die Steigungen $\mu_{1,a}$ und $\mu_{2,b}$
+bestimmt sind, so lautet der führende Koeffizient
+\[
+M(L_1,L_2)=\frac{-L_1\cdot L_2+d_2\mu_{1,a}+d_1\mu_{2,b}}{\omega^2}
+=-\frac{(L_1-\mu_{1,a}F)\cdot(L_2-\mu_{2,b}F)}{\omega^2}.
+\]
+
+\begin{proposition}\label{prop:cross}
+Besitzen die horizontalen Basisdivisoren $B_{1,a}$ und $B_{2,b}$ keine gemeinsame
+Komponente, so gilt $(L_1-\mu_{1,a}F)\cdot(L_2-\mu_{2,b}F)\ge 0$ und folglich
+$M(L_1,L_2)\le 0$.
+\end{proposition}
+
+\begin{proof}
+Man schreibe $L_1-\mu_{1,a}F=N_{1,a}+B_{1,a}+V_{1,a}$ und verfahre analog für
+$L_2$, wobei $N_{1,a},N_{2,b}$ nach Lemma~\ref{lem:nef} nef sind. Beim
+Ausmultiplizieren ist jeder Summand nichtnegativ: das Schnittprodukt zweier nef
+Divisoren, das Produkt eines nef mit einem effektiven Divisor,
+$B_{1,a}\cdot B_{2,b}\ge 0$ (da keine gemeinsame Komponente vorliegt), das
+Produkt eines horizontalen mit einem vertikalen Divisor sowie
+$V_{1,a}\cdot V_{2,b}=0$.
+\end{proof}
+
+\subsection{Einzelne Schnitte und Jets längs Kurven}
+Für einen einzelnen Schnitt $s$ und eine irreduzible horizontale Kurve $C$, die
+nicht im Divisor von $s$ enthalten ist, liefert der Vergleich punktweiser Normen
+mit den Supremumsnormen eine Abschätzung der Gestalt $-\Lb\cdot\overline C\le(C\cdot
+F)\,h(s)$, deren geometrischer Koeffizient für $s$ aus $E_j$ gleich
+$-(L-\mu_jF)\cdot C/\omega^2$ ist. Normale Jets der Ordnung $b$ längs einer Kurve
+$C$, die in $B_j$ mit der Vielfachheit $b$ auftritt, sind Schnitte von
+$(L-bC)|_C$.
+
+\begin{proposition}\label{prop:curves}
+Es sei $C$ eine irreduzible horizontale Kurve. (a) Ist $C\not\subseteq B_j$, so
+gilt $(L-\mu_jF)\cdot C\ge 0$. (b) Tritt $C$ in $B_j$ mit der Vielfachheit $b$
+auf, so gilt $(L-bC-\mu_jF)\cdot C\ge 0$.
+\end{proposition}
+
+\begin{proof}
+(a) Es gilt $L-\mu_jF=N_j+B_j+V_j$ mit $N_j\cdot C\ge 0$, $B_j\cdot C\ge 0$ und
+$V_j\cdot C\ge 0$. (b) Es ist $L-bC-\mu_jF=N_j+(B_j-bC)+V_j$, wobei $C$ keine
+Komponente von $B_j-bC$ bildet.
+\end{proof}
+
+\subsection{Quellbündel, die nicht von der Basis zurückgezogen sind}
+Die Identität aus Satz~\ref{thm:rankr} besitzt eine Verallgemeinerung für ein
+beliebiges Quellbündel.
+
+\begin{proposition}\label{prop:universal}
+Es sei $\cF$ lokal frei vom Rang $r\ge 2$ auf $X$ und $\cF\to L$ ein Morphismus
+mit Bild $A\otimes\cI_Z$, wobei $A$ ein Geradenbündel ist und $Z$ endliche Länge
+besitzt. Dann ist der Kern $K$ lokal frei vom Rang $r-1$, und es gilt
+\[
+\Bigl(A-\frac{c_1(\cF)}{r}\Bigr)^2=\frac{\Delta(K)+2(r-1)\ell(Z)}{r}-\frac{r-1}{r^2}\,\Delta(\cF).
+\]
+\end{proposition}
+
+\begin{proof}
+Es gilt $c_1(K)=c_1(\cF)-A$ sowie $\ch_2(K)=\ch_2(\cF)-\frac12A^2+\ell(Z)$. Setzt
+man dies in $\Delta(K)=c_1(K)^2-2(r-1)\ch_2(K)$ ein und verwendet
+$\ch_2(\cF)=(c_1(\cF)^2-\Delta(\cF))/(2r)$, so folgt durch Zusammenfassen die
+Behauptung.
+\end{proof}
+
+Für $\cF=\phi^*E$ gilt $\Delta(\cF)=0$ und $c_1(\cF)\equiv(\deg E)F$, womit sich
+die Proposition auf Satz~\ref{thm:rankr} reduziert. Ist $\Delta(K)\ge 0$, so
+kann allein ein positiver Beitrag $\Delta(\cF)>0$ die linke Seite negativ machen;
+hierfür ist ein Bündel erforderlich, das nicht von der Basis zurückgezogen ist.
+Im arithmetischen Rahmen führt dies zurück auf Parshins Programm einer
+arithmetischen Bogomolov--Miyaoka--Yau-Ungleichung~\cite{Pa88,MB90} sowie auf
+arithmetische Ungleichungen vom Bogomolov--Gieseker-Typ~\cite{Mo94}.
+Soul\'e~\cite{So05} verfolgte Miyaokas Zugang über Erweiterungen vom Rang zwei;
+er hält dort fest, dass die arithmetische zweite Chern-Zahl „contains an
+archimedean summand -- an integral over the set of complex points of $X$ -- which
+is not easy to bound from above“, und gewinnt untere Schranken für einzelne
+sukzessive Minima anstelle einer oberen Schranke für $\ob^{\,2}$. Weitere
+Schlüsse ziehen wir daraus nicht.
+
+\section{Schlussbemerkungen}\label{sec:conclusion}
+
+Innerhalb der hier betrachteten Klasse von Argumenten beruht jede verfügbare
+Positivität auf demselben Prinzip: Das Schnittprodukt eines nef Divisors mit
+einem effektiven Divisor ist nichtnegativ. In jedem oben behandelten Fall geht
+diese Positivität mit genau jenem Vorzeichen in den führenden Koeffizienten ein,
+das den Spielraum nichtpositiv macht, während ein PMB-Argument einen positiven
+Spielraum erfordert. Für Büschel zeigen dies Satz~\ref{thm:rank2} in Rang zwei
+und Korollar~\ref{cor:ss} für semistabiles $\phi_*L$ in jedem Rang. Offen bleibt
+in dieser Richtung die Frage einer arithmetischen Anomalie für instabiles
+$\phi_*L$ vom Rang $r\ge 3$ (Offenes Problem~\ref{prob:anomaly}). Für~\cite{So26},
+Version~1, ist die Folgerung eng umgrenzt und konkret: Proposition~9\,vi) ist
+falsch, Ungleichung~(36) besitzt einen negativen führenden Koeffizienten, und der
+dort gegebene Beweis von Theorem~1 ist unvollständig.
+
+\phantomsection
+\addcontentsline{toc}{section}{KI-Offenlegung}
+\begingroup
+\sloppy\emergencystretch=2em
+\input{ai_disclosure_STANDARD_de}
+\endgroup
+
+\phantomsection
+\addcontentsline{toc}{section}{Literatur}
+\begin{thebibliography}{99}
+\small
+\frenchspacing
+
+\bibitem{BHPV04}
+W.~P. Barth, K.~Hulek, C.~A.~M. Peters, A.~Van de Ven,
+\emph{Compact Complex Surfaces}, 2nd enlarged ed.,
+Ergebnisse der Mathematik und ihrer Grenzgebiete (3) 4, Springer, Berlin, 2004.
+
+\bibitem{Bo78}
+F.~A. Bogomolov,
+Holomorphic tensors and vector bundles on projective varieties,
+\emph{Izv. Akad. Nauk SSSR Ser. Mat.} 42 (1978), 1227--1287;
+engl.\ Übers.\ \emph{Math. USSR-Izv.} 13 (1979), 499--555.
+
+\bibitem{CH88}
+M.~Cornalba, J.~Harris,
+Divisor classes associated to families of stable varieties, with applications
+to the moduli space of curves,
+\emph{Ann. Sci. \'Ec. Norm. Sup\'er.} (4) 21 (1988), 455--475.
+
+\bibitem{HN75}
+G.~Harder, M.~S. Narasimhan,
+On the cohomology groups of moduli spaces of vector bundles on curves,
+\emph{Math. Ann.} 212 (1975), 215--248.
+
+\bibitem{HL10}
+D.~Huybrechts, M.~Lehn,
+\emph{The Geometry of Moduli Spaces of Sheaves}, 2nd ed.,
+Cambridge Mathematical Library, Cambridge University Press, Cambridge, 2010.
+
+\bibitem{Ko67}
+K.~Kodaira,
+A certain type of irregular algebraic surfaces,
+\emph{J. Analyse Math.} 19 (1967), 207--215.
+
+\bibitem{MD85}
+M.~Martin-Deschamps,
+La construction de Kodaira--Parshin,
+in: \emph{S\'eminaire sur les pinceaux arithm\'etiques: la conjecture de Mordell},
+Ast\'erisque 127 (1985), 261--273.
+
+\bibitem{Mi77}
+Y.~Miyaoka,
+On the Chern numbers of surfaces of general type,
+\emph{Invent. Math.} 42 (1977), 225--237.
+
+\bibitem{MB90}
+L.~Moret-Bailly,
+Hauteurs et classes de Chern sur les surfaces arithm\'etiques,
+in: \emph{S\'eminaire sur les pinceaux de courbes elliptiques (\`a la recherche
+de \guillemotleft Mordell effectif\guillemotright)}, Ast\'erisque 183 (1990), 37--58.
+
+\bibitem{Mo94}
+A.~Moriwaki,
+Inequality of Bogomolov--Gieseker type on arithmetic surfaces,
+\emph{Duke Math. J.} 74 (1994), 713--761.
+
+\bibitem{Pa88}
+A.~N. Parshin,
+The Bogomolov--Miyaoka--Yau inequality for the arithmetical surfaces and its
+applications,
+in: \emph{S\'eminaire de Th\'eorie des Nombres, Paris 1986--87},
+Progr. Math. 75, Birkh\"auser, Boston, 1988, 299--312.
+
+\bibitem{So05}
+C.~Soul\'e,
+Semi-stable extensions on arithmetic surfaces,
+arXiv:math/0505079 (2005); in: \emph{Moduli Spaces and Arithmetic Geometry
+(Kyoto, 2004)}, Adv. Stud. Pure Math. 45 (2006), 283--295.
+
+\bibitem{So26}
+C.~Soul\'e,
+On the $abc$ conjecture,
+arXiv:2611.05217, Version~1 (3.~November 2026).
+
+\bibitem{Xi87}
+G.~Xiao,
+Fibered algebraic surfaces with low slope,
+\emph{Math. Ann.} 276 (1987), 449--466.
+
+\end{thebibliography}
+
+\end{document}

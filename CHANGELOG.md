@@ -4,6 +4,9 @@ All notable changes to this repository will be documented in this file.
 
 ## [Unreleased]
 
+### Companion paper
+- Add the companion paper "No Positive Margin from Pencils" (v0.1, Zenodo 10.5281/zenodo.24046160, concept DOI 10.5281/zenodo.24046159) as `pmb-pencil-nogo/`: bilingual TeX sources, PDFs, local AI disclosures, READMEs and a SHA-256 manifest. It shows that Proposition 9 vi) of arXiv:2611.05217v1 is false and makes no statement about the abc conjecture. Repository software remains at frozen version 0.1.13.
+
 ### Research manuscript corrections
 - Add the bilingual Part 6 ATS height-subchain v0.3 corrective paper package: R18 linear-class, full-place and arithmetic-domain fixes with unchanged core proofs and explicit open measure/extension gates. Package version 0.1.13 remains frozen.
 

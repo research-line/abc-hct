@@ -1,0 +1,59 @@
+{
+  "title_en": "No Positive Margin from Pencils: Xiao's Lemma, a Rank-r Margin Identity, and the Nef Barrier in Parshin-Moret-Bailly Height Arguments",
+  "title_de": "Kein positiver Spielraum aus Büschelargumenten: Xiaos Lemma, eine Spielraumidentität in Rang r und die Nef-Barriere in Höhenargumenten nach Parshin und Moret-Bailly",
+  "manuscript_version": "0.1",
+  "date": "2026-11-08",
+  "license": "CC-BY-4.0",
+  "state": "PUBLISHED",
+  "doi": "10.5281/zenodo.24046160",
+  "concept_doi": "10.5281/zenodo.24046159",
+  "zenodo_record": "24046160",
+  "companion_to": "10.5281/zenodo.21916900",
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 2399,
+      "sha256": "1ccba4b82cff1892ec25f781ca41ef166f77cc0c08d1f557f7cb64297e869afa"
+    },
+    {
+      "name": "README_de.md",
+      "bytes": 2509,
+      "sha256": "0e930723816a17724a17587621f27b867da73bfebe25280bf74e9af50d045816"
+    },
+    {
+      "name": "ai_disclosure_STANDARD_de.tex",
+      "bytes": 2062,
+      "sha256": "cb20009a22f10430683ee8e04c59df51c8ce524913e386d07fe6453e5b0d22a7"
+    },
+    {
+      "name": "ai_disclosure_STANDARD_en.tex",
+      "bytes": 1901,
+      "sha256": "74a1774a059d5016aca1fa434ec027c44a50c4e932bd41d7b46cd0e123a242bf"
+    },
+    {
+      "name": "pmb_pencil_nogo_v0.1_de.pdf",
+      "bytes": 495433,
+      "sha256": "f585236dfd5b813e049008544bc8fbd7eb732ddd5dfdb777df8d6fba14b28b84"
+    },
+    {
+      "name": "pmb_pencil_nogo_v0.1_de.tex",
+      "bytes": 53521,
+      "sha256": "3f121225793df3531b53cfaa096691c02d6580a6fce652df10011e419a71487c"
+    },
+    {
+      "name": "pmb_pencil_nogo_v0.1_en.pdf",
+      "bytes": 482914,
+      "sha256": "949a4ff9c65b97fccf46eb3b692ba997b427d33b775b04552a9c5c1af2abc5da"
+    },
+    {
+      "name": "pmb_pencil_nogo_v0.1_en.tex",
+      "bytes": 48901,
+      "sha256": "04948573818ffd399ded10112d3262bf407b9756763bdcdf576cd81bce3933ed"
+    }
+  ],
+  "scientific_scope": "Companion paper; shows the pencil margin in Parshin-Moret-Bailly height arguments is not positive and that Prop. 9 vi) of arXiv:2611.05217v1 is false; no statement about the abc conjecture; arithmetic side of the Harder-Narasimhan-unstable case for r >= 3 open.",
+  "verification": {
+    "en_pages": 12,
+    "de_pages": 13
+  }
+}

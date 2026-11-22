@@ -320,6 +320,7 @@ Jede unten aufgeführte Ergebniskategorie wird in mindestens einer der Veröffen
 | Paper | DOI (Konzept) | Status |
 |---|---|---|
 | **Paper A** -- "From Landscape to Atlas: Multi-Route Cartography of an Ongoing Expedition Toward the *abc* Conjecture" | [10.5281/zenodo.21916900](https://doi.org/10.5281/zenodo.21916900) | Live, versioniert auf Zenodo |
+| **Begleitarbeit zu Paper A** -- "No Positive Margin from Pencils: Xiao's Lemma, a Rank-r Margin Identity, and the Nef Barrier in Parshin-Moret-Bailly Height Arguments" ([`pmb-pencil-nogo/`](pmb-pencil-nogo/)) | [10.5281/zenodo.24046159](https://doi.org/10.5281/zenodo.24046159) | Live v0.1 auf Zenodo (2026-11-08); keine *abc*-Aussage |
 | **Paper B** -- "Beneath the *abc* Landscape: Hecke Quotients and the HCT Route" | Demnächst | Entwurf in Arbeit |
 
 ---
